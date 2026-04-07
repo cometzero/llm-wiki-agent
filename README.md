@@ -20,30 +20,43 @@ Three layers:
 - **`wiki/`** — Claude-maintained markdown pages (Claude writes, you read)
 - **`graph/`** — auto-generated knowledge graph visualization
 
-## Quick Start — Claude Code (no API key needed)
+## Quick Start — Any Coding Agent (no API key needed)
 
-Open this repo in [Claude Code](https://claude.ai/code):
+Works with Claude Code, Codex, OpenCode, Gemini CLI, and any agent that reads a config file from the repo root.
+
+| Agent | Config file read automatically |
+|---|---|
+| [Claude Code](https://claude.ai/code) | `CLAUDE.md` + `.claude/commands/` |
+| [OpenAI Codex](https://openai.com/codex) | `AGENTS.md` |
+| OpenCode / Pear AI | `AGENTS.md` |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI.md` |
+| Any other agent | Point it at `AGENTS.md` or `README.md` |
 
 ```bash
 git clone https://github.com/SamurAIGPT/GPT-Agent.git
 cd GPT-Agent
-claude  # opens Claude Code in this repo
+
+claude          # Claude Code
+codex           # OpenAI Codex
+opencode        # OpenCode
+gemini          # Gemini CLI
 ```
 
-Claude Code reads `CLAUDE.md` automatically. Then just talk to it:
+Each agent reads its config file and follows the same workflows. Then talk to it:
 
 ```
-# Drop a source into raw/ first, then:
+# Claude Code slash commands:
 /wiki-ingest raw/articles/my-article.md
-
 /wiki-query what are the main themes across all sources?
-
 /wiki-lint
-
 /wiki-graph
-```
 
-Or in plain English: *"Ingest this paper"*, *"What does the wiki say about X?"*, *"Check for contradictions"*
+# Any agent (plain English):
+"Ingest this paper: raw/papers/my-paper.md"
+"What does the wiki say about X?"
+"Check for contradictions"
+"Build the knowledge graph"
+```
 
 ## Quick Start — Standalone Python (requires API key)
 
