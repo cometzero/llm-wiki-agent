@@ -2,60 +2,60 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**A personal knowledge base that builds and maintains itself.** Drop in source documents — articles, papers, notes — and the LLM reads them, extracts the knowledge, and integrates everything into a persistent, interlinked wiki. You never write the wiki. The LLM does.
+**A personal knowledge base that builds and maintains itself.** Drop in source documents — articles, papers, notes — and the LLM reads them, extracts the knowledge, and integrates everything into a persistent, interlinked wiki. You never write the wiki. Claude does.
 
 Unlike RAG systems that re-derive knowledge from scratch on every query, LLM Wiki Agent compiles knowledge once and keeps it current. Cross-references are pre-built. Contradictions are flagged at ingest time. Every new source makes the wiki richer.
 
 ## How It Works
 
 ```
-You drop a source → LLM reads it → wiki pages are created/updated → graph is rebuilt
+You drop a source → Claude reads it → wiki pages are created/updated → graph is rebuilt
 
-You ask a question → LLM reads relevant wiki pages → synthesizes answer with citations
+You ask a question → Claude reads relevant wiki pages → synthesizes answer with citations
 ```
 
 Three layers:
 
 - **`raw/`** — your source documents (immutable, you own this)
-- **`wiki/`** — LLM-maintained markdown pages (Claude writes, you read)
+- **`wiki/`** — Claude-maintained markdown pages (Claude writes, you read)
 - **`graph/`** — auto-generated knowledge graph visualization
 
-## Quick Start
+## Quick Start — Claude Code (no API key needed)
+
+Open this repo in [Claude Code](https://claude.ai/code):
 
 ```bash
 git clone https://github.com/SamurAIGPT/GPT-Agent.git
 cd GPT-Agent
+claude  # opens Claude Code in this repo
+```
+
+Claude Code reads `CLAUDE.md` automatically. Then just talk to it:
+
+```
+# Drop a source into raw/ first, then:
+/wiki-ingest raw/articles/my-article.md
+
+/wiki-query what are the main themes across all sources?
+
+/wiki-lint
+
+/wiki-graph
+```
+
+Or in plain English: *"Ingest this paper"*, *"What does the wiki say about X?"*, *"Check for contradictions"*
+
+## Quick Start — Standalone Python (requires API key)
+
+```bash
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY=your_key_here
-```
 
-Add your first source:
-
-```bash
-# Drop a source document into raw/
-cp my-article.md raw/articles/my-article.md
-
-# Ingest it — LLM reads, extracts, and files knowledge into the wiki
 python tools/ingest.py raw/articles/my-article.md
-```
-
-Query the wiki:
-
-```bash
-python tools/query.py "What are the main themes across all sources?"
-python tools/query.py "How does X relate to Y?" --save   # save answer back to wiki
-```
-
-Build the knowledge graph:
-
-```bash
-python tools/build_graph.py --open   # opens graph.html in browser
-```
-
-Health-check the wiki:
-
-```bash
-python tools/lint.py --save   # checks for orphans, contradictions, gaps
+python tools/query.py "What are the main themes?"
+python tools/query.py "How does X relate to Y?" --save
+python tools/build_graph.py --open
+python tools/lint.py --save
 ```
 
 ## Architecture
@@ -81,16 +81,29 @@ tools/
 CLAUDE.md               ← schema and workflow instructions for the LLM
 ```
 
-## Tools
+## Commands
+
+### Claude Code (primary — no API key)
+
+| Slash command | What it does |
+|---|---|
+| `/wiki-ingest <file>` | Read a source, update wiki pages, append to log |
+| `/wiki-query <question>` | Search wiki, synthesize answer with citations |
+| `/wiki-lint` | Check for orphans, broken links, contradictions, gaps |
+| `/wiki-graph` | Build knowledge graph (`graph.json` + `graph.html`) |
+
+Or describe what you want in plain English — Claude Code follows `CLAUDE.md` and does the right thing.
+
+### Standalone Python (optional — requires `ANTHROPIC_API_KEY`)
 
 | Command | What it does |
 |---|---|
-| `python tools/ingest.py <file>` | Read a source, update wiki pages, append to log |
-| `python tools/query.py "<question>"` | Search wiki, synthesize answer with citations |
-| `python tools/query.py "<question>" --save` | Same, and file the answer back as a wiki page |
-| `python tools/lint.py` | Check for orphans, broken links, contradictions, gaps |
-| `python tools/build_graph.py` | Build `graph.json` + `graph.html` from wiki |
-| `python tools/build_graph.py --no-infer` | Build graph without semantic inference (faster) |
+| `python tools/ingest.py <file>` | Ingest a source |
+| `python tools/query.py "<question>"` | Query the wiki |
+| `python tools/query.py "<question>" --save` | Query and file answer back |
+| `python tools/lint.py` | Lint the wiki |
+| `python tools/build_graph.py` | Build graph |
+| `python tools/build_graph.py --no-infer` | Build graph (skip inference, faster) |
 | `python tools/build_graph.py --open` | Build and open in browser |
 
 ## The Graph

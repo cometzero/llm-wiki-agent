@@ -1,6 +1,25 @@
 # LLM Wiki Agent — Schema & Workflow Instructions
 
-This document defines how Claude maintains this wiki. Follow these conventions exactly in every session.
+This wiki is maintained entirely by Claude Code. No API key or Python scripts needed — just open this repo in Claude Code and talk to it.
+
+## Slash Commands (Claude Code)
+
+| Command | What to say |
+|---|---|
+| `/wiki-ingest` | `ingest raw/my-article.md` |
+| `/wiki-query` | `query: what are the main themes?` |
+| `/wiki-lint` | `lint the wiki` |
+| `/wiki-graph` | `build the knowledge graph` |
+
+Or just describe what you want in plain English:
+- *"Ingest this file: raw/papers/attention-is-all-you-need.md"*
+- *"What does the wiki say about transformer models?"*
+- *"Check the wiki for orphan pages and contradictions"*
+- *"Build the graph and show me what's connected to RAG"*
+
+Claude Code reads this file automatically and follows the workflows below.
+
+---
 
 ## Directory Layout
 
@@ -13,9 +32,12 @@ wiki/         # Claude owns this layer entirely
   sources/    # One summary page per source document
   entities/   # People, companies, projects, products
   concepts/   # Ideas, frameworks, methods, theories
-graph/        # Auto-generated graph data — regenerate with build_graph.py
-tools/        # CLI scripts
+  syntheses/  # Saved query answers
+graph/        # Auto-generated graph data
+tools/        # Optional standalone Python scripts (require ANTHROPIC_API_KEY)
 ```
+
+---
 
 ## Page Format
 
@@ -31,23 +53,24 @@ last_updated: YYYY-MM-DD
 ---
 ```
 
-Use `[[PageName]]` wikilinks to link to other wiki pages. These are parsed by build_graph.py.
+Use `[[PageName]]` wikilinks to link to other wiki pages.
 
 ---
 
 ## Ingest Workflow
 
-Triggered when user runs: `python tools/ingest.py <source-path>`
+Triggered by: *"ingest <file>"* or `/wiki-ingest`
 
 Steps (in order):
-1. Read the source document fully
-2. Write `wiki/sources/<slug>.md` — title, date, key claims, key quotes, tags, links to entity/concept pages
-3. Update `wiki/index.md` — add entry under the correct section
-4. Update `wiki/overview.md` — revise synthesis if the source adds new perspectives, themes, or contradicts prior conclusions
-5. Update existing entity pages that this source mentions; create new entity pages if needed
-6. Update existing concept pages that this source discusses; create new concept pages if needed
-7. Flag any contradictions with existing wiki content in the log entry
-8. Append to `wiki/log.md` with this prefix format: `## [YYYY-MM-DD] ingest | <Title>`
+1. Read the source document fully using the Read tool
+2. Read `wiki/index.md` and `wiki/overview.md` for current wiki context
+3. Write `wiki/sources/<slug>.md` — use the source page format below
+4. Update `wiki/index.md` — add entry under Sources section
+5. Update `wiki/overview.md` — revise synthesis if warranted
+6. Update/create entity pages for key people, companies, projects mentioned
+7. Update/create concept pages for key ideas and frameworks discussed
+8. Flag any contradictions with existing wiki content
+9. Append to `wiki/log.md`: `## [YYYY-MM-DD] ingest | <Title>`
 
 ### Source Page Format
 
@@ -82,48 +105,53 @@ source_file: raw/...
 
 ## Query Workflow
 
-Triggered when user runs: `python tools/query.py "<question>"`
+Triggered by: *"query: <question>"* or `/wiki-query`
 
 Steps:
 1. Read `wiki/index.md` to identify relevant pages
-2. Read the relevant pages
-3. Synthesize an answer with inline citations as wikilinks: `[[PageName]]`
-4. Ask the user if they want the answer filed as a new synthesis page in `wiki/`
+2. Read those pages with the Read tool
+3. Synthesize an answer with inline citations as `[[PageName]]` wikilinks
+4. Ask the user if they want the answer filed as `wiki/syntheses/<slug>.md`
 
 ---
 
 ## Lint Workflow
 
-Triggered when user runs: `python tools/lint.py`
+Triggered by: *"lint the wiki"* or `/wiki-lint`
 
-Check for:
+Use Grep and Read tools to check for:
 - **Orphan pages** — wiki pages with no inbound `[[links]]` from other pages
-- **Contradictions** — claims that conflict across pages
-- **Stale summaries** — pages not updated after newer sources changed the picture
-- **Missing entity pages** — entities mentioned in 3+ pages but lacking their own page
 - **Broken links** — `[[WikiLinks]]` pointing to pages that don't exist
-- **Data gaps** — important questions the wiki cannot answer — suggest new sources to find
+- **Contradictions** — claims that conflict across pages
+- **Stale summaries** — pages not updated after newer sources
+- **Missing entity pages** — entities mentioned in 3+ pages but lacking their own page
+- **Data gaps** — questions the wiki can't answer; suggest new sources
 
-Output a lint report as markdown.
+Output a lint report and ask if the user wants it saved to `wiki/lint-report.md`.
 
 ---
 
 ## Graph Workflow
 
-Triggered when user runs: `python tools/build_graph.py`
+Triggered by: *"build the knowledge graph"* or `/wiki-graph`
 
-- Pass 1: Parse all `[[wikilinks]]` in wiki pages → deterministic edges tagged `EXTRACTED`
-- Pass 2: Call Claude API to infer implicit relationships not captured by wikilinks → edges tagged `INFERRED` with confidence score
-- Tag ambiguous relationships as `AMBIGUOUS`
-- Use Louvain community detection to cluster nodes
-- Output `graph/graph.json` and `graph/graph.html`
-- Cache by SHA256 of page content — only reprocess changed pages
+When the user asks to build the graph, run `tools/build_graph.py` which:
+- Pass 1: Parses all `[[wikilinks]]` → deterministic `EXTRACTED` edges
+- Pass 2: Infers implicit relationships → `INFERRED` edges with confidence scores
+- Runs Louvain community detection
+- Outputs `graph/graph.json` + `graph/graph.html`
+
+If the user doesn't have Python/dependencies set up, instead generate the graph data manually:
+1. Use Grep to find all `[[wikilinks]]` across wiki pages
+2. Build a node/edge list
+3. Write `graph/graph.json` directly
+4. Write `graph/graph.html` using the vis.js template
 
 ---
 
 ## Naming Conventions
 
-- Source slugs: `kebab-case` matching the source filename
+- Source slugs: `kebab-case` matching source filename
 - Entity pages: `TitleCase.md` (e.g. `OpenAI.md`, `SamAltman.md`)
 - Concept pages: `TitleCase.md` (e.g. `ReinforcementLearning.md`, `RAG.md`)
 - Source pages: `kebab-case.md`
@@ -151,7 +179,7 @@ Triggered when user runs: `python tools/build_graph.py`
 
 ## Log Format
 
-Each entry starts with `## [YYYY-MM-DD] <operation> | <title>` so it's parseable:
+Each entry starts with `## [YYYY-MM-DD] <operation> | <title>` so it's grep-parseable:
 
 ```
 grep "^## \[" wiki/log.md | tail -10
