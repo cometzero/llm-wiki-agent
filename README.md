@@ -20,56 +20,46 @@ Three layers:
 - **`wiki/`** — Claude-maintained markdown pages (Claude writes, you read)
 - **`graph/`** — auto-generated knowledge graph visualization
 
-## Quick Start — Any Coding Agent (no API key needed)
-
-Works with Claude Code, Codex, OpenCode, Gemini CLI, and any agent that reads a config file from the repo root.
-
-| Agent | Config file read automatically |
-|---|---|
-| [Claude Code](https://claude.ai/code) | `CLAUDE.md` + `.claude/commands/` |
-| [OpenAI Codex](https://openai.com/codex) | `AGENTS.md` |
-| OpenCode / Pear AI | `AGENTS.md` |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI.md` |
-| Any other agent | Point it at `AGENTS.md` or `README.md` |
+## Quick Start
 
 ```bash
-git clone https://github.com/SamurAIGPT/GPT-Agent.git
-cd GPT-Agent
-
-claude          # Claude Code
-codex           # OpenAI Codex
-opencode        # OpenCode
-gemini          # Gemini CLI
+git clone https://github.com/SamurAIGPT/llm-wiki-agent.git
+cd llm-wiki-agent
 ```
 
-Each agent reads its config file and follows the same workflows. Then talk to it:
+Open it in your coding agent — **no API key or Python setup needed**:
+
+```bash
+claude      # Claude Code
+codex       # OpenAI Codex
+opencode    # OpenCode / Pear AI
+gemini      # Gemini CLI
+```
+
+Each agent reads its config file automatically (`CLAUDE.md`, `AGENTS.md`, or `GEMINI.md`) and follows the same workflows. Then just talk to it:
 
 ```
-# Claude Code slash commands:
+# Claude Code — slash commands:
 /wiki-ingest raw/articles/my-article.md
 /wiki-query what are the main themes across all sources?
 /wiki-lint
 /wiki-graph
 
-# Any agent (plain English):
+# Any agent — plain English works too:
 "Ingest this paper: raw/papers/my-paper.md"
 "What does the wiki say about X?"
 "Check for contradictions"
 "Build the knowledge graph"
 ```
 
-## Quick Start — Standalone Python (requires API key)
+| Agent | Config file |
+|---|---|
+| [Claude Code](https://claude.ai/code) | `CLAUDE.md` + `.claude/commands/` |
+| [OpenAI Codex](https://openai.com/codex) | `AGENTS.md` |
+| OpenCode / Pear AI | `AGENTS.md` |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI.md` |
 
-```bash
-pip install -r requirements.txt
-export ANTHROPIC_API_KEY=your_key_here
-
-python tools/ingest.py raw/articles/my-article.md
-python tools/query.py "What are the main themes?"
-python tools/query.py "How does X relate to Y?" --save
-python tools/build_graph.py --open
-python tools/lint.py --save
-```
+> **Standalone use** (without a coding agent): `pip install -r requirements.txt`, set `ANTHROPIC_API_KEY`, then use `python tools/ingest.py`, `python tools/query.py`, etc.
 
 ## Architecture
 
@@ -144,10 +134,126 @@ Community detection (Louvain) clusters nodes by topic. The output is a self-cont
 
 ## Use Cases
 
-- **Research** — go deep on a topic over weeks; every paper/article updates the same wiki
-- **Reading** — build a companion wiki as you read a book; by the end you have a rich reference
-- **Personal knowledge** — file journal entries, health notes, goals; build a structured picture over time
-- **Business** — feed in meeting transcripts, Slack threads, docs; LLM does the maintenance no one wants to do
+### Research
+
+Going deep on a topic over weeks or months — reading papers, articles, reports.
+
+```
+# Each paper you read gets ingested:
+/wiki-ingest raw/papers/attention-is-all-you-need.md
+/wiki-ingest raw/papers/llama2.md
+/wiki-ingest raw/papers/rag-survey.md
+
+# Wiki builds up entity pages (e.g. "Meta AI", "Google Brain") and
+# concept pages (e.g. "Attention Mechanism", "RLHF") automatically.
+
+# Ask synthesis questions across everything you've read:
+/wiki-query "What are the main approaches to reducing hallucination?"
+/wiki-query "How has context window size evolved across models?"
+
+# Check where your knowledge has gaps:
+/wiki-lint
+# → "No sources on mixture-of-experts — consider reading the Mixtral paper"
+```
+
+By the end of a research project you have a structured, interlinked reference that reflects everything you've read — not a folder of PDFs you'll never reopen.
+
+---
+
+### Reading a Book
+
+File each chapter as you go. Build out pages for characters, themes, plot threads.
+
+```
+# After each chapter:
+/wiki-ingest raw/book/chapter-01-the-beginning.md
+/wiki-ingest raw/book/chapter-02-the-conflict.md
+
+# Wiki creates pages like:
+# entities/ElonMusk.md, entities/Tesla.md
+# concepts/FirstPrinciplesThinking.md
+
+# Mid-book:
+/wiki-query "How has the protagonist's motivation evolved?"
+/wiki-query "What contradictions exist in the author's argument so far?"
+
+# End of book — build the graph:
+/wiki-graph
+# Open graph.html → see every character/theme/event and how they connect
+```
+
+Think fan wikis like the Tolkien Gateway — thousands of interlinked pages. You can build something like that as you read, with the agent doing all the cross-referencing.
+
+---
+
+### Personal Knowledge Base
+
+Track goals, health, psychology, self-improvement — file journal entries, articles, podcast notes.
+
+```
+# File your journal entries:
+/wiki-ingest raw/journal/2026-01-week1.md
+/wiki-ingest raw/journal/2026-01-week2.md
+
+# File articles and podcast notes that resonated:
+/wiki-ingest raw/articles/huberman-sleep-protocol.md
+/wiki-ingest raw/articles/atomic-habits-summary.md
+
+# Ask introspective questions:
+/wiki-query "What patterns show up in my journal entries about energy levels?"
+/wiki-query "What habits have I tried and what was the outcome?"
+
+# The wiki builds a structured picture of you over time —
+# entities like "Sleep", "Exercise", "Deep Work" accumulate evidence
+# from every source you've filed.
+```
+
+---
+
+### Business / Team Intelligence
+
+Feed in meeting transcripts, Slack exports, project docs, customer calls.
+
+```
+# Onboard new context:
+/wiki-ingest raw/meetings/q1-planning-transcript.md
+/wiki-ingest raw/docs/product-roadmap-2026.md
+/wiki-ingest raw/calls/customer-interview-acme.md
+
+# Wiki creates pages for projects, people, decisions, recurring themes.
+
+# Ask strategic questions:
+/wiki-query "What feature requests have come up most across customer calls?"
+/wiki-query "What decisions were made in Q1 planning and what was the rationale?"
+
+# Lint catches things like:
+# → "Project X mentioned in 5 pages but no dedicated page"
+# → "Roadmap contradicts customer interview on priority of feature Y"
+```
+
+The wiki stays current because the agent does the maintenance no one on the team wants to do.
+
+---
+
+### Competitive Analysis / Due Diligence
+
+Track a company, market, or technology area over time.
+
+```
+# Feed in everything you find:
+/wiki-ingest raw/competitors/openai-announcements.md
+/wiki-ingest raw/competitors/anthropic-blog-posts.md
+/wiki-ingest raw/market/ai-funding-report-q1.md
+
+# Wiki builds entity pages per company, concept pages per technology.
+
+# Ask comparison questions:
+/wiki-query "How do OpenAI and Anthropic differ in their approach to safety?"
+/wiki-query "Which companies have announced multimodal models in the last 6 months?"
+
+# Save the answer back as a reusable synthesis:
+/wiki-query "Competitive landscape summary as of today" --save
+```
 
 ## Tips
 
