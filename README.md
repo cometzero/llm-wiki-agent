@@ -206,10 +206,27 @@ The schema file tells the agent how to maintain the wiki — page formats, inges
 | Contradictions surface at query time (maybe) | Flagged at ingest time |
 | No accumulation | Every source makes the wiki richer |
 
+## Obsidian Integration
+
+The wiki is designed to be browsed seamlessly in [Obsidian](https://obsidian.md). Since the agent maintains consistent `[[wikilinks]]`, you get a naturally growing knowledge graph in your vault.
+
+### Vault Symlink Pattern
+If you want to keep the LLM Wiki Agent repository separate from your main personal vault, use symlinks:
+1. Keep your working agent repository at e.g., `~/llm-wiki-agent`
+2. Create a symlink from your main Obsidian vault:
+   ```bash
+   ln -sfn ~/llm-wiki-agent/wiki ~/your-obsidian-vault/wiki
+   ```
+3. Use the [Obsidian Web Clipper](https://obsidian.md/clipper) or write directly to `raw/` in the agent repo to queue items for ingestion.
+
+> **Note:** If you ever move your local repo directory, remember to update the symlink, otherwise the `wiki/` directory will appear missing in Obsidian.
+
+### Recommended .obsidian Config
+- **Graph View:** Filter out `index.md` and `log.md` (e.g. `-file:index.md -file:log.md`) to avoid them becoming gravity wells in your Obsidian graph.
+- **Dataview:** Use the community plugin [Dataview](https://blacksmithgu.github.io/obsidian-dataview/) to query the YAML frontmatter the agent automatically injects (e.g., `type: source`, `tags: [diary]`).
+
 ## Tips
 
-- Use [Obsidian](https://obsidian.md) to browse the wiki — follow links, check graph view, use Dataview for frontmatter queries
-- Use [Obsidian Web Clipper](https://obsidian.md/clipper) to clip web articles directly to `raw/`
 - File good query answers back with `--save` — your explorations compound just like ingested sources
 - The wiki is a git repo — version history for free
 - Standalone Python scripts in `tools/` work without a coding agent (require `ANTHROPIC_API_KEY`)

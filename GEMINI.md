@@ -94,6 +94,48 @@ source_file: raw/...
 - Contradicts [[OtherPage]] on: ...
 ```
 
+### Domain-Specific Templates
+
+If the source falls into a specific domain (e.g., personal diary, meeting notes), the agent should use a specialized template instead of the default generic one above:
+
+#### Diary / Journal Template
+```markdown
+---
+title: "YYYY-MM-DD Diary"
+type: source
+tags: [diary]
+date: YYYY-MM-DD
+---
+## Event Summary
+...
+## Key Decisions
+...
+## Energy & Mood
+...
+## Connections
+...
+## Shifts & Contradictions
+...
+```
+
+#### Meeting Notes Template
+```markdown
+---
+title: "Meeting Title"
+type: source
+tags: [meeting]
+date: YYYY-MM-DD
+---
+## Goal
+...
+## Key Discussions
+...
+## Decisions Made
+...
+## Action Items
+...
+```
+
 ---
 
 ## Query Workflow
