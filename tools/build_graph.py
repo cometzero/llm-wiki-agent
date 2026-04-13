@@ -25,7 +25,7 @@ import webbrowser
 from pathlib import Path
 from datetime import date
 
-import anthropic
+import os
 
 try:
     import networkx as nx
@@ -62,6 +62,23 @@ EDGE_COLORS = {
 
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
+def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 4096) -> str:
+    try:
+        from litellm import completion
+    except ImportError:
+        print("Error: litellm not installed. Run: pip install litellm")
+        import sys
+        sys.exit(1)
+        
+    model = os.getenv(model_env, default_model)
+    response = completion(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens
+    )
+    return response.choices[0].message.content
 
 
 def sha256(text: str) -> str:
@@ -143,8 +160,7 @@ def build_extracted_edges(pages: list[Path]) -> list[dict]:
 
 
 def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: dict) -> list[dict]:
-    """Pass 2: Claude-inferred semantic relationships."""
-    client = anthropic.Anthropic()
+    """Pass 2: API-inferred semantic relationships."""
     new_edges = []
 
     # Only process pages that changed since last run
@@ -186,12 +202,7 @@ def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: d
         content = read_file(p)[:2000]  # truncate for context efficiency
         src = page_id(p)
 
-        response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=1024,
-            messages=[{
-                "role": "user",
-                "content": f"""Analyze this wiki page and identify implicit semantic relationships to other pages in the wiki.
+        prompt = f"""Analyze this wiki page and identify implicit semantic relationships to other pages in the wiki.
 
 Source page: {src}
 Content:
@@ -214,10 +225,8 @@ Rules:
 - Do not repeat edges already in the extracted list
 - Return empty array [] if no new relationships found
 """
-            }]
-        )
-
-        raw = response.content[0].text.strip()
+        raw = call_llm(prompt, "LLM_MODEL_FAST", "claude-3-5-haiku-latest", max_tokens=1024)
+        raw = raw.strip()
         raw = re.sub(r"^```(?:json)?\s*", "", raw)
         raw = re.sub(r"\s*```$", "", raw)
 
