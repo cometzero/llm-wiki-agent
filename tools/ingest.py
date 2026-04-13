@@ -190,6 +190,40 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python tools/ingest.py <path-to-source>")
+        print("Usage: python tools/ingest.py <path-to-source> [path2 ...] [dir1 ...]")
         sys.exit(1)
-    ingest(sys.argv[1])
+        
+    paths_to_process = []
+    for arg in sys.argv[1:]:
+        p = Path(arg)
+        if p.is_file() and p.suffix == ".md":
+            paths_to_process.append(p)
+        elif p.is_dir():
+            for f in p.rglob("*.md"):
+                if f.is_file():
+                    paths_to_process.append(f)
+        else:
+            import glob
+            for f in glob.glob(arg, recursive=True):
+                g_p = Path(f)
+                if g_p.is_file() and g_p.suffix == ".md":
+                    paths_to_process.append(g_p)
+                    
+    # Deduplicate while preserving order
+    unique_paths = []
+    seen = set()
+    for p in paths_to_process:
+        abs_p = p.resolve()
+        if abs_p not in seen:
+            seen.add(abs_p)
+            unique_paths.append(p)
+
+    if not unique_paths:
+        print("Error: no markdown files found to ingest.")
+        sys.exit(1)
+        
+    if len(unique_paths) > 1:
+        print(f"Batch mode: found {len(unique_paths)} files to ingest.")
+        
+    for p in unique_paths:
+        ingest(str(p))
