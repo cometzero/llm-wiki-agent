@@ -23,7 +23,7 @@ import re
 from pathlib import Path
 from datetime import date
 
-import anthropic
+import os
 
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -39,6 +39,22 @@ def sha256(text: str) -> str:
 
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
+def call_llm(prompt: str, max_tokens: int = 8192) -> str:
+    try:
+        from litellm import completion
+    except ImportError:
+        print("Error: litellm not installed. Run: pip install litellm")
+        sys.exit(1)
+        
+    model = os.getenv("LLM_MODEL", "claude-3-5-sonnet-latest")
+    response = completion(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens
+    )
+    return response.choices[0].message.content
 
 
 def write_file(path: Path, content: str):
@@ -105,7 +121,7 @@ def ingest(source_path: str):
     wiki_context = build_wiki_context()
     schema = read_file(SCHEMA_FILE)
 
-    client = anthropic.Anthropic()
+    schema = read_file(SCHEMA_FILE)
 
     prompt = f"""You are maintaining an LLM Wiki. Process this source document and integrate its knowledge into the wiki.
 
@@ -140,14 +156,8 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 }}
 """
 
-    print("  calling Claude API...")
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=8192,
-        messages=[{"role": "user", "content": prompt}],
-    )
-
-    raw = response.content[0].text
+    print(f"  calling API (model: ...)")
+    raw = call_llm(prompt, max_tokens=8192)
     try:
         data = parse_json_from_response(raw)
     except (ValueError, json.JSONDecodeError) as e:

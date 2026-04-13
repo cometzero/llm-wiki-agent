@@ -19,7 +19,7 @@ import argparse
 from pathlib import Path
 from datetime import date
 
-import anthropic
+import os
 
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -36,6 +36,22 @@ def write_file(path: Path, content: str):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
     print(f"  saved: {path.relative_to(REPO_ROOT)}")
+
+
+def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 4096) -> str:
+    try:
+        from litellm import completion
+    except ImportError:
+        print("Error: litellm not installed. Run: pip install litellm")
+        sys.exit(1)
+        
+    model = os.getenv(model_env, default_model)
+    response = completion(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens
+    )
+    return response.choices[0].message.content
 
 
 def find_relevant_pages(question: str, index_content: str) -> list[Path]:
@@ -64,7 +80,6 @@ def append_log(entry: str):
 
 def query(question: str, save_path: str | None = None):
     today = date.today().isoformat()
-    client = anthropic.Anthropic()
 
     # Step 1: Read index
     index_content = read_file(INDEX_FILE)
@@ -77,16 +92,10 @@ def query(question: str, save_path: str | None = None):
 
     # If no keyword match, ask Claude to identify relevant pages from the index
     if not relevant_pages or len(relevant_pages) <= 1:
-        print("  selecting relevant pages via Claude...")
-        selection_response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=512,
-            messages=[{
-                "role": "user",
-                "content": f"Given this wiki index:\n\n{index_content}\n\nWhich pages are most relevant to answering: \"{question}\"\n\nReturn ONLY a JSON array of relative file paths (as listed in the index), e.g. [\"sources/foo.md\", \"concepts/Bar.md\"]. Maximum 10 pages."
-            }]
-        )
-        raw = selection_response.content[0].text.strip()
+        print("  selecting relevant pages via API...")
+        prompt = f"Given this wiki index:\n\n{index_content}\n\nWhich pages are most relevant to answering: \"{question}\"\n\nReturn ONLY a JSON array of relative file paths (as listed in the index), e.g. [\"sources/foo.md\", \"concepts/Bar.md\"]. Maximum 10 pages."
+        raw = call_llm(prompt, "LLM_MODEL_FAST", "claude-3-5-haiku-latest", max_tokens=512)
+        raw = raw.strip()
         raw = re.sub(r"^```(?:json)?\s*", "", raw)
         raw = re.sub(r"\s*```$", "", raw)
         try:
@@ -108,12 +117,7 @@ def query(question: str, save_path: str | None = None):
 
     # Step 4: Synthesize answer
     print(f"  synthesizing answer from {len(relevant_pages)} pages...")
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4096,
-        messages=[{
-            "role": "user",
-            "content": f"""You are querying an LLM Wiki to answer a question. Use the wiki pages below to synthesize a thorough answer. Cite sources using [[PageName]] wikilink syntax.
+    prompt = f"""You are querying an LLM Wiki to answer a question. Use the wiki pages below to synthesize a thorough answer. Cite sources using [[PageName]] wikilink syntax.
 
 Schema:
 {schema}
@@ -125,10 +129,7 @@ Question: {question}
 
 Write a well-structured markdown answer with headers, bullets, and [[wikilink]] citations. At the end, add a ## Sources section listing the pages you drew from.
 """
-        }]
-    )
-
-    answer = response.content[0].text
+    answer = call_llm(prompt, "LLM_MODEL", "claude-3-5-sonnet-latest", max_tokens=4096)
     print("\n" + "=" * 60)
     print(answer)
     print("=" * 60)

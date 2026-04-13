@@ -21,7 +21,7 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import date
 
-import anthropic
+import os
 
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -31,6 +31,22 @@ SCHEMA_FILE = REPO_ROOT / "CLAUDE.md"
 
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
+def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 4096) -> str:
+    try:
+        from litellm import completion
+    except ImportError:
+        print("Error: litellm not installed. Run: pip install litellm")
+        sys.exit(1)
+        
+    model = os.getenv(model_env, default_model)
+    response = completion(
+        model=model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens
+    )
+    return response.choices[0].message.content
 
 
 def all_wiki_pages() -> list[Path]:
@@ -112,14 +128,8 @@ def run_lint():
         rel = p.relative_to(REPO_ROOT)
         pages_context += f"\n\n### {rel}\n{read_file(p)[:1500]}"  # truncate long pages
 
-    client = anthropic.Anthropic()
-    print("  running semantic lint via Claude API...")
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=3000,
-        messages=[{
-            "role": "user",
-            "content": f"""You are linting an LLM Wiki. Review the pages below and identify:
+    print("  running semantic lint via API...")
+    prompt = f"""You are linting an LLM Wiki. Review the pages below and identify:
 1. Contradictions between pages (claims that conflict)
 2. Stale content (summaries that newer sources have superseded)
 3. Data gaps (important questions the wiki can't answer — suggest specific sources to find)
@@ -136,10 +146,7 @@ Return a markdown lint report with these sections:
 
 Be specific — name the exact pages and claims involved.
 """
-        }]
-    )
-
-    semantic_report = response.content[0].text
+    semantic_report = call_llm(prompt, "LLM_MODEL", "claude-3-5-sonnet-latest", max_tokens=3000)
 
     # Compose full report
     report_lines = [
