@@ -152,9 +152,23 @@ def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: d
     for p in pages:
         content = read_file(p)
         h = sha256(content)
-        if cache.get(str(p)) != h:
+        entry = cache.get(str(p))
+        
+        if not isinstance(entry, dict) or entry.get("hash") != h:
             changed_pages.append(p)
-            cache[str(p)] = h
+        else:
+            # Page unchanged: load its inferred edges from cache perfectly
+            src = page_id(p)
+            for rel in entry.get("edges", []):
+                new_edges.append({
+                    "from": src,
+                    "to": rel["to"],
+                    "type": rel.get("type", "INFERRED"),
+                    "title": rel.get("relationship", ""),
+                    "label": "",
+                    "color": EDGE_COLORS.get(rel.get("type", "INFERRED"), EDGE_COLORS["INFERRED"]),
+                    "confidence": float(rel.get("confidence", 0.7)),
+                })
 
     if not changed_pages:
         print("  no changed pages — skipping semantic inference")
@@ -209,17 +223,26 @@ Rules:
 
         try:
             inferred = json.loads(raw)
+            valid_rels = []
             for rel in inferred:
                 if isinstance(rel, dict) and "to" in rel:
                     new_edges.append({
                         "from": src,
                         "to": rel["to"],
                         "type": rel.get("type", "INFERRED"),
-                        "label": rel.get("relationship", ""),
+                        "title": rel.get("relationship", ""),
+                        "label": "",
                         "color": EDGE_COLORS.get(rel.get("type", "INFERRED"), EDGE_COLORS["INFERRED"]),
-                        "confidence": rel.get("confidence", 0.7),
+                        "confidence": float(rel.get("confidence", 0.7)),
                     })
-        except (json.JSONDecodeError, TypeError):
+                    valid_rels.append(rel)
+            
+            # Save properly to cache
+            cache[str(p)] = {
+                "hash": sha256(content),
+                "edges": valid_rels
+            }
+        except (json.JSONDecodeError, TypeError, ValueError):
             pass
 
     return new_edges
