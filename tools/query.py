@@ -42,14 +42,28 @@ def find_relevant_pages(question: str, index_content: str) -> list[Path]:
     """Extract linked pages from index that seem relevant to the question."""
     # Pull all [[links]] and markdown links from index
     md_links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', index_content)
-    # Simple keyword match: check if any word in the title appears in the question
     question_lower = question.lower()
     relevant = []
+    
     for title, href in md_links:
-        if any(word in question_lower for word in title.lower().split() if len(word) > 3):
+        title_lower = title.lower()
+        match = False
+        
+        # 1. English/Space-separated: check words > 3 chars
+        if any(word in question_lower for word in title_lower.split() if len(word) > 3):
+            match = True
+        # 2. Exact substring match for the whole title (useful for short CJK titles, e.g. len=2)
+        elif len(title_lower) >= 2 and title_lower in question_lower:
+            match = True
+        # 3. CJK chunks: find contiguous non-ASCII characters (len >= 2) and check if in question
+        elif any(chunk in question_lower for chunk in re.findall(r'[^\x00-\x7F]{2,}', title_lower)):
+            match = True
+            
+        if match:
             p = WIKI_DIR / href
-            if p.exists():
+            if p.exists() and p not in relevant:
                 relevant.append(p)
+                
     # Always include overview
     overview = WIKI_DIR / "overview.md"
     if overview.exists() and overview not in relevant:
