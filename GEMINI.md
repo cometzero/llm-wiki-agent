@@ -66,6 +66,7 @@ Triggered by: *"ingest <file>"*
 6. Update/create entity and concept pages
 7. Flag contradictions with existing wiki content
 8. Append to `wiki/log.md`: `## [YYYY-MM-DD] ingest | <Title>`
+9. **Post-ingest validation** — check for broken `[[wikilinks]]`, verify all new pages are in `index.md`, print a change summary
 
 ### Source Page Format
 
