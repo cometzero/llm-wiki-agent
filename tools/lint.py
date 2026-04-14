@@ -172,6 +172,7 @@ Be specific — name the exact pages and claims involved.
 
     if missing_entities:
         report_lines.append("### Missing Entity Pages (mentioned 3+ times but no page)")
+        report_lines.append("> [!warning] Action Required\n> Run `python3 generate_missing_entities.py` to automatically materialize these missing hubs.")
         for name in missing_entities:
             report_lines.append(f"- `[[{name}]]`")
         report_lines.append("")

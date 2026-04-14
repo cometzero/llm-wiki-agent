@@ -41,6 +41,7 @@ GRAPH_DIR = REPO_ROOT / "graph"
 GRAPH_JSON = GRAPH_DIR / "graph.json"
 GRAPH_HTML = GRAPH_DIR / "graph.html"
 CACHE_FILE = GRAPH_DIR / ".cache.json"
+INFERRED_EDGES_FILE = GRAPH_DIR / ".inferred_edges.jsonl"
 LOG_FILE = WIKI_DIR / "log.md"
 SCHEMA_FILE = REPO_ROOT / "CLAUDE.md"
 
@@ -73,11 +74,16 @@ def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 
         sys.exit(1)
         
     model = os.getenv(model_env, default_model)
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
-    )
+
+    kwargs = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}]
+    }
+    
+    if max_tokens:
+        kwargs["max_tokens"] = max_tokens
+
+    response = completion(**kwargs)
     return response.choices[0].message.content
 
 
@@ -159,18 +165,49 @@ def build_extracted_edges(pages: list[Path]) -> list[dict]:
     return edges
 
 
-def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: dict) -> list[dict]:
-    """Pass 2: API-inferred semantic relationships."""
-    new_edges = []
+def load_checkpoint() -> tuple[list[dict], set[str]]:
+    """Load previously inferred edges from JSONL checkpoint file."""
+    edges = []
+    completed = set()
+    if INFERRED_EDGES_FILE.exists():
+        for line in INFERRED_EDGES_FILE.read_text().strip().split("\n"):
+            if not line.strip():
+                continue
+            try:
+                record = json.loads(line)
+                completed.add(record["page_id"])
+                edges.extend(record.get("edges", []))
+            except (json.JSONDecodeError, KeyError):
+                continue
+    return edges, completed
+
+
+def append_checkpoint(page_id_str: str, edges: list[dict]):
+    """Append one page's inferred edges to the JSONL checkpoint."""
+    GRAPH_DIR.mkdir(parents=True, exist_ok=True)
+    record = {"page_id": page_id_str, "edges": edges, "ts": date.today().isoformat()}
+    with open(INFERRED_EDGES_FILE, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: dict, resume: bool = True) -> list[dict]:
+    """Pass 2: API-inferred semantic relationships with checkpoint/resume."""
+    # Load checkpoint if resuming
+    checkpoint_edges, completed_ids = ([], set())
+    if resume:
+        checkpoint_edges, completed_ids = load_checkpoint()
+        if completed_ids:
+            print(f"  checkpoint: {len(completed_ids)} pages already done, {len(checkpoint_edges)} edges loaded")
+
+    new_edges = list(checkpoint_edges)
 
     # Only process pages that changed since last run
     changed_pages = []
     for p in pages:
         content = read_file(p)
         h = sha256(content)
-        entry = cache.get(str(p))
-        
-        if not isinstance(entry, dict) or entry.get("hash") != h:
+        pid = page_id(p)
+        if cache.get(str(p)) != h and pid not in completed_ids:
             changed_pages.append(p)
         else:
             # Page unchanged: load its inferred edges from cache perfectly
@@ -188,9 +225,12 @@ def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: d
 
     if not changed_pages:
         print("  no changed pages — skipping semantic inference")
-        return []
+        return new_edges
 
-    print(f"  inferring relationships for {len(changed_pages)} changed pages...")
+    total_pages = len(changed_pages)
+    already_done = len(completed_ids)
+    grand_total = total_pages + already_done
+    print(f"  inferring relationships for {total_pages} remaining pages (of {grand_total} total)...")
 
     # Build a summary of existing nodes for context
     node_list = "\n".join(f"- {page_id(p)} ({extract_frontmatter_type(read_file(p))})" for p in pages)
@@ -198,9 +238,11 @@ def build_inferred_edges(pages: list[Path], existing_edges: list[dict], cache: d
         f"- {e['from']} → {e['to']} (EXTRACTED)" for e in existing_edges[:30]
     )
 
-    for p in changed_pages:
+    for i, p in enumerate(changed_pages, 1):
         content = read_file(p)[:2000]  # truncate for context efficiency
         src = page_id(p)
+        global_idx = already_done + i
+        print(f"    [{global_idx}/{grand_total}] Inferring for '{src}'... ", end="", flush=True)
 
         prompt = f"""Analyze this wiki page and identify implicit semantic relationships to other pages in the wiki.
 
@@ -214,47 +256,77 @@ All available pages:
 Already-extracted edges from this page:
 {existing_edge_summary}
 
-Return ONLY a JSON array of NEW relationships not already captured by explicit wikilinks:
-[
-  {{"to": "page-id", "relationship": "one-line description", "confidence": 0.0-1.0, "type": "INFERRED or AMBIGUOUS"}}
-]
+Return ONLY a JSON object containing an "edges" array of NEW relationships not already captured by explicit wikilinks. The response must be STRICTLY valid JSON formatted exactly like this:
+{{
+  "edges": [
+    {{"to": "page-id", "relationship": "one-line description", "confidence": 0.0-1.0, "type": "INFERRED or AMBIGUOUS"}}
+  ]
+}}
+
+CRITICAL INSTRUCTION:
+YOU MUST RETURN ONLY A RAW JSON STRING BEGINNING WITH {{ AND ENDING WITH }}. 
+DO NOT OUTPUT BULLET POINTS. DO NOT OUTPUT MARKDOWN LISTS. 
+ANY CONVERSATIONAL PREAMBLE WILL CAUSE A SYSTEM CRASH.
 
 Rules:
 - Only include pages from the available list above
 - Confidence >= 0.7 → INFERRED, < 0.7 → AMBIGUOUS
 - Do not repeat edges already in the extracted list
-- Return empty array [] if no new relationships found
+- Return {{"edges": []}} if no new relationships found
 """
-        raw = call_llm(prompt, "LLM_MODEL_FAST", "claude-3-5-haiku-latest", max_tokens=1024)
-        raw = raw.strip()
-        raw = re.sub(r"^```(?:json)?\s*", "", raw)
-        raw = re.sub(r"\s*```$", "", raw)
-
+        page_edges = []
         try:
+            raw = call_llm(prompt, "LLM_MODEL_FAST", "claude-3-5-haiku-latest", max_tokens=1024)
+            raw = raw.strip()
+            
+            # Robust JSON extraction
+            match = re.search(r"\{.*\}", raw, re.DOTALL)
+            if match:
+                raw = match.group(0)
+            else:
+                raw = re.sub(r"^```(?:json)?\s*", "", raw)
+                raw = re.sub(r"\s*```$", "", raw)
+                
             inferred = json.loads(raw)
-            valid_rels = []
-            for rel in inferred:
+            edges_list = inferred.get("edges", [])
+            for rel in edges_list:
                 if isinstance(rel, dict) and "to" in rel:
-                    new_edges.append({
+                    edge = {
                         "from": src,
                         "to": rel["to"],
                         "type": rel.get("type", "INFERRED"),
                         "title": rel.get("relationship", ""),
                         "label": "",
                         "color": EDGE_COLORS.get(rel.get("type", "INFERRED"), EDGE_COLORS["INFERRED"]),
-                        "confidence": float(rel.get("confidence", 0.7)),
-                    })
-                    valid_rels.append(rel)
-            
-            # Save properly to cache
-            cache[str(p)] = {
-                "hash": sha256(content),
-                "edges": valid_rels
-            }
-        except (json.JSONDecodeError, TypeError, ValueError):
-            pass
+                        "confidence": rel.get("confidence", 0.7),
+                    }
+                    page_edges.append(edge)
+                    new_edges.append(edge)
+            print(f"-> Found {len(page_edges)} edges.")
+        except json.JSONDecodeError as jde:
+            print(f"-> [WARN] Invalid JSON: {str(jde)[:60]}")
+        except Exception as e:
+            err_msg = str(e).replace('\n', ' ')[:80]
+            print(f"-> [ERROR] {err_msg}")
+            import time
+            time.sleep(2)
+
+        # Persist checkpoint immediately after each page
+        append_checkpoint(src, page_edges)
 
     return new_edges
+
+
+def deduplicate_edges(edges: list[dict]) -> list[dict]:
+    """Merge duplicate and bidirectional edges, keeping highest confidence."""
+    best = {}  # (min(a,b), max(a,b)) -> edge
+    for e in edges:
+        a, b = e["from"], e["to"]
+        key = (min(a, b), max(a, b))
+        existing = best.get(key)
+        if not existing or e.get("confidence", 0) > existing.get("confidence", 0):
+            best[key] = e
+    return list(best.values())
 
 
 def detect_communities(nodes: list[dict], edges: list[dict]) -> dict[str, int]:
@@ -289,14 +361,18 @@ COMMUNITY_COLORS = [
 
 
 def render_html(nodes: list[dict], edges: list[dict]) -> str:
-    """Generate self-contained vis.js HTML."""
-    nodes_json = json.dumps(nodes, indent=2)
-    edges_json = json.dumps(edges, indent=2)
+    """Generate self-contained vis.js HTML with interactive filtering."""
+    nodes_json = json.dumps(nodes, indent=2, ensure_ascii=False)
+    edges_json = json.dumps(edges, indent=2, ensure_ascii=False)
 
     legend_items = "".join(
         f'<span style="background:{color};padding:3px 8px;margin:2px;border-radius:3px;font-size:12px">{t}</span>'
         for t, color in TYPE_COLORS.items() if t != "unknown"
     )
+
+    n_extracted = len([e for e in edges if e.get('type') == 'EXTRACTED'])
+    n_inferred = len([e for e in edges if e.get('type') == 'INFERRED'])
+    n_ambiguous = len([e for e in edges if e.get('type') == 'AMBIGUOUS'])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -305,84 +381,157 @@ def render_html(nodes: list[dict], edges: list[dict]) -> str:
 <title>LLM Wiki — Knowledge Graph</title>
 <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <style>
-  body {{ margin: 0; background: #1a1a2e; font-family: sans-serif; color: #eee; }}
+  body {{ margin: 0; background: #1a1a2e; font-family: 'Inter', sans-serif; color: #eee; }}
   #graph {{ width: 100vw; height: 100vh; }}
   #controls {{
-    position: fixed; top: 10px; left: 10px; background: rgba(0,0,0,0.7);
-    padding: 12px; border-radius: 8px; z-index: 10; max-width: 260px;
+    position: fixed; top: 10px; left: 10px; background: rgba(10,10,30,0.88);
+    padding: 14px; border-radius: 10px; z-index: 10; max-width: 280px;
+    backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08);
   }}
-  #controls h3 {{ margin: 0 0 8px; font-size: 14px; }}
-  #search {{ width: 100%; padding: 4px; margin-bottom: 8px; background: #333; color: #eee; border: 1px solid #555; border-radius: 4px; }}
+  #controls h3 {{ margin: 0 0 10px; font-size: 15px; letter-spacing: 0.5px; }}
+  #search {{ width: 100%; padding: 6px 8px; margin-bottom: 10px; background: #222; color: #eee; border: 1px solid #444; border-radius: 6px; font-size: 13px; }}
+  .filter-group {{ margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }}
+  .filter-group label {{ display: block; font-size: 12px; color: #bbb; margin-bottom: 4px; }}
+  .slider-row {{ display: flex; align-items: center; gap: 8px; margin-top: 4px; }}
+  .slider-row input[type=range] {{ flex: 1; accent-color: #FF5722; }}
+  .slider-val {{ font-size: 12px; color: #FF5722; min-width: 28px; text-align: right; font-weight: bold; }}
+  .cb-row {{ display: flex; align-items: center; gap: 6px; font-size: 12px; margin: 3px 0; cursor: pointer; }}
+  .cb-row input {{ accent-color: #FF5722; }}
   #info {{
-    position: fixed; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8);
-    padding: 12px; border-radius: 8px; z-index: 10; max-width: 320px;
-    display: none;
+    position: fixed; bottom: 10px; left: 10px; background: rgba(10,10,30,0.92);
+    padding: 14px; border-radius: 10px; z-index: 10; max-width: 360px;
+    display: none; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08);
   }}
-  #stats {{ position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 8px; font-size: 12px; }}
+  #info b {{ font-size: 14px; }}
+  #stats {{ position: fixed; top: 10px; right: 10px; background: rgba(10,10,30,0.88); padding: 10px 14px; border-radius: 10px; font-size: 12px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08); }}
 </style>
 </head>
 <body>
 <div id="controls">
   <h3>LLM Wiki Graph</h3>
-  <input id="search" type="text" placeholder="Search nodes..." oninput="searchNodes(this.value)">
+  <input id="search" type="text" placeholder="Search nodes..." oninput="applyFilters()">
   <div>{legend_items}</div>
-  <div style="margin-top:8px;font-size:11px;color:#aaa">
-    <span style="background:#555;padding:2px 6px;border-radius:3px;margin-right:4px">──</span> Explicit link<br>
-    <span style="background:#FF5722;padding:2px 6px;border-radius:3px;margin-right:4px">──</span> Inferred
+  <div class="filter-group">
+    <label>Edge Types</label>
+    <div class="cb-row"><input type="checkbox" id="cb-extracted" checked onchange="applyFilters()"><span style="color:#888">━</span> Extracted ({n_extracted})</div>
+    <div class="cb-row"><input type="checkbox" id="cb-inferred" checked onchange="applyFilters()"><span style="color:#FF5722">━</span> Inferred ({n_inferred})</div>
+    <div class="cb-row"><input type="checkbox" id="cb-ambiguous" onchange="applyFilters()"><span style="color:#BDBDBD">━</span> Ambiguous ({n_ambiguous})</div>
+  </div>
+  <div class="filter-group">
+    <label>Min Confidence</label>
+    <div class="slider-row">
+      <input type="range" id="conf-slider" min="0" max="100" value="50" oninput="applyFilters()">
+      <span class="slider-val" id="conf-val">0.50</span>
+    </div>
   </div>
 </div>
 <div id="graph"></div>
 <div id="info">
   <b id="info-title"></b><br>
   <span id="info-type" style="font-size:12px;color:#aaa"></span><br>
-  <span id="info-path" style="font-size:11px;color:#666"></span>
+  <span id="info-path" style="font-size:11px;color:#666"></span><br>
+  <span id="info-edges" style="font-size:11px;color:#888;margin-top:4px;display:block"></span>
 </div>
 <div id="stats"></div>
 <script>
-const nodes = new vis.DataSet({nodes_json});
-const edges = new vis.DataSet({edges_json});
+const allNodes = {nodes_json};
+const allEdges = {edges_json};
+
+const nodes = new vis.DataSet(allNodes);
+const edges = new vis.DataSet(allEdges.map((e, i) => ({{ ...e, id: 'e'+i }})));
 
 const container = document.getElementById("graph");
 const network = new vis.Network(container, {{ nodes, edges }}, {{
   nodes: {{
     shape: "dot",
-    size: 12,
-    font: {{ color: "#eee", size: 13 }},
-    borderWidth: 2,
+    size: 10,
+    font: {{ color: "#ddd", size: 12, strokeWidth: 3, strokeColor: "#111" }},
+    borderWidth: 1.5,
+    scaling: {{ label: {{ drawThreshold: 9, maxVisible: 18 }} }},
   }},
   edges: {{
-    width: 1.2,
+    width: 0.8,
     smooth: {{ type: "continuous" }},
-    arrows: {{ to: {{ enabled: true, scaleFactor: 0.5 }} }},
+    arrows: {{ to: {{ enabled: true, scaleFactor: 0.4 }} }},
+    color: {{ inherit: false }},
+    hoverWidth: 2,
   }},
   physics: {{
-    stabilization: {{ iterations: 150 }},
-    barnesHut: {{ gravitationalConstant: -8000, springLength: 120 }},
+    stabilization: {{ iterations: 200, updateInterval: 25 }},
+    barnesHut: {{ gravitationalConstant: -3000, springLength: 200, springConstant: 0.02, damping: 0.12 }},
   }},
-  interaction: {{ hover: true, tooltipDelay: 200 }},
+  interaction: {{ hover: true, tooltipDelay: 150, hideEdgesOnDrag: true, hideEdgesOnZoom: true }},
 }});
 
 network.on("click", params => {{
   if (params.nodes.length > 0) {{
-    const node = nodes.get(params.nodes[0]);
+    const nid = params.nodes[0];
+    const node = nodes.get(nid);
+    const connEdges = network.getConnectedEdges(nid);
     document.getElementById("info").style.display = "block";
     document.getElementById("info-title").textContent = node.label;
-    document.getElementById("info-type").textContent = node.type;
+    document.getElementById("info-type").textContent = `Type: ${{node.type}} | Community: ${{node.group}}`;
     document.getElementById("info-path").textContent = node.path;
+    document.getElementById("info-edges").textContent = `${{connEdges.length}} connections`;
   }} else {{
     document.getElementById("info").style.display = "none";
   }}
 }});
 
+network.on("hoverEdge", params => {{
+  const edge = edges.get(params.edge);
+  if (edge && edge.label) {{
+    document.getElementById("info").style.display = "block";
+    document.getElementById("info-title").textContent = `${{edge.from}} → ${{edge.to}}`;
+    document.getElementById("info-type").textContent = `${{edge.type}} (confidence: ${{(edge.confidence || 0).toFixed(2)}})`;
+    document.getElementById("info-path").textContent = edge.label || '';
+    document.getElementById("info-edges").textContent = '';
+  }}
+}});
+
+function applyFilters() {{
+  const q = document.getElementById("search").value.toLowerCase();
+  const showExtracted = document.getElementById("cb-extracted").checked;
+  const showInferred = document.getElementById("cb-inferred").checked;
+  const showAmbiguous = document.getElementById("cb-ambiguous").checked;
+  const minConf = parseInt(document.getElementById("conf-slider").value) / 100;
+  document.getElementById("conf-val").textContent = minConf.toFixed(2);
+
+  // Filter edges
+  let visibleNodes = new Set();
+  let visibleEdgeCount = 0;
+  edges.forEach(e => {{
+    const typeOk = (e.type === 'EXTRACTED' && showExtracted) ||
+                   (e.type === 'INFERRED' && showInferred) ||
+                   (e.type === 'AMBIGUOUS' && showAmbiguous);
+    const confOk = (e.confidence || 1.0) >= minConf;
+    const show = typeOk && confOk;
+    edges.update({{ id: e.id, hidden: !show }});
+    if (show) {{
+      visibleNodes.add(e.from);
+      visibleNodes.add(e.to);
+      visibleEdgeCount++;
+    }}
+  }});
+
+  // Filter nodes by search + connectivity
+  nodes.forEach(n => {{
+    const searchOk = !q || n.label.toLowerCase().includes(q);
+    const connected = visibleNodes.has(n.id);
+    const show = searchOk && (connected || q);
+    nodes.update({{ id: n.id, hidden: !show, opacity: show ? 1 : 0.1 }});
+  }});
+
+  document.getElementById("stats").textContent =
+    `${{visibleNodes.size}} nodes · ${{visibleEdgeCount}} edges (filtered)`;
+}}
+
+// Initial stats
 document.getElementById("stats").textContent =
   `${{nodes.length}} nodes · ${{edges.length}} edges`;
 
-function searchNodes(q) {{
-  const lower = q.toLowerCase();
-  nodes.forEach(n => {{
-    nodes.update({{ id: n.id, opacity: (!q || n.label.toLowerCase().includes(lower)) ? 1 : 0.15 }});
-  }});
-}}
+// Apply default filter (hide AMBIGUOUS by default)
+setTimeout(() => applyFilters(), 500);
 </script>
 </body>
 </html>"""
@@ -394,7 +543,7 @@ def append_log(entry: str):
     log_path.write_text(entry.strip() + "\n\n" + existing, encoding="utf-8")
 
 
-def build_graph(infer: bool = True, open_browser: bool = False):
+def build_graph(infer: bool = True, open_browser: bool = False, clean: bool = False):
     pages = all_wiki_pages()
     today = date.today().isoformat()
 
@@ -404,6 +553,11 @@ def build_graph(infer: bool = True, open_browser: bool = False):
 
     print(f"Building graph from {len(pages)} wiki pages...")
     GRAPH_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Clean checkpoint if requested
+    if clean and INFERRED_EDGES_FILE.exists():
+        INFERRED_EDGES_FILE.unlink()
+        print("  cleaned: removed inference checkpoint")
 
     cache = load_cache()
 
@@ -416,10 +570,16 @@ def build_graph(infer: bool = True, open_browser: bool = False):
     # Pass 2: inferred edges
     if infer:
         print("  Pass 2: inferring semantic relationships...")
-        inferred = build_inferred_edges(pages, edges, cache)
+        inferred = build_inferred_edges(pages, edges, cache, resume=not clean)
         edges.extend(inferred)
         print(f"  → {len(inferred)} inferred edges")
         save_cache(cache)
+
+    # Deduplicate edges
+    before_dedup = len(edges)
+    edges = deduplicate_edges(edges)
+    if before_dedup != len(edges):
+        print(f"  dedup: {before_dedup} → {len(edges)} edges")
 
     # Community detection
     print("  Running Louvain community detection...")
@@ -432,15 +592,17 @@ def build_graph(infer: bool = True, open_browser: bool = False):
 
     # Save graph.json
     graph_data = {"nodes": nodes, "edges": edges, "built": today}
-    GRAPH_JSON.write_text(json.dumps(graph_data, indent=2))
+    GRAPH_JSON.write_text(json.dumps(graph_data, indent=2, ensure_ascii=False))
     print(f"  saved: graph/graph.json  ({len(nodes)} nodes, {len(edges)} edges)")
 
     # Save graph.html
     html = render_html(nodes, edges)
-    GRAPH_HTML.write_text(html)
+    GRAPH_HTML.write_text(html, encoding="utf-8")
     print(f"  saved: graph/graph.html")
 
-    append_log(f"## [{today}] graph | Knowledge graph rebuilt\n\n{len(nodes)} nodes, {len(edges)} edges ({len([e for e in edges if e['type']=='EXTRACTED'])} extracted, {len([e for e in edges if e['type']=='INFERRED'])} inferred).")
+    n_ext = len([e for e in edges if e['type']=='EXTRACTED'])
+    n_inf = len([e for e in edges if e['type'] in ('INFERRED', 'AMBIGUOUS')])
+    append_log(f"## [{today}] graph | Knowledge graph rebuilt\n\n{len(nodes)} nodes, {len(edges)} edges ({n_ext} extracted, {n_inf} inferred).")
 
     if open_browser:
         webbrowser.open(f"file://{GRAPH_HTML.resolve()}")
@@ -450,5 +612,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build LLM Wiki knowledge graph")
     parser.add_argument("--no-infer", action="store_true", help="Skip semantic inference (faster)")
     parser.add_argument("--open", action="store_true", help="Open graph.html in browser")
+    parser.add_argument("--clean", action="store_true", help="Delete checkpoint and force full re-inference")
     args = parser.parse_args()
-    build_graph(infer=not args.no_infer, open_browser=args.open)
+    build_graph(infer=not args.no_infer, open_browser=args.open, clean=args.clean)

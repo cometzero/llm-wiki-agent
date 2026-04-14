@@ -55,36 +55,57 @@ def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 
 
 
 def find_relevant_pages(question: str, index_content: str) -> list[Path]:
-    """Extract linked pages from index that seem relevant to the question."""
-    # Pull all [[links]] and markdown links from index
+    """Extract linked pages from index that seem relevant to the question.
+    Uses character-level matching for CJK compatibility."""
     md_links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', index_content)
     question_lower = question.lower()
     relevant = []
-    
+
     for title, href in md_links:
         title_lower = title.lower()
-        match = False
-        
-        # 1. English/Space-separated: check words > 3 chars
-        if any(word in question_lower for word in title_lower.split() if len(word) > 3):
-            match = True
-        # 2. Exact substring match for the whole title (useful for short CJK titles, e.g. len=2)
-        elif len(title_lower) >= 2 and title_lower in question_lower:
-            match = True
-        # 3. CJK chunks: find contiguous non-ASCII characters (len >= 2) and check if in question
-        elif any(chunk in question_lower for chunk in re.findall(r'[^\x00-\x7F]{2,}', title_lower)):
-            match = True
-            
-        if match:
+        # For CJK: check if any 2+ char substring of the title appears in question
+        has_cjk = any('\u4e00' <= ch <= '\u9fff' for ch in title)
+        if has_cjk:
+            # Sliding window: check if any 2-char CJK bigram from title exists in question
+            matched = any(
+                title_lower[j:j+2] in question_lower
+                for j in range(len(title_lower) - 1)
+                if any('\u4e00' <= c <= '\u9fff' for c in title_lower[j:j+2])
+            )
+        else:
+            # Latin: original word-based match (lowered threshold to >2)
+            matched = any(word in question_lower for word in title_lower.split() if len(word) > 2)
+
+        if matched:
             p = WIKI_DIR / href
             if p.exists() and p not in relevant:
                 relevant.append(p)
-                
+
+    # Also try graph-based expansion: find neighbors of matched pages
+    graph_json = REPO_ROOT / "graph" / "graph.json"
+    if graph_json.exists() and relevant:
+        try:
+            graph_data = json.loads(graph_json.read_text())
+            page_ids = {p.relative_to(WIKI_DIR).as_posix().replace('.md', '') for p in relevant}
+            neighbors = set()
+            for edge in graph_data.get('edges', []):
+                if edge.get('confidence', 0) >= 0.7:
+                    if edge['from'] in page_ids:
+                        neighbors.add(edge['to'])
+                    elif edge['to'] in page_ids:
+                        neighbors.add(edge['from'])
+            for nid in neighbors:
+                np = WIKI_DIR / f"{nid}.md"
+                if np.exists() and np not in relevant:
+                    relevant.append(np)
+        except (json.JSONDecodeError, KeyError):
+            pass
+
     # Always include overview
     overview = WIKI_DIR / "overview.md"
     if overview.exists() and overview not in relevant:
         relevant.insert(0, overview)
-    return relevant[:12]  # cap to avoid context overflow
+    return relevant[:15]  # cap to avoid context overflow
 
 
 def append_log(entry: str):
