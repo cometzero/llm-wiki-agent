@@ -49,11 +49,16 @@ def call_llm(prompt: str, max_tokens: int = 8192) -> str:
         sys.exit(1)
         
     model = os.getenv("LLM_MODEL", "claude-3-5-sonnet-latest")
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
-    )
+    
+    kwargs = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}]
+    }
+    
+    if max_tokens:
+        kwargs["max_tokens"] = max_tokens
+
+    response = completion(**kwargs)
     return response.choices[0].message.content
 
 
@@ -142,7 +147,7 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 {{
   "title": "Human-readable title for this source",
   "slug": "kebab-case-slug-for-filename",
-  "source_page": "full markdown content for wiki/sources/<slug>.md — use the source page format from the schema",
+  "source_page": "full markdown content for wiki/sources/<slug>.md — use the source page format from the schema. CRITICAL: Aggressively convert key people, products, concepts and projects into [[Wikilinks]] inline in the text. Omitting [[ ]] for known terms is a failure.",
   "index_entry": "- [Title](sources/slug.md) — one-line summary",
   "overview_update": "full updated content for wiki/overview.md, or null if no update needed",
   "entity_pages": [
