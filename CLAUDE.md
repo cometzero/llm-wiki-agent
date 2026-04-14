@@ -71,6 +71,7 @@ Steps (in order):
 7. Update/create concept pages for key ideas and frameworks discussed
 8. Flag any contradictions with existing wiki content
 9. Append to `wiki/log.md`: `## [YYYY-MM-DD] ingest | <Title>`
+10. **Post-ingest validation** — check for broken `[[wikilinks]]`, verify all new pages are in `index.md`, print a change summary
 
 ### Source Page Format
 
