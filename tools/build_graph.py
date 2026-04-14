@@ -21,6 +21,7 @@ import re
 import json
 import hashlib
 import argparse
+import statistics
 import webbrowser
 from pathlib import Path
 from datetime import date
@@ -405,6 +406,157 @@ def detect_communities(nodes: list[dict], edges: list[dict]) -> dict[str, int]:
         return node_to_community
     except Exception:
         return {}
+
+
+def generate_report(nodes: list[dict], edges: list[dict], communities: dict[str, int]) -> str:
+    """Generate a structured graph health report.
+
+    Analyzes the graph for orphan nodes, hub pages (god nodes),
+    fragile inter-community bridges, and overall connectivity health.
+    """
+    today = date.today().isoformat()
+    n_nodes = len(nodes)
+    n_edges = len(edges)
+
+    if n_nodes == 0:
+        return f"# Graph Insights Report — {today}\n\nWiki is empty — nothing to report.\n"
+
+    # Build NetworkX graph for analysis
+    G = nx.Graph()
+    for n in nodes:
+        G.add_node(n["id"])
+    for e in edges:
+        G.add_edge(e["from"], e["to"])
+
+    # --- Metrics ---
+    degrees = dict(G.degree())
+    edges_per_node = n_edges / n_nodes if n_nodes else 0
+    density = nx.density(G)
+
+    # Health rating
+    if edges_per_node >= 2.0:
+        health = "✅ healthy"
+    elif edges_per_node >= 1.0:
+        health = "⚠️ warning"
+    else:
+        health = "🔴 critical"
+
+    # Orphans: degree == 0
+    orphans = sorted([n for n, d in degrees.items() if d == 0])
+    orphan_count = len(orphans)
+    orphan_pct = (orphan_count / n_nodes * 100) if n_nodes else 0
+
+    # God nodes: degree > mean + 2*std
+    deg_values = list(degrees.values())
+    mean_deg = statistics.mean(deg_values) if deg_values else 0
+    std_deg = statistics.stdev(deg_values) if len(deg_values) > 1 else 0
+    god_threshold = mean_deg + 2 * std_deg
+    god_nodes = sorted(
+        [(n, d) for n, d in degrees.items() if d > god_threshold],
+        key=lambda x: x[1],
+        reverse=True,
+    )
+
+    # Community stats
+    community_count = len(set(communities.values())) if communities else 0
+    comm_members: dict[int, list[str]] = {}
+    for node_id, comm_id in communities.items():
+        comm_members.setdefault(comm_id, []).append(node_id)
+
+    # Fragile bridges: community pairs connected by exactly 1 edge
+    cross_comm_edges: dict[tuple[int, int], list[dict]] = {}
+    for e in edges:
+        ca = communities.get(e["from"], -1)
+        cb = communities.get(e["to"], -1)
+        if ca >= 0 and cb >= 0 and ca != cb:
+            key = (min(ca, cb), max(ca, cb))
+            cross_comm_edges.setdefault(key, []).append(e)
+    fragile_bridges = [
+        (pair, edge_list[0])
+        for pair, edge_list in sorted(cross_comm_edges.items())
+        if len(edge_list) == 1
+    ]
+
+    # --- Build report ---
+    lines = [
+        f"# Graph Insights Report — {today}",
+        "",
+        "## Health Summary",
+        f"- **{n_nodes}** nodes, **{n_edges}** edges ({edges_per_node:.2f} edges/node — {health})",
+        f"- **{orphan_count}** orphan nodes ({orphan_pct:.1f}%) — target: <10%",
+        f"- **{community_count}** communities",
+        f"- Link density: {density:.4f}",
+        "",
+    ]
+
+    # Orphan section
+    lines.append(f"## 🔴 Orphan Nodes ({orphan_count} pages, {orphan_pct:.1f}%)")
+    if orphans:
+        lines.append("These pages have zero graph connections. Consider adding [[wikilinks]]:")
+        for o in orphans:
+            lines.append(f"- `{o}`")
+    else:
+        lines.append("No orphan nodes — excellent!")
+    lines.append("")
+
+    # God nodes section
+    lines.append("## 🟡 God Nodes (Hub Pages)")
+    if god_nodes:
+        lines.append("These nodes carry disproportionate connectivity (degree > μ+2σ). Verify they are comprehensive:")
+        lines.append("")
+        lines.append("| Node | Degree | % of Edges | Community |")
+        lines.append("|---|---|---|---|")
+        for node_id, deg in god_nodes:
+            edge_pct = (deg / (2 * n_edges) * 100) if n_edges else 0
+            comm = communities.get(node_id, -1)
+            lines.append(f"| `{node_id}` | {deg} | {edge_pct:.1f}% | {comm} |")
+    else:
+        lines.append("No god nodes detected — degree distribution is balanced.")
+    lines.append("")
+
+    # Fragile bridges section
+    lines.append("## 🟡 Fragile Bridges")
+    if fragile_bridges:
+        lines.append("Community pairs connected by only 1 edge — one deleted link breaks them:")
+        for (ca, cb), edge in fragile_bridges:
+            lines.append(f"- Community {ca} ↔ Community {cb} via `{edge['from']}` → `{edge['to']}`")
+    else:
+        lines.append("No fragile bridges — all community connections are redundant.")
+    lines.append("")
+
+    # Community overview
+    lines.append("## 🟢 Community Overview")
+    if comm_members:
+        lines.append("")
+        lines.append("| Community | Nodes | Key Members |")
+        lines.append("|---|---|---|")
+        for comm_id in sorted(comm_members.keys()):
+            members = comm_members[comm_id]
+            # Sort by degree descending to show key members first
+            members_sorted = sorted(members, key=lambda m: degrees.get(m, 0), reverse=True)
+            key_members = ", ".join(members_sorted[:5])
+            if len(members_sorted) > 5:
+                key_members += ", …"
+            lines.append(f"| {comm_id} | {len(members)} | {key_members} |")
+    else:
+        lines.append("No communities detected.")
+    lines.append("")
+
+    # Suggested actions
+    lines.append("## Suggested Actions")
+    actions = []
+    if orphans:
+        actions.append(f"1. Add wikilinks to top orphan pages (highest potential impact: {orphans[0]})")
+    if god_nodes:
+        actions.append(f"{len(actions)+1}. Review god nodes for stub content vs. genuine hubs")
+    if fragile_bridges:
+        actions.append(f"{len(actions)+1}. Strengthen fragile bridges with cross-references")
+    if not actions:
+        actions.append("1. Graph is in good shape — maintain current linking practices")
+    lines.extend(actions)
+    lines.append("")
+
+    return "\n".join(lines)
 
 
 COMMUNITY_COLORS = [
@@ -977,7 +1129,8 @@ def append_log(entry: str):
     log_path.write_text(existing + "\n\n" + entry_text + "\n", encoding="utf-8")
 
 
-def build_graph(infer: bool = True, open_browser: bool = False, clean: bool = False):
+def build_graph(infer: bool = True, open_browser: bool = False, clean: bool = False,
+                report: bool = False, save: bool = False):
     pages = all_wiki_pages()
     today = date.today().isoformat()
 
@@ -1038,6 +1191,19 @@ def build_graph(infer: bool = True, open_browser: bool = False, clean: bool = Fa
     n_inf = len([e for e in edges if e['type'] in ('INFERRED', 'AMBIGUOUS')])
     append_log(f"## [{today}] graph | Knowledge graph rebuilt\n\n{len(nodes)} nodes, {len(edges)} edges ({n_ext} extracted, {n_inf} inferred).")
 
+    # Generate health report
+    if report:
+        if not HAS_NETWORKX:
+            print("Warning: networkx not installed. Cannot generate report.")
+        else:
+            report_text = generate_report(nodes, edges, communities)
+            print("\n" + report_text)
+            if save:
+                report_path = GRAPH_DIR / "graph-report.md"
+                report_path.write_text(report_text, encoding="utf-8")
+                print(f"  saved: {report_path.relative_to(REPO_ROOT)}")
+            append_log(f"## [{today}] report | Graph health report generated\n\n{len(nodes)} nodes analyzed.")
+
     if open_browser:
         webbrowser.open(f"file://{GRAPH_HTML.resolve()}")
 
@@ -1047,5 +1213,8 @@ if __name__ == "__main__":
     parser.add_argument("--no-infer", action="store_true", help="Skip semantic inference (faster)")
     parser.add_argument("--open", action="store_true", help="Open graph.html in browser")
     parser.add_argument("--clean", action="store_true", help="Delete checkpoint and force full re-inference")
+    parser.add_argument("--report", action="store_true", help="Generate graph health report")
+    parser.add_argument("--save", action="store_true", help="Save report to graph/graph-report.md")
     args = parser.parse_args()
-    build_graph(infer=not args.no_infer, open_browser=args.open, clean=args.clean)
+    build_graph(infer=not args.no_infer, open_browser=args.open, clean=args.clean,
+                report=args.report, save=args.save)
