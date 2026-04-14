@@ -5,6 +5,7 @@ Ingest a source document into the LLM Wiki.
 Usage:
     python tools/ingest.py <path-to-source>
     python tools/ingest.py raw/articles/my-article.md
+    python tools/ingest.py --validate-only   # run validation on existing wiki
 
 The LLM reads the source, extracts knowledge, and updates the wiki:
   - Creates wiki/sources/<slug>.md
@@ -13,6 +14,7 @@ The LLM reads the source, extracts knowledge, and updates the wiki:
   - Creates/updates entity and concept pages
   - Appends to wiki/log.md
   - Flags contradictions
+  - Runs post-ingest validation (broken links, index coverage)
 """
 
 import os
@@ -21,9 +23,8 @@ import json
 import hashlib
 import re
 from pathlib import Path
+from collections import defaultdict
 from datetime import date
-
-import os
 
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -49,11 +50,16 @@ def call_llm(prompt: str, max_tokens: int = 8192) -> str:
         sys.exit(1)
         
     model = os.getenv("LLM_MODEL", "claude-3-5-sonnet-latest")
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
-    )
+    
+    kwargs = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}]
+    }
+    
+    if max_tokens:
+        kwargs["max_tokens"] = max_tokens
+
+    response = completion(**kwargs)
     return response.choices[0].message.content
 
 
@@ -106,6 +112,63 @@ def append_log(entry: str):
     write_file(LOG_FILE, entry.strip() + "\n\n" + existing)
 
 
+def extract_wikilinks(content: str) -> list[str]:
+    """Extract all [[WikiLink]] targets from page content."""
+    return re.findall(r'\[\[([^\]]+)\]\]', content)
+
+
+def all_wiki_pages() -> set[str]:
+    """Return set of all wiki page stems (case-insensitive)."""
+    pages = set()
+    for p in WIKI_DIR.rglob("*.md"):
+        if p.name not in ("index.md", "log.md", "lint-report.md"):
+            pages.add(p.stem.lower())
+    return pages
+
+
+def validate_ingest(changed_pages: list[str] | None = None) -> dict:
+    """Validate wiki integrity after an ingest.
+
+    Checks:
+      1. Broken wikilinks in changed pages (or all pages if none specified)
+      2. Pages not registered in index.md
+
+    Returns dict with 'broken_links' and 'unindexed' lists.
+    """
+    existing_pages = all_wiki_pages()
+    index_content = read_file(INDEX_FILE).lower()
+
+    # Determine which pages to scan for broken links
+    if changed_pages:
+        scan_paths = [WIKI_DIR / p for p in changed_pages if (WIKI_DIR / p).exists()]
+    else:
+        scan_paths = [p for p in WIKI_DIR.rglob("*.md")
+                      if p.name not in ("index.md", "log.md", "lint-report.md")]
+
+    # Check 1: Broken wikilinks
+    broken_links = []
+    for page_path in scan_paths:
+        content = read_file(page_path)
+        rel = str(page_path.relative_to(WIKI_DIR))
+        for link in extract_wikilinks(content):
+            # Normalize: strip paths, check stem only
+            link_stem = Path(link).stem.lower() if '/' in link else link.lower()
+            if link_stem not in existing_pages:
+                broken_links.append((rel, link))
+
+    # Check 2: Unindexed pages (only check changed pages)
+    unindexed = []
+    for p in (changed_pages or []):
+        page_path = WIKI_DIR / p
+        if page_path.exists():
+            # Check if the page filename appears in index.md
+            stem = page_path.stem.lower()
+            if stem not in index_content and p not in ("log.md", "overview.md"):
+                unindexed.append(p)
+
+    return {"broken_links": broken_links, "unindexed": unindexed}
+
+
 def ingest(source_path: str):
     source = Path(source_path)
     if not source.exists():
@@ -119,8 +182,6 @@ def ingest(source_path: str):
     print(f"\nIngesting: {source.name}  (hash: {source_hash})")
 
     wiki_context = build_wiki_context()
-    schema = read_file(SCHEMA_FILE)
-
     schema = read_file(SCHEMA_FILE)
 
     prompt = f"""You are maintaining an LLM Wiki. Process this source document and integrate its knowledge into the wiki.
@@ -142,7 +203,7 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 {{
   "title": "Human-readable title for this source",
   "slug": "kebab-case-slug-for-filename",
-  "source_page": "full markdown content for wiki/sources/<slug>.md — use the source page format from the schema",
+  "source_page": "full markdown content for wiki/sources/<slug>.md — use the source page format from the schema. CRITICAL: Aggressively convert key people, products, concepts and projects into [[Wikilinks]] inline in the text. Omitting [[ ]] for known terms is a failure.",
   "index_entry": "- [Title](sources/slug.md) — one-line summary",
   "overview_update": "full updated content for wiki/overview.md, or null if no update needed",
   "entity_pages": [
@@ -195,12 +256,81 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
         for c in contradictions:
             print(f"     - {c}")
 
-    print(f"\nDone. Ingested: {data['title']}")
+    # --- Post-ingest validation ---
+    created_pages = [f"sources/{slug}.md"]
+    for page in data.get("entity_pages", []):
+        created_pages.append(page["path"])
+    for page in data.get("concept_pages", []):
+        created_pages.append(page["path"])
+    updated_pages = ["index.md", "log.md"]
+    if data.get("overview_update"):
+        updated_pages.append("overview.md")
+
+    validation = validate_ingest(created_pages)
+
+    print(f"\n{'='*50}")
+    print(f"  ✅ Ingested: {data['title']}")
+    print(f"{'='*50}")
+    print(f"  Created : {len(created_pages)} pages")
+    for p in created_pages:
+        print(f"           + wiki/{p}")
+    print(f"  Updated : {len(updated_pages)} pages")
+    for p in updated_pages:
+        print(f"           ~ wiki/{p}")
+    if contradictions:
+        print(f"  Warnings: {len(contradictions)} contradiction(s)")
+    if validation["broken_links"]:
+        print(f"  ⚠️  Broken links: {len(validation['broken_links'])}")
+        for page, link in validation["broken_links"][:10]:
+            print(f"           wiki/{page} → [[{link}]]")
+        if len(validation["broken_links"]) > 10:
+            print(f"           ... and {len(validation['broken_links']) - 10} more")
+    if validation["unindexed"]:
+        print(f"  ⚠️  Not in index.md: {len(validation['unindexed'])}")
+        for p in validation["unindexed"][:10]:
+            print(f"           wiki/{p}")
+        if len(validation["unindexed"]) > 10:
+            print(f"           ... and {len(validation['unindexed']) - 10} more")
+    if not validation["broken_links"] and not validation["unindexed"]:
+        print("  ✓ Validation passed — no broken links, all pages indexed")
+    print()
 
 
 if __name__ == "__main__":
+    # Handle --validate-only flag
+    if len(sys.argv) == 2 and sys.argv[1] == "--validate-only":
+        print("Running wiki validation (no ingest)...\n")
+        result = validate_ingest()
+        if result["broken_links"]:
+            print(f"Broken wikilinks: {len(result['broken_links'])}")
+            for page, link in result["broken_links"][:20]:
+                print(f"  wiki/{page} → [[{link}]]")
+            if len(result["broken_links"]) > 20:
+                print(f"  ... and {len(result['broken_links']) - 20} more")
+        else:
+            print("No broken wikilinks found.")
+        print()
+        pages = all_wiki_pages()
+        index_content = read_file(INDEX_FILE).lower()
+        unindexed_all = []
+        for p in WIKI_DIR.rglob("*.md"):
+            if p.name in ("index.md", "log.md", "lint-report.md", "overview.md"):
+                continue
+            if p.stem.lower() not in index_content:
+                unindexed_all.append(str(p.relative_to(WIKI_DIR)))
+        if unindexed_all:
+            print(f"Pages not in index.md: {len(unindexed_all)}")
+            for up in unindexed_all[:20]:
+                print(f"  wiki/{up}")
+            if len(unindexed_all) > 20:
+                print(f"  ... and {len(unindexed_all) - 20} more")
+        else:
+            print("All pages are indexed.")
+        sys.exit(0)
+
     if len(sys.argv) < 2:
         print("Usage: python tools/ingest.py <path-to-source> [path2 ...] [dir1 ...]")
+        print("       python tools/ingest.py --validate-only")
         sys.exit(1)
         
     paths_to_process = []
