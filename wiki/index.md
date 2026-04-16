@@ -1,14 +1,234 @@
 # Wiki Index
 
-This file is maintained by the LLM. Updated on every ingest.
+This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 
 ## Overview
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — 한국 주택 세제와 증여 추정 이슈를 실무적으로 설명하는 세무 상담형 자료다. 1주택 비과세 요건, 세대 분리, 차용증 활용, 가족 간 계좌 이체 증빙, 공동명의 전략 등 자금 출처 조사와 양도세 리스크를 줄이는 포인트를 폭넓게 다룬다.
+- [2028 High School Choice and Admissions Strategy](sources/2028-high-school-choice-and-admissions-strategy.md) — This source argues that changes to the 2028 Korean admissions landscape make high school choice more consequential, especially because grades and school records
+- [2028 글로벌 인텔리전스 위기](sources/2028-global-intelligence-crisis-ko.md) — AI가 너무 풍부해질 때 생길 수 있는 금융 시스템 리스크를 가정한 시나리오 문서다. 인텔리전스의 비용이 급락하면 정보 비대칭이 줄어들고 기존 금융 비즈니스의 마찰이 사라지면서, 초과 경쟁과 급격한 가격 재조정이 시스템 리스크로 전이될 수 있다는 사고 실험을 펼친다.
+- [26년 제조 산업에 AI 적용되면 이렇게 바뀝니다](sources/26년-제조-산업에-ai-적용되면-이렇게-바뀝니다-10년차-대기업-llm-현직자의-솔직한-조ᄋ.md) — 제조 대기업 현직자의 관점에서 LLM과 에이전트가 문서 작성, 불량 문서 검색, 시장 조사, 연구개발 지원 같은 실제 제조 업무에 어떻게 들어오는지 정리한 자료다. 환각과 최신성 한계를 넘기 위해 파인튜닝보다 RAG와 내부 지식 연결이 중요하다고 보고, 보안 제약이 강한 제조 환경에서의
+- [Accelerating Software-Defined Vehicles:  SDV-EG Updates & New AGL SDV Referenc Jerry Jiancong Zhao](sources/accelerating-software-defined-vehicles-sdv-eg-updates-and-new-agl-sdv-referenc-jerry-jiancong-zhao.md) — AGL SDV 전문가 그룹은 소프트웨어 정의 차량(SDV)의 개발을 가속화하기 위해 하드웨어 가상화(Vertio)를 통해 소프트웨어와 하드웨어를 분리하고, 통합 HMI(Human Machine Interface) 및 클라우드-차량 연동 기술을 발전시키고 있습니다. 특히 AGL SOD(S
+- [Claude Code is the Inflection Point](sources/claude-code-is-the-inflection-point.md) — SemiAnalysis 관점에서 Claude Code를 단순 코드 생성기가 아니라 다단계 계획과 실행이 가능한 터미널 네이티브 에이전트로 해석한 글이다. 코딩이 AI 에이전트의 첫 번째 대형 시장일 뿐이며, 장기적으로는 더 넓은 정보 노동 자동화로 이어질 것이라는 논지를 편다.
+- [Claude Code는 변곡점이다](sources/claude-code-is-the-inflection-point-ko.md) — SemiAnalysis 원문의 한국어 번역/요약본으로, Claude Code를 에이전트 시대의 분기점으로 해석한다. Anthropic의 성장, 토큰 오케스트레이션, 터미널형 작업 수행, 그리고 정보 노동 자동화의 확장 가능성을 보다 직접적인 언어로 정리한다.
+- [Claude Opus 4.6 소개](sources/claude-opus-4-6-소개.md) — Claude Opus 4.6의 성능 개선, 100만 토큰 컨텍스트, 에이전트형 협업 능력, 안전성 업데이트를 소개하는 제품 설명 문서다. 코딩과 금융 분석 같은 전문 지식 업무에서 더 신중하고 장기적인 작업 수행이 가능해졌다는 점을 강조한다.
+- [Context Rot: How Increasing Input Tokens Impacts LLM Performance](sources/context-rot-how-increasing-input-tokens-impacts-llm-performance-chroma-research.md) — Chroma Research의 문맥 길이 연구를 정리한 문서로, 입력 토큰 수가 늘어날수록 성능이 균일하게 유지되지 않고 비선형적으로 저하되는 현상을 Context Rot로 설명한다. 단순 NIAH 테스트를 넘어 방해 요소, 유사성, 구조 변화가 긴 컨텍스트 활용 능력에 얼마나 큰 영향
+- [Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning](sources/cosmos-reason1-from-physical-common-sense-to-embodied-reasoning.md) — 실세계 물리 상식과 구체화된 의사결정을 수행하는 멀티모달 모델 Cosmos-Reason1의 설계와 학습 방법을 다룬 문서다. 물리적 상식 온톨로지, embodied reasoning 분류 체계, 멀티모달 백본, 그리고 SFT와 RL을 결합한 훈련 전략을 통해 Physical AI를 향한
+- [Decoding Safe(ty) Linux Architectural Approaches for Critical Systems - Philipp Ahmann, Etas GmbH](sources/decoding-safe-ty-linux-architectural-approaches-for-critical-systems-philipp-ahmann-etas-gmbh.md) — 안전 필수 시스템에 리눅스를 통합하는 다양한 아키텍처 접근법과 관련된 도전 과제, 인증 경로, 그리고 고려 사항을 해독하는 것이 핵심입니다. - 리눅스 커널 내 직접 안전 기능 통합 - 품질 관리된 리눅스 및 감시/모니터링 활용 (RTOS 기반) - 하이퍼바이저를 통한 리눅스 관리 및 
+- [Dom0less and Deterministic:  Building Safer Automotive Systems With Xen - Cody Zuschlag](sources/dom0less-and-deterministic-building-safer-automotive-systems-with-xen-cody-zuschlag.md) — Xen을 활용하여 Dom0less 아키텍처를 구현하고, 이를 통해 자동차 시스템에서 필요한 혼합 중요도(Mixed Criticality) 워크로드에 대한 강력한 격리 및 예측 가능성을 제공하며 안전성을 높입니다. - 하드웨어 기반 격리 및 다중 아키텍처(x86, ARM, RISC-V) 
+- [Extending Claude's capabilities with skills and MCP](sources/extending-claudes-capabilities-with-skills-and-mcp-claude.md) — Anthropic이 Skills와 MCP를 어떻게 구분하고 함께 써야 하는지 설명한 문서다. MCP는 외부 시스템 연결을 담당하고, Skills는 그 도구를 팀의 고유 워크플로에 맞게 잘 사용하는 방법을 모델에 가르친다는 점을 분리해 설명한다.
+- [Figure 03 and the Future of Robotics](sources/figure-03-and-the-future-of-robotics.md) — This source analyzes [[Figure03]] as a marker of recent progress in humanoid robotics, emphasizing quieter electric actuators, hybrid control, richer sensing, b
+- [GDP 7% 시대 시작된다](sources/gdp-7-시대-시작된다-혁신주-대가가-찍은-기술-혁명-수혜주들.md) — ARK Invest의 빅 아이디어스 2026을 바탕으로 AI, 로봇, 우주, 바이오의 결합이 경제성장률을 크게 끌어올릴 수 있다는 낙관적 전망을 정리한 자료다. 가사 노동의 시장화, 로보택시, 우주 데이터센터, AI 쇼핑과 광고 같은 사례를 통해 비경제 활동이 경제 활동으로 전환되는 메
+- [InferenceX v2: NVIDIA Blackwell Vs AMD vs Hopper](sources/inferencex-v2-nvidia-blackwell-vs-amd-vs-hopper-formerly-inferencemax.md) — 최신 AI 추론 하드웨어와 시스템 구성을 비교한 SemiAnalysis 자료로, Blackwell, Hopper, AMD 계열 칩의 처리량과 비용 효율을 Prefill/Decode, 병렬화, 분산 추론 관점에서 분석한다. 단순 칩 스펙보다 워크로드 특성에 맞는 시스템 설계가 중요하다는 
+- [Introducing Helix 02: Full-Body Autonomy](sources/introducing-helix-02-full-body-autonomy.md) — This source describes Figure's Helix 02 as a full-body humanoid control stack that unifies locomotion, manipulation, and balance instead of treating them as sep
+- [Memory Mania: How a Once-in-Four-Decades Shortage Is Fueling a Memory Boom](sources/memory-mania-semianalysis.md) — AI 수요가 메모리 반도체 시장에 만드는 슈퍼사이클을 설명하는 SemiAnalysis 자료다. DRAM 스케일링 둔화와 공급 제약이 과거보다 더 길고 강한 메모리 호황을 만들 수 있으며, HBM과 고대역폭 메모리가 AI 시스템 병목의 핵심이라고 본다.
+- [NVIDIA Groq 3 LPX 소개[](#introducing_nvidia_groq_3_lpx )](sources/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform.md) — NVIDIA Groq 3 LPX는 NVIDIA Vera Rubin platform을 위한 새로운 rack-scale inference accelerator로, agentic 시스템이 요구하는 low-latency와 large-context 워크로드를 겨냥해 설계되었습니다. NVIDIA 
+- [Understanding and Coding the KV Cache in LLMs from Scratch](sources/understanding-and-coding-the-kv-cache-in-llms-from-scratch.md) — LLM 추론에서 Key/Value 벡터를 재사용해 중복 계산을 줄이는 KV 캐시의 원리와 구현을 설명하는 기술 문서다. 단일 토큰 생성의 반복 구조가 왜 비효율적인지부터 시작해, attention 모듈과 생성 루프에 캐시를 추가하는 코드 수준 변경을 단계별로 다룬다.
+- [당신의 삶을 바꿔줄 클로드봇 실전 워크플로우](sources/당신의-삶을-바꿔줄-클로드봇-실전-워크플로우.md) — 클로드봇을 실제 서비스와 개인 생산성 자동화에 붙이는 다양한 사례를 정리한 실전형 문서다. AI 기반 E2E 테스트, 서비스 내 비서 통합, 악성 댓글 분류, 뉴스 브리핑, 콘텐츠 분석 같은 워크플로우를 통해 챗봇을 넘는 실행형 비서의 형태를 제시한다.
+- [스타트업 성공 전략: 제품, 시장, 비전 및 모멘텀](sources/스타트업-성공-전략-제품-시장-비전-및-모멘텀.md) — 스타트업 성공의 원칙과 반도체 업황 분석이 결합된 독특한 자료다. 전반부는 압도적인 제품력, 빠르게 성장하는 시장, 창업자 자질, 팀 구성의 중요성을 강조하고, 후반부는 NAND/DRAM 사이클과 삼성전자·SK하이닉스 밸류에이션을 통해 산업 선택의 중요성을 보여준다.
+- [은 가격 급락의 범인은 누굴까](sources/은-가격-급락의-범인은-누굴까.md) — 은 가격 급락을 JP모건의 시장 영향력과 케빈 워시 지명 이슈에 연결해 해석한 시장 해설 자료다. 은의 역사적 통화 역할, 페이퍼 은 문제, 공매도 포지션, 귀금속 시장 심리를 함께 다루며 거시정책과 금속 시장을 묶어 설명한다.
+- [케빈 워시 분석 보고서](sources/케빈-워시-분석-보고서.md) — 케빈 워시의 경력, 시장 반응, 트럼프와의 관계를 해설하는 인물 분석 자료다. 일부 내용은 엘리트 네트워크와 음모론적 연결고리까지 확장하며, 워시를 연준 권력 재편의 핵심 인물로 묘사한다.
+- [투자에서 가장 위험한 습관은 이것](sources/투자에서-가장-위험한-습관은-이것.md) — 변동성 장세에서 개인 투자자가 흔들리지 않기 위한 원칙을 설명하는 인터뷰형 자료다. 망설이는 투자 습관의 위험, 연준 의장 성향 해석, 주도주 중심 전략, AI가 시장의 주도 섹터를 바꾸는 과정 등을 함께 다룬다.
+- [트럼프가 때리자 유럽이 뭉쳤다](sources/트럼프가-때리자-유럽이-뭉쳤다.md) — 트럼프의 대유럽 압박이 역설적으로 유럽 통합과 자강 전략을 촉진했다는 지정학 해설이다. 국방비 증액, 단일 시장 강화, 통상 다각화, 한국과의 협력 가능성까지 연결해 유럽의 전략적 재편을 설명한다.
+- [트럼프의 케빈 워시 지명 의도 분석](sources/트럼프의-케빈-워시-지명-의도-분석.md) — 트럼프가 왜 케빈 워시를 연준 의장 카드로 검토하는지 정책 관점에서 해석한 자료다. 연준의 역할 축소, 유동성 의존 비판, 금리 인하와 대차대조표 축소를 동시에 노리는 시나리오를 중심으로 워시의 매파 이미지와 실제 논리를 구분한다.
+- [📌 \"Power Management and USB\"에 대한 발표는 어떤 내용을 다루는가?](sources/power-management-and-usb-mr-darrion-ramos-ms-victoria-siver-dr-ken-yihang-bai-dr-tuba-yavuz.md) — 전력 관리 퍼징(Power Management Fuzzing)에 대한 모듈식 접근 방식을 소개하고, 특히 저전력 상태 및 USB 상호작용에서 발생하는 버그를 탐색하는 방법을 다룹니다. 저전력 상태(예: 절전 모드)에서는 대부분의 로깅 메커니즘이 꺼지기 때문에, 크래시 발생 시 어떤 문제
+- [📌 AGL 및 SoDev를 위한 레퍼런스 보드와 BSP 현황은?](sources/status-of-reference-board-and-bsp-for-agl-and-sodev-harunobu-kurokawa.md) — AGL(Automotive Grade Linux) 커뮤니티에서 SDV(Software Defined Vehicle) 구현을 위해 오픈 소스 기반의 통합 코드베이스(UCB) 및 레퍼런스 플랫폼을 제공하며, 특히 새로운 레퍼런스 보드 'SparHawk'을 통해 개발을 가속화하고 있습니다. 
+- [📌 BSP를 메인라인 커널에 매핑하는 과정에서 가장 중요한 도전 과제는 무엇인가?](sources/beyond-the-demo-kernel-mapping-bsps-to-mainline-alessandro-carminati.md) — BSP의 진정한 하드웨어 지원 부분과 노이즈를 분리하여 어떤 부분이 메인라인에 통합될 수 있는지 파악하고, 이를 유지 관리 가능한 형태로 업스트림하는 것이 핵심 과제입니다. - 하드웨어 동작과 무관한 백포트, 리팩터링, 그리고 오래된 실험 코드 - 메인라인 커널과 분리되어 시간이 지나면
+- [📌 CIP(Civil Infrastructure Platform)는 무엇이며, 어떤 목표를 가지고 있나요?](sources/towards-a-decade-of-industrial-grade-linux-cips-journey-and-the-road-ahead-yoshitake-kobayashi.md) — CIP는 사회 기반 시설 시스템을 위한 산업 등급 리눅스의 오픈소스 기반 레이어를 제공하여, 10년 이상의 장기 지원이 필요한 시스템의 수명 주기 전반에 걸친 유지보수 문제를 해결하는 것을 목표로 합니다. - 커널: 10년 이상의 초장기 지원(SLTS) 커널 유지보수 - CIP 코어: 
+- [📌 CPU 격리(CPU Isolation) 시 발생하는 IPI(Inter-Processor Interrupt) 간섭 문제의 원인과 해결 방안은 무엇인가?](sources/cpu-isolation-and-ipi-interference-valentin-schneider-red-hat.md) — CPU를 격리해도 커널 텍스트 업데이트(정적 키) 및 tlb 플러시 등으로 인해 ipi 간섭이 발생하며, 이를 해결하기 위해 커널 진입 시 작업을 지연 처리하거나 하드웨어 지원을 활용하는 방안을 논의 중입니다. 고성능 컴퓨팅 환경에서 cpu 격리(Isolation)의 실질적인 문제점과 
+- [📌 EROFS는 컨테이너 환경에서 어떤 이점을 제공하는가?](sources/erofs-and-containers-xiang-gao-alibaba-cloud.md) — EROFS는 컨테이너 OS의 시작 속도를 높이고 이미지 크기를 줄이며, OCI 이미지 풀링을 가속화하고, 루트 파일 시스템의 무결성을 보장하여 전반적인 컨테이너 운영 효율성을 크게 향상시킵니다. - 블록 기반의 불변(immutable) 파일 시스템 - 고정 파일 시스템 블록 크기를 사용
+- [📌 HKML은 리눅스 커널 개발을 위한 어떤 메일링 도구인가?](sources/hkml-mailing-tool-for-simple-linux-kernel-development-seongjae-sj-park-meta.md) — 최소한의 설정과 리소스 사용으로 설계되어 공개 메일링 아카이브와 mbox 파일을 지원하며, 리눅스 개발 사용 사례에 고도로 최적화된 도구입니다. 리눅스 커널 메일링 리스트에서 메일 송수신, 패치 관리, 리뷰 등 복잡한 작업들을 더 쉽고 효율적으로 처리할 수 있도록 돕습니다.
+- [📌 KernelSBOM은 무엇을 하는 프로젝트인가?](sources/kernelsbom-reconstructing-linux-kernel-builds-into-trusted-spdx-bills-of-materi-maximilian-huber.md) — kernelsbom은 리눅스 커널 빌드를 재구성하여 신뢰할 수 있는 spdx 소프트웨어 자재 명세서(SBOM)를 생성하는 파이썬 기반 도구입니다. 성공적인 커널 빌드로부터 bzImage나 커널 모듈 파일 같은 최종 배포 아티팩트를 역추적하여, cmd 파일과 추가적인 휴리스틱(예: .s 
+- [📌 KUnit 테스팅의 주요 문제점과 한계는 무엇인가?](sources/kunit-testing-insufficiencies-matthew-whitehead-the-boeing-company.md) — KUnit은 커널 내에서 유닛 테스트를 수행하는 데 유용하지만, 의존성 관리의 어려움, 느린 빌드 및 실행 시간, 복잡한 테스트 작성 및 유지보수 부담 등 기존 유닛 테스팅 프레임워크에 비해 여러 가지 부족한 점과 한계가 있습니다. - 의존성 관리: 패치 도입 및 유지보수로 인한 복잡성
+- [📌 Linus Torvalds가 리눅스 커널 개발에서 가장 중요하게 생각하는 원칙과 AI 활용에 대한 그의 입장은?](sources/keynote-linus-torvalds-creator-of-linux-and-git-in-conversation-with-dirk-hohndel.md) — 리눅스 커널 개발에서 가장 중요하게 생각하는 원칙은 후퇴(regression)를 만들지 않고 안정성을 유지하는 것이며, AI는 코드를 작성하는 것보다 코드 리뷰 및 유지보수를 돕는 강력한 도구로 활용될 잠재력이 크다고 봅니다. AI가 방대한 코드와 충돌을 분석하여 버그를 찾고 설명하는 
+- [📌 Linux 장치 드라이버 모델에서 다양한 소프트웨어 노드 유형을 이해하는 방법은 무엇인가요?](sources/of-nodes-fwnodes-swnodes-devlinks-properties-understanding-how-devices-bartosz-golaszewski.md) — Linux 커널의 장치 드라이버 모델에서 OF-노드, FW-노드, SW-노드, Device Link 및 속성 같은 다양한 소프트웨어 노드 유형과 이들의 역사적 발전, 상호 관계를 이해하는 것이 중요합니다. 장치가 시스템마다 다르게 연결되어 있더라도 동일한 장치 드라이버를 재사용하고 구성
+- [📌 Linux 커널의 안전성 강화를 위한 Address Space Isolation(주소 공간 격리)은 무엇인가?](sources/address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia.md) — Linux 커널 내부에서 발생하는 자체 간섭으로부터 커널을 보호하기 위해 MMU(메모리 관리 장치)를 활용하여 커널 내부에 여러 컨텍스트(safe, core, qm)를 정의하고 각 컨텍스트의 메모리 접근을 제한하는 기술입니다. 커널 내부에서 발생할 수 있는 오류의 확산을 방지하여 시스템
+- [📌 Linux에서 게임 경험을 향상시키기 위한 Sched_ext의 역할은 무엇인가?](sources/enhancing-your-gaming-experience-on-linux-with-sched-ext-changwoo-min-igalia.md) — Sched_ext는 Linux 커널 6.12에 공식 병합된 BPF 기반 확장 가능한 스케줄러 프레임워크로, 사용자 지정 스케줄러를 구현하여 게임 워크로드의 지연 시간 및 에너지 소비를 최적화함으로써 전반적인 게임 경험을 향상시키는 데 기여합니다. LAD 스케줄러는 지연 시간에 민감한 작
+- [📌 NVIDIA가 리눅스 커널을 ASIL B 인증받기 위해 어떤 접근 방식을 취하는가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-mr-bryan-huntsman-senior-director-nvidia.md) — NVIDIA는 리눅스 커널 전체를 인증하는 대신, MMU 기반의 메모리 분리 및 페이지 테이블 스위칭을 통해 안전 필수 코드를 비안전 코드로부터 보호하는 방식으로 접근합니다. 커널의 비안전 관련 부분에 대한 광범위한 변경이나 인증 노력을 줄여, 전통적인 방법 대비 비용과 노력을 크게 절
+- [📌 NVIDIA가 리눅스에서 ASIL B 수준의 안전성을 달성하기 위한 접근 방식은 무엇인가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-bryan-huntsman-us-nvidia.md) — NVIDIA는 리눅스 커널 내에 안전 관련 코드와 비안전 관련 코드를 물리적으로 분리하는 ‘컨텍스트(Context)’ 개념을 도입하여 커널 공간 간의 공간적 간섭 문제를 해결함으로써 ASIL B 인증이 가능하다고 보고 있습니다. 대부분의 리눅스 커널 코드는 안전성 고려 없이 개발 과정을
+- [📌 NVIDIA는 ASIL B 인증 Linux를 달성하기 위해 어떤 접근 방식을 사용했는가?](sources/nvidia-approach-for-achieving-asil-b-qualified-linux-minimizing-expectations-from-up-igor-stoppa-youtube.md) — 전체 Linux 커널에 안전성 검증을 적용하지 않고, 핵심 메커니즘만 안전성 검증 대상으로 삼아 코드베이스의 유연성과 혁신 속도를 유지하는 접근 방식을 사용합니다. - 스레드에 특정 기능(capability)을 부여하여 메모리 할당 등을 통제 - 메모리 풀을 통해 자원을 안전성 수준별로
+- [📌 PREEMPT_RT 커널에서의 핵심적인 개선 사항은 무엇인가?](sources/news-from-preempt-rt-sebastian-siewior.md) — PREEMPT_RT 커널에서 발생하던 락(lock) 경쟁 문제를 해결하기 위해 명시적인 잠금 메커니즘을 도입하고, futex 및 lazy preempt 동작을 개선하여 시스템 성능과 안정성을 향상시킨 것이 핵심입니다. 리눅스 커널의 PREEMPT_RT 패치와 관련된 최신 핵심 업데이트를
+- [📌 RV와 데드라인 스케줄러를 사용하여 런타임에 서브시스템을 검증하는 방법은 무엇인가요?](sources/rv-and-the-deadline-scheduler-how-to-verify-your-subsystem-at-runti-gabriele-monaco-and-juri-lelli.md) — 커널에 런타임 검증(RV) 메커니즘을 적용하여 데드라인 스케줄러의 동작이 이론적 모델과 일치하는지 확인하고, 오류 발생 시 디버깅하는 과정을 통해 이를 수행합니다. 이벤트와 상태 전이에 시간 제약(클록)을 추가한 Timed Automata(시간 자동자)를 사용하여 모델을 구성하며, 커널
+- [📌 SDV(Software Defined Vehicle) 시대에 오픈소스 기반 가상화 기술이 차량 개발을 어떻게 가속화하는가?](sources/keynote-accelerating-sdv-through-open-source-based-virtualization-masashige-mizuyama.md) — 오픈소스 기반 가상화 기술인 VIO(Virtual I/O)를 활용하여 하드웨어에 관계없이 소프트웨어 개발 및 배포를 가능하게 함으로써, SDV 시대의 핵심인 소프트웨어 우선 개발을 가속화합니다. VIO는 가상 하드웨어를 통해 실제 하드웨어가 없어도 소프트웨어 개발을 가능하게 하며, 이를
+- [📌 SDV(소프트웨어 정의 차량) 시대의 차세대 차량 진단 기술 SOVD(Service-Oriented Vehicle Diagnostics)는 무엇인가?](sources/sdv-oriented-use-cases-leveraging-next-generation-vehicle-diagnostics-sovd-and-vir-masanori-itoh.md) — SOVD는 SDV 시대에 필요한 유연하고 동적인 차량 데이터 교환을 위해 기존 이진 기반 진단 프로토콜을 대체하여 HTTP REST 프로토콜로 정의된 차세대 차량 진단 인터페이스입니다. SDV(소프트웨어 정의 차량) 시대를 맞아 차량 진단의 패러다임을 바꿀 SOVD(Service-Ori
+- [📌 TinyML 워크로드를 Zephyr RTOS에 배포하고 최적화하는 방법은 무엇인가?](sources/tinyml-at-the-edge-deploying-and-optimizing-ai-workloads-on-zephyr-rtos-amandeep-singh-welzin.md) — TinyML 워크로드를 Zephyr RTOS에 배포하고 최적화하기 위해 다양한 추론 엔진(TensorFlow Lite Micro, MicroTVM, MLAN 등)을 활용하고, AutoML, LLE(Linkable Loadable Extensions)를 통해 모델을 동적으로 업데이트하며,
+- [📌 Userspace Assisted Scheduling (UAS) via SKITS는 무엇을 해결하고자 하는가?](sources/userspace-assisted-scheduling-via-sc-john-stultz-mr-qais-yousef-steven-rostedt-vincent-guittot.md) — 리눅스 스케줄러가 다양한 하드웨어 및 워크로드 요구사항을 충족하며 상호작용성과 처리량 간의 균형을 맞추기 어려운 문제를 해결하기 위해 사용자 공간에서 스케줄링에 더 많은 정보를 제공하는 방법을 제시합니다. 리눅스 커널의 고질적인 문제인 인터랙티비티와 처리량(Throughput) 간의 불
+- [📌 Zephyr 개발을 위한 AI 가속기를 탑재한 이기종 코어 플랫폼의 주요 특징은 무엇인가?](sources/introducing-a-heterogeneous-core-platform-with-ai-accelerator-for-zephyr-developme-yuya-hamamachi.md) — 이 플랫폼은 zephyr 개발을 위해 cortex-a76 4개, cortex-r52 3개, gpu 및 ai 가속기를 탑재한 새로운 해킹 가능한 이기종 코어 플랫폼으로, 자동차 산업의 요구사항을 충족시키며 장기적인 개발 플랫폼으로 활용될 수 있습니다. - ISO 26262 인증 지원 가능
+- [📌 Zephyr 기반 VIRTIO 백엔드를 Xen에서 구현하는 목적은 무엇인가?](sources/zephyrbased-virtio-backend-on-xen-toward-open-source-functional-safety-hiroshi-tokita.md) — Xen에서 Zephyr 기반 VIRTIO 백엔드를 구현하여 오픈 소스 기능 안전성을 달성하고, 자동차 등 복잡한 시스템의 통합 및 효율화를 목표로 합니다. - 기능 안전성 인증 가능성 향상 - 시스템 비용 및 리소스 감소 (메모리, SoC) - 개발 시간 단축 및 단일 장애 지점 제거
+- [📌 Zephyr 프로젝트가 개방형으로 안전 인증 작업을 수행하면서 얻은 주요 교훈은 무엇인가?](sources/zephyr-learnings-from-working-on-safety-certification-in-the-open-kate-stewart.md) — Zephyr는 오픈 소스 프로젝트가 안전 필수 애플리케이션에서 효과적으로 사용되기 위한 안전 및 보안 목표 달성 과정에서 요구사항 추적성, 문서화, 커뮤니티 참여 및 개방형 도구 활용의 중요성을 배웠습니다. Zephyr는 기존 개발 프로세스와 표준 준수 사이의 격차를 해소하기 위해 IE
+- [📌 Zephyr 프로젝트는 자동차 산업에 어떤 중요한 변화를 가져올 게임 체인저인가요?](sources/zephyr-a-game-changer-for-the-automotive-industry-yuichi-kusakabe-honda-motor-co-ltd.md) — Zephyr는 자동차 산업의 엄격한 하드웨어 요구사항을 충족시키면서도 유연하고 안전한 오픈소스 실시간 운영체제를 제공하여, 개발 효율성을 높이고 새로운 기능을 통합하는 데 핵심적인 역할을 합니다. - 초경량: 8KB 플래시, 5KB 램으로 낮은 리소스 소비 - 실시간 성능: 100ms 
+- [📌 Zephyr에서 베어 메탈 코드 추출 방식을 바꾸는 방법의 핵심은 무엇인가?](sources/how-to-extract-a-bare-metal-flavor-of-code-out-of-zephyr-to-use-in-rtos-khasim-syed-mohammed.md) — 기존의 Artos 방식을 따르기보다 Zephyr 네이티브 드라이버를 우선 개발하여 Zephyr의 오픈소스 커뮤니티, CI/CD, 툴링(west, twister) 등의 이점을 활용하고, 이를 다른 RTOS로 이식할 수 있는 경로를 모색하는 것이 핵심입니다. - 빌드 스크립트를 통해 DT를
+- [📌 고성능 SoC에 Zephyr를 포팅하는 주요 동기와 과제는 무엇인가?](sources/zephyr-porting-efforts-in-high-performance-socs-kunihiko-hayashi-socionext-inc.md) — 미래 하이브리드 시스템(메인 OS + Zephyr) 구축을 위한 사전 준비가 주요 동기이며, 현재 마이크로컨트롤러 기반의 Zephyr 설계를 고성능 SoC 환경에 맞게 개선하는 것이 주요 과제입니다. - 메모리 관리 유닛(MMU) 지원 부족 및 불충분한 번역 테이블 요소 - SMP (S
+- [📌 리눅스 NPU 서브시스템이 엣지 AI/LLM 워크로드에서 겪는 핵심적인 문제는 무엇인가?](sources/demystifying-linux-npu-subsystem-from-vision-to-llm-at-edge-mr-jagan-teki.md) — 기존 리눅스 DRM(Direct Rendering Manager) 스택이 LLM과 같이 상태 유지(stateful) 및 장기 실행(long-loop) 워크로드의 메모리 관리, 작업 스케줄링, 전력 처리 등을 효율적으로 지원하지 못하여 한계에 부딪히는 것이 핵심입니다. 벤더들은 강력한 자
+- [📌 리눅스 시스템에서 카메라 센서를 통합하는 방법은 무엇인가?](sources/how-to-integrate-camera-sensors-in-a-linux-system-laurent-pinchart-ideas-on-board.md) — 이 강연은 카메라 모듈, 하드웨어 인터페이스, 리눅스 커널 드라이버, 펌웨어 인터페이스, 클럭 구성, 테스트 및 문제 해결, 이미지 캡처 등 리눅스 시스템에 카메라 센서를 성공적으로 통합하는 데 필요한 핵심 요소와 절차를 다룹니다. 표준화된 커넥터 부재, SOC 및 카메라 모듈 간의 연
+- [📌 리눅스 커널에서 머신러닝 애플리케이션을 어떻게 실행할 수 있는가?](sources/ml-applications-in-linux-kernel-viacheslav-dubeyko-ibm.md) — 리눅스 커널에서 머신러닝 모델을 직접 실행하기는 어렵기 때문에, 모델 훈련과 추론을 사용자 공간에서 수행하고, CFS나 EBPF 같은 기존 커널-사용자 공간 상호작용 메커니즘을 활용하여 데이터를 주고받는 방식으로 구현할 수 있습니다. 커널 내의 부동 소수점 연산 제약이나 성능 페널티를 
+- [📌 멀티커널 아키텍처는 무엇이며, 어떤 핵심적인 이점을 제공하는가?](sources/multikernel-architecture-kernel-to-kernel-isolation-and-resource-management-cong-wang.md) — 멀티커널 아키텍처는 가상화나 하이퍼바이저 없이 하나의 머신에서 여러 Linux 커널을 동시에 실행하여 커널 간 격리와 탄력적인 리소스 관리를 제공하는 새로운 접근 방식입니다. 리눅스 커널의 고전적인 '단일 커널' 모델에 도전하여, 하이퍼바이저나 가상화 없이 단일 머신에서 여러 리눅스 커
+- [📌 소프트웨어 정의 차량(SDV) 혁명을 주도하기 위해 AGL SoDeV가 무엇을 하는가?](sources/keynote-agl-sodev-leading-the-software-defined-vehicles-revolution-dan-cauchy.md) — AGL SoDeV는 자동차 내 소프트웨어 변화에 대응하고 소프트웨어 통합을 위해 6가지 핵심 요소(중앙 집중화, 하드웨어-소프트웨어 분리, 가상화 장치, 통합 HMI, OTA를 통한 지속적 배포, 하드웨어-소프트웨어 수명 주기 분리)를 통합한 레퍼런스 플랫폼을 제공합니다. AGL SoD
+- [📌 안드로이드 부트의 미래를 위한 GBL, DRTM, UKI 기술은 무엇이며 왜 중요한가?](sources/android-boot-drtm-ukis-dmitrii-merkurev-google-leif-lindholm-qualcomm-ram-muthiah-google.md) — 안드로이드 부트의 현대적이고 안전한 변화를 이끌기 위해 GBL(Google Bootloader)은 EFI 애플리케이션으로 부트플로우를 표준화하고, DRTM(Dynamic Root of Trust for Measurement)은 초기 펌웨어 손상으로부터 보호하며, UKI(Unified K
+- [📌 이기종 ARM SoC 환경에서 Linux와 RTOS 간의 디버깅 및 트레이싱 방법은?](sources/debugging-and-tracing-and-more-between-linux-and-rtos-on-heterogeneous-arm-soc-wenlong-liu-and-rui-li.md) — --- tags: - Debug - Trace - Heterogeneous - ARM - SoC - Remoteproc - Linux - RTOS --- 이기종 SOC의 공유 메모리 등 고유한 특성을 활용하여 Linux 원격 프로세스 서브시스템(remote proc)이나 Huawei O
+- [📌 자동차 등급 리눅스(AGL)는 무엇이며, 어떤 업데이트가 있었나?](sources/automotive-grade-linux-agl-update-walt-miner-the-linux-foundation.md) — AGL은 리눅스 재단 기반의 비영리 협력 프로젝트로, 자동차 및 소프트웨어 산업을 통합하여 미래 자동차를 위한 오픈소스 플랫폼을 구축합니다. 2024년 Toyota Rav 4와 Suzuki E Vitara에 AGL이 적용되었고, 차세대 SDV 레퍼런스 플랫폼 계획 및 Flutter 통합
+- [📌 캐시 인식 스케줄링이란 무엇이며, 어떤 문제를 해결하는가?](sources/cache-aware-scheduling-mr-tim-chen-intel-mr-yu-chen-intel.md) — 캐시 인식 스케줄링은 numa 노드 내 여러 캐시(ARC) 간의 데이터 공유 문제를 해결하여, 프로세스의 스레드들을 가장 활발한 ARC에 모으는 전략입니다. 기존 노드 밸런서가 작업을 CPU에 고르게 분산시키려 하여 캐시 간 데이터 전송 비용이 증가하고 성능이 저하되는 문제를 해결하기 
 
 ## Entities
+- [Alessandro Carminati](entities/AlessandroCarminati.md) — Alessandro Carminati is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Alibaba Cloud](entities/AlibabaCloud.md) — Alibaba Cloud appears in the corpus through EROFS and container-image topics.
+- [Amandeep Singh](entities/AmandeepSingh.md) — Amandeep Singh is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [AMD](entities/AMD.md) — NVIDIA와 함께 AI 추론 가속기 시장에서 비교되는 경쟁사. InferenceX 자료에서는 비용 효율과 시스템 구성 관점에서 평가된다.
+- [Android](entities/Android.md) — Android appears in the corpus through boot-chain modernization, DRTM, and UKI-related secure boot discussions.
+- [Anthropic](entities/Anthropic.md) — Claude 제품군과 에이전트형 개발 도구를 출시하는 AI 기업. 이 코퍼스에서는 [[ClaudeCode]], [[ClaudeOpus46]], [[Skills]], [[MCP]]를 통해 에이전트형 지식 작업 플랫폼을 확장하는 주체로 반복 등장한다.
+- [ARKInvest](entities/ARKInvest.md) — Big Ideas 2026을 통해 AI, 로봇, 우주, 바이오 융합이 고성장을 만든다고 주장하는 투자사.
+- [Automotive Grade Linux](entities/AutomotiveGradeLinux.md) — Automotive Grade Linux (AGL) is a recurring project in the corpus, positioned as an open software stack and collaboration base for software-defined vehicles.
+- [Bryan Huntsman (senior Director](entities/BryanHuntsmanSeniorDirector.md) — Bryan Huntsman (senior Director is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Bryan Huntsman Us](entities/BryanHuntsmanUs.md) — Bryan Huntsman Us is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Changwoo Min](entities/ChangwooMin.md) — Changwoo Min is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Chroma](entities/Chroma.md) — 긴 컨텍스트 성능 저하를 [[ContextRot]] 개념으로 정리한 연구 조직. 실사용형 장문 처리 평가를 강조한다.
+- [CitriniResearch](entities/CitriniResearch.md) — AI 풍부화가 금융 시스템 리스크로 전환될 수 있다는 사고 실험을 제시한 매크로 리서치 조직.
+- [Civil Infrastructure Platform](entities/CivilInfrastructurePlatform.md) — The Civil Infrastructure Platform (CIP) is presented as a long-horizon industrial Linux effort focused on dependable maintenance and lifecycle management.
+- [ClaudeCode](entities/ClaudeCode.md) — 터미널 네이티브 AI 에이전트형 코딩 도구. 단순 코드 생성보다 코드베이스 탐색, 계획 수립, 다단계 실행, 도구 호출을 포함한 작업 완수 능력 때문에 변곡점으로 평가된다.
+- [ClaudeOpus46](entities/ClaudeOpus46.md) — Anthropic의 Claude Opus 4.6 모델 릴리스. 긴 컨텍스트, 자기 수정 능력, 장기 작업 지속성, 전문 지식 업무 성능이 강조된다.
+- [Cody Zuschlag](entities/CodyZuschlag.md) — Cody Zuschlag is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Cong Wang](entities/CongWang.md) — Cong Wang is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [CosmosReason1](entities/CosmosReason1.md) — 물리적 상식과 embodied reasoning을 수행하도록 설계된 멀티모달 모델 프로젝트. [[PhysicalAI]] 구현을 위한 연구 사례로 등장한다.
+- [Dan Cauchy](entities/DanCauchy.md) — Dan Cauchy is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Dmitrii Merkurev](entities/DmitriiMerkurev.md) — Dmitrii Merkurev is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [DonaldTrump](entities/DonaldTrump.md) — 연준 인선과 대유럽 압박이라는 두 축에서 시장과 지정학 변수로 등장하는 미국 정치인.
+- [ELISA](entities/ELISA.md) — ELISA appears as the cross-industry effort focused on making Linux usable in safety-related systems through process maturity, tooling, and architectural analysi
+- [Etas Gmbh](entities/EtasGmbh.md) — Etas Gmbh is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [EuropeanUnion](entities/EuropeanUnion.md) — 트럼프의 압박 이후 단일시장 강화, 국방 자강, 통상 다변화를 추진하는 전략 행위자로 묘사된다.
+- [FederalReserve](entities/FederalReserve.md) — 금리, 유동성, 대차대조표, 정책 커뮤니케이션 논쟁의 중심 기관. 워시 관련 자료 전반의 제도적 무대다.
+- [Figure 03](entities/Figure03.md) — [[Figure03]] is Figure AI's humanoid robot platform as described in the robotics sources. It is notable here for combining electric actuators, hybrid control, s
+- [Figure AI](entities/FigureAI.md) — [[FigureAI]] is the robotics company behind the Figure humanoid platform and the Helix control stack. In the current corpus it is presented as pursuing general-
+- [Git](entities/Git.md) — Git appears mainly via the Linus Torvalds keynote context as the version control system co-created by Torvalds.
+- [Google](entities/Google.md) — Google appears in the corpus via Android boot-chain work, DRTM, and UKIs.
+- [Harunobu Kurokawa](entities/HarunobuKurokawa.md) — Harunobu Kurokawa is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Helix 02](entities/Helix02.md) — [[Helix02]] is Figure's full-body autonomy model for humanoid robots. The corpus presents it as a learned architecture that ties together semantic reasoning, vi
+- [Hiroshi Tokita](entities/HiroshiTokita.md) — Hiroshi Tokita is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Honda](entities/Honda.md) — Honda appears in the corpus through automotive Zephyr and software-defined vehicle discussions.
+- [Honda Motor Co.](entities/HondaMotorCo.md) — Honda Motor Co. is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [IBM](entities/IBM.md) — IBM appears in the corpus through exploration of machine learning applications running in or near the Linux kernel.
+- [Ideas on Board](entities/IdeasOnBoard.md) — Ideas on Board appears in the corpus through camera sensor integration guidance for Linux systems.
+- [Igalia](entities/Igalia.md) — Igalia appears in the corpus through Sched_ext gaming and scheduler extensibility work.
+- [Igor Stoppa](entities/IgorStoppa.md) — Igor Stoppa is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Intel](entities/Intel.md) — Intel appears in scheduling and cache-aware workload placement discussions.
+- [Jagan Teki](entities/JaganTeki.md) — Jagan Teki is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [JPMorgan](entities/JPMorgan.md) — 은 시장 가격 형성 논쟁에서 대형 포지션과 시장 영향력의 상징으로 등장하는 금융기관.
+- [Kate Stewart](entities/KateStewart.md) — Kate Stewart is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [KevinWarsh](entities/KevinWarsh.md) — 미국 연준 의장 후보로 거론되며 트럼프, 시장 기대, 유동성 정책 논쟁과 연결되는 인물. 일부 자료는 정책 프레임으로, 일부는 권력 네트워크 프레임으로 해석한다.
+- [Khasim Syed Mohammed](entities/KhasimSyedMohammed.md) — Khasim Syed Mohammed is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Kunihiko Hayashi](entities/KunihikoHayashi.md) — Kunihiko Hayashi is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Laurent Pinchart](entities/LaurentPinchart.md) — Laurent Pinchart is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Leif Lindholm](entities/LeifLindholm.md) — Leif Lindholm is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Linus Torvalds](entities/LinusTorvalds.md) — Linus Torvalds appears in the corpus discussing kernel development values, maintainership, and views on AI-assisted work.
+- [Linux Kernel](entities/LinuxKernel.md) — The Linux kernel is the central software platform across this corpus, appearing in discussions of scheduling, safety, BSP upstreaming, drivers, and AI accelerat
+- [Masashige Mizuyama](entities/MasashigeMizuyama.md) — Masashige Mizuyama is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Matthew Whitehead](entities/MatthewWhitehead.md) — Matthew Whitehead is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Meta](entities/Meta.md) — Meta appears in the corpus through tooling contributions to Linux kernel development workflows.
+- [NVIDIA](entities/NVIDIA.md) — NVIDIA appears repeatedly as both a conference participant and a technical subject, especially around ASIL B Linux qualification, safety isolation, and heteroge
+- [Nvidia](entities/Nvidia.md) — [[Nvidia]] appears in the corpus mainly through Isaac Lab and Isaac Sim, which are presented as important simulation environments for training robot policies. T
+- [NVIDIA Dynamo](entities/Dynamo.md) — NVIDIA Dynamo is the orchestration layer used to route requests, coordinate heterogeneous decode loops, and stabilize latency across GPU and LPX backends.
+- [NVIDIA Groq 3 LPX](entities/Groq3LPX.md) — NVIDIA Groq 3 LPX is described as a rack-scale low-latency inference accelerator designed to complement Vera Rubin GPUs in heterogeneous serving pipelines.
+- [NVIDIA Vera Rubin Platform](entities/VeraRubinPlatform.md) — The NVIDIA Vera Rubin platform is the high-throughput GPU side of the heterogeneous inference architecture described in the Nvidia corpus material.
+- [OpenAI](entities/OpenAI.md) — Anthropic과의 경쟁 및 범용 AI 확산의 기준점으로 간접 등장하는 AI 기업.
+- [Philipp Ahmann](entities/PhilippAhmann.md) — Philipp Ahmann is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [QEMU](entities/QEMU.md) — QEMU appears as an accessible environment for prototyping and evaluating low-level kernel isolation techniques.
+- [Qualcomm](entities/Qualcomm.md) — Qualcomm appears in the corpus as a contributor to Android boot-chain and platform integration discussions.
+- [Ram Muthiah](entities/RamMuthiah.md) — Ram Muthiah is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Red Hat](entities/RedHat.md) — Red Hat appears in the corpus through work on CPU isolation and scheduler behavior.
+- [Rui Li](entities/RuiLi.md) — Rui Li is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [SamsungElectronics](entities/SamsungElectronics.md) — 메모리 사이클과 밸류에이션 논의에 반복 등장하는 주요 반도체 기업.
+- [Sebastian Siewior](entities/SebastianSiewior.md) — Sebastian Siewior is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [SemiAnalysis](entities/SemiAnalysis.md) — 에이전트, AI 인프라, 메모리 업황을 공격적으로 해석하는 분석 매체. 이 코퍼스에서 여러 핵심 서사의 출처다.
+- [Seongjae Park](entities/SeongjaePark.md) — Seongjae Park is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Seoul National University](entities/SeoulNationalUniversity.md) — [[SeoulNationalUniversity]] is cited in the admissions source as a reference point for evaluating school-level admissions outcomes, especially when comparing re
+- [SKHynix](entities/SKHynix.md) — HBM과 AI 메모리 수요 확대의 대표 수혜 기업으로 등장하는 한국 메모리 반도체 업체.
+- [Socionext](entities/Socionext.md) — Socionext appears in the corpus through Zephyr porting work for high-performance SoCs.
+- [Socionext Inc.](entities/SocionextInc.md) — Socionext Inc. is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [SPDX](entities/SPDX.md) — SPDX appears in the corpus as the bill-of-materials and software transparency format used for KernelSBOM and supply-chain work.
+- [System 0](entities/System0.md) — [[System0]] is the lowest-level layer in the Helix 02 stack. It is described as a learned whole-body controller running at 1 kHz that stabilizes contact, postur
+- [System 1](entities/System1.md) — [[System1]] is the fast visuomotor layer in the Helix 02 stack. It consumes camera, tactile, and proprioceptive inputs and outputs full-body joint targets that 
+- [System 2](entities/System2.md) — [[System2]] is the semantic reasoning layer in the Helix 02 architecture. It interprets scenes and language, then emits latent goals that let lower layers execu
+- [The Linux Foundation](entities/LinuxFoundation.md) — The Linux Foundation appears as the umbrella organization behind AGL, ELISA, and other collaborative projects referenced in the corpus.
+- [The Linux Foundation](entities/TheLinuxFoundation.md) — The Linux Foundation is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Tim Chen](entities/TimChen.md) — Tim Chen is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Understanding How Devices... Bartosz Golaszewski](entities/UnderstandingHowDevicesBartoszGolaszewski.md) — Understanding How Devices... Bartosz Golaszewski is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the 
+- [Valentin Schneider](entities/ValentinSchneider.md) — Valentin Schneider is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Viacheslav Dubeyko](entities/ViacheslavDubeyko.md) — Viacheslav Dubeyko is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Walt Miner](entities/WaltMiner.md) — Walt Miner is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Wenlong Liu](entities/WenlongLiu.md) — Wenlong Liu is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Xen](entities/Xen.md) — Xen is discussed as an open source virtualization layer for deterministic mixed-criticality systems, especially in automotive and functional safety architecture
+- [Xiang Gao](entities/XiangGao.md) — Xiang Gao is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Yoshitake Kobayashi](entities/YoshitakeKobayashi.md) — Yoshitake Kobayashi is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Yu Chen](entities/YuChen.md) — Yu Chen is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Yuichi Kusakabe](entities/YuichiKusakabe.md) — Yuichi Kusakabe is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
+- [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+- [Address Space Isolation](concepts/AddressSpaceIsolation.md) — Address space isolation is presented as a way to partition kernel internals into contexts with hardware-backed memory restrictions to reduce self-interference.
+- [AIAutomation](concepts/AIAutomation.md) — AI가 반복적이고 규칙화된 정보 노동을 대체하거나 증강하는 흐름. 코딩, 문서 작업, 테스트, 콘텐츠 분석, 금융 중개 등 여러 영역에 걸쳐 등장한다.
+- [AIInfrastructure](concepts/AIInfrastructure.md) — 가속기, 메모리, 네트워크, 전력, 데이터센터를 포함하는 AI 시스템 공급 기반. 경제성장 서사와 반도체 업황 서사를 연결하는 핵심 층이다.
+- [Android Boot Security](concepts/AndroidBootSecurity.md) — Android boot security covers secure boot-chain modernization, DRTM, and integration of UKIs for stronger measured startup paths.
+- [ASIL B Qualified Linux](concepts/ASILBQualifiedLinux.md) — ASIL B qualified Linux refers to the effort to build evidence, process, and architecture sufficient to use Linux in automotive safety contexts.
+- [Bare-Metal Extraction](concepts/BareMetalExtraction.md) — Bare-metal extraction refers to separating reusable low-level code from Zephyr so it can be used in other RTOS or firmware contexts.
+- [Cache-Aware Scheduling](concepts/CacheAwareScheduling.md) — Cache-aware scheduling aims to improve placement decisions by considering cache locality and shared-resource contention.
+- [Camera Sensor Integration](concepts/CameraSensorIntegration.md) — Camera sensor integration covers the Linux media and device-model work needed to bring sensors up cleanly in real systems.
+- [College Admissions 2028](concepts/CollegeAdmissions2028.md) — [[CollegeAdmissions2028]] refers to the expected Korean admissions environment around the 2028 intake, especially the growing weight of internal grades, school 
+- [ContextRot](concepts/ContextRot.md) — 입력 토큰 수가 증가함에 따라 모델 성능이 비선형적으로 저하되는 현상. 긴 컨텍스트 마케팅 수치와 실제 업무 성능 사이의 간극을 설명한다.
+- [CPU Isolation](concepts/CPUIsolation.md) — CPU isolation refers to the techniques used to shield execution from interference, especially interrupts and scheduler activity on latency-sensitive cores.
+- [CSAT](concepts/CSAT.md) — [[CSAT]] is the standardized-test pathway discussed in contrast with school-record-driven admissions. In the source it remains important, but the author argues 
+- [Deadline Scheduler Verification](concepts/DeadlineSchedulerVerification.md) — Deadline scheduler verification combines runtime verification ideas with scheduling analysis to validate subsystem behavior while systems run.
+- [Deterministic Execution](concepts/DeterministicExecution.md) — Deterministic execution recurs in both safety and inference contexts, where predictability matters for validation, latency control, and interference reduction.
+- [Devicetree and Fwnodes](concepts/DevicetreeAndFwnodes.md) — Devicetree, fwnodes, swnodes, devlinks, and properties are discussed as the Linux device-model vocabulary needed to describe hardware and software device relati
+- [DisaggregatedPrefill](concepts/DisaggregatedPrefill.md) — prefill과 decode 단계를 분리해 다른 자원 풀에서 처리하는 추론 아키텍처. 인터랙티브 서비스의 효율을 높이는 전략으로 강조된다.
+- [Dynamic Root of Trust for Measurement](concepts/DRTM.md) — DRTM appears as a measured-boot building block for stronger system attestation and trusted boot flows.
+- [EconomicGrowth](concepts/EconomicGrowth.md) — AI, 로봇, 지정학, 금융 구조 변화가 생산성과 GDP, 산업 배분을 어떻게 바꾸는지를 포괄하는 상위 개념. 낙관적 성장 서사와 시스템 리스크 서사가 동시에 존재한다.
+- [EmbodiedReasoning](concepts/EmbodiedReasoning.md) — 실세계 환경과 신체적 제약을 고려해 다음 행동을 추론하는 능력. Cosmos-Reason1 문서에서 핵심 역량으로 분리된다.
+- [EROFS](concepts/EROFS.md) — EROFS is covered as a read-only filesystem with practical benefits for container images and efficient software distribution.
+- [Functional Safety](concepts/FunctionalSafety.md) — Functional safety is a dominant theme across the corpus, covering certification, fault containment, monitoring, and architectural patterns for Linux-based syste
+- [Heterogeneous Inference](concepts/HeterogeneousInference.md) — Heterogeneous inference refers to splitting model execution across specialized hardware paths to balance throughput and low-latency responsiveness.
+- [High School Choice](concepts/HighSchoolChoice.md) — [[HighSchoolChoice]] is the strategic decision of selecting a high school based on the admissions system a student expects to face. The current source argues th
+- [HKML](concepts/HKML.md) — HKML is a lightweight mailing-list workflow tool for Linux kernel development.
+- [Holistic Admissions](concepts/HolisticAdmissions.md) — [[HolisticAdmissions]] refers to student selection based on more than test scores alone, especially through grades, school records, activities, and contextual e
+- [HousingTaxPlanning](concepts/HousingTaxPlanning.md) — 주택 취득, 보유, 양도 과정에서 세무 리스크를 줄이기 위한 실무적 절차와 증빙 관리 개념.
+- [Humanoid Robotics](concepts/HumanoidRobotics.md) — [[HumanoidRobotics]] refers to robot systems with human-like morphology that must coordinate balance, locomotion, perception, and manipulation in unstructured e
+- [Hypervisor Virtualization](concepts/HypervisorVirtualization.md) — Hypervisor-based virtualization is a recurring pattern for partitioning Linux workloads, enforcing isolation, and building deterministic automotive systems.
+- [Industrial Linux Maintenance](concepts/IndustrialLinuxMaintenance.md) — Industrial Linux maintenance captures the long-term support, update discipline, and lifecycle practices needed for infrastructure-grade Linux deployments.
+- [InferenceOptimization](concepts/InferenceOptimization.md) — LLM 추론의 속도, 비용, 처리량을 개선하는 시스템 설계 전반. KV 캐시, 분산 prefill, 병렬화, 메모리 최적화 등이 포함된다.
+- [Interactive Inference](concepts/InteractiveInference.md) — Interactive inference emphasizes low and predictable latency for user-facing generation workloads rather than throughput alone.
+- [KernelSBOM](concepts/KernelSBOM.md) — KernelSBOM is the effort to reconstruct trusted SPDX software bills of materials from Linux kernel builds.
+- [KUnit](concepts/KUnit.md) — KUnit is the Linux kernel unit testing framework, discussed here mainly through its present insufficiencies and coverage limitations.
+- [KVCache](concepts/KVCache.md) — 생성 중 반복되는 attention key/value 계산을 저장해 추론 속도를 높이는 캐싱 메커니즘. 응답 지연을 줄이는 대신 메모리 사용량이 늘어난다.
+- [LLMAgents](concepts/LLMAgents.md) — 단순 질의응답이 아니라 계획 수립, 도구 사용, 문맥 유지, 다단계 실행을 수행하는 LLM 기반 소프트웨어 패턴. 제조 현장, 코딩, 서비스 비서, 연구 자동화까지 다양한 적용 사례가 등장한다.
+- [Loco-Manipulation](concepts/LocoManipulation.md) — [[LocoManipulation]] is the robotics problem of moving through the world while manipulating objects at the same time. The Helix 02 source presents it as one of 
+- [LongContext](concepts/LongContext.md) — 긴 입력 문서를 읽고 활용하는 모델 역량. 마케팅 수치는 커졌지만 실제 성능은 [[ContextRot]]과 서빙 비용 문제에 제약받는다.
+- [Machine Learning in Kernel](concepts/MachineLearningInKernel.md) — Machine learning in kernel refers to exploratory work on placing ML-assisted capabilities inside or adjacent to kernel subsystems.
+- [Mainline Upstreaming](concepts/MainlineUpstreaming.md) — Mainline upstreaming is discussed as the process of converting board-support and vendor-kernel work into maintainable upstream Linux code.
+- [MCP](concepts/MCP.md) — Model Context Protocol. 에이전트가 외부 시스템과 도구에 연결되도록 하는 인터페이스 계층으로 설명된다.
+- [MemorySupercycle](concepts/MemorySupercycle.md) — AI 수요, DRAM 스케일링 둔화, 공급 제약이 결합해 메모리 업황이 장기 호황으로 전환될 수 있다는 프레임.
+- [Mixed Criticality](concepts/MixedCriticality.md) — Mixed criticality captures architectures that place safety-relevant and quality-managed functions on shared hardware while trying to preserve freedom from inter
+- [MonetaryPolicy](concepts/MonetaryPolicy.md) — 금리, 유동성, 대차대조표, 정책 커뮤니케이션을 포함한 중앙은행 정책 논쟁. 케빈 워시 관련 문서군의 공통 개념이다.
+- [Multikernel Architecture](concepts/MultikernelArchitecture.md) — Multikernel architecture is presented as a way to isolate kernel components and manage resources through kernel-to-kernel partitioning.
+- [Neural Processing Unit Subsystem](concepts/NPU.md) — The NPU subsystem topic covers how Linux should expose accelerators for edge vision and LLM workloads.
+- [Physical Intelligence](concepts/PhysicalIntelligence.md) — [[PhysicalIntelligence]] is the idea that the next major frontier for AI/software is embodied competence in the physical world rather than purely digital applic
+- [PhysicalAI](concepts/PhysicalAI.md) — 물리 세계를 이해하고 행동까지 연결하는 AI 패러다임. 로봇, 비전, 시뮬레이션, 물리 상식, embodied reasoning이 결합된다.
+- [PreciousMetalsMarket](concepts/PreciousMetalsMarket.md) — 은과 금 같은 귀금속의 가격 형성 구조를 다루는 개념. 실물 수급뿐 아니라 선물 포지션과 정책 기대가 크게 작용한다.
+- [PREEMPT_RT](concepts/PREEMPTRT.md) — PREEMPT_RT is the real-time Linux effort discussed in the corpus through upstream progress and latency-oriented kernel changes.
+- [RAG](concepts/RAG.md) — 검색 증강 생성. 최신 정보와 사내 도메인 지식을 LLM 응답에 연결하기 위한 대표 구조로 제조업 적용 문서에서 핵심 대안으로 제시된다.
+- [Sched_ext](concepts/SchedExt.md) — Sched_ext is treated as an extensible scheduling framework that lets user-defined policies improve responsiveness for specific workloads such as gaming.
+- [Service-Oriented Vehicle Diagnostics](concepts/SOVD.md) — SOVD is discussed as a next-generation diagnostics interface for software-defined vehicle workflows.
+- [Skills](concepts/Skills.md) — 에이전트가 도구를 팀의 표준 절차에 맞게 사용하도록 만드는 재사용 가능한 업무 지식 계층.
+- [Software Defined Vehicle](concepts/SoftwareDefinedVehicle.md) — Software-defined vehicle work in the corpus focuses on open platforms, diagnostics, virtualization, and long-lived software stacks for automotive systems.
+- [SPDX SBOM](concepts/SPDXSBOM.md) — SPDX SBOM work in the corpus centers on trustworthy build reconstruction, transparency, and supply-chain evidence for complex system software.
+- [Speculative Decoding](concepts/SpeculativeDecoding.md) — Speculative decoding is highlighted as a latency-reduction method that pairs a fast draft model with a larger verifier model.
+- [StartupStrategy](concepts/StartupStrategy.md) — 제품-시장 적합성, 고성장 시장 선택, 창업자 자질, 팀 구축을 중심으로 한 스타트업 성공 프레임워크.
+- [Student Record](concepts/StudentRecord.md) — [[StudentRecord]] captures the school-record portfolio used in Korean admissions, including grades, activities, course choices, and detailed qualitative entries
+- [Tactile Sensing](concepts/TactileSensing.md) — [[TactileSensing]] is the use of touch information to guide robot interaction with objects. The corpus emphasizes fingertip sensing and palm cameras as the comb
+- [TinyML](concepts/TinyML.md) — TinyML refers to running and optimizing compact AI workloads on constrained RTOS and embedded platforms such as Zephyr.
+- [Unified Kernel Image](concepts/UnifiedKernelImage.md) — Unified Kernel Image work appears as part of efforts to simplify, harden, and attest modern boot chains.
+- [USB Power Management](concepts/PowerManagementUSB.md) — USB power management appears as a systems topic concerned with how device power states and host behavior interact.
+- [Userspace-Assisted Scheduling](concepts/UserspaceAssistedScheduling.md) — Userspace-assisted scheduling appears as a way to combine kernel scheduling with workload-aware signals from user space.
+- [VirtIO](concepts/VirtIO.md) — VirtIO appears as a virtualization interface that becomes especially important when open automotive and Xen-based safety systems exchange data across guests.
+- [Visuomotor Control](concepts/VisuomotorControl.md) — [[VisuomotorControl]] links perception directly to action, using visual, tactile, and proprioceptive signals to generate motor commands. In the current corpus i
 
 ## Syntheses
