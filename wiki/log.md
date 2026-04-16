@@ -1,3 +1,8 @@
+## [2026-04-16] ingest | Bulk corpus sync
+
+- Rebuilt `wiki/index.md` and `wiki/overview.md` after confirming all raw markdown sources are represented in `wiki/sources/`.
+- Corpus status: 64 sources, 91 entities, 65 concepts.
+
 # Wiki Log
 
 Append-only chronological record of all operations.
