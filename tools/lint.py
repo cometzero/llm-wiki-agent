@@ -27,6 +27,8 @@ from datetime import date
 
 import os
 
+from tools.llm_backend import call_llm, selected_backend
+
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
 GRAPH_DIR = REPO_ROOT / "graph"
@@ -37,22 +39,6 @@ SCHEMA_FILE = REPO_ROOT / "CLAUDE.md"
 
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
-
-
-def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 4096) -> str:
-    try:
-        from litellm import completion
-    except ImportError:
-        print("Error: litellm not installed. Run: pip install litellm")
-        sys.exit(1)
-        
-    model = os.getenv(model_env, default_model)
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
-    )
-    return response.choices[0].message.content
 
 
 def all_wiki_pages() -> list[Path]:

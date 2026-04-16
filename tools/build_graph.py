@@ -28,6 +28,8 @@ from datetime import date
 
 import os
 
+from tools.llm_backend import call_llm, selected_backend
+
 try:
     import networkx as nx
     from networkx.algorithms import community as nx_community
@@ -64,28 +66,6 @@ EDGE_COLORS = {
 
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
-
-
-def call_llm(prompt: str, model_env: str, default_model: str, max_tokens: int = 4096) -> str:
-    try:
-        from litellm import completion
-    except ImportError:
-        print("Error: litellm not installed. Run: pip install litellm")
-        import sys
-        sys.exit(1)
-
-    model = os.getenv(model_env, default_model)
-
-    kwargs = {
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}]
-    }
-
-    if max_tokens:
-        kwargs["max_tokens"] = max_tokens
-
-    response = completion(**kwargs)
-    return response.choices[0].message.content
 
 
 def sha256(text: str) -> str:

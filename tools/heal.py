@@ -14,11 +14,7 @@ import os
 import sys
 from pathlib import Path
 
-try:
-    from litellm import completion
-except ImportError:
-    print("Error: litellm not installed. Run: pip install litellm")
-    sys.exit(1)
+from tools.llm_backend import call_llm, selected_backend
 
 # Ensure tools can be imported
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -28,18 +24,6 @@ from tools.lint import find_missing_entities, all_wiki_pages
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
 ENTITIES_DIR = WIKI_DIR / "entities"
-
-def call_llm(prompt: str, max_tokens: int = 1500) -> str:
-    # Use litellm standard environment variables
-    # e.g., GEMINI_API_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY
-    model = os.getenv("LLM_MODEL", "claude-3-5-haiku-latest") # default to fast model
-    
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=max_tokens
-    )
-    return response.choices[0].message.content
 
 def search_sources(entity: str, pages: list[Path]) -> list[Path]:
     """Find up to 15 pages where this entity is mentioned natively."""
