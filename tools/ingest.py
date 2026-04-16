@@ -22,6 +22,8 @@ import sys
 import json
 import hashlib
 import re
+import shutil
+import subprocess
 from pathlib import Path
 from collections import defaultdict
 from datetime import date
@@ -42,25 +44,137 @@ def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
-def call_llm(prompt: str, max_tokens: int = 8192) -> str:
+def _call_litellm(prompt: str, max_tokens: int = 8192) -> str:
     try:
         from litellm import completion
     except ImportError:
         print("Error: litellm not installed. Run: pip install litellm")
         sys.exit(1)
-        
-    model = os.getenv("LLM_MODEL", "claude-3-5-sonnet-latest")
-    
+
+    model = os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
+
     kwargs = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}]
     }
-    
+
     if max_tokens:
         kwargs["max_tokens"] = max_tokens
 
     response = completion(**kwargs)
     return response.choices[0].message.content
+
+
+def _codex_error_text(proc: subprocess.CompletedProcess[str]) -> str:
+    return "\n".join(part for part in (proc.stderr, proc.stdout) if part).lower()
+
+
+
+def _is_token_exhaustion_error(proc: subprocess.CompletedProcess[str]) -> bool:
+    error_text = _codex_error_text(proc)
+    markers = [
+        "rate_limit_exceeded",
+        "token",
+        "usage limit",
+        "quota",
+        "exceeded",
+        "insufficient_quota",
+        "context_length_exceeded",
+    ]
+    return any(marker in error_text for marker in markers)
+
+
+
+def _run_codex(prompt: str, model: str, reasoning_effort: str) -> subprocess.CompletedProcess[str]:
+    codex_bin = shutil.which("codex")
+    if not codex_bin:
+        print("Error: codex CLI not found in PATH.")
+        sys.exit(1)
+
+    command = [
+        codex_bin,
+        "exec",
+        "--json",
+        "-m",
+        model,
+        "-s",
+        "read-only",
+        "-C",
+        str(REPO_ROOT),
+        "-c",
+        f'model_reasoning_effort="{reasoning_effort}"',
+        "-",
+    ]
+    return subprocess.run(
+        command,
+        input=prompt,
+        text=True,
+        capture_output=True,
+        cwd=REPO_ROOT,
+        check=False,
+    )
+
+
+
+def _call_codex(prompt: str, max_tokens: int = 8192) -> str:
+    primary_model = os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
+    fallback_model = os.getenv("CODEX_FALLBACK_MODEL", "gpt-5.4-mini")
+    reasoning_effort = os.getenv("CODEX_REASONING_EFFORT", "low")
+
+    proc = _run_codex(prompt, primary_model, reasoning_effort)
+    active_model = primary_model
+    if proc.returncode != 0 and _is_token_exhaustion_error(proc) and fallback_model and fallback_model != primary_model:
+        print(f"  codex primary model exhausted tokens; retrying with fallback model: {fallback_model}")
+        proc = _run_codex(prompt, fallback_model, reasoning_effort)
+        active_model = fallback_model
+
+    if proc.returncode != 0:
+        print(f"Error: codex exec failed (model: {active_model})")
+        if proc.stderr:
+            print(proc.stderr)
+        if proc.stdout:
+            print(proc.stdout)
+        sys.exit(proc.returncode)
+
+    final_messages = []
+    for line in proc.stdout.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if event.get("type") == "item.completed":
+            item = event.get("item", {})
+            if item.get("type") == "agent_message" and item.get("text"):
+                final_messages.append(item["text"])
+
+    if not final_messages:
+        print(f"Error: codex exec produced no final agent message (model: {active_model})")
+        if proc.stdout:
+            print(proc.stdout)
+        sys.exit(1)
+
+    return "\n".join(final_messages)
+
+
+def selected_backend() -> tuple[str, str]:
+    backend = os.getenv("WIKI_LLM_BACKEND", "auto").lower()
+    if backend == "codex":
+        return "codex", os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
+    if backend == "litellm":
+        return "litellm", os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
+    if shutil.which("codex") and not any(os.getenv(k) for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY")):
+        return "codex", os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
+    return "litellm", os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
+
+
+def call_llm(prompt: str, max_tokens: int = 8192) -> str:
+    backend, _ = selected_backend()
+    if backend == "codex":
+        return _call_codex(prompt, max_tokens=max_tokens)
+    return _call_litellm(prompt, max_tokens=max_tokens)
 
 
 def write_file(path: Path, content: str):
@@ -217,7 +331,8 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 }}
 """
 
-    print(f"  calling API (model: ...)")
+    backend_name, backend_model = selected_backend()
+    print(f"  calling backend: {backend_name} (model: {backend_model})")
     raw = call_llm(prompt, max_tokens=8192)
     try:
         data = parse_json_from_response(raw)
