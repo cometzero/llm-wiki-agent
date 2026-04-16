@@ -27,9 +27,11 @@ from datetime import date
 
 import os
 
+REPO_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+
 from tools.llm_backend import call_llm, selected_backend
 
-REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
 GRAPH_DIR = REPO_ROOT / "graph"
 GRAPH_JSON = GRAPH_DIR / "graph.json"
