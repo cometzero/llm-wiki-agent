@@ -174,7 +174,8 @@ Track a company, market, or technology over time.
 
 /wiki-query "How do OpenAI and Anthropic differ on safety approach?"
 /wiki-query "Which companies announced multimodal models in the last 6 months?"
-/wiki-query "Competitive landscape summary as of today" --save
+/wiki-query "Competitive landscape summary as of today"
+# → agent shows the answer, then asks if you want to save it as a synthesis page
 ```
 
 ## The Graph
@@ -227,7 +228,7 @@ If you want to keep the LLM Wiki Agent repository separate from your main person
 
 ## Tips
 
-- File good query answers back with `--save` — your explorations compound just like ingested sources
+- Query answers are shown first — the agent then asks if you want to file them as synthesis pages. Your explorations compound just like ingested sources
 - The wiki is a git repo — version history for free
 - Standalone Python scripts in `tools/` work without a coding agent (require `ANTHROPIC_API_KEY`)
 
