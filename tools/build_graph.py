@@ -27,6 +27,10 @@ from pathlib import Path
 from datetime import date
 
 import os
+import sys
+
+REPO_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
 from tools.llm_backend import call_llm, selected_backend
 
