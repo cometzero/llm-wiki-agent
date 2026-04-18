@@ -12,3 +12,7 @@ Format: `## [YYYY-MM-DD] <operation> | <title>`
 Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 
 ---
+
+## [2026-04-18] graph | Knowledge graph rebuilt
+
+221 nodes, 1880 edges (1117 extracted, 763 inferred).
