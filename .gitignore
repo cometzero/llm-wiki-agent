@@ -1,5 +1,9 @@
+.makemd/
 .omx/
+.space/
+.trash/
 .venv/
+.obsidian/
 __pycache__/
 *.py[cod]
 tools/__pycache__/
