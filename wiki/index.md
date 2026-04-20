@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [Vibe coding in prod](sources/vibe-coding-in-prod.md) — [[VibeCoding]]을 프로덕션에서 적용하기 위해 [[ClaudeCode]]를 [[AI의PM]] 관점으로 운용하고, [[LeafNode]] 중심 변경·명확한 검증 게이트로 신뢰를 확보하는 운영 방식으로 정리한다.
 - [Vibe coding in prod](sources/vibe-coding-in-prod.md) — [[VibeCoding]]을 프로덕션에서 책임있게 적용하기 위한 방법으로 AI의 PM 역할, 리프 노드 우선 전략, 그리고 테스트 중심의 검증 가능성 설계를 제시한다.
 - [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — 한국 주택 세제와 증여 추정 이슈를 실무적으로 설명하는 세무 상담형 자료다. 1주택 비과세 요건, 세대 분리, 차용증 활용, 가족 간 계좌 이체 증빙, 공동명의 전략 등 자금 출처 조사와 양도세 리스크를 줄이는 포인트를 폭넓게 다룬다.
 - [2028 High School Choice and Admissions Strategy](sources/2028-high-school-choice-and-admissions-strategy.md) — This source argues that changes to the 2028 Korean admissions landscape make high school choice more consequential, especially because grades and school records

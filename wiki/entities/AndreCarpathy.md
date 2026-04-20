@@ -1,18 +1,22 @@
 ---
-title: "AndreCarpathy"
+title: "Andre Carpathy"
 type: entity
-tags: [llm, vibe-coding]
+tags: [person, ai, productivity]
 sources: [vibe-coding-in-prod]
-last_updated: 2026-04-19
+last_updated: 2026-04-20
 ---
 
 ## Summary
-Andre Carpathy는 AI 개발 문화에서 [[VibeCoding]]의 핵심 문구를 제공한 인물로 등장한다. 이 문서에서는 AI가 빠르게 발전할수록 개발자는 생성된 코드 자체를 모두 읽는 방식이 아니라, **제품 결과와 시스템 신뢰성으로 판단하는 방식**으로 전환해야 한다는 관점을 제시한 발언자로 다룬다.
+[[Andre Carpathy]]는 [[VibeCoding]]의 정의와 정서를 설명한 주요 인물로, 개발자가 구현 디테일의 전면적 이해보다 제품 전반의 몰입과 실행 품질에 집중해야 한다는 관점을 제시한다.
 
-## Key Focus
-- [[VibeCoding]]의 정의를 제시하는 관점에 반복적으로 인용됨.
-- 코드 중심 사고에서 제품 중심 사고로의 전환을 촉진하는 철학적 출발점으로 사용됨.
+## Key Roles
+- AI 기반 개발에서 실무적 사고 전환의 출발점 제시자
+- "분위기에 몰입하고 급격한 발전을 받아들인다"는 문맥에서 [[ClaudeCode]] 기반 협업 철학의 개념적 뿌리로 제시됨
 
 ## Connections
-- [[VibeCoding]] — 이 용어의 개념적 근원으로서의 인용 대상.
-- [[Anthropic]] — Claude 생태계 문맥에서 간접적으로 연결되는 인물/사고 프레임.
+- [[VibeCoding]] — [[Vibe coding in prod]]에서 핵심 정의적 출처 중 하나로 인용됨.
+- [[Anthropic]] — 소스에서 간접적으로 언급되는 AI 에이전트 생산성 지형의 중심 기업.
+- [[ClaudeCode]] — 본 논의의 실무 실험 플랫폼.
+
+## Notes
+- 본 위키는 해당 소스를 통해 [[AndreCarpathy]]를 핵심 개념 정립 인물로 반영한다.
