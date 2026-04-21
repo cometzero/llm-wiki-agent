@@ -1,18 +1,14 @@
 ---
 title: "OpenAI"
 type: entity
-tags: ["company", "ai"]
-sources: ["claude-code-is-the-inflection-point-ko", "2028-global-intelligence-crisis-ko"]
-last_updated: 2026-04-16
+tags: [ai-company, foundation-models, infrastructure-demand]
+sources: [the-great-gpu-shortage-rental-capacity-launching-our-h100-1-year-rental-price-index]
+last_updated: 2026-04-20
 ---
 
 ## Summary
-Anthropic과의 경쟁 및 범용 AI 확산의 기준점으로 간접 등장하는 AI 기업.
+OpenAI is referenced as one of the capex-intensive model vendors contributing to broad AI compute demand in this source.
 
-## Related Concepts and Entities
-- [[Anthropic]]
-- [[AIAutomation]]
-
-## Related Sources
-- [[claude-code-is-the-inflection-point-ko]]
-- [[2028-global-intelligence-crisis-ko]]
+## Connections
+- [[NVIDIA]] — AI 모델 및 추론 수요와 컴퓨팅 수요의 공급 긴축 연결점.
+- [[GPURentalMarket]] — OpenAI 자본 및 모델 확장이 GPU 수요 긴축에 반영되는 실무적 요인.
