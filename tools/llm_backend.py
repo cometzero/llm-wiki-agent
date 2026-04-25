@@ -56,9 +56,11 @@ def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = 
     top_p = float(os.getenv("NVIDIA_TOP_P", "0.95"))
     reasoning_effort = os.getenv("NVIDIA_REASONING_EFFORT", "high")
     thinking = os.getenv("NVIDIA_THINKING", "true").lower() not in {"0", "false", "no"}
+    use_stream = os.getenv("NVIDIA_STREAM", "true").lower() not in {"0", "false", "no"}
+    request_timeout = float(os.getenv("NVIDIA_REQUEST_TIMEOUT", "300"))
 
-    client = OpenAI(base_url=normalized_nvidia_base_url(), api_key=api_key)
-    stream = client.chat.completions.create(
+    client = OpenAI(base_url=normalized_nvidia_base_url(), api_key=api_key, timeout=request_timeout)
+    request_kwargs = dict(
         model=model,
         messages=[
             {
@@ -75,18 +77,21 @@ def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = 
         top_p=top_p,
         max_tokens=max_tokens,
         extra_body={"chat_template_kwargs": {"thinking": thinking, "reasoning_effort": reasoning_effort}},
-        stream=True,
     )
 
-    content_parts: list[str] = []
-    for chunk in stream:
-        if not getattr(chunk, "choices", None):
-            continue
-        delta = chunk.choices[0].delta
-        if getattr(delta, "content", None) is not None:
-            content_parts.append(delta.content)
-
-    text = "".join(content_parts).strip()
+    if use_stream:
+        stream = client.chat.completions.create(stream=True, **request_kwargs)
+        content_parts: list[str] = []
+        for chunk in stream:
+            if not getattr(chunk, "choices", None):
+                continue
+            delta = chunk.choices[0].delta
+            if getattr(delta, "content", None) is not None:
+                content_parts.append(delta.content)
+        text = "".join(content_parts).strip()
+    else:
+        response = client.chat.completions.create(stream=False, **request_kwargs)
+        text = (response.choices[0].message.content or "").strip()
     if not text:
         print(f"Error: NVIDIA completion produced no content (model: {model})")
         sys.exit(1)
