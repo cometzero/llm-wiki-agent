@@ -1,3 +1,15 @@
+## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source: AI/ML 30일 학습 Day 01 — 수按月기초 복습. Key claims: (1) [[VectorSpace]]에서 좌표는 [[Basis]]-dependent하며 벡터 자체는 불변이다. (2) [[Matrix]]는 [[LinearMap]]의 계산 표현이며 [[Rank]]는 보존되는 독립 정보 차원 수다. (3) [[DotProduct]]는 방향+크기 결합 측정으로 [[Attention]] scoring에, [[CosineSimilarity]]는 방향만 측정해 [[Embedding]] retrieval에 쓰인다. (4) [[Norm]]은 [[Gradient]] clipping과 regularization의 기초다. Created/updated concept pages: [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]]. Updated overview with AI/ML Mathematical Foundations section.
+
+## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source. Key claims: [[VectorSpace]] defines the abstract space for vector representations; coordinates are [[Basis]]-dependent, not intrinsic to the vector. [[Matrix]] is the computational form of a [[LinearMap]], and [[Rank]] measures preserved information dimensionality. [[DotProduct]], [[Norm]], and [[CosineSimilarity]] quantify vector relationships—used respectively in [[Attention]] scoring, [[Regularization]]/[[GradientNormClipping]], and [[Embedding]] retrieval. Created concept pages: VectorSpace, Basis, LinearMap, Rank, DotProduct, Norm, CosineSimilarity, LoRA, LowRankApproximation, GradientNormClipping. No contradictions with existing wiki content.
+
+## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source. Key claims: 벡터공간은 표현의 대상, 행렬은 선형변환, dot product·norm·거리는 표현 간 관계를 수치화. [[VectorSpace]], [[LinearMap]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] 개념 페이지 생성.
+
 ## [2026-04-25] ingest | 2026-04-25 AI/ML Learning Day 03
 
 Added source. Key claims: ML as [[FunctionApproximation]], [[HypothesisSpace]]/[[LossFunction]] as model selection axes, and high-dimensional sparsity as the main driver for [[RepresentationLearning]], [[Regularization]], and [[DimensionalityReduction]].
@@ -185,3 +197,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-25] graph | Knowledge graph rebuilt
 
 432 nodes, 1931 edges (1931 extracted, 0 inferred).
+
+## [2026-04-25] graph | Knowledge graph rebuilt
+
+458 nodes, 2122 edges (2122 extracted, 0 inferred).

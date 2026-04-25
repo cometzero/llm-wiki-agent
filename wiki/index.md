@@ -6,13 +6,9 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]·[[Basis]]·[[LinearMap]]·[[Rank]]·[[DotProduct]]·[[Norm]]·[[CosineSimilarity]] 기반으로 [[LLM]]의 [[Embedding]]·[[Attention]]·[[Gradient]] 연산을 수학적으로 정리한 AI/ML 30일 학습 Day 01 복습 기록
 - [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]]·[[HypothesisSpace]]·[[LossFunction]]·[[FeatureMatrix]]·[[CurseOfDimensionality]]로 ML을 함수 근사와 고차원 표현 문제로 정리한 학습 기록
 - [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]] 기반으로 [[PMF]]·[[PDF]]·[[CDF]]와 기대값 계열 통계량, 그리고 [[BayesTheorem]]의 [[Prior]], [[Likelihood]], [[Posterior]] 구조를 정리한 AI/ML 기초 복습
-- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]와 [[Basis]] 기반 좌표 해석을 통해 [[Matrix]]를 [[LinearMap]]로 이해하고, [[DotProduct]]·[[Norm]]·[[CosineSimilarity]]가 [[LLM]]의 [[Embedding]]·[[Attention]] 연산과 어떻게 연결되는지 정리한 AI/ML 기초 복습 자료
-- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]]를 통해 ML을 함수 학습과 고차원 표현 문제로 정리한 기초 학습 기록
-- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]]를 통해 ML을 함수 학습과 고차원 표현 문제로 정리한 기초 학습 기록
-- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]], [[PMF]]·[[PDF]]·[[CDF]], 그리고 [[BayesTheorem]]의 기초를 정리한 ML 수학 복습 기록
-- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]], [[LinearMap]], [[DotProduct]], [[Norm]]으로 [[LLM]]의 [[Embedding]]·[[Attention]] 기본 연산을 다시 정리한 AI/ML 기초 복습 기록
 - [\"인간지능 시대는 끝났다\" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호의원에게-내린-숙제-차지호-의원-1부.md) — [[UN]]의 AI 기능 이전을 매개로 [[HumanIntelligenceSystem]], [[Polycrisis]], [[ConnectedIntelligence]], [[UniversalBasicIncome]]가 충돌하는 AI 사회전환 설계 프레임을 제시한다.
 - [Understanding the RISC-V Extensions for AI - John Simpson, SiFive](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]] AI 가속을 위해 [[VectorBatchProduct]], [[IntegratedMatrixExtensions]], [[VectorMatrixExtensions]], [[AttachedMatrixExtensions]]를 워크로드 단계별로 선택하는 방식과 [[LLM]]의 prefill/decode 특성 반영 기준을 정리한다.
 - [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — [[Terafab]]는 [[Tesla]], [[SpaceX]], [[xAI]] 협업으로 연간 [[Terawatt]]급 AI 컴퓨팅을 확보해 우주 기반 확장과 [[ElectromagneticMassDriver]] 기반 [[PetawattComputing]]까지 연결하려는 장기 로드맵을 제시한다.
@@ -20,29 +16,19 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [GTC 2026 – The Inference Kingdom Expands](sources/gtc-2026-the-inference-kingdom-expands.md) — [[NVIDIA]]가 [[Groq]]의 LPU 자산을 통합해 [[GPU]]-[[LPU]] 이원 구조, [[AFD]], [[CPO]] 로드맵, 그리고 [[CMX]]/[[STX]] 기반 컨텍스트·스토리지 확장 전략까지 추론 인프라 전 영역을 재편했다.
 - [EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test](sources/eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-time-test.md) — [[EAGLE3]]가 [[TrainingTimeTest]]와 [[MultiLayerFeatureFusion]]을 통해 데이터 증가 시 추론 가속이 개선되는 스케일링 법칙을 제시하고, [[HumanEval]], [[MT-bench]], [[GSM8K]]에서 최대 6.47x 가속을 보고한다.
 - [Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI](sources/andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai.md) — [[AndrejKarpathy]]의 관점에서 [[LLMAgents]]의 생산성 체계, [[AutoResearch]] 자율연구 루프, [[OpenClaw]] 기반 지속형 에이전트, 그리고 [[Speciation]] 및 [[오픈소스 AI]]의 필요성이 정리된 자료이다.
-- [Understanding the RISC-V Extensions for AI](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]]가 AI 행렬 가속을 위해 [[RiscVVector]], [[RiscVExtensionsForAI]], [[VectorBatchProduct]], [[IntegratedMatrixExtensions]], [[VectorMatrixExtensions]], [[AttachedMatrixExtensions]]로 분기되는 선택지를 제시해 엣지와 데이터센터 각각의 워크로드 특성에 맞는 ISA 전략을 제안한다.
-- [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — [[Tesla]], [[SpaceX]], [[xAI]] 협력으로 지상-우주 통합 [[Terawatt]] AI 컴퓨팅 인프라를 구축해 인류 문명 확장과 [[SpaceBasedAI]] 스케일업 경로를 제시한 발표 정리
-- [Project Glasswing: Securing critical software for the AI era — Anthropic](sources/project-glasswing-securing-critical-software-for-the-ai-era-anthropic.md) — [[Anthropic]]가 [[ClaudeMythosPreview]] 기반 [[AIForCybersecurity]]로 [[ProjectGlasswing]]를 통해 핵심 소프트웨어의 [[ZeroDayVulnerability]] 탐지·공유·패치 체인을 가속화해 방어 협업을 제도화하려는 이니셔티브를 정리한다.
-- [GTC 2026 – The Inference Kingdom Expands](sources/gtc-2026-the-inference-kingdom-expands.md) — [[NVIDIA]]의 [[Groq]] [[LPU]] 흡수와 [[GPU]]-[[LPU]] 협업형 추론 아키텍처([[AFD]], [[Speculative Decoding]], [[CPO]], [[CMX]]) 전환을 통해 지연/대역폭/컨텍스트 메모리 병목을 동시에 다루는 전략을 정리한다.
-- [EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test](sources/eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-time-test.md) — [[EAGLE3]]가 [[TrainingTimeTest]]와 [[MultiLayerFeatureFusion]]을 통해 훈련량 증가에 비례하는 추론 가속 스케일링을 보이며, [[Vicuna 13B]]/[[LLaMA-3.1 8B]]/[[LLaMA-3.3 70B]] 벤치마크에서 최대 6.47x까지 속도 향상을 제시한 기술이다.
-- [Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI](sources/andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai.md) — [[AndrejKarpathy]]가 [[AutoResearch]]와 [[ModelSpeciation]]을 통해 [[LLMAgents]]의 자율성, 조직 최적화, [[agent-first software]] 전환을 설명한다.
 - [메모리 현물가 하락, 사이클 꺾인 게 아닌 '과열 해소' | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/메모리-현물가-하락-사이클-꺾인-게-아닌-과열-해소-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — [[DRAM]] 현물가 하락을 과열 해소로 보고, [[LongTermAgreement]]의 최저가격 보장·[[TurboQuant]] 효과·[[ASMR]]/온디바이스 확장 시나리오를 통해 단기 조정과 장기 수요 성장을 함께 설명한다.
 - [Dissecting Nvidia Blackwell - Tensor Cores, PTX Instructions, SASS, Floorsweep, Yield](sources/dissecting-nvidia-blackwell-tensor-cores-ptx-instructions-sass-floorsweep-yield.md) — 본문이 비어 있어 제목 기반 키워드([[NVIDIA]], [[Blackwell]], [[Tensor Cores]], [[PTX]], [[SASS]], [[Floorsweep]], [[ChipYield]])만 확인된 미포맷 소스입니다.
-- [Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI](sources/andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai.md) — [[AndrejKarpathy]]의 관점에서 [[CodeAgent]], [[AutoResearch]], [[OpenClaw]], [[ModelSpeciation]], [[agent-first software]]까지 포괄하는 AI 자율화·연구 자동화·소프트웨어 경험 재설계 흐름을 정리한다.
 - [The Great GPU Shortage – Rental Capacity – Launching our H100 1 Year Rental Price Index](sources/the-great-gpu-shortage-rental-capacity-launching-our-h100-1-year-rental-price-index.md) — [[SemiAnalysis]]가 발표한 [[H100]] 1년 렌탈 가격 지수 기준으로 AI 컴퓨팅 수요 급증, 메모리 가격 압력, 장기 오프테이크 구조가 가격 상승을 지속시키는 이유를 정리한다.
 - [환율 1500원 시대 시작되나? 전쟁 끝나도 못 내려오는 이유 | 변정규 다이와증권코리아 본부장 [신과대화]](sources/환율-1500원-시대-시작되나-전쟁-끝나도-못-내려오는-이유-변정규-다이와증권코리아-본부장-신과대화.md) — [[전쟁 이후]]에도 [[한미금리차]]와 달러 강세가 유지되면 [[환율]]이 1,500원대에서 고착될 수 있다는 통화정책·자본흐름·유동성 통합 분석.
 - [트렌드포스 "SK하이닉스 때문에 엔비디아 루빈 생산량이 대폭하향 되었다](sources/트렌드포스-sk하이닉스-때문에-엔비디아-루빈-생산량이-대폭하향-되었다.md) — [[NVIDIA]]의 [[CPX]]/[[LPX]] 워크로드 분리 전략이 [[VeraRubinPlatform]] 루빈 다이 수요를 줄여 [[HBM]] 수급 해석이 바뀐다는 분석을 정리한다.
 - [제2의 테슬라? 3천조 괴물 상륙! 스페이스X 상장, 약일까 독일까? | 정의훈 유진투자증권 연구원](sources/제2의-테슬라-3천조-괴물-상륙-스페이스x-상장-약일까-독일까-정의훈-유진투자증권-연구원-여의도-인사이트.md) — [[SpaceX]] 상장 시점·밸류에이션 논점과 [[우주산업]] 밸류체인 확장, [[스페이스X]] 모멘텀 효과를 정리한다.
 - [인간의 가치는 오직 의지만 남을 겁니다 - 노정석 대표(비팩토리)](sources/인간의-가치는-오직-의지만-남을-겁니다-노정석-대표-비팩토리.md) — [[비팩토리]]의 AI 에이전트 운영 경험을 통해 [[노력과 의지]] 중심의 AI 시대 생산성 재편, 노동 양극화, 에이전트형 비즈니스 모델 전환을 정리한다.
 - ["인간지능 시대는 끝났다" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호-의원에게-내린-숙제-차지호-의원-1부.md) — [[차지호]]의 AI 거버넌스·연결지능·다중위기 대응 프레임을 중심으로 한국의 [[UN]] 공동 AI 허브 전략과 노동·국제질서 재편 전망을 정리한다.
-- [Understanding the RISC-V Extensions for AI](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]]의 AI 가속화를 위해 [[RiscVExtensionsForAI]]가 엣지용 경량 제안과 데이터센터형 고성능 제안으로 나뉘어, 모델 워크로드 특성에 따라 선택해야 한다는 구조를 정리한다.
-- [Project Glasswing: Securing critical software for the AI era — Anthropic](sources/project-glasswing-securing-critical-software-for-the-ai-era-anthropic.md) — [[Anthropic]]가 [[ClaudeMythosPreview]] 기반으로 [[ProjectGlasswing]]을 통해 핵심 소프트웨어의 [[ZeroDayVulnerability]]를 대규모로 탐지·공유·패치하려는 AI 보안 협력 이니셔티브를 발표했다.
 - [반도체 업황 살아났나? 밸류 재평가의 진짜 조건ㅣ김장열 유니스토리자산운용 본부장](sources/반도체-업황-살아났나-밸류-재평가의-진짜-조건-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — 빅테크 CAPEX 신호와 AI 가격 정책을 중심으로 HBM/메모리 밸류 재평가 조건을 제시하고, SK하이닉스·삼성전기·심텍·TLB의 구조적 수혜를 설명한 투자 인사이트다.
 - [HBM 다음은 HBF, 엔비디아·MS를 영원히 가두는 삼성·하이닉스의 30년 가두리 전략](sources/hbm-다음은-hbf-엔비디아-ms를-영원히-가두는-삼성-하이닉스의-30년-가두리-전략-김정호-카이스트-전기-및-전자공학과-교수-2-투자insight.md) — [[HBM]]과 [[HBF]]로 AI 시대 메모리 지배·가격·공급 전략이 어떻게 재편될 수 있는지를 정리한 투자 인사이트 분석이다.
 - [ONNX와 ONNX Runtime](sources/san19-211.md) — [[ONNX]]의 표준 형식 성격과 [[ONNXRuntime]]의 그래프 최적화·파티셔닝·실행 공급자 기반 실행 구조를 정리하고, [[Microsoft]] 운영 사례와 모델 획득 채널을 함께 제시한다.
 - [ONNX-MLIR 기반 추론 컴파일 파이프라인](sources/le-onnx-pdf.md) — [[ONNX-MLIR]]이 [[ONNX]]→[[MLIR]]→[[LLVM]] 파이프라인으로 추론 산출물을 생성하고, [[IBM]] [[zAIU]]/[[Telum]] 지원 및 버퍼·상수 최적화로 성능을 높이는 과정을 설명한다.
 - [Vibe coding in prod](sources/vibe-coding-in-prod.md) — [[VibeCoding]]을 프로덕션에서 적용하기 위해 [[ClaudeCode]]를 [[AI의PM]] 관점으로 운용하고, [[LeafNode]] 중심 변경·명확한 검증 게이트로 신뢰를 확보하는 운영 방식으로 정리한다.
-- [Vibe coding in prod](sources/vibe-coding-in-prod.md) — [[VibeCoding]]을 프로덕션에서 책임있게 적용하기 위한 방법으로 AI의 PM 역할, 리프 노드 우선 전략, 그리고 테스트 중심의 검증 가능성 설계를 제시한다.
 - [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — 한국 주택 세제와 증여 추정 이슈를 실무적으로 설명하는 세무 상담형 자료다. 1주택 비과세 요건, 세대 분리, 차용증 활용, 가족 간 계좌 이체 증빙, 공동명의 전략 등 자금 출처 조사와 양도세 리스크를 줄이는 포인트를 폭넓게 다룬다.
 - [2028 High School Choice and Admissions Strategy](sources/2028-high-school-choice-and-admissions-strategy.md) — This source argues that changes to the 2028 Korean admissions landscape make high school choice more consequential, especially because grades and school records
 - [2028 글로벌 인텔리전스 위기](sources/2028-global-intelligence-crisis-ko.md) — AI가 너무 풍부해질 때 생길 수 있는 금융 시스템 리스크를 가정한 시나리오 문서다. 인텔리전스의 비용이 급락하면 정보 비대칭이 줄어들고 기존 금융 비즈니스의 마찰이 사라지면서, 초과 경쟁과 급격한 가격 재조정이 시스템 리스크로 전이될 수 있다는 사고 실험을 펼친다.
@@ -202,29 +188,50 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+
 - [Address Space Isolation](concepts/AddressSpaceIsolation.md) — Address space isolation is presented as a way to partition kernel internals into contexts with hardware-backed memory restrictions to reduce self-interference.
 - [AIAutomation](concepts/AIAutomation.md) — AI가 반복적이고 규칙화된 정보 노동을 대체하거나 증강하는 흐름. 코딩, 문서 작업, 테스트, 콘텐츠 분석, 금융 중개 등 여러 영역에 걸쳐 등장한다.
 - [AIInfrastructure](concepts/AIInfrastructure.md) — 가속기, 메모리, 네트워크, 전력, 데이터센터를 포함하는 AI 시스템 공급 기반. 경제성장 서사와 반도체 업황 서사를 연결하는 핵심 층이다.
 - [Android Boot Security](concepts/AndroidBootSecurity.md) — Android boot security covers secure boot-chain modernization, DRTM, and integration of UKIs for stronger measured startup paths.
 - [ASIL B Qualified Linux](concepts/ASILBQualifiedLinux.md) — ASIL B qualified Linux refers to the effort to build evidence, process, and architecture sufficient to use Linux in automotive safety contexts.
+- [Attention](concepts/Attention.md) — query·key 관련도를 계산해 value를 가중합하는 transformer 핵심 메커니즘.
 - [Bare-Metal Extraction](concepts/BareMetalExtraction.md) — Bare-metal extraction refers to separating reusable low-level code from Zephyr so it can be used in other RTOS or firmware contexts.
 - [Cache-Aware Scheduling](concepts/CacheAwareScheduling.md) — Cache-aware scheduling aims to improve placement decisions by considering cache locality and shared-resource contention.
+- [Calibration](concepts/Calibration.md) — 모델이 출력한 확률이 실제 빈도와 얼마나 잘 맞는지 평가하는 개념.
 - [Camera Sensor Integration](concepts/CameraSensorIntegration.md) — Camera sensor integration covers the Linux media and device-model work needed to bring sensors up cleanly in real systems.
+- [Classification](concepts/Classification.md) — 입력을 미리 정의된 범주 중 하나로 예측하는 지도학습 문제.
 - [College Admissions 2028](concepts/CollegeAdmissions2028.md) — [[CollegeAdmissions2028]] refers to the expected Korean admissions environment around the 2028 intake, especially the growing weight of internal grades, school 
+- [ConditionalProbability](concepts/ConditionalProbability.md) — 새로운 정보가 주어졌을 때 사건 확률이 어떻게 바뀌는지 표현하는 확률 개념.
 - [ContextRot](concepts/ContextRot.md) — 입력 토큰 수가 증가함에 따라 모델 성능이 비선형적으로 저하되는 현상. 긴 컨텍스트 마케팅 수치와 실제 업무 성능 사이의 간극을 설명한다.
+- [Continuous](concepts/Continuous.md) — 연속 구간의 값을 취하는 확률변수/분포의 성질로 PDF와 연결된다.
+- [Coordinate](concepts/Coordinate.md) — 선택한 basis에 대해 벡터를 수치로 표현한 값으로, basis가 바뀌면 함께 바뀐다.
+- [Correlation](concepts/Correlation.md) — 두 변수의 관계 강도와 방향을 정규화된 척도로 나타낸 값.
+- [Covariance](concepts/Covariance.md) — 두 변수가 함께 변하는 방향과 크기를 나타내는 통계량.
 - [CPU Isolation](concepts/CPUIsolation.md) — CPU isolation refers to the techniques used to shield execution from interference, especially interrupts and scheduler activity on latency-sensitive cores.
 - [CSAT](concepts/CSAT.md) — [[CSAT]] is the standardized-test pathway discussed in contrast with school-record-driven admissions. In the source it remains important, but the author argues 
 - [Deadline Scheduler Verification](concepts/DeadlineSchedulerVerification.md) — Deadline scheduler verification combines runtime verification ideas with scheduling analysis to validate subsystem behavior while systems run.
+- [DenseLayer](concepts/DenseLayer.md) — 행렬과 bias를 적용해 표현을 변환하는 기본 신경망 층.
 - [Deterministic Execution](concepts/DeterministicExecution.md) — Deterministic execution recurs in both safety and inference contexts, where predictability matters for validation, latency control, and interference reduction.
 - [Devicetree and Fwnodes](concepts/DevicetreeAndFwnodes.md) — Devicetree, fwnodes, swnodes, devlinks, and properties are discussed as the Linux device-model vocabulary needed to describe hardware and software device relati
+- [DimensionalityReduction](concepts/DimensionalityReduction.md) — 고차원 feature를 더 낮은 차원으로 줄여 계산·일반화 안정성을 높이는 기법군.
 - [DisaggregatedPrefill](concepts/DisaggregatedPrefill.md) — prefill과 decode 단계를 분리해 다른 자원 풀에서 처리하는 추론 아키텍처. 인터랙티브 서비스의 효율을 높이는 전략으로 강조된다.
+- [Discrete](concepts/Discrete.md) — 셀 수 있는 개별 상태를 취하는 확률변수/분포의 성질로 PMF와 연결된다.
 - [Dynamic Root of Trust for Measurement](concepts/DRTM.md) — DRTM appears as a measured-boot building block for stronger system attestation and trusted boot flows.
 - [EconomicGrowth](concepts/EconomicGrowth.md) — AI, 로봇, 지정학, 금융 구조 변화가 생산성과 GDP, 산업 배분을 어떻게 바꾸는지를 포괄하는 상위 개념. 낙관적 성장 서사와 시스템 리스크 서사가 동시에 존재한다.
+- [Embedding](concepts/Embedding.md) — 토큰·문서·개체를 연속 벡터로 매핑한 표현으로, 유사도 계산과 검색의 기본 단위.
 - [EmbodiedReasoning](concepts/EmbodiedReasoning.md) — 실세계 환경과 신체적 제약을 고려해 다음 행동을 추론하는 능력. Cosmos-Reason1 문서에서 핵심 역량으로 분리된다.
 - [EROFS](concepts/EROFS.md) — EROFS is covered as a read-only filesystem with practical benefits for container images and efficient software distribution.
+- [Expectation](concepts/Expectation.md) — 확률변수의 평균적 중심을 나타내는 대표 요약 통계량.
+- [FeatureAnalysis](concepts/FeatureAnalysis.md) — 각 feature가 데이터 구조와 예측에 어떤 역할을 하는지 해석하는 작업.
 - [Functional Safety](concepts/FunctionalSafety.md) — Functional safety is a dominant theme across the corpus, covering certification, fault containment, monitoring, and architectural patterns for Linux-based syste
+- [GaussianModeling](concepts/GaussianModeling.md) — 데이터를 정규분포 또는 그 확장으로 근사하는 모델링 관점.
+- [GenerativeModeling](concepts/GenerativeModeling.md) — 데이터 생성 분포 자체를 학습하는 접근.
+- [Gradient](concepts/Gradient.md) — 손실이 각 파라미터 방향으로 얼마나 변하는지 나타내는 벡터로, 최적화 업데이트의 핵심 신호.
+- [GradientNormClipping](concepts/GradientNormClipping.md) — gradient norm을 임계값 이하로 제한해 학습 폭주를 막는 안정화 기법.
 - [Heterogeneous Inference](concepts/HeterogeneousInference.md) — Heterogeneous inference refers to splitting model execution across specialized hardware paths to balance throughput and low-latency responsiveness.
+- [HiddenState](concepts/HiddenState.md) — 모델이 입력을 처리하며 유지하는 중간 표현 벡터.
 - [High School Choice](concepts/HighSchoolChoice.md) — [[HighSchoolChoice]] is the strategic decision of selecting a high school based on the admissions system a student expects to face. The current source argues th
+- [HighDimensionalSpace](concepts/HighDimensionalSpace.md) — 차원이 매우 큰 표현 공간으로, sparsity와 distance concentration 문제가 두드러진다.
 - [HKML](concepts/HKML.md) — HKML is a lightweight mailing-list workflow tool for Linux kernel development.
 - [Holistic Admissions](concepts/HolisticAdmissions.md) — [[HolisticAdmissions]] refers to student selection based on more than test scores alone, especially through grades, school records, activities, and contextual e
 - [HousingTaxPlanning](concepts/HousingTaxPlanning.md) — 주택 취득, 보유, 양도 과정에서 세무 리스크를 줄이기 위한 실무적 절차와 증빙 관리 개념.
@@ -236,35 +243,56 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [KernelSBOM](concepts/KernelSBOM.md) — KernelSBOM is the effort to reconstruct trusted SPDX software bills of materials from Linux kernel builds.
 - [KUnit](concepts/KUnit.md) — KUnit is the Linux kernel unit testing framework, discussed here mainly through its present insufficiencies and coverage limitations.
 - [KVCache](concepts/KVCache.md) — 생성 중 반복되는 attention key/value 계산을 저장해 추론 속도를 높이는 캐싱 메커니즘. 응답 지연을 줄이는 대신 메모리 사용량이 늘어난다.
+- [L1Norm](concepts/L1Norm.md) — 절댓값 합으로 정의되는 norm으로 sparsity와 feature selection 논의에 자주 연결된다.
+- [L2Norm](concepts/L2Norm.md) — 제곱합의 제곱근으로 정의되는 norm으로 거리와 gradient 안정화에 자주 쓰인다.
+- [LLM](concepts/LLM.md) — 대규모 텍스트 코퍼스로 학습되는 언어 모델 계열로, embedding·attention·gradient 연산 위에 구축된다.
 - [LLMAgents](concepts/LLMAgents.md) — 단순 질의응답이 아니라 계획 수립, 도구 사용, 문맥 유지, 다단계 실행을 수행하는 LLM 기반 소프트웨어 패턴. 제조 현장, 코딩, 서비스 비서, 연구 자동화까지 다양한 적용 사례가 등장한다.
 - [Loco-Manipulation](concepts/LocoManipulation.md) — [[LocoManipulation]] is the robotics problem of moving through the world while manipulating objects at the same time. The Helix 02 source presents it as one of 
 - [LongContext](concepts/LongContext.md) — 긴 입력 문서를 읽고 활용하는 모델 역량. 마케팅 수치는 커졌지만 실제 성능은 [[ContextRot]]과 서빙 비용 문제에 제약받는다.
+- [LoRA](concepts/LoRA.md) — low-rank update를 이용해 대형 모델을 파라미터 효율적으로 미세조정하는 방법.
+- [LowRankApproximation](concepts/LowRankApproximation.md) — 고차원 행렬을 더 낮은 rank 행렬로 근사해 핵심 구조만 남기는 기법.
 - [Machine Learning in Kernel](concepts/MachineLearningInKernel.md) — Machine learning in kernel refers to exploratory work on placing ML-assisted capabilities inside or adjacent to kernel subsystems.
+- [MachineLearning](concepts/MachineLearning.md) — 데이터를 바탕으로 입력에서 출력으로 가는 함수를 학습하는 상위 개념.
 - [Mainline Upstreaming](concepts/MainlineUpstreaming.md) — Mainline upstreaming is discussed as the process of converting board-support and vendor-kernel work into maintainable upstream Linux code.
+- [Matrix](concepts/Matrix.md) — 선형변환을 계산 가능한 형태로 표현한 배열로, projection과 dense layer의 수학 기반이다.
 - [MCP](concepts/MCP.md) — Model Context Protocol. 에이전트가 외부 시스템과 도구에 연결되도록 하는 인터페이스 계층으로 설명된다.
 - [MemorySupercycle](concepts/MemorySupercycle.md) — AI 수요, DRAM 스케일링 둔화, 공급 제약이 결합해 메모리 업황이 장기 호황으로 전환될 수 있다는 프레임.
 - [Mixed Criticality](concepts/MixedCriticality.md) — Mixed criticality captures architectures that place safety-relevant and quality-managed functions on shared hardware while trying to preserve freedom from inter
 - [MonetaryPolicy](concepts/MonetaryPolicy.md) — 금리, 유동성, 대차대조표, 정책 커뮤니케이션을 포함한 중앙은행 정책 논쟁. 케빈 워시 관련 문서군의 공통 개념이다.
 - [Multikernel Architecture](concepts/MultikernelArchitecture.md) — Multikernel architecture is presented as a way to isolate kernel components and manage resources through kernel-to-kernel partitioning.
 - [Neural Processing Unit Subsystem](concepts/NPU.md) — The NPU subsystem topic covers how Linux should expose accelerators for edge vision and LLM workloads.
+- [Optimization](concepts/Optimization.md) — loss function을 줄이도록 파라미터를 갱신하는 학습 절차.
+- [PCA](concepts/PCA.md) — 분산이 큰 축을 찾아 데이터를 더 낮은 차원으로 투영하는 대표적 dimensionality reduction 기법.
 - [Physical Intelligence](concepts/PhysicalIntelligence.md) — [[PhysicalIntelligence]] is the idea that the next major frontier for AI/software is embodied competence in the physical world rather than purely digital applic
 - [PhysicalAI](concepts/PhysicalAI.md) — 물리 세계를 이해하고 행동까지 연결하는 AI 패러다임. 로봇, 비전, 시뮬레이션, 물리 상식, embodied reasoning이 결합된다.
 - [PreciousMetalsMarket](concepts/PreciousMetalsMarket.md) — 은과 금 같은 귀금속의 가격 형성 구조를 다루는 개념. 실물 수급뿐 아니라 선물 포지션과 정책 기대가 크게 작용한다.
 - [PREEMPT_RT](concepts/PREEMPTRT.md) — PREEMPT_RT is the real-time Linux effort discussed in the corpus through upstream progress and latency-oriented kernel changes.
+- [Probability](concepts/Probability.md) — 불확실한 사건의 가능성을 수치로 표현하는 체계로, random variable과 distribution의 기반이다.
+- [Projection](concepts/Projection.md) — 벡터를 특정 부분공간이나 다른 표현 공간으로 사상하는 연산.
 - [RAG](concepts/RAG.md) — 검색 증강 생성. 최신 정보와 사내 도메인 지식을 LLM 응답에 연결하기 위한 대표 구조로 제조업 적용 문서에서 핵심 대안으로 제시된다.
+- [Regularization](concepts/Regularization.md) — 과적합을 억제하고 일반화를 높이기 위한 제약 또는 보조 장치.
+- [RepresentationLearning](concepts/RepresentationLearning.md) — 원시 데이터를 더 유용한 feature space로 바꾸는 학습 관점.
+- [Sampling](concepts/Sampling.md) — 분포에서 표본을 추출하거나 데이터 일부를 선택해 분석하는 절차.
 - [Sched_ext](concepts/SchedExt.md) — Sched_ext is treated as an extensible scheduling framework that lets user-defined policies improve responsiveness for specific workloads such as gaming.
 - [Service-Oriented Vehicle Diagnostics](concepts/SOVD.md) — SOVD is discussed as a next-generation diagnostics interface for software-defined vehicle workflows.
 - [Skills](concepts/Skills.md) — 에이전트가 도구를 팀의 표준 절차에 맞게 사용하도록 만드는 재사용 가능한 업무 지식 계층.
 - [Software Defined Vehicle](concepts/SoftwareDefinedVehicle.md) — Software-defined vehicle work in the corpus focuses on open platforms, diagnostics, virtualization, and long-lived software stacks for automotive systems.
+- [SpamFiltering](concepts/SpamFiltering.md) — 베이즈 분류 직관을 설명할 때 자주 쓰이는 고전적 classification 응용.
 - [SPDX SBOM](concepts/SPDXSBOM.md) — SPDX SBOM work in the corpus centers on trustworthy build reconstruction, transparency, and supply-chain evidence for complex system software.
 - [Speculative Decoding](concepts/SpeculativeDecoding.md) — Speculative decoding is highlighted as a latency-reduction method that pairs a fast draft model with a larger verifier model.
 - [StartupStrategy](concepts/StartupStrategy.md) — 제품-시장 적합성, 고성장 시장 선택, 창업자 자질, 팀 구축을 중심으로 한 스타트업 성공 프레임워크.
+- [Statistics](concepts/Statistics.md) — 데이터의 요약량과 구조를 추론하는 체계로 expectation·variance·correlation의 기반이다.
 - [Student Record](concepts/StudentRecord.md) — [[StudentRecord]] captures the school-record portfolio used in Korean admissions, including grades, activities, course choices, and detailed qualitative entries
 - [Tactile Sensing](concepts/TactileSensing.md) — [[TactileSensing]] is the use of touch information to guide robot interaction with objects. The corpus emphasizes fingertip sensing and palm cameras as the comb
+- [Tensor](concepts/Tensor.md) — 행렬을 일반화한 다차원 배열 표현으로, batch·sequence·channel 축을 함께 다루는 기본 구조.
+- [TensorShape](concepts/TensorShape.md) — 각 tensor 축의 의미와 크기를 읽는 규칙으로, 딥러닝 디버깅과 연산 해석의 기본이다.
 - [TinyML](concepts/TinyML.md) — TinyML refers to running and optimizing compact AI workloads on constrained RTOS and embedded platforms such as Zephyr.
+- [Transformer](concepts/Transformer.md) — self-attention과 feed-forward block을 쌓아 시퀀스를 처리하는 대표 LLM 아키텍처.
 - [Unified Kernel Image](concepts/UnifiedKernelImage.md) — Unified Kernel Image work appears as part of efforts to simplify, harden, and attest modern boot chains.
 - [USB Power Management](concepts/PowerManagementUSB.md) — USB power management appears as a systems topic concerned with how device power states and host behavior interact.
 - [Userspace-Assisted Scheduling](concepts/UserspaceAssistedScheduling.md) — Userspace-assisted scheduling appears as a way to combine kernel scheduling with workload-aware signals from user space.
+- [Variance](concepts/Variance.md) — 확률변수나 feature가 평균 주변에 얼마나 퍼져 있는지 나타내는 통계량.
+- [Vector](concepts/Vector.md) — 크기와 방향을 가진 수학 객체로, embedding·gradient·hidden state의 기본 표현 단위.
 - [VirtIO](concepts/VirtIO.md) — VirtIO appears as a virtualization interface that becomes especially important when open automotive and Xen-based safety systems exchange data across guests.
 - [Visuomotor Control](concepts/VisuomotorControl.md) — [[VisuomotorControl]] links perception directly to action, using visual, tactile, and proprioceptive signals to generate motor commands. In the current corpus i
 
