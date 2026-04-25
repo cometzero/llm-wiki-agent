@@ -14,7 +14,7 @@ last_updated: 2026-04-25
 - [[Rank]]는 변환이 정보 보존을 어느 정도 허용하는지 보여주는 지표다.
 
 ## AI/ML 연결
-- [[DenseLayer]], [[Projection]], [[Transformer]]의 [[Q]], [[K]], [[V]] 연산은 선형 변환으로 모두 행렬 곱을 사용한다.
+- [[DenseLayer]], [[Projection]], [[Transformer]]의 `Q`, `K`, `V` 연산은 선형 변환으로 모두 행렬 곱을 사용한다.
 - low-rank 근사, [[LoRA]]는 [[Matrix]]의 표현을 제한해 파라미터 효율을 얻는 기법이다.
 
 ## 연결 개념
