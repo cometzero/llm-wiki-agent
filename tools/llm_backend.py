@@ -39,27 +39,45 @@ def call_litellm(prompt: str, model_env: str = "LLM_MODEL", default_model: str =
     return response.choices[0].message.content
 
 
-def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = NVIDIA_DEFAULT_MODEL, max_tokens: int = 4096) -> str:
-    try:
-        from openai import OpenAI
-    except ImportError:
-        print("Error: openai not installed. Run: pip install openai")
-        sys.exit(1)
+def _env_bool(name: str, default: bool) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() not in {"0", "false", "no", "off"}
 
-    api_key = os.getenv("NVIDIA_API_KEY")
-    if not api_key:
-        print("Error: NVIDIA_API_KEY is not set.")
-        sys.exit(1)
 
-    model = os.getenv(model_env, default_model)
-    temperature = float(os.getenv("NVIDIA_TEMPERATURE", "0.2"))
-    top_p = float(os.getenv("NVIDIA_TOP_P", "0.95"))
-    reasoning_effort = os.getenv("NVIDIA_REASONING_EFFORT", "high")
-    thinking = os.getenv("NVIDIA_THINKING", "true").lower() not in {"0", "false", "no"}
-    use_stream = os.getenv("NVIDIA_STREAM", "true").lower() not in {"0", "false", "no"}
-    request_timeout = float(os.getenv("NVIDIA_REQUEST_TIMEOUT", "300"))
 
-    client = OpenAI(base_url=normalized_nvidia_base_url(), api_key=api_key, timeout=request_timeout)
+def _nvidia_model_profile(model: str) -> dict:
+    model_lower = model.lower()
+    profile = {
+        "temperature": float(os.getenv("NVIDIA_TEMPERATURE", "0.2")),
+        "top_p": float(os.getenv("NVIDIA_TOP_P", "0.95")),
+        "reasoning_effort": os.getenv("NVIDIA_REASONING_EFFORT", "high"),
+        "thinking": _env_bool("NVIDIA_THINKING", True),
+        "stream": _env_bool("NVIDIA_STREAM", True),
+        "request_timeout": float(os.getenv("NVIDIA_REQUEST_TIMEOUT", "300")),
+    }
+
+    # deepseek-v4-pro is stricter about chat_template_kwargs support in this repo's usage.
+    # Keep the global env override, but make the default safer for structured ingest.
+    if "deepseek-ai/deepseek-v4-pro" in model_lower:
+        if os.getenv("NVIDIA_THINKING") is None:
+            profile["thinking"] = False
+        if os.getenv("NVIDIA_TEMPERATURE") is None:
+            profile["temperature"] = 0.2
+
+    return profile
+
+
+
+def _is_degraded_thinking_error(exc: Exception) -> bool:
+    text = str(exc).lower()
+    return "degraded function cannot be invoked" in text or "chat_template_kwargs" in text
+
+
+
+def _nvidia_request_kwargs(prompt: str, model: str, max_tokens: int, profile: dict, *, thinking_override: bool | None = None) -> dict:
+    thinking = profile["thinking"] if thinking_override is None else thinking_override
     request_kwargs = dict(
         model=model,
         messages=[
@@ -73,12 +91,24 @@ def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = 
             },
             {"role": "user", "content": prompt},
         ],
-        temperature=temperature,
-        top_p=top_p,
+        temperature=profile["temperature"],
+        top_p=profile["top_p"],
         max_tokens=max_tokens,
-        extra_body={"chat_template_kwargs": {"thinking": thinking, "reasoning_effort": reasoning_effort}},
     )
 
+    if thinking:
+        request_kwargs["extra_body"] = {
+            "chat_template_kwargs": {
+                "thinking": True,
+                "reasoning_effort": profile["reasoning_effort"],
+            }
+        }
+
+    return request_kwargs
+
+
+
+def _consume_nvidia_response(client, request_kwargs: dict, *, use_stream: bool) -> str:
     if use_stream:
         stream = client.chat.completions.create(stream=True, **request_kwargs)
         content_parts: list[str] = []
@@ -88,10 +118,44 @@ def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = 
             delta = chunk.choices[0].delta
             if getattr(delta, "content", None) is not None:
                 content_parts.append(delta.content)
-        text = "".join(content_parts).strip()
-    else:
-        response = client.chat.completions.create(stream=False, **request_kwargs)
-        text = (response.choices[0].message.content or "").strip()
+        return "".join(content_parts).strip()
+
+    response = client.chat.completions.create(stream=False, **request_kwargs)
+    return (response.choices[0].message.content or "").strip()
+
+
+
+def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = NVIDIA_DEFAULT_MODEL, max_tokens: int = 4096) -> str:
+    try:
+        from openai import OpenAI
+    except ImportError:
+        print("Error: openai not installed. Run: pip install openai")
+        sys.exit(1)
+
+    api_key = os.getenv("NVIDIA_API_KEY")
+    if not api_key:
+        print("Error: NVIDIA_API_KEY is not set.")
+        sys.exit(1)
+
+    model = os.getenv(model_env, default_model)
+    profile = _nvidia_model_profile(model)
+    client = OpenAI(
+        base_url=normalized_nvidia_base_url(),
+        api_key=api_key,
+        timeout=profile["request_timeout"],
+    )
+
+    try:
+        request_kwargs = _nvidia_request_kwargs(prompt, model, max_tokens, profile)
+        text = _consume_nvidia_response(client, request_kwargs, use_stream=profile["stream"])
+    except Exception as exc:
+        if profile["thinking"] and _is_degraded_thinking_error(exc):
+            print(f"  NVIDIA request rejected thinking mode for {model}; retrying with thinking disabled")
+            request_kwargs = _nvidia_request_kwargs(prompt, model, max_tokens, profile, thinking_override=False)
+            text = _consume_nvidia_response(client, request_kwargs, use_stream=profile["stream"])
+        else:
+            raise
+
     if not text:
         print(f"Error: NVIDIA completion produced no content (model: {model})")
         sys.exit(1)
