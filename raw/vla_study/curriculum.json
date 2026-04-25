@@ -1,0 +1,209 @@
+{
+  "program": "VLA for Autonomous Driving Weekly Study",
+  "timezone": "Asia/Seoul",
+  "cadence": "weekly Tuesday",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "VLA for AD 지형도와 taxonomy",
+      "deep": "Vision-Language-Action Models for Autonomous Driving: Past, Present, and Future",
+      "deep_url": "https://arxiv.org/abs/2512.16760",
+      "skim": [
+        "VLA4AD project page",
+        "awesome-vla-for-ad README"
+      ],
+      "focus": [
+        "VA vs VLA",
+        "End-to-End VLA vs Dual-System VLA",
+        "action grounding 기준"
+      ],
+      "output": "taxonomy map, VA/VLA 비교표, 대표 논문 목록"
+    },
+    {
+      "week": 2,
+      "title": "End-to-End AD 기본기",
+      "deep": "UniAD: Planning-Oriented Autonomous Driving",
+      "deep_url": "https://arxiv.org/abs/2212.10156",
+      "skim": [
+        "TransFuser",
+        "ST-P3",
+        "VAD"
+      ],
+      "focus": [
+        "modular AD vs end-to-end AD",
+        "BEV representation",
+        "planning-oriented perception"
+      ],
+      "output": "Modular AD vs End-to-End AD 비교표"
+    },
+    {
+      "week": 3,
+      "title": "World Model 기초",
+      "deep": "Drive-WM or OccWorld",
+      "deep_url": "https://arxiv.org/abs/2311.17918",
+      "skim": [
+        "DriveDreamer",
+        "Drive-OccWorld"
+      ],
+      "focus": [
+        "image-based world model",
+        "occupancy-based world model",
+        "future scene prediction과 planning"
+      ],
+      "output": "world model 유형 비교표"
+    },
+    {
+      "week": 4,
+      "title": "Early VLA와 explainable driving",
+      "deep": "DriveLM: Driving with Graph Visual Question Answering",
+      "deep_url": "https://arxiv.org/abs/2312.14150",
+      "skim": [
+        "DriveGPT4",
+        "DriveMLM"
+      ],
+      "focus": [
+        "language reasoning",
+        "graph VQA",
+        "explanation과 action의 차이"
+      ],
+      "output": "Explanation VLA vs Action VLA 구분표"
+    },
+    {
+      "week": 5,
+      "title": "CoT, Retrieval, Instruction Following",
+      "deep": "RAG-Driver",
+      "deep_url": "https://arxiv.org/abs/2402.10828",
+      "skim": [
+        "Reason2Drive",
+        "DriveCoT",
+        "RDA-Driver"
+      ],
+      "focus": [
+        "retrieval augmented driving",
+        "chain-of-thought",
+        "reasoning hallucination"
+      ],
+      "output": "Reasoning usefulness checklist"
+    },
+    {
+      "week": 6,
+      "title": "Numerical Action Generator 1",
+      "deep": "LMDrive",
+      "deep_url": "https://arxiv.org/abs/2312.07488",
+      "skim": [
+        "ORION",
+        "SimLingo"
+      ],
+      "focus": [
+        "waypoint/trajectory output",
+        "closed-loop CARLA",
+        "language-action alignment"
+      ],
+      "output": "Textual action vs Numerical action 비교표"
+    },
+    {
+      "week": 7,
+      "title": "Numerical Action Generator 2: 효율성과 최신 구조",
+      "deep": "AutoVLA or OpenDriveVLA",
+      "deep_url": "https://arxiv.org/abs/2506.13757",
+      "skim": [
+        "DriveMoE",
+        "FastDriveVLA",
+        "OpenDriveVLA"
+      ],
+      "focus": [
+        "adaptive reasoning",
+        "MoE",
+        "token pruning",
+        "latency"
+      ],
+      "output": "VLA inference cost / latency 정리"
+    },
+    {
+      "week": 8,
+      "title": "Dual-System VLA",
+      "deep": "DriveVLM",
+      "deep_url": "https://arxiv.org/abs/2402.12289",
+      "skim": [
+        "LeapAD",
+        "Senna",
+        "DualAD"
+      ],
+      "focus": [
+        "slow VLM reasoning",
+        "fast planner",
+        "safety-critical interface"
+      ],
+      "output": "End-to-End VLA vs Dual-System VLA 비교표"
+    },
+    {
+      "week": 9,
+      "title": "VLM supervision / distillation",
+      "deep": "DiMA or VLM-AD",
+      "deep_url": "https://arxiv.org/abs/2501.09757",
+      "skim": [
+        "VLP",
+        "ALN-P3",
+        "VERDI"
+      ],
+      "focus": [
+        "VLM as teacher",
+        "representation transfer",
+        "deployment realism"
+      ],
+      "output": "Direct VLA vs Distilled VLA 비교표"
+    },
+    {
+      "week": 10,
+      "title": "Dataset & Benchmark 집중",
+      "deep": "DriveBench",
+      "deep_url": "https://arxiv.org/abs/2501.04003",
+      "skim": [
+        "CoVLA",
+        "ImpromptuVLA",
+        "DriveAction"
+      ],
+      "focus": [
+        "dataset modality",
+        "annotation type",
+        "closed-loop benchmark blind spot"
+      ],
+      "output": "VLA dataset/benchmark matrix"
+    },
+    {
+      "week": 11,
+      "title": "RL / Reasoning 강화",
+      "deep": "Drive-R1 or DriveAgent-R1",
+      "deep_url": "https://arxiv.org/abs/2506.18234",
+      "skim": [
+        "AlphaDrive",
+        "AutoDrive-R2",
+        "DriveAgent-R1"
+      ],
+      "focus": [
+        "reward design",
+        "reasoning-action alignment",
+        "self-reflection"
+      ],
+      "output": "RL for VLA 분석표"
+    },
+    {
+      "week": 12,
+      "title": "최신 논문 업데이트와 개인 research map",
+      "deep": "Learning Vision-Language-Action World Models for Autonomous Driving",
+      "deep_url": "https://arxiv.org/abs/2604.09059",
+      "skim": [
+        "SpanVLA",
+        "OneDrive",
+        "ExploreVLA",
+        "UniDriveVLA"
+      ],
+      "focus": [
+        "2026 최신 흐름",
+        "world model + VLA",
+        "open problems"
+      ],
+      "output": "읽을 논문 20개 우선순위, open problems 5개, research map"
+    }
+  ]
+}
