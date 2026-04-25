@@ -6,6 +6,13 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]]·[[HypothesisSpace]]·[[LossFunction]]·[[FeatureMatrix]]·[[CurseOfDimensionality]]로 ML을 함수 근사와 고차원 표현 문제로 정리한 학습 기록
+- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]] 기반으로 [[PMF]]·[[PDF]]·[[CDF]]와 기대값 계열 통계량, 그리고 [[BayesTheorem]]의 [[Prior]], [[Likelihood]], [[Posterior]] 구조를 정리한 AI/ML 기초 복습
+- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]와 [[Basis]] 기반 좌표 해석을 통해 [[Matrix]]를 [[LinearMap]]로 이해하고, [[DotProduct]]·[[Norm]]·[[CosineSimilarity]]가 [[LLM]]의 [[Embedding]]·[[Attention]] 연산과 어떻게 연결되는지 정리한 AI/ML 기초 복습 자료
+- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]]를 통해 ML을 함수 학습과 고차원 표현 문제로 정리한 기초 학습 기록
+- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]]를 통해 ML을 함수 학습과 고차원 표현 문제로 정리한 기초 학습 기록
+- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]], [[PMF]]·[[PDF]]·[[CDF]], 그리고 [[BayesTheorem]]의 기초를 정리한 ML 수학 복습 기록
+- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]], [[LinearMap]], [[DotProduct]], [[Norm]]으로 [[LLM]]의 [[Embedding]]·[[Attention]] 기본 연산을 다시 정리한 AI/ML 기초 복습 기록
 - [\"인간지능 시대는 끝났다\" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호의원에게-내린-숙제-차지호-의원-1부.md) — [[UN]]의 AI 기능 이전을 매개로 [[HumanIntelligenceSystem]], [[Polycrisis]], [[ConnectedIntelligence]], [[UniversalBasicIncome]]가 충돌하는 AI 사회전환 설계 프레임을 제시한다.
 - [Understanding the RISC-V Extensions for AI - John Simpson, SiFive](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]] AI 가속을 위해 [[VectorBatchProduct]], [[IntegratedMatrixExtensions]], [[VectorMatrixExtensions]], [[AttachedMatrixExtensions]]를 워크로드 단계별로 선택하는 방식과 [[LLM]]의 prefill/decode 특성 반영 기준을 정리한다.
 - [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — [[Terafab]]는 [[Tesla]], [[SpaceX]], [[xAI]] 협업으로 연간 [[Terawatt]]급 AI 컴퓨팅을 확보해 우주 기반 확장과 [[ElectromagneticMassDriver]] 기반 [[PetawattComputing]]까지 연결하려는 장기 로드맵을 제시한다.

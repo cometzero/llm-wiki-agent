@@ -1,3 +1,31 @@
+## [2026-04-25] ingest | 2026-04-25 AI/ML Learning Day 03
+
+Added source. Key claims: ML as [[FunctionApproximation]], [[HypothesisSpace]]/[[LossFunction]] as model selection axes, and high-dimensional sparsity as the main driver for [[RepresentationLearning]], [[Regularization]], and [[DimensionalityReduction]].
+
+## [2026-04-25] ingest | 2026-04-24 AI/ML Learning Day 02
+
+Added source. Key claims: [[RandomVariable]]는 불확실성의 수치 매핑이며 [[PMF]]/[[PDF]]/[[CDF]]로 분포를 다룬다; [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]은 분포 요약 통계량 축을 이룬다; [[BayesTheorem]]은 [[Prior]], [[Likelihood]], [[Posterior]]로 조건부 갱신을 정식화한다.
+
+## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source. Key claims: 수학 기초를 벡터공간 기반으로 정리해 coordinate의 basis-dependent 성격을 명확화했고, [[Matrix]]를 [[LinearMap]]로 재해석해 LLM의 [[Embedding]]·[[Attention]] 연산과 연결했으며, [[DotProduct]], [[Norm]], [[CosineSimilarity]]의 측정 목적 차이를 학습-복습 질문으로 정리했다.
+
+## [2026-04-25] ingest | 2026-04-25 AI/ML Learning Day 03
+
+Added source. Key claims: ML을 function approximation으로 보는 관점, hypothesis space와 loss function의 역할, feature matrix의 구조, curse of dimensionality와 대응 전략.
+
+## [2026-04-25] ingest | 2026-04-25 AI/ML Learning Day 03
+
+Added source. Key claims: ML can be framed as function approximation over a hypothesis space optimized by a loss function; feature matrices and tensor shapes encode data structure; high-dimensional sparsity creates the curse of dimensionality and motivates representation learning, regularization, and dimensionality reduction.
+
+## [2026-04-25] ingest | 2026-04-24 AI/ML Learning Day 02
+
+Added source. Key claims: 확률변수/분포의 기본 구분과 PMF/PDF/CDF의 사용 구간, 기댓값·분산·공분산·상관의 관계, 조건부확률과 베이즈 정리를 통해 분류에서 prior·likelihood·posterior가 어떻게 결합되는지 정리했다.
+
+## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source. Key claims: 벡터는 고정 대상이지만 [[Coordinate]]는 [[Basis]]에 따라 변하고, [[Matrix]]를 [[LinearMap]] 관점으로 해석해 [[DenseLayer]]·[[Attention]]을 이해할 수 있으며, [[DotProduct]], [[L2Norm]], [[CosineSimilarity]]가 각각 [[LLM]]의 [[Attention]], [[Regularization]], [[EmbeddingSearch]]에서 다른 목적의 유사도/거리 측도로 사용된다는 점을 정리했다.
+
 ## [2026-04-21] ingest | \"인간지능 시대는 끝났다\" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부
 
 Added source. Key claims: [[UN]] 다자기구 AI 기능을 한국 공동 캠퍼스로 이전해 [[GlobalAIHub]]를 만든다는 제안, [[Polycrisis]](동시복합위기) 조건에서 [[HumanIntelligenceSystem]]의 한계를 보완하기 위한 [[ConnectedIntelligence]] 중심 전환 필요성, AI 시대 노동시장·안보 질서의 급격한 재편 가능성, 과도기 고용 및 소득안전장치로서 [[UniversalBasicIncome]]의 제한적 후보 제시.
@@ -149,3 +177,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-21] graph | Knowledge graph rebuilt
 
 393 nodes, 3307 edges (1792 extracted, 1515 inferred).
+
+## [2026-04-25] graph | Knowledge graph rebuilt
+
+426 nodes, 1900 edges (1900 extracted, 0 inferred).
+
+## [2026-04-25] graph | Knowledge graph rebuilt
+
+432 nodes, 1931 edges (1931 extracted, 0 inferred).
