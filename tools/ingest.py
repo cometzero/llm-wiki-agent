@@ -22,11 +22,12 @@ import sys
 import json
 import hashlib
 import re
-import shutil
-import subprocess
 from pathlib import Path
 from collections import defaultdict
 from datetime import date
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from tools.llm_backend import call_llm, selected_backend
 
 REPO_ROOT = Path(__file__).parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -44,138 +45,6 @@ def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
-def _call_litellm(prompt: str, max_tokens: int = 8192) -> str:
-    try:
-        from litellm import completion
-    except ImportError:
-        print("Error: litellm not installed. Run: pip install litellm")
-        sys.exit(1)
-
-    model = os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
-
-    kwargs = {
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}]
-    }
-
-    if max_tokens:
-        kwargs["max_tokens"] = max_tokens
-
-    response = completion(**kwargs)
-    return response.choices[0].message.content
-
-
-def _codex_error_text(proc: subprocess.CompletedProcess[str]) -> str:
-    return "\n".join(part for part in (proc.stderr, proc.stdout) if part).lower()
-
-
-
-def _is_token_exhaustion_error(proc: subprocess.CompletedProcess[str]) -> bool:
-    error_text = _codex_error_text(proc)
-    markers = [
-        "rate_limit_exceeded",
-        "token",
-        "usage limit",
-        "quota",
-        "exceeded",
-        "insufficient_quota",
-        "context_length_exceeded",
-    ]
-    return any(marker in error_text for marker in markers)
-
-
-
-def _run_codex(prompt: str, model: str, reasoning_effort: str) -> subprocess.CompletedProcess[str]:
-    codex_bin = shutil.which("codex")
-    if not codex_bin:
-        print("Error: codex CLI not found in PATH.")
-        sys.exit(1)
-
-    command = [
-        codex_bin,
-        "exec",
-        "--json",
-        "-m",
-        model,
-        "-s",
-        "read-only",
-        "-C",
-        str(REPO_ROOT),
-        "-c",
-        f'model_reasoning_effort="{reasoning_effort}"',
-        "-",
-    ]
-    return subprocess.run(
-        command,
-        input=prompt,
-        text=True,
-        capture_output=True,
-        cwd=REPO_ROOT,
-        check=False,
-    )
-
-
-
-def _call_codex(prompt: str, max_tokens: int = 8192) -> str:
-    primary_model = os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
-    fallback_model = os.getenv("CODEX_FALLBACK_MODEL", "gpt-5.4-mini")
-    reasoning_effort = os.getenv("CODEX_REASONING_EFFORT", "low")
-
-    proc = _run_codex(prompt, primary_model, reasoning_effort)
-    active_model = primary_model
-    if proc.returncode != 0 and _is_token_exhaustion_error(proc) and fallback_model and fallback_model != primary_model:
-        print(f"  codex primary model exhausted tokens; retrying with fallback model: {fallback_model}")
-        proc = _run_codex(prompt, fallback_model, reasoning_effort)
-        active_model = fallback_model
-
-    if proc.returncode != 0:
-        print(f"Error: codex exec failed (model: {active_model})")
-        if proc.stderr:
-            print(proc.stderr)
-        if proc.stdout:
-            print(proc.stdout)
-        sys.exit(proc.returncode)
-
-    final_messages = []
-    for line in proc.stdout.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            event = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        if event.get("type") == "item.completed":
-            item = event.get("item", {})
-            if item.get("type") == "agent_message" and item.get("text"):
-                final_messages.append(item["text"])
-
-    if not final_messages:
-        print(f"Error: codex exec produced no final agent message (model: {active_model})")
-        if proc.stdout:
-            print(proc.stdout)
-        sys.exit(1)
-
-    return "\n".join(final_messages)
-
-
-def selected_backend() -> tuple[str, str]:
-    backend = os.getenv("WIKI_LLM_BACKEND", "auto").lower()
-    if backend == "codex":
-        return "codex", os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
-    if backend == "litellm":
-        return "litellm", os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
-    if shutil.which("codex") and not any(os.getenv(k) for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY")):
-        return "codex", os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", "gpt-5.3-codex-spark"))
-    return "litellm", os.getenv("LLM_MODEL", "anthropic/claude-3-5-sonnet-latest")
-
-
-def call_llm(prompt: str, max_tokens: int = 8192) -> str:
-    backend, _ = selected_backend()
-    if backend == "codex":
-        return _call_codex(prompt, max_tokens=max_tokens)
-    return _call_litellm(prompt, max_tokens=max_tokens)
-
 
 def write_file(path: Path, content: str):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -183,7 +52,7 @@ def write_file(path: Path, content: str):
     print(f"  wrote: {path.relative_to(REPO_ROOT)}")
 
 
-def build_wiki_context() -> str:
+def build_wiki_context(max_chars: int | None = None) -> str:
     parts = []
     if INDEX_FILE.exists():
         parts.append(f"## wiki/index.md\n{read_file(INDEX_FILE)}")
@@ -195,7 +64,25 @@ def build_wiki_context() -> str:
         recent = sorted(sources_dir.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True)[:5]
         for p in recent:
             parts.append(f"## {p.relative_to(REPO_ROOT)}\n{p.read_text()}")
-    return "\n\n---\n\n".join(parts)
+
+    if max_chars is None:
+        return "\n\n---\n\n".join(parts)
+
+    compact_parts: list[str] = []
+    remaining = max_chars
+    separator = "\n\n---\n\n"
+    for part in parts:
+        if remaining <= 0:
+            break
+        chunk = part[:remaining]
+        compact_parts.append(chunk)
+        remaining -= len(chunk)
+        if remaining > 0:
+            remaining -= len(separator)
+    context = separator.join(compact_parts)
+    if len(context) < len(separator.join(parts)):
+        context += "\n\n---\n\n[wiki context truncated for model context budget]"
+    return context
 
 
 def parse_json_from_response(text: str) -> dict:
@@ -295,7 +182,9 @@ def ingest(source_path: str):
 
     print(f"\nIngesting: {source.name}  (hash: {source_hash})")
 
-    wiki_context = build_wiki_context()
+    backend_name, backend_model = selected_backend()
+    context_budget = 12000 if backend_name == "nvidia" else None
+    wiki_context = build_wiki_context(max_chars=context_budget)
     schema = read_file(SCHEMA_FILE)
 
     prompt = f"""You are maintaining an LLM Wiki. Process this source document and integrate its knowledge into the wiki.
@@ -303,13 +192,13 @@ def ingest(source_path: str):
 Schema and conventions:
 {schema}
 
-Current wiki state (index + recent pages):
-{wiki_context if wiki_context else "(wiki is empty — this is the first source)"}
-
 New source to ingest (file: {source.relative_to(REPO_ROOT) if source.is_relative_to(REPO_ROOT) else source.name}):
 === SOURCE START ===
 {source_content}
 === SOURCE END ===
+
+Current wiki state (index + recent pages):
+{wiki_context if wiki_context else "(wiki is empty — this is the first source)"}
 
 Today's date: {today}
 
@@ -331,7 +220,6 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 }}
 """
 
-    backend_name, backend_model = selected_backend()
     print(f"  calling backend: {backend_name} (model: {backend_model})")
     raw = call_llm(prompt, max_tokens=8192)
     try:

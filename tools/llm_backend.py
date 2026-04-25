@@ -9,6 +9,20 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent
 
 
+NVIDIA_BASE_URL = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
+NVIDIA_DEFAULT_MODEL = "deepseek-ai/deepseek-v4-flash"
+NVIDIA_DEFAULT_FAST_MODEL = NVIDIA_DEFAULT_MODEL
+
+
+def normalized_nvidia_base_url() -> str:
+    base_url = os.getenv("NVIDIA_BASE_URL", NVIDIA_BASE_URL).strip()
+    if not base_url:
+        return "https://integrate.api.nvidia.com/v1"
+    if not base_url.startswith(("http://", "https://")):
+        base_url = f"https://{base_url}"
+    return base_url.rstrip("/")
+
+
 def call_litellm(prompt: str, model_env: str = "LLM_MODEL", default_model: str = "anthropic/claude-3-5-sonnet-latest", max_tokens: int = 4096) -> str:
     try:
         from litellm import completion
@@ -23,6 +37,60 @@ def call_litellm(prompt: str, model_env: str = "LLM_MODEL", default_model: str =
         max_tokens=max_tokens,
     )
     return response.choices[0].message.content
+
+
+def call_nvidia(prompt: str, model_env: str = "LLM_MODEL", default_model: str = NVIDIA_DEFAULT_MODEL, max_tokens: int = 4096) -> str:
+    try:
+        from openai import OpenAI
+    except ImportError:
+        print("Error: openai not installed. Run: pip install openai")
+        sys.exit(1)
+
+    api_key = os.getenv("NVIDIA_API_KEY")
+    if not api_key:
+        print("Error: NVIDIA_API_KEY is not set.")
+        sys.exit(1)
+
+    model = os.getenv(model_env, default_model)
+    temperature = float(os.getenv("NVIDIA_TEMPERATURE", "0.2"))
+    top_p = float(os.getenv("NVIDIA_TOP_P", "0.95"))
+    reasoning_effort = os.getenv("NVIDIA_REASONING_EFFORT", "high")
+    thinking = os.getenv("NVIDIA_THINKING", "true").lower() not in {"0", "false", "no"}
+
+    client = OpenAI(base_url=normalized_nvidia_base_url(), api_key=api_key)
+    stream = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a backend text generator running inside an automated Python script. "
+                    "You have no tool access. Never emit tool-call markup, XML tags, DSML tags, or planning preambles. "
+                    "Return only the final answer requested by the user prompt."
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ],
+        temperature=temperature,
+        top_p=top_p,
+        max_tokens=max_tokens,
+        extra_body={"chat_template_kwargs": {"thinking": thinking, "reasoning_effort": reasoning_effort}},
+        stream=True,
+    )
+
+    content_parts: list[str] = []
+    for chunk in stream:
+        if not getattr(chunk, "choices", None):
+            continue
+        delta = chunk.choices[0].delta
+        if getattr(delta, "content", None) is not None:
+            content_parts.append(delta.content)
+
+    text = "".join(content_parts).strip()
+    if not text:
+        print(f"Error: NVIDIA completion produced no content (model: {model})")
+        sys.exit(1)
+    return text
 
 
 def _codex_error_text(proc: subprocess.CompletedProcess[str]) -> str:
@@ -116,19 +184,35 @@ def call_codex(prompt: str, model_env: str = "LLM_MODEL", default_model: str = "
     return "\n".join(final_messages)
 
 
-def selected_backend(model_env: str = "LLM_MODEL", litellm_default: str = "anthropic/claude-3-5-sonnet-latest", codex_default: str = "gpt-5.3-codex-spark") -> tuple[str, str]:
-    backend = os.getenv("WIKI_LLM_BACKEND", "auto").lower()
+def selected_backend(model_env: str = "LLM_MODEL", litellm_default: str = "anthropic/claude-3-5-sonnet-latest", codex_default: str = "gpt-5.3-codex-spark", nvidia_default: str = NVIDIA_DEFAULT_MODEL) -> tuple[str, str]:
+    backend = os.getenv("WIKI_LLM_BACKEND", "nvidia").lower()
+    if backend == "nvidia":
+        return "nvidia", os.getenv(model_env, os.getenv("NVIDIA_MODEL", os.getenv("LLM_MODEL", nvidia_default)))
     if backend == "codex":
         return "codex", os.getenv(model_env, os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", codex_default)))
     if backend == "litellm":
         return "litellm", os.getenv(model_env, litellm_default)
-    if shutil.which("codex") and not any(os.getenv(k) for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY")):
-        return "codex", os.getenv(model_env, os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", codex_default)))
-    return "litellm", os.getenv(model_env, litellm_default)
+    if backend == "auto":
+        if os.getenv("NVIDIA_API_KEY"):
+            return "nvidia", os.getenv(model_env, os.getenv("NVIDIA_MODEL", os.getenv("LLM_MODEL", nvidia_default)))
+        if shutil.which("codex") and not any(os.getenv(k) for k in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY")):
+            return "codex", os.getenv(model_env, os.getenv("CODEX_MODEL", os.getenv("LLM_MODEL", codex_default)))
+        return "litellm", os.getenv(model_env, litellm_default)
+    print(f"Error: unsupported WIKI_LLM_BACKEND={backend}")
+    sys.exit(1)
+
+
+def _nvidia_default_for_env(model_env: str, default_model: str) -> str:
+    if model_env == "LLM_MODEL_FAST":
+        return os.getenv("NVIDIA_MODEL_FAST", NVIDIA_DEFAULT_FAST_MODEL)
+    return os.getenv("NVIDIA_MODEL", default_model)
 
 
 def call_llm(prompt: str, model_env: str = "LLM_MODEL", default_model: str = "anthropic/claude-3-5-sonnet-latest", max_tokens: int = 4096) -> str:
-    backend, _ = selected_backend(model_env=model_env, litellm_default=default_model)
+    nvidia_default = _nvidia_default_for_env(model_env, NVIDIA_DEFAULT_MODEL)
+    backend, _ = selected_backend(model_env=model_env, litellm_default=default_model, nvidia_default=nvidia_default)
+    if backend == "nvidia":
+        return call_nvidia(prompt, model_env=model_env, default_model=nvidia_default, max_tokens=max_tokens)
     if backend == "codex":
         return call_codex(prompt, model_env=model_env, default_model="gpt-5.3-codex-spark", max_tokens=max_tokens)
     return call_litellm(prompt, model_env=model_env, default_model=default_model, max_tokens=max_tokens)
