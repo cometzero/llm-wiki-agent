@@ -1,64 +1,27 @@
----
-title: "Overview"
-type: synthesis
-tags: [overview, corpus]
-sources: [andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai, the-great-gpu-shortage-rental-capacity-launching-our-h100-1-year-rental-price-index, gtc-2026-the-inference-kingdom-expands, 26년-제조-산업에-ai-적용되면-이렇게-바뀝니다-10년차-대기업-llm-현직자의-솔직한-조ᄋ, project-glasswing-securing-critical-software-for-the-ai-era-anthropic, terafab-keynote-building-ai-chips-for-earth-space, understanding-the-risc-v-extensions-for-ai-john-simpson-sifive]
-last_updated: 2026-04-21
----
+# Wiki Overview
 
-# Overview
+Living synthesis across all sources. Last updated: 2026-04-25.
 
-This overview tracks the current shape of the wiki corpus after the latest ingest.
+## AI/ML Foundations
 
-## Corpus Snapshot
-- Sources: 84
-- Entities: 154
-- Concepts: 127
-- Syntheses: 0
+머신러닝은 [[FunctionApproximation]] 문제로 이해할 수 있다. [[HypothesisSpace]]는 모델이 탐색할 함수 집합, [[LossFunction]]은 오차 측정 기준이다. 데이터는 [[FeatureMatrix]] (sample × feature)로 표현되며, [[DeepLearning]]에서는 [[Tensor]] shape 이해가 필수적이다. 고차원 공간에서는 [[CurseOfDimensionality]]가 발생하여 거리 개념이 약화되고 overfitting 위험이 커지므로, [[RepresentationLearning]], [[Regularization]], [[DimensionalityReduction]]이 중요해진다.
 
-## Raw Corpus by Top-Level Folder
-- `AI`: 20 source documents
-- `Finance`: 14 source documents
-- `LPC2025`: 18 source documents
-- `Nvidia`: 5 source documents
-- `OSS2025_Japan`: 22 source documents
-- `Robotics`: 2 source documents
-- `Technology`: 6 source documents
-- `University_Preparation`: 1 source documents
-- `Policy`: 1 source documents
+Day 03에서는 이 관점이 더 직접적으로 정리된다. 머신러닝은 입력을 출력으로 대응시키는 함수를 학습하는 문제이며, [[HypothesisSpace]]는 후보 함수를 제한하는 탐색 공간, [[LossFunction]]은 그 후보의 성능을 재는 기준이다. 분류, 회귀, sequence modeling, next-token prediction은 같은 함수 근사 틀 안에서 이해할 수 있고, [[FeatureMatrix]]와 [[Tensor]]는 이러한 함수를 실제 데이터 구조 위에 구현하기 위한 표현 언어다.
 
-## Highest-Coverage Entities
-- [[Anthropic]] — referenced by 6 source page(s)
-- [[NVIDIA]] — referenced by 6 source page(s)
-- [[MonetaryPolicy]] — referenced by 5 source page(s)
-- [[LLMAgents]] — referenced by 6 source page(s)
-- [[KevinWarsh]] — referenced by 5 source page(s)
-- [[SemiAnalysis]] — referenced by 3 source page(s)
-- [[OpenClaw]] — [[agent-first software]], 지속형 에이전트 사례로 고빈도 연결성 상승
-- [[Tesla]] — 반도체 제조 역량과 우주 엣지 AI 확장 논의에서 최근 급부상
-- [[SpaceX]] — 위성·우주 발사·페이로드 인프라를 통한 컴퓨팅 확장 축의 핵심 파트너
-- [[Groq]] — GPU와의 추론 분업 전략의 실증축으로 연결성 확대
+또한 고차원 공간에서는 데이터가 희소하게 퍼지면서 거리 기반 방법의 신뢰성이 떨어지고, [[NearestNeighbor]], [[DensityEstimation]], nonparametric method가 불안정해진다. 따라서 [[RepresentationLearning]]으로 더 좋은 좌표계를 학습하고, [[Regularization]]으로 과적합을 줄이며, [[DimensionalityReduction]]으로 문제를 다루기 쉬운 차원으로 압축하는 전략이 중요해진다.
 
-## Highest-Coverage Concepts
-- [[AIAutomation]] — referenced by 6 source page(s)
-- [[LLMAgents]] — referenced by 6 source page(s)
-- [[AIInfrastructure]] — 가속기, 네트워크, 저장층 통합 관점 강화
-- [[InferenceOptimization]] — 비용/지연/처리량 트레이오드 고도화
-- [[AFD]] — [[GPU]]-[[LPU]] 분업과 MoE 라우팅 확장으로 추론 단계 분할의 핵심 축
-- [[AddressSpaceIsolation]] — 안전형 커널 맥락의 핵심 축으로 계속 유지
-- [[TerawattComputing]] — 지상-우주 스케일 확장형 인프라 패러다임
-- [[ContextRot]] — 긴 컨텍스트 비용 모델과 추론 인프라 병목을 함께 다루는 교차 축
-- [[AIForCybersecurity]] — AI의 공격력 전환에서 방어 운영 체계 통합 강조
-- [[ContextMemoryStorage]] — 긴 문맥 추론의 KV 캐시 오프로딩 축으로 신규 핵심화
-- [[CPO]] — 스케일업/스케일아웃 경계에서 구리/광학 분기 설계
+또한 [[VectorSpace]] 기반 시각에서 벡터는 고정 실체가 아니라 표현 대상이며, [[Coordinate]]는 [[Basis]]에 따라 달라진다. 이 관점은 [[Matrix]]를 단순 배열이 아닌 [[LinearMap]]로 해석하게 하고, [[Attention]]의 점수 계산, [[EmbeddingRetrieval]], [[Gradient]] 처리에서 [[DotProduct]], [[Norm]], [[CosineSimilarity]]가 중심이 되는 이유를 설명한다.
 
-## Current Shape of the Knowledge Base
-- AI 인프라 논의는 추론 단계별 병목(입력 사전처리·Prefill vs. 토큰 반복 Decode) 분리와 하드웨어 역할 분담으로 이동하며, 단일 GPU 성능만으로 성능을 평가하기보다 [[AFD]] 및 계층형 메모리 네트워크를 결합한 설계가 핵심이 되고 있다.
-- [[NVIDIA]]의 추론 전략은 [[Groq]] 계열 자산을 LPU로 흡수해 [[GPU]]-[[LPU]] 이원화, 이어서 [[CPO]]/[[CMX]]/[[STX]]로 네트워크·스토리지까지 확장하며, 인퍼런스 스택의 수직 통합을 강화한다.
-- 스케일 전략은 구리 기반 랙 내 상호연결을 활용해 비용 효율과 지연을 맞추다가, world-size 확장 시에는 광학으로 점진 이행하는 하이브리드 인터커넥트 철학으로 정교화된다.
-- 긴 컨텍스트와 대량 동시 사용자 환경에서는 메모리 계층 확장이 병목 해소의 핵심으로 부상해, [[Vera ETL256]]·[[CMX]]·[[STX]]를 통한 오프로딩 전략이 성능·안정성 경로의 공통화로 정착하는 흐름이다.
+Day 02에서는 여기에 [[Probability]]와 [[Statistics]] 기초가 덧붙는다. [[RandomVariable]]와 [[ProbabilityDistribution]], 이산/연속 표현인 [[PMF]], [[PDF]], [[CDF]], 그리고 [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]을 통해 불확실성과 분산 구조를 정리하고, [[ConditionalProbability]]/[[BayesTheorem]]에서 [[Prior]], [[Likelihood]], [[Posterior]]로 정보가 갱신되는 프레임을 통해 분류·진단·의사결정 문제와 연결한다.
 
-## Cross-Source Synthesis Note
-- 기존의 추론 성능 논의는 지금 [[LLM]] 스케일링 법칙과 벡터/행렬 가속 하드웨어 확장으로부터, 더 깊이 네트워크-메모리-스토리지 결합 설계로 이동했다.
-- [[RiscVExtensionsForAI]]가 ISA 수준의 워크로드 적합성 선택을 제공하는 것처럼, NVIDIA 축은 인퍼런스의 단계별 역할 분할([[AFD]])과 계층형 저장 오프로딩([[CMX]], [[STX]])에서 비용·지연·품질 트레이오드를 동시에 통제하려는 경향을 강화한다.
-- 결과적으로 [[LLMAgents]]/소프트웨어 계층의 성능향상을 실현하려면, 하드웨어 인프라 편차(단기 지연 vs. 장기 처리량, 구리 대 광학, HBM 대 DRAM/SSD 오프로드)를 함께 반영한 설계 프레임이 전제되어야 한다.
+## AI Infrastructure & Hardware
+
+[[NVIDIA]]의 [[GPU]]-[[LPU]] 이원 구조, [[RiscV]]의 AI 확장, [[Terafab]]의 우주 기반 컴퓨팅 등 하드웨어 계층에서도 AI 추론 효율을 극대화하기 위한 다양한 접근이 진행 중이다. [[EAGLE3]]는 [[TrainingTimeTest]]를 통해 추론 가속 스케일링을 보여준다.
+
+## AI Safety & Governance
+
+[[Anthropic]]의 [[ProjectGlasswing]]은 AI를 활용한 취약점 탐지 협력 모델을, [[차지호]]의 프레임은 [[UN]] 기반 AI 거버넌스와 [[ConnectedIntelligence]]를 제시한다. [[AndrejKarpathy]]는 [[AutoResearch]]와 [[ModelSpeciation]]을 통해 AI 에이전트의 자율성과 조직 최적화를 논의한다.
+
+## Market & Economics
+
+[[H100]] 렌탈 가격, [[DRAM]] 현물가, [[HBM]] 수급, [[SpaceX]] 상장 등 AI 인프라 수요와 반도체 시장의 구조적 변화가 관찰된다. [[ClaudeCode]]는 에이전트형 코딩의 변곡점으로 평가된다.
