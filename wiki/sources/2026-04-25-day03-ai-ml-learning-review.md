@@ -3,7 +3,7 @@ title: "2026-04-25 AI/ML Learning Day 03"
 type: source
 tags: [diary, ai-ml-learning]
 date: 2026-04-25
-source_file: raw/2026-04-25-day03-ai-ml-learning-review.md
+source_file: raw/ai_ml_learning/2026-04-25-day03-ai-ml-learning-review.md
 ---
 
 ## Event Summary

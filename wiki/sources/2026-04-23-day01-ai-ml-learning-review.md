@@ -3,7 +3,7 @@ title: "2026-04-23 AI/ML Learning Day 01"
 type: source
 tags: [diary, ai-ml-learning, math-foundations]
 date: 2026-04-23
-source_file: raw/2026-04-23-day01-ai-ml-learning-review.md
+source_file: raw/ai_ml_learning/2026-04-23-day01-ai-ml-learning-review.md
 ---
 
 ## Event Summary
