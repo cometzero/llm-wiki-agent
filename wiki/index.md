@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]·[[PartialDerivative]]·[[Gradient]]·[[ChainRule]]·[[ComputationalGraph]]·[[Backpropagation]] 기반으로 [[GradientDescent]]와 [[Autograd]]의 수학적 기초를 정리한 AI/ML 30일 학습 Day 04 복습 기록
 - [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]·[[Basis]]·[[LinearMap]]·[[Rank]]·[[DotProduct]]·[[Norm]]·[[CosineSimilarity]] 기반으로 [[LLM]]의 [[Embedding]]·[[Attention]]·[[Gradient]] 연산을 수학적으로 정리한 AI/ML 30일 학습 Day 01 복습 기록
 - [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]]·[[HypothesisSpace]]·[[LossFunction]]·[[FeatureMatrix]]·[[CurseOfDimensionality]]로 ML을 함수 근사와 고차원 표현 문제로 정리한 학습 기록
 - [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]] 기반으로 [[PMF]]·[[PDF]]·[[CDF]]와 기대값 계열 통계량, 그리고 [[BayesTheorem]]의 [[Prior]], [[Likelihood]], [[Posterior]] 구조를 정리한 AI/ML 기초 복습

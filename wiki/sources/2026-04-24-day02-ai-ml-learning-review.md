@@ -3,7 +3,7 @@ title: "2026-04-24 AI/ML Learning Day 02"
 type: source
 tags: [diary, ai-ml-learning, probability, statistics]
 date: 2026-04-24
-source_file: raw/2026-04-24-day02-ai-ml-learning-review.md
+source_file: raw/ai_ml_learning/2026-04-24-day02-ai-ml-learning-review.md
 last_updated: 2026-04-25
 sources: [2026-04-24-day02-ai-ml-learning-review]
 ---

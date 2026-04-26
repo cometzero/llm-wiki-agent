@@ -1,3 +1,7 @@
+## [2026-04-26] ingest | 2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation
+
+Added source covering derivative, partial derivative, gradient, chain rule, computational graph, and backpropagation. Created concept pages for Derivative, PartialDerivative, Gradient, ChainRule, ComputationalGraph, Backpropagation, GradientDescent, Autograd, VanishingGradient, ExplodingGradient.
+
 ## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
 
 Added source: AI/ML 30일 학습 Day 01 — 수按月기초 복습. Key claims: (1) [[VectorSpace]]에서 좌표는 [[Basis]]-dependent하며 벡터 자체는 불변이다. (2) [[Matrix]]는 [[LinearMap]]의 계산 표현이며 [[Rank]]는 보존되는 독립 정보 차원 수다. (3) [[DotProduct]]는 방향+크기 결합 측정으로 [[Attention]] scoring에, [[CosineSimilarity]]는 방향만 측정해 [[Embedding]] retrieval에 쓰인다. (4) [[Norm]]은 [[Gradient]] clipping과 regularization의 기초다. Created/updated concept pages: [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]]. Updated overview with AI/ML Mathematical Foundations section.
@@ -201,3 +205,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-25] graph | Knowledge graph rebuilt
 
 458 nodes, 2122 edges (2122 extracted, 0 inferred).
+
+## [2026-04-26] graph | Knowledge graph rebuilt
+
+468 nodes, 2140 edges (2140 extracted, 0 inferred).
