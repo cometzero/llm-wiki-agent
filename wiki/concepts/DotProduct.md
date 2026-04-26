@@ -1,28 +1,23 @@
 ---
 title: "DotProduct"
 type: concept
-tags: [math, linear-algebra, ml-foundations]
+tags: [linear-algebra, similarity]
+last_updated: 2026-04-26
 sources: [2026-04-23-day01-ai-ml-learning-review]
-last_updated: 2026-04-25
 ---
 
-## Definition
-The dot product (inner product) of two vectors is a scalar that combines their magnitudes and the cosine of the angle between them: a·b = ||a|| ||b|| cos(θ).
+## 핵심 정의
+[[DotProduct]]는 두 벡터의 대응 성분곱을 합산한 값으로, 방향성과 크기 정보를 동시에 반영한다.
 
-## Key Properties
-- Measures the combined directional alignment and magnitude of two vectors.
-- Positive when vectors point in similar directions, negative when opposite, zero when orthogonal.
-- Symmetric: a·b = b·a.
-- Related to [[Norm]]: a·a = ||a||².
+`a · b = Σ_i a_i b_i`
 
-## Relevance to AI/ML
-- [[Attention]] mechanisms in [[LLM]] use dot product to compute raw interaction scores between query and key vectors.
-- Scaled dot-product attention normalizes by √d_k to prevent vanishing gradients.
-- Dot product is the fundamental operation in linear layers (matrix multiplication is a collection of dot products).
-- Used in [[Gradient]] computations throughout neural network training.
+## AI/ML 연결
+- [[Attention]]에서 Query와 Key의 연산 점수로 자주 사용된다.
+- 값이 크면 일반적으로 방향 정합 + 크기 요인이 모두 강하게 작동한다.
+- 단순 유사도 비교만으로는 크기 영향이 섞이므로, [[CosineSimilarity]]로 정규화하기도 한다.
 
-## Related Concepts
-- [[CosineSimilarity]] — dot product normalized by magnitudes (direction-only comparison)
-- [[Norm]] — derived from dot product (||a|| = √(a·a))
-- [[Attention]] — uses dot product for query-key scoring
-- [[Embedding]] — dot products between embeddings can measure relatedness
+## 관련 개념
+- [[CosineSimilarity]]
+- [[Norm]]
+- [[Embedding]]
+- [[Attention]]

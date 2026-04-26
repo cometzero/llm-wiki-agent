@@ -1,29 +1,22 @@
 ---
 title: "Norm"
 type: concept
-tags: [math, linear-algebra, ml-foundations]
+tags: [linear-algebra, optimization]
+last_updated: 2026-04-26
 sources: [2026-04-23-day01-ai-ml-learning-review]
-last_updated: 2026-04-25
 ---
 
-## Definition
-A norm is a function that assigns a non-negative length or size to vectors in a [[VectorSpace]], satisfying positivity, homogeneity, and the triangle inequality.
+## 핵심 정의
+[[Norm]]은 벡터의 크기(길이)를 측정하는 함수로, 0벡터와의 거리 개념을 일반화한다.
 
-## Key Properties
-- L2 norm (Euclidean): ||x||₂ = √(Σ x_i²) — the standard Euclidean distance from origin.
-- L1 norm (Manhattan): ||x||₁ = Σ |x_i| — sum of absolute values, induces sparsity.
-- Different norms have different geometric properties and optimization characteristics.
-- L2 norm is derived from [[DotProduct]]: ||x||₂ = √(x·x).
+## AI/ML 연결
+- [[L2Norm]]은 가장 흔히 쓰이는 길이 척도이며 `sqrt(Σx_i^2)`로 계산된다.
+- [[Gradient]]의 크기 제어(예: [[GradientNormClipping]])에 직접 쓰인다.
+- [[Regularization]]에서 파라미터 크기 제약을 통해 과적합을 억제한다.
+- distance(거리) 계산의 기본 요소로도 사용된다.
 
-## Relevance to AI/ML
-- L2 regularization (weight decay) penalizes large L2 norms of weights to prevent overfitting.
-- [[Gradient]] norm clipping limits the L2 norm of gradients to stabilize training.
-- L1 regularization (Lasso) encourages sparse solutions by penalizing L1 norm.
-- Distance metrics in [[Embedding]] spaces often use L2 distance (derived from L2 norm).
-- Batch normalization uses statistics related to norms.
-
-## Related Concepts
-- [[DotProduct]] — L2 norm squared equals dot product with itself
-- [[CosineSimilarity]] — uses L2 norm for normalization
-- [[Gradient]] — norm clipping is a key training stabilization technique
-- [[VectorSpace]] — the space where norms are defined
+## 관련 개념
+- [[L2Norm]]
+- [[GradientNormClipping]]
+- [[Regularization]]
+- [[Embedding]]

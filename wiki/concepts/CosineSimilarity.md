@@ -1,27 +1,25 @@
 ---
 title: "CosineSimilarity"
 type: concept
-tags: [math, linear-algebra, ml-foundations]
+tags: [similarity, retrieval, embedding]
+last_updated: 2026-04-26
 sources: [2026-04-23-day01-ai-ml-learning-review]
-last_updated: 2026-04-25
 ---
 
-## Definition
-Cosine similarity measures the cosine of the angle between two vectors, computed as the [[DotProduct]] divided by the product of their [[Norm]]s: cos(θ) = (a·b) / (||a|| ||b||).
+## 핵심 정의
+[[CosineSimilarity]]는 두 벡터의 내적을 각 벡터의 크기로 정규화해 방향 유사도만 비교한다.
 
-## Key Properties
-- Range: [-1, 1], where 1 = identical direction, 0 = orthogonal, -1 = opposite direction.
-- Removes magnitude information — focuses purely on directional similarity.
-- Invariant to scalar multiplication: cos_sim(a, c·a) = 1 for any c > 0.
+## 직관
+- 크기(스케일)가 다르더라도 방향이 비슷하면 높은 유사도를 준다.
+- 의미 검색에서 표현 벡터 간 "유사도" 판단으로 자주 쓰인다.
 
-## Relevance to AI/ML
-- [[Embedding]] retrieval and semantic search use cosine similarity to find semantically similar items regardless of embedding magnitude.
-- Document similarity, recommendation systems, and clustering frequently use cosine similarity.
-- Contrasts with raw [[DotProduct]] used in [[Attention]]: attention cares about both direction and magnitude (raw interaction strength), while retrieval typically cares only about direction (semantic similarity).
-- Sentence embeddings (e.g., Sentence-BERT) are often compared using cosine similarity.
+## AI/ML 연결
+- [[Embedding]] retrieval에서 질의-문서 문장 유사도 비교
+- [[RAG]] 검색 정렬
+- [[LLM]] 기반 의미 검색 파이프라인에서 [[Attention]]의 직접 점수화 방식과는 다른 쓰임새를 가진다.
 
-## Related Concepts
-- [[DotProduct]] — the unnormalized version that includes magnitude
-- [[Norm]] — used for normalization in cosine similarity
-- [[Embedding]] — the vector representations compared via cosine similarity
-- [[Attention]] — uses dot product (not cosine similarity) for raw scoring
+## 관련 개념
+- [[DotProduct]]
+- [[Norm]]
+- [[Embedding]]
+- [[RAG]]

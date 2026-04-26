@@ -1,5 +1,21 @@
 ## [2026-04-26] ingest | 2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation
 
+Added source. Key claims: Day 04 formalized optimization intuition from [[Derivative]] and [[PartialDerivative]] to [[Gradient]], and linked [[ChainRule]] + [[ComputationalGraph]] to practical [[Backpropagation]]/[[Autograd]] workflows. It also emphasized [[DirectionalDerivative]], [[ForwardPass]]/[[BackwardPass]], and [[LearningRate]] tradeoffs in avoiding unstable updates.
+
+## [2026-04-26] ingest | 2026-04-25 AI/ML Learning Day 03
+
+Added source. Key claims: 머신러닝을 [[FunctionApproximation]] 관점에서 정리하고, [[HypothesisSpace]]와 [[LossFunction]]의 역할을 분리했으며, [[FeatureMatrix]]와 [[TensorShape]] 중심의 데이터 표현을 정리했다. 또한 고차원에서 발생하는 [[CurseOfDimensionality]]를 경고하고 [[Regularization]], [[DimensionalityReduction]], [[RepresentationLearning]]의 중요성을 추가 연결했다.
+
+## [2026-04-26] ingest | 2026-04-24 AI/ML Learning Day 02
+
+Added source. Key claims: Day 02 documents [[Probability]] foundations for AI/ML through [[RandomVariable]] and [[ProbabilityDistribution]], distinguishes [[PMF]], [[PDF]], and [[CDF]] for discrete/continuous modeling, and connects summary statistics ([[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]) with [[ConditionalProbability]] and [[BayesTheorem]] via [[Prior]], [[Likelihood]], and [[Posterior]] for practical [[Classification]] intuition.
+
+## [2026-04-26] ingest | 2026-04-23 AI/ML Learning Day 01
+
+Added source. Key claims: 벡터·기저 의존 좌표 개념을 정리했고, 행렬을 [[LinearMap]] 관점으로 해석했으며, [[DotProduct]], [[Norm]], [[CosineSimilarity]]를 [[Embedding]], [[Attention]], [[Gradient]] 연산과 연결했다.
+
+## [2026-04-26] ingest | 2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation
+
 Added source covering derivative, partial derivative, gradient, chain rule, computational graph, and backpropagation. Created concept pages for Derivative, PartialDerivative, Gradient, ChainRule, ComputationalGraph, Backpropagation, GradientDescent, Autograd, VanishingGradient, ExplodingGradient.
 
 ## [2026-04-25] ingest | 2026-04-23 AI/ML Learning Day 01
@@ -209,3 +225,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-26] graph | Knowledge graph rebuilt
 
 468 nodes, 2140 edges (2140 extracted, 0 inferred).
+
+## [2026-04-26] graph | Knowledge graph rebuilt
+
+473 nodes, 2218 edges (2218 extracted, 0 inferred).
