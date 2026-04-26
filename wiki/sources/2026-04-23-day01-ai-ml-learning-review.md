@@ -1,51 +1,53 @@
 ---
 title: "2026-04-23 AI/ML Learning Day 01"
 type: source
-tags: [diary, ai-ml-learning, math-foundations]
+tags: [diary, ai-ml-learning, math-foundations, vector-space, linear-algebra]
 date: 2026-04-23
+last_updated: 2026-04-26
 source_file: raw/ai_ml_learning/2026-04-23-day01-ai-ml-learning-review.md
+sources: [2026-04-23-day01-ai-ml-learning-review]
 ---
 
-## Event Summary
-AI/ML 30일 학습 여정의 첫째 날. 수학 표현과 확률 기초를 주제로 [[VectorSpace]], [[LinearMap]], [[DotProduct]], [[Norm]], [[CosineSimilarity]]의 핵심 개념을 학습하고, 이들이 [[LLM]]의 [[Embedding]], [[Attention]], [[Gradient]] 연산과 어떻게 연결되는지 정리했다.
+## Summary
+Day 01은 AI/ML 30일 학습 중 수학 기초를 정리한 기록으로, [[VectorSpace]]와 [[Basis]], 좌표 표현, [[Matrix]]와 [[LinearMap]], 그리고 [[DotProduct]], [[Norm]], [[CosineSimilarity]]로 구성된다.
 
-## Key Decisions
-- 학습 레벨을 beginner-intermediate로 설정
-- 첫날은 벡터·행렬·내적 기초에 집중
-- 복습 질문 3개를 통해 개념 체화 목표
+핵심은 "벡터는 대상의 표현, 좌표는 기준축(기저) 기준의 숫자 표현"이라는 구분이다.
 
-## Energy & Mood
-- Day 01/30 — 기초 개념 리뷰에 집중한 구조화된 학습 세션
+이 문서는 이런 기하학적 표현이 [[LLM]]의 내부 연산인 [[Embedding]], [[Attention]], [[Gradient]], [[DenseLayer]]에서 어떻게 쓰이는지 연결해준다.
 
 ## Key Claims
-- [[VectorSpace]]는 벡터의 덧셈과 스칼라배가 정의되는 공간이며, 좌표(coordinate)는 선택한 [[Basis]]에 의존하는 수치 표현이다. 같은 벡터라도 basis가 바뀌면 coordinate는 달라진다.
-- [[Matrix]]는 단순한 숫자표가 아니라 벡터를 다른 벡터로 보내는 [[LinearMap]]의 계산 표현이다. [[Rank]]는 변환이 실제로 보존하는 독립 정보의 차원 수를 의미한다.
-- [[DotProduct]]는 두 벡터의 방향성과 크기가 결합된 관련도를 측정하며, [[Attention]]에서 query-key 점수화에 쓰인다.
-- [[Norm]]은 벡터의 크기를 나타내며, L1과 L2는 서로 다른 기하학적 성질을 갖는다. [[Gradient]] norm clipping, regularization에 연결된다.
-- [[CosineSimilarity]]는 크기를 제거하고 방향 유사도에 집중하므로 [[Embedding]] retrieval, semantic similarity에 자주 쓰인다.
-- [[LLM]]의 token embedding, hidden state, gradient는 모두 벡터 표현으로 다룰 수 있다.
-- Dense layer, projection layer, [[Attention]]의 Q/K/V projection은 모두 행렬 곱 관점으로 이해할 수 있다.
+- [[Vector]]는 대상을 수치적으로 표현한 결과이며, 동일한 대상이라도 [[Basis]]가 바뀌면 같은 벡터의 [[Coordinate]]가 달라질 수 있다.
+- [[VectorSpace]]는 벡터 덧셈과 스칼라배가 성립하는 공간이며, 좌표는 벡터의 고유값이 아니라 좌표계 선택에 따른 기록값이다.
+- [[Matrix]]는 숫자표 이상으로, [[LinearMap]]의 계산 표현으로서 벡터를 다른 벡터로 변환한다.
+- [[Rank]]는 [[LinearMap]]가 보존하는 독립 방향의 수로, 변환 후 정보의 유효한 차원 수를 나타낸다.
+- [[DotProduct]]는 방향과 크기를 동시에 반영한 유사성/관련도 점수이며, [[Attention]] 점수 계산의 핵심이다.
+- [[Norm]]은 벡터 크기(길이) 측도이며, [[Gradient]]의 [[GradientNormClipping]] 및 정규화 관점과 연결된다.
+- [[CosineSimilarity]]는 벡터 크기 효과를 제거하고 방향 유사도를 비교하므로 문장 의미 유사도 기반 [[RAG]]/검색에서 자주 쓰인다.
 
 ## Key Quotes
-> "좌표(coordinate)는 벡터 자체가 아니라, 선택한 basis에 대해 그 벡터를 어떻게 분해해서 표현하느냐를 나타내는 값이기 때문이다."
+> "좌표는 벡터 자체가 아니라, 선택한 basis에 대해 그 벡터를 어떻게 분해해서 표현하느냐를 나타내는 값이기 때문이다."
+
 > "rank는 그 linear map이 실제로 살려내는 독립적인 정보의 차원 수를 의미한다."
+
 > "attention은 raw interaction score로 dot product를, retrieval은 의미 유사도 비교를 위해 cosine similarity를 자주 활용한다."
-> "벡터공간은 표현의 대상, 행렬은 그 표현을 바꾸는 선형변환, dot product·norm·거리는 표현 사이의 관계를 수치화하는 도구다."
 
 ## Connections
-- [[VectorSpace]] — 벡터 표현의 기반 공간
-- [[Basis]] — 좌표 표현을 결정하는 기준축
-- [[LinearMap]] — 행렬의 본질적 해석
+- [[VectorSpace]] — 데이터 표현의 기반 공간
+- [[Basis]] — 좌표 계산의 기준축
+- [[Coordinate]] — basis-dependent(기저 의존) 좌표 표현
+- [[Matrix]] — [[LinearMap]]의 연산 형식화
+- [[LinearMap]] — 벡터 공간 간 선형 변환
 - [[Rank]] — 선형변환의 정보 보존 차원
-- [[DotProduct]] — [[Attention]] 메커니즘의 점수 함수 기반
-- [[Norm]] — [[Gradient]] clipping, regularization의 기초
-- [[CosineSimilarity]] — [[Embedding]] 검색 및 의미 유사도 측정
-- [[LLM]] — 학습한 수학 개념이 적용되는 대상 시스템
-- [[Embedding]] — 벡터 표현의 구체적 응용
-- [[Attention]] — dot product 기반 관련도 계산 메커니즘
-- [[Gradient]] — norm 기반 clipping 대상
-- [[LoRA]] — low-rank approximation과 rank 개념의 응용
-- [[PCA]] — basis change 관점의 응용
+- [[DotProduct]] — [[Attention]]의 기본 점수 연산
+- [[Norm]] — [[Gradient]] 크기 제어와 정규화 지표
+- [[L2Norm]] — 기하학적 거리/길이 척도
+- [[CosineSimilarity]] — 의미 유사도 비교
+- [[Embedding]] — 토큰/문장 표현 벡터
+- [[Attention]] — Q·K 점수화 및 정보 결합 단계
+- [[DenseLayer]] — [[LLM]]의 핵심 선형 변환 층
+- [[LoRA]] — [[Rank]] 개념과 연결되는 저차원 업데이트 방식
+- [[Gradient]] — [[LLM]] 학습에서의 방향 신호
+- [[Vector]] — 계산 단위 기본 객체
 
 ## Contradictions
-- None identified with existing wiki content.
+- 기존 [[LinearMap]]/[[Rank]] 관련 문서들과 모순되는 내용은 없다.

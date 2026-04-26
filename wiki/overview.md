@@ -6,10 +6,10 @@ This wiki synthesizes knowledge from multiple sources about AI, machine learning
 
 The wiki covers a structured 30-day learning path. Key mathematical foundations include:
 
-- **Linear Algebra** ([[2026-04-23 AI/ML Learning Day 01]]): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
-- **Probability & Statistics** ([[2026-04-24 AI/ML Learning Day 02]]): [[RandomVariable]], [[ProbabilityDistribution]], [[PMF]], [[PDF]], [[CDF]], [[BayesTheorem]] with [[Prior]], [[Likelihood]], [[Posterior]].
-- **Machine Learning as Function Approximation** ([[2026-04-25 AI/ML Learning Day 03]]): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
-- **Optimization via Calculus** ([[2026-04-26 AI/ML Learning Day 04]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[ChainRule]], [[ComputationalGraph]], [[Backpropagation]], [[GradientDescent]], [[Autograd]], [[VanishingGradient]], [[ExplodingGradient]].
+- **Linear Algebra** ([[2026-04-23-day01-ai-ml-learning-review]]): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
+- **Probability & Statistics** ([[2026-04-24-day02-ai-ml-learning-review]]): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/stat dependence notions like [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism for model inference.
+- **Machine Learning as Function Approximation** ([[2026-04-25-day03-ai-ml-learning-review]]): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
+- **Optimization via Calculus** ([[2026-04-26-day04-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], and [[ExplodingGradient]].
 
 ## AI Hardware & Inference
 

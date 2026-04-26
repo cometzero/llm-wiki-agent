@@ -6,10 +6,10 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
-- [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]·[[PartialDerivative]]·[[Gradient]]·[[ChainRule]]·[[ComputationalGraph]]·[[Backpropagation]] 기반으로 [[GradientDescent]]와 [[Autograd]]의 수학적 기초를 정리한 AI/ML 30일 학습 Day 04 복습 기록
-- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]·[[Basis]]·[[LinearMap]]·[[Rank]]·[[DotProduct]]·[[Norm]]·[[CosineSimilarity]] 기반으로 [[LLM]]의 [[Embedding]]·[[Attention]]·[[Gradient]] 연산을 수학적으로 정리한 AI/ML 30일 학습 Day 01 복습 기록
-- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]]·[[HypothesisSpace]]·[[LossFunction]]·[[FeatureMatrix]]·[[CurseOfDimensionality]]로 ML을 함수 근사와 고차원 표현 문제로 정리한 학습 기록
-- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]·[[ProbabilityDistribution]] 기반으로 [[PMF]]·[[PDF]]·[[CDF]]와 기대값 계열 통계량, 그리고 [[BayesTheorem]]의 [[Prior]], [[Likelihood]], [[Posterior]] 구조를 정리한 AI/ML 기초 복습
+- [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]와 [[Gradient]]의 기초를 [[ChainRule]]과 [[ComputationalGraph]] 기반 [[Backpropagation]]으로 연결해 [[GradientDescent]]의 기하적/계산적 직관과 학습 안정성(learning rate, exploding/vanishing behavior)을 정리한 복습 기록
+- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]] 관점에서 머신러닝 학습을 정리하고, [[FeatureMatrix]]·[[TensorShape]] 기반 입력 표현 및 [[CurseOfDimensionality]]의 위험을 [[Regularization]]·[[RepresentationLearning]]으로 보완하는 Day 03 복습
+- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]와 [[ProbabilityDistribution]], [[PMF]]·[[PDF]]·[[CDF]]의 이산/연속 분기와 [[Expectation]]·[[Variance]]·[[Covariance]] 요약 통계, 그리고 [[BayesTheorem]]의 [[Prior]]·[[Likelihood]]·[[Posterior]] 업데이트 구조를 정리한 AI/ML 기초 복습이다.
+- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]·[[Basis]]·[[LinearMap]]·[[Rank]]·[[DotProduct]]·[[Norm]]·[[CosineSimilarity]]로 [[LLM]]의 [[Embedding]], [[Attention]], [[Gradient]] 연산 연결을 정리한 AI/ML 학습 1일차 리뷰
 - [\"인간지능 시대는 끝났다\" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호의원에게-내린-숙제-차지호-의원-1부.md) — [[UN]]의 AI 기능 이전을 매개로 [[HumanIntelligenceSystem]], [[Polycrisis]], [[ConnectedIntelligence]], [[UniversalBasicIncome]]가 충돌하는 AI 사회전환 설계 프레임을 제시한다.
 - [Understanding the RISC-V Extensions for AI - John Simpson, SiFive](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]] AI 가속을 위해 [[VectorBatchProduct]], [[IntegratedMatrixExtensions]], [[VectorMatrixExtensions]], [[AttachedMatrixExtensions]]를 워크로드 단계별로 선택하는 방식과 [[LLM]]의 prefill/decode 특성 반영 기준을 정리한다.
 - [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — [[Terafab]]는 [[Tesla]], [[SpaceX]], [[xAI]] 협업으로 연간 [[Terawatt]]급 AI 컴퓨팅을 확보해 우주 기반 확장과 [[ElectromagneticMassDriver]] 기반 [[PetawattComputing]]까지 연결하려는 장기 로드맵을 제시한다.
@@ -189,6 +189,15 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+- [HypothesisSpace](concepts/HypothesisSpace.md) — 모델이 선택할 수 있는 후보 함수들의 집합과 그 표현력 범위.
+- [FunctionApproximation](concepts/FunctionApproximation.md) — 머신러닝을 입력-출력 함수 학습 문제로 바라보는 핵심 관점.
+- [LearningRate](concepts/LearningRate.md) — optimizer가 한 번에 얼마나 크게 이동할지 정하는 스텝 크기.
+- [ExplodingGradient](concepts/ExplodingGradient.md) — gradient가 지나치게 커져 학습이 불안정해지는 현상.
+- [VanishingGradient](concepts/VanishingGradient.md) — 깊은 네트워크에서 gradient가 너무 작아져 학습이 어려워지는 현상.
+- [BackwardPass](concepts/BackwardPass.md) — 출력에서 입력 방향으로 gradient를 전달하는 역전파 단계.
+- [ForwardPass](concepts/ForwardPass.md) — 입력에서 출력까지 값을 계산하는 순전파 단계.
+- [Jacobian](concepts/Jacobian.md) — 벡터값 함수의 미분을 행렬로 모은 일반화된 도구.
+- [DirectionalDerivative](concepts/DirectionalDerivative.md) — 특정 방향으로 움직일 때 함수가 얼마나 변하는지 측정하는 변화율.
 
 - [Address Space Isolation](concepts/AddressSpaceIsolation.md) — Address space isolation is presented as a way to partition kernel internals into contexts with hardware-backed memory restrictions to reduce self-interference.
 - [AIAutomation](concepts/AIAutomation.md) — AI가 반복적이고 규칙화된 정보 노동을 대체하거나 증강하는 흐름. 코딩, 문서 작업, 테스트, 콘텐츠 분석, 금융 중개 등 여러 영역에 걸쳐 등장한다.
