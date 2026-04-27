@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — [[Optimization]]을 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[GradientDescent]]로 분해해 Day05 학습 목표를 정리한 복습 기록
 - [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]와 [[Gradient]]의 기초를 [[ChainRule]]과 [[ComputationalGraph]] 기반 [[Backpropagation]]으로 연결해 [[GradientDescent]]의 기하적/계산적 직관과 학습 안정성(learning rate, exploding/vanishing behavior)을 정리한 복습 기록
 - [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]] 관점에서 머신러닝 학습을 정리하고, [[FeatureMatrix]]·[[TensorShape]] 기반 입력 표현 및 [[CurseOfDimensionality]]의 위험을 [[Regularization]]·[[RepresentationLearning]]으로 보완하는 Day 03 복습
 - [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]와 [[ProbabilityDistribution]], [[PMF]]·[[PDF]]·[[CDF]]의 이산/연속 분기와 [[Expectation]]·[[Variance]]·[[Covariance]] 요약 통계, 그리고 [[BayesTheorem]]의 [[Prior]]·[[Likelihood]]·[[Posterior]] 업데이트 구조를 정리한 AI/ML 기초 복습이다.
@@ -189,6 +190,26 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+- [Adam](concepts/Adam.md) — gradient의 1차/2차 모멘트 추정을 활용해 파라미터별 학습률을 적응적으로 조정하는 optimizer.
+- [Argmin](concepts/Argmin.md) — objective 값을 가장 작게 만드는 입력 위치 또는 입력 집합.
+- [Convergence](concepts/Convergence.md) — 반복 최적화에서 손실이나 파라미터가 안정된 해에 가까워지는 현상.
+- [Constraint](concepts/Constraint.md) — 최적화에서 허용 가능한 해의 범위를 제한하는 조건.
+- [Cross-Entropy](concepts/CrossEntropy.md) — 분류와 LLM 학습에서 널리 쓰이는 확률 기반 손실 함수.
+- [Empirical Risk](concepts/EmpiricalRisk.md) — train 데이터에서 계산한 평균 손실.
+- [Empirical Risk Minimization](concepts/EmpiricalRiskMinimization.md) — train 데이터 평균 손실을 최소화하는 실전 학습 원리.
+- [Linear Regression](concepts/LinearRegression.md) — 선형 결합으로 연속값을 예측하는 기본 회귀 모델.
+- [Mean Squared Error](concepts/MSE.md) — 예측과 정답의 제곱 오차 평균을 쓰는 대표 회귀 손실.
+- [Objective](concepts/Objective.md) — 모델 학습에서 최적화할 목표 함수.
+- [Objective Function](concepts/ObjectiveFunction.md) — 좋고 나쁨을 수치로 정의하는 목적 함수라는 표현.
+- [Optimizer](concepts/Optimizer.md) — gradient를 사용해 파라미터를 실제로 갱신하는 알고리즘 또는 모듈.
+- [Optimization Problem](concepts/OptimizationProblem.md) — 목적 함수와 제약 아래 해를 찾는 문제 형식 전체.
+- [Overfitting](concepts/Overfitting.md) — train 데이터에 과도하게 맞아 일반화가 나빠지는 현상.
+- [Parameter](concepts/Parameter.md) — 학습 과정에서 조정되는 모델 내부 변수.
+- [Reinforcement Learning](concepts/ReinforcementLearning.md) — reward 최대화를 목표로 학습하는 프레임워크.
+- [SGD](concepts/SGD.md) — 샘플 또는 mini-batch 기반으로 gradient를 추정하는 경사하강법 변형.
+- [Step Size](concepts/StepSize.md) — 한 번의 업데이트에서 얼마나 이동할지 정하는 크기.
+- [Surrogate Loss](concepts/SurrogateLoss.md) — 직접 최적화하기 어려운 목표를 대신하는 대체 손실.
+- [Update Rule](concepts/UpdateRule.md) — 현재 파라미터를 다음 파라미터로 바꾸는 공식.
 - [HypothesisSpace](concepts/HypothesisSpace.md) — 모델이 선택할 수 있는 후보 함수들의 집합과 그 표현력 범위.
 - [FunctionApproximation](concepts/FunctionApproximation.md) — 머신러닝을 입력-출력 함수 학습 문제로 바라보는 핵심 관점.
 - [LearningRate](concepts/LearningRate.md) — optimizer가 한 번에 얼마나 크게 이동할지 정하는 스텝 크기.

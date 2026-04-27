@@ -6,10 +6,14 @@ This wiki synthesizes knowledge from multiple sources about AI, machine learning
 
 The wiki covers a structured 30-day learning path. Key mathematical foundations include:
 
-- **Linear Algebra** ([[2026-04-23-day01-ai-ml-learning-review]]): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
-- **Probability & Statistics** ([[2026-04-24-day02-ai-ml-learning-review]]): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/stat dependence notions like [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism for model inference.
-- **Machine Learning as Function Approximation** ([[2026-04-25-day03-ai-ml-learning-review]]): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
-- **Optimization via Calculus** ([[2026-04-26-day04-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], and [[ExplodingGradient]].
+- **Linear Algebra** ([[2026-04-23-ai-ml-learning-review]]): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
+- **Probability & Statistics** ([[2026-04-24-ai-ml-learning-review]]): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/stat dependence notions like [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism for model inference.
+- **Machine Learning as Function Approximation** ([[2026-04-25-ai-ml-learning-review]]): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
+- **Optimization via Calculus** ([[2026-04-26-ai-ml-learning-review]], [[2026-04-27-day05-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], [[ExplodingGradient]], and now refined framing with [[Objective]], [[Argmin]], [[LossFunction]], [[EmpiricalRisk]], [[EmpiricalRiskMinimization]], and [[SurrogateLoss]].
+
+## Core Learning Flow Added by Day 05
+
+AI/ML 학습은 [[Objective]](목표함수) 설정에서 출발해 [[LossFunction]] 기반의 [[EmpiricalRisk]] 계산, [[GradientDescent]] 기반의 [[UpdateRule]] 반복으로 이어진다. 이때 [[StepSize]]/[[LearningRate]]는 수렴 안정성과 속도를 좌우하고, [[Constraint]] 및 [[Regularization]]은 과적합과 불안정성을 제어한다.
 
 ## AI Hardware & Inference
 
