@@ -1,3 +1,7 @@
+## [2026-04-27] ingest | 2026-04-27 AI/ML Learning Day 05
+
+Added source. Key claims: 학습을 [[Optimization]] 문제로 재정의해 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[EmpiricalRiskMinimization]], [[GradientDescent]]의 연결고리를 정리했고, [[Objective]]와 [[Argmin]], [[LossFunction]]와 [[EmpiricalRisk]], 그리고 [[Gradient]]와 [[StepSize]]의 역할 구분을 추가했다.
+
 ## [2026-04-26] ingest | 2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation
 
 Added source. Key claims: Day 04 formalized optimization intuition from [[Derivative]] and [[PartialDerivative]] to [[Gradient]], and linked [[ChainRule]] + [[ComputationalGraph]] to practical [[Backpropagation]]/[[Autograd]] workflows. It also emphasized [[DirectionalDerivative]], [[ForwardPass]]/[[BackwardPass]], and [[LearningRate]] tradeoffs in avoiding unstable updates.
@@ -229,3 +233,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-26] graph | Knowledge graph rebuilt
 
 473 nodes, 2218 edges (2218 extracted, 0 inferred).
+
+## [2026-04-27] graph | Knowledge graph rebuilt
+
+494 nodes, 2351 edges (2351 extracted, 0 inferred).
