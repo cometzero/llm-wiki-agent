@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — [[SGD]]와 [[MiniBatch]]의 차이를 중심으로 [[LearningRate]], [[Convergence]], [[Momentum]], [[Adam]]의 작동 원리를 정리한 Day 06 복습 기록
 - [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — [[Optimization]]을 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[GradientDescent]]로 분해해 Day05 학습 목표를 정리한 복습 기록
 - [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]와 [[Gradient]]의 기초를 [[ChainRule]]과 [[ComputationalGraph]] 기반 [[Backpropagation]]으로 연결해 [[GradientDescent]]의 기하적/계산적 직관과 학습 안정성(learning rate, exploding/vanishing behavior)을 정리한 복습 기록
 - [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]] 관점에서 머신러닝 학습을 정리하고, [[FeatureMatrix]]·[[TensorShape]] 기반 입력 표현 및 [[CurseOfDimensionality]]의 위험을 [[Regularization]]·[[RepresentationLearning]]으로 보완하는 Day 03 복습
@@ -193,6 +194,9 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Adam](concepts/Adam.md) — gradient의 1차/2차 모멘트 추정을 활용해 파라미터별 학습률을 적응적으로 조정하는 optimizer.
 - [Argmin](concepts/Argmin.md) — objective 값을 가장 작게 만드는 입력 위치 또는 입력 집합.
 - [Convergence](concepts/Convergence.md) — 반복 최적화에서 손실이나 파라미터가 안정된 해에 가까워지는 현상.
+- [Divergence](concepts/Divergence.md) — 학습 업데이트가 불안정해져 loss 또는 파라미터 값이 폭주하는 최적화 실패 양상.
+- [MiniBatch](concepts/MiniBatch.md) — 전체 데이터 대신 작은 묶음으로 gradient를 추정해 빠르게 업데이트하는 학습 단위.
+- [Momentum](concepts/Momentum.md) — 이전 gradient 흐름을 누적해 일관된 방향은 강화하고 흔들림은 완화하는 optimizer 기법.
 - [Constraint](concepts/Constraint.md) — 최적화에서 허용 가능한 해의 범위를 제한하는 조건.
 - [Cross-Entropy](concepts/CrossEntropy.md) — 분류와 LLM 학습에서 널리 쓰이는 확률 기반 손실 함수.
 - [Empirical Risk](concepts/EmpiricalRisk.md) — train 데이터에서 계산한 평균 손실.

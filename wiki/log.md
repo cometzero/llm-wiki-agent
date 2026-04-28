@@ -1,3 +1,7 @@
+## [2026-04-28] ingest | 2026-04-28 AI/ML Learning Day 06
+
+Added source. Key claims: [[SGD]]/[[MiniBatch]]는 전체 데이터 gradient의 대체 추정치로 계산 효율을 높여 반복 학습을 가능케 하며, [[LearningRate]]가 수렴 안정성의 핵심 변수로 [[Convergence]], [[Oscillation]], [[Divergence]]를 좌우한다. [[Momentum]]과 [[Adam]]은 각각 누적 방향 정보와 1차/2차 모멘트 정보를 이용해 [[AdaptiveLearningRate]]와 함께 업데이트 안정성을 향상시키는 optimizer 전략이다.
+
 ## [2026-04-27] ingest | 2026-04-27 AI/ML Learning Day 05
 
 Added source. Key claims: 학습을 [[Optimization]] 문제로 재정의해 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[EmpiricalRiskMinimization]], [[GradientDescent]]의 연결고리를 정리했고, [[Objective]]와 [[Argmin]], [[LossFunction]]와 [[EmpiricalRisk]], 그리고 [[Gradient]]와 [[StepSize]]의 역할 구분을 추가했다.
@@ -237,3 +241,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-27] graph | Knowledge graph rebuilt
 
 494 nodes, 2351 edges (2351 extracted, 0 inferred).
+
+## [2026-04-28] graph | Knowledge graph rebuilt
+
+498 nodes, 2400 edges (2400 extracted, 0 inferred).
