@@ -1,3 +1,7 @@
+## [2026-04-29] ingest | 2026-04-29 AI/ML Learning Day 07
+
+Added source. Key claims: 모델의 표현력은 [[HypothesisSpace]]와 [[Capacity]]로 정리되며 과소/과대 적합이 trade-off를 만든다. [[TrainSet]], [[ValidationSet]], [[TestSet]] 분리를 통해 일반화 가능성을 진단하고, [[Generalization]]은 [[GeneralizationGap]] 및 [[OutOfSample]] 성능으로 평가해야 한다. capacity 균형, split 규칙 준수, [[DataLeakage]] 회피를 통해 실전 배포 신뢰도를 높인다.
+
 ## [2026-04-28] ingest | 2026-04-28 AI/ML Learning Day 06
 
 Added source. Key claims: [[SGD]]/[[MiniBatch]]는 전체 데이터 gradient의 대체 추정치로 계산 효율을 높여 반복 학습을 가능케 하며, [[LearningRate]]가 수렴 안정성의 핵심 변수로 [[Convergence]], [[Oscillation]], [[Divergence]]를 좌우한다. [[Momentum]]과 [[Adam]]은 각각 누적 방향 정보와 1차/2차 모멘트 정보를 이용해 [[AdaptiveLearningRate]]와 함께 업데이트 안정성을 향상시키는 optimizer 전략이다.
@@ -245,3 +249,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-28] graph | Knowledge graph rebuilt
 
 498 nodes, 2400 edges (2400 extracted, 0 inferred).
+
+## [2026-04-29] graph | Knowledge graph rebuilt
+
+513 nodes, 2497 edges (2497 extracted, 0 inferred).

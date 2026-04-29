@@ -19,7 +19,18 @@ AI/ML 학습은 [[Objective]](목표함수) 설정에서 출발해 [[LossFunctio
 
 [[MiniBatch]]는 실전 학습에서 계산/수렴 트레이드오프를 다루는 핵심 단위로, 전체 데이터의 완전 기울기 대신 표본 집합으로부터의 StochasticEstimate를 제공한다. 이는 학습 속도와 하드웨어 효율성 측면에서 유리하지만, [[Variance]]와 잡음으로 인해 Oscillation이 자연스러운 현상이 됨을 함께 고려한다.
 
-학습의 안정성은 [[LearningRate]] 선택이 결정적이다. [[Convergence]], [[Divergence]], [[Divergence]] 위험을 줄이기 위해 보통 [[LearningRate]] schedule(Warmup, decay, cosine)와 함께 쓰며, [[Optimizer]]의 진화 계열은 [[Momentum]]와 [[Adam]]으로 이어진다. 특히 [[Adam]]은 FirstMoment와 SecondMoment을 추적해 AdaptiveLearningRate 효과를 주므로 [[LLM]], [[Transformer]], [[Embedding]], [[Attention]] 기반 모델에서 성능/안정성 모두에 큰 영향을 준다.
+학습의 안정성은 [[LearningRate]] 선택이 결정적이다. [[Convergence]], [[Divergence]], [[Divergence]] 위험을 줄이기 위해 보통 [[LearningRate]] schedule(Warmup, decay, cosine)와 함께 쓰이며, [[Optimizer]]의 진화 계열은 [[Momentum]]와 [[Adam]]으로 이어진다. 특히 [[Adam]]은 FirstMoment와 SecondMoment을 추적해 AdaptiveLearningRate 효과를 주므로 [[LLM]], [[Transformer]], [[Embedding]], [[Attention]] 기반 모델에서 성능/안정성 모두에 큰 영향을 준다.
+
+## Core Learning Flow Added by Day 07
+
+Day 07 introduces the structural perspective on model power and evaluation reliability.
+
+1. [[HypothesisSpace]] defines what a model family can represent, while [[Capacity]] and [[Expressivity]] describe the breadth and complexity of that representable set.
+2. Larger capacity expands the set of fit functions but increases [[Overfitting]] risk when data is limited, noisy, or biased.
+3. [[InductiveBias]] is the model's built-in preference, which can stabilize learning when data is sparse and supports better [[Generalization]] if aligned with data structure.
+4. Proper [[TrainValidationTestSplit]] is the control framework for deciding if the model learned actual structure rather than memorization.
+5. [[TrainSet]] drives parameter fitting, [[ValidationSet]] supports tuning ([[Hyperparameter]], [[EarlyStopping]]), and [[TestSet]] estimates [[OutOfSample]] behavior; only last-stage use of test is considered reliable.
+6. [[GeneralizationGap]] gives a practical diagnostic: small gap with high performance is preferable, while large gap requires investigation into overfitting, distribution mismatch, leakage, or preprocessing/data-split flaws.
 
 ## AI Hardware & Inference
 

@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-29 AI/ML Learning Day 07](sources/2026-04-29-day07-ai-ml-learning-review.md) — [[HypothesisSpace]]와 [[Capacity]]/[[TrainValidationTestSplit]]·[[Generalization]]·[[GeneralizationGap]] 흐름을 연결해 Day 07 복습 핵심을 정리한 기록
 - [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — [[SGD]]와 [[MiniBatch]]의 차이를 중심으로 [[LearningRate]], [[Convergence]], [[Momentum]], [[Adam]]의 작동 원리를 정리한 Day 06 복습 기록
 - [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — [[Optimization]]을 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[GradientDescent]]로 분해해 Day05 학습 목표를 정리한 복습 기록
 - [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]와 [[Gradient]]의 기초를 [[ChainRule]]과 [[ComputationalGraph]] 기반 [[Backpropagation]]으로 연결해 [[GradientDescent]]의 기하적/계산적 직관과 학습 안정성(learning rate, exploding/vanishing behavior)을 정리한 복습 기록
