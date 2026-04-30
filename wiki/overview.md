@@ -6,7 +6,7 @@ This wiki synthesizes knowledge from multiple sources about AI, machine learning
 
 The wiki covers a structured 30-day learning path. Key mathematical foundations include:
 
-- **Linear Algebra** (2026-04-23-ai-ml-learning-review): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
+- **Linear Algebra** (2026-04-29-ai-ml-learning-review): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
 - **Probability & Statistics** (2026-04-24-ai-ml-learning-review): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/stat dependence notions like [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism for model inference.
 - **Machine Learning as Function Approximation** (2026-04-25-ai-ml-learning-review): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
 - **Optimization via Calculus** (2026-04-26-ai-ml-learning-review, [[2026-04-27-day05-ai-ml-learning-review]], [[2026-04-28-day06-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], [[ExplodingGradient]], [[MiniBatch]], [[Variance]], [[Momentum]], and [[Adam]], and the practical implications for [[Convergence]], [[Divergence]], and Oscillation.
@@ -31,6 +31,28 @@ Day 07 introduces the structural perspective on model power and evaluation relia
 4. Proper [[TrainValidationTestSplit]] is the control framework for deciding if the model learned actual structure rather than memorization.
 5. [[TrainSet]] drives parameter fitting, [[ValidationSet]] supports tuning ([[Hyperparameter]], [[EarlyStopping]]), and [[TestSet]] estimates [[OutOfSample]] behavior; only last-stage use of test is considered reliable.
 6. [[GeneralizationGap]] gives a practical diagnostic: small gap with high performance is preferable, while large gap requires investigation into overfitting, distribution mismatch, leakage, or preprocessing/data-split flaws.
+
+## Core Learning Flow Added by Day 08
+
+Day 08 closes the bridge from structural understanding to day-to-day diagnostics.
+
+- [[Overfitting]] and [[Underfitting]] are interpreted by comparing [[TrainingLoss]] and [[ValidationLoss]].
+  - if training gets better but validation gets worse, the model is likely overfitting.
+  - if both are poor, underfitting is likely.
+- [[BiasVarianceTradeoff]] explains why this happens: 
+  - [[Bias]] dominant states miss the true rule and underfit.
+  - [[Variance]] dominant states overreact to sample-specific details and overfit.
+- [[Generalization]] remains the real goal: low error on unseen data,
+  not perfect memorization of training points.
+- [[Regularization]] is the standard control layer for model complexity:
+  - objective augmentation with penalty: [[L1Penalty]], [[L2Penalty]], [[WeightDecay]],
+  - learning-control: [[EarlyStopping]], [[Dropout]], [[DataAugmentation]], noise-based robustness techniques,
+  - parameter/data choice (more data, feature revision, and better split hygiene).
+- Practical interpretation from learning curves:
+  - if training loss decreases continuously while validation loss turns up, reduce complexity or regularization strength and stop too-early fitting.
+  - too strong regularization can cause [[Underfitting]], so [[Lambda]] tuning is always a tradeoff.
+
+In modern ML/LLM pipelines, this frame is especially visible in embedding and fine-tuning behavior: repeated benchmark fit without new-scenario robustness is often a warning sign of poor [[Generalization]].
 
 ## AI Hardware & Inference
 
