@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-04-30 AI/ML Learning Day 08](sources/2026-04-30-day08-ai-ml-learning-review.md) — [[Overfitting]]과 [[Underfitting]], [[BiasVarianceTradeoff]], [[Regularization]]을 통해 [[Generalization]]을 설계하는 Day 08 복습 기록
 - [2026-04-29 AI/ML Learning Day 07](sources/2026-04-29-day07-ai-ml-learning-review.md) — [[HypothesisSpace]]와 [[Capacity]]/[[TrainValidationTestSplit]]·[[Generalization]]·[[GeneralizationGap]] 흐름을 연결해 Day 07 복습 핵심을 정리한 기록
 - [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — [[SGD]]와 [[MiniBatch]]의 차이를 중심으로 [[LearningRate]], [[Convergence]], [[Momentum]], [[Adam]]의 작동 원리를 정리한 Day 06 복습 기록
 - [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — [[Optimization]]을 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[GradientDescent]]로 분해해 Day05 학습 목표를 정리한 복습 기록
@@ -192,6 +193,22 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+- [ModelCapacity](concepts/ModelCapacity.md) — 모델이 복잡한 패턴이나 함수를 표현할 수 있는 능력.
+- [L2Penalty](concepts/L2Penalty.md) — weight 제곱합을 벌점으로 쓰는 정규화 방식.
+- [L1Penalty](concepts/L1Penalty.md) — weight 절댓값 합을 벌점으로 쓰는 정규화 방식.
+- [WeightDecay](concepts/WeightDecay.md) — 학습 중 weight 크기를 줄여 과적합을 완화하는 정규화 방식.
+- [BiasVarianceTradeoff](concepts/BiasVarianceTradeoff.md) — 단순함에서 오는 bias와 민감함에서 오는 variance 사이의 균형 문제.
+- [Bias](concepts/Bias.md) — 모델의 평균 예측이 실제 규칙에서 구조적으로 벗어나는 정도.
+- [Underfitting](concepts/Underfitting.md) — 모델이 데이터의 기본 규칙을 충분히 배우지 못해 train/validation 모두에서 성능이 낮아지는 현상.
+- [Weight](concepts/Weight.md) — 모델이 입력 특징이나 내부 표현에 부여하는 학습 가능한 계수.
+- [NoiseInjection](concepts/NoiseInjection.md) — 입력, feature, hidden state 등에 작은 노이즈를 넣어 모델의 robustness와 일반화를 높이는 정규화 방식.
+- [AdamW](concepts/AdamW.md) — Adam optimizer에 decoupled weight decay를 결합한 딥러닝 최적화 알고리즘.
+- [Epoch](concepts/Epoch.md) — 학습 데이터 전체를 모델이 한 번 모두 본 학습 단위.
+- [ModelComplexity](concepts/ModelComplexity.md) — 모델이 표현할 수 있는 패턴의 복잡도와 자유도.
+- [ValidationLoss](concepts/ValidationLoss.md) — 모델 선택과 과적합 점검을 위해 학습에 직접 쓰지 않은 검증 데이터에서 계산한 손실 값.
+- [TrainingLoss](concepts/TrainingLoss.md) — 모델이 학습에 직접 사용한 데이터에서 계산한 손실 값.
+- [DataAugmentation](concepts/DataAugmentation.md) — 원본 데이터를 보존하면서 변형 샘플을 만들어 모델이 더 다양한 입력에 일반화하도록 돕는 기법.
+- [Dropout](concepts/Dropout.md) — 학습 중 일부 뉴런이나 경로를 임시로 꺼 특정 패턴에 과도하게 의존하지 않도록 하는 정규화 기법.
 - [Adam](concepts/Adam.md) — gradient의 1차/2차 모멘트 추정을 활용해 파라미터별 학습률을 적응적으로 조정하는 optimizer.
 - [Argmin](concepts/Argmin.md) — objective 값을 가장 작게 만드는 입력 위치 또는 입력 집합.
 - [Convergence](concepts/Convergence.md) — 반복 최적화에서 손실이나 파라미터가 안정된 해에 가까워지는 현상.

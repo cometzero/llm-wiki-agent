@@ -1,3 +1,7 @@
+## [2026-04-30] ingest | 2026-04-30 AI/ML Learning Day 08
+
+Added source. Key claims: Day 08 formalizes the connection between [[Overfitting]], [[Underfitting]], [[BiasVarianceTradeoff]], and [[Regularization]], with practice-oriented diagnostic guidance around [[TrainingLoss]]/[[ValidationLoss]] divergence and model complexity control via [[L1Penalty]], [[L2Penalty]], and [[WeightDecay]]. Also added conceptual updates with new pages: [[Underfitting]], [[Bias]], [[BiasVarianceTradeoff]], [[WeightDecay]], [[L1Penalty]], [[L2Penalty]], and updated index/overview entries.
+
 ## [2026-04-29] ingest | 2026-04-29 AI/ML Learning Day 07
 
 Added source. Key claims: 모델의 표현력은 [[HypothesisSpace]]와 [[Capacity]]로 정리되며 과소/과대 적합이 trade-off를 만든다. [[TrainSet]], [[ValidationSet]], [[TestSet]] 분리를 통해 일반화 가능성을 진단하고, [[Generalization]]은 [[GeneralizationGap]] 및 [[OutOfSample]] 성능으로 평가해야 한다. capacity 균형, split 규칙 준수, [[DataLeakage]] 회피를 통해 실전 배포 신뢰도를 높인다.
@@ -253,3 +257,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-29] graph | Knowledge graph rebuilt
 
 513 nodes, 2497 edges (2497 extracted, 0 inferred).
+
+## [2026-04-30] graph | Knowledge graph rebuilt
+
+530 nodes, 2589 edges (2589 extracted, 0 inferred).
