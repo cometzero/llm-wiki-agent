@@ -1,3 +1,7 @@
+## [2026-05-01] ingest | 2026-05-01 AI/ML Learning Day 09
+
+Added source. Key claims: 교차검증을 통해 [[CrossValidation]]/[[KFoldCrossValidation]] 기반의 안정적 성능 추정으로 단일 split 편향을 줄였고, 도메인 목표에 맞는 [[EvaluationMetric]] 설계를 위해 [[Precision]], [[Recall]], [[F1Score]], [[AUROC]]를 활용했으며, [[Regression]]과 [[Classification]]의 [[RegressionLoss]]와 [[ClassificationLoss]] 차이를 통해 모델 학습 신호를 정확히 분리했다.
+
 ## [2026-04-30] ingest | 2026-04-30 AI/ML Learning Day 08
 
 Added source. Key claims: Day 08 formalizes the connection between [[Overfitting]], [[Underfitting]], [[BiasVarianceTradeoff]], and [[Regularization]], with practice-oriented diagnostic guidance around [[TrainingLoss]]/[[ValidationLoss]] divergence and model complexity control via [[L1Penalty]], [[L2Penalty]], and [[WeightDecay]]. Also added conceptual updates with new pages: [[Underfitting]], [[Bias]], [[BiasVarianceTradeoff]], [[WeightDecay]], [[L1Penalty]], [[L2Penalty]], and updated index/overview entries.
@@ -261,3 +265,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-04-30] graph | Knowledge graph rebuilt
 
 530 nodes, 2589 edges (2589 extracted, 0 inferred).
+
+## [2026-05-01] graph | Knowledge graph rebuilt
+
+542 nodes, 2668 edges (2668 extracted, 0 inferred).
