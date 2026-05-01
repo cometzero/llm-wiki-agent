@@ -34,12 +34,12 @@ Day 07 introduces the structural perspective on model power and evaluation relia
 
 ## Core Learning Flow Added by Day 08
 
-Day 08 closes the bridge from structural understanding to day-to-day diagnostics.
+Day 08 closes the bridge from structural understanding to daily diagnostics.
 
 - [[Overfitting]] and [[Underfitting]] are interpreted by comparing [[TrainingLoss]] and [[ValidationLoss]].
   - if training gets better but validation gets worse, the model is likely overfitting.
   - if both are poor, underfitting is likely.
-- [[BiasVarianceTradeoff]] explains why this happens: 
+- [[BiasVarianceTradeoff]] explains why this happens:
   - [[Bias]] dominant states miss the true rule and underfit.
   - [[Variance]] dominant states overreact to sample-specific details and overfit.
 - [[Generalization]] remains the real goal: low error on unseen data,
@@ -47,12 +47,27 @@ Day 08 closes the bridge from structural understanding to day-to-day diagnostics
 - [[Regularization]] is the standard control layer for model complexity:
   - objective augmentation with penalty: [[L1Penalty]], [[L2Penalty]], [[WeightDecay]],
   - learning-control: [[EarlyStopping]], [[Dropout]], [[DataAugmentation]], noise-based robustness techniques,
-  - parameter/data choice (more data, feature revision, and better split hygiene).
+  - parameter/data choice (more data, feature revision, better split hygiene).
 - Practical interpretation from learning curves:
   - if training loss decreases continuously while validation loss turns up, reduce complexity or regularization strength and stop too-early fitting.
   - too strong regularization can cause [[Underfitting]], so [[Lambda]] tuning is always a tradeoff.
 
-In modern ML/LLM pipelines, this frame is especially visible in embedding and fine-tuning behavior: repeated benchmark fit without new-scenario robustness is often a warning sign of poor [[Generalization]].
+## Core Learning Flow Added by Day 09
+
+Day 09 extends the flow into robust evaluation and alignment of objectives.
+
+1. [[CrossValidation]] and specifically [[KFoldCrossValidation]] make performance estimation less dependent on one lucky or unlucky split by averaging validation outcomes across multiple folds.
+2. Proper [[EvaluationMetric]] design is now framed as a model-choice tool, not a cosmetic score. In particular:
+   - [[Accuracy]] can be misleading under [[ImbalancedData]],
+   - [[Precision]]/[[Recall]] and [[F1Score]] expose different failure costs,
+   - [[AUROC]] is useful for threshold-agnostic ranking behavior.
+3. [[Threshold]] tuning is tied to business utility: lowering threshold usually raises recall while reducing precision, and vice versa.
+4. [[Loss]] is separated from metric: learning signal control ([[RegressionLoss]] vs [[ClassificationLoss]]) should match the task type.
+   - [[Regression]]: distance-based penalties such as [[MSE]]/[[MAE]],
+   - [[Classification]]: probability-shaping penalties such as [[CrossEntropy]].
+5. This reinforces the distinction between what the optimizer minimizes and what users care about in decision contexts.
+
+For modern ML practice this means evaluation quality depends on both sound split protocol and context-matched metrics, and stable training depends on task-aligned loss definitions.
 
 ## AI Hardware & Inference
 

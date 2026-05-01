@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-05-01 AI/ML Learning Day 09](sources/2026-05-01-day09-ai-ml-learning-review.md) — Day 09는 [[CrossValidation]], [[EvaluationMetric]], [[Precision]], [[Recall]], [[F1Score]], [[AUROC]], [[RegressionLoss]], [[ClassificationLoss]]를 통해 [[Generalization]] 신뢰도와 지표·손실 정합성을 정리한 학습 기록이다.
 - [2026-04-30 AI/ML Learning Day 08](sources/2026-04-30-day08-ai-ml-learning-review.md) — [[Overfitting]]과 [[Underfitting]], [[BiasVarianceTradeoff]], [[Regularization]]을 통해 [[Generalization]]을 설계하는 Day 08 복습 기록
 - [2026-04-29 AI/ML Learning Day 07](sources/2026-04-29-day07-ai-ml-learning-review.md) — [[HypothesisSpace]]와 [[Capacity]]/[[TrainValidationTestSplit]]·[[Generalization]]·[[GeneralizationGap]] 흐름을 연결해 Day 07 복습 핵심을 정리한 기록
 - [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — [[SGD]]와 [[MiniBatch]]의 차이를 중심으로 [[LearningRate]], [[Convergence]], [[Momentum]], [[Adam]]의 작동 원리를 정리한 Day 06 복습 기록
