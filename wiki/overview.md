@@ -69,6 +69,17 @@ Day 09 extends the flow into robust evaluation and alignment of objectives.
 
 For modern ML practice this means evaluation quality depends on both sound split protocol and context-matched metrics, and stable training depends on task-aligned loss definitions.
 
+## Core Learning Flow Added by Day 10
+
+Day 10 adds the bridge from early ML foundations to how classical models realize "prediction as optimization + probabilistic decision + geometric separation."
+
+1. [[LinearRegression]] is the baseline for regression: define a linear function and optimize parameters by minimizing [[LeastSquares]]/[[MSE]] risk, which explains why large errors are penalized more than small errors.
+2. [[LogisticRegression]] turns the same linear scoring idea into binary decisioning by converting `logit` into probabilities with [[Sigmoid]], then selecting class by [[Threshold]].
+3. [[DecisionBoundary]] is the geometric object induced by scoring functions; in linear models it is a [[Hyperplane]], and [[Margin]] quantifies confidence-like robustness to perturbations.
+4. [[LinearSeparability]] is a model-capacity condition: if not separable by one linear boundary, richer representations may be required.
+5. [[FeatureSpace]] transformation is therefore central: even when raw inputs are not separable, [[NeuralNetwork]] layers can transform representation so classes become separable.
+6. Across all three topics, the same AI core remains consistent: choose a model family, define loss, optimize parameters, and interpret geometry of how decisions are made.
+
 ## AI Hardware & Inference
 
 Sources cover the hardware landscape for AI inference and training:
