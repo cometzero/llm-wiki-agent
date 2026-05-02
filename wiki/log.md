@@ -1,3 +1,7 @@
+## [2026-05-02] ingest | 2026-05-02 AI/ML Learning Day 10
+
+Added source. Key claims: introduced [[LinearRegression]] with [[LeastSquares]] objective and [[Residual]]-based fitting, [[LogisticRegression]] as linear-score+[[Sigmoid]] binary decision flow, and [[DecisionBoundary]]/[[LinearSeparability]]/[[Hyperplane]] geometry for classification; linked these to [[CrossEntropy]] for classification optimization and connected them with [[FeatureSpace]] transformation and [[LLM]] intuition.
+
 ## [2026-05-01] ingest | 2026-05-01 AI/ML Learning Day 09
 
 Added source. Key claims: 교차검증을 통해 [[CrossValidation]]/[[KFoldCrossValidation]] 기반의 안정적 성능 추정으로 단일 split 편향을 줄였고, 도메인 목표에 맞는 [[EvaluationMetric]] 설계를 위해 [[Precision]], [[Recall]], [[F1Score]], [[AUROC]]를 활용했으며, [[Regression]]과 [[Classification]]의 [[RegressionLoss]]와 [[ClassificationLoss]] 차이를 통해 모델 학습 신호를 정확히 분리했다.
@@ -269,3 +273,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-01] graph | Knowledge graph rebuilt
 
 542 nodes, 2668 edges (2668 extracted, 0 inferred).
+
+## [2026-05-02] graph | Knowledge graph rebuilt
+
+554 nodes, 2740 edges (2740 extracted, 0 inferred).
