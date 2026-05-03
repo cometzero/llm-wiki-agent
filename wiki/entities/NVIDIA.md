@@ -1,32 +1,18 @@
 ---
 title: "NVIDIA"
 type: entity
-tags: [entity, organization]
-sources: [address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia, decoding-safe-ty-linux-architectural-approaches-for-critical-systems-philipp-ahmann-etas-gmbh, inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform, nvidia-approach-for-achieving-asil-b-qualified-linux-minimizing-expectations-from-up-igor-stoppa-youtube, nvidia-s-approach-for-achieving-asil-b-qualified-linux-bryan-huntsman-us-nvidia, nvidia-s-approach-for-achieving-asil-b-qualified-linux-mr-bryan-huntsman-senior-director-nvidia]
-last_updated: 2026-04-16
+tags: [Hardware, GPU, AI, Quantization]
+sources: [neural-network-quantization-number-formats-from-first-principles]
+last_updated: 2026-05-03
 ---
 
-## Summary
-NVIDIA appears repeatedly as both a conference participant and a technical subject, especially around ASIL B Linux qualification, safety isolation, and heterogeneous AI inference platforms.
+NVIDIA is referenced here as the dominant vendor driving practical [[NeuralNetworkQuantization]] and low-precision AI hardware adoption. In this source, NVIDIA appears through its use of [[FP8]], [[FP4]], [[FP6]], [[TensorCores]], and related hardware design choices that shape the efficiency/accuracy tradeoff for [[LLM]] inference and training.
 
-## Mentioned In
-- [[address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia]]
-- [[decoding-safe-ty-linux-architectural-approaches-for-critical-systems-philipp-ahmann-etas-gmbh]]
-- [[inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform]]
-- [[nvidia-approach-for-achieving-asil-b-qualified-linux-minimizing-expectations-from-up-igor-stoppa-youtube]]
-- [[nvidia-s-approach-for-achieving-asil-b-qualified-linux-bryan-huntsman-us-nvidia]]
-- [[nvidia-s-approach-for-achieving-asil-b-qualified-linux-mr-bryan-huntsman-senior-director-nvidia]]
-
-## Related
-- [[AutomotiveGradeLinux]]
-- [[BryanHuntsmanSeniorDirector]]
-- [[BryanHuntsmanUs]]
-- [[Dynamo]]
-- [[ELISA]]
-- [[EtasGmbh]]
-- [[ASILBQualifiedLinux]]
-- [[AddressSpaceIsolation]]
-- [[DeterministicExecution]]
-- [[DevicetreeAndFwnodes]]
-- [[FunctionalSafety]]
-- [[HeterogeneousInference]]
+## Connections
+- [[NeuralNetworkQuantization]] — major hardware driver of reduced-precision deployment.
+- [[FP8]] — low-precision format emphasized in Hopper-era training.
+- [[FP4]] — low-precision inference format emphasized in Blackwell-era design.
+- [[FP6]] — additional low-precision format used in Blackwell-era design.
+- [[TensorCores]] — the compute substrate for low-precision matrix math.
+- [[Hopper]] — generation that popularized FP8 training recipes.
+- [[Blackwell]] — generation that extends low-precision and tensor-memory design.

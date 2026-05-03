@@ -1,356 +1,1524 @@
 # Wiki Index
 
-This file is maintained by the LLM. Last rebuilt: 2026-04-16.
-
 ## Overview
-- [Overview](overview.md) — living synthesis across all sources
+- [Overview](overview.md) — living synthesis
 
 ## Sources
-- [2026-05-03 AI/ML Learning Day 11](sources/2026-05-03-day11-ai-ml-learning-review.md) — Day 11은 [[SupportVectorMachine]], [[KNN]], [[DecisionTree]]를 중심으로 [[MaximumMargin]], [[Distance]] 기반 추론, [[InformationGain]]를 정리해 고전 분류 모델의 직관과 한계를 정리한다.
-- [2026-05-02 AI/ML Learning Day 10](sources/2026-05-02-day10-ai-ml-learning-review.md) — Day 10은 [[LinearRegression]], [[LogisticRegression]], [[DecisionBoundary]]를 통해 회귀/분류/분리 경계가 같은 최적화-확률-구조로 어떻게 연결되는지 정리한다.
-- [2026-05-01 AI/ML Learning Day 09](sources/2026-05-01-day09-ai-ml-learning-review.md) — Day 09는 [[CrossValidation]], [[EvaluationMetric]], [[Precision]], [[Recall]], [[F1Score]], [[AUROC]], [[RegressionLoss]], [[ClassificationLoss]]를 통해 [[Generalization]] 신뢰도와 지표·손실 정합성을 정리한 학습 기록이다.
-- [2026-04-30 AI/ML Learning Day 08](sources/2026-04-30-day08-ai-ml-learning-review.md) — [[Overfitting]]과 [[Underfitting]], [[BiasVarianceTradeoff]], [[Regularization]]을 통해 [[Generalization]]을 설계하는 Day 08 복습 기록
-- [2026-04-29 AI/ML Learning Day 07](sources/2026-04-29-day07-ai-ml-learning-review.md) — [[HypothesisSpace]]와 [[Capacity]]/[[TrainValidationTestSplit]]·[[Generalization]]·[[GeneralizationGap]] 흐름을 연결해 Day 07 복습 핵심을 정리한 기록
-- [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — [[SGD]]와 [[MiniBatch]]의 차이를 중심으로 [[LearningRate]], [[Convergence]], [[Momentum]], [[Adam]]의 작동 원리를 정리한 Day 06 복습 기록
-- [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — [[Optimization]]을 [[Objective]], [[LossFunction]], [[EmpiricalRisk]], [[GradientDescent]]로 분해해 Day05 학습 목표를 정리한 복습 기록
-- [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — [[Derivative]]와 [[Gradient]]의 기초를 [[ChainRule]]과 [[ComputationalGraph]] 기반 [[Backpropagation]]으로 연결해 [[GradientDescent]]의 기하적/계산적 직관과 학습 안정성(learning rate, exploding/vanishing behavior)을 정리한 복습 기록
-- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — [[FunctionApproximation]] 관점에서 머신러닝 학습을 정리하고, [[FeatureMatrix]]·[[TensorShape]] 기반 입력 표현 및 [[CurseOfDimensionality]]의 위험을 [[Regularization]]·[[RepresentationLearning]]으로 보완하는 Day 03 복습
-- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — [[RandomVariable]]와 [[ProbabilityDistribution]], [[PMF]]·[[PDF]]·[[CDF]]의 이산/연속 분기와 [[Expectation]]·[[Variance]]·[[Covariance]] 요약 통계, 그리고 [[BayesTheorem]]의 [[Prior]]·[[Likelihood]]·[[Posterior]] 업데이트 구조를 정리한 AI/ML 기초 복습이다.
-- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — [[VectorSpace]]·[[Basis]]·[[LinearMap]]·[[Rank]]·[[DotProduct]]·[[Norm]]·[[CosineSimilarity]]로 [[LLM]]의 [[Embedding]], [[Attention]], [[Gradient]] 연산 연결을 정리한 AI/ML 학습 1일차 리뷰
-- [\"인간지능 시대는 끝났다\" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호의원에게-내린-숙제-차지호-의원-1부.md) — [[UN]]의 AI 기능 이전을 매개로 [[HumanIntelligenceSystem]], [[Polycrisis]], [[ConnectedIntelligence]], [[UniversalBasicIncome]]가 충돌하는 AI 사회전환 설계 프레임을 제시한다.
-- [Understanding the RISC-V Extensions for AI - John Simpson, SiFive](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — [[RiscV]] AI 가속을 위해 [[VectorBatchProduct]], [[IntegratedMatrixExtensions]], [[VectorMatrixExtensions]], [[AttachedMatrixExtensions]]를 워크로드 단계별로 선택하는 방식과 [[LLM]]의 prefill/decode 특성 반영 기준을 정리한다.
-- [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — [[Terafab]]는 [[Tesla]], [[SpaceX]], [[xAI]] 협업으로 연간 [[Terawatt]]급 AI 컴퓨팅을 확보해 우주 기반 확장과 [[ElectromagneticMassDriver]] 기반 [[PetawattComputing]]까지 연결하려는 장기 로드맵을 제시한다.
-- [Project Glasswing: Securing critical software for the AI era — Anthropic](sources/project-glasswing-securing-critical-software-for-the-ai-era-anthropic.md) — [[Anthropic]]가 [[ClaudeMythosPreview]]의 고성능 취약점 탐지 능력을 기반으로 핵심 소프트웨어 보안을 위한 협업형 보안 프로그램 [[ProjectGlasswing]]를 출범해 공격-방어 양면성 환경에서 제로데이 대응 속도와 조직 간 정보공유를 강화한다.
-- [GTC 2026 – The Inference Kingdom Expands](sources/gtc-2026-the-inference-kingdom-expands.md) — [[NVIDIA]]가 [[Groq]]의 LPU 자산을 통합해 [[GPU]]-[[LPU]] 이원 구조, [[AFD]], [[CPO]] 로드맵, 그리고 [[CMX]]/[[STX]] 기반 컨텍스트·스토리지 확장 전략까지 추론 인프라 전 영역을 재편했다.
-- [EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test](sources/eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-time-test.md) — [[EAGLE3]]가 [[TrainingTimeTest]]와 [[MultiLayerFeatureFusion]]을 통해 데이터 증가 시 추론 가속이 개선되는 스케일링 법칙을 제시하고, [[HumanEval]], [[MT-bench]], [[GSM8K]]에서 최대 6.47x 가속을 보고한다.
-- [Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI](sources/andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai.md) — [[AndrejKarpathy]]의 관점에서 [[LLMAgents]]의 생산성 체계, [[AutoResearch]] 자율연구 루프, [[OpenClaw]] 기반 지속형 에이전트, 그리고 [[Speciation]] 및 [[오픈소스 AI]]의 필요성이 정리된 자료이다.
-- [메모리 현물가 하락, 사이클 꺾인 게 아닌 '과열 해소' | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/메모리-현물가-하락-사이클-꺾인-게-아닌-과열-해소-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — [[DRAM]] 현물가 하락을 과열 해소로 보고, [[LongTermAgreement]]의 최저가격 보장·[[TurboQuant]] 효과·[[ASMR]]/온디바이스 확장 시나리오를 통해 단기 조정과 장기 수요 성장을 함께 설명한다.
-- [Dissecting Nvidia Blackwell - Tensor Cores, PTX Instructions, SASS, Floorsweep, Yield](sources/dissecting-nvidia-blackwell-tensor-cores-ptx-instructions-sass-floorsweep-yield.md) — 본문이 비어 있어 제목 기반 키워드([[NVIDIA]], [[Blackwell]], [[Tensor Cores]], [[PTX]], [[SASS]], [[Floorsweep]], [[ChipYield]])만 확인된 미포맷 소스입니다.
-- [The Great GPU Shortage – Rental Capacity – Launching our H100 1 Year Rental Price Index](sources/the-great-gpu-shortage-rental-capacity-launching-our-h100-1-year-rental-price-index.md) — [[SemiAnalysis]]가 발표한 [[H100]] 1년 렌탈 가격 지수 기준으로 AI 컴퓨팅 수요 급증, 메모리 가격 압력, 장기 오프테이크 구조가 가격 상승을 지속시키는 이유를 정리한다.
-- [환율 1500원 시대 시작되나? 전쟁 끝나도 못 내려오는 이유 | 변정규 다이와증권코리아 본부장 [신과대화]](sources/환율-1500원-시대-시작되나-전쟁-끝나도-못-내려오는-이유-변정규-다이와증권코리아-본부장-신과대화.md) — [[전쟁 이후]]에도 [[한미금리차]]와 달러 강세가 유지되면 [[환율]]이 1,500원대에서 고착될 수 있다는 통화정책·자본흐름·유동성 통합 분석.
-- [트렌드포스 "SK하이닉스 때문에 엔비디아 루빈 생산량이 대폭하향 되었다](sources/트렌드포스-sk하이닉스-때문에-엔비디아-루빈-생산량이-대폭하향-되었다.md) — [[NVIDIA]]의 [[CPX]]/[[LPX]] 워크로드 분리 전략이 [[VeraRubinPlatform]] 루빈 다이 수요를 줄여 [[HBM]] 수급 해석이 바뀐다는 분석을 정리한다.
-- [제2의 테슬라? 3천조 괴물 상륙! 스페이스X 상장, 약일까 독일까? | 정의훈 유진투자증권 연구원](sources/제2의-테슬라-3천조-괴물-상륙-스페이스x-상장-약일까-독일까-정의훈-유진투자증권-연구원-여의도-인사이트.md) — [[SpaceX]] 상장 시점·밸류에이션 논점과 [[우주산업]] 밸류체인 확장, [[스페이스X]] 모멘텀 효과를 정리한다.
-- [인간의 가치는 오직 의지만 남을 겁니다 - 노정석 대표(비팩토리)](sources/인간의-가치는-오직-의지만-남을-겁니다-노정석-대표-비팩토리.md) — [[비팩토리]]의 AI 에이전트 운영 경험을 통해 [[노력과 의지]] 중심의 AI 시대 생산성 재편, 노동 양극화, 에이전트형 비즈니스 모델 전환을 정리한다.
-- ["인간지능 시대는 끝났다" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호-의원에게-내린-숙제-차지호-의원-1부.md) — [[차지호]]의 AI 거버넌스·연결지능·다중위기 대응 프레임을 중심으로 한국의 [[UN]] 공동 AI 허브 전략과 노동·국제질서 재편 전망을 정리한다.
-- [반도체 업황 살아났나? 밸류 재평가의 진짜 조건ㅣ김장열 유니스토리자산운용 본부장](sources/반도체-업황-살아났나-밸류-재평가의-진짜-조건-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — 빅테크 CAPEX 신호와 AI 가격 정책을 중심으로 HBM/메모리 밸류 재평가 조건을 제시하고, SK하이닉스·삼성전기·심텍·TLB의 구조적 수혜를 설명한 투자 인사이트다.
-- [HBM 다음은 HBF, 엔비디아·MS를 영원히 가두는 삼성·하이닉스의 30년 가두리 전략](sources/hbm-다음은-hbf-엔비디아-ms를-영원히-가두는-삼성-하이닉스의-30년-가두리-전략-김정호-카이스트-전기-및-전자공학과-교수-2-투자insight.md) — [[HBM]]과 [[HBF]]로 AI 시대 메모리 지배·가격·공급 전략이 어떻게 재편될 수 있는지를 정리한 투자 인사이트 분석이다.
-- [ONNX와 ONNX Runtime](sources/san19-211.md) — [[ONNX]]의 표준 형식 성격과 [[ONNXRuntime]]의 그래프 최적화·파티셔닝·실행 공급자 기반 실행 구조를 정리하고, [[Microsoft]] 운영 사례와 모델 획득 채널을 함께 제시한다.
-- [ONNX-MLIR 기반 추론 컴파일 파이프라인](sources/le-onnx-pdf.md) — [[ONNX-MLIR]]이 [[ONNX]]→[[MLIR]]→[[LLVM]] 파이프라인으로 추론 산출물을 생성하고, [[IBM]] [[zAIU]]/[[Telum]] 지원 및 버퍼·상수 최적화로 성능을 높이는 과정을 설명한다.
-- [Vibe coding in prod](sources/vibe-coding-in-prod.md) — [[VibeCoding]]을 프로덕션에서 적용하기 위해 [[ClaudeCode]]를 [[AI의PM]] 관점으로 운용하고, [[LeafNode]] 중심 변경·명확한 검증 게이트로 신뢰를 확보하는 운영 방식으로 정리한다.
-- [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — 한국 주택 세제와 증여 추정 이슈를 실무적으로 설명하는 세무 상담형 자료다. 1주택 비과세 요건, 세대 분리, 차용증 활용, 가족 간 계좌 이체 증빙, 공동명의 전략 등 자금 출처 조사와 양도세 리스크를 줄이는 포인트를 폭넓게 다룬다.
-- [2028 High School Choice and Admissions Strategy](sources/2028-high-school-choice-and-admissions-strategy.md) — This source argues that changes to the 2028 Korean admissions landscape make high school choice more consequential, especially because grades and school records
-- [2028 글로벌 인텔리전스 위기](sources/2028-global-intelligence-crisis-ko.md) — AI가 너무 풍부해질 때 생길 수 있는 금융 시스템 리스크를 가정한 시나리오 문서다. 인텔리전스의 비용이 급락하면 정보 비대칭이 줄어들고 기존 금융 비즈니스의 마찰이 사라지면서, 초과 경쟁과 급격한 가격 재조정이 시스템 리스크로 전이될 수 있다는 사고 실험을 펼친다.
-- [26년 제조 산업에 AI 적용되면 이렇게 바뀝니다](sources/26년-제조-산업에-ai-적용되면-이렇게-바뀝니다-10년차-대기업-llm-현직자의-솔직한-조ᄋ.md) — 제조 대기업 현직자의 관점에서 LLM과 에이전트가 문서 작성, 불량 문서 검색, 시장 조사, 연구개발 지원 같은 실제 제조 업무에 어떻게 들어오는지 정리한 자료다. 환각과 최신성 한계를 넘기 위해 파인튜닝보다 RAG와 내부 지식 연결이 중요하다고 보고, 보안 제약이 강한 제조 환경에서의
-- [Accelerating Software-Defined Vehicles:  SDV-EG Updates & New AGL SDV Referenc Jerry Jiancong Zhao](sources/accelerating-software-defined-vehicles-sdv-eg-updates-and-new-agl-sdv-referenc-jerry-jiancong-zhao.md) — AGL SDV 전문가 그룹은 소프트웨어 정의 차량(SDV)의 개발을 가속화하기 위해 하드웨어 가상화(Vertio)를 통해 소프트웨어와 하드웨어를 분리하고, 통합 HMI(Human Machine Interface) 및 클라우드-차량 연동 기술을 발전시키고 있습니다. 특히 AGL SOD(S
-- [Claude Code is the Inflection Point](sources/claude-code-is-the-inflection-point.md) — SemiAnalysis 관점에서 Claude Code를 단순 코드 생성기가 아니라 다단계 계획과 실행이 가능한 터미널 네이티브 에이전트로 해석한 글이다. 코딩이 AI 에이전트의 첫 번째 대형 시장일 뿐이며, 장기적으로는 더 넓은 정보 노동 자동화로 이어질 것이라는 논지를 편다.
-- [Claude Code는 변곡점이다](sources/claude-code-is-the-inflection-point-ko.md) — SemiAnalysis 원문의 한국어 번역/요약본으로, Claude Code를 에이전트 시대의 분기점으로 해석한다. Anthropic의 성장, 토큰 오케스트레이션, 터미널형 작업 수행, 그리고 정보 노동 자동화의 확장 가능성을 보다 직접적인 언어로 정리한다.
-- [Claude Opus 4.6 소개](sources/claude-opus-4-6-소개.md) — Claude Opus 4.6의 성능 개선, 100만 토큰 컨텍스트, 에이전트형 협업 능력, 안전성 업데이트를 소개하는 제품 설명 문서다. 코딩과 금융 분석 같은 전문 지식 업무에서 더 신중하고 장기적인 작업 수행이 가능해졌다는 점을 강조한다.
-- [Context Rot: How Increasing Input Tokens Impacts LLM Performance](sources/context-rot-how-increasing-input-tokens-impacts-llm-performance-chroma-research.md) — Chroma Research의 문맥 길이 연구를 정리한 문서로, 입력 토큰 수가 늘어날수록 성능이 균일하게 유지되지 않고 비선형적으로 저하되는 현상을 Context Rot로 설명한다. 단순 NIAH 테스트를 넘어 방해 요소, 유사성, 구조 변화가 긴 컨텍스트 활용 능력에 얼마나 큰 영향
-- [Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning](sources/cosmos-reason1-from-physical-common-sense-to-embodied-reasoning.md) — 실세계 물리 상식과 구체화된 의사결정을 수행하는 멀티모달 모델 Cosmos-Reason1의 설계와 학습 방법을 다룬 문서다. 물리적 상식 온톨로지, embodied reasoning 분류 체계, 멀티모달 백본, 그리고 SFT와 RL을 결합한 훈련 전략을 통해 Physical AI를 향한
-- [Decoding Safe(ty) Linux Architectural Approaches for Critical Systems - Philipp Ahmann, Etas GmbH](sources/decoding-safe-ty-linux-architectural-approaches-for-critical-systems-philipp-ahmann-etas-gmbh.md) — 안전 필수 시스템에 리눅스를 통합하는 다양한 아키텍처 접근법과 관련된 도전 과제, 인증 경로, 그리고 고려 사항을 해독하는 것이 핵심입니다. - 리눅스 커널 내 직접 안전 기능 통합 - 품질 관리된 리눅스 및 감시/모니터링 활용 (RTOS 기반) - 하이퍼바이저를 통한 리눅스 관리 및 
-- [Dom0less and Deterministic:  Building Safer Automotive Systems With Xen - Cody Zuschlag](sources/dom0less-and-deterministic-building-safer-automotive-systems-with-xen-cody-zuschlag.md) — Xen을 활용하여 Dom0less 아키텍처를 구현하고, 이를 통해 자동차 시스템에서 필요한 혼합 중요도(Mixed Criticality) 워크로드에 대한 강력한 격리 및 예측 가능성을 제공하며 안전성을 높입니다. - 하드웨어 기반 격리 및 다중 아키텍처(x86, ARM, RISC-V) 
-- [Extending Claude's capabilities with skills and MCP](sources/extending-claudes-capabilities-with-skills-and-mcp-claude.md) — Anthropic이 Skills와 MCP를 어떻게 구분하고 함께 써야 하는지 설명한 문서다. MCP는 외부 시스템 연결을 담당하고, Skills는 그 도구를 팀의 고유 워크플로에 맞게 잘 사용하는 방법을 모델에 가르친다는 점을 분리해 설명한다.
-- [Figure 03 and the Future of Robotics](sources/figure-03-and-the-future-of-robotics.md) — This source analyzes [[Figure03]] as a marker of recent progress in humanoid robotics, emphasizing quieter electric actuators, hybrid control, richer sensing, b
-- [GDP 7% 시대 시작된다](sources/gdp-7-시대-시작된다-혁신주-대가가-찍은-기술-혁명-수혜주들.md) — ARK Invest의 빅 아이디어스 2026을 바탕으로 AI, 로봇, 우주, 바이오의 결합이 경제성장률을 크게 끌어올릴 수 있다는 낙관적 전망을 정리한 자료다. 가사 노동의 시장화, 로보택시, 우주 데이터센터, AI 쇼핑과 광고 같은 사례를 통해 비경제 활동이 경제 활동으로 전환되는 메
-- [InferenceX v2: NVIDIA Blackwell Vs AMD vs Hopper](sources/inferencex-v2-nvidia-blackwell-vs-amd-vs-hopper-formerly-inferencemax.md) — 최신 AI 추론 하드웨어와 시스템 구성을 비교한 SemiAnalysis 자료로, Blackwell, Hopper, AMD 계열 칩의 처리량과 비용 효율을 Prefill/Decode, 병렬화, 분산 추론 관점에서 분석한다. 단순 칩 스펙보다 워크로드 특성에 맞는 시스템 설계가 중요하다는 
-- [Introducing Helix 02: Full-Body Autonomy](sources/introducing-helix-02-full-body-autonomy.md) — This source describes Figure's Helix 02 as a full-body humanoid control stack that unifies locomotion, manipulation, and balance instead of treating them as sep
-- [Memory Mania: How a Once-in-Four-Decades Shortage Is Fueling a Memory Boom](sources/memory-mania-semianalysis.md) — AI 수요가 메모리 반도체 시장에 만드는 슈퍼사이클을 설명하는 SemiAnalysis 자료다. DRAM 스케일링 둔화와 공급 제약이 과거보다 더 길고 강한 메모리 호황을 만들 수 있으며, HBM과 고대역폭 메모리가 AI 시스템 병목의 핵심이라고 본다.
-- [NVIDIA Groq 3 LPX 소개[](#introducing_nvidia_groq_3_lpx )](sources/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform.md) — NVIDIA Groq 3 LPX는 NVIDIA Vera Rubin platform을 위한 새로운 rack-scale inference accelerator로, agentic 시스템이 요구하는 low-latency와 large-context 워크로드를 겨냥해 설계되었습니다. NVIDIA 
-- [Understanding and Coding the KV Cache in LLMs from Scratch](sources/understanding-and-coding-the-kv-cache-in-llms-from-scratch.md) — LLM 추론에서 Key/Value 벡터를 재사용해 중복 계산을 줄이는 KV 캐시의 원리와 구현을 설명하는 기술 문서다. 단일 토큰 생성의 반복 구조가 왜 비효율적인지부터 시작해, attention 모듈과 생성 루프에 캐시를 추가하는 코드 수준 변경을 단계별로 다룬다.
-- [당신의 삶을 바꿔줄 클로드봇 실전 워크플로우](sources/당신의-삶을-바꿔줄-클로드봇-실전-워크플로우.md) — 클로드봇을 실제 서비스와 개인 생산성 자동화에 붙이는 다양한 사례를 정리한 실전형 문서다. AI 기반 E2E 테스트, 서비스 내 비서 통합, 악성 댓글 분류, 뉴스 브리핑, 콘텐츠 분석 같은 워크플로우를 통해 챗봇을 넘는 실행형 비서의 형태를 제시한다.
-- [스타트업 성공 전략: 제품, 시장, 비전 및 모멘텀](sources/스타트업-성공-전략-제품-시장-비전-및-모멘텀.md) — 스타트업 성공의 원칙과 반도체 업황 분석이 결합된 독특한 자료다. 전반부는 압도적인 제품력, 빠르게 성장하는 시장, 창업자 자질, 팀 구성의 중요성을 강조하고, 후반부는 NAND/DRAM 사이클과 삼성전자·SK하이닉스 밸류에이션을 통해 산업 선택의 중요성을 보여준다.
-- [은 가격 급락의 범인은 누굴까](sources/은-가격-급락의-범인은-누굴까.md) — 은 가격 급락을 JP모건의 시장 영향력과 케빈 워시 지명 이슈에 연결해 해석한 시장 해설 자료다. 은의 역사적 통화 역할, 페이퍼 은 문제, 공매도 포지션, 귀금속 시장 심리를 함께 다루며 거시정책과 금속 시장을 묶어 설명한다.
-- [케빈 워시 분석 보고서](sources/케빈-워시-분석-보고서.md) — 케빈 워시의 경력, 시장 반응, 트럼프와의 관계를 해설하는 인물 분석 자료다. 일부 내용은 엘리트 네트워크와 음모론적 연결고리까지 확장하며, 워시를 연준 권력 재편의 핵심 인물로 묘사한다.
-- [투자에서 가장 위험한 습관은 이것](sources/투자에서-가장-위험한-습관은-이것.md) — 변동성 장세에서 개인 투자자가 흔들리지 않기 위한 원칙을 설명하는 인터뷰형 자료다. 망설이는 투자 습관의 위험, 연준 의장 성향 해석, 주도주 중심 전략, AI가 시장의 주도 섹터를 바꾸는 과정 등을 함께 다룬다.
-- [트럼프가 때리자 유럽이 뭉쳤다](sources/트럼프가-때리자-유럽이-뭉쳤다.md) — 트럼프의 대유럽 압박이 역설적으로 유럽 통합과 자강 전략을 촉진했다는 지정학 해설이다. 국방비 증액, 단일 시장 강화, 통상 다각화, 한국과의 협력 가능성까지 연결해 유럽의 전략적 재편을 설명한다.
-- [트럼프의 케빈 워시 지명 의도 분석](sources/트럼프의-케빈-워시-지명-의도-분석.md) — 트럼프가 왜 케빈 워시를 연준 의장 카드로 검토하는지 정책 관점에서 해석한 자료다. 연준의 역할 축소, 유동성 의존 비판, 금리 인하와 대차대조표 축소를 동시에 노리는 시나리오를 중심으로 워시의 매파 이미지와 실제 논리를 구분한다.
-- [📌 \"Power Management and USB\"에 대한 발표는 어떤 내용을 다루는가?](sources/power-management-and-usb-mr-darrion-ramos-ms-victoria-siver-dr-ken-yihang-bai-dr-tuba-yavuz.md) — 전력 관리 퍼징(Power Management Fuzzing)에 대한 모듈식 접근 방식을 소개하고, 특히 저전력 상태 및 USB 상호작용에서 발생하는 버그를 탐색하는 방법을 다룹니다. 저전력 상태(예: 절전 모드)에서는 대부분의 로깅 메커니즘이 꺼지기 때문에, 크래시 발생 시 어떤 문제
-- [📌 AGL 및 SoDev를 위한 레퍼런스 보드와 BSP 현황은?](sources/status-of-reference-board-and-bsp-for-agl-and-sodev-harunobu-kurokawa.md) — AGL(Automotive Grade Linux) 커뮤니티에서 SDV(Software Defined Vehicle) 구현을 위해 오픈 소스 기반의 통합 코드베이스(UCB) 및 레퍼런스 플랫폼을 제공하며, 특히 새로운 레퍼런스 보드 'SparHawk'을 통해 개발을 가속화하고 있습니다. 
-- [📌 BSP를 메인라인 커널에 매핑하는 과정에서 가장 중요한 도전 과제는 무엇인가?](sources/beyond-the-demo-kernel-mapping-bsps-to-mainline-alessandro-carminati.md) — BSP의 진정한 하드웨어 지원 부분과 노이즈를 분리하여 어떤 부분이 메인라인에 통합될 수 있는지 파악하고, 이를 유지 관리 가능한 형태로 업스트림하는 것이 핵심 과제입니다. - 하드웨어 동작과 무관한 백포트, 리팩터링, 그리고 오래된 실험 코드 - 메인라인 커널과 분리되어 시간이 지나면
-- [📌 CIP(Civil Infrastructure Platform)는 무엇이며, 어떤 목표를 가지고 있나요?](sources/towards-a-decade-of-industrial-grade-linux-cips-journey-and-the-road-ahead-yoshitake-kobayashi.md) — CIP는 사회 기반 시설 시스템을 위한 산업 등급 리눅스의 오픈소스 기반 레이어를 제공하여, 10년 이상의 장기 지원이 필요한 시스템의 수명 주기 전반에 걸친 유지보수 문제를 해결하는 것을 목표로 합니다. - 커널: 10년 이상의 초장기 지원(SLTS) 커널 유지보수 - CIP 코어: 
-- [📌 CPU 격리(CPU Isolation) 시 발생하는 IPI(Inter-Processor Interrupt) 간섭 문제의 원인과 해결 방안은 무엇인가?](sources/cpu-isolation-and-ipi-interference-valentin-schneider-red-hat.md) — CPU를 격리해도 커널 텍스트 업데이트(정적 키) 및 tlb 플러시 등으로 인해 ipi 간섭이 발생하며, 이를 해결하기 위해 커널 진입 시 작업을 지연 처리하거나 하드웨어 지원을 활용하는 방안을 논의 중입니다. 고성능 컴퓨팅 환경에서 cpu 격리(Isolation)의 실질적인 문제점과 
-- [📌 EROFS는 컨테이너 환경에서 어떤 이점을 제공하는가?](sources/erofs-and-containers-xiang-gao-alibaba-cloud.md) — EROFS는 컨테이너 OS의 시작 속도를 높이고 이미지 크기를 줄이며, OCI 이미지 풀링을 가속화하고, 루트 파일 시스템의 무결성을 보장하여 전반적인 컨테이너 운영 효율성을 크게 향상시킵니다. - 블록 기반의 불변(immutable) 파일 시스템 - 고정 파일 시스템 블록 크기를 사용
-- [📌 HKML은 리눅스 커널 개발을 위한 어떤 메일링 도구인가?](sources/hkml-mailing-tool-for-simple-linux-kernel-development-seongjae-sj-park-meta.md) — 최소한의 설정과 리소스 사용으로 설계되어 공개 메일링 아카이브와 mbox 파일을 지원하며, 리눅스 개발 사용 사례에 고도로 최적화된 도구입니다. 리눅스 커널 메일링 리스트에서 메일 송수신, 패치 관리, 리뷰 등 복잡한 작업들을 더 쉽고 효율적으로 처리할 수 있도록 돕습니다.
-- [📌 KernelSBOM은 무엇을 하는 프로젝트인가?](sources/kernelsbom-reconstructing-linux-kernel-builds-into-trusted-spdx-bills-of-materi-maximilian-huber.md) — kernelsbom은 리눅스 커널 빌드를 재구성하여 신뢰할 수 있는 spdx 소프트웨어 자재 명세서(SBOM)를 생성하는 파이썬 기반 도구입니다. 성공적인 커널 빌드로부터 bzImage나 커널 모듈 파일 같은 최종 배포 아티팩트를 역추적하여, cmd 파일과 추가적인 휴리스틱(예: .s 
-- [📌 KUnit 테스팅의 주요 문제점과 한계는 무엇인가?](sources/kunit-testing-insufficiencies-matthew-whitehead-the-boeing-company.md) — KUnit은 커널 내에서 유닛 테스트를 수행하는 데 유용하지만, 의존성 관리의 어려움, 느린 빌드 및 실행 시간, 복잡한 테스트 작성 및 유지보수 부담 등 기존 유닛 테스팅 프레임워크에 비해 여러 가지 부족한 점과 한계가 있습니다. - 의존성 관리: 패치 도입 및 유지보수로 인한 복잡성
-- [📌 Linus Torvalds가 리눅스 커널 개발에서 가장 중요하게 생각하는 원칙과 AI 활용에 대한 그의 입장은?](sources/keynote-linus-torvalds-creator-of-linux-and-git-in-conversation-with-dirk-hohndel.md) — 리눅스 커널 개발에서 가장 중요하게 생각하는 원칙은 후퇴(regression)를 만들지 않고 안정성을 유지하는 것이며, AI는 코드를 작성하는 것보다 코드 리뷰 및 유지보수를 돕는 강력한 도구로 활용될 잠재력이 크다고 봅니다. AI가 방대한 코드와 충돌을 분석하여 버그를 찾고 설명하는 
-- [📌 Linux 장치 드라이버 모델에서 다양한 소프트웨어 노드 유형을 이해하는 방법은 무엇인가요?](sources/of-nodes-fwnodes-swnodes-devlinks-properties-understanding-how-devices-bartosz-golaszewski.md) — Linux 커널의 장치 드라이버 모델에서 OF-노드, FW-노드, SW-노드, Device Link 및 속성 같은 다양한 소프트웨어 노드 유형과 이들의 역사적 발전, 상호 관계를 이해하는 것이 중요합니다. 장치가 시스템마다 다르게 연결되어 있더라도 동일한 장치 드라이버를 재사용하고 구성
-- [📌 Linux 커널의 안전성 강화를 위한 Address Space Isolation(주소 공간 격리)은 무엇인가?](sources/address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia.md) — Linux 커널 내부에서 발생하는 자체 간섭으로부터 커널을 보호하기 위해 MMU(메모리 관리 장치)를 활용하여 커널 내부에 여러 컨텍스트(safe, core, qm)를 정의하고 각 컨텍스트의 메모리 접근을 제한하는 기술입니다. 커널 내부에서 발생할 수 있는 오류의 확산을 방지하여 시스템
-- [📌 Linux에서 게임 경험을 향상시키기 위한 Sched_ext의 역할은 무엇인가?](sources/enhancing-your-gaming-experience-on-linux-with-sched-ext-changwoo-min-igalia.md) — Sched_ext는 Linux 커널 6.12에 공식 병합된 BPF 기반 확장 가능한 스케줄러 프레임워크로, 사용자 지정 스케줄러를 구현하여 게임 워크로드의 지연 시간 및 에너지 소비를 최적화함으로써 전반적인 게임 경험을 향상시키는 데 기여합니다. LAD 스케줄러는 지연 시간에 민감한 작
-- [📌 NVIDIA가 리눅스 커널을 ASIL B 인증받기 위해 어떤 접근 방식을 취하는가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-mr-bryan-huntsman-senior-director-nvidia.md) — NVIDIA는 리눅스 커널 전체를 인증하는 대신, MMU 기반의 메모리 분리 및 페이지 테이블 스위칭을 통해 안전 필수 코드를 비안전 코드로부터 보호하는 방식으로 접근합니다. 커널의 비안전 관련 부분에 대한 광범위한 변경이나 인증 노력을 줄여, 전통적인 방법 대비 비용과 노력을 크게 절
-- [📌 NVIDIA가 리눅스에서 ASIL B 수준의 안전성을 달성하기 위한 접근 방식은 무엇인가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-bryan-huntsman-us-nvidia.md) — NVIDIA는 리눅스 커널 내에 안전 관련 코드와 비안전 관련 코드를 물리적으로 분리하는 ‘컨텍스트(Context)’ 개념을 도입하여 커널 공간 간의 공간적 간섭 문제를 해결함으로써 ASIL B 인증이 가능하다고 보고 있습니다. 대부분의 리눅스 커널 코드는 안전성 고려 없이 개발 과정을
-- [📌 NVIDIA는 ASIL B 인증 Linux를 달성하기 위해 어떤 접근 방식을 사용했는가?](sources/nvidia-approach-for-achieving-asil-b-qualified-linux-minimizing-expectations-from-up-igor-stoppa-youtube.md) — 전체 Linux 커널에 안전성 검증을 적용하지 않고, 핵심 메커니즘만 안전성 검증 대상으로 삼아 코드베이스의 유연성과 혁신 속도를 유지하는 접근 방식을 사용합니다. - 스레드에 특정 기능(capability)을 부여하여 메모리 할당 등을 통제 - 메모리 풀을 통해 자원을 안전성 수준별로
-- [📌 PREEMPT_RT 커널에서의 핵심적인 개선 사항은 무엇인가?](sources/news-from-preempt-rt-sebastian-siewior.md) — PREEMPT_RT 커널에서 발생하던 락(lock) 경쟁 문제를 해결하기 위해 명시적인 잠금 메커니즘을 도입하고, futex 및 lazy preempt 동작을 개선하여 시스템 성능과 안정성을 향상시킨 것이 핵심입니다. 리눅스 커널의 PREEMPT_RT 패치와 관련된 최신 핵심 업데이트를
-- [📌 RV와 데드라인 스케줄러를 사용하여 런타임에 서브시스템을 검증하는 방법은 무엇인가요?](sources/rv-and-the-deadline-scheduler-how-to-verify-your-subsystem-at-runti-gabriele-monaco-and-juri-lelli.md) — 커널에 런타임 검증(RV) 메커니즘을 적용하여 데드라인 스케줄러의 동작이 이론적 모델과 일치하는지 확인하고, 오류 발생 시 디버깅하는 과정을 통해 이를 수행합니다. 이벤트와 상태 전이에 시간 제약(클록)을 추가한 Timed Automata(시간 자동자)를 사용하여 모델을 구성하며, 커널
-- [📌 SDV(Software Defined Vehicle) 시대에 오픈소스 기반 가상화 기술이 차량 개발을 어떻게 가속화하는가?](sources/keynote-accelerating-sdv-through-open-source-based-virtualization-masashige-mizuyama.md) — 오픈소스 기반 가상화 기술인 VIO(Virtual I/O)를 활용하여 하드웨어에 관계없이 소프트웨어 개발 및 배포를 가능하게 함으로써, SDV 시대의 핵심인 소프트웨어 우선 개발을 가속화합니다. VIO는 가상 하드웨어를 통해 실제 하드웨어가 없어도 소프트웨어 개발을 가능하게 하며, 이를
-- [📌 SDV(소프트웨어 정의 차량) 시대의 차세대 차량 진단 기술 SOVD(Service-Oriented Vehicle Diagnostics)는 무엇인가?](sources/sdv-oriented-use-cases-leveraging-next-generation-vehicle-diagnostics-sovd-and-vir-masanori-itoh.md) — SOVD는 SDV 시대에 필요한 유연하고 동적인 차량 데이터 교환을 위해 기존 이진 기반 진단 프로토콜을 대체하여 HTTP REST 프로토콜로 정의된 차세대 차량 진단 인터페이스입니다. SDV(소프트웨어 정의 차량) 시대를 맞아 차량 진단의 패러다임을 바꿀 SOVD(Service-Ori
-- [📌 TinyML 워크로드를 Zephyr RTOS에 배포하고 최적화하는 방법은 무엇인가?](sources/tinyml-at-the-edge-deploying-and-optimizing-ai-workloads-on-zephyr-rtos-amandeep-singh-welzin.md) — TinyML 워크로드를 Zephyr RTOS에 배포하고 최적화하기 위해 다양한 추론 엔진(TensorFlow Lite Micro, MicroTVM, MLAN 등)을 활용하고, AutoML, LLE(Linkable Loadable Extensions)를 통해 모델을 동적으로 업데이트하며,
-- [📌 Userspace Assisted Scheduling (UAS) via SKITS는 무엇을 해결하고자 하는가?](sources/userspace-assisted-scheduling-via-sc-john-stultz-mr-qais-yousef-steven-rostedt-vincent-guittot.md) — 리눅스 스케줄러가 다양한 하드웨어 및 워크로드 요구사항을 충족하며 상호작용성과 처리량 간의 균형을 맞추기 어려운 문제를 해결하기 위해 사용자 공간에서 스케줄링에 더 많은 정보를 제공하는 방법을 제시합니다. 리눅스 커널의 고질적인 문제인 인터랙티비티와 처리량(Throughput) 간의 불
-- [📌 Zephyr 개발을 위한 AI 가속기를 탑재한 이기종 코어 플랫폼의 주요 특징은 무엇인가?](sources/introducing-a-heterogeneous-core-platform-with-ai-accelerator-for-zephyr-developme-yuya-hamamachi.md) — 이 플랫폼은 zephyr 개발을 위해 cortex-a76 4개, cortex-r52 3개, gpu 및 ai 가속기를 탑재한 새로운 해킹 가능한 이기종 코어 플랫폼으로, 자동차 산업의 요구사항을 충족시키며 장기적인 개발 플랫폼으로 활용될 수 있습니다. - ISO 26262 인증 지원 가능
-- [📌 Zephyr 기반 VIRTIO 백엔드를 Xen에서 구현하는 목적은 무엇인가?](sources/zephyrbased-virtio-backend-on-xen-toward-open-source-functional-safety-hiroshi-tokita.md) — Xen에서 Zephyr 기반 VIRTIO 백엔드를 구현하여 오픈 소스 기능 안전성을 달성하고, 자동차 등 복잡한 시스템의 통합 및 효율화를 목표로 합니다. - 기능 안전성 인증 가능성 향상 - 시스템 비용 및 리소스 감소 (메모리, SoC) - 개발 시간 단축 및 단일 장애 지점 제거
-- [📌 Zephyr 프로젝트가 개방형으로 안전 인증 작업을 수행하면서 얻은 주요 교훈은 무엇인가?](sources/zephyr-learnings-from-working-on-safety-certification-in-the-open-kate-stewart.md) — Zephyr는 오픈 소스 프로젝트가 안전 필수 애플리케이션에서 효과적으로 사용되기 위한 안전 및 보안 목표 달성 과정에서 요구사항 추적성, 문서화, 커뮤니티 참여 및 개방형 도구 활용의 중요성을 배웠습니다. Zephyr는 기존 개발 프로세스와 표준 준수 사이의 격차를 해소하기 위해 IE
-- [📌 Zephyr 프로젝트는 자동차 산업에 어떤 중요한 변화를 가져올 게임 체인저인가요?](sources/zephyr-a-game-changer-for-the-automotive-industry-yuichi-kusakabe-honda-motor-co-ltd.md) — Zephyr는 자동차 산업의 엄격한 하드웨어 요구사항을 충족시키면서도 유연하고 안전한 오픈소스 실시간 운영체제를 제공하여, 개발 효율성을 높이고 새로운 기능을 통합하는 데 핵심적인 역할을 합니다. - 초경량: 8KB 플래시, 5KB 램으로 낮은 리소스 소비 - 실시간 성능: 100ms 
-- [📌 Zephyr에서 베어 메탈 코드 추출 방식을 바꾸는 방법의 핵심은 무엇인가?](sources/how-to-extract-a-bare-metal-flavor-of-code-out-of-zephyr-to-use-in-rtos-khasim-syed-mohammed.md) — 기존의 Artos 방식을 따르기보다 Zephyr 네이티브 드라이버를 우선 개발하여 Zephyr의 오픈소스 커뮤니티, CI/CD, 툴링(west, twister) 등의 이점을 활용하고, 이를 다른 RTOS로 이식할 수 있는 경로를 모색하는 것이 핵심입니다. - 빌드 스크립트를 통해 DT를
-- [📌 고성능 SoC에 Zephyr를 포팅하는 주요 동기와 과제는 무엇인가?](sources/zephyr-porting-efforts-in-high-performance-socs-kunihiko-hayashi-socionext-inc.md) — 미래 하이브리드 시스템(메인 OS + Zephyr) 구축을 위한 사전 준비가 주요 동기이며, 현재 마이크로컨트롤러 기반의 Zephyr 설계를 고성능 SoC 환경에 맞게 개선하는 것이 주요 과제입니다. - 메모리 관리 유닛(MMU) 지원 부족 및 불충분한 번역 테이블 요소 - SMP (S
-- [📌 리눅스 NPU 서브시스템이 엣지 AI/LLM 워크로드에서 겪는 핵심적인 문제는 무엇인가?](sources/demystifying-linux-npu-subsystem-from-vision-to-llm-at-edge-mr-jagan-teki.md) — 기존 리눅스 DRM(Direct Rendering Manager) 스택이 LLM과 같이 상태 유지(stateful) 및 장기 실행(long-loop) 워크로드의 메모리 관리, 작업 스케줄링, 전력 처리 등을 효율적으로 지원하지 못하여 한계에 부딪히는 것이 핵심입니다. 벤더들은 강력한 자
-- [📌 리눅스 시스템에서 카메라 센서를 통합하는 방법은 무엇인가?](sources/how-to-integrate-camera-sensors-in-a-linux-system-laurent-pinchart-ideas-on-board.md) — 이 강연은 카메라 모듈, 하드웨어 인터페이스, 리눅스 커널 드라이버, 펌웨어 인터페이스, 클럭 구성, 테스트 및 문제 해결, 이미지 캡처 등 리눅스 시스템에 카메라 센서를 성공적으로 통합하는 데 필요한 핵심 요소와 절차를 다룹니다. 표준화된 커넥터 부재, SOC 및 카메라 모듈 간의 연
-- [📌 리눅스 커널에서 머신러닝 애플리케이션을 어떻게 실행할 수 있는가?](sources/ml-applications-in-linux-kernel-viacheslav-dubeyko-ibm.md) — 리눅스 커널에서 머신러닝 모델을 직접 실행하기는 어렵기 때문에, 모델 훈련과 추론을 사용자 공간에서 수행하고, CFS나 EBPF 같은 기존 커널-사용자 공간 상호작용 메커니즘을 활용하여 데이터를 주고받는 방식으로 구현할 수 있습니다. 커널 내의 부동 소수점 연산 제약이나 성능 페널티를 
-- [📌 멀티커널 아키텍처는 무엇이며, 어떤 핵심적인 이점을 제공하는가?](sources/multikernel-architecture-kernel-to-kernel-isolation-and-resource-management-cong-wang.md) — 멀티커널 아키텍처는 가상화나 하이퍼바이저 없이 하나의 머신에서 여러 Linux 커널을 동시에 실행하여 커널 간 격리와 탄력적인 리소스 관리를 제공하는 새로운 접근 방식입니다. 리눅스 커널의 고전적인 '단일 커널' 모델에 도전하여, 하이퍼바이저나 가상화 없이 단일 머신에서 여러 리눅스 커
-- [📌 소프트웨어 정의 차량(SDV) 혁명을 주도하기 위해 AGL SoDeV가 무엇을 하는가?](sources/keynote-agl-sodev-leading-the-software-defined-vehicles-revolution-dan-cauchy.md) — AGL SoDeV는 자동차 내 소프트웨어 변화에 대응하고 소프트웨어 통합을 위해 6가지 핵심 요소(중앙 집중화, 하드웨어-소프트웨어 분리, 가상화 장치, 통합 HMI, OTA를 통한 지속적 배포, 하드웨어-소프트웨어 수명 주기 분리)를 통합한 레퍼런스 플랫폼을 제공합니다. AGL SoD
-- [📌 안드로이드 부트의 미래를 위한 GBL, DRTM, UKI 기술은 무엇이며 왜 중요한가?](sources/android-boot-drtm-ukis-dmitrii-merkurev-google-leif-lindholm-qualcomm-ram-muthiah-google.md) — 안드로이드 부트의 현대적이고 안전한 변화를 이끌기 위해 GBL(Google Bootloader)은 EFI 애플리케이션으로 부트플로우를 표준화하고, DRTM(Dynamic Root of Trust for Measurement)은 초기 펌웨어 손상으로부터 보호하며, UKI(Unified K
-- [📌 이기종 ARM SoC 환경에서 Linux와 RTOS 간의 디버깅 및 트레이싱 방법은?](sources/debugging-and-tracing-and-more-between-linux-and-rtos-on-heterogeneous-arm-soc-wenlong-liu-and-rui-li.md) — --- tags: - Debug - Trace - Heterogeneous - ARM - SoC - Remoteproc - Linux - RTOS --- 이기종 SOC의 공유 메모리 등 고유한 특성을 활용하여 Linux 원격 프로세스 서브시스템(remote proc)이나 Huawei O
-- [📌 자동차 등급 리눅스(AGL)는 무엇이며, 어떤 업데이트가 있었나?](sources/automotive-grade-linux-agl-update-walt-miner-the-linux-foundation.md) — AGL은 리눅스 재단 기반의 비영리 협력 프로젝트로, 자동차 및 소프트웨어 산업을 통합하여 미래 자동차를 위한 오픈소스 플랫폼을 구축합니다. 2024년 Toyota Rav 4와 Suzuki E Vitara에 AGL이 적용되었고, 차세대 SDV 레퍼런스 플랫폼 계획 및 Flutter 통합
-- [📌 캐시 인식 스케줄링이란 무엇이며, 어떤 문제를 해결하는가?](sources/cache-aware-scheduling-mr-tim-chen-intel-mr-yu-chen-intel.md) — 캐시 인식 스케줄링은 numa 노드 내 여러 캐시(ARC) 간의 데이터 공유 문제를 해결하여, 프로세스의 스레드들을 가장 활발한 ARC에 모으는 전략입니다. 기존 노드 밸런서가 작업을 CPU에 고르게 분산시키려 하여 캐시 간 데이터 전송 비용이 증가하고 성능이 저하되는 문제를 해결하기 
+- [TMEM vs Registers: How NVIDIA and AMD Feed Tensor Compute | LinkedIn](sources/1-tmem-vs-registers-how-nvidia-and-amd-feed-tensor-compute-linkedin.md) — source page
+- [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — source page
+- [2026-04-23 AI/ML Learning Day 01](sources/2026-04-23-day01-ai-ml-learning-review.md) — source page
+- [2026-04-24 AI/ML Learning Day 02](sources/2026-04-24-day02-ai-ml-learning-review.md) — source page
+- [2026-04-25 AI/ML Learning Day 03](sources/2026-04-25-day03-ai-ml-learning-review.md) — source page
+- [2026-04-26 AI/ML Learning Day 04 — Derivatives, Gradients, and Backpropagation](sources/2026-04-26-day04-ai-ml-learning-review.md) — source page
+- [2026-04-27 AI/ML Learning Day 05](sources/2026-04-27-day05-ai-ml-learning-review.md) — source page
+- [2026-04-28 AI/ML Learning Day 06](sources/2026-04-28-day06-ai-ml-learning-review.md) — source page
+- [2026-04-29 AI/ML Learning Day 07](sources/2026-04-29-day07-ai-ml-learning-review.md) — source page
+- [2026-04-30 AI/ML Learning Day 08](sources/2026-04-30-day08-ai-ml-learning-review.md) — source page
+- [2026-05-01 AI/ML Learning Day 09](sources/2026-05-01-day09-ai-ml-learning-review.md) — source page
+- [2026-05-02 AI/ML Learning Day 10](sources/2026-05-02-day10-ai-ml-learning-review.md) — source page
+- [2026-05-03 AI/ML Learning Day 11](sources/2026-05-03-day11-ai-ml-learning-review.md) — source page
+- [2028 글로벌 인텔리전스 위기](sources/2028-global-intelligence-crisis-ko.md) — source page
+- [2028 High School Choice and Admissions Strategy](sources/2028-high-school-choice-and-admissions-strategy.md) — source page
+- [2512.02189](sources/2512-02189.md) — source page
+- [26년 제조 산업에 AI 적용되면 이렇게 바뀝니다](sources/26년-제조-산업에-ai-적용되면-이렇게-바뀝니다-10년차-대기업-llm-현직자의-솔직한-조ᄋ.md) — source page
+- [Accelerating Software-Defined Vehicles:  SDV-EG Updates & New AGL SDV Referenc Jerry Jiancong Zhao](sources/accelerating-software-defined-vehicles-sdv-eg-updates-and-new-agl-sdv-referenc-jerry-jiancong-zhao.md) — source page
+- [📌 Linux 커널의 안전성 강화를 위한 Address Space Isolation(주소 공간 격리)은 무엇인가?](sources/address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia.md) — source page
+- [An Introduction to Speculative Decoding for Reducing Latency in AI Inference | NVIDIA Technical Blog](sources/an-introduction-to-speculative-decoding-for-reducing-latency-in-ai-inference-nvidia-technical-blog.md) — source page
+- [Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI](sources/andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai.md) — source page
+- [📌 안드로이드 부트의 미래를 위한 GBL, DRTM, UKI 기술은 무엇이며 왜 중요한가?](sources/android-boot-drtm-ukis-dmitrii-merkurev-google-leif-lindholm-qualcomm-ram-muthiah-google.md) — source page
+- [📌 자동차 등급 리눅스(AGL)는 무엇이며, 어떤 업데이트가 있었나?](sources/automotive-grade-linux-agl-update-walt-miner-the-linux-foundation.md) — source page
+- [📌 BSP를 메인라인 커널에 매핑하는 과정에서 가장 중요한 도전 과제는 무엇인가?](sources/beyond-the-demo-kernel-mapping-bsps-to-mainline-alessandro-carminati.md) — source page
+- [📌 캐시 인식 스케줄링이란 무엇이며, 어떤 문제를 해결하는가?](sources/cache-aware-scheduling-mr-tim-chen-intel-mr-yu-chen-intel.md) — source page
+- [Claude Code is the Inflection Point](sources/claude-code-is-the-inflection-point.md) — source page
+- [Claude Code는 변곡점이다](sources/claude-code-is-the-inflection-point-ko.md) — source page
+- [Claude Opus 4.6 소개](sources/claude-opus-4-6-소개.md) — source page
+- [Context Rot: How Increasing Input Tokens Impacts LLM Performance](sources/context-rot-how-increasing-input-tokens-impacts-llm-performance-chroma-research.md) — source page
+- [Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning](sources/cosmos-reason1-from-physical-common-sense-to-embodied-reasoning.md) — source page
+- [📌 CPU 격리(CPU Isolation) 시 발생하는 IPI(Inter-Processor Interrupt) 간섭 문제의 원인과 해결 방안은 무엇인가?](sources/cpu-isolation-and-ipi-interference-valentin-schneider-red-hat.md) — source page
+- [CUDA Refresher: The CUDA Programming Model | NVIDIA Technical Blog](sources/cuda-refresher-the-cuda-programming-model-nvidia-technical-blog.md) — source page
+- [📌 이기종 ARM SoC 환경에서 Linux와 RTOS 간의 디버깅 및 트레이싱 방법은?](sources/debugging-and-tracing-and-more-between-linux-and-rtos-on-heterogeneous-arm-soc-wenlong-liu-and-rui-li.md) — source page
+- [Decoding Safe(ty) Linux Architectural Approaches for Critical Systems - Philipp Ahmann, Etas GmbH](sources/decoding-safe-ty-linux-architectural-approaches-for-critical-systems-philipp-ahmann-etas-gmbh.md) — source page
+- [Deconstructing Nvidia’s Vera Rubin — The Successor To Blackwell That’s 10x More Efficient](sources/deconstructing-nvidia-s-vera-rubin-the-successor-to-blackwell-that-s-10x-more-efficient.md) — source page
+- [📌 리눅스 NPU 서브시스템이 엣지 AI/LLM 워크로드에서 겪는 핵심적인 문제는 무엇인가?](sources/demystifying-linux-npu-subsystem-from-vision-to-llm-at-edge-mr-jagan-teki.md) — source page
+- [Dissecting Nvidia Blackwell - Tensor Cores, PTX Instructions, SASS, Floorsweep, Yield](sources/dissecting-nvidia-blackwell-tensor-cores-ptx-instructions-sass-floorsweep-yield.md) — source page
+- [Dom0less and Deterministic:  Building Safer Automotive Systems With Xen - Cody Zuschlag](sources/dom0less-and-deterministic-building-safer-automotive-systems-with-xen-cody-zuschlag.md) — source page
+- [EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test](sources/eagle-3-scaling-up-inference-acceleration-of-large-language-models-via-training-time-test.md) — source page
+- [📌 Linux에서 게임 경험을 향상시키기 위한 Sched_ext의 역할은 무엇인가?](sources/enhancing-your-gaming-experience-on-linux-with-sched-ext-changwoo-min-igalia.md) — source page
+- [📌 EROFS는 컨테이너 환경에서 어떤 이점을 제공하는가?](sources/erofs-and-containers-xiang-gao-alibaba-cloud.md) — source page
+- [Extending Claude's capabilities with skills and MCP](sources/extending-claudes-capabilities-with-skills-and-mcp-claude.md) — source page
+- [Figure 03 and the Future of Robotics](sources/figure-03-and-the-future-of-robotics.md) — source page
+- [GDP 7% 시대 시작된다](sources/gdp-7-시대-시작된다-혁신주-대가가-찍은-기술-혁명-수혜주들.md) — source page
+- [Groq Inference Tokenomics: Speed, But At What Cost?](sources/groq-inference-tokenomics-speed-but-at-what-cost.md) — source page
+- [GTC 2026 – The Inference Kingdom Expands](sources/gtc-2026-the-inference-kingdom-expands.md) — source page
+- [HBM 다음은 HBF, 엔비디아·MS를 영원히 가두는 삼성·하이닉스의 30년 가두리 전략](sources/hbm-다음은-hbf-엔비디아-ms를-영원히-가두는-삼성-하이닉스의-30년-가두리-전략-김정호-카이스트-전기-및-전자공학과-교수-2-투자insight.md) — source page
+- [📌 HKML은 리눅스 커널 개발을 위한 어떤 메일링 도구인가?](sources/hkml-mailing-tool-for-simple-linux-kernel-development-seongjae-sj-park-meta.md) — source page
+- [HotChips34 - Groq - Abts - final](sources/hotchips34-groq-abts-final-pdf.md) — source page
+- [How Centralized Radar Processing on NVIDIA DRIVE Enables Safer, Smarter Level 4 Autonomy](sources/how-centralized-radar-processing-on-nvidia-drive-enables-safer-smarter-level-4-autonomy-nvidia-technical-blog.md) — source page
+- [📌 Zephyr에서 베어 메탈 코드 추출 방식을 바꾸는 방법의 핵심은 무엇인가?](sources/how-to-extract-a-bare-metal-flavor-of-code-out-of-zephyr-to-use-in-rtos-khasim-syed-mohammed.md) — source page
+- [📌 리눅스 시스템에서 카메라 센서를 통합하는 방법은 무엇인가?](sources/how-to-integrate-camera-sensors-in-a-linux-system-laurent-pinchart-ideas-on-board.md) — source page
+- [InferenceX v2: NVIDIA Blackwell Vs AMD vs Hopper](sources/inferencex-v2-nvidia-blackwell-vs-amd-vs-hopper-formerly-inferencemax.md) — source page
+- [Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform](sources/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform.md) — source page
+- [Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform (LilysAI)](sources/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform-lilysai.md) — source page
+- [📌 Zephyr 개발을 위한 AI 가속기를 탑재한 이기종 코어 플랫폼의 주요 특징은 무엇인가?](sources/introducing-a-heterogeneous-core-platform-with-ai-accelerator-for-zephyr-developme-yuya-hamamachi.md) — source page
+- [Introducing Helix 02: Full-Body Autonomy](sources/introducing-helix-02-full-body-autonomy.md) — source page
+- [Introduction to Tensor Cores Programming](sources/introduction-to-tensor-cores-programming.md) — source page
+- [📌 KernelSBOM은 무엇을 하는 프로젝트인가?](sources/kernelsbom-reconstructing-linux-kernel-builds-into-trusted-spdx-bills-of-materi-maximilian-huber.md) — source page
+- [📌 SDV(Software Defined Vehicle) 시대에 오픈소스 기반 가상화 기술이 차량 개발을 어떻게 가속화하는가?](sources/keynote-accelerating-sdv-through-open-source-based-virtualization-masashige-mizuyama.md) — source page
+- [📌 소프트웨어 정의 차량(SDV) 혁명을 주도하기 위해 AGL SoDeV가 무엇을 하는가?](sources/keynote-agl-sodev-leading-the-software-defined-vehicles-revolution-dan-cauchy.md) — source page
+- [📌 Linus Torvalds가 리눅스 커널 개발에서 가장 중요하게 생각하는 원칙과 AI 활용에 대한 그의 입장은?](sources/keynote-linus-torvalds-creator-of-linux-and-git-in-conversation-with-dirk-hohndel.md) — source page
+- [📌 KUnit 테스팅의 주요 문제점과 한계는 무엇인가?](sources/kunit-testing-insufficiencies-matthew-whitehead-the-boeing-company.md) — source page
+- [ONNX-MLIR 기반 추론 컴파일 파이프라인](sources/le-onnx-pdf.md) — source page
+- [Memory Mania: How a Once-in-Four-Decades Shortage Is Fueling a Memory Boom](sources/memory-mania-semianalysis.md) — source page
+- [📌 리눅스 커널에서 머신러닝 애플리케이션을 어떻게 실행할 수 있는가?](sources/ml-applications-in-linux-kernel-viacheslav-dubeyko-ibm.md) — source page
+- [Modular: Matrix Multiplication on Blackwell: Part 2 - Using Hardware Features to Optimize Matmul](sources/modular-matrix-multiplication-on-blackwell-part-2-using-hardware-features-to-optimize-matmul.md) — source page
+- [📌 멀티커널 아키텍처는 무엇이며, 어떤 핵심적인 이점을 제공하는가?](sources/multikernel-architecture-kernel-to-kernel-isolation-and-resource-management-cong-wang.md) — source page
+- [Neural Network Quantization & Number Formats From First Principles](sources/neural-network-quantization-number-formats-from-first-principles.md) — source page
+- [📌 PREEMPT_RT 커널에서의 핵심적인 개선 사항은 무엇인가?](sources/news-from-preempt-rt-sebastian-siewior.md) — source page
+- [NPU v0.1 Hardware Architecture](sources/npu-v0-1-hw-architecture.md) — source page
+- [NPU v0.1 Implementation Design](sources/npu-v0-1-implementation-design.md) — source page
+- [NPU v0.1 ISA Specification](sources/npu-v0-1-isa-spec.md) — source page
+- [NPU v0.1 PRD](sources/npu-v0-1-prd.md) — source page
+- [NPU v0.1 Software Architecture](sources/npu-v0-1-sw-architecture.md) — source page
+- [📌 NVIDIA는 ASIL B 인증 Linux를 달성하기 위해 어떤 접근 방식을 사용했는가?](sources/nvidia-approach-for-achieving-asil-b-qualified-linux-minimizing-expectations-from-up-igor-stoppa-youtube.md) — source page
+- [NVIDIA Groq 3 LPX: Everything we know - StorageReview.com](sources/nvidia-groq-3-lpx-everything-we-know-storagereview-com.md) — source page
+- [NVIDIA GTC 2026](sources/nvidia-gtc-keynote-2026.md) — source page
+- [NVIDIA Hopper 아키텍처 심층 분석하기 - NVIDIA Technical Blog](sources/nvidia-hopper-아키텍처-심층-분석하기-nvidia-technical-blog.md) — source page
+- [NVIDIA 인터뷰: Groq 3 LPX와 함께하는 Vera Rubin AI 심층 분석 | GTC 2026](sources/nvidia-interview-groq-3-lpx-with-vera-rubin-ai-deep-analysis-gtc-2026.md) — source page
+- [📌 NVIDIA가 리눅스에서 ASIL B 수준의 안전성을 달성하기 위한 접근 방식은 무엇인가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-bryan-huntsman-us-nvidia.md) — source page
+- [📌 NVIDIA가 리눅스 커널을 ASIL B 인증받기 위해 어떤 접근 방식을 취하는가?](sources/nvidia-s-approach-for-achieving-asil-b-qualified-linux-mr-bryan-huntsman-senior-director-nvidia.md) — source page
+- [NVIDIA Tensor Core Evolution: From Volta To Blackwell](sources/nvidia-tensor-core-evolution-from-volta-to-blackwell.md) — source page
+- [📌 Linux 장치 드라이버 모델에서 다양한 소프트웨어 노드 유형을 이해하는 방법은 무엇인가요?](sources/of-nodes-fwnodes-swnodes-devlinks-properties-understanding-how-devices-bartosz-golaszewski.md) — source page
+- [Part I - Intro to GPUs](sources/part-i-intro-to-gpus.md) — source page
+- [📌 \"Power Management and USB\"에 대한 발표는 어떤 내용을 다루는가?](sources/power-management-and-usb-mr-darrion-ramos-ms-victoria-siver-dr-ken-yihang-bai-dr-tuba-yavuz.md) — source page
+- [Project Glasswing: Securing critical software for the AI era — Anthropic](sources/project-glasswing-securing-critical-software-for-the-ai-era-anthropic.md) — source page
+- [📌 RV와 데드라인 스케줄러를 사용하여 런타임에 서브시스템을 검증하는 방법은 무엇인가요?](sources/rv-and-the-deadline-scheduler-how-to-verify-your-subsystem-at-runti-gabriele-monaco-and-juri-lelli.md) — source page
+- [ONNX와 ONNX Runtime](sources/san19-211.md) — source page
+- [📌 SDV(소프트웨어 정의 차량) 시대의 차세대 차량 진단 기술 SOVD(Service-Oriented Vehicle Diagnostics)는 무엇인가?](sources/sdv-oriented-use-cases-leveraging-next-generation-vehicle-diagnostics-sovd-and-vir-masanori-itoh.md) — source page
+- [📌 AGL 및 SoDev를 위한 레퍼런스 보드와 BSP 현황은?](sources/status-of-reference-board-and-bsp-for-agl-and-sodev-harunobu-kurokawa.md) — source page
+- [Terafab Keynote | Building AI Chips for Earth & Space](sources/terafab-keynote-building-ai-chips-for-earth-space.md) — source page
+- [The Great GPU Shortage – Rental Capacity – Launching our H100 1 Year Rental Price Index](sources/the-great-gpu-shortage-rental-capacity-launching-our-h100-1-year-rental-price-index.md) — source page
+- [📌 TinyML 워크로드를 Zephyr RTOS에 배포하고 최적화하는 방법은 무엇인가?](sources/tinyml-at-the-edge-deploying-and-optimizing-ai-workloads-on-zephyr-rtos-amandeep-singh-welzin.md) — source page
+- [📌 CIP(Civil Infrastructure Platform)는 무엇이며, 어떤 목표를 가지고 있나요?](sources/towards-a-decade-of-industrial-grade-linux-cips-journey-and-the-road-ahead-yoshitake-kobayashi.md) — source page
+- [Understanding and Coding the KV Cache in LLMs from Scratch](sources/understanding-and-coding-the-kv-cache-in-llms-from-scratch.md) — source page
+- [Understanding PTX, the Assembly Language of CUDA GPU Computing](sources/understanding-ptx-the-assembly-language-of-cuda-gpu-computing-nvidia-technical-blog.md) — source page
+- [Understanding the RISC-V Extensions for AI - John Simpson, SiFive](sources/understanding-the-risc-v-extensions-for-ai-john-simpson-sifive.md) — source page
+- [📌 Userspace Assisted Scheduling (UAS) via SKITS는 무엇을 해결하고자 하는가?](sources/userspace-assisted-scheduling-via-sc-john-stultz-mr-qais-yousef-steven-rostedt-vincent-guittot.md) — source page
+- [Vibe coding in prod](sources/vibe-coding-in-prod.md) — source page
+- [Vibe coding in prod (slug version)](sources/vibe-coding-in-prod-lilysai-slug.md) — source page
+- [VLA for Autonomous Driving Weekly Study](sources/vla-for-autonomous-driving-weekly-study.md) — source page
+- [VLA for Autonomous Driving Weekly Study Template](sources/vla-for-autonomous-driving-weekly-study-template.md) — source page
+- [Week 01. VLA for AD 지형도와 taxonomy](sources/week-01-vla-for-ad-지형도와-taxonomy-2026-04-28.md) — source page
+- [📌 Zephyr 프로젝트는 자동차 산업에 어떤 중요한 변화를 가져올 게임 체인저인가요?](sources/zephyr-a-game-changer-for-the-automotive-industry-yuichi-kusakabe-honda-motor-co-ltd.md) — source page
+- [📌 Zephyr 프로젝트가 개방형으로 안전 인증 작업을 수행하면서 얻은 주요 교훈은 무엇인가?](sources/zephyr-learnings-from-working-on-safety-certification-in-the-open-kate-stewart.md) — source page
+- [📌 고성능 SoC에 Zephyr를 포팅하는 주요 동기와 과제는 무엇인가?](sources/zephyr-porting-efforts-in-high-performance-socs-kunihiko-hayashi-socionext-inc.md) — source page
+- [📌 Zephyr 기반 VIRTIO 백엔드를 Xen에서 구현하는 목적은 무엇인가?](sources/zephyrbased-virtio-backend-on-xen-toward-open-source-functional-safety-hiroshi-tokita.md) — source page
+- [견고한 반도체 시장 펀더멘털...실적 대비 저평가된 반도체 기업은? | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/견고한-반도체-시장-펀더멘털-실적-대비-저평가된-반도체-기업은-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — source page
+- [구글 TurboQuant AI 메모리 6배 줄여도 된다!  메모리 압축 기술의 진짜 의미   | Hot Warm Cold KV Cache 의 차이 | 메모리 슈퍼사이클](sources/구글-turboquant-ai-메모리-6배-줄여도-된다-메모리-압축-기술의-진짜-의미-hot-warm-cold-kv-cache-의-차이-메모리-슈퍼사이클.md) — source page
+- [당신의 삶을 바꿔줄 클로드봇 실전 워크플로우](sources/당신의-삶을-바꿔줄-클로드봇-실전-워크플로우.md) — source page
+- [마이크론 역대급 저평가...메모리 밸류 바닥 국면 진입?ㅣ김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/마이크론-역대급-저평가-메모리-밸류-바닥-국면-진입-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — source page
+- [메모리 현물가 하락, 사이클 꺾인 게 아닌 '과열 해소' | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/메모리-현물가-하락-사이클-꺾인-게-아닌-과열-해소-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — source page
+- [메모리Q와 토큰 올해 말부터 기울기 폭발?! | 김장열 유니스토리자산운용 본부장 [글로벌 인터뷰]](sources/메모리q와-토큰-올해-말부터-기울기-폭발-김장열-유니스토리자산운용-본부장-글로벌-인터뷰.md) — source page
+- [반도체 업황 살아났나? 밸류 재평가의 진짜 조건ㅣ김장열 유니스토리자산운용 본부장](sources/반도체-업황-살아났나-밸류-재평가의-진짜-조건-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — source page
+- [삼전닉스 동반 하락 부른 구글 '터보퀀트'의 진짜 의미ㅣ김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/삼전닉스-동반-하락-부른-구글-터보퀀트-의-진짜-의미-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — source page
+- [스타트업 성공 전략: 제품, 시장, 비전 및 모멘텀](sources/스타트업-성공-전략-제품-시장-비전-및-모멘텀.md) — source page
+- [실적 5배에도 주가 2배, 반도체 상승 여력 남았나? | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]](sources/실적-5배에도-주가-2배-반도체-상승-여력-남았나-l-김장열-유니스토리운용-본부장-집중-오늘의-주식.md) — source page
+- [알레르기 비염의 치료법은 하나뿐입니다 - 권혁수 교수 (서울아산병원 알레르기내과)](sources/알레르기-비염의-치료법은-하나뿐입니다-권혁수-교수-서울아산병원-알레르기내과.md) — source page
+- [‘원유’가 아니라 ‘달러 패권’이다… 호르무즈의 진짜 의미 | 중소기업중앙회 성상현 부부장 [신과대화]](sources/원유-가-아니라-달러-패권-이다-호르무즈의-진짜-의미-중소기업중앙회-성상현-부부장.md) — source page
+- [은 가격 급락의 범인은 누굴까](sources/은-가격-급락의-범인은-누굴까.md) — source page
+- [인간의 가치는 오직 의지만 남을 겁니다 - 노정석 대표(비팩토리)](sources/인간의-가치는-오직-의지만-남을-겁니다-노정석-대표-비팩토리.md) — source page
+- [인간지능 시대는 끝났다" 인공지능이 가져올 인류 절멸의 위기, 이재명 대통령이 차지호의원에게 내린 숙제 (차지호 의원) 1부](sources/인간지능-시대는-끝났다-인공지능이-가져올-인류-절멸의-위기-이재명-대통령이-차지호의원에게-내린-숙제-차지호-의원-1부.md) — source page
+- [전쟁, 유가, 금리, 그리고 삼성전자와 하이닉스의 매트릭스는? | 장우진 작가 [긴급인터뷰]](sources/전쟁-유가-그리고-삼성전자와-하이닉스의-매트릭스는-장우진-작가-긴급인터뷰.md) — source page
+- [제2의 금융위기 온다? 사모대출 위기의 실체 - 이영주 수석연구위원 (하나증권)](sources/제2의-금융위기-온다-사모대출-위기의-실체-이영주-수석연구위원-하나증권.md) — source page
+- [제2의 테슬라? 3천조 괴물 상륙! 스페이스X 상장, 약일까 독일까? | 정의훈 유진투자증권 연구원](sources/제2의-테슬라-3천조-괴물-상륙-스페이스x-상장-약일까-독일까-정의훈-유진투자증권-연구원-여의도-인사이트.md) — source page
+- [케빈 워시 분석 보고서](sources/케빈-워시-분석-보고서.md) — source page
+- [코스피 1만 시나리오… 결국 ‘금리’에서 갈린다 | 나탈리 허 변호사 [신과대화]](sources/코스피-1만-시나리오-결국-금리-에서-갈린다-나탈리-허-변호사-신과대화.md) — source page
+- [투자를 망치는 진짜 원인, 틀린 판단보다 '결정을 미루는 것' | 박병창 교보증권 자산관리전략부 이사 [여의도 인사이트]](sources/투자를-망치는-진짜-원인-틀린-판단보다-결정을-미루는-것-박병창-교보증권-자산관리전략부-이사-여의도-인사이트.md) — source page
+- [투자에서 가장 위험한 습관은 이것](sources/투자에서-가장-위험한-습관은-이것.md) — source page
+- [트럼프가 때리자 유럽이 뭉쳤다](sources/트럼프가-때리자-유럽이-뭉쳤다.md) — source page
+- [트럼프의 케빈 워시 지명 의도 분석](sources/트럼프의-케빈-워시-지명-의도-분석.md) — source page
+- [트렌드포스 \"SK하이닉스 때문에 엔비디아 루빈 생산량이 대폭하향 되었다\](sources/트렌드포스-sk하이닉스-때문에-엔비디아-루빈-생산량이-대폭하향-되었다.md) — source page
+- [환율 1500원 시대 시작되나? 전쟁 끝나도 못 내려오는 이유 | 변정규 다이와증권코리아 본부장 [신과대화]](sources/환율-1500원-시대-시작되나-전쟁-끝나도-못-내려오는-이유-변정규-다이와증권코리아-본부장-신과대화.md) — source page
+- [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
-- [Alessandro Carminati](entities/AlessandroCarminati.md) — Alessandro Carminati is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Alibaba Cloud](entities/AlibabaCloud.md) — Alibaba Cloud appears in the corpus through EROFS and container-image topics.
-- [Amandeep Singh](entities/AmandeepSingh.md) — Amandeep Singh is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [AMD](entities/AMD.md) — NVIDIA와 함께 AI 추론 가속기 시장에서 비교되는 경쟁사. InferenceX 자료에서는 비용 효율과 시스템 구성 관점에서 평가된다.
-- [Android](entities/Android.md) — Android appears in the corpus through boot-chain modernization, DRTM, and UKI-related secure boot discussions.
-- [Anthropic](entities/Anthropic.md) — Claude 제품군과 에이전트형 개발 도구를 출시하는 AI 기업. 이 코퍼스에서는 [[ClaudeCode]], [[ClaudeOpus46]], [[Skills]], [[MCP]]를 통해 에이전트형 지식 작업 플랫폼을 확장하는 주체로 반복 등장한다.
-- [ARKInvest](entities/ARKInvest.md) — Big Ideas 2026을 통해 AI, 로봇, 우주, 바이오 융합이 고성장을 만든다고 주장하는 투자사.
-- [Automotive Grade Linux](entities/AutomotiveGradeLinux.md) — Automotive Grade Linux (AGL) is a recurring project in the corpus, positioned as an open software stack and collaboration base for software-defined vehicles.
-- [Bryan Huntsman (senior Director](entities/BryanHuntsmanSeniorDirector.md) — Bryan Huntsman (senior Director is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Bryan Huntsman Us](entities/BryanHuntsmanUs.md) — Bryan Huntsman Us is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Changwoo Min](entities/ChangwooMin.md) — Changwoo Min is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Chroma](entities/Chroma.md) — 긴 컨텍스트 성능 저하를 [[ContextRot]] 개념으로 정리한 연구 조직. 실사용형 장문 처리 평가를 강조한다.
-- [CitriniResearch](entities/CitriniResearch.md) — AI 풍부화가 금융 시스템 리스크로 전환될 수 있다는 사고 실험을 제시한 매크로 리서치 조직.
-- [Civil Infrastructure Platform](entities/CivilInfrastructurePlatform.md) — The Civil Infrastructure Platform (CIP) is presented as a long-horizon industrial Linux effort focused on dependable maintenance and lifecycle management.
-- [ClaudeCode](entities/ClaudeCode.md) — 터미널 네이티브 AI 에이전트형 코딩 도구. 단순 코드 생성보다 코드베이스 탐색, 계획 수립, 다단계 실행, 도구 호출을 포함한 작업 완수 능력 때문에 변곡점으로 평가된다.
-- [ClaudeOpus46](entities/ClaudeOpus46.md) — Anthropic의 Claude Opus 4.6 모델 릴리스. 긴 컨텍스트, 자기 수정 능력, 장기 작업 지속성, 전문 지식 업무 성능이 강조된다.
-- [Cody Zuschlag](entities/CodyZuschlag.md) — Cody Zuschlag is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Cong Wang](entities/CongWang.md) — Cong Wang is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [CosmosReason1](entities/CosmosReason1.md) — 물리적 상식과 embodied reasoning을 수행하도록 설계된 멀티모달 모델 프로젝트. [[PhysicalAI]] 구현을 위한 연구 사례로 등장한다.
-- [Dan Cauchy](entities/DanCauchy.md) — Dan Cauchy is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Dmitrii Merkurev](entities/DmitriiMerkurev.md) — Dmitrii Merkurev is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [DonaldTrump](entities/DonaldTrump.md) — 연준 인선과 대유럽 압박이라는 두 축에서 시장과 지정학 변수로 등장하는 미국 정치인.
-- [ELISA](entities/ELISA.md) — ELISA appears as the cross-industry effort focused on making Linux usable in safety-related systems through process maturity, tooling, and architectural analysi
-- [Etas Gmbh](entities/EtasGmbh.md) — Etas Gmbh is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [EuropeanUnion](entities/EuropeanUnion.md) — 트럼프의 압박 이후 단일시장 강화, 국방 자강, 통상 다변화를 추진하는 전략 행위자로 묘사된다.
-- [FederalReserve](entities/FederalReserve.md) — 금리, 유동성, 대차대조표, 정책 커뮤니케이션 논쟁의 중심 기관. 워시 관련 자료 전반의 제도적 무대다.
-- [Figure 03](entities/Figure03.md) — [[Figure03]] is Figure AI's humanoid robot platform as described in the robotics sources. It is notable here for combining electric actuators, hybrid control, s
-- [Figure AI](entities/FigureAI.md) — [[FigureAI]] is the robotics company behind the Figure humanoid platform and the Helix control stack. In the current corpus it is presented as pursuing general-
-- [Git](entities/Git.md) — Git appears mainly via the Linus Torvalds keynote context as the version control system co-created by Torvalds.
-- [Google](entities/Google.md) — Google appears in the corpus via Android boot-chain work, DRTM, and UKIs.
-- [Harunobu Kurokawa](entities/HarunobuKurokawa.md) — Harunobu Kurokawa is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Helix 02](entities/Helix02.md) — [[Helix02]] is Figure's full-body autonomy model for humanoid robots. The corpus presents it as a learned architecture that ties together semantic reasoning, vi
-- [Hiroshi Tokita](entities/HiroshiTokita.md) — Hiroshi Tokita is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Honda](entities/Honda.md) — Honda appears in the corpus through automotive Zephyr and software-defined vehicle discussions.
-- [Honda Motor Co.](entities/HondaMotorCo.md) — Honda Motor Co. is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [IBM](entities/IBM.md) — IBM appears in the corpus through exploration of machine learning applications running in or near the Linux kernel.
-- [Ideas on Board](entities/IdeasOnBoard.md) — Ideas on Board appears in the corpus through camera sensor integration guidance for Linux systems.
-- [Igalia](entities/Igalia.md) — Igalia appears in the corpus through Sched_ext gaming and scheduler extensibility work.
-- [Igor Stoppa](entities/IgorStoppa.md) — Igor Stoppa is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Intel](entities/Intel.md) — Intel appears in scheduling and cache-aware workload placement discussions.
-- [Jagan Teki](entities/JaganTeki.md) — Jagan Teki is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [JPMorgan](entities/JPMorgan.md) — 은 시장 가격 형성 논쟁에서 대형 포지션과 시장 영향력의 상징으로 등장하는 금융기관.
-- [Kate Stewart](entities/KateStewart.md) — Kate Stewart is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [KevinWarsh](entities/KevinWarsh.md) — 미국 연준 의장 후보로 거론되며 트럼프, 시장 기대, 유동성 정책 논쟁과 연결되는 인물. 일부 자료는 정책 프레임으로, 일부는 권력 네트워크 프레임으로 해석한다.
-- [Khasim Syed Mohammed](entities/KhasimSyedMohammed.md) — Khasim Syed Mohammed is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Kunihiko Hayashi](entities/KunihikoHayashi.md) — Kunihiko Hayashi is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Laurent Pinchart](entities/LaurentPinchart.md) — Laurent Pinchart is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Leif Lindholm](entities/LeifLindholm.md) — Leif Lindholm is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Linus Torvalds](entities/LinusTorvalds.md) — Linus Torvalds appears in the corpus discussing kernel development values, maintainership, and views on AI-assisted work.
-- [Linux Kernel](entities/LinuxKernel.md) — The Linux kernel is the central software platform across this corpus, appearing in discussions of scheduling, safety, BSP upstreaming, drivers, and AI accelerat
-- [Masashige Mizuyama](entities/MasashigeMizuyama.md) — Masashige Mizuyama is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Matthew Whitehead](entities/MatthewWhitehead.md) — Matthew Whitehead is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Meta](entities/Meta.md) — Meta appears in the corpus through tooling contributions to Linux kernel development workflows.
-- [NVIDIA](entities/NVIDIA.md) — NVIDIA appears repeatedly as both a conference participant and a technical subject, especially around ASIL B Linux qualification, safety isolation, and heteroge
-- [Nvidia](entities/Nvidia.md) — [[Nvidia]] appears in the corpus mainly through Isaac Lab and Isaac Sim, which are presented as important simulation environments for training robot policies. T
-- [NVIDIA Dynamo](entities/Dynamo.md) — NVIDIA Dynamo is the orchestration layer used to route requests, coordinate heterogeneous decode loops, and stabilize latency across GPU and LPX backends.
-- [NVIDIA Groq 3 LPX](entities/Groq3LPX.md) — NVIDIA Groq 3 LPX is described as a rack-scale low-latency inference accelerator designed to complement Vera Rubin GPUs in heterogeneous serving pipelines.
-- [NVIDIA Vera Rubin Platform](entities/VeraRubinPlatform.md) — The NVIDIA Vera Rubin platform is the high-throughput GPU side of the heterogeneous inference architecture described in the Nvidia corpus material.
-- [OpenAI](entities/OpenAI.md) — Anthropic과의 경쟁 및 범용 AI 확산의 기준점으로 간접 등장하는 AI 기업.
-- [Philipp Ahmann](entities/PhilippAhmann.md) — Philipp Ahmann is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [QEMU](entities/QEMU.md) — QEMU appears as an accessible environment for prototyping and evaluating low-level kernel isolation techniques.
-- [Qualcomm](entities/Qualcomm.md) — Qualcomm appears in the corpus as a contributor to Android boot-chain and platform integration discussions.
-- [Ram Muthiah](entities/RamMuthiah.md) — Ram Muthiah is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Red Hat](entities/RedHat.md) — Red Hat appears in the corpus through work on CPU isolation and scheduler behavior.
-- [Rui Li](entities/RuiLi.md) — Rui Li is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [SamsungElectronics](entities/SamsungElectronics.md) — 메모리 사이클과 밸류에이션 논의에 반복 등장하는 주요 반도체 기업.
-- [Sebastian Siewior](entities/SebastianSiewior.md) — Sebastian Siewior is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [SemiAnalysis](entities/SemiAnalysis.md) — 에이전트, AI 인프라, 메모리 업황을 공격적으로 해석하는 분석 매체. 이 코퍼스에서 여러 핵심 서사의 출처다.
-- [Seongjae Park](entities/SeongjaePark.md) — Seongjae Park is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Seoul National University](entities/SeoulNationalUniversity.md) — [[SeoulNationalUniversity]] is cited in the admissions source as a reference point for evaluating school-level admissions outcomes, especially when comparing re
-- [SKHynix](entities/SKHynix.md) — HBM과 AI 메모리 수요 확대의 대표 수혜 기업으로 등장하는 한국 메모리 반도체 업체.
-- [Socionext](entities/Socionext.md) — Socionext appears in the corpus through Zephyr porting work for high-performance SoCs.
-- [Socionext Inc.](entities/SocionextInc.md) — Socionext Inc. is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [SPDX](entities/SPDX.md) — SPDX appears in the corpus as the bill-of-materials and software transparency format used for KernelSBOM and supply-chain work.
-- [System 0](entities/System0.md) — [[System0]] is the lowest-level layer in the Helix 02 stack. It is described as a learned whole-body controller running at 1 kHz that stabilizes contact, postur
-- [System 1](entities/System1.md) — [[System1]] is the fast visuomotor layer in the Helix 02 stack. It consumes camera, tactile, and proprioceptive inputs and outputs full-body joint targets that 
-- [System 2](entities/System2.md) — [[System2]] is the semantic reasoning layer in the Helix 02 architecture. It interprets scenes and language, then emits latent goals that let lower layers execu
-- [The Linux Foundation](entities/LinuxFoundation.md) — The Linux Foundation appears as the umbrella organization behind AGL, ELISA, and other collaborative projects referenced in the corpus.
-- [The Linux Foundation](entities/TheLinuxFoundation.md) — The Linux Foundation is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Tim Chen](entities/TimChen.md) — Tim Chen is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Understanding How Devices... Bartosz Golaszewski](entities/UnderstandingHowDevicesBartoszGolaszewski.md) — Understanding How Devices... Bartosz Golaszewski is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the 
-- [Valentin Schneider](entities/ValentinSchneider.md) — Valentin Schneider is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Viacheslav Dubeyko](entities/ViacheslavDubeyko.md) — Viacheslav Dubeyko is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Walt Miner](entities/WaltMiner.md) — Walt Miner is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Wenlong Liu](entities/WenlongLiu.md) — Wenlong Liu is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Xen](entities/Xen.md) — Xen is discussed as an open source virtualization layer for deterministic mixed-criticality systems, especially in automotive and functional safety architecture
-- [Xiang Gao](entities/XiangGao.md) — Xiang Gao is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Yoshitake Kobayashi](entities/YoshitakeKobayashi.md) — Yoshitake Kobayashi is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Yu Chen](entities/YuChen.md) — Yu Chen is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Yuichi Kusakabe](entities/YuichiKusakabe.md) — Yuichi Kusakabe is a speaker in this corpus whose talk contributes to the Linux, safety, systems, or AI themes captured by the wiki.
-- [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
+- [Alessandro Carminati](entities/AlessandroCarminati.md) — entity page
+- [AlexNet](entities/AlexNet.md) — entity page
+- [Alibaba Cloud](entities/AlibabaCloud.md) — entity page
+- [Amandeep Singh](entities/AmandeepSingh.md) — entity page
+- [AMD](entities/AMD.md) — entity page
+- [Andre Carpathy](entities/AndreCarpathy.md) — entity page
+- [Andrej Carpathy](entities/AndrejCarpathy.md) — entity page
+- [Andrej Karpathy](entities/AndrejKarpathy.md) — entity page
+- [Android](entities/Android.md) — entity page
+- [Anthropic](entities/Anthropic.md) — entity page
+- [ARKInvest](entities/ARKInvest.md) — entity page
+- [Automotive Grade Linux](entities/AutomotiveGradeLinux.md) — entity page
+- [Blackwell](entities/Blackwell.md) — entity page
+- [Blue Origin](entities/BlueOrigin.md) — entity page
+- [Broadcom](entities/Broadcom.md) — entity page
+- [Bryan Huntsman (senior Director](entities/BryanHuntsmanSeniorDirector.md) — entity page
+- [Bryan Huntsman Us](entities/BryanHuntsmanUs.md) — entity page
+- [변정규](entities/ByunJeonggyu.md) — entity page
+- [ChaJiho](entities/ChaJiho.md) — entity page
+- [Changwoo Min](entities/ChangwooMin.md) — entity page
+- [ChengTech](entities/ChengTech.md) — entity page
+- [Chroma](entities/Chroma.md) — entity page
+- [CitriniResearch](entities/CitriniResearch.md) — entity page
+- [Civil Infrastructure Platform](entities/CivilInfrastructurePlatform.md) — entity page
+- [Claude](entities/Claude.md) — entity page
+- [ClaudeCode](entities/ClaudeCode.md) — entity page
+- [Claude Mythos Preview](entities/ClaudeMythosPreview.md) — entity page
+- [ClaudeOpus46](entities/ClaudeOpus46.md) — entity page
+- [Cody Zuschlag](entities/CodyZuschlag.md) — entity page
+- [Cong Wang](entities/CongWang.md) — entity page
+- [CoreWeave](entities/CoreWeave.md) — entity page
+- [CosmosReason1](entities/CosmosReason1.md) — entity page
+- [다이와증권코리아](entities/DaiwaSecuritiesKorea.md) — entity page
+- [Dan Cauchy](entities/DanCauchy.md) — entity page
+- [DeepSeek](entities/DeepSeek.md) — entity page
+- [DeepSeek R1](entities/DeepSeekR1.md) — entity page
+- [DLC](entities/DLC.md) — entity page
+- [Dmitrii Merkurev](entities/DmitriiMerkurev.md) — entity page
+- [Dobby the Elf Claw](entities/DobbyTheElfClaw.md) — entity page
+- [DonaldTrump](entities/DonaldTrump.md) — entity page
+- [DualSystemVLA](entities/DualSystemVLA.md) — entity page
+- [NVIDIA Dynamo](entities/Dynamo.md) — entity page
+- [ELISA](entities/ELISA.md) — entity page
+- [Elon Musk](entities/ElonMusk.md) — entity page
+- [EndToEndVLA](entities/EndToEndVLA.md) — entity page
+- [Etas Gmbh](entities/EtasGmbh.md) — entity page
+- [EuropeanUnion](entities/EuropeanUnion.md) — entity page
+- [FederalReserve](entities/FederalReserve.md) — entity page
+- [Figure 03](entities/Figure03.md) — entity page
+- [Figure AI](entities/FigureAI.md) — entity page
+- [GF Securities](entities/GFSecurities.md) — entity page
+- [GH100](entities/GH100.md) — entity page
+- [Git](entities/Git.md) — entity page
+- [GLM 5](entities/GLM5.md) — entity page
+- [GlobalFoundries](entities/GlobalFoundries.md) — entity page
+- [Globalstar](entities/Globalstar.md) — entity page
+- [Google](entities/Google.md) — entity page
+- [GPU](entities/GPU.md) — entity page
+- [Grace Hopper Superchip](entities/GraceHopperSuperchip.md) — entity page
+- [Groq](entities/Groq.md) — entity page
+- [Groq3LPX](entities/Groq3LPX.md) — entity page
+- [GroqChip](entities/GroqChip.md) — entity page
+- [GST](entities/GST.md) — entity page
+- [H100](entities/H100.md) — entity page
+- [Harunobu Kurokawa](entities/HarunobuKurokawa.md) — entity page
+- [Helix 02](entities/Helix02.md) — entity page
+- [헨리 키신저](entities/HenryKissinger.md) — entity page
+- [Hiroshi Tokita](entities/HiroshiTokita.md) — entity page
+- [Honda](entities/Honda.md) — entity page
+- [Honda Motor Co.](entities/HondaMotorCo.md) — entity page
+- [호르무즈해협](entities/HormuzStrait.md) — entity page
+- [IBM](entities/IBM.md) — entity page
+- [IBM Z](entities/IBMZ.md) — entity page
+- [Ideas on Board](entities/IdeasOnBoard.md) — entity page
+- [Igalia](entities/Igalia.md) — entity page
+- [Igor Stoppa](entities/IgorStoppa.md) — entity page
+- [IMEC](entities/IMEC.md) — entity page
+- [Intel](entities/Intel.md) — entity page
+- [Intel Foundry](entities/IntelFoundry.md) — entity page
+- [International Labour Organization](entities/InternationalLabourOrganization.md) — entity page
+- [International Organization for Migration](entities/InternationalOrganizationForMigration.md) — entity page
+- [International Telecommunication Union](entities/InternationalTelecommunicationUnion.md) — entity page
+- [IREE](entities/IREE.md) — entity page
+- [IREN](entities/IREN.md) — entity page
+- [Jagan Teki](entities/JaganTeki.md) — entity page
+- [Jen Huang](entities/JenHuang.md) — entity page
+- [Jensen Huang](entities/JensenHuang.md) — entity page
+- [Jensen Wong](entities/JensenWong.md) — entity page
+- [John Simpson](entities/JohnSimpson.md) — entity page
+- [JPMorgan](entities/JPMorgan.md) — entity page
+- [KAIST](entities/KAIST.md) — entity page
+- [Kate Stewart](entities/KateStewart.md) — entity page
+- [케빈 오르](entities/KevinOrr.md) — entity page
+- [KevinWarsh](entities/KevinWarsh.md) — entity page
+- [Khasim Syed Mohammed](entities/KhasimSyedMohammed.md) — entity page
+- [Kimi K2](entities/KimiK2.md) — entity page
+- [김장열](entities/KimJangyeol.md) — entity page
+- [김장열](entities/KimJangYeol.md) — entity page
+- [Kim Jeong Ho](entities/KimJeongHo.md) — entity page
+- [Korea Circuit](entities/KoreaCircuit.md) — entity page
+- [Kunihiko Hayashi](entities/KunihikoHayashi.md) — entity page
+- [KVTC](entities/KVTC.md) — entity page
+- [Kyber](entities/Kyber.md) — entity page
+- [Lambda](entities/Lambda.md) — entity page
+- [Laurent Pinchart](entities/LaurentPinchart.md) — entity page
+- [Lee Jae-Myung](entities/LeeJaeMyung.md) — entity page
+- [Leif Lindholm](entities/LeifLindholm.md) — entity page
+- [LilysAI](entities/LilysAI.md) — entity page
+- [Linus Torvalds](entities/LinusTorvalds.md) — entity page
+- [The Linux Foundation](entities/LinuxFoundation.md) — entity page
+- [Linux Kernel](entities/LinuxKernel.md) — entity page
+- [LNF](entities/LNF.md) — entity page
+- [LP30](entities/LP30.md) — entity page
+- [LPX](entities/LPX.md) — entity page
+- [Marvell](entities/Marvell.md) — entity page
+- [Masashige Mizuyama](entities/MasashigeMizuyama.md) — entity page
+- [Matthew Whitehead](entities/MatthewWhitehead.md) — entity page
+- [Meta](entities/Meta.md) — entity page
+- [MI300X](entities/MI300X.md) — entity page
+- [Micron](entities/Micron.md) — entity page
+- [Micron Technology](entities/MicronTechnology.md) — entity page
+- [Microsoft](entities/Microsoft.md) — entity page
+- [Mixtral](entities/Mixtral.md) — entity page
+- [MLIR](entities/MLIR.md) — entity page
+- [Nebius](entities/Nebius.md) — entity page
+- [Nemotron](entities/Nemotron.md) — entity page
+- [Neocloud](entities/Neocloud.md) — entity page
+- [NPUv01](entities/NPUv01.md) — entity page
+- [NVIDIA](entities/NVIDIA.md) — entity page
+- [Nvidia](entities/Nvidia.md) — entity page
+- [NVIDIA DRIVE](entities/NVIDIADrive.md) — entity page
+- [NVIDIA DRIVE AGX Thor](entities/NVIDIADriveAGXThor.md) — entity page
+- [Oberon](entities/Oberon.md) — entity page
+- [ONNX-MLIR](entities/OnnxMLIR.md) — entity page
+- [OpenAI](entities/OpenAI.md) — entity page
+- [OpenClaw](entities/OpenClaw.md) — entity page
+- [파마리서치](entities/Pamaresearch.md) — entity page
+- [Peter Steinberg](entities/PeterSteinberg.md) — entity page
+- [Peter Steinberger](entities/PeterSteinberger.md) — entity page
+- [Philipp Ahmann](entities/PhilippAhmann.md) — entity page
+- [Procter & Gamble](entities/ProcterGamble.md) — entity page
+- [ProjectGlasswing](entities/ProjectGlasswing.md) — entity page
+- [QEMU](entities/QEMU.md) — entity page
+- [Qualcomm](entities/Qualcomm.md) — entity page
+- [Ram Muthiah](entities/RamMuthiah.md) — entity page
+- [RealScale](entities/RealScale.md) — entity page
+- [Red Hat](entities/RedHat.md) — entity page
+- [Rui Li](entities/RuiLi.md) — entity page
+- [Runpod](entities/Runpod.md) — entity page
+- [SamsungElectronics](entities/SamsungElectronics.md) — entity page
+- [산일전기](entities/SanilJungi.md) — entity page
+- [사우디아라비아](entities/SaudiArabia.md) — entity page
+- [SCHD](entities/SCHD.md) — entity page
+- [Sebastian Siewior](entities/SebastianSiewior.md) — entity page
+- [SemiAnalysis](entities/SemiAnalysis.md) — entity page
+- [Seongjae Park](entities/SeongjaePark.md) — entity page
+- [Seoul National University](entities/SeoulNationalUniversity.md) — entity page
+- [SiFive](entities/SiFive.md) — entity page
+- [Simtech](entities/Simtech.md) — entity page
+- [SKHynix](entities/SKHynix.md) — entity page
+- [Socionext](entities/Socionext.md) — entity page
+- [Socionext Inc.](entities/SocionextInc.md) — entity page
+- [SpaceX](entities/SpaceX.md) — entity page
+- [SPDX](entities/SPDX.md) — entity page
+- [SuperMemory](entities/SuperMemory.md) — entity page
+- [System 0](entities/System0.md) — entity page
+- [System 1](entities/System1.md) — entity page
+- [System 2](entities/System2.md) — entity page
+- [Telum](entities/Telum.md) — entity page
+- [TensorRT-Model-Optimizer](entities/TensorRTModelOptimizer.md) — entity page
+- [Terafab](entities/Terafab.md) — entity page
+- [Tesla](entities/Tesla.md) — entity page
+- [The Linux Foundation](entities/TheLinuxFoundation.md) — entity page
+- [Tim Chen](entities/TimChen.md) — entity page
+- [TLB](entities/TLB.md) — entity page
+- [TrendForce](entities/TrendForce.md) — entity page
+- [TSMC](entities/TSMC.md) — entity page
+- [TurboQuant](entities/TurboQuant.md) — entity page
+- [United Nations](entities/UN.md) — entity page
+- [Understanding How Devices... Bartosz Golaszewski](entities/UnderstandingHowDevicesBartoszGolaszewski.md) — entity page
+- [United Nations Development Programme](entities/UNDP.md) — entity page
+- [유니스토리자산운용](entities/UnistoryAssetManagement.md) — entity page
+- [UNistory Asset Management](entities/UNistoryAssetManagement.md) — entity page
+- [UnitedHealth Group](entities/UnitedHealthGroup.md) — entity page
+- [Valentin Schneider](entities/ValentinSchneider.md) — entity page
+- [Vera ETL256](entities/VeraETL256.md) — entity page
+- [VeraRubinNVL72](entities/VeraRubinNVL72.md) — entity page
+- [VeraRubin Platform](entities/VeraRubinPlatform.md) — entity page
+- [Viacheslav Dubeyko](entities/ViacheslavDubeyko.md) — entity page
+- [VisionAction](entities/VisionAction.md) — entity page
+- [VisionLanguageActionForAutonomousDriving](entities/VisionLanguageActionForAutonomousDriving.md) — entity page
+- [VM](entities/VM.md) — entity page
+- [Walt Miner](entities/WaltMiner.md) — entity page
+- [Wenlong Liu](entities/WenlongLiu.md) — entity page
+- [World Food Programme](entities/WorldFoodProgramme.md) — entity page
+- [World Health Organization](entities/WorldHealthOrganization.md) — entity page
+- [XAI](entities/XAI.md) — entity page
+- [xAI](entities/xAI.md) — entity page
+- [Xen](entities/Xen.md) — entity page
+- [Xiang Gao](entities/XiangGao.md) — entity page
+- [Yoshitake Kobayashi](entities/YoshitakeKobayashi.md) — entity page
+- [Yu Chen](entities/YuChen.md) — entity page
+- [Yuichi Kusakabe](entities/YuichiKusakabe.md) — entity page
+- [zAIU](entities/zAIU.md) — entity page
+- [zDNN](entities/zDNN.md) — entity page
+- [Zephyr](entities/Zephyr.md) — entity page
+- [교보증권](entities/교보증권.md) — entity page
+- [권혁수](entities/권혁수.md) — entity page
+- [김장열](entities/김장열.md) — entity page
+- [나탈리허](entities/나탈리허.md) — entity page
+- [노정석](entities/노정석.md) — entity page
+- [두산에너빌리티](entities/두산에너빌리티.md) — entity page
+- [Meta](entities/메타.md) — entity page
+- [박병창](entities/박병창.md) — entity page
+- [브로드컴](entities/브로드컴.md) — entity page
+- [블루아울](entities/블루아울.md) — entity page
+- [서울아산병원](entities/서울아산병원.md) — entity page
+- [성상현](entities/성상현.md) — entity page
+- [손정의](entities/손정의.md) — entity page
+- [알레르기내과](entities/알레르기내과.md) — entity page
+- [엔트로픽](entities/엔트로픽.md) — entity page
+- [유니스토리자산운용](entities/유니스토리자산운용.md) — entity page
+- [이영주](entities/이영주.md) — entity page
+- [장우진](entities/장우진.md) — entity page
+- [정의훈](entities/정의훈.md) — entity page
+- [젠슨황](entities/젠슨황.md) — entity page
+- [중소기업중앙회](entities/중소기업중앙회.md) — entity page
+- [파나소닉](entities/파나소닉.md) — entity page
+- [하나증권](entities/하나증권.md) — entity page
+- [현대건설](entities/현대건설.md) — entity page
+- [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
-- [Gini Impurity](concepts/GiniImpurity.md) — impurity measure used by decision trees to choose cleaner splits.
-- [ModelCapacity](concepts/ModelCapacity.md) — 모델이 복잡한 패턴이나 함수를 표현할 수 있는 능력.
-- [L2Penalty](concepts/L2Penalty.md) — weight 제곱합을 벌점으로 쓰는 정규화 방식.
-- [L1Penalty](concepts/L1Penalty.md) — weight 절댓값 합을 벌점으로 쓰는 정규화 방식.
-- [WeightDecay](concepts/WeightDecay.md) — 학습 중 weight 크기를 줄여 과적합을 완화하는 정규화 방식.
-- [BiasVarianceTradeoff](concepts/BiasVarianceTradeoff.md) — 단순함에서 오는 bias와 민감함에서 오는 variance 사이의 균형 문제.
-- [Bias](concepts/Bias.md) — 모델의 평균 예측이 실제 규칙에서 구조적으로 벗어나는 정도.
-- [Underfitting](concepts/Underfitting.md) — 모델이 데이터의 기본 규칙을 충분히 배우지 못해 train/validation 모두에서 성능이 낮아지는 현상.
-- [Weight](concepts/Weight.md) — 모델이 입력 특징이나 내부 표현에 부여하는 학습 가능한 계수.
-- [NoiseInjection](concepts/NoiseInjection.md) — 입력, feature, hidden state 등에 작은 노이즈를 넣어 모델의 robustness와 일반화를 높이는 정규화 방식.
-- [AdamW](concepts/AdamW.md) — Adam optimizer에 decoupled weight decay를 결합한 딥러닝 최적화 알고리즘.
-- [Epoch](concepts/Epoch.md) — 학습 데이터 전체를 모델이 한 번 모두 본 학습 단위.
-- [ModelComplexity](concepts/ModelComplexity.md) — 모델이 표현할 수 있는 패턴의 복잡도와 자유도.
-- [ValidationLoss](concepts/ValidationLoss.md) — 모델 선택과 과적합 점검을 위해 학습에 직접 쓰지 않은 검증 데이터에서 계산한 손실 값.
-- [TrainingLoss](concepts/TrainingLoss.md) — 모델이 학습에 직접 사용한 데이터에서 계산한 손실 값.
-- [DataAugmentation](concepts/DataAugmentation.md) — 원본 데이터를 보존하면서 변형 샘플을 만들어 모델이 더 다양한 입력에 일반화하도록 돕는 기법.
-- [Dropout](concepts/Dropout.md) — 학습 중 일부 뉴런이나 경로를 임시로 꺼 특정 패턴에 과도하게 의존하지 않도록 하는 정규화 기법.
-- [Adam](concepts/Adam.md) — gradient의 1차/2차 모멘트 추정을 활용해 파라미터별 학습률을 적응적으로 조정하는 optimizer.
-- [Argmin](concepts/Argmin.md) — objective 값을 가장 작게 만드는 입력 위치 또는 입력 집합.
-- [Convergence](concepts/Convergence.md) — 반복 최적화에서 손실이나 파라미터가 안정된 해에 가까워지는 현상.
-- [Divergence](concepts/Divergence.md) — 학습 업데이트가 불안정해져 loss 또는 파라미터 값이 폭주하는 최적화 실패 양상.
-- [MiniBatch](concepts/MiniBatch.md) — 전체 데이터 대신 작은 묶음으로 gradient를 추정해 빠르게 업데이트하는 학습 단위.
-- [Momentum](concepts/Momentum.md) — 이전 gradient 흐름을 누적해 일관된 방향은 강화하고 흔들림은 완화하는 optimizer 기법.
-- [Constraint](concepts/Constraint.md) — 최적화에서 허용 가능한 해의 범위를 제한하는 조건.
-- [Cross-Entropy](concepts/CrossEntropy.md) — 분류와 LLM 학습에서 널리 쓰이는 확률 기반 손실 함수.
-- [Empirical Risk](concepts/EmpiricalRisk.md) — train 데이터에서 계산한 평균 손실.
-- [Empirical Risk Minimization](concepts/EmpiricalRiskMinimization.md) — train 데이터 평균 손실을 최소화하는 실전 학습 원리.
-- [Linear Regression](concepts/LinearRegression.md) — 선형 결합으로 연속값을 예측하는 기본 회귀 모델.
-- [Mean Squared Error](concepts/MSE.md) — 예측과 정답의 제곱 오차 평균을 쓰는 대표 회귀 손실.
-- [Objective](concepts/Objective.md) — 모델 학습에서 최적화할 목표 함수.
-- [Objective Function](concepts/ObjectiveFunction.md) — 좋고 나쁨을 수치로 정의하는 목적 함수라는 표현.
-- [Optimizer](concepts/Optimizer.md) — gradient를 사용해 파라미터를 실제로 갱신하는 알고리즘 또는 모듈.
-- [Optimization Problem](concepts/OptimizationProblem.md) — 목적 함수와 제약 아래 해를 찾는 문제 형식 전체.
-- [Overfitting](concepts/Overfitting.md) — train 데이터에 과도하게 맞아 일반화가 나빠지는 현상.
-- [Parameter](concepts/Parameter.md) — 학습 과정에서 조정되는 모델 내부 변수.
-- [Reinforcement Learning](concepts/ReinforcementLearning.md) — reward 최대화를 목표로 학습하는 프레임워크.
-- [SGD](concepts/SGD.md) — 샘플 또는 mini-batch 기반으로 gradient를 추정하는 경사하강법 변형.
-- [Step Size](concepts/StepSize.md) — 한 번의 업데이트에서 얼마나 이동할지 정하는 크기.
-- [Surrogate Loss](concepts/SurrogateLoss.md) — 직접 최적화하기 어려운 목표를 대신하는 대체 손실.
-- [Update Rule](concepts/UpdateRule.md) — 현재 파라미터를 다음 파라미터로 바꾸는 공식.
-- [HypothesisSpace](concepts/HypothesisSpace.md) — 모델이 선택할 수 있는 후보 함수들의 집합과 그 표현력 범위.
-- [FunctionApproximation](concepts/FunctionApproximation.md) — 머신러닝을 입력-출력 함수 학습 문제로 바라보는 핵심 관점.
-- [LearningRate](concepts/LearningRate.md) — optimizer가 한 번에 얼마나 크게 이동할지 정하는 스텝 크기.
-- [ExplodingGradient](concepts/ExplodingGradient.md) — gradient가 지나치게 커져 학습이 불안정해지는 현상.
-- [VanishingGradient](concepts/VanishingGradient.md) — 깊은 네트워크에서 gradient가 너무 작아져 학습이 어려워지는 현상.
-- [BackwardPass](concepts/BackwardPass.md) — 출력에서 입력 방향으로 gradient를 전달하는 역전파 단계.
-- [ForwardPass](concepts/ForwardPass.md) — 입력에서 출력까지 값을 계산하는 순전파 단계.
-- [Jacobian](concepts/Jacobian.md) — 벡터값 함수의 미분을 행렬로 모은 일반화된 도구.
-- [DirectionalDerivative](concepts/DirectionalDerivative.md) — 특정 방향으로 움직일 때 함수가 얼마나 변하는지 측정하는 변화율.
-
-- [Address Space Isolation](concepts/AddressSpaceIsolation.md) — Address space isolation is presented as a way to partition kernel internals into contexts with hardware-backed memory restrictions to reduce self-interference.
-- [AIAutomation](concepts/AIAutomation.md) — AI가 반복적이고 규칙화된 정보 노동을 대체하거나 증강하는 흐름. 코딩, 문서 작업, 테스트, 콘텐츠 분석, 금융 중개 등 여러 영역에 걸쳐 등장한다.
-- [AIInfrastructure](concepts/AIInfrastructure.md) — 가속기, 메모리, 네트워크, 전력, 데이터센터를 포함하는 AI 시스템 공급 기반. 경제성장 서사와 반도체 업황 서사를 연결하는 핵심 층이다.
-- [Android Boot Security](concepts/AndroidBootSecurity.md) — Android boot security covers secure boot-chain modernization, DRTM, and integration of UKIs for stronger measured startup paths.
-- [ASIL B Qualified Linux](concepts/ASILBQualifiedLinux.md) — ASIL B qualified Linux refers to the effort to build evidence, process, and architecture sufficient to use Linux in automotive safety contexts.
-- [Attention](concepts/Attention.md) — query·key 관련도를 계산해 value를 가중합하는 transformer 핵심 메커니즘.
-- [Bare-Metal Extraction](concepts/BareMetalExtraction.md) — Bare-metal extraction refers to separating reusable low-level code from Zephyr so it can be used in other RTOS or firmware contexts.
-- [Cache-Aware Scheduling](concepts/CacheAwareScheduling.md) — Cache-aware scheduling aims to improve placement decisions by considering cache locality and shared-resource contention.
-- [Calibration](concepts/Calibration.md) — 모델이 출력한 확률이 실제 빈도와 얼마나 잘 맞는지 평가하는 개념.
-- [Camera Sensor Integration](concepts/CameraSensorIntegration.md) — Camera sensor integration covers the Linux media and device-model work needed to bring sensors up cleanly in real systems.
-- [Classification](concepts/Classification.md) — 입력을 미리 정의된 범주 중 하나로 예측하는 지도학습 문제.
-- [College Admissions 2028](concepts/CollegeAdmissions2028.md) — [[CollegeAdmissions2028]] refers to the expected Korean admissions environment around the 2028 intake, especially the growing weight of internal grades, school 
-- [ConditionalProbability](concepts/ConditionalProbability.md) — 새로운 정보가 주어졌을 때 사건 확률이 어떻게 바뀌는지 표현하는 확률 개념.
-- [ContextRot](concepts/ContextRot.md) — 입력 토큰 수가 증가함에 따라 모델 성능이 비선형적으로 저하되는 현상. 긴 컨텍스트 마케팅 수치와 실제 업무 성능 사이의 간극을 설명한다.
-- [Continuous](concepts/Continuous.md) — 연속 구간의 값을 취하는 확률변수/분포의 성질로 PDF와 연결된다.
-- [Coordinate](concepts/Coordinate.md) — 선택한 basis에 대해 벡터를 수치로 표현한 값으로, basis가 바뀌면 함께 바뀐다.
-- [Correlation](concepts/Correlation.md) — 두 변수의 관계 강도와 방향을 정규화된 척도로 나타낸 값.
-- [Covariance](concepts/Covariance.md) — 두 변수가 함께 변하는 방향과 크기를 나타내는 통계량.
-- [CPU Isolation](concepts/CPUIsolation.md) — CPU isolation refers to the techniques used to shield execution from interference, especially interrupts and scheduler activity on latency-sensitive cores.
-- [CSAT](concepts/CSAT.md) — [[CSAT]] is the standardized-test pathway discussed in contrast with school-record-driven admissions. In the source it remains important, but the author argues 
-- [Deadline Scheduler Verification](concepts/DeadlineSchedulerVerification.md) — Deadline scheduler verification combines runtime verification ideas with scheduling analysis to validate subsystem behavior while systems run.
-- [DenseLayer](concepts/DenseLayer.md) — 행렬과 bias를 적용해 표현을 변환하는 기본 신경망 층.
-- [Deterministic Execution](concepts/DeterministicExecution.md) — Deterministic execution recurs in both safety and inference contexts, where predictability matters for validation, latency control, and interference reduction.
-- [Devicetree and Fwnodes](concepts/DevicetreeAndFwnodes.md) — Devicetree, fwnodes, swnodes, devlinks, and properties are discussed as the Linux device-model vocabulary needed to describe hardware and software device relati
-- [DimensionalityReduction](concepts/DimensionalityReduction.md) — 고차원 feature를 더 낮은 차원으로 줄여 계산·일반화 안정성을 높이는 기법군.
-- [DisaggregatedPrefill](concepts/DisaggregatedPrefill.md) — prefill과 decode 단계를 분리해 다른 자원 풀에서 처리하는 추론 아키텍처. 인터랙티브 서비스의 효율을 높이는 전략으로 강조된다.
-- [Discrete](concepts/Discrete.md) — 셀 수 있는 개별 상태를 취하는 확률변수/분포의 성질로 PMF와 연결된다.
-- [Dynamic Root of Trust for Measurement](concepts/DRTM.md) — DRTM appears as a measured-boot building block for stronger system attestation and trusted boot flows.
-- [EconomicGrowth](concepts/EconomicGrowth.md) — AI, 로봇, 지정학, 금융 구조 변화가 생산성과 GDP, 산업 배분을 어떻게 바꾸는지를 포괄하는 상위 개념. 낙관적 성장 서사와 시스템 리스크 서사가 동시에 존재한다.
-- [Embedding](concepts/Embedding.md) — 토큰·문서·개체를 연속 벡터로 매핑한 표현으로, 유사도 계산과 검색의 기본 단위.
-- [EmbodiedReasoning](concepts/EmbodiedReasoning.md) — 실세계 환경과 신체적 제약을 고려해 다음 행동을 추론하는 능력. Cosmos-Reason1 문서에서 핵심 역량으로 분리된다.
-- [EROFS](concepts/EROFS.md) — EROFS is covered as a read-only filesystem with practical benefits for container images and efficient software distribution.
-- [Expectation](concepts/Expectation.md) — 확률변수의 평균적 중심을 나타내는 대표 요약 통계량.
-- [FeatureAnalysis](concepts/FeatureAnalysis.md) — 각 feature가 데이터 구조와 예측에 어떤 역할을 하는지 해석하는 작업.
-- [Functional Safety](concepts/FunctionalSafety.md) — Functional safety is a dominant theme across the corpus, covering certification, fault containment, monitoring, and architectural patterns for Linux-based syste
-- [GaussianModeling](concepts/GaussianModeling.md) — 데이터를 정규분포 또는 그 확장으로 근사하는 모델링 관점.
-- [GenerativeModeling](concepts/GenerativeModeling.md) — 데이터 생성 분포 자체를 학습하는 접근.
-- [Gradient](concepts/Gradient.md) — 손실이 각 파라미터 방향으로 얼마나 변하는지 나타내는 벡터로, 최적화 업데이트의 핵심 신호.
-- [GradientNormClipping](concepts/GradientNormClipping.md) — gradient norm을 임계값 이하로 제한해 학습 폭주를 막는 안정화 기법.
-- [Heterogeneous Inference](concepts/HeterogeneousInference.md) — Heterogeneous inference refers to splitting model execution across specialized hardware paths to balance throughput and low-latency responsiveness.
-- [HiddenState](concepts/HiddenState.md) — 모델이 입력을 처리하며 유지하는 중간 표현 벡터.
-- [High School Choice](concepts/HighSchoolChoice.md) — [[HighSchoolChoice]] is the strategic decision of selecting a high school based on the admissions system a student expects to face. The current source argues th
-- [HighDimensionalSpace](concepts/HighDimensionalSpace.md) — 차원이 매우 큰 표현 공간으로, sparsity와 distance concentration 문제가 두드러진다.
-- [HKML](concepts/HKML.md) — HKML is a lightweight mailing-list workflow tool for Linux kernel development.
-- [Holistic Admissions](concepts/HolisticAdmissions.md) — [[HolisticAdmissions]] refers to student selection based on more than test scores alone, especially through grades, school records, activities, and contextual e
-- [HousingTaxPlanning](concepts/HousingTaxPlanning.md) — 주택 취득, 보유, 양도 과정에서 세무 리스크를 줄이기 위한 실무적 절차와 증빙 관리 개념.
-- [Humanoid Robotics](concepts/HumanoidRobotics.md) — [[HumanoidRobotics]] refers to robot systems with human-like morphology that must coordinate balance, locomotion, perception, and manipulation in unstructured e
-- [Hypervisor Virtualization](concepts/HypervisorVirtualization.md) — Hypervisor-based virtualization is a recurring pattern for partitioning Linux workloads, enforcing isolation, and building deterministic automotive systems.
-- [Industrial Linux Maintenance](concepts/IndustrialLinuxMaintenance.md) — Industrial Linux maintenance captures the long-term support, update discipline, and lifecycle practices needed for infrastructure-grade Linux deployments.
-- [InferenceOptimization](concepts/InferenceOptimization.md) — LLM 추론의 속도, 비용, 처리량을 개선하는 시스템 설계 전반. KV 캐시, 분산 prefill, 병렬화, 메모리 최적화 등이 포함된다.
-- [Interactive Inference](concepts/InteractiveInference.md) — Interactive inference emphasizes low and predictable latency for user-facing generation workloads rather than throughput alone.
-- [KernelSBOM](concepts/KernelSBOM.md) — KernelSBOM is the effort to reconstruct trusted SPDX software bills of materials from Linux kernel builds.
-- [KUnit](concepts/KUnit.md) — KUnit is the Linux kernel unit testing framework, discussed here mainly through its present insufficiencies and coverage limitations.
-- [KVCache](concepts/KVCache.md) — 생성 중 반복되는 attention key/value 계산을 저장해 추론 속도를 높이는 캐싱 메커니즘. 응답 지연을 줄이는 대신 메모리 사용량이 늘어난다.
-- [L1Norm](concepts/L1Norm.md) — 절댓값 합으로 정의되는 norm으로 sparsity와 feature selection 논의에 자주 연결된다.
-- [L2Norm](concepts/L2Norm.md) — 제곱합의 제곱근으로 정의되는 norm으로 거리와 gradient 안정화에 자주 쓰인다.
-- [LLM](concepts/LLM.md) — 대규모 텍스트 코퍼스로 학습되는 언어 모델 계열로, embedding·attention·gradient 연산 위에 구축된다.
-- [LLMAgents](concepts/LLMAgents.md) — 단순 질의응답이 아니라 계획 수립, 도구 사용, 문맥 유지, 다단계 실행을 수행하는 LLM 기반 소프트웨어 패턴. 제조 현장, 코딩, 서비스 비서, 연구 자동화까지 다양한 적용 사례가 등장한다.
-- [Loco-Manipulation](concepts/LocoManipulation.md) — [[LocoManipulation]] is the robotics problem of moving through the world while manipulating objects at the same time. The Helix 02 source presents it as one of 
-- [LongContext](concepts/LongContext.md) — 긴 입력 문서를 읽고 활용하는 모델 역량. 마케팅 수치는 커졌지만 실제 성능은 [[ContextRot]]과 서빙 비용 문제에 제약받는다.
-- [LoRA](concepts/LoRA.md) — low-rank update를 이용해 대형 모델을 파라미터 효율적으로 미세조정하는 방법.
-- [LowRankApproximation](concepts/LowRankApproximation.md) — 고차원 행렬을 더 낮은 rank 행렬로 근사해 핵심 구조만 남기는 기법.
-- [Machine Learning in Kernel](concepts/MachineLearningInKernel.md) — Machine learning in kernel refers to exploratory work on placing ML-assisted capabilities inside or adjacent to kernel subsystems.
-- [MachineLearning](concepts/MachineLearning.md) — 데이터를 바탕으로 입력에서 출력으로 가는 함수를 학습하는 상위 개념.
-- [Mainline Upstreaming](concepts/MainlineUpstreaming.md) — Mainline upstreaming is discussed as the process of converting board-support and vendor-kernel work into maintainable upstream Linux code.
-- [Matrix](concepts/Matrix.md) — 선형변환을 계산 가능한 형태로 표현한 배열로, projection과 dense layer의 수학 기반이다.
-- [MCP](concepts/MCP.md) — Model Context Protocol. 에이전트가 외부 시스템과 도구에 연결되도록 하는 인터페이스 계층으로 설명된다.
-- [MemorySupercycle](concepts/MemorySupercycle.md) — AI 수요, DRAM 스케일링 둔화, 공급 제약이 결합해 메모리 업황이 장기 호황으로 전환될 수 있다는 프레임.
-- [Mixed Criticality](concepts/MixedCriticality.md) — Mixed criticality captures architectures that place safety-relevant and quality-managed functions on shared hardware while trying to preserve freedom from inter
-- [MonetaryPolicy](concepts/MonetaryPolicy.md) — 금리, 유동성, 대차대조표, 정책 커뮤니케이션을 포함한 중앙은행 정책 논쟁. 케빈 워시 관련 문서군의 공통 개념이다.
-- [Multikernel Architecture](concepts/MultikernelArchitecture.md) — Multikernel architecture is presented as a way to isolate kernel components and manage resources through kernel-to-kernel partitioning.
-- [Neural Processing Unit Subsystem](concepts/NPU.md) — The NPU subsystem topic covers how Linux should expose accelerators for edge vision and LLM workloads.
-- [Optimization](concepts/Optimization.md) — loss function을 줄이도록 파라미터를 갱신하는 학습 절차.
-- [PCA](concepts/PCA.md) — 분산이 큰 축을 찾아 데이터를 더 낮은 차원으로 투영하는 대표적 dimensionality reduction 기법.
-- [Physical Intelligence](concepts/PhysicalIntelligence.md) — [[PhysicalIntelligence]] is the idea that the next major frontier for AI/software is embodied competence in the physical world rather than purely digital applic
-- [PhysicalAI](concepts/PhysicalAI.md) — 물리 세계를 이해하고 행동까지 연결하는 AI 패러다임. 로봇, 비전, 시뮬레이션, 물리 상식, embodied reasoning이 결합된다.
-- [PreciousMetalsMarket](concepts/PreciousMetalsMarket.md) — 은과 금 같은 귀금속의 가격 형성 구조를 다루는 개념. 실물 수급뿐 아니라 선물 포지션과 정책 기대가 크게 작용한다.
-- [PREEMPT_RT](concepts/PREEMPTRT.md) — PREEMPT_RT is the real-time Linux effort discussed in the corpus through upstream progress and latency-oriented kernel changes.
-- [Probability](concepts/Probability.md) — 불확실한 사건의 가능성을 수치로 표현하는 체계로, random variable과 distribution의 기반이다.
-- [Projection](concepts/Projection.md) — 벡터를 특정 부분공간이나 다른 표현 공간으로 사상하는 연산.
-- [RAG](concepts/RAG.md) — 검색 증강 생성. 최신 정보와 사내 도메인 지식을 LLM 응답에 연결하기 위한 대표 구조로 제조업 적용 문서에서 핵심 대안으로 제시된다.
-- [Regularization](concepts/Regularization.md) — 과적합을 억제하고 일반화를 높이기 위한 제약 또는 보조 장치.
-- [RepresentationLearning](concepts/RepresentationLearning.md) — 원시 데이터를 더 유용한 feature space로 바꾸는 학습 관점.
-- [Sampling](concepts/Sampling.md) — 분포에서 표본을 추출하거나 데이터 일부를 선택해 분석하는 절차.
-- [Sched_ext](concepts/SchedExt.md) — Sched_ext is treated as an extensible scheduling framework that lets user-defined policies improve responsiveness for specific workloads such as gaming.
-- [Service-Oriented Vehicle Diagnostics](concepts/SOVD.md) — SOVD is discussed as a next-generation diagnostics interface for software-defined vehicle workflows.
-- [Skills](concepts/Skills.md) — 에이전트가 도구를 팀의 표준 절차에 맞게 사용하도록 만드는 재사용 가능한 업무 지식 계층.
-- [Software Defined Vehicle](concepts/SoftwareDefinedVehicle.md) — Software-defined vehicle work in the corpus focuses on open platforms, diagnostics, virtualization, and long-lived software stacks for automotive systems.
-- [SpamFiltering](concepts/SpamFiltering.md) — 베이즈 분류 직관을 설명할 때 자주 쓰이는 고전적 classification 응용.
-- [SPDX SBOM](concepts/SPDXSBOM.md) — SPDX SBOM work in the corpus centers on trustworthy build reconstruction, transparency, and supply-chain evidence for complex system software.
-- [Speculative Decoding](concepts/SpeculativeDecoding.md) — Speculative decoding is highlighted as a latency-reduction method that pairs a fast draft model with a larger verifier model.
-- [StartupStrategy](concepts/StartupStrategy.md) — 제품-시장 적합성, 고성장 시장 선택, 창업자 자질, 팀 구축을 중심으로 한 스타트업 성공 프레임워크.
-- [Statistics](concepts/Statistics.md) — 데이터의 요약량과 구조를 추론하는 체계로 expectation·variance·correlation의 기반이다.
-- [Student Record](concepts/StudentRecord.md) — [[StudentRecord]] captures the school-record portfolio used in Korean admissions, including grades, activities, course choices, and detailed qualitative entries
-- [Tactile Sensing](concepts/TactileSensing.md) — [[TactileSensing]] is the use of touch information to guide robot interaction with objects. The corpus emphasizes fingertip sensing and palm cameras as the comb
-- [Tensor](concepts/Tensor.md) — 행렬을 일반화한 다차원 배열 표현으로, batch·sequence·channel 축을 함께 다루는 기본 구조.
-- [TensorShape](concepts/TensorShape.md) — 각 tensor 축의 의미와 크기를 읽는 규칙으로, 딥러닝 디버깅과 연산 해석의 기본이다.
-- [TinyML](concepts/TinyML.md) — TinyML refers to running and optimizing compact AI workloads on constrained RTOS and embedded platforms such as Zephyr.
-- [Transformer](concepts/Transformer.md) — self-attention과 feed-forward block을 쌓아 시퀀스를 처리하는 대표 LLM 아키텍처.
-- [Unified Kernel Image](concepts/UnifiedKernelImage.md) — Unified Kernel Image work appears as part of efforts to simplify, harden, and attest modern boot chains.
-- [USB Power Management](concepts/PowerManagementUSB.md) — USB power management appears as a systems topic concerned with how device power states and host behavior interact.
-- [Userspace-Assisted Scheduling](concepts/UserspaceAssistedScheduling.md) — Userspace-assisted scheduling appears as a way to combine kernel scheduling with workload-aware signals from user space.
-- [Variance](concepts/Variance.md) — 확률변수나 feature가 평균 주변에 얼마나 퍼져 있는지 나타내는 통계량.
-- [Vector](concepts/Vector.md) — 크기와 방향을 가진 수학 객체로, embedding·gradient·hidden state의 기본 표현 단위.
-- [VirtIO](concepts/VirtIO.md) — VirtIO appears as a virtualization interface that becomes especially important when open automotive and Xen-based safety systems exchange data across guests.
-- [Visuomotor Control](concepts/VisuomotorControl.md) — [[VisuomotorControl]] links perception directly to action, using visual, tactile, and proprioceptive signals to generate motor commands. In the current corpus i
+- [1,000,000 gigawatt](concepts/1000000gigawatt.md) — placeholder page for wikilink integrity
+- [1,000,000 GW](concepts/1000000GW.md) — placeholder page for wikilink integrity
+- [1 2 4 tile SKU](concepts/124tileSKU.md) — placeholder page for wikilink integrity
+- [1_terawatt](concepts/1_terawatt.md) — placeholder page for wikilink integrity
+- [1D Interconnect](concepts/1DInterconnect.md) — concept page
+- [2-hart tile](concepts/2-harttile.md) — placeholder page for wikilink integrity
+- [2026-04-27-ai-ml-learning-review](concepts/2026-04-27-ai-ml-learning-review.md) — placeholder page for wikilink integrity
+- [2026-04-28-ai-ml-learning-review](concepts/2026-04-28-ai-ml-learning-review.md) — placeholder page for wikilink integrity
+- [20_gigawatt](concepts/20_gigawatt.md) — placeholder page for wikilink integrity
+- [2분기전망](concepts/2분기전망.md) — placeholder page for wikilink integrity
+- [A100](concepts/A100.md) — placeholder page for wikilink integrity
+- [ABF](concepts/ABF.md) — concept page
+- [Acceptance Rate](concepts/AcceptanceRate.md) — concept page
+- [Accuracy](concepts/Accuracy.md) — placeholder page for wikilink integrity
+- [AccuracyGap](concepts/AccuracyGap.md) — placeholder page for wikilink integrity
+- [ActionGrounding](concepts/ActionGrounding.md) — concept page
+- [Activation](concepts/Activation.md) — placeholder page for wikilink integrity
+- [Adam](concepts/Adam.md) — concept page
+- [AdamW](concepts/AdamW.md) — concept page
+- [AdaRound](concepts/AdaRound.md) — placeholder page for wikilink integrity
+- [ADAS](concepts/ADAS.md) — placeholder page for wikilink integrity
+- [ADC](concepts/ADC.md) — placeholder page for wikilink integrity
+- [Address Space Isolation](concepts/AddressSpaceIsolation.md) — concept page
+- [AF4](concepts/AF4.md) — placeholder page for wikilink integrity
+- [AFD (Attention FFN Disaggregation)](concepts/AFD.md) — concept page
+- [Affine](concepts/Affine.md) — placeholder page for wikilink integrity
+- [agent-first software](concepts/agent-first software.md) — concept page
+- [AgenticSystems](concepts/AgenticSystems.md) — concept page
+- [AGI](concepts/AGI.md) — placeholder page for wikilink integrity
+- [AGPR](concepts/AGPR.md) — placeholder page for wikilink integrity
+- [AI](concepts/AI.md) — placeholder page for wikilink integrity
+- [AI Psychosis](concepts/AI psychosis.md) — concept page
+- [AI 시대의 인간 가치](concepts/AI 시대의 인간 가치.md) — concept page
+- [AIAutomation](concepts/AIAutomation.md) — concept page
+- [AIAutonomy](concepts/AIAutonomy.md) — placeholder page for wikilink integrity
+- [AICapacityDemand](concepts/AICapacityDemand.md) — placeholder page for wikilink integrity
+- [AICompilation](concepts/AICompilation.md) — placeholder page for wikilink integrity
+- [AI Data Center Infrastructure](concepts/AIDataCenterInfrastructure.md) — concept page
+- [AIFactory](concepts/AIFactory.md) — concept page
+- [AIForCybersecurity](concepts/AIForCybersecurity.md) — concept page
+- [AIHub](concepts/AIHub.md) — concept page
+- [AIInfrastructure](concepts/AIInfrastructure.md) — concept page
+- [AI International Order](concepts/AIInternationalOrder.md) — concept page
+- [AI Model Compilation](concepts/AIModelCompilation.md) — concept page
+- [AIOptimization](concepts/AIOptimization.md) — placeholder page for wikilink integrity
+- [AI Product Management (AIPM)](concepts/AIPM.md) — concept page
+- [AIProductManager](concepts/AIProductManager.md) — placeholder page for wikilink integrity
+- [AI Psychosis](concepts/AIpsychosis.md) — concept page
+- [AISat](concepts/AISat.md) — placeholder page for wikilink integrity
+- [AI 노동 시장 변화](concepts/AI노동시장변화.md) — placeholder page for wikilink integrity
+- [AI 데이터센터](concepts/AI데이터센터.md) — placeholder page for wikilink integrity
+- [AI 사회](concepts/AI사회.md) — placeholder page for wikilink integrity
+- [AI서비스](concepts/AI서비스.md) — placeholder page for wikilink integrity
+- [AI 시대](concepts/AI시대.md) — placeholder page for wikilink integrity
+- [AI에이전트](concepts/AI에이전트.md) — concept page
+- [AI와 로봇](concepts/AI와로봇.md) — placeholder page for wikilink integrity
+- [AI워싱](concepts/AI워싱.md) — concept page
+- [AI의PM](concepts/AI의PM.md) — placeholder page for wikilink integrity
+- [AI인재양극화](concepts/AI인재양극화.md) — concept page
+- [AI 인프라](concepts/AI인프라.md) — placeholder page for wikilink integrity
+- [AI 인프라 투자 리스크](concepts/AI인프라투자리스크.md) — concept page
+- [AI자동화](concepts/AI자동화.md) — placeholder page for wikilink integrity
+- [AI투자사이클](concepts/AI투자사이클.md) — placeholder page for wikilink integrity
+- [AI혁신](concepts/AI혁신.md) — placeholder page for wikilink integrity
+- [AllReduce](concepts/AllReduce.md) — placeholder page for wikilink integrity
+- [Alpamayo](concepts/Alpamayo.md) — placeholder page for wikilink integrity
+- [AlphaGo](concepts/AlphaGo.md) — placeholder page for wikilink integrity
+- [Amazon](concepts/Amazon.md) — placeholder page for wikilink integrity
+- [Amazon Web Services](concepts/AmazonWebServices.md) — placeholder page for wikilink integrity
+- [Ampere](concepts/Ampere.md) — concept page
+- [Android Boot Security](concepts/AndroidBootSecurity.md) — concept page
+- [AngleFFT](concepts/AngleFFT.md) — placeholder page for wikilink integrity
+- [AOT](concepts/AOT.md) — placeholder page for wikilink integrity
+- [ApacheSoftwareFoundation](concepts/ApacheSoftwareFoundation.md) — placeholder page for wikilink integrity
+- [API](concepts/API.md) — placeholder page for wikilink integrity
+- [Apple](concepts/Apple.md) — placeholder page for wikilink integrity
+- [ArchitectureAnalysis](concepts/ArchitectureAnalysis.md) — placeholder page for wikilink integrity
+- [Argmin](concepts/Argmin.md) — concept page
+- [ArithmeticIntensity](concepts/ArithmeticIntensity.md) — placeholder page for wikilink integrity
+- [Artemis](concepts/Artemis.md) — placeholder page for wikilink integrity
+- [ASI](concepts/ASI.md) — placeholder page for wikilink integrity
+- [Asia/Seoul](concepts/Asia-Seoul.md) — placeholder page for wikilink integrity
+- [ASIL B Qualified Linux](concepts/ASILBQualifiedLinux.md) — concept page
+- [ASMR](concepts/ASMR.md) — concept page
+- [AsynchronousDataCopy](concepts/AsynchronousDataCopy.md) — placeholder page for wikilink integrity
+- [AsynchronousExecution](concepts/AsynchronousExecution.md) — placeholder page for wikilink integrity
+- [AsynchronousTransactionBarrier](concepts/AsynchronousTransactionBarrier.md) — placeholder page for wikilink integrity
+- [AsynchronousTransactionBarriers](concepts/AsynchronousTransactionBarriers.md) — placeholder page for wikilink integrity
+- [AttachedMatrixExtensions](concepts/AttachedMatrixExtensions.md) — concept page
+- [Attention](concepts/Attention.md) — concept page
+- [Attention FFN Disaggregation](concepts/AttentionFFNDisaggregation.md) — concept page
+- [AUROC](concepts/AUROC.md) — concept page
+- [Autograd](concepts/Autograd.md) — concept page
+- [AutonomousVehicle](concepts/AutonomousVehicle.md) — placeholder page for wikilink integrity
+- [AutoResearch](concepts/AutoResearch.md) — concept page
+- [Average](concepts/Average.md) — placeholder page for wikilink integrity
+- [AWQ](concepts/AWQ.md) — placeholder page for wikilink integrity
+- [AWS](concepts/AWS.md) — placeholder page for wikilink integrity
+- [AXI](concepts/AXI.md) — placeholder page for wikilink integrity
+- [AzureCustomVision](concepts/AzureCustomVision.md) — placeholder page for wikilink integrity
+- [AzureML](concepts/AzureML.md) — placeholder page for wikilink integrity
+- [B100](concepts/B100.md) — placeholder page for wikilink integrity
+- [B200](concepts/B200.md) — placeholder page for wikilink integrity
+- [B2B](concepts/B2B.md) — placeholder page for wikilink integrity
+- [B2C](concepts/B2C.md) — placeholder page for wikilink integrity
+- [Backpropagation](concepts/Backpropagation.md) — concept page
+- [BackwardPass](concepts/BackwardPass.md) — concept page
+- [BankConflict](concepts/BankConflict.md) — placeholder page for wikilink integrity
+- [Banking](concepts/Banking.md) — placeholder page for wikilink integrity
+- [Bare-Metal Extraction](concepts/BareMetalExtraction.md) — concept page
+- [BarrierSynchronization](concepts/BarrierSynchronization.md) — placeholder page for wikilink integrity
+- [Basis](concepts/Basis.md) — concept page
+- [BatchInference](concepts/BatchInference.md) — placeholder page for wikilink integrity
+- [BatchSize](concepts/BatchSize.md) — placeholder page for wikilink integrity
+- [BayesTheorem](concepts/BayesTheorem.md) — concept page
+- [BDC](concepts/BDC.md) — concept page
+- [BenchmarkContamination](concepts/BenchmarkContamination.md) — placeholder page for wikilink integrity
+- [BERT](concepts/BERT.md) — placeholder page for wikilink integrity
+- [BF16](concepts/BF16.md) — placeholder page for wikilink integrity
+- [Bias](concepts/Bias.md) — concept page
+- [Bias-Variance Tradeoff](concepts/BiasVarianceTradeoff.md) — concept page
+- [Binary Classification](concepts/BinaryClassification.md) — concept page
+- [Blackwell](concepts/Blackwell.md) — concept page
+- [Block](concepts/Block.md) — placeholder page for wikilink integrity
+- [blockDim](concepts/blockDim.md) — placeholder page for wikilink integrity
+- [blockIdx](concepts/blockIdx.md) — placeholder page for wikilink integrity
+- [Block Number Formats](concepts/BlockNumberFormats.md) — concept page
+- [BlueField](concepts/BlueField.md) — placeholder page for wikilink integrity
+- [BlueField-4](concepts/BlueField-4.md) — placeholder page for wikilink integrity
+- [BringUp](concepts/BringUp.md) — placeholder page for wikilink integrity
+- [Bufferless Vertical Hybrid (BVH)](concepts/BVH.md) — concept page
+- [C](concepts/C.md) — placeholder page for wikilink integrity
+- [C2C](concepts/C2C.md) — placeholder page for wikilink integrity
+- [C_tile](concepts/C_tile.md) — placeholder page for wikilink integrity
+- [Cache-Aware Scheduling](concepts/CacheAwareScheduling.md) — concept page
+- [Caffe2](concepts/Caffe2.md) — placeholder page for wikilink integrity
+- [Calibration](concepts/Calibration.md) — concept page
+- [Camera Sensor Integration](concepts/CameraSensorIntegration.md) — concept page
+- [Capacity](concepts/Capacity.md) — concept page
+- [CAPEX](concepts/CAPEX.md) — concept page
+- [CDF](concepts/CDF.md) — concept page
+- [CDNA3](concepts/CDNA3.md) — placeholder page for wikilink integrity
+- [CDNA4](concepts/CDNA4.md) — placeholder page for wikilink integrity
+- [CDO](concepts/CDO.md) — placeholder page for wikilink integrity
+- [Centralized Radar Processing](concepts/CentralizedRadarProcessing.md) — concept page
+- [ChainOfThought](concepts/ChainOfThought.md) — placeholder page for wikilink integrity
+- [ChainRule](concepts/ChainRule.md) — concept page
+- [ChipYield](concepts/ChipYield.md) — placeholder page for wikilink integrity
+- [Cholesky](concepts/Cholesky.md) — placeholder page for wikilink integrity
+- [Cisco](concepts/Cisco.md) — placeholder page for wikilink integrity
+- [Classification](concepts/Classification.md) — concept page
+- [Classification Loss](concepts/ClassificationLoss.md) — concept page
+- [Class imbalance](concepts/Classimbalance.md) — placeholder page for wikilink integrity
+- [Claude](concepts/Claude.md) — concept page
+- [Claude Artifacts](concepts/ClaudeArtifacts.md) — concept page
+- [Claw](concepts/Claw.md) — placeholder page for wikilink integrity
+- [CLO](concepts/CLO.md) — placeholder page for wikilink integrity
+- [ClosedLoopEvaluation](concepts/ClosedLoopEvaluation.md) — concept page
+- [CloudCode](concepts/CloudCode.md) — placeholder page for wikilink integrity
+- [CMX](concepts/CMX.md) — placeholder page for wikilink integrity
+- [CNN](concepts/CNN.md) — placeholder page for wikilink integrity
+- [Co-Packaged Optics](concepts/Co-Packaged-Optics.md) — concept page
+- [CohereNet](concepts/CohereNet.md) — placeholder page for wikilink integrity
+- [College Admissions 2028](concepts/CollegeAdmissions2028.md) — concept page
+- [command queue](concepts/commandqueue.md) — placeholder page for wikilink integrity
+- [Compiler](concepts/Compiler.md) — placeholder page for wikilink integrity
+- [Compiler-Based Instruction Scheduling](concepts/CompilerBasedInstructionScheduling.md) — concept page
+- [Compiler Managed Scratchpad](concepts/CompilerManagedScratchpad.md) — concept page
+- [CompilerOptimization](concepts/CompilerOptimization.md) — placeholder page for wikilink integrity
+- [ComputationalGraph](concepts/ComputationalGraph.md) — concept page
+- [Compute Capability](concepts/ComputeCapability.md) — concept page
+- [ConditionalProbability](concepts/ConditionalProbability.md) — concept page
+- [ConfidentialBoundary](concepts/ConfidentialBoundary.md) — concept page
+- [ConfidentialComputing](concepts/ConfidentialComputing.md) — placeholder page for wikilink integrity
+- [Confusion Matrix](concepts/ConfusionMatrix.md) — concept page
+- [Connected Intelligence](concepts/ConnectedIntelligence.md) — concept page
+- [Constraint](concepts/Constraint.md) — concept page
+- [ContextLength](concepts/ContextLength.md) — placeholder page for wikilink integrity
+- [Context Memory Storage (CMX/STX)](concepts/ContextMemoryStorage.md) — concept page
+- [Context Memory Storage Platform](concepts/ContextMemoryStoragePlatform.md) — concept page
+- [ContextRot](concepts/ContextRot.md) — concept page
+- [ContextWindow](concepts/ContextWindow.md) — placeholder page for wikilink integrity
+- [Continuous](concepts/Continuous.md) — concept page
+- [Contract Debt](concepts/ContractDebt.md) — concept page
+- [Convergence](concepts/Convergence.md) — concept page
+- [Coordinate](concepts/Coordinate.md) — concept page
+- [Correlation](concepts/Correlation.md) — concept page
+- [CosineSimilarity](concepts/CosineSimilarity.md) — concept page
+- [Cosmos](concepts/Cosmos.md) — placeholder page for wikilink integrity
+- [Covariance](concepts/Covariance.md) — concept page
+- [CPI](concepts/CPI.md) — placeholder page for wikilink integrity
+- [Co-Packaged Optics (CPO)](concepts/CPO.md) — concept page
+- [CPO(Co-Packaged Optics)](concepts/CPOCo-PackagedOptics.md) — placeholder page for wikilink integrity
+- [CPU](concepts/CPU.md) — placeholder page for wikilink integrity
+- [CPU Isolation](concepts/CPUIsolation.md) — concept page
+- [CPX](concepts/CPX.md) — concept page
+- [Cross-Entropy](concepts/CrossEntropy.md) — concept page
+- [Cross Validation](concepts/CrossValidation.md) — concept page
+- [CrowdStrike](concepts/CrowdStrike.md) — placeholder page for wikilink integrity
+- [CSAT](concepts/CSAT.md) — concept page
+- [CSR](concepts/CSR.md) — placeholder page for wikilink integrity
+- [CUBIN](concepts/CUBIN.md) — concept page
+- [cuBLAS](concepts/cuBLAS.md) — placeholder page for wikilink integrity
+- [CUDA](concepts/CUDA.md) — concept page
+- [CUDA Block](concepts/CUDABlock.md) — placeholder page for wikilink integrity
+- [CudaExecutionProvider](concepts/CudaExecutionProvider.md) — placeholder page for wikilink integrity
+- [CUDA Kernel](concepts/CUDAKernel.md) — placeholder page for wikilink integrity
+- [CUDA Kernel Launch](concepts/CUDAKernelLaunch.md) — placeholder page for wikilink integrity
+- [CUDA Programming Model](concepts/CUDAProgrammingModel.md) — concept page
+- [CUDA Thread](concepts/CUDAThread.md) — placeholder page for wikilink integrity
+- [CUDA X](concepts/CUDAX.md) — placeholder page for wikilink integrity
+- [Curse of Dimensionality](concepts/CurseOfDimensionality.md) — concept page
+- [CXL](concepts/CXL.md) — placeholder page for wikilink integrity
+- [Cybersecurity](concepts/Cybersecurity.md) — placeholder page for wikilink integrity
+- [D2C](concepts/D2C.md) — placeholder page for wikilink integrity
+- [DataAugmentation](concepts/DataAugmentation.md) — concept page
+- [DataFrame](concepts/DataFrame.md) — placeholder page for wikilink integrity
+- [DataLeakage](concepts/DataLeakage.md) — concept page
+- [DDR4](concepts/DDR4.md) — concept page
+- [DDR5](concepts/DDR5.md) — concept page
+- [Deadline Scheduler Verification](concepts/DeadlineSchedulerVerification.md) — concept page
+- [Decision Boundary](concepts/DecisionBoundary.md) — concept page
+- [Decision Tree](concepts/DecisionTree.md) — concept page
+- [Decode](concepts/Decode.md) — placeholder page for wikilink integrity
+- [Decode Disaggregation](concepts/DecodeDisaggregation.md) — concept page
+- [DecompressionEngine](concepts/DecompressionEngine.md) — placeholder page for wikilink integrity
+- [DeepLearning](concepts/DeepLearning.md) — placeholder page for wikilink integrity
+- [DeepSeek Multi-Token Prediction (MTP)](concepts/DeepSeekMTP.md) — concept page
+- [DenseLayer](concepts/DenseLayer.md) — concept page
+- [Derivative](concepts/Derivative.md) — concept page
+- [DESKEW](concepts/DESKEW.md) — placeholder page for wikilink integrity
+- [Deterministic Execution](concepts/DeterministicExecution.md) — concept page
+- [Device](concepts/Device.md) — placeholder page for wikilink integrity
+- [DeviceMemory](concepts/DeviceMemory.md) — placeholder page for wikilink integrity
+- [deviceQuery](concepts/deviceQuery.md) — placeholder page for wikilink integrity
+- [Devicetree and Fwnodes](concepts/DevicetreeAndFwnodes.md) — concept page
+- [DigitalTwin](concepts/DigitalTwin.md) — placeholder page for wikilink integrity
+- [DimensionalityReduction](concepts/DimensionalityReduction.md) — concept page
+- [DirectionalDerivative](concepts/DirectionalDerivative.md) — concept page
+- [Disaggregated Prefill](concepts/DisaggregatedPrefill.md) — concept page
+- [Discrete](concepts/Discrete.md) — concept page
+- [DistributedSharedMemory](concepts/DistributedSharedMemory.md) — placeholder page for wikilink integrity
+- [DistributionShift](concepts/DistributionShift.md) — concept page
+- [Divergence](concepts/Divergence.md) — concept page
+- [DLSS](concepts/DLSS.md) — placeholder page for wikilink integrity
+- [DLSS 5](concepts/DLSS5.md) — placeholder page for wikilink integrity
+- [DMA](concepts/DMA.md) — placeholder page for wikilink integrity
+- [달러 패권](concepts/DollarHegemony.md) — concept page
+- [Doorbell Launch](concepts/DoorbellLaunch.md) — concept page
+- [DotProduct](concepts/DotProduct.md) — concept page
+- [DPU](concepts/DPU.md) — concept page
+- [DPX](concepts/DPX.md) — concept page
+- [DraftModel](concepts/DraftModel.md) — placeholder page for wikilink integrity
+- [DraftTarget](concepts/DraftTarget.md) — placeholder page for wikilink integrity
+- [Dragonfly Topology](concepts/DragonflyTopology.md) — concept page
+- [DRAM](concepts/DRAM.md) — concept page
+- [DriveDriverStack](concepts/DriveDriverStack.md) — placeholder page for wikilink integrity
+- [DriveStack](concepts/DriveStack.md) — placeholder page for wikilink integrity
+- [Dropout](concepts/Dropout.md) — concept page
+- [Dynamic Root of Trust for Measurement](concepts/DRTM.md) — concept page
+- [DSX](concepts/DSX.md) — concept page
+- [DSX Exchange](concepts/DSXExchange.md) — placeholder page for wikilink integrity
+- [DSX Flex](concepts/DSXFlex.md) — placeholder page for wikilink integrity
+- [DSX Max-Q](concepts/DSXMax-Q.md) — placeholder page for wikilink integrity
+- [DSX SIM](concepts/DSXSIM.md) — placeholder page for wikilink integrity
+- [Dual-Issue In-Order](concepts/DualIssueInOrder.md) — concept page
+- [DV](concepts/DV.md) — placeholder page for wikilink integrity
+- [EAGLE](concepts/EAGLE.md) — placeholder page for wikilink integrity
+- [EAGLE3](concepts/EAGLE3.md) — concept page
+- [EarlyStopping](concepts/EarlyStopping.md) — concept page
+- [EarningsGrowth](concepts/EarningsGrowth.md) — placeholder page for wikilink integrity
+- [Earth&Space](concepts/EarthSpace.md) — placeholder page for wikilink integrity
+- [EconomicGrowth](concepts/EconomicGrowth.md) — concept page
+- [EdgeAI](concepts/EdgeAI.md) — placeholder page for wikilink integrity
+- [EdgeDataCenterAISplit](concepts/EdgeDataCenterAISplit.md) — concept page
+- [EdgeInference](concepts/EdgeInference.md) — placeholder page for wikilink integrity
+- [Electromagnetic Mass Driver](concepts/ElectromagneticMassDriver.md) — concept page
+- [Embedded ELF](concepts/EmbeddedELF.md) — concept page
+- [Embedding](concepts/Embedding.md) — concept page
+- [EmbodiedReasoning](concepts/EmbodiedReasoning.md) — concept page
+- [Empirical Risk](concepts/EmpiricalRisk.md) — concept page
+- [Empirical Risk Minimization](concepts/EmpiricalRiskMinimization.md) — concept page
+- [Entropy](concepts/Entropy.md) — concept page
+- [Epoch](concepts/Epoch.md) — concept page
+- [EROFS](concepts/EROFS.md) — concept page
+- [ESS](concepts/ESS.md) — placeholder page for wikilink integrity
+- [Evaluation](concepts/Evaluation.md) — concept page
+- [Evaluation Metric](concepts/EvaluationMetric.md) — concept page
+- [환율](concepts/ExchangeRate.md) — concept page
+- [Execution Provider](concepts/ExecutionProvider.md) — concept page
+- [Expectation](concepts/Expectation.md) — concept page
+- [ExplodingGradient](concepts/ExplodingGradient.md) — concept page
+- [ExponentialAIProgress](concepts/ExponentialAIProgress.md) — concept page
+- [Expressivity](concepts/Expressivity.md) — concept page
+- [F1 Score](concepts/F1Score.md) — concept page
+- [Fatbin](concepts/Fatbin.md) — concept page
+- [Fault](concepts/Fault.md) — placeholder page for wikilink integrity
+- [fault report](concepts/faultreport.md) — placeholder page for wikilink integrity
+- [FCBGA](concepts/FCBGA.md) — concept page
+- [FeatureAnalysis](concepts/FeatureAnalysis.md) — concept page
+- [Feature Matrix](concepts/FeatureMatrix.md) — concept page
+- [Feature Space](concepts/FeatureSpace.md) — concept page
+- [Feynman](concepts/Feynman.md) — placeholder page for wikilink integrity
+- [FFmpeg](concepts/FFmpeg.md) — placeholder page for wikilink integrity
+- [FFN](concepts/FFN.md) — placeholder page for wikilink integrity
+- [FFN Offloading](concepts/FFNOffloading.md) — concept page
+- [금융억압](concepts/FinancialRepression.md) — concept page
+- [재정지배력](concepts/FiscalDominance.md) — concept page
+- [Fixed Point](concepts/FixedPoint.md) — concept page
+- [Floating Point](concepts/FloatingPoint.md) — concept page
+- [Floorsweep](concepts/Floorsweep.md) — placeholder page for wikilink integrity
+- [FMA](concepts/FMA.md) — placeholder page for wikilink integrity
+- [FN](concepts/FN.md) — placeholder page for wikilink integrity
+- [ForwardPass](concepts/ForwardPass.md) — concept page
+- [FP](concepts/FP.md) — placeholder page for wikilink integrity
+- [FP16](concepts/FP16.md) — placeholder page for wikilink integrity
+- [FP32](concepts/FP32.md) — placeholder page for wikilink integrity
+- [FP4](concepts/FP4.md) — placeholder page for wikilink integrity
+- [FP6](concepts/FP6.md) — placeholder page for wikilink integrity
+- [FP64](concepts/FP64.md) — placeholder page for wikilink integrity
+- [FP8](concepts/FP8.md) — concept page
+- [fragment](concepts/fragment.md) — placeholder page for wikilink integrity
+- [Functional Safety](concepts/FunctionalSafety.md) — concept page
+- [Function Approximation](concepts/FunctionApproximation.md) — concept page
+- [GaussianModeling](concepts/GaussianModeling.md) — concept page
+- [GCC](concepts/GCC.md) — placeholder page for wikilink integrity
+- [GDDR](concepts/GDDR.md) — concept page
+- [Gemini](concepts/Gemini.md) — placeholder page for wikilink integrity
+- [GEMM](concepts/GEMM.md) — placeholder page for wikilink integrity
+- [GenAI](concepts/GenAI.md) — placeholder page for wikilink integrity
+- [Generalization](concepts/Generalization.md) — concept page
+- [GeneralizationGap](concepts/GeneralizationGap.md) — concept page
+- [GenerativeAI](concepts/GenerativeAI.md) — placeholder page for wikilink integrity
+- [GenerativeModeling](concepts/GenerativeModeling.md) — concept page
+- [GFLOPS](concepts/GFLOPS.md) — concept page
+- [Gini Impurity](concepts/GiniImpurity.md) — concept page
+- [__global__](concepts/global.md) — placeholder page for wikilink integrity
+- [Global AI Hub](concepts/GlobalAIHub.md) — concept page
+- [GlobalMemory](concepts/GlobalMemory.md) — placeholder page for wikilink integrity
+- [GPC](concepts/GPC.md) — placeholder page for wikilink integrity
+- [GPM](concepts/GPM.md) — placeholder page for wikilink integrity
+- [GPT-5.4](concepts/GPT-5.4.md) — placeholder page for wikilink integrity
+- [GPTQ](concepts/GPTQ.md) — placeholder page for wikilink integrity
+- [GPU](concepts/GPU.md) — concept page
+- [GPURentalMarket](concepts/GPURentalMarket.md) — concept page
+- [GraceBlackwell](concepts/GraceBlackwell.md) — placeholder page for wikilink integrity
+- [GraceHopper](concepts/GraceHopper.md) — placeholder page for wikilink integrity
+- [Gradient](concepts/Gradient.md) — concept page
+- [GradientDescent](concepts/GradientDescent.md) — concept page
+- [GradientNormClipping](concepts/GradientNormClipping.md) — concept page
+- [Graph Optimization](concepts/GraphOptimization.md) — concept page
+- [GraphPartitioner](concepts/GraphPartitioner.md) — placeholder page for wikilink integrity
+- [Grid](concepts/Grid.md) — placeholder page for wikilink integrity
+- [Groot](concepts/Groot.md) — placeholder page for wikilink integrity
+- [총이익률](concepts/GrossProfitMargin.md) — concept page
+- [GSM8K](concepts/GSM8K.md) — placeholder page for wikilink integrity
+- [GTC 2026](concepts/GTC2026.md) — placeholder page for wikilink integrity
+- [H200](concepts/H200.md) — placeholder page for wikilink integrity
+- [HAL](concepts/HAL.md) — placeholder page for wikilink integrity
+- [Half Precision](concepts/HalfPrecision.md) — concept page
+- [Halide](concepts/Halide.md) — placeholder page for wikilink integrity
+- [한미금리차](concepts/HanmiInterestDifferential.md) — concept page
+- [HBF](concepts/HBF.md) — concept page
+- [HBF5](concepts/HBF5.md) — placeholder page for wikilink integrity
+- [HBM](concepts/HBM.md) — concept page
+- [HBM2e](concepts/HBM2e.md) — placeholder page for wikilink integrity
+- [HBM3](concepts/HBM3.md) — placeholder page for wikilink integrity
+- [HBM3e](concepts/HBM3e.md) — placeholder page for wikilink integrity
+- [HBM4](concepts/HBM4.md) — concept page
+- [HBM8](concepts/HBM8.md) — placeholder page for wikilink integrity
+- [Helios](concepts/Helios.md) — placeholder page for wikilink integrity
+- [Heterogeneous Inference](concepts/HeterogeneousInference.md) — concept page
+- [HiddenState](concepts/HiddenState.md) — concept page
+- [HighDimensionalSpace](concepts/HighDimensionalSpace.md) — concept page
+- [High School Choice](concepts/HighSchoolChoice.md) — concept page
+- [HKML](concepts/HKML.md) — concept page
+- [HMMA](concepts/HMMA.md) — placeholder page for wikilink integrity
+- [Holistic Admissions](concepts/HolisticAdmissions.md) — concept page
+- [Hopper](concepts/Hopper.md) — concept page
+- [Hopper Architecture](concepts/HopperArchitecture.md) — concept page
+- [Host](concepts/Host.md) — placeholder page for wikilink integrity
+- [HostMemory](concepts/HostMemory.md) — placeholder page for wikilink integrity
+- [HotWarmColdKVCache](concepts/HotWarmColdKVCache.md) — concept page
+- [HousingTaxPlanning](concepts/HousingTaxPlanning.md) — concept page
+- [HPC](concepts/HPC.md) — placeholder page for wikilink integrity
+- [HumanEval](concepts/HumanEval.md) — placeholder page for wikilink integrity
+- [Human Intelligence System](concepts/HumanIntelligenceSystem.md) — concept page
+- [Humanoid Robotics](concepts/HumanoidRobotics.md) — concept page
+- [Hyperparameter](concepts/Hyperparameter.md) — concept page
+- [Hyperparameter Tuning](concepts/HyperparameterTuning.md) — concept page
+- [Hyperplane](concepts/Hyperplane.md) — concept page
+- [Hypervisor Virtualization](concepts/HypervisorVirtualization.md) — concept page
+- [Hypothesis Space](concepts/HypothesisSpace.md) — concept page
+- [ICU](concepts/ICU.md) — placeholder page for wikilink integrity
+- [IEEE754](concepts/IEEE754.md) — placeholder page for wikilink integrity
+- [IFETCH](concepts/IFETCH.md) — placeholder page for wikilink integrity
+- [ILO](concepts/ILO.md) — placeholder page for wikilink integrity
+- [ImageNet](concepts/ImageNet.md) — placeholder page for wikilink integrity
+- [ImbalancedData](concepts/ImbalancedData.md) — placeholder page for wikilink integrity
+- [IME](concepts/IME.md) — placeholder page for wikilink integrity
+- [Immediate Launch](concepts/ImmediateLaunch.md) — concept page
+- [InContextLearning](concepts/InContextLearning.md) — placeholder page for wikilink integrity
+- [InductiveBias](concepts/InductiveBias.md) — concept page
+- [Industrial Linux Maintenance](concepts/IndustrialLinuxMaintenance.md) — concept page
+- [InferenceOptimization](concepts/InferenceOptimization.md) — concept page
+- [Information Gain](concepts/InformationGain.md) — concept page
+- [IngestionFlow](concepts/IngestionFlow.md) — placeholder page for wikilink integrity
+- [혁신 사이클](concepts/InnovationCycle.md) — concept page
+- [INT4](concepts/INT4.md) — placeholder page for wikilink integrity
+- [INT8](concepts/INT8.md) — placeholder page for wikilink integrity
+- [IntegratedMatrixExtensions](concepts/IntegratedMatrixExtensions.md) — concept page
+- [Interactive Inference](concepts/InteractiveInference.md) — concept page
+- [IOM](concepts/IOM.md) — placeholder page for wikilink integrity
+- [IPO](concepts/IPO.md) — concept page
+- [IREE/MLIR Compiler Stack](concepts/IREE-MLIRCompilerStack.md) — placeholder page for wikilink integrity
+- [ISA](concepts/ISA.md) — placeholder page for wikilink integrity
+- [IsaacLab](concepts/IsaacLab.md) — placeholder page for wikilink integrity
+- [ITU](concepts/ITU.md) — placeholder page for wikilink integrity
+- [Jacobian](concepts/Jacobian.md) — concept page
+- [Jevons Paradox](concepts/JevonsParadox.md) — placeholder page for wikilink integrity
+- [JPMorganChase](concepts/JPMorganChase.md) — placeholder page for wikilink integrity
+- [K-콘텐츠](concepts/K-콘텐츠.md) — placeholder page for wikilink integrity
+- [KB/AI 인프라](concepts/KB-AI인프라.md) — placeholder page for wikilink integrity
+- [Keras](concepts/Keras.md) — placeholder page for wikilink integrity
+- [Kernel](concepts/Kernel.md) — placeholder page for wikilink integrity
+- [Kernel Launch](concepts/KernelLaunch.md) — concept page
+- [KernelOptimization](concepts/KernelOptimization.md) — placeholder page for wikilink integrity
+- [KernelSBOM](concepts/KernelSBOM.md) — concept page
+- [K-Fold Cross Validation](concepts/KFoldCrossValidation.md) — concept page
+- [KNN](concepts/KNN.md) — concept page
+- [Korea Account](concepts/KoreaAccount.md) — concept page
+- [KOSPI](concepts/KOSPI.md) — concept page
+- [Krnl](concepts/Krnl.md) — placeholder page for wikilink integrity
+- [KUnit](concepts/KUnit.md) — concept page
+- [KVCache](concepts/KVCache.md) — concept page
+- [KVCacheCompression](concepts/KVCacheCompression.md) — concept page
+- [KVTC](concepts/KVTC.md) — concept page
+- [L1Cache](concepts/L1Cache.md) — placeholder page for wikilink integrity
+- [L1 Norm](concepts/L1Norm.md) — concept page
+- [L1 Penalty](concepts/L1Penalty.md) — concept page
+- [L2Cache](concepts/L2Cache.md) — placeholder page for wikilink integrity
+- [L2 Norm](concepts/L2Norm.md) — concept page
+- [L2 Penalty](concepts/L2Penalty.md) — concept page
+- [LanguageRole](concepts/LanguageRole.md) — placeholder page for wikilink integrity
+- [Latency](concepts/Latency.md) — placeholder page for wikilink integrity
+- [Latency-Oriented Inference](concepts/LatencyOrientedInference.md) — concept page
+- [LBO](concepts/LBO.md) — placeholder page for wikilink integrity
+- [ldmatrix](concepts/ldmatrix.md) — placeholder page for wikilink integrity
+- [Leaf Node](concepts/LeafNode.md) — concept page
+- [LearningRate](concepts/LearningRate.md) — concept page
+- [Least Squares](concepts/LeastSquares.md) — concept page
+- [Level4Autonomy](concepts/Level4Autonomy.md) — placeholder page for wikilink integrity
+- [LGEnergySolution](concepts/LGEnergySolution.md) — placeholder page for wikilink integrity
+- [Likelihood](concepts/Likelihood.md) — concept page
+- [LinearMap](concepts/LinearMap.md) — concept page
+- [Linear Regression](concepts/LinearRegression.md) — concept page
+- [Linear Separability](concepts/LinearSeparability.md) — concept page
+- [LiquidCooling](concepts/LiquidCooling.md) — concept page
+- [유동성사이클](concepts/LiquidityCycle.md) — concept page
+- [LLaMA-3.1-8B](concepts/LLaMA-3.1-8B.md) — placeholder page for wikilink integrity
+- [LLaMA-3.3-70B](concepts/LLaMA-3.3-70B.md) — placeholder page for wikilink integrity
+- [LLM](concepts/LLM.md) — concept page
+- [LLMAgents](concepts/LLMAgents.md) — concept page
+- [LLVM](concepts/LLVM.md) — placeholder page for wikilink integrity
+- [Loco-Manipulation](concepts/LocoManipulation.md) — concept page
+- [Logistic Regression](concepts/LogisticRegression.md) — concept page
+- [Logit](concepts/Logit.md) — concept page
+- [Log Number Systems](concepts/LogNumberSystems.md) — concept page
+- [LongContext](concepts/LongContext.md) — concept page
+- [LongTailGeneralization](concepts/LongTailGeneralization.md) — concept page
+- [Long-Term Agreement](concepts/LongTermAgreement.md) — concept page
+- [LoRA](concepts/LoRA.md) — concept page
+- [Loss](concepts/Loss.md) — placeholder page for wikilink integrity
+- [Loss Function](concepts/LossFunction.md) — concept page
+- [LowRankApproximation](concepts/LowRankApproximation.md) — concept page
+- [LPU](concepts/LPU.md) — concept page
+- [LPX](concepts/LPX.md) — concept page
+- [LPX Rack](concepts/LPXRack.md) — concept page
+- [MachineLearning](concepts/MachineLearning.md) — concept page
+- [Machine Learning in Kernel](concepts/MachineLearningInKernel.md) — concept page
+- [Macro Action](concepts/MacroAction.md) — concept page
+- [MAE](concepts/MAE.md) — placeholder page for wikilink integrity
+- [Mainline Upstreaming](concepts/MainlineUpstreaming.md) — concept page
+- [Margin](concepts/Margin.md) — concept page
+- [Matrix](concepts/Matrix.md) — concept page
+- [MatrixInstruction](concepts/MatrixInstruction.md) — placeholder page for wikilink integrity
+- [Matrix Multiplication](concepts/MatrixMultiplication.md) — concept page
+- [Swizzling](concepts/MatrixSwizzling.md) — concept page
+- [Maximum Margin](concepts/MaximumMargin.md) — concept page
+- [MaxQ](concepts/MaxQ.md) — placeholder page for wikilink integrity
+- [mbarrier](concepts/mbarrier.md) — placeholder page for wikilink integrity
+- [MCP](concepts/MCP.md) — concept page
+- [MEM](concepts/MEM.md) — placeholder page for wikilink integrity
+- [MemoryBoundKernel](concepts/MemoryBoundKernel.md) — placeholder page for wikilink integrity
+- [MemoryCentricAI](concepts/MemoryCentricAI.md) — concept page
+- [Memory Hierarchy](concepts/MemoryHierarchy.md) — concept page
+- [MemoryLayout](concepts/MemoryLayout.md) — placeholder page for wikilink integrity
+- [MemorySupercycle](concepts/MemorySupercycle.md) — concept page
+- [MemoryWall](concepts/MemoryWall.md) — placeholder page for wikilink integrity
+- [MermaidDiagram](concepts/MermaidDiagram.md) — placeholder page for wikilink integrity
+- [Meta Optimization](concepts/MetaOptimization.md) — concept page
+- [Metric](concepts/Metric.md) — placeholder page for wikilink integrity
+- [MFMA](concepts/MFMA.md) — concept page
+- [Microscaling](concepts/Microscaling.md) — placeholder page for wikilink integrity
+- [Microsoft MSFP12](concepts/MicrosoftMSFP12.md) — placeholder page for wikilink integrity
+- [Mid Plane](concepts/MidPlane.md) — concept page
+- [MIG](concepts/MIG.md) — placeholder page for wikilink integrity
+- [MiniBatch](concepts/MiniBatch.md) — concept page
+- [Mistral](concepts/Mistral.md) — placeholder page for wikilink integrity
+- [Mixed Criticality](concepts/MixedCriticality.md) — concept page
+- [MKLDNNExecutionProvider](concepts/MKLDNNExecutionProvider.md) — placeholder page for wikilink integrity
+- [MLCC](concepts/MLCC.md) — placeholder page for wikilink integrity
+- [MLIR](concepts/MLIR.md) — concept page
+- [MMA](concepts/MMA.md) — concept page
+- [MMA.2SM](concepts/MMA.2SM.md) — placeholder page for wikilink integrity
+- [MMIO](concepts/MMIO.md) — placeholder page for wikilink integrity
+- [ModelBias](concepts/ModelBias.md) — placeholder page for wikilink integrity
+- [Model Capacity](concepts/ModelCapacity.md) — concept page
+- [ModelComplexity](concepts/ModelComplexity.md) — concept page
+- [ModelSelection](concepts/ModelSelection.md) — placeholder page for wikilink integrity
+- [Model Speciation](concepts/ModelSpeciation.md) — concept page
+- [ModularDesign](concepts/ModularDesign.md) — concept page
+- [MoE](concepts/MoE.md) — placeholder page for wikilink integrity
+- [Momentum](concepts/Momentum.md) — concept page
+- [MonetaryPolicy](concepts/MonetaryPolicy.md) — concept page
+- [Mean Squared Error](concepts/MSE.md) — concept page
+- [MT-bench](concepts/MT-bench.md) — placeholder page for wikilink integrity
+- [Multi-Token Prediction](concepts/Multi-TokenPrediction.md) — placeholder page for wikilink integrity
+- [Multikernel Architecture](concepts/MultikernelArchitecture.md) — concept page
+- [Multi-Layer Feature Fusion](concepts/MultiLayerFeatureFusion.md) — concept page
+- [MXFP4](concepts/MXFP4.md) — placeholder page for wikilink integrity
+- [MXM](concepts/MXM.md) — placeholder page for wikilink integrity
+- [Mythos Preview](concepts/MythosPreview.md) — placeholder page for wikilink integrity
+- [NAND](concepts/NAND.md) — placeholder page for wikilink integrity
+- [NASA](concepts/NASA.md) — placeholder page for wikilink integrity
+- [Nasdaq](concepts/Nasdaq.md) — placeholder page for wikilink integrity
+- [NAV](concepts/NAV.md) — placeholder page for wikilink integrity
+- [NemoClaw](concepts/NemoClaw.md) — placeholder page for wikilink integrity
+- [Nervana Flexpoint](concepts/NervanaFlexpoint.md) — placeholder page for wikilink integrity
+- [Network Card](concepts/NetworkCard.md) — concept page
+- [NeuralNetwork](concepts/NeuralNetwork.md) — placeholder page for wikilink integrity
+- [Neural Network Quantization](concepts/NeuralNetworkQuantization.md) — concept page
+- [NeuralProcessingUnit](concepts/NeuralProcessingUnit.md) — placeholder page for wikilink integrity
+- [NeuralRendering](concepts/NeuralRendering.md) — concept page
+- [Newton](concepts/Newton.md) — placeholder page for wikilink integrity
+- [NF4](concepts/NF4.md) — placeholder page for wikilink integrity
+- [nGraph](concepts/nGraph.md) — placeholder page for wikilink integrity
+- [nGraphExecutionProvider](concepts/nGraphExecutionProvider.md) — placeholder page for wikilink integrity
+- [NII](concepts/NII.md) — placeholder page for wikilink integrity
+- [NoC](concepts/NoC.md) — placeholder page for wikilink integrity
+- [NoiseInjection](concepts/NoiseInjection.md) — concept page
+- [Non-accrual asset](concepts/Non-accrualasset.md) — placeholder page for wikilink integrity
+- [Norm](concepts/Norm.md) — concept page
+- [NOTIFY](concepts/NOTIFY.md) — placeholder page for wikilink integrity
+- [Neural Processing Unit Subsystem](concepts/NPU.md) — concept page
+- [NPUISA](concepts/NPUISA.md) — concept page
+- [nputile](concepts/nputile.md) — placeholder page for wikilink integrity
+- [NPU v0.1 Hardware Architecture](concepts/NPUv0.1HardwareArchitecture.md) — placeholder page for wikilink integrity
+- [NPU v0.1 ISA Specification](concepts/NPUv0.1ISASpecification.md) — placeholder page for wikilink integrity
+- [NPU v0.1 Software Architecture](concepts/NPUv0.1SoftwareArchitecture.md) — placeholder page for wikilink integrity
+- [NPU v0.1 Bring-Up](concepts/NPUv01BringUp.md) — concept page
+- [NPU v0.1 Implementation Plan](concepts/NPUv01ImplementationPlan.md) — concept page
+- [Number Format](concepts/NumberFormat.md) — concept page
+- [NV-HBI](concepts/NV-HBI.md) — placeholder page for wikilink integrity
+- [nvcuda::wmma](concepts/nvcudawmma.md) — placeholder page for wikilink integrity
+- [NVIDIADynamo](concepts/NVIDIADynamo.md) — placeholder page for wikilink integrity
+- [NVIDIA Groq 3 LPU](concepts/NVIDIAGroq3LPU.md) — placeholder page for wikilink integrity
+- [NVIDIA Groq 3 LPX](concepts/NVIDIAGroq3LPX.md) — placeholder page for wikilink integrity
+- [NVIDIAOpenSource](concepts/NVIDIAOpenSource.md) — placeholder page for wikilink integrity
+- [NVIDIA RTX 4090](concepts/NVIDIARTX4090.md) — placeholder page for wikilink integrity
+- [NVIDIA Vera Rubin](concepts/NVIDIAVeraRubin.md) — placeholder page for wikilink integrity
+- [NVIDIA Vera Rubin GPU](concepts/NVIDIAVeraRubinGPU.md) — placeholder page for wikilink integrity
+- [NVIDIA Vera Rubin NVL72](concepts/NVIDIAVeraRubinNVL72.md) — placeholder page for wikilink integrity
+- [NVIDIA Vera Rubin Platform](concepts/NVIDIAVeraRubinPlatform.md) — placeholder page for wikilink integrity
+- [Nvidia VSQ](concepts/NvidiaVSQ.md) — placeholder page for wikilink integrity
+- [NVL576](concepts/NVL576.md) — placeholder page for wikilink integrity
+- [NVLink](concepts/NVLink.md) — placeholder page for wikilink integrity
+- [NVLink6](concepts/NVLink6.md) — placeholder page for wikilink integrity
+- [NVMe](concepts/NVMe.md) — placeholder page for wikilink integrity
+- [NVSwitch](concepts/NVSwitch.md) — placeholder page for wikilink integrity
+- [NV Switch Chip](concepts/NVSwitchChip.md) — concept page
+- [OBDC2](concepts/OBDC2.md) — placeholder page for wikilink integrity
+- [Objective](concepts/Objective.md) — concept page
+- [Objective Function](concepts/ObjectiveFunction.md) — concept page
+- [OCP Microscaling](concepts/OCPMicroscaling.md) — placeholder page for wikilink integrity
+- [Omniverse](concepts/Omniverse.md) — placeholder page for wikilink integrity
+- [On-device AI](concepts/OnDeviceAI.md) — concept page
+- [ONNX](concepts/ONNX.md) — placeholder page for wikilink integrity
+- [ONNXGraphPartitioning](concepts/ONNXGraphPartitioning.md) — placeholder page for wikilink integrity
+- [ONNX-MLIR](concepts/OnnxMlir.md) — concept page
+- [ONNX Model Conversion](concepts/ONNXModelConversion.md) — concept page
+- [ONNX Runtime](concepts/ONNXRuntime.md) — concept page
+- [ONNX Runtime API](concepts/ONNXRuntimeAPI.md) — placeholder page for wikilink integrity
+- [ONNX Runtime Training](concepts/ONNXRuntimeTraining.md) — concept page
+- [ONNXZoo](concepts/ONNXZoo.md) — placeholder page for wikilink integrity
+- [OpenAIGPTOSS120B](concepts/OpenAIGPTOSS120B.md) — placeholder page for wikilink integrity
+- [OpenBSD](concepts/OpenBSD.md) — placeholder page for wikilink integrity
+- [OpenClawOS](concepts/OpenClawOS.md) — placeholder page for wikilink integrity
+- [OpenSource](concepts/OpenSource.md) — placeholder page for wikilink integrity
+- [OpenSSD](concepts/OpenSSD.md) — placeholder page for wikilink integrity
+- [OpenSSF](concepts/OpenSSF.md) — placeholder page for wikilink integrity
+- [Optimization](concepts/Optimization.md) — concept page
+- [Optimization Problem](concepts/OptimizationProblem.md) — concept page
+- [Optimizer](concepts/Optimizer.md) — concept page
+- [Optimus](concepts/Optimus.md) — placeholder page for wikilink integrity
+- [Orbital Solar Power](concepts/OrbitalSolarPower.md) — concept page
+- [Outlier](concepts/Outlier.md) — placeholder page for wikilink integrity
+- [OutOfSample](concepts/OutOfSample.md) — concept page
+- [Overfitting](concepts/Overfitting.md) — concept page
+- [Packetless Routing](concepts/PacketlessRouting.md) — concept page
+- [PAL](concepts/PAL.md) — placeholder page for wikilink integrity
+- [Palo Alto Networks](concepts/PaloAltoNetworks.md) — placeholder page for wikilink integrity
+- [Parameter](concepts/Parameter.md) — concept page
+- [PartialDerivative](concepts/PartialDerivative.md) — concept page
+- [PBR](concepts/PBR.md) — placeholder page for wikilink integrity
+- [PCA](concepts/PCA.md) — concept page
+- [PCB](concepts/PCB.md) — concept page
+- [PCIeGen5](concepts/PCIeGen5.md) — placeholder page for wikilink integrity
+- [PDF](concepts/PDF.md) — concept page
+- [PER](concepts/PER.md) — placeholder page for wikilink integrity
+- [PER](concepts/PERRatio.md) — concept page
+- [Petawatt](concepts/Petawatt.md) — placeholder page for wikilink integrity
+- [PetawattComputing](concepts/PetawattComputing.md) — placeholder page for wikilink integrity
+- [페트로달러](concepts/Petrodollar.md) — concept page
+- [P&G](concepts/PG.md) — placeholder page for wikilink integrity
+- [PhysicalAI](concepts/PhysicalAI.md) — concept page
+- [Physical Intelligence](concepts/PhysicalIntelligence.md) — concept page
+- [PIK](concepts/PIK.md) — concept page
+- [PIK(Payment In Kind)](concepts/PIKPaymentInKind.md) — placeholder page for wikilink integrity
+- [PIK(지급식 이자 in kind)](concepts/PIK지급식이자inkind.md) — placeholder page for wikilink integrity
+- [PMF](concepts/PMF.md) — concept page
+- [PMU](concepts/PMU.md) — placeholder page for wikilink integrity
+- [PolarQuant](concepts/PolarQuant.md) — concept page
+- [Polycrisis](concepts/Polycrisis.md) — concept page
+- [Posterior](concepts/Posterior.md) — concept page
+- [Post Training Quantization](concepts/PostTrainingQuantization.md) — concept page
+- [PowerEfficiency](concepts/PowerEfficiency.md) — placeholder page for wikilink integrity
+- [PowerManagement](concepts/PowerManagement.md) — placeholder page for wikilink integrity
+- [USB Power Management](concepts/PowerManagementUSB.md) — concept page
+- [PreciousMetalsMarket](concepts/PreciousMetalsMarket.md) — concept page
+- [Precision](concepts/Precision.md) — concept page
+- [PREEMPT_RT](concepts/PREEMPTRT.md) — concept page
+- [Prefill](concepts/Prefill.md) — placeholder page for wikilink integrity
+- [PrefillDecodeSplit](concepts/PrefillDecodeSplit.md) — placeholder page for wikilink integrity
+- [Prior](concepts/Prior.md) — concept page
+- [Probability](concepts/Probability.md) — concept page
+- [ProbabilityDistribution](concepts/ProbabilityDistribution.md) — concept page
+- [Programmable Vision Accelerator](concepts/ProgrammableVisionAccelerator.md) — concept page
+- [programMD](concepts/programMD.md) — placeholder page for wikilink integrity
+- [Projection](concepts/Projection.md) — concept page
+- [PTX](concepts/PTX.md) — concept page
+- [PVA](concepts/PVA.md) — placeholder page for wikilink integrity
+- [Python](concepts/Python.md) — placeholder page for wikilink integrity
+- [PyTorch](concepts/PyTorch.md) — placeholder page for wikilink integrity
+- [QDF](concepts/QDF.md) — concept page
+- [Quantitative Tightening](concepts/QuantitativeTightening.md) — concept page
+- [Quantization Aware Training](concepts/QuantizationAwareTraining.md) — concept page
+- [QVS](concepts/QVS.md) — concept page
+- [Qwen3](concepts/Qwen3.md) — placeholder page for wikilink integrity
+- [RackScaleSystem](concepts/RackScaleSystem.md) — placeholder page for wikilink integrity
+- [RAG](concepts/RAG.md) — concept page
+- [RandomVariable](concepts/RandomVariable.md) — concept page
+- [Range-Doppler Map](concepts/RangeDopplerMap.md) — concept page
+- [Rank](concepts/Rank.md) — concept page
+- [Raw ADC](concepts/RawADC.md) — concept page
+- [READ](concepts/READ.md) — placeholder page for wikilink integrity
+- [Read-only Memory](concepts/Read-onlyMemory.md) — placeholder page for wikilink integrity
+- [RealScale](concepts/RealScale.md) — concept page
+- [ReasoningAI](concepts/ReasoningAI.md) — placeholder page for wikilink integrity
+- [Recall](concepts/Recall.md) — concept page
+- [RECEIVE](concepts/RECEIVE.md) — placeholder page for wikilink integrity
+- [Refactor](concepts/Refactor.md) — placeholder page for wikilink integrity
+- [Register](concepts/Register.md) — placeholder page for wikilink integrity
+- [RegisterFile](concepts/RegisterFile.md) — placeholder page for wikilink integrity
+- [Registers](concepts/Registers.md) — placeholder page for wikilink integrity
+- [Regression](concepts/Regression.md) — placeholder page for wikilink integrity
+- [Regression Loss](concepts/RegressionLoss.md) — concept page
+- [Regularization](concepts/Regularization.md) — concept page
+- [Reinforcement Learning](concepts/ReinforcementLearning.md) — concept page
+- [Reliability](concepts/Reliability.md) — placeholder page for wikilink integrity
+- [REPEAT](concepts/REPEAT.md) — placeholder page for wikilink integrity
+- [RepresentationLearning](concepts/RepresentationLearning.md) — concept page
+- [Residual](concepts/Residual.md) — concept page
+- [RiscV](concepts/RiscV.md) — concept page
+- [riscv-ime-cpu](concepts/riscv-ime-cpu.md) — placeholder page for wikilink integrity
+- [RiscVExtensionsForAI](concepts/RiscVExtensionsForAI.md) — concept page
+- [RiscVVector](concepts/RiscVVector.md) — placeholder page for wikilink integrity
+- [RNN](concepts/RNN.md) — placeholder page for wikilink integrity
+- [RoboTaxiReady](concepts/RoboTaxiReady.md) — placeholder page for wikilink integrity
+- [Robotics](concepts/Robotics.md) — placeholder page for wikilink integrity
+- [Robustness](concepts/Robustness.md) — placeholder page for wikilink integrity
+- [Rocket](concepts/Rocket.md) — placeholder page for wikilink integrity
+- [ROE](concepts/ROE.md) — placeholder page for wikilink integrity
+- [RTL](concepts/RTL.md) — placeholder page for wikilink integrity
+- [Rubin](concepts/Rubin.md) — placeholder page for wikilink integrity
+- [Rubin Die](concepts/RubinDie.md) — concept page
+- [Rubin Ultra](concepts/RubinUltra.md) — placeholder page for wikilink integrity
+- [Runtime](concepts/Runtime.md) — placeholder page for wikilink integrity
+- [RV64](concepts/RV64.md) — placeholder page for wikilink integrity
+- [RV64GC](concepts/RV64GC.md) — placeholder page for wikilink integrity
+- [RVV](concepts/RVV.md) — placeholder page for wikilink integrity
+- [RVV256](concepts/RVV256.md) — placeholder page for wikilink integrity
+- [Safety](concepts/Safety.md) — concept page
+- [Sampling](concepts/Sampling.md) — concept page
+- [SamsungSDI](concepts/SamsungSDI.md) — placeholder page for wikilink integrity
+- [SASS](concepts/SASS.md) — placeholder page for wikilink integrity
+- [SatelliteCommunication](concepts/SatelliteCommunication.md) — concept page
+- [SatelliteManufacturing](concepts/SatelliteManufacturing.md) — placeholder page for wikilink integrity
+- [Sched_ext](concepts/SchedExt.md) — concept page
+- [SEC](concepts/SEC.md) — placeholder page for wikilink integrity
+- [SecurityBoundary](concepts/SecurityBoundary.md) — placeholder page for wikilink integrity
+- [SemiconductorCompetition](concepts/SemiconductorCompetition.md) — placeholder page for wikilink integrity
+- [SemiconductorSelfManufacturing](concepts/SemiconductorSelfManufacturing.md) — placeholder page for wikilink integrity
+- [Semiconductor Valuation](concepts/SemiconductorValuation.md) — concept page
+- [SEND](concepts/SEND.md) — placeholder page for wikilink integrity
+- [Sensor Fusion](concepts/SensorFusion.md) — concept page
+- [SessionCompaction](concepts/SessionCompaction.md) — concept page
+- [Stochastic Gradient Descent](concepts/SGD.md) — concept page
+- [SharedMemory](concepts/SharedMemory.md) — placeholder page for wikilink integrity
+- [Shared Memory Bank Conflict](concepts/SharedMemoryBankConflict.md) — concept page
+- [Shared Scratchpad Memory](concepts/SharedScratchpadMemory.md) — concept page
+- [Sigmoid](concepts/Sigmoid.md) — concept page
+- [SIMT](concepts/SIMT.md) — concept page
+- [SinglePrecision](concepts/SinglePrecision.md) — placeholder page for wikilink integrity
+- [Skills](concepts/Skills.md) — concept page
+- [SK하이닉스](concepts/SK하이닉스.md) — placeholder page for wikilink integrity
+- [SM](concepts/SM.md) — placeholder page for wikilink integrity
+- [Smoothquant](concepts/Smoothquant.md) — placeholder page for wikilink integrity
+- [SMR](concepts/SMR.md) — placeholder page for wikilink integrity
+- [SoC Module](concepts/SoCModule.md) — concept page
+- [SoC Packaging](concepts/SoCPackaging.md) — concept page
+- [SoC 패키징](concepts/SoC패키징.md) — placeholder page for wikilink integrity
+- [Softmax](concepts/Softmax.md) — placeholder page for wikilink integrity
+- [SoftwaeDefinedNetworking](concepts/SoftwaeDefinedNetworking.md) — placeholder page for wikilink integrity
+- [SoftwareControlledMemory](concepts/SoftwareControlledMemory.md) — placeholder page for wikilink integrity
+- [Software Defined Hardware](concepts/SoftwareDefinedHardware.md) — concept page
+- [SoftwareDefinedNetworking](concepts/SoftwareDefinedNetworking.md) — placeholder page for wikilink integrity
+- [Software Defined Vehicle](concepts/SoftwareDefinedVehicle.md) — concept page
+- [software engineering](concepts/softwareengineering.md) — placeholder page for wikilink integrity
+- [SouthKorea](concepts/SouthKorea.md) — placeholder page for wikilink integrity
+- [Service-Oriented Vehicle Diagnostics](concepts/SOVD.md) — concept page
+- [S&P500](concepts/SP500.md) — placeholder page for wikilink integrity
+- [Space-Based AI](concepts/SpaceBasedAI.md) — concept page
+- [Space-based AI Computing](concepts/SpaceBasedAIComputing.md) — concept page
+- [SpaceBasedSolarPower](concepts/SpaceBasedSolarPower.md) — placeholder page for wikilink integrity
+- [SpaceIndustry](concepts/SpaceIndustry.md) — concept page
+- [SpaceRace](concepts/SpaceRace.md) — concept page
+- [SpaceSolarPower](concepts/SpaceSolarPower.md) — placeholder page for wikilink integrity
+- [SpamFiltering](concepts/SpamFiltering.md) — concept page
+- [Sparsity](concepts/Sparsity.md) — placeholder page for wikilink integrity
+- [SPB](concepts/SPB.md) — placeholder page for wikilink integrity
+- [SPDX SBOM](concepts/SPDXSBOM.md) — concept page
+- [Model Speciation](concepts/Speciation.md) — concept page
+- [SpectrumX](concepts/SpectrumX.md) — placeholder page for wikilink integrity
+- [Speculative Decoding](concepts/SpeculativeDecoding.md) — concept page
+- [SRAM](concepts/SRAM.md) — placeholder page for wikilink integrity
+- [SSM](concepts/SSM.md) — placeholder page for wikilink integrity
+- [스테이블코인](concepts/StableCoin.md) — concept page
+- [StableHLO](concepts/StableHLO.md) — placeholder page for wikilink integrity
+- [Starlink](concepts/Starlink.md) — placeholder page for wikilink integrity
+- [Starship](concepts/Starship.md) — placeholder page for wikilink integrity
+- [StartupStrategy](concepts/StartupStrategy.md) — concept page
+- [Statistics](concepts/Statistics.md) — concept page
+- [Std](concepts/Std.md) — placeholder page for wikilink integrity
+- [Step Size](concepts/StepSize.md) — concept page
+- [Stmatrix](concepts/Stmatrix.md) — placeholder page for wikilink integrity
+- [StorageReview](concepts/StorageReview.md) — placeholder page for wikilink integrity
+- [STORE](concepts/STORE.md) — placeholder page for wikilink integrity
+- [StreamedRegisterFile](concepts/StreamedRegisterFile.md) — placeholder page for wikilink integrity
+- [Streaming Multiprocessor](concepts/StreamingMultiprocessor.md) — concept page
+- [Streaming Tensor Processor](concepts/StreamingTensorProcessor.md) — concept page
+- [Stream Register](concepts/StreamRegister.md) — concept page
+- [StressTest](concepts/StressTest.md) — placeholder page for wikilink integrity
+- [StructuredData](concepts/StructuredData.md) — placeholder page for wikilink integrity
+- [Structured Sparsity](concepts/StructuredSparsity.md) — concept page
+- [Student Record](concepts/StudentRecord.md) — concept page
+- [STX](concepts/STX.md) — placeholder page for wikilink integrity
+- [공급망 패권](concepts/SupplyChainHegemony.md) — concept page
+- [Support Vector Machine](concepts/SupportVectorMachine.md) — concept page
+- [Surrogate Loss](concepts/SurrogateLoss.md) — concept page
+- [Swizzling](concepts/Swizzling.md) — placeholder page for wikilink integrity
+- [SXM](concepts/SXM.md) — placeholder page for wikilink integrity
+- [SYNC](concepts/SYNC.md) — placeholder page for wikilink integrity
+- [__syncthreads](concepts/syncthreads.md) — placeholder page for wikilink integrity
+- [Tactile Sensing](concepts/TactileSensing.md) — concept page
+- [TargetModel](concepts/TargetModel.md) — placeholder page for wikilink integrity
+- [tcgen05.cp](concepts/tcgen05.cp.md) — placeholder page for wikilink integrity
+- [tcgen05.ld](concepts/tcgen05.ld.md) — placeholder page for wikilink integrity
+- [tcgen05.st](concepts/tcgen05.st.md) — placeholder page for wikilink integrity
+- [Tcgen05MMA](concepts/Tcgen05MMA.md) — concept page
+- [TCM](concepts/TCM.md) — placeholder page for wikilink integrity
+- [Total Cost of Ownership](concepts/TCO.md) — concept page
+- [Technical Debt](concepts/TechnicalDebt.md) — concept page
+- [Tensor](concepts/Tensor.md) — concept page
+- [TensorCore](concepts/TensorCore.md) — placeholder page for wikilink integrity
+- [TensorCoreLibrary](concepts/TensorCoreLibrary.md) — placeholder page for wikilink integrity
+- [Tensor Cores](concepts/TensorCores.md) — concept page
+- [TensorFlow](concepts/TensorFlow.md) — placeholder page for wikilink integrity
+- [TensorMemory](concepts/TensorMemory.md) — placeholder page for wikilink integrity
+- [Tensor Memory Accelerator](concepts/TensorMemoryAccelerator.md) — concept page
+- [TensorRT](concepts/TensorRT.md) — placeholder page for wikilink integrity
+- [TensorShape](concepts/TensorShape.md) — concept page
+- [Terawatt](concepts/Terawatt.md) — placeholder page for wikilink integrity
+- [Terawatt Computing](concepts/TerawattComputing.md) — concept page
+- [Tesla V100](concepts/TeslaV100.md) — placeholder page for wikilink integrity
+- [test accuracy](concepts/testaccuracy.md) — placeholder page for wikilink integrity
+- [Test Driven Development](concepts/TestDrivenDevelopment.md) — concept page
+- [TestSet](concepts/TestSet.md) — concept page
+- [Thread Block Cluster](concepts/ThreadBlockCluster.md) — concept page
+- [Thread Hierarchy](concepts/ThreadHierarchy.md) — placeholder page for wikilink integrity
+- [threadIdx](concepts/threadIdx.md) — placeholder page for wikilink integrity
+- [Threshold](concepts/Threshold.md) — placeholder page for wikilink integrity
+- [Throughput](concepts/Throughput.md) — concept page
+- [Throughput-Oriented Inference](concepts/ThroughputOrientedInference.md) — concept page
+- [Throughput vs latency](concepts/Throughputvslatency.md) — placeholder page for wikilink integrity
+- [Tile-Based NPU](concepts/TileBasedNPU.md) — concept page
+- [TinyML](concepts/TinyML.md) — concept page
+- [TMA](concepts/TMA.md) — placeholder page for wikilink integrity
+- [Tmbar](concepts/Tmbar.md) — placeholder page for wikilink integrity
+- [TMEM](concepts/TMEM.md) — concept page
+- [TN](concepts/TN.md) — placeholder page for wikilink integrity
+- [Token-level Prediction](concepts/Token-levelPrediction.md) — placeholder page for wikilink integrity
+- [TokenEconomy](concepts/TokenEconomy.md) — concept page
+- [Tokenomics](concepts/Tokenomics.md) — concept page
+- [Token Routing](concepts/TokenRouting.md) — placeholder page for wikilink integrity
+- [TokensPerWatt](concepts/TokensPerWatt.md) — placeholder page for wikilink integrity
+- [ToolUse](concepts/ToolUse.md) — placeholder page for wikilink integrity
+- [TOSA](concepts/TOSA.md) — placeholder page for wikilink integrity
+- [TP](concepts/TP.md) — placeholder page for wikilink integrity
+- [TPC](concepts/TPC.md) — placeholder page for wikilink integrity
+- [Trace](concepts/Trace.md) — placeholder page for wikilink integrity
+- [train accuracy](concepts/trainaccuracy.md) — placeholder page for wikilink integrity
+- [TrainingLoss](concepts/TrainingLoss.md) — concept page
+- [Training-Time Test](concepts/TrainingTimeTest.md) — concept page
+- [TrainLoss](concepts/TrainLoss.md) — placeholder page for wikilink integrity
+- [TrainSet](concepts/TrainSet.md) — concept page
+- [TrainValidationTestSplit](concepts/TrainValidationTestSplit.md) — concept page
+- [train 성능](concepts/train성능.md) — placeholder page for wikilink integrity
+- [Transformer](concepts/Transformer.md) — concept page
+- [Transformer Engine](concepts/TransformerEngine.md) — concept page
+- [TreeDepth](concepts/TreeDepth.md) — placeholder page for wikilink integrity
+- [Triton](concepts/Triton.md) — placeholder page for wikilink integrity
+- [TurboQuant](concepts/TurboQuant.md) — concept page
+- [Turing](concepts/Turing.md) — concept page
+- [TVM](concepts/TVM.md) — placeholder page for wikilink integrity
+- [UBI](concepts/UBI.md) — placeholder page for wikilink integrity
+- [Underfitting](concepts/Underfitting.md) — concept page
+- [Unified Kernel Image](concepts/UnifiedKernelImage.md) — concept page
+- [Universal Basic Income](concepts/UniversalBasicIncome.md) — concept page
+- [UnstructuredData](concepts/UnstructuredData.md) — placeholder page for wikilink integrity
+- [UN 산하 AI 기능](concepts/UN산하AI기능.md) — placeholder page for wikilink integrity
+- [UN산하기구](concepts/UN산하기구.md) — placeholder page for wikilink integrity
+- [Update Rule](concepts/UpdateRule.md) — concept page
+- [Userspace-Assisted Scheduling](concepts/UserspaceAssistedScheduling.md) — concept page
+- [USGovernment](concepts/USGovernment.md) — placeholder page for wikilink integrity
+- [ValidationAccuracy](concepts/ValidationAccuracy.md) — placeholder page for wikilink integrity
+- [ValidationLoss](concepts/ValidationLoss.md) — concept page
+- [ValidationSet](concepts/ValidationSet.md) — concept page
+- [validation 성능](concepts/validation성능.md) — placeholder page for wikilink integrity
+- [Valuation](concepts/Valuation.md) — placeholder page for wikilink integrity
+- [Valuation Derating](concepts/ValuationDerating.md) — concept page
+- [ValuationRepricing](concepts/ValuationRepricing.md) — placeholder page for wikilink integrity
+- [VanishingGradient](concepts/VanishingGradient.md) — concept page
+- [Variance](concepts/Variance.md) — concept page
+- [Vector](concepts/Vector.md) — concept page
+- [VectorBatchProduct](concepts/VectorBatchProduct.md) — concept page
+- [VectorMatrixExtensions](concepts/VectorMatrixExtensions.md) — concept page
+- [VectorRegisterFile](concepts/VectorRegisterFile.md) — placeholder page for wikilink integrity
+- [VectorSearch](concepts/VectorSearch.md) — placeholder page for wikilink integrity
+- [VectorSpace](concepts/VectorSpace.md) — concept page
+- [Vera CPU](concepts/VeraCPU.md) — placeholder page for wikilink integrity
+- [VeraRubin](concepts/VeraRubin.md) — placeholder page for wikilink integrity
+- [VeraRubinUltra](concepts/VeraRubinUltra.md) — placeholder page for wikilink integrity
+- [Verifiability](concepts/Verifiability.md) — concept page
+- [Verification](concepts/Verification.md) — placeholder page for wikilink integrity
+- [VGPR](concepts/VGPR.md) — placeholder page for wikilink integrity
+- [Vibe Coding](concepts/VibeCoding.md) — concept page
+- [Vicuna-13B](concepts/Vicuna-13B.md) — placeholder page for wikilink integrity
+- [VirtIO](concepts/VirtIO.md) — concept page
+- [VisionLanguageAction](concepts/VisionLanguageAction.md) — concept page
+- [VisionLanguageActionForAutonomousDriving](concepts/VisionLanguageActionForAutonomousDriving.md) — concept page
+- [Visuomotor Control](concepts/VisuomotorControl.md) — concept page
+- [VLA](concepts/VLA.md) — placeholder page for wikilink integrity
+- [VLIW](concepts/VLIW.md) — placeholder page for wikilink integrity
+- [Volta](concepts/Volta.md) — concept page
+- [VXM](concepts/VXM.md) — placeholder page for wikilink integrity
+- [Warp](concepts/Warp.md) — concept page
+- [WarpDivergence](concepts/WarpDivergence.md) — placeholder page for wikilink integrity
+- [Warpgroup](concepts/Warpgroup.md) — placeholder page for wikilink integrity
+- [Wavefront](concepts/Wavefront.md) — placeholder page for wikilink integrity
+- [WaveGroup Tensor Execution](concepts/WaveGroupTensorExecution.md) — concept page
+- [Weight](concepts/Weight.md) — concept page
+- [Weight Decay](concepts/WeightDecay.md) — concept page
+- [WFP](concepts/WFP.md) — placeholder page for wikilink integrity
+- [WGBI](concepts/WGBI.md) — concept page
+- [WGMMA](concepts/WGMMA.md) — placeholder page for wikilink integrity
+- [WHO](concepts/WHO.md) — placeholder page for wikilink integrity
+- [WMMA](concepts/WMMA.md) — concept page
+- [World Size](concepts/WorldSize.md) — placeholder page for wikilink integrity
+- [XNPUV01](concepts/XNPUV01.md) — concept page
+- [Zero-Day Vulnerability](concepts/ZeroDayVulnerability.md) — concept page
+- [zHigh](concepts/zHigh.md) — placeholder page for wikilink integrity
+- [zLow](concepts/zLow.md) — placeholder page for wikilink integrity
+- [zTensor](concepts/zTensor.md) — placeholder page for wikilink integrity
+- [검증가능성](concepts/검증가능성.md) — placeholder page for wikilink integrity
+- [결정지연](concepts/결정지연.md) — concept page
+- [경기방어주](concepts/경기방어주.md) — placeholder page for wikilink integrity
+- [고배당주](concepts/고배당주.md) — placeholder page for wikilink integrity
+- [공급망](concepts/공급망.md) — placeholder page for wikilink integrity
+- [공급망패권](concepts/공급망패권.md) — placeholder page for wikilink integrity
+- [광모듈](concepts/광모듈.md) — concept page
+- [광트랜시버](concepts/광트랜시버.md) — placeholder page for wikilink integrity
+- [교육](concepts/교육.md) — placeholder page for wikilink integrity
+- [구글](concepts/구글.md) — placeholder page for wikilink integrity
+- [국가 간 안보 격차](concepts/국가간안보격차.md) — placeholder page for wikilink integrity
+- [국가와 비국가 행위자](concepts/국가와비국가행위자.md) — placeholder page for wikilink integrity
+- [국내 IT](concepts/국내IT.md) — placeholder page for wikilink integrity
+- [국내 제조업](concepts/국내제조업.md) — placeholder page for wikilink integrity
+- [국제결제](concepts/국제결제.md) — placeholder page for wikilink integrity
+- [군중심리](concepts/군중심리.md) — placeholder page for wikilink integrity
+- [규율투자](concepts/규율투자.md) — placeholder page for wikilink integrity
+- [그림자금융](concepts/그림자금융.md) — concept page
+- [그림자유동성](concepts/그림자유동성.md) — placeholder page for wikilink integrity
+- [글로벌 원전주](concepts/글로벌원전주.md) — placeholder page for wikilink integrity
+- [글로벌유동성](concepts/글로벌유동성.md) — placeholder page for wikilink integrity
+- [금리](concepts/금리.md) — concept page
+- [금리 인상](concepts/금리인상.md) — placeholder page for wikilink integrity
+- [금리인상시나리오](concepts/금리인상시나리오.md) — concept page
+- [금리인하](concepts/금리인하.md) — placeholder page for wikilink integrity
+- [금리 인하 지연](concepts/금리인하지연.md) — placeholder page for wikilink integrity
+- [금리차](concepts/금리차.md) — placeholder page for wikilink integrity
+- [금융억압](concepts/금융억압.md) — placeholder page for wikilink integrity
+- [기관투자자](concepts/기관투자자.md) — placeholder page for wikilink integrity
+- [기술](concepts/기술.md) — placeholder page for wikilink integrity
+- [기업부채](concepts/기업부채.md) — placeholder page for wikilink integrity
+- [나스닥](concepts/나스닥.md) — placeholder page for wikilink integrity
+- [낮은 가이던스 리스크](concepts/낮은가이던스리스크.md) — placeholder page for wikilink integrity
+- [네이버](concepts/네이버.md) — placeholder page for wikilink integrity
+- [다이와증권코리아](concepts/다이와증권코리아.md) — placeholder page for wikilink integrity
+- [달](concepts/달.md) — placeholder page for wikilink integrity
+- [달러](concepts/달러.md) — placeholder page for wikilink integrity
+- [달러 강세](concepts/달러강세.md) — placeholder page for wikilink integrity
+- [달러자산](concepts/달러자산.md) — placeholder page for wikilink integrity
+- [달러패권](concepts/달러패권.md) — placeholder page for wikilink integrity
+- [대한민국](concepts/대한민국.md) — placeholder page for wikilink integrity
+- [독립 인공지능](concepts/독립인공지능.md) — placeholder page for wikilink integrity
+- [동시성 추론 파이프라인](concepts/동시성추론파이프라인.md) — placeholder page for wikilink integrity
+- [디지털자산](concepts/디지털자산.md) — placeholder page for wikilink integrity
+- [러시아](concepts/러시아.md) — placeholder page for wikilink integrity
+- [로봇](concepts/로봇.md) — placeholder page for wikilink integrity
+- [로봇산업](concepts/로봇산업.md) — placeholder page for wikilink integrity
+- [루빈 울트라](concepts/루빈울트라.md) — placeholder page for wikilink integrity
+- [리밸런싱](concepts/리밸런싱.md) — concept page
+- [리스크 프리미엄](concepts/리스크프리미엄.md) — placeholder page for wikilink integrity
+- [마이크로소프트](concepts/마이크로소프트.md) — placeholder page for wikilink integrity
+- [마이크론](concepts/마이크론.md) — placeholder page for wikilink integrity
+- [마이크론테크놀로지](concepts/마이크론테크놀로지.md) — placeholder page for wikilink integrity
+- [마진디레이팅](concepts/마진디레이팅.md) — placeholder page for wikilink integrity
+- [매몰비용](concepts/매몰비용.md) — concept page
+- [메모리반도체](concepts/메모리반도체.md) — placeholder page for wikilink integrity
+- [메모리밸류](concepts/메모리밸류.md) — placeholder page for wikilink integrity
+- [메모리수요](concepts/메모리수요.md) — placeholder page for wikilink integrity
+- [메모리수요비선형성](concepts/메모리수요비선형성.md) — concept page
+- [메모리슈퍼사이클](concepts/메모리슈퍼사이클.md) — placeholder page for wikilink integrity
+- [메모리 효율화](concepts/메모리효율화.md) — placeholder page for wikilink integrity
+- [면역요법](concepts/면역요법.md) — placeholder page for wikilink integrity
+- [무수익성 자산](concepts/무수익성자산.md) — placeholder page for wikilink integrity
+- [물류](concepts/물류.md) — placeholder page for wikilink integrity
+- [미국](concepts/미국.md) — placeholder page for wikilink integrity
+- [반대매매](concepts/반대매매.md) — placeholder page for wikilink integrity
+- [반도체](concepts/반도체.md) — placeholder page for wikilink integrity
+- [반도체 밸류에이션](concepts/반도체밸류에이션.md) — concept page
+- [반도체쇼티지](concepts/반도체쇼티지.md) — placeholder page for wikilink integrity
+- [반도체시장](concepts/반도체시장.md) — placeholder page for wikilink integrity
+- [반도체장비](concepts/반도체장비.md) — placeholder page for wikilink integrity
+- [방산](concepts/방산.md) — placeholder page for wikilink integrity
+- [배당](concepts/배당.md) — placeholder page for wikilink integrity
+- [배당재투자](concepts/배당재투자.md) — concept page
+- [배당투자](concepts/배당투자.md) — placeholder page for wikilink integrity
+- [밸류에이션 리레이팅](concepts/밸류에이션리레이팅.md) — concept page
+- [변정규](concepts/변정규.md) — placeholder page for wikilink integrity
+- [보수적포트폴리오](concepts/보수적포트폴리오.md) — placeholder page for wikilink integrity
+- [복리](concepts/복리.md) — placeholder page for wikilink integrity
+- [부채/GDP 비율](concepts/부채-GDP비율.md) — placeholder page for wikilink integrity
+- [부채비율](concepts/부채비율.md) — placeholder page for wikilink integrity
+- [분산투자](concepts/분산투자.md) — placeholder page for wikilink integrity
+- [분할 진입/분할 매도](concepts/분할진입-분할매도.md) — placeholder page for wikilink integrity
+- [비수익성자산](concepts/비수익성자산.md) — placeholder page for wikilink integrity
+- [비용자본](concepts/비용자본.md) — placeholder page for wikilink integrity
+- [비트코인](concepts/비트코인.md) — placeholder page for wikilink integrity
+- [비팩토리](concepts/비팩토리.md) — placeholder page for wikilink integrity
+- [빅테크](concepts/빅테크.md) — placeholder page for wikilink integrity
+- [사모대출](concepts/사모대출.md) — concept page
+- [사모대출부실](concepts/사모대출부실.md) — concept page
+- [사모대출 위기](concepts/사모대출위기.md) — placeholder page for wikilink integrity
+- [사모신용](concepts/사모신용.md) — concept page
+- [사우디아라비아](concepts/사우디아라비아.md) — placeholder page for wikilink integrity
+- [삼성-닉스-동반-하락-부른-구글-터보퀀트-의-진짜-의미-김장열-유니스토리자산운용-본부장-집중-오늘의-주식](concepts/삼성-닉스-동반-하락-부른-구글-터보퀀트-의-진짜-의미-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — placeholder page for wikilink integrity
+- [삼성전기](concepts/삼성전기.md) — placeholder page for wikilink integrity
+- [삼성전자](concepts/삼성전자.md) — placeholder page for wikilink integrity
+- [생산성](concepts/생산성.md) — placeholder page for wikilink integrity
+- [생산성혁명](concepts/생산성혁명.md) — placeholder page for wikilink integrity
+- [섀도우뱅킹](concepts/섀도우뱅킹.md) — concept page
+- [유동성 미스매치](concepts/석자금리스크.md) — concept page
+- [세금](concepts/세금.md) — placeholder page for wikilink integrity
+- [세부산업관측](concepts/세부산업관측.md) — placeholder page for wikilink integrity
+- [세이프티마진](concepts/세이프티마진.md) — placeholder page for wikilink integrity
+- [세제](concepts/세제.md) — placeholder page for wikilink integrity
+- [세후수익](concepts/세후수익.md) — placeholder page for wikilink integrity
+- [섹터교체](concepts/섹터교체.md) — placeholder page for wikilink integrity
+- [소부장](concepts/소부장.md) — placeholder page for wikilink integrity
+- [손실회피](concepts/손실회피.md) — placeholder page for wikilink integrity
+- [쇼티지](concepts/쇼티지.md) — concept page
+- [수급리스크](concepts/수급리스크.md) — placeholder page for wikilink integrity
+- [수에즈운하](concepts/수에즈운하.md) — placeholder page for wikilink integrity
+- [스테이블코인](concepts/스테이블코인.md) — placeholder page for wikilink integrity
+- [스트라이크 해협](concepts/스트라이크해협.md) — placeholder page for wikilink integrity
+- [스페이스X](concepts/스페이스X.md) — placeholder page for wikilink integrity
+- [시니어](concepts/시니어.md) — placeholder page for wikilink integrity
+- [시세차익](concepts/시세차익.md) — placeholder page for wikilink integrity
+- [신용경색](concepts/신용경색.md) — placeholder page for wikilink integrity
+- [신용사태](concepts/신용사태.md) — placeholder page for wikilink integrity
+- [신용융자](concepts/신용융자.md) — concept page
+- [실리콘 커패시터](concepts/실리콘 커패시터.md) — concept page
+- [실적-5배에도-주가-2배-반도체-상승-여력-남았나-l-김장열-유니스토리자산운용-본부장-집중-오늘의-주식](concepts/실적-5배에도-주가-2배-반도체-상승-여력-남았나-l-김장열-유니스토리자산운용-본부장-집중-오늘의-주식.md) — placeholder page for wikilink integrity
+- [실적 대비 주가 저평가](concepts/실적대비주가저평가.md) — concept page
+- [심텍](concepts/심텍.md) — placeholder page for wikilink integrity
+- [아랍에미리트](concepts/아랍에미리트.md) — placeholder page for wikilink integrity
+- [아르테미스](concepts/아르테미스.md) — placeholder page for wikilink integrity
+- [아마존](concepts/아마존.md) — placeholder page for wikilink integrity
+- [알레르기비염](concepts/알레르기비염.md) — concept page
+- [알파벳](concepts/알파벳.md) — placeholder page for wikilink integrity
+- [애플](concepts/애플.md) — placeholder page for wikilink integrity
+- [양적긴축](concepts/양적긴축.md) — concept page
+- [양적긴축(QT)](concepts/양적긴축QT.md) — placeholder page for wikilink integrity
+- [에너지](concepts/에너지.md) — placeholder page for wikilink integrity
+- [에너지가격](concepts/에너지가격.md) — placeholder page for wikilink integrity
+- [에너지가격 상승](concepts/에너지가격상승.md) — placeholder page for wikilink integrity
+- [에너지 인프라](concepts/에너지인프라.md) — placeholder page for wikilink integrity
+- [엔비디아](concepts/엔비디아.md) — placeholder page for wikilink integrity
+- [엔화](concepts/엔화.md) — placeholder page for wikilink integrity
+- [연결 지능](concepts/연결지능.md) — placeholder page for wikilink integrity
+- [연쇄부도](concepts/연쇄부도.md) — placeholder page for wikilink integrity
+- [연준](concepts/연준.md) — placeholder page for wikilink integrity
+- [오프밸런스 구조](concepts/오프밸런스구조.md) — concept page
+- [오픈소스AI](concepts/오픈소스AI.md) — placeholder page for wikilink integrity
+- [온디바이스 AI](concepts/온디바이스AI.md) — placeholder page for wikilink integrity
+- [외국인투자자](concepts/외국인투자자.md) — concept page
+- [외화 기준 평가](concepts/외화기준평가.md) — placeholder page for wikilink integrity
+- [우주산업](concepts/우주산업.md) — placeholder page for wikilink integrity
+- [워페이](concepts/워페이.md) — placeholder page for wikilink integrity
+- [원유](concepts/원유.md) — placeholder page for wikilink integrity
+- [원유충격](concepts/원유충격.md) — concept page
+- [원자재가격](concepts/원자재가격.md) — concept page
+- [원전](concepts/원전.md) — placeholder page for wikilink integrity
+- [원화](concepts/원화.md) — placeholder page for wikilink integrity
+- [위성통신](concepts/위성통신.md) — placeholder page for wikilink integrity
+- [위안화](concepts/위안화.md) — placeholder page for wikilink integrity
+- [유가](concepts/유가.md) — placeholder page for wikilink integrity
+- [유나이티드헬스그룹](concepts/유나이티드헬스그룹.md) — placeholder page for wikilink integrity
+- [유동성 미스매치](concepts/유동성미스매치.md) — placeholder page for wikilink integrity
+- [유동성사이클](concepts/유동성사이클.md) — placeholder page for wikilink integrity
+- [유진투자증권](concepts/유진투자증권.md) — placeholder page for wikilink integrity
+- [의지](concepts/의지.md) — placeholder page for wikilink integrity
+- [이란](concepts/이란.md) — placeholder page for wikilink integrity
+- [이벤트 루프 추론 비용](concepts/이벤트루프추론비용.md) — placeholder page for wikilink integrity
+- [이스라엘](concepts/이스라엘.md) — placeholder page for wikilink integrity
+- [이재명](concepts/이재명.md) — placeholder page for wikilink integrity
+- [인간 지능 시스템](concepts/인간지능시스템.md) — placeholder page for wikilink integrity
+- [인터랙티브 추론](concepts/인터랙티브추론.md) — placeholder page for wikilink integrity
+- [인플레이션](concepts/인플레이션.md) — placeholder page for wikilink integrity
+- [일반적 소프트웨어 유지관리](concepts/일반적소프트웨어유지관리.md) — placeholder page for wikilink integrity
+- [일본](concepts/일본.md) — placeholder page for wikilink integrity
+- [자산관리전략부](concepts/자산관리전략부.md) — placeholder page for wikilink integrity
+- [장기계약(LTA)](concepts/장기계약LTA.md) — placeholder page for wikilink integrity
+- [장기투자](concepts/장기투자.md) — placeholder page for wikilink integrity
+- [재번스의역설](concepts/재번스의역설.md) — concept page
+- [재정적자](concepts/재정적자.md) — placeholder page for wikilink integrity
+- [재정지배력](concepts/재정지배력.md) — placeholder page for wikilink integrity
+- [전략적 고객계약(SCA)](concepts/전략적고객계약SCA.md) — placeholder page for wikilink integrity
+- [전력](concepts/전력.md) — placeholder page for wikilink integrity
+- [전쟁](concepts/전쟁.md) — placeholder page for wikilink integrity
+- [전쟁 장기화 우려](concepts/전쟁장기화우려.md) — placeholder page for wikilink integrity
+- [제로클릭사회](concepts/제로클릭사회.md) — concept page
+- [주가차익](concepts/주가차익.md) — placeholder page for wikilink integrity
+- [주관성](concepts/주관성.md) — placeholder page for wikilink integrity
+- [주니어](concepts/주니어.md) — placeholder page for wikilink integrity
+- [주도주전략](concepts/주도주전략.md) — placeholder page for wikilink integrity
+- [주식 거래 과정에서 발생한 환차익은 과세 대상](concepts/주식거래과정에서발생한환차익은과세대상.md) — placeholder page for wikilink integrity
+- [중국](concepts/중국.md) — placeholder page for wikilink integrity
+- [중동정세](concepts/중동정세.md) — placeholder page for wikilink integrity
+- [중소기업](concepts/중소기업.md) — placeholder page for wikilink integrity
+- [지방선거](concepts/지방선거.md) — placeholder page for wikilink integrity
+- [차지호](concepts/차지호.md) — placeholder page for wikilink integrity
+- [챗봇](concepts/챗봇.md) — placeholder page for wikilink integrity
+- [청년 고용 문제](concepts/청년고용문제.md) — placeholder page for wikilink integrity
+- [추론의 미묘성](concepts/추론의미묘성.md) — placeholder page for wikilink integrity
+- [치료법](concepts/치료법.md) — concept page
+- [카카오](concepts/카카오.md) — placeholder page for wikilink integrity
+- [카타르](concepts/카타르.md) — placeholder page for wikilink integrity
+- [컨센서스](concepts/컨센서스.md) — placeholder page for wikilink integrity
+- [케빈오르](concepts/케빈오르.md) — placeholder page for wikilink integrity
+- [케빈워시](concepts/케빈워시.md) — placeholder page for wikilink integrity
+- [코스닥](concepts/코스닥.md) — placeholder page for wikilink integrity
+- [코스피](concepts/코스피.md) — concept page
+- [퀀타이제이션](concepts/퀀타이제이션.md) — placeholder page for wikilink integrity
+- [퀄컴](concepts/퀄컴.md) — placeholder page for wikilink integrity
+- [터보컨트](concepts/터보컨트.md) — placeholder page for wikilink integrity
+- [터보퀀트](concepts/터보퀀트.md) — placeholder page for wikilink integrity
+- [테라와트](concepts/테라와트.md) — placeholder page for wikilink integrity
+- [테스트 주도 개발](concepts/테스트주도개발.md) — placeholder page for wikilink integrity
+- [테슬라](concepts/테슬라.md) — placeholder page for wikilink integrity
+- [토큰 처리량](concepts/토큰처리량.md) — concept page
+- [투자사이클](concepts/투자사이클.md) — placeholder page for wikilink integrity
+- [투자심리](concepts/투자심리.md) — placeholder page for wikilink integrity
+- [투자원칙](concepts/투자원칙.md) — placeholder page for wikilink integrity
+- [투자자의 멘탈 관리](concepts/투자자의멘탈관리.md) — placeholder page for wikilink integrity
+- [투자자정신적자기관리](concepts/투자자정신적자기관리.md) — placeholder page for wikilink integrity
+- [트럼프](concepts/트럼프.md) — placeholder page for wikilink integrity
+- [파마리서치](concepts/파마리서치.md) — placeholder page for wikilink integrity
+- [파생상품](concepts/파생상품.md) — placeholder page for wikilink integrity
+- [퍼러비스](concepts/퍼러비스.md) — placeholder page for wikilink integrity
+- [펀드](concepts/펀드.md) — placeholder page for wikilink integrity
+- [펀딩](concepts/펀딩.md) — placeholder page for wikilink integrity
+- [페트로달러](concepts/페트로달러.md) — placeholder page for wikilink integrity
+- [페트로달러체제](concepts/페트로달러체제.md) — placeholder page for wikilink integrity
+- [포트폴리오](concepts/포트폴리오.md) — placeholder page for wikilink integrity
+- [포트폴리오 리스크관리](concepts/포트폴리오리스크관리.md) — placeholder page for wikilink integrity
+- [하이페리온](concepts/하이페리온.md) — placeholder page for wikilink integrity
+- [한국](concepts/한국.md) — placeholder page for wikilink integrity
+- [한미금리차](concepts/한미금리차.md) — placeholder page for wikilink integrity
+- [해외투자](concepts/해외투자.md) — placeholder page for wikilink integrity
+- [행동경제학](concepts/행동경제학.md) — concept page
+- [헨리 키신저](concepts/헨리키신저.md) — placeholder page for wikilink integrity
+- [헬스케어](concepts/헬스케어.md) — placeholder page for wikilink integrity
+- [혁신 사이클](concepts/혁신사이클.md) — placeholder page for wikilink integrity
+- [현금관리](concepts/현금관리.md) — placeholder page for wikilink integrity
+- [현금율](concepts/현금율.md) — placeholder page for wikilink integrity
+- [현금흐름 경색](concepts/현금흐름경색.md) — placeholder page for wikilink integrity
+- [호르무즈](concepts/호르무즈.md) — placeholder page for wikilink integrity
+- [환매](concepts/환매.md) — placeholder page for wikilink integrity
+- [환율](concepts/환율.md) — placeholder page for wikilink integrity
+- [환차익](concepts/환차익.md) — concept page
+- [후회](concepts/후회.md) — placeholder page for wikilink integrity
+- [휴머노이드로봇](concepts/휴머노이드로봇.md) — concept page
+- [희토류](concepts/희토류.md) — concept page
 
 ## Syntheses

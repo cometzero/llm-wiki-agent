@@ -1,28 +1,33 @@
 ---
 title: "Groq"
 type: entity
-tags: [company, AI, inference-hardware]
-last_updated: 2026-04-21
+tags:
+  - company
+  - ai-chip
+  - inference
+  - architecture
+last_updated: 2026-05-03
 sources:
-  - gtc-2026-the-inference-kingdom-expands
+  - hotchips34-groq-abts-final-pdf
 ---
 
-## Summary
-[[Groq]]는 NVIDIA가 GTC 2026에서 언급한 LPU 계열의 기술·조직 자산을 흡수한 파트너로, 추론 가속 시장에서 GPU와의 역할 분할을 가속화한 핵심 촉매로 작동한다.
+## 개요
+[[Groq]]는 추론 중심의 AI 시스템에서 높은 예측 가능성과 낮은 지연 시간을 목표로 [[StreamingTensorProcessor|소프트웨어 정의 스트리밍 텐서 처리 아키텍처]]를 전개한 회사/플랫폼이다.
 
-## Key Positioning
-- [[NVIDIA]] 입장에서 [[LPU]] 핵심 IP/팀 자산을 직접적 규제 부담을 줄이는 방식으로 접근해 추론 플랫폼 통합 속도를 높인 인수형 협력 체계의 중심으로 제시된다.
-- 단기적으로는 독립형 LPU의 대량 상용화 한계를 보완하고, NVIDIA의 GPU·네트워크·스토리지 전략과 결합해 장기적 플랫폼 경쟁력을 강화하는 데 기여한다.
+## 핵심 특징
+- [[StreamingTensorProcessor]] 기반 아키텍처를 통해 연산기를 단순화하고, 캐시 비의존 메모리 모델을 통해 성능 변동을 줄이는 방향을 채택했다.
+- [[GroqChip]] 계열은 기능 유닛 분할([[ICU]], [[MXM]], [[VXM]], [[SXM]], [[MEM]])과 소프트웨어 제어 인터페이스를 결합한다.
+- [[C2C]]/[[RealScale]] 기반 분산 동작에서 글로벌 동기화와 라우팅을 소프트웨어가 통제해 결정론적 성능을 유지하려고 한다.
 
-## Key Claims
-- Groq의 LPU 라인(특히 LP30 계열)은 높은 지연시간 개선을 제공하나 전체 처리량만으로는 GPU 단독 대비 제약이 있어, 결국 [[AFD]] 기반 분업에서 가치가 극대화된다.
-- 기존 독립형 구성 대비, NVIDIA 랙/인터커넥트 생태계와 결합될 때 기술 확장성과 공급 안정성이 동시에 개선되는 것으로 정리된다.
+## 주요 문헌 연결
+- [[hotchips34-groq-abts-final-pdf]] — 결정론 기반 TSP/ISA/스케줄링/신뢰성의 핵심 기술 상세.
+- [[groq-inference-tokenomics-speed-but-at-what-cost]] — 비용 효율/성능-지연 트레이드오프 맥락.
+- [[NVIDIA Groq 3 LPX 소개[](#introducing_nvidia_groq_3_lpx )]] — [[NVIDIA]] 생태계에서의 협업·경쟁 위치.
 
-## Connections
-- [[NVIDIA]] — 전략적 통합 파트너.
-- [[LPU]] / [[AFD]] / [[Speculative Decoding]] — Groq 계열 아키텍처가 실질적으로 연결되는 실행 지점.
-- [[LPX]] — 컴퓨트 트레이 형태로의 실제 시스템 내장 채널.
-- [[JensenHuang]] — 통합 방향성 발표·로드맵 레벨에서 확인되는 리더십 주체.
-
-## Contradictions
-- No direct contradiction identified; the source positions Groq chiefly as a practical integration layer rather than a standalone long-horizon replacement of [[NVIDIA]] inference stack.
+## 연결 페이지
+- [[StreamingTensorProcessor]]
+- [[GroqChip]]
+- [[DeterministicExecution]]
+- [[SoftwareDefinedHardware]]
+- [[AIInfrastructure]]
+- [[TCO]]

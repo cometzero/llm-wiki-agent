@@ -1,21 +1,25 @@
 ---
 title: "Tesla"
 type: entity
-tags: [company, manufacturing, AI, robotics]
-sources: [terafab-keynote-building-ai-chips-for-earth-space]
-last_updated: 2026-04-20
+tags:
+  - 반도체
+  - 제조
+  - 자급화
+  - 리스크
+sources:
+  - 견고한-반도체-시장-펀더멘털-실적-대비-저평가된-반도체-기업은-김장열-유니스토리자산운용-본부장-집중-오늘의-주식
+last_updated: 2026-05-03
 ---
 
-## Overview
-[[Tesla]]는 전기차 대량생산, 로봇 하드웨어([[Optimus]]), 에너지 및 대규모 공정 역량을 바탕으로 [[Terafab]] 협력에서 AI 칩 수요를 견인할 생산 파트너로 소개된다.
+## 개요
+[[Tesla]]는 자체 반도체 생산(테라 프로젝트) 계획을 통해 장기적 공급 경쟁 구도를 바꿀 수 있는 리스크 요인으로 제시된다.
 
-## Relevance in Sources
-- 대량 생산과 공정 속도를 이용해 AI 시대 칩 수요를 흡수.
-- [[Optimus]] 중심 엣지 추론 칩 수요의 핵심 수요처로 제시됨.
+## 핵심 요지
+- 200억~250억 달러 규모 투자 가설과 대만 인력 채용 시도는 반도체 설계·제조·패키징 내재화를 시사.
+- 실현의 핵심 제약은 인력 확보이며, 즉시 주가 반영은 보수적으로 보는 접근이 제시됨.
 
-## Connections
-- [[Terafab]]
-- [[SpaceX]]
-- [[xAI]]
-- [[Optimus]]
-- [[AIInfrastructure]]
+## 연결
+- [[AIDataCenterInfrastructure]]
+- [[DPU]]
+- [[SemiconductorSelfManufacturing]]
+- [[ValuationDerating]]
