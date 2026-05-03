@@ -1,17 +1,31 @@
 ---
-title: "DisaggregatedPrefill"
+title: "Disaggregated Prefill"
 type: concept
-tags: ["ai", "systems"]
-sources: ["inferencex-v2-nvidia-blackwell-vs-amd-vs-hopper-formerly-inferencemax"]
-last_updated: 2026-04-16
+tags:
+  - inference
+  - serving
+  - scheduling
+  - prefill
+  - decode
+sources:
+  - inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform
+last_updated: 2026-05-03
 ---
 
-## Summary
-prefill과 decode 단계를 분리해 다른 자원 풀에서 처리하는 추론 아키텍처. 인터랙티브 서비스의 효율을 높이는 전략으로 강조된다.
+## Definition
+[[DisaggregatedPrefill]] separates the prefill phase from decode phase responsibilities across hardware and scheduling layers. The NVIDIA source frames it as a practical necessity for agentic, long-context, high-concurrency inference.
 
-## Related Concepts and Entities
-- [[InferenceOptimization]]
-- [[AIInfrastructure]]
+## In This Source
+- Prefill: longer-context KV/cache construction is routed to high-throughput GPU path ([[VeraRubinPlatform]]/NVL72).
+- Decode: per-token step and FFN/MoE heavy functions are routed for low-latency execution via [[Groq3LPX]].
+- Loop design resembles AFD-like behavior where intermediate activations cross boundaries between engines.
+
+## Consequence
+- Prevents a single architecture from being forced to optimize competing regimes.
+- Reduces response jitter for interactive users while preserving aggregate output scale.
 
 ## Related Sources
-- [[inferencex-v2-nvidia-blackwell-vs-amd-vs-hopper-formerly-inferencemax]]
+- [[inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform]
+- [[HeterogeneousInference]]
+- [[InteractiveInference]]
+- [[NVIDIADynamo]]

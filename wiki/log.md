@@ -1,3 +1,197 @@
+## [2026-05-03] ingest | Raw corpus catch-up and graph refresh
+
+- Ingested raw markdown files that had no wiki source page, including Finance, NVIDIA/CUDA, NPU, Technology, Health, AI, and VLA study documents.
+- Rebuilt wiki/index.md from current wiki pages to restore page coverage.
+- Patched source_file paths for nested raw directories so future refresh checks can match raw documents correctly.
+
+## [2026-05-03] ingest | Week 01. VLA for AD 지형도와 taxonomy
+
+Added source. Key claims: VLA for autonomous driving should be read through the VA -> End-to-End VLA -> Dual-System VLA taxonomy; action grounding is the decisive criterion; closed-loop safety and long-tail robustness matter more than text-only metrics.
+
+## [2026-05-03] ingest | VLA for Autonomous Driving Weekly Study Template
+
+Added source. Key claims: this is a reusable weekly-study template for [[VisionLanguageActionForAutonomousDriving]] that standardizes translation, architecture analysis, [[ActionGrounding]], [[Evaluation]], critique, and follow-up questions with a [[MermaidDiagram]]-based visual map.
+
+## [2026-05-03] ingest | VLA for Autonomous Driving Weekly Study
+
+Added source. Key claims: the corpus defines a weekly VLA-for-autonomous-driving workflow, centers closed-loop and safety-oriented analysis, and treats language as a question of action grounding versus explanation-only utility.
+
+## [2026-05-03] ingest | Neural Network Quantization & Number Formats From First Principles
+
+Added source. Key claims: quantization is a system-level tradeoff among accuracy, range, precision, memory traffic, and hardware cost; low-bit formats like INT8/FP8/FP16/BF16 are practical but workload-sensitive; PTQ/QAT and alternative formats such as block and log systems exist to preserve accuracy while reducing cost.
+
+## [2026-05-03] ingest | 2512.02189
+
+Added source. Key claims: Blackwell B200's core innovations are TMEM, 5th-generation tensor cores, and hardware decompression; the source quantifies TMEM and DE behavior with PTX microbenchmarks; it also characterizes FP4/FP6 inference paths and their latency/throughput tradeoffs.
+
+## [2026-05-03] ingest | Part I - Intro to GPUs
+
+Added source. Key claims: GPU design is throughput-first rather than latency-first; deep learning's practical breakthrough depended on GPU-enabled compute and memory hierarchy; CUDA/SIMT/warp execution and shared memory behavior are central to performance; tensor cores and memory optimization are the main levers for modern GPU acceleration.
+
+## [2026-05-03] ingest | NVIDIA 인터뷰: Groq 3 LPX와 함께하는 Vera Rubin AI 심층 분석 | GTC 2026
+
+Added source. Key claims: Vera Rubin NVL72 uses 72 Rubin GPUs and 36 Vera CPUs with NVLink 6, Groq 3 LPX handles decode FFN work in a heterogeneous inference split, and the modular tray design reduces assembly time from 2 hours to 5 minutes while lowering failure points.
+
+## [2026-05-03] ingest | NVIDIA Tensor Core Evolution: From Volta To Blackwell
+
+Added source. Key claims: 텐서 코어는 Volta→Turing→Ampere→Hopper→Blackwell로 세대가 갈수록 코어 크기 확장과 메모리 경로 재설계, 데이터 이동 최적화, 저정밀도 정밀도(MXFP·BF16·FP8 등) 확대로 비용/성능 효율을 개선했다. Blackwell는 TMEM 및 tcgen05.mma/MMA.2SM, 구조적 희소성의 현실적 제약(정확도·커널 성숙도) 정리를 덧붙여 텐서 코어 진화를 실무 관점으로 정리함.
+
+## [2026-05-03] ingest | NVIDIA Hopper 아키텍처 심층 분석하기 - NVIDIA Technical Blog
+
+Added source. Key claims: [[H100|Hopper H100]]의 4세대 [[TensorCores]], [[FP8]], [[TransformerEngine]], [[DPX]], [[ThreadBlockCluster]], [[TensorMemoryAccelerator|TMA]], 4세대 [[NVLink]]/3세대 [[NVSwitch]], [[HBM3]], [[MIG]], [[ConfidentialComputing]] 중심 개편이 AI/HPC 성능과 추론 지연 제어, 보안·격리를 동시에 확장한다.
+
+## [2026-05-03] ingest | NVIDIA GTC 2026
+
+Added source. Key claims: [[JensenHuang]]이 제시한 AI 시대 핵심은 [[AIFactory]], [[AgenticSystems]], [[PhysicalAI]]이며, GTC 2026은 추론 중심의 AI 인프라를 토큰 단가·처리량·지연 KPI로 재정의했다. [[VeraRubin]]/[[Blackwell]] 진화와 [[Groq3LPX]]의 이기종 추론 분리, [[DSX]] 기반 디지털 트윈 운영, [[OpenClaw]] 중심 에이전트 OS 전략을 새로 정리했다. Source file linked as nvidia-gtc-keynote-2026.
+
+## [2026-05-03] ingest | NVIDIA Groq 3 LPX: Everything we know - StorageReview.com
+
+Added source. Key claims: [[NVIDIA]]의 [[Groq3LPX]]를 FFN 오프로딩 기반의 랙스케일 디코드 분리 아키텍처로 정리하고, [[LPU]]의 결정론적 1D 통신/RealScale C2C 설계, [[LPXRack]]의 트레이-랙-래크 확장 트래픽 구조, 그리고 [[FFN]]/[[MoE]] 중심 오픈소스 모델(예: [[DeepSeekR1]], [[KimiK2]], [[GLM5]])의 사이징 근거를 정리하여 기존 [[HeterogeneousInference]]/[[SpeculativeDecoding]] 문맥을 보강.
+
+## [2026-05-03] ingest | Modular: Matrix Multiplication on Blackwell: Part 2 - Using Hardware Features to Optimize Matmul
+
+Added source. Key claims: this source details Blackwell matrix multiplication optimization using [[TensorMemoryAccelerator]], [[Tcgen05MMA]], [[TMEM]], [[Swizzling]], and [[Stmatrix]], showing up to 58x improvement over naive kernels and explicit stages of memory/compute overlap and bank-conflict mitigation.
+
+## [2026-05-03] ingest | Introduction to Tensor Cores Programming
+
+Added source. Key claims: AI 연산의 비용이 높은 [[MatrixMultiplication]]에서 [[TensorCores]]의 FP16-기반 텐서 연산이 핵심 가속 경로이며, [[WMMA]]와 워프/타일 전략이 실전 성능을 좌우한다. 또한 소스는 성능 측정을 [[GFLOPS]] 중심으로 정량화하고, CUDA 코어 대비 텐서 코어의 장점이 구현 패턴에 따라 달라짐을 정리했다.
+
+## [2026-05-03] ingest | Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform
+
+Added source. Key claims: LPX and [[VeraRubinPlatform]] form a two-engine heterogeneous inference stack that splits prefill/attention vs FFN-MoE decode responsibilities; [[NVIDIA Groq 3 LPU]] enables deterministic, low-jitter per-token behavior via compiler-orchestrated execution; [[NVIDIADynamo]] operationalizes this split with latency-aware routing and intermediate activation movement; and the structure is positioned as essential for long-context, high-concurrency, agentic workloads while expanding premium operating points on Pareto frontier terms.
+
+## [2026-05-03] ingest | 코스피 1만 시나리오… 결국 ‘금리’에서 갈린다 | 나탈리 허 변호사 [신과대화]
+
+Added source. Key claims: 핵심은 [[금리]]의 방향성이 한국 시장의 [[코스피]] 상방/하방을 좌우할 수 있다는 점, 미국의 중동 지정학·AI 인프라 과열 리스크가 [[사모신용]]/차입 경로를 통해 시스템적 변동성을 키울 수 있다는 점, 그리고 투자자는 삼성·하이닉스 집중 노출 완화와 에너지·방산·AI 인프라 관련 분산 배분이 필요하다는 점.
+
+## [2026-05-03] ingest | Vibe coding in prod
+
+Added source. Key claims: [[VibeCoding]] should be operated as an [[AIPM]]-driven workflow, with changes constrained to [[LeafNode]] areas and reliability established through [[Verifiability]] and [[TestDrivenDevelopment]], rather than exhaustive human code review. The source also adds practical production guidance on risk control, testing-first collaboration with [[Claude]], and scaling practices under accelerating AI capability growth.
+
+## [2026-05-03] ingest | Inside NVIDIA Groq 3 LPX: The Low-Latency Inference Accelerator for the NVIDIA Vera Rubin Platform
+
+Added source. Key claims: The provided document is a missing-page notice and does not contain reusable technical content about [[NVIDIA]], [[Groq]], [[Groq 3 LPX]], or [[VeraRubin]]. Added warnings that prior LPX-specific claims from this slug should be treated as unverified until a real source document is ingested.
+
+## [2026-05-03] ingest | How Centralized Radar Processing on NVIDIA DRIVE Enables Safer, Smarter Level 4 Autonomy
+
+Added source. Key claims: NVIDIA DRIVE centralizes radar DSP from edge SoCs to centralized platform processing for higher fidelity [[RawADC]]-based sensing, reallocates workload to [[PVA]] while freeing [[GPU]] for cognition/planning, exposes mid-level outputs (e.g., [[RangeDopplerMap]]) for model training and multimodal fusion, and proposes a practical path for production readiness through supplier collaboration (예: [[ChengTech]]) and [[NVIDIA]] partner enablement.
+
+## [2026-05-03] ingest | HotChips34 - Groq - Abts - final
+
+Added source. Key claims: 1) [[Groq]]의 [[StreamingTensorProcessor|TSP]]는 소프트웨어 정의 하드웨어와 [[DeterministicExecution]]을 결합해 추론 예측성을 강화한다. 2) [[GroqChip]]은 기능 유닛 분할( [[ICU]], [[MEM]], [[VXM]], [[MXM]], [[SXM]] )과 정적/사이클 정밀 스케줄링으로 성능 편차를 줄인다. 3) [[SoftwareDefinedNetworking]] 기반 소프트웨어 스케줄링 네트워크와 [[C2C]], [[RealScale]], [[DragonflyTopology]]는 분산 TSP 동기화/부하분산의 핵심이다. 4) [[GEMM]], [[BERT]], [[Cholesky]], [[AllReduce]] 워크로드에서 배치-1 체감 지연을 중심으로 성능 특성이 강조되며, 시스템 경제성 관점으로 확장된다.
+
+## [2026-05-03] ingest | Groq Inference Tokenomics: Speed, But At What Cost?
+
+Added source. Key claims: [[Groq]] shows strong single-sequence and latency advantages, but [[NVIDIA]] comparison under full [[TCO]] framing can favor throughput-oriented GPU stacks under high-concurrency/batch conditions; deployment economics, batch size, concurrency, and pricing/margin assumptions are central to true inference viability.
+
+## [2026-05-03] ingest | Deconstructing Nvidia’s Vera Rubin — The Successor To Blackwell That’s 10x More Efficient
+
+Added source. Key claims: [[VeraRubin]]은 [[Blackwell]] 대비 성능당 전력 효율을 크게 높인 랙 스케일 시스템이며, [[NVLink]]/[[HBM4]], 액체 냉각, 대규모 공급망 정합성 및 조달 구조가 핵심이다. 단가 상승에도 토큰당 비용 절감이 가능하다는 총소유비용 관점을 제시했으며, 향후 [[VeraRubinUltra]]와 [[AMD]] [[Helios]] 경쟁 구도가 병행됨.
+
+## [2026-05-03] ingest | CUDA Refresher: The CUDA Programming Model | NVIDIA Technical Blog
+
+Added source. Key claims: CUDA programming model defines explicit [[Host]]/[[Device]] memory split, asynchronous [[Kernel Launch]], thread/block grid hierarchy for GPU parallelism, and a practical memory hierarchy model ([[Register]], [[Shared Memory]], [[L1 Cache]], [[L2 Cache]], [[Global Memory]]) while [[Compute Capability]] and device attributes (via [[deviceQuery]]) gate feature availability and optimization strategy.
+
+## [2026-05-03] ingest | An Introduction to Speculative Decoding for Reducing Latency in AI Inference | NVIDIA Technical Blog
+
+Added source. Key claims: [[SpeculativeDecoding]]는 드래프트-타겟 병렬 검증 구조를 통해 표준 자기회귀 디코딩의 고정 순차 병목을 완화한다. [[EAGLE3]]는 피처 기반 트리 드래프팅 헤드를 사용하고, [[DeepSeekMTP]]는 다중 헤드 다중 토큰 예측으로 드래프팅 예측을 수행한다. 실무는 [[TensorRTModelOptimizer]] 기반으로 적용 흐름이 제시되어 있으며, 수락율이 높을수록 지연 시간 절감이 커진다.
+
+## [2026-05-03] ingest | TMEM vs Registers: How NVIDIA and AMD Feed Tensor Compute | LinkedIn
+
+Added source. Key claims: (1) 텐서 코어 병목은 데이터 공급이며, [[NVIDIA]]는 [[TMEM]] 기반 분리형으로 비동기 텐서 파이프라인을 강화했다. (2) [[AMD]]는 [[VGPR]]/[[AGPR]] 대형 레지스터 파일로 유연성을 확보했지만 소프트웨어 복잡성이 크게 증가한다. (3) 아키텍처별 메모리 레이아웃·스케줄링 차이 때문에 최적화 패턴은 플랫폼 간 이식성이 낮다.
+
+## [2026-05-03] ingest | NPU v0.1 Software Architecture
+
+Added source. Key claims: Immediate launch 기반 command queue-less stack을 채택한 [[NPUv01]] v0.1 소프트웨어 설계, `riscv-ime-cpu` compiler plugin과 `nputile` external [[HAL]] driver 분리, compile-time SPM/DMA/barrier 계약 고정, 그리고 embedded ELF와 fault/trace 관측성 강화.
+
+## [2026-05-03] ingest | NPU v0.1 PRD
+
+Added source. Key claims: v0.1 freezes a queue-free, host immediate launch baseline for [[NPUv01]] with 2-hart tile, shared scratchpad, 3-channel DMA, and IREE/MLIR AOT ELFs; defines explicit product gates PG-01 to PG-06 plus P0-P1 product requirements; excludes command queue, preemption, virtualization, and sparse/compression in scope; identifies SPM bank conflict, IME semantic churn, and softmax/LN latency as principal risks with mitigations.
+
+## [2026-05-03] ingest | NPU v0.1 Implementation Design
+
+Added source. Key claims: define a single-tile baseline-first NPU bring-up plan for [[NPUv01]] with fixed scope (RTL, compiler, runtime, DV), gate execution by phase-wise regression green status, and prioritize MMIO/driver interfaces and immediate launch control over opcode freeze and late-stage preemption/virtualization work.
+
+## [2026-05-03] ingest | NPU v0.1 ISA Specification
+
+Added source. Key claims: [[NPUv01]] v0.1 now defines a provisional but explicit kernel-visible [[XNPUV01]] ISA, CSR/MMIO semantics, barrier/event synchronization, and AOT kernel ABI contract (`nputile_kernel_params_t`) for RV64GC+[[RVV]] 기반 tile execution. Matrix semantics are packed vector register-group based without architected matrix RF, DMA is MMIO-programmed (non-instruction), and preemption/virtualization/security hardening are deferred to v0.2 scope.
+
+## [2026-05-03] ingest | NPU v0.1 Hardware Architecture
+
+Added source. Key claims: [[NPUv01]]는 global command processor 없이 host doorbell launch 기반의 2-hart tile baseline으로 설계되며, [[RV64]] + [[RVV]] + [[IME]] 조합과 [[SharedScratchpadMemory]], 3-channel [[DMA]], 8-slot [[BarrierSynchronization]]를 통해 deterministic edge execution을 우선한다. 또한 [[IREE]]/[[MLIR]] 기반 AOT ELF kernel, 소프트웨어 가시성 기반 멀티타일 partitioning, 그리고 [[DeterministicExecution]] 중심의 DV/bring-up 관측 체계를 정의한다.
+
+## [2026-05-03] ingest | 알레르기 비염의 치료법은 하나뿐입니다 - 권혁수 교수 (서울아산병원 알레르기내과)
+
+Added source. Key claims: 본문이 누락되어 구체 치료 내용은 반영하지 못하며, 출처 메타정보(저자: [[권혁수]], 소속: [[서울아산병원]] [[알레르기내과]], 주제: [[알레르기비염]])를 중심으로 정리되었고, 해당 개념/엔티티 페이지를 신규 등록함.
+
+## [2026-05-03] ingest | 환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)
+
+Added source. Key claims: 고환율 구간에서 배당·환차익·환율 타이밍을 결합해 달러 자산을 키우는 전략을 제시하고, 주식 거래 과정 환차익 과세 규칙을 강조하였다. 또한 2026년 [[SCHD]]의 리밸런싱(편입 25개, 제외 22개), 섹터 이동(에너지 축소, 기술 확대), 신규 편입 종목의 우량성(예: [[P&G]], [[유나이티드헬스그룹]], [[퀄컴]])을 정리해 장기 분산투자 관점의 실전 운영 규칙을 보완했다.
+
+## [2026-05-03] ingest | 투자를 망치는 진짜 원인, 틀린 판단보다 '결정을 미루는 것' | 박병창 교보증권 자산관리전략부 이사 [여의도 인사이트]
+
+Added source. Key claims: 투자자는 틀린 판단보다 결정 지연이 더 크고 파괴적인 손실을 만든다; 단기 하락에서 [[결정지연]], [[매몰비용]], [[손실회피]]가 개입해 관망이 손실을 키운다. [[삼성전자]], [[SKHynix]], [[환율]], [[신용융자]] 변수를 통해 시장 심리-유동성-레버리지 상호작용을 분석하고, 즉시 실행 가능한 투자 원칙(규칙 기반 대응, 분할 운용, 레버리지 제한)을 제시한다.
+
+## [2026-05-03] ingest | 코스피 1만 시나리오… 결국 ‘금리’에서 갈린다 | 나탈리 허 변호사 [신과대화]
+
+Added source. Key claims: 핵심 변수가 [[금리]]의 방향 전환이며, 코스피 1만 시나리오의 실현성은 [[AI 인프라]] 확대와 [[미국]] 지정학·규제 리스크를 함께 반영한 금리/신용/유동성 경로에 의해 좌우된다는 점, 그리고 [[사모신용]], [[AI워싱]], [[에너지 인프라]] 연동 리스크가 한국형 투자 실행 규칙(분할 진입·현금율 유지·산업 다변화)을 보강한다.
+
+## [2026-05-03] ingest | 제2의 금융위기 온다? 사모대출 위기의 실체 - 이영주 수석연구위원 (하나증권)
+
+Added source. Key claims: [[사모대출]] 시장은 [[BDC]] 유동성 구조와 [[AI 데이터센터]] 인프라 연결에서 구조적 전환기에 진입했다, [[블루아울]] [[OBDC2]] 사태는 환매 미스매치의 연쇄 신호다, [[PIK]]와 [[NII]] 악화는 배당 지속성 붕괴의 선행 신호, [[오프밸런스 구조]]와 [[섀도우뱅킹]] 특성으로 금융 시스템 전이 리스크가 높아질 수 있다.
+
+## [2026-05-03] ingest | 전쟁, 유가, 금리, 그리고 삼성전자와 하이닉스의 매트릭스는? | 장우진 작가 [긴급인터뷰]
+
+Added source. Key claims: [[유가]] 변동성 둔화에도 지정학·신용·금리 경로의 재확대 가능성, [[호르무즈해협]] 봉쇄 및 사모신용 경로가 [[삼성전자]]·[[SKHynix]]의 변동성에 미치는 영향, [[양적긴축(QT)]], [[금리]] 정책 경로가 단기 밸류에이션 조정과 하반기 유동성 리스크를 동반함, 그리고 주도주 운용의 보수적 비중조절(분할 매수/현금 확보/매도 연습)을 제시함.
+
+## [2026-05-03] ingest | ‘원유’가 아니라 ‘달러 패권’이다… 호르무즈의 진짜 의미 | 중소기업중앙회 성상현 부부장 [신과대화]
+
+Added source. Key claims: 중동 전쟁의 본질을 달러패권·재정지배력 유지와 공급망 재편으로 해석했고, [[호르무즈해협]]·[[IMEC]]를 전략 허브로 제시했다. [[재정지배력]]·[[유동성사이클]]·[[금융억압]]·[[AI혁신]]이 투자 판단을 연결하는 공통 축으로 정리됨.
+
+## [2026-05-03] ingest | 실적 5배에도 주가 2배, 반도체 상승 여력 남았나? | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]
+
+Added source. Key claims: [[OpenAI]] 토큰 처리량 2.5배 증가와 [[엔트로픽]] 사용자 증가에도 [[삼성전자]]·[[SKHynix]] 주가 반응이 실적 대비 제한적이어서 반도체 밸류의 추가 반영 여력이 존재함을 제시한다. AI 인프라 병목인 [[쇼티지]](연산 자원)와 기업별 리포트(두산에너빌리티, 현대건설, [[GST]], 낸드) 분석을 통해 기간 검증과 분할·분산 기반 투자 원칙을 강조한다.
+
+## [2026-05-03] ingest | 삼전닉스 동반 하락 부른 구글 '터보퀀트'의 진짜 의미ㅣ김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]
+
+Added source. Key claims: 단기적으로 [[TurboQuant]]는 [[삼성전자]]·[[SKHynix]] 주가에 부정적 헤드라인을 유발할 수 있으나, 장기적으로 [[재번스의역설]] 하에서 AI 비용 하락과 [[ASMR]] 확산이 메모리 수요 재가속을 유도할 수 있다. 투자 해석은 단일 시그널이 아닌 기술 채택 시점, 고객 재고, 가격협상(가격 신호), CAPEX/가동률을 함께 본다.
+
+## [2026-05-03] ingest | 메모리Q와 토큰 올해 말부터 기울기 폭발?! | 김장열 유니스토리자산운용 본부장 [글로벌 인터뷰]
+
+Added source. Key claims: AI 토큰 수 증가와 메모리 수요는 즉시 선형 연동되지 않으며, 효율화로 일시 둔화되는 수요가 장기적으로는 [[재번스의역설]]을 통해 다시 가속될 수 있다. 반도체 업황의 핵심은 AI 서비스 성장 + 빅테크 [[CAPEX]] 실행 + 전력/금리/펀딩 조건의 동시 검증이며, 투자에서는 속도 조절과 수익성의 기간성 확인이 필요하다.
+
+## [2026-05-03] ingest | 마이크론 역대급 저평가...메모리 밸류 바닥 국면 진입?ㅣ김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]
+
+Added source. Key claims: [[MicronTechnology]]의 역대급 낮은 PER(약 5~6배)이 한국 메모리 대장주 밸류 재편의 하한 기준이 될 수 있다는 비교평가 프레임을 제시하고, [[삼성전자]], [[SKHynix]], [[삼성전기]], [[VM]], [[파마리서치]] 리포트 신호 및 유가/쇼티지/휴머노이드·희토류 등의 거시 변수로 투자 타이밍을 다층 판단해야 한다는 점을 정리.
+
+## [2026-05-03] ingest | 구글 TurboQuant AI 메모리 6배 줄여도 된다!  메모리 압축 기술의 진짜 의미   | Hot Warm Cold KV Cache 의 차이 | 메모리 슈퍼사이클
+
+Added source. Key claims: [[Google]]의 [[TurboQuant]]는 핫 [[KVCache]] 압축으로 FP16 대비 최대 6배 메모리 절감과 속도 개선을 제시하며, [[NVIDIA]]의 [[KVTC]]는 콜드 [[KVCache]] 처리로 최대 약 20배 절감이 가능하다는 상호 보완적 메모리 계층 전략을 제시한다. 단기 효율성 개선이 장기적으로 긴 문맥/멀티턴·동시성 증가로 이어질 수 있다는 점을 함께 기록한다.
+
+## [2026-05-03] ingest | 견고한 반도체 시장 펀더멘털...실적 대비 저평가된 반도체 기업은? | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]
+
+Added source. Key claims: 1) 실적 전망이 개선된 [[삼성전자]], [[SKHynix]], [[MicronTechnology]]가 디레이팅 구간에 있을 수 있다. 2) AI 아키텍처 확대(특히 [[VeraRubinPlatform]]/NVL144)로 [[KoreaCircuit]], [[SoCModule]], [[FCBGA]], [[NVSwitchChip]], [[MidPlane]] 연계 패키징 수요가 성장 축이 된다. 3) 계약 부채와 AI 데이터센터 부품(DPU/NetworkCard/광모듈) 이해가 반도체 투자 판단의 보조 지표로 중요하다.
+
+## [2026-05-03] ingest | Vibe coding in prod
+
+Added source. Key claims: 바이브 코딩을 단순 코드 생성이 아니라 결과 기반 검증 운영으로 재정의하고, AI 협업의 안전한 운영을 위해 [[AIPM]], [[LeafNode]], [[Verifiability]], [[TestDrivenDevelopment]], [[ConfidentialBoundary]], [[SessionCompaction]]을 결합해야 한다고 정리. [[Anthropic]], [[Claude]], [[ClaudeCode]] 적용 맥락을 통해 프로덕션 확장 시 리스크 통제와 신뢰 확보 절차를 강조함.
+
+## [2026-05-03] ingest | Vibe coding in prod
+
+Added source. Key claims: [[VibeCoding]]은 AI 생성 코드를 전량 검토하기보다 [[AIPM]], [[LeafNode]], [[Verifiability]], [[TestDrivenDevelopment]]를 결합해 제품 품질을 보증하는 방식이다. 또한 [[Anthropic]]의 [[ClaudeCode]] 운영 사례를 통해 보안 민감 구간에서는 [[ConfidentialBoundary]]로 범위를 제한하고, [[SessionCompaction]]으로 장기 작업 생산성을 유지해야 한다.
+
+## [2026-05-03] ingest | 구글 TurboQuant AI 메모리 6배 줄여도 된다! 메모리 압축 기술의 진짜 의미 | Hot Warm Cold KV Cache 의 차이 | 메모리 슈퍼사이클
+
+Added source. Key claims: [[TurboQuant]]는 핫 KV 캐시의 고밀도 압축을 통해 단기 메모리 효율과 속도 개선을 제시하고, [[NVIDIA]]의 [[KVTC]]는 콜드 KV 중심 압축으로 보완되며, 단기 효율성 증가가 장기적으로 메모리 수요 절대 감소로 연결되지 않고 더 긴 컨텍스트/동시성 확대로 이어질 수 있음을 정리한다.
+
+## [2026-05-03] ingest | 견고한 반도체 시장 펀더멘털...실적 대비 저평가된 반도체 기업은? | 김장열 유니스토리자산운용 본부장 [집중 오늘의 주식]
+
+Added source. Key claims: AI 반도체 실적이 상향되는 구간에서 대형반도체주는 저평가 디레이팅 현상이 존재할 수 있으며, 밸류에이션 재평가의 핵심 변수는 수요 회복 지연의 해소와 고다층 기판·패키징 수요의 구조적 증가. 신규 엔티티([[KoreaCircuit]], [[MicronTechnology]], [[DLC]], [[UnistoryAssetManagement]], [[Tesla]])와 신규 개념([[SemiconductorValuation]], [[SoCModule]], [[FCBGA]], [[NVSwitchChip]], [[MidPlane]], [[ContractDebt]], [[AIDataCenterInfrastructure]])를 생성/갱신해 [[VeraRubinPlatform]]/AI 데이터센터 수요와 연결했다.
+
+## [2026-05-03] ingest | Vibe coding in prod
+
+Added source. Key claims: source argues that production-safe [[VibeCoding]] depends on humans acting as [[AIPM]] for AI, focusing on [[LeafNode]]-scoped changes and measurable [[TestDrivenDevelopment]] gates rather than line-by-line review. It adds operational guidance for security-sensitive systems, compounding speed with verification, and a view of AI workflow optimization through context management and iterative prompts.
+
 ## [2026-05-03] ingest | 2026-05-03 AI/ML Learning Day 11
 
 Added source. Key claims: Day 11 covers [[SupportVectorMachine]] with [[MaximumMargin]] and [[KernelTrick]], [[KNN]] with nearest-neighbor inference under chosen [[DistanceMetric]], and [[DecisionTree]] split quality via [[InformationGain]], [[Entropy]], and [[GiniImpurity]]. It adds key connections to [[RAG]], [[Embedding]] retrieval, and tree ensembles ([[RandomForest]], [[XGBoost]], [[LightGBM]], [[CatBoost]]), and flags no direct contradictions with existing pages.
@@ -285,3 +479,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-03] graph | Knowledge graph rebuilt
 
 562 nodes, 2781 edges (2781 extracted, 0 inferred).
+
+## [2026-05-03] graph | Knowledge graph rebuilt
+
+1513 nodes, 5085 edges (5085 extracted, 0 inferred).

@@ -1,23 +1,29 @@
 ---
 title: "Jensen Huang"
 type: entity
-tags: [person, AI, leadership]
-last_updated: 2026-04-21
+tags:
+  - NVIDIA
+  - CEO
+  - AIInfrastructure
 sources:
-  - gtc-2026-the-inference-kingdom-expands
+  - nvidia-gtc-keynote-2026
+last_updated: 2026-05-03
 ---
 
 ## Summary
-[[JensenHuang]]는 GTC 2026 맥락에서 CPO 로드맵과 추론 인프라 진화를 설명한 중심 인물로 등장하며, 구리-광학 혼합 인터커넥트와 계층형 오버레이 설계를 지향하는 전략 방향을 제시한다.
+[[JensenHuang]]은 [[NVIDIA]]의 창립자이자 전략 수립 핵심 인물로, GTC 2026 키노트에서 AI 시대의 3대 동력인 [[AIFactory]], [[AgenticSystems]], [[PhysicalAI]]를 제시한 발표자로 등장한다.
 
-## Key Claims
-- [[CPO]] 로드맵의 구체적 세대 적용(NVIDIA의 Rubin/Oberon/Feynman 계열)에서 현장 질의 응답을 통해 기술 방향의 현실적 전개 속도와 우선순위를 보완적으로 전달한다.
-- 추론 인프라의 병목 해결이 단일 하드웨어 성능보다 단계 분리와 네트워크/스토리지 설계의 결합으로 진화한다는 관점을 강화한다.
+## Key Facts
+- [[NVIDIA]]의 AI 플랫폼 확장을 플랫폼 전략(예: [[CUDA]], [[CUDA X]], [[Blackwell]], [[VeraRubin]])과 기업 채택 확대의 중심 프레임으로 정리했다.
+- 컴퓨팅은 더 이상 칩만의 문제를 넘어 토큰 처리량과 지연 예측성이라는 운영 지표로 관리되는 것으로 framing을 전환했다.
+- [[OpenClaw]]를 에이전트 운영 체제 관점으로 제시한 흐름에서, AI 도구 오케스트레이션의 상업적 표준화를 암시했다.
 
-## Connections
-- [[NVIDIA]] — 기업 및 기술 전략 주체.
-- [[CPO]], [[Rubin]], [[Feynman]], [[Oberon]], [[Kyber]] — 발표 맥락의 핵심 아키텍처군.
-- [[LMInference|LLM Inference]] 및 [[InferenceOptimization]] — 전략 산출물의 대상 도메인.
+## Links
+- [[NVIDIA]]
+- [[AIFactory]]
+- [[GPU]]
+- [[OpenClaw]]
+- [[AgenticSystems]]
 
-## Notes
-- 본 소스에서는 [[NVIDIA]] 공장/라우팅 전략보다 제품군 구성원 역할 분담, 인프라 지연/비용 트레이드오프를 중심으로 정책 언급이 두드러진다.
+## Open Questions
+- [[NVIDIA]]의 공개 로드맵이 실제 공개 가능한 수치와 타임라인에서 어떻게 수렴되는지 지속 추적이 필요.

@@ -1,24 +1,25 @@
 ---
-title: "Andrej Karpathy"
+title: Andrej Karpathy
 type: entity
-tags: [researcher, llm]
-last_updated: 2026-04-21
-sources: [andrej-karpathy-on-code-agents-autoresearch-and-the-loopy-era-of-ai]
+tags:
+  - AI
+  - coding
+  - engineering-culture
+last_updated: 2026-05-03
+sources:
+  - vibe-coding-in-prod
 ---
 
-## Summary
-[[AndrejKarpathy]]는 최근 인터뷰에서 [[LLM]] 기반 [[LLMAgents]] 시대를 ‘인간 지시 능력의 확장’ 관점으로 정리한 인물이다. 그는 에이전트 병렬 처리, [[AutoResearch]], 그리고 제품 인터페이스를 에이전트 중심으로 바꾸는 방향을 강조한다.
+## Role
+AI 연구자이자 교육자 출신의 기술 사상가로, [[VibeCoding]]의 개념적 출발점 중 하나로 인용된다. 생산성 중심의 AI 코딩에서 몰입 상태, 추세 수용, 구현 초월형 관리의 사고방식을 제시했다.
 
-## Key Themes
-- 에이전트 오케스트레이션에서 직접 코딩보다 작업 분할·지시 능력이 핵심 역량이 됨.
-- [[OpenClaw]]와 같은 지속형 클로를 통한 자율 루프 설계.
-- 연구 조직 자체를 코드처럼 최적화하는 메타 설계.
-- 모델의 완전범용 지양, 과업 특화인 [[Speciation]]의 필요성.
+## Key Claims
+- AI 코딩은 단순 생성 지원을 넘어, 인간이 결과 목표에 몰입하는 운영 방식이 가능하도록 만든다.
+- 생산성의 본질은 생성 속도보다, 검증 가능한 결과 전달 체계다.
 
-## Connections
-- [[AutoResearch]]
-- [[LLMAgents]]
-- [[OpenClaw]]
-- [[Speciation]]
-- [[agent-first software]]
-- [[오픈소스AI]]
+## Links
+- Source linkage: [[Vibe coding in prod]]
+- Related concepts: [[VibeCoding]], [[Verifiability]], [[LeafNode]], [[TestDrivenDevelopment]]
+
+## Notes
+이 인물 정보는 본 소스에서 제시된 [[VibeCoding]] 정의의 철학적 배경을 반영한다.

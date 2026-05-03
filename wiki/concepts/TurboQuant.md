@@ -1,24 +1,31 @@
 ---
 title: "TurboQuant"
 type: concept
-tags: [llm, model-compression, memory, ai-inference]
-last_updated: 2026-04-20
-sources: [메모리-현물가-하락-사이클-꺾인-게-아닌-과열-해소-김장열-유니스토리자산운용-본부장-집중-오늘의-주식]
+tags:
+  - KVCache
+  - 인퍼런스 최적화
+  - 메모리 압축
+  - AI 인프라
+last_updated: 2026-05-03
+sources:
+  - 삼전닉스-동반-하락-부른-구글-터보퀀트-의-진짜-의미-김장열-유니스토리자산운용-본부장-집중-오늘의-주식
+  - 구글-turboquant-ai-메모리-6배-줄여도-된다-메모리-압축-기술의-진짜-의미-hot-warm-cold-kv-cache-의-차이-메모리-슈퍼사이클
 ---
 
-## Definition
-[[TurboQuant]]은 데이터 표현을 축약해 메모리 사용량을 낮추는 접근으로 해석되는 양자화 계열의 AI 효율화 기법이다.
+## Summary
+[[TurboQuant]]는 [[Google]]가 제시한 [[KVCache]] 압축/양자화 기반 추론 최적화 기술이다. 핵심은 현재 사용 중인 ‘핫’ 메모리 상태를 더 압축해 메모리 사용량을 낮추고 처리 속도를 높이는 방향이다.
 
-## Key Implications
-- 비용 효율성 개선을 통해 동일 모델 파이프라인에서 즉시 지출을 낮출 수 있다.
-- 하지만 압축-복원 과정에서의 계산 비용, 병목 이동(특히 [[GPU]] 및 통신 경로), 품질 보전 이슈가 동반될 수 있다.
+단기적으로는 비용·지연 측면 이득을 제공하는 반면, 비용 축소가 장기 AI 수요 확대를 유발할 수 있다는 점에서 메모리 수요 동학을 시간축으로 나누는 핵심 지표가 된다.
 
-## Relation to Wiki
-이 개념은 [[MemorySupercycle]]을 해석할 때 수요 둔화 신호처럼 보이는 구간과 장기 수요 지속 신호를 동시에 설명하는 역할을 한다.
+## Core Mechanism
+- KVCache의 활성 데이터(Hot)에서 과도한 정밀도를 줄이되 품질에 영향이 적은 연산 방식 채택.
+- 비트폭 축소, 정렬·보정류 기법 결합으로 연산량 대비 메모리 점유를 줄이는 구조.
+- 기존 [[RAG]]나 저장 인프라와 독립적이나, 추론 비용을 낮추어 상위 AI 서비스 확장성을 높이는 계층적 효과를 만든다.
 
-## Connected Pages
-- [[DRAM]]
-- [[HBM]]
-- [[GPU]]
-- [[OnDeviceAI]]
-- [[MemorySupercycle]]
+## Key Effects on Strategy
+- 단기: 추론 단가, 동시성 비용, 보고되는 이익률 기대치에 하방 압력 완충 또는 조정 가능성.
+- 장기: AI 채택 확대 및 서비스 유지시간 증가로 전체 워크로드가 확대되어 메모리 수요가 증가할 수 있음.
+- 경쟁축: [[NVIDIA]]의 [[KVTC]]와 함께 쓰면 Hot/Cold 처리 체인의 상보성으로 해석된다.
+
+## Related Concepts
+- [[KVCache]], [[Attention]], [[GPU]], [[HBM]], [[재번스의역설]], [[ASMR]]

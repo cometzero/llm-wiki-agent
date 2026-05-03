@@ -1,27 +1,28 @@
 ---
-title: "LPU (Language Processing Unit)"
+title: "LPU"
 type: concept
-tags: [inference-hardware, nvidia, architecture]
-last_updated: 2026-04-21
+tags:
+  - Accelerator
+  - Inference
+  - GPU
+  - LLM
+  - DeterministicExecution
 sources:
-  - gtc-2026-the-inference-kingdom-expands
+  - nvidia-groq-3-lpx-everything-we-know-storagereview-com
+last_updated: 2026-05-03
 ---
 
 ## Definition
-[[LPU]]는 대규모 토큰 디코드에서 저지연 처리를 목표로, 연산을 단일 목적 slice(예: VXM/MEM/SXM/MXM)로 분리한 추론 가속 코어군을 뜻한다.
+[[LPU]](Language Processing Unit)는 LLM 추론에서 특정 연산군(특히 FFN/MoE 경로)에서 높은 예측 가능성과 고대역폭 메모리 접근을 제공하도록 설계된 전용 가속기 개념이다. 본 문맥에서 [[NVIDIA]] [[Groq3LPX]]의 핵심 실행 엔진으로 사용된다.
 
-## Source Key Traits
-- 단일 계층 SRAM 기반 구조로 예측 가능성(결정론성)과 컴파일러 스케줄링 친화성이 높아짐.
-- 메모리 대역폭 대비 계산 분산에서 디코드 병목 완화에 유리.
-- 처리량 한계(주로 SRAM 및 DRAM 오프로딩 제약) 때문에 GPU와의 결합이 실제 운영에서 필수적.
+## Claims from Source
+- 320-byte(INT8)/640-byte(FP16) 기반 고정 벡터 단위와 기능 유닛 구성을 통해 컴파일러가 위치·시간을 결정적으로 관리할 수 있다.
+- 컴파일러 중심의 스케줄링을 통해 동적 경합(캐시 충돌·가변 큐 관리)을 제거해 실행 변동을 줄인다.
+- 온칩 SRAM 기반 흐름에서 FFN 가중치/활성화 이동을 반복적으로 처리하기 유리하며, 대형 모델의 디코드 병목 완화에 적합하다는 주장.
+- [[DeterministicExecution]]의 핵심 도구로, 추론 지연의 예측성과 tail 안정화에 기여한다.
 
-## Variants (observed)
-- LP30: 14세대 기반의 본격 통합 경로로, 온칩 SRAM 비중 강화.
-- LP35: 소프트웨어-출시 시간 단축형 마이너 업데이트 성격.
-- LP40: TSMC N3P 및 NVLink 통합, 하이브리드 본딩 DRAM로 메모리 확장성 강화 계획.
-
-## Connections
-- [[AFD]], [[CPO]], [[LPX]], [[Speculative Decoding]], [[Groq]], [[NVIDIA]]
-
-## Contradictions
-- No explicit contradiction identified.
+## Relations
+- [[Groq3LPX]] uses LPU as decode-side accelerator.
+- [[FFN]]은 LPX-LPU 오프로딩의 핵심 대상이다.
+- [[NVIDIADynamo]]가 LPU와 GPU 간 활성화 토큰 이동을 조정한다.
+- [[DecodeDisaggregation]]에서 LPU는 FFN/MoE 단계에 대응한다.

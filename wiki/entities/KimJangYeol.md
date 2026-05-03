@@ -1,24 +1,28 @@
 ---
 title: "김장열"
 type: entity
-tags: [finance, equity-research, memory, korea]
-last_updated: 2026-04-20
-sources: [메모리-현물가-하락-사이클-꺾인-게-아닌-과열-해소-김장열-유니스토리자산운용-본부장-집중-오늘의-주식]
+tags:
+  - 금융
+type
+energetics: 투자자
+sources:
+  - 견고한-반도체-시장-펀더멘털-실적-대비-저평가된-반도체-기업은-김장열-유니스토리자산운용-본부장-집중-오늘의-주식
+last_updated: 2026-05-03
 ---
 
-## Summary
-[[김장열]]은 [[UNistoryAssetManagement]]의 본부장으로, 메모리 반도체 가격 사이클을 사이클 전환보다 과열 해소 관점에서 해석하는 투자 해설을 제시한다.
+## 개요
+[[김장열]]은 [[UnistoryAssetManagement]] 소속으로 반도체와 AI 인프라 관련 기업을 중심으로 투자 의견을 제시한다. 본 자료에서 그는 실적 성장 기대가 이미 반영되지 않은 종목에서 밸류에이션 갭을 찾아내는 관점을 지속적으로 강조한다.
 
-## Key Assertions
-- [[DRAM]] 현물가 조정은 유통·수요 구조의 정합화로 해석해야 한다.
-- [[LongTermAgreement]] 확대와 가격 바닥(Floor Price) 구조가 실적 안정성의 핵심 완충장치라는 점을 강조한다.
-- [[TurboQuant]] 같은 효율화 기술은 단기 수요 해석을 혼탁하게 만들 수 있으므로, 자산 배분에서 병목 이동 효과를 함께 봐야 한다.
-- 단기 가격 급락은 시장 전체의 하락 국면 진입 여부와 별개로, 장기적으로는 AI 인프라 수요의 누적 성장성은 유지될 수 있다고 본다.
+## 핵심 주장
+- 실적 전망 상향 대비 주가 반등이 충분치 않은 대형 반도체 종목의 디레이팅을 중점적으로 다룬다.
+- AI 데이터센터 구조 변화에 따른 패키징/기판 수요를 투자 판단의 추가 축으로 제시한다.
+- 개별 종목 선택 시 밸류에이션 지표(PER, PBR), 수주/계약 신호, 고객사 수요를 함께 본다.
+- Tesla 반도체 자급화 이슈는 리스크로 언급하되, 즉시 과대 반영하기보다 추적이 필요하다고 본다.
 
-## Connections
-- [[DRAM]]
-- [[LongTermAgreement]]
-- [[MemorySupercycle]]
-- [[UNistoryAssetManagement]]
-- [[OnDeviceAI]]
-- [[TurboQuant]]
+## 연결
+- [[삼성전자]], [[SKHynix]], [[MicronTechnology]]: 실적 대비 저평가 프레임의 핵심 비교군.
+- [[KoreaCircuit]] 및 [[SoCModule]]/[[FCBGA]]: 성장 모멘텀 후보군으로 자주 언급.
+- [[DLC]], [[LNF]], [[LGEnergySolution]], [[SamsungSDI]]: 보조 섹터로 분석.
+
+## 비고
+투자 성향은 실적 가시성, 밸류 에이치, 공급망 구조 변화를 동시에 보는 '구조적 밸류에이션' 관점으로 요약할 수 있다.

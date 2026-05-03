@@ -1,20 +1,30 @@
 ---
-title: "LeafNode"
+title: "Leaf Node"
 type: concept
-tags: [architecture, engineering]
-sources: [vibe-coding-in-prod]
-last_updated: 2026-04-19
+tags:
+  - 코드베이스 구조
+  - 리스크 관리
+  - 변경 통제
+last_updated: 2026-05-03
 ---
 
-## Definition
-[[LeafNode]]는 의존성이 적거나 하위 단위 기능으로, 변경이 다른 핵심 경로에 즉시 확산되지 않는 코드 지점이다. 해당 소스에서는 AI 코딩 적용 시 기술 부채를 통제하기 위한 우선 변경 단위로 제안된다.
+## Summary
+[[LeafNode]]는 코드베이스에서 더 이상 다른 모듈에 의존하지 않거나 의존 영향이 낮은 종단 지점 기능 단위를 말한다. 프로덕션 AI 협업에서 변경을 [[LeafNode]]로 한정하면 핵심 아키텍처로의 피해 확산을 줄일 수 있다.
 
-## Why it matters
-- 핵심 아키텍처를 건드리지 않고도 기능 개선을 진행할 수 있어 배포 리스크가 낮다.
-- 변경 영향도를 낮춰 생산성/속도와 안정성을 동시에 확보할 수 있다.
-- 리프 노드 중심 전략은 [[VibeCoding]] 운영에서 “빠른 적용 + 통제 가능한 책임 범위”를 만들 수 있게 한다.
+## Core Principle
+- 핵심 브랜치/아키텍처는 사람이 깊이 이해하고 보호한다.
+- AI는 리프 노드에서 반복작업, 인터페이스 정합성, 보조 기능 수정 중심으로 투입한다.
+- 기술 부채가 누적되어도 비핵심 영역에서 한정되면 운영 리스크를 낮출 수 있다.
+
+## Why It Matters
+- 전면 리뷰가 어려운 대규모 AI 생산 환경에서 변경 범위를 제한하는 실무적 방어선이 된다.
 
 ## Connections
-- [[VibeCoding]] — 핵심 적용 단위 전략.
-- [[TestDrivenDevelopment]] — 리프 노드의 동작 보증을 위한 테스트 설계.
-- [[FunctionalSafety]] — 핵심 안전 경로를 분리해 변경 위험을 낮추는 사고 실무와 정합성 있음.
+- [[VibeCoding]]
+- [[Verifiability]]
+- [[AIPM]]
+- [[TestDrivenDevelopment]]
+- [[SecurityBoundary]]
+
+## Caveat
+- 리프 노드 판별 기준이 부정확하면 오히려 핵심 로직이 누락될 수 있으므로 사전 영향분석이 필요하다.

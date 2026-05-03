@@ -1,115 +1,115 @@
 # Overview
 
-This wiki synthesizes knowledge from multiple sources about AI, machine learning, hardware, and their societal impacts.
+This wiki synthesizes knowledge from multiple sources about AI, machine learning, hardware, autonomous systems, and their societal impacts.
 
 ## Core AI/ML Foundations
 
 The wiki covers a structured 30-day learning path. Key mathematical foundations include:
 
 - **Linear Algebra** (2026-04-29-ai-ml-learning-review): [[VectorSpace]], [[Basis]], [[LinearMap]], [[Rank]], [[DotProduct]], [[Norm]], [[CosineSimilarity]] — underpinning [[Embedding]], [[Attention]], and basic [[Gradient]] operations.
-- **Probability & Statistics** (2026-04-24-ai-ml-learning-review): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/stat dependence notions like [[Expectation]], [[Variance]], [[Covariance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism for model inference.
+- **Probability & Statistics** (2026-04-24-ai-ml-learning-review): [[RandomVariable]], [[ProbabilityDistribution]], [[Probability]], [[PMF]], [[PDF]], [[CDF]], and moment/dependence notions like [[Expectation]], [[Variance]], [[Correlation]]. Also covers [[ConditionalProbability]] and [[BayesTheorem]] through [[Prior]], [[Likelihood]], [[Posterior]] as a core update mechanism.
 - **Machine Learning as Function Approximation** (2026-04-25-ai-ml-learning-review): [[FunctionApproximation]], [[HypothesisSpace]], [[LossFunction]], [[FeatureMatrix]], [[CurseOfDimensionality]].
-- **Optimization via Calculus** (2026-04-26-ai-ml-learning-review, [[2026-04-27-day05-ai-ml-learning-review]], [[2026-04-28-day06-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], [[ExplodingGradient]], [[MiniBatch]], [[Variance]], [[Momentum]], and [[Adam]], and the practical implications for [[Convergence]], [[Divergence]], and Oscillation.
+- **Optimization via Calculus** (2026-04-26-ai-ml-learning-review, [[2026-04-27-ai-ml-learning-review]], [[2026-04-28-ai-ml-learning-review]]): [[Derivative]], [[PartialDerivative]], [[Gradient]], [[DirectionalDerivative]], [[ChainRule]], [[Jacobian]], [[ComputationalGraph]], [[ForwardPass]], [[BackwardPass]], [[Backpropagation]], [[Autograd]], [[GradientDescent]], [[LearningRate]], [[VanishingGradient]], [[ExplodingGradient]], [[MiniBatch]], [[Variance]], [[Momentum]], and [[Adam]], and the practical implications for [[Convergence]], [[Divergence]], and Oscillation.
 
 ## Core Learning Flow Added by Day 05
 
-AI/ML 학습은 [[Objective]](목표함수) 설정에서 출발해 [[LossFunction]] 기반의 [[EmpiricalRisk]] 계산, [[GradientDescent]] 기반의 [[UpdateRule]] 반복으로 이어진다. 이때 [[StepSize]]/[[LearningRate]]는 수렴 안정성과 속도를 좌우하고, [[Constraint]] 및 [[Regularization]]은 과적합과 불안정성을 제어한다.
+AI/ML learning starts from setting an [[Objective]], evaluating [[LossFunction]] through [[EmpiricalRisk]], then iterating [[GradientDescent]] with an [[UpdateRule]]. Learning stability is dominated by the [[LearningRate]] and regularization controls such as [[Constraint]], [[Regularization]].
 
 ## Core Learning Flow Added by Day 06
 
-[[MiniBatch]]는 실전 학습에서 계산/수렴 트레이드오프를 다루는 핵심 단위로, 전체 데이터의 완전 기울기 대신 표본 집합으로부터의 StochasticEstimate를 제공한다. 이는 학습 속도와 하드웨어 효율성 측면에서 유리하지만, [[Variance]]와 잡음으로 인해 Oscillation이 자연스러운 현상이 됨을 함께 고려한다.
-
-학습의 안정성은 [[LearningRate]] 선택이 결정적이다. [[Convergence]], [[Divergence]], [[Divergence]] 위험을 줄이기 위해 보통 [[LearningRate]] schedule(Warmup, decay, cosine)와 함께 쓰이며, [[Optimizer]]의 진화 계열은 [[Momentum]]와 [[Adam]]으로 이어진다. 특히 [[Adam]]은 FirstMoment와 SecondMoment을 추적해 AdaptiveLearningRate 효과를 주므로 [[LLM]], [[Transformer]], [[Embedding]], [[Attention]] 기반 모델에서 성능/안정성 모두에 큰 영향을 준다.
+[[MiniBatch]] provides a practical gradient estimator tradeoff between compute and variance, enabling faster practical convergence but requiring careful noise-aware optimization control.
 
 ## Core Learning Flow Added by Day 07
 
-Day 07 introduces the structural perspective on model power and evaluation reliability.
-
-1. [[HypothesisSpace]] defines what a model family can represent, while [[Capacity]] and [[Expressivity]] describe the breadth and complexity of that representable set.
-2. Larger capacity expands the set of fit functions but increases [[Overfitting]] risk when data is limited, noisy, or biased.
-3. [[InductiveBias]] is the model's built-in preference, which can stabilize learning when data is sparse and supports better [[Generalization]] if aligned with data structure.
-4. Proper [[TrainValidationTestSplit]] is the control framework for deciding if the model learned actual structure rather than memorization.
-5. [[TrainSet]] drives parameter fitting, [[ValidationSet]] supports tuning ([[Hyperparameter]], [[EarlyStopping]]), and [[TestSet]] estimates [[OutOfSample]] behavior; only last-stage use of test is considered reliable.
-6. [[GeneralizationGap]] gives a practical diagnostic: small gap with high performance is preferable, while large gap requires investigation into overfitting, distribution mismatch, leakage, or preprocessing/data-split flaws.
+[[HypothesisSpace]], [[Capacity]], and [[Overfitting]] are the key structural trio: bigger capacity improves fit but increases risk without sound validation design.
 
 ## Core Learning Flow Added by Day 08
 
-Day 08 closes the bridge from structural understanding to daily diagnostics.
-
-- [[Overfitting]] and [[Underfitting]] are interpreted by comparing [[TrainingLoss]] and [[ValidationLoss]].
-  - if training gets better but validation gets worse, the model is likely overfitting.
-  - if both are poor, underfitting is likely.
-- [[BiasVarianceTradeoff]] explains why this happens:
-  - [[Bias]] dominant states miss the true rule and underfit.
-  - [[Variance]] dominant states overreact to sample-specific details and overfit.
-- [[Generalization]] remains the real goal: low error on unseen data,
-  not perfect memorization of training points.
-- [[Regularization]] is the standard control layer for model complexity:
-  - objective augmentation with penalty: [[L1Penalty]], [[L2Penalty]], [[WeightDecay]],
-  - learning-control: [[EarlyStopping]], [[Dropout]], [[DataAugmentation]], noise-based robustness techniques,
-  - parameter/data choice (more data, feature revision, better split hygiene).
-- Practical interpretation from learning curves:
-  - if training loss decreases continuously while validation loss turns up, reduce complexity or regularization strength and stop too-early fitting.
-  - too strong regularization can cause [[Underfitting]], so [[Lambda]] tuning is always a tradeoff.
+Generalization is managed through the balance of [[BiasVarianceTradeoff]], with regularization and data split discipline reducing the risk of brittle memorization.
 
 ## Core Learning Flow Added by Day 09
 
-Day 09 extends the flow into robust evaluation and alignment of objectives.
-
-1. [[CrossValidation]] and specifically [[KFoldCrossValidation]] make performance estimation less dependent on one lucky or unlucky split by averaging validation outcomes across multiple folds.
-2. Proper [[EvaluationMetric]] design is now framed as a model-choice tool, not a cosmetic score. In particular:
-   - [[Accuracy]] can be misleading under [[ImbalancedData]],
-   - [[Precision]]/[[Recall]] and [[F1Score]] expose different failure costs,
-   - [[AUROC]] is useful for threshold-agnostic ranking behavior.
-3. [[Threshold]] tuning is tied to business utility: lowering threshold usually raises recall while reducing precision, and vice versa.
-4. [[Loss]] is separated from metric: learning signal ([[RegressionLoss]] vs [[ClassificationLoss]]) should match the task type.
+Evaluation requires a utility-driven lens: not all metrics are equal for all decisions; [[CrossValidation]], [[Precision]], [[Recall]], and [[F1Score]] are used by failure-cost context.
 
 ## Core Learning Flow Added by Day 10
 
-Day 10 adds the bridge from early ML foundations to how classical models realize "prediction as optimization + probabilistic decision + geometric separation."
-
-1. [[LinearRegression]] is the baseline for regression: define a linear function and optimize parameters by minimizing [[LeastSquares]]/[[MSE]] risk.
-2. [[LogisticRegression]] turns linear score into class probability via sigmoid/logit, then applies [[Threshold]] for binary classification.
-3. [[DecisionBoundary]] is the geometric object induced by scoring functions; in linear models it is [[Hyperplane]], and [[Margin]] quantifies confidence-like robustness to perturbations.
-4. [[LinearSeparability]] is a model-capacity condition: if not separable by one linear boundary, richer representations may be required.
-5. [[FeatureSpace]] transformation is therefore central, and nonlinear models reshape feature spaces to make classes separable.
+[[LinearRegression]], [[LogisticRegression]], and [[DecisionBoundary]] framing connect geometric separation to practical classification logic.
 
 ## Core Learning Flow Added by Day 11
 
-Day 11 revisits classical ML from the lens of classification robustness:
+SVM/SNN/DecisionTree triad frames the robustness of margins, local neighborhoods, and recursive splits as complementary paths to generalization.
 
-1. [[SupportVectorMachine]] emphasizes robust geometric separation via [[MaximumMargin]], where support vectors define the boundary-relevant subset and [[KernelTrick]] enables nonlinear separability.
-2. [[KNN]] highlights case-based reasoning: prediction comes from the nearest instances under a chosen [[DistanceMetric]], making the choice of metric and feature scaling central.
-3. [[DecisionTree]] reframes learning as sequential questioning; splitting is evaluated by uncertainty reduction through [[InformationGain]], [[Entropy]], or [[GiniImpurity]].
-4. Together, these models provide three complementary inductive biases:
-   - margin-maximizing boundary construction,
-   - local neighborhood voting,
-   - recursive partitioning by pure splits.
-5. Their practical limits are clear: [[SVM]] needs kernel/regularization choices, [[KNN]] struggles with scale and high dimension ([[CurseOfDimensionality]]), and [[DecisionTree]] needs pruning or depth constraints to avoid [[Overfitting]].
-6. Modern AI systems still reuse these ideas: [[Embedding]] retrieval resembles KNN-style nearest-neighbor search, and distance/partition thinking appears inside feature-space engineering and tree-based models for tabular tasks.
+## GPU, Memory, and CUDA Execution
 
-## AI Hardware & Inference
+A new source adds a lower-level systems perspective on [[GPU]] design and why it matters for deep learning:
 
-Sources cover the hardware landscape for AI inference and training:
-- [[NVIDIA]]'s Blackwell and [[VeraRubinPlatform]] with [[Groq]] LPU integration (GTC 2026)
-- RISC-V extensions for AI ([[VectorBatchProduct]], MatrixExtensions)
-- Memory dynamics: [[HBM]], [[HBF]], [[DRAM]] supercycle (MemoryMania)
-- Inference acceleration: [[EAGLE3]], [[KVCache]], ONNX/[[ONNXRuntime]]
+- [[GPU]]s are framed as throughput-first processors, while [[CPU]]s remain latency-optimized.
+- [[DRAM]] and [[SRAM]] explain the tradeoff between capacity and access speed in [[GlobalMemory]], [[SharedMemory]], and [[Registers]].
+- [[CUDA]] programming is mapped to kernels, blocks, and warps, with [[SIMT]] execution explaining how a warp shares instructions across threads.
+- [[WarpDivergence]] and memory alignment issues are highlighted as practical performance hazards.
+- [[TensorCores]] are presented as the specialized compute path that makes modern deep learning practical at scale.
 
-## AI Agents & Software
+This complements the wiki's broader AI hardware arc, which already covers [[NVIDIA]] Tensor Core evolution, [[Hopper]], [[Blackwell]], and inference-centric system design. The new material grounds those later-generation architectures in the foundational constraints of memory hierarchy and warp-level execution.
 
-- Claude Code as an inflection point for agentic coding.
-- [[VibeCoding]] in production with [[ClaudeCode]]
-- [[MCP]] and [[Skills]] for extending AI capabilities
-- [[ProjectGlasswing]] for security
+### Deep Learning as Matrix-Multiply Workload
 
-## Societal & Economic Impacts
+The source reinforces a recurring theme across the wiki: deep learning changes architectures, but the computational core remains dominated by large matrix multiplications.
 
-- [[Polycrisis]], [[ConnectedIntelligence]], [[UniversalBasicIncome]] in AI governance.
-- [[SpaceX]] and [[Terafab]] for space-based computing.
-- GDP 7% era with AI, robotics, space, biotech convergence.
-- Korean semiconductor and currency analysis.
+- [[AlexNet]] is treated as the historical proof point that enough data plus enough compute can unlock much better feature learning than hand-engineered pipelines.
+- [[ImageNet]] remains the canonical benchmark for that breakthrough.
+- Later model families such as [[CNN]], [[RNN]], [[Transformer]], and [[SSM]] differ structurally, but all still depend heavily on dense linear algebra.
 
-## Knowledge Graph
+### Practical Implications for Inference
 
-The wiki maintains a knowledge graph of interconnected concepts, entities, and sources. See graph/graph.html for visualization.
+The source also connects directly to inference optimization:
+
+- minimize global memory access when possible,
+- use [[SharedMemory]] and [[Registers]] efficiently,
+- understand that [[GPU]]s hide latency by switching work rather than eliminating latency,
+- and keep execution fed with enough data to sustain occupancy.
+
+That aligns with the wiki's existing [[InferenceOptimization]], [[InteractiveInference]], and [[AIInfrastructure]] themes, where bandwidth, memory staging, and scheduling decisions often matter more than peak FLOPS alone.
+
+## Neural Network Quantization and Number Formats
+
+A new source adds a dedicated systems and numerics perspective on [[NeuralNetworkQuantization]]:
+
+- [[INT8]], [[FP16]], [[BF16]], and [[FP8]] are framed as practical points on a range between range, precision, and hardware cost.
+- [[FixedPoint]] and [[FloatingPoint]] are contrasted as simple scaling-based versus exponent-based representations.
+- [[IEEE754]]-style floating point is shown to trade complexity for dynamic range, while low-bit formats shift the burden onto calibration, scaling, and accumulation.
+- [[PostTrainingQuantization]] and [[QuantizationAwareTraining]] represent the two main adaptation paths from full precision to reduced precision.
+- [[BlockNumberFormats]], [[LogNumberSystems]], [[NF4]], [[AF4]], and [[PAL]] show that quantization research is not only about fewer bits, but about matching value distributions more cleverly.
+- The source reinforces a recurring hardware theme in the wiki: the best numeric format depends on the workload, the distribution of values, and the data movement path, not just the raw bit width.
+
+This also complements the wiki's existing [[NVIDIA]] [[Hopper]] and [[Blackwell]] materials, where low-precision training and inference formats are tied to tensor-core design, memory traffic, and energy efficiency rather than being treated as isolated model tricks.
+
+## Blackwell Microarchitecture and Data Path Rework
+
+A new Blackwell-focused source adds a more detailed systems view of how modern AI accelerators are changing:
+
+- [[Blackwell]] B200 combines a dual-die package, unified memory addressability, and much larger on-chip resources to behave as a single logical device.
+- [[TensorMemory|TMEM]] is the main architectural break from Hopper: tensor compute no longer relies only on registers and shared memory.
+- [[tcgen05.mma]] and related [[PTX]] instructions shift tensor execution toward finer-grained, thread-level dispatch and lower single-instruction latency.
+- The [[DecompressionEngine|DE]] offloads common compression formats so compressed model weights and datasets can stay resident in memory while being transparently decompressed on demand.
+- Low-precision formats such as [[FP4]] and [[FP6]] are now first-class tuning knobs for [[LLM]] inference, not just research curiosities.
+
+This strengthens the wiki's existing [[Blackwell]] and [[Hopper]] materials by showing that the next frontier is not only more tensor throughput, but also more explicit control over memory movement, compression, and operand staging.
+
+## Autonomous Driving VLA Study
+
+A new source introduces a dedicated weekly study corpus for [[VisionLanguageActionForAutonomousDriving]]. It centers the question of whether language meaningfully improves [[ActionGrounding]] and driving safety, or whether it remains a thin explanatory layer on top of behavior.
+
+- The study process is weekly, structured, and time-boxed around [[Asia/Seoul]] scheduling.
+- The analysis frame is explicitly closed-loop and safety-oriented rather than purely offline benchmark-driven.
+- The documentation style emphasizes tables, diagrams, and evaluation matrices, which suggests a preference for comparing action fidelity, language role, and long-tail robustness across papers.
+- The corpus also includes a reusable note template that standardizes translation, architecture analysis, evaluation comparison, and critique for each weekly paper.
+- This adds an autonomous-driving-specific strand to the wiki's existing [[VLA]], [[ClosedLoopEvaluation]], and [[Safety]] themes.
+
+### VLA for Autonomous Driving Taxonomy
+
+The newest weekly study note expands this strand into a more detailed taxonomy. It distinguishes [[VisionAction|VA]] from [[VisionLanguageActionForAutonomousDriving|VLA]], then further splits VLA into [[EndToEndVLA]] and [[DualSystemVLA]]. Within that map, the key question is not whether a model can talk about the scene, but whether language actually grounds into executable action at the waypoint, trajectory, or control level.
+
+- [[ActionGrounding]] is the primary test for whether a model deserves to be treated as driving policy rather than explanation layer.
+- [[ClosedLoopEvaluation]] and safety monitors matter more than text-only metrics.
+- [[LongTailGeneralization]] is framed as a safety requirement, not just a benchmark claim.
+- The weekly study notes are therefore evolving into a reusable evaluation language for future VLA papers.
