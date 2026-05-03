@@ -93,7 +93,17 @@ def parse_json_from_response(text: str) -> dict:
     match = re.search(r"\{[\s\S]*\}", text)
     if not match:
         raise ValueError("No JSON object found in response")
-    return json.loads(match.group())
+    payload = match.group()
+    try:
+        return json.loads(payload, strict=False)
+    except json.JSONDecodeError:
+        # Codex/LLM backends sometimes emit markdown-ish strings inside JSON
+        # with lone backslashes (for example \$ or \|). JSON only permits a
+        # small escape alphabet, so preserve the intended literal backslash by
+        # doubling invalid escape prefixes and retry once. strict=False accepts
+        # literal newlines/control characters occasionally emitted in long strings.
+        repaired = re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', payload)
+        return json.loads(repaired, strict=False)
 
 
 def update_index(new_entry: str, section: str = "Sources"):
@@ -113,17 +123,28 @@ def append_log(entry: str):
     write_file(LOG_FILE, entry.strip() + "\n\n" + existing)
 
 
+def normalize_wikilink_target(target: str) -> str:
+    """Normalize a wikilink or page stem for validation.
+
+    Supports common wiki syntax such as [[Page|alias]] and [[Page#section]],
+    and treats spacing/punctuation differences as non-breaking when a page stem
+    uses compact CamelCase (for example [[NVIDIA DRIVE]] vs NVIDIADrive.md).
+    """
+    target = target.split("|", 1)[0].split("#", 1)[0].strip()
+    return re.sub(r"[^0-9A-Za-z가-힣]+", "", target).lower()
+
+
 def extract_wikilinks(content: str) -> list[str]:
     """Extract all [[WikiLink]] targets from page content."""
     return re.findall(r'\[\[([^\]]+)\]\]', content)
 
 
 def all_wiki_pages() -> set[str]:
-    """Return set of all wiki page stems (case-insensitive)."""
+    """Return normalized set of all wiki page stems."""
     pages = set()
     for p in WIKI_DIR.rglob("*.md"):
         if p.name not in ("index.md", "log.md", "lint-report.md"):
-            pages.add(p.stem.lower())
+            pages.add(normalize_wikilink_target(p.stem))
     return pages
 
 
@@ -152,9 +173,7 @@ def validate_ingest(changed_pages: list[str] | None = None) -> dict:
         content = read_file(page_path)
         rel = str(page_path.relative_to(WIKI_DIR))
         for link in extract_wikilinks(content):
-            # Normalize: strip paths, check stem only
-            link_stem = Path(link).stem.lower() if '/' in link else link.lower()
-            if link_stem not in existing_pages:
+            if normalize_wikilink_target(link) not in existing_pages:
                 broken_links.append((rel, link))
 
     # Check 2: Unindexed pages (only check changed pages)
