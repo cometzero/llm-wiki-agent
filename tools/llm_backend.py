@@ -1,12 +1,67 @@
 #!/usr/bin/env python3
 import json
 import os
+import shlex
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
+
+
+def load_runtime_env() -> None:
+    """Load static exports from common shell env files for non-interactive runs.
+
+    Hermes/cron/non-interactive shells do not necessarily read ~/.bashrc, and
+    this machine's ~/.bashrc returns early before the NVIDIA exports. Parse only
+    simple `export KEY=value` assignments and never override variables that are
+    already present in the process environment.
+    """
+    env_files = [
+        REPO_ROOT / ".env",
+        Path.home() / ".llm-wiki-agent.env",
+        Path.home() / ".hermes" / ".env",
+        Path.home() / ".bashrc",
+    ]
+    allowed_prefixes = (
+        "NVIDIA_",
+        "WIKI_LLM_",
+        "LLM_MODEL",
+        "CODEX_",
+        "ANTHROPIC_",
+        "OPENAI_",
+        "OPENROUTER_",
+    )
+
+    for env_file in env_files:
+        if not env_file.exists():
+            continue
+        for line in env_file.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.startswith("export "):
+                line = line[len("export ") :].strip()
+            if "=" not in line:
+                continue
+            key, raw_value = line.split("=", 1)
+            key = key.strip()
+            if not key or key in os.environ or not key.replace("_", "").isalnum():
+                continue
+            if not key.startswith(allowed_prefixes):
+                continue
+            try:
+                parsed = shlex.split(raw_value, comments=True, posix=True)
+            except ValueError:
+                parsed = [raw_value.strip().strip('"').strip("'")]
+            if not parsed:
+                os.environ[key] = ""
+            elif len(parsed) == 1:
+                os.environ[key] = parsed[0]
+
+
+load_runtime_env()
 
 
 NVIDIA_BASE_URL = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
