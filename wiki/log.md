@@ -1,3 +1,7 @@
+## [2026-05-03] ingest | 2026-05-03 AI/ML Learning Day 11
+
+Added source. Key claims: Day 11 covers [[SupportVectorMachine]] with [[MaximumMargin]] and [[KernelTrick]], [[KNN]] with nearest-neighbor inference under chosen [[DistanceMetric]], and [[DecisionTree]] split quality via [[InformationGain]], [[Entropy]], and [[GiniImpurity]]. It adds key connections to [[RAG]], [[Embedding]] retrieval, and tree ensembles ([[RandomForest]], [[XGBoost]], [[LightGBM]], [[CatBoost]]), and flags no direct contradictions with existing pages.
+
 ## [2026-05-02] ingest | 2026-05-02 AI/ML Learning Day 10
 
 Added source. Key claims: introduced [[LinearRegression]] with [[LeastSquares]] objective and [[Residual]]-based fitting, [[LogisticRegression]] as linear-score+[[Sigmoid]] binary decision flow, and [[DecisionBoundary]]/[[LinearSeparability]]/[[Hyperplane]] geometry for classification; linked these to [[CrossEntropy]] for classification optimization and connected them with [[FeatureSpace]] transformation and [[LLM]] intuition.
@@ -277,3 +281,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-02] graph | Knowledge graph rebuilt
 
 554 nodes, 2740 edges (2740 extracted, 0 inferred).
+
+## [2026-05-03] graph | Knowledge graph rebuilt
+
+562 nodes, 2781 edges (2781 extracted, 0 inferred).
