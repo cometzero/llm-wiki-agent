@@ -62,23 +62,31 @@ Day 09 extends the flow into robust evaluation and alignment of objectives.
    - [[Precision]]/[[Recall]] and [[F1Score]] expose different failure costs,
    - [[AUROC]] is useful for threshold-agnostic ranking behavior.
 3. [[Threshold]] tuning is tied to business utility: lowering threshold usually raises recall while reducing precision, and vice versa.
-4. [[Loss]] is separated from metric: learning signal control ([[RegressionLoss]] vs [[ClassificationLoss]]) should match the task type.
-   - [[Regression]]: distance-based penalties such as [[MSE]]/[[MAE]],
-   - [[Classification]]: probability-shaping penalties such as [[CrossEntropy]].
-5. This reinforces the distinction between what the optimizer minimizes and what users care about in decision contexts.
-
-For modern ML practice this means evaluation quality depends on both sound split protocol and context-matched metrics, and stable training depends on task-aligned loss definitions.
+4. [[Loss]] is separated from metric: learning signal ([[RegressionLoss]] vs [[ClassificationLoss]]) should match the task type.
 
 ## Core Learning Flow Added by Day 10
 
 Day 10 adds the bridge from early ML foundations to how classical models realize "prediction as optimization + probabilistic decision + geometric separation."
 
-1. [[LinearRegression]] is the baseline for regression: define a linear function and optimize parameters by minimizing [[LeastSquares]]/[[MSE]] risk, which explains why large errors are penalized more than small errors.
-2. [[LogisticRegression]] turns the same linear scoring idea into binary decisioning by converting `logit` into probabilities with [[Sigmoid]], then selecting class by [[Threshold]].
-3. [[DecisionBoundary]] is the geometric object induced by scoring functions; in linear models it is a [[Hyperplane]], and [[Margin]] quantifies confidence-like robustness to perturbations.
+1. [[LinearRegression]] is the baseline for regression: define a linear function and optimize parameters by minimizing [[LeastSquares]]/[[MSE]] risk.
+2. [[LogisticRegression]] turns linear score into class probability via sigmoid/logit, then applies [[Threshold]] for binary classification.
+3. [[DecisionBoundary]] is the geometric object induced by scoring functions; in linear models it is [[Hyperplane]], and [[Margin]] quantifies confidence-like robustness to perturbations.
 4. [[LinearSeparability]] is a model-capacity condition: if not separable by one linear boundary, richer representations may be required.
-5. [[FeatureSpace]] transformation is therefore central: even when raw inputs are not separable, [[NeuralNetwork]] layers can transform representation so classes become separable.
-6. Across all three topics, the same AI core remains consistent: choose a model family, define loss, optimize parameters, and interpret geometry of how decisions are made.
+5. [[FeatureSpace]] transformation is therefore central, and nonlinear models reshape feature spaces to make classes separable.
+
+## Core Learning Flow Added by Day 11
+
+Day 11 revisits classical ML from the lens of classification robustness:
+
+1. [[SupportVectorMachine]] emphasizes robust geometric separation via [[MaximumMargin]], where support vectors define the boundary-relevant subset and [[KernelTrick]] enables nonlinear separability.
+2. [[KNN]] highlights case-based reasoning: prediction comes from the nearest instances under a chosen [[DistanceMetric]], making the choice of metric and feature scaling central.
+3. [[DecisionTree]] reframes learning as sequential questioning; splitting is evaluated by uncertainty reduction through [[InformationGain]], [[Entropy]], or [[GiniImpurity]].
+4. Together, these models provide three complementary inductive biases:
+   - margin-maximizing boundary construction,
+   - local neighborhood voting,
+   - recursive partitioning by pure splits.
+5. Their practical limits are clear: [[SVM]] needs kernel/regularization choices, [[KNN]] struggles with scale and high dimension ([[CurseOfDimensionality]]), and [[DecisionTree]] needs pruning or depth constraints to avoid [[Overfitting]].
+6. Modern AI systems still reuse these ideas: [[Embedding]] retrieval resembles KNN-style nearest-neighbor search, and distance/partition thinking appears inside feature-space engineering and tree-based models for tabular tasks.
 
 ## AI Hardware & Inference
 

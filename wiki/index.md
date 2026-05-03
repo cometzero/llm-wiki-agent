@@ -6,6 +6,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Overview](overview.md) — living synthesis across all sources
 
 ## Sources
+- [2026-05-03 AI/ML Learning Day 11](sources/2026-05-03-day11-ai-ml-learning-review.md) — Day 11은 [[SupportVectorMachine]], [[KNN]], [[DecisionTree]]를 중심으로 [[MaximumMargin]], [[Distance]] 기반 추론, [[InformationGain]]를 정리해 고전 분류 모델의 직관과 한계를 정리한다.
 - [2026-05-02 AI/ML Learning Day 10](sources/2026-05-02-day10-ai-ml-learning-review.md) — Day 10은 [[LinearRegression]], [[LogisticRegression]], [[DecisionBoundary]]를 통해 회귀/분류/분리 경계가 같은 최적화-확률-구조로 어떻게 연결되는지 정리한다.
 - [2026-05-01 AI/ML Learning Day 09](sources/2026-05-01-day09-ai-ml-learning-review.md) — Day 09는 [[CrossValidation]], [[EvaluationMetric]], [[Precision]], [[Recall]], [[F1Score]], [[AUROC]], [[RegressionLoss]], [[ClassificationLoss]]를 통해 [[Generalization]] 신뢰도와 지표·손실 정합성을 정리한 학습 기록이다.
 - [2026-04-30 AI/ML Learning Day 08](sources/2026-04-30-day08-ai-ml-learning-review.md) — [[Overfitting]]과 [[Underfitting]], [[BiasVarianceTradeoff]], [[Regularization]]을 통해 [[Generalization]]을 설계하는 Day 08 복습 기록
@@ -195,6 +196,7 @@ This file is maintained by the LLM. Last rebuilt: 2026-04-16.
 - [Zephyr](entities/Zephyr.md) — Zephyr is used in the corpus as an RTOS and open source safety platform, especially in automotive, TinyML, high-performance SoCs, and Xen/VirtIO deployments.
 
 ## Concepts
+- [Gini Impurity](concepts/GiniImpurity.md) — impurity measure used by decision trees to choose cleaner splits.
 - [ModelCapacity](concepts/ModelCapacity.md) — 모델이 복잡한 패턴이나 함수를 표현할 수 있는 능력.
 - [L2Penalty](concepts/L2Penalty.md) — weight 제곱합을 벌점으로 쓰는 정규화 방식.
 - [L1Penalty](concepts/L1Penalty.md) — weight 절댓값 합을 벌점으로 쓰는 정규화 방식.
