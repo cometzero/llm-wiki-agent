@@ -57,6 +57,14 @@ def extract_source_file(content: str) -> Optional[str]:
     return None
 
 
+def extract_source_hash(content: str) -> Optional[str]:
+    """Extract source_hash from YAML frontmatter when present."""
+    match = re.search(r'^source_hash:\s*(.+)$', content, re.MULTILINE)
+    if match:
+        return match.group(1).strip().strip('"').strip("'")
+    return None
+
+
 def find_stale_sources(force: bool = False) -> list[tuple[Path, Path]]:
     """Return list of (wiki_source_page, raw_document) pairs that need refresh."""
     cache = load_refresh_cache()
@@ -80,10 +88,26 @@ def find_stale_sources(force: bool = False) -> list[tuple[Path, Path]]:
 
         raw_content = read_file(raw_path)
         current_hash = sha256(raw_content)
-        cached_hash = cache.get(str(raw_path))
+        cache_key = str(raw_path.relative_to(REPO_ROOT))
+        cached_hash = cache.get(cache_key) or cache.get(str(raw_path))
+        source_hash = extract_source_hash(content)
 
-        if force or cached_hash != current_hash:
+        if force:
             stale.append((wiki_page, raw_path))
+        elif cached_hash is not None:
+            if cached_hash != current_hash:
+                stale.append((wiki_page, raw_path))
+        elif source_hash is not None:
+            if source_hash != current_hash:
+                stale.append((wiki_page, raw_path))
+        else:
+            # Older source pages were created before refresh hashes existed. Treat
+            # the current raw file as the initial baseline instead of marking the
+            # entire corpus stale on a first refresh run.
+            cache[cache_key] = current_hash
+
+    if cache != load_refresh_cache():
+        save_refresh_cache(cache)
 
     return stale
 
@@ -156,7 +180,7 @@ def main():
     for wiki_page, raw_path in stale:
         if refresh_page(wiki_page, raw_path):
             raw_content = read_file(raw_path)
-            cache[str(raw_path)] = sha256(raw_content)
+            cache[str(raw_path.relative_to(REPO_ROOT))] = sha256(raw_content)
             refreshed += 1
         else:
             failed += 1
