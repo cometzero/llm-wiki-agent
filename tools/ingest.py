@@ -123,6 +123,27 @@ def append_log(entry: str):
     write_file(LOG_FILE, entry.strip() + "\n\n" + existing)
 
 
+def ensure_source_frontmatter_metadata(source_page: str, source_file: str, source_hash: str) -> str:
+    """Ensure source pages carry deterministic refresh metadata.
+
+    The LLM writes the page body, but refresh bookkeeping should not depend on
+    the model remembering exact YAML fields. Add or replace source_file and
+    source_hash in the frontmatter after generation.
+    """
+    if not source_page.startswith("---"):
+        return f"---\nsource_file: {source_file}\nsource_hash: {source_hash}\n---\n\n{source_page.lstrip()}"
+
+    parts = source_page.split("---", 2)
+    if len(parts) < 3:
+        return f"---\nsource_file: {source_file}\nsource_hash: {source_hash}\n---\n\n{source_page.lstrip()}"
+
+    _, frontmatter, body = parts
+    lines = [line for line in frontmatter.strip().splitlines() if not re.match(r"^source_(file|hash):\s*", line)]
+    lines.append(f"source_file: {source_file}")
+    lines.append(f"source_hash: {source_hash}")
+    return "---\n" + "\n".join(lines) + "\n---" + body
+
+
 def normalize_wikilink_target(target: str) -> str:
     """Normalize a wikilink or page stem for validation.
 
@@ -251,7 +272,9 @@ Return ONLY a valid JSON object with these fields (no markdown fences, no prose 
 
     # Write source page
     slug = data["slug"]
-    write_file(WIKI_DIR / "sources" / f"{slug}.md", data["source_page"])
+    source_ref = source.relative_to(REPO_ROOT).as_posix() if source.is_relative_to(REPO_ROOT) else source.as_posix()
+    source_page = ensure_source_frontmatter_metadata(data["source_page"], source_ref, source_hash)
+    write_file(WIKI_DIR / "sources" / f"{slug}.md", source_page)
 
     # Write entity pages
     for page in data.get("entity_pages", []):

@@ -9,3 +9,4 @@ __pycache__/
 tools/__pycache__/
 graph/.cache.json
 graph/.inferred_edges.jsonl
+graph/.refresh_cache.json

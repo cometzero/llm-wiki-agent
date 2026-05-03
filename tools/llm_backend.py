@@ -254,7 +254,7 @@ def call_codex(prompt: str, model_env: str = "LLM_MODEL", default_model: str = "
 
 
 def selected_backend(model_env: str = "LLM_MODEL", litellm_default: str = "anthropic/claude-3-5-sonnet-latest", codex_default: str = "gpt-5.3-codex-spark", nvidia_default: str = NVIDIA_DEFAULT_MODEL) -> tuple[str, str]:
-    backend = os.getenv("WIKI_LLM_BACKEND", "nvidia").lower()
+    backend = os.getenv("WIKI_LLM_BACKEND", "auto").lower()
     if backend == "nvidia":
         return "nvidia", os.getenv(model_env, os.getenv("NVIDIA_MODEL", os.getenv("LLM_MODEL", nvidia_default)))
     if backend == "codex":
