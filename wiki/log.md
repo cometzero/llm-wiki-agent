@@ -1,3 +1,7 @@
+## [2026-05-04] ingest | 2026-05-04 AI/ML Learning Day 12 — Random Forest, Boosting, PCA
+
+Added source covering classical ML models: Random Forest, Boosting, PCA. Created concept pages for RandomForest, Boosting, PCA, Ensemble, Bootstrap, Bagging, GradientBoosting, AdaBoost, DimensionalityReduction. Updated overview with new section on classical ML foundations.
+
 ## [2026-05-03] ingest | Raw corpus catch-up and graph refresh
 
 - Ingested raw markdown files that had no wiki source page, including Finance, NVIDIA/CUDA, NPU, Technology, Health, AI, and VLA study documents.
@@ -483,3 +487,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-03] graph | Knowledge graph rebuilt
 
 1513 nodes, 5085 edges (5085 extracted, 0 inferred).
+
+## [2026-05-04] graph | Knowledge graph rebuilt
+
+1521 nodes, 5017 edges (5017 extracted, 0 inferred).
+
+## [2026-05-04] graph | Knowledge graph rebuilt
+
+1521 nodes, 5017 edges (5017 extracted, 0 inferred).

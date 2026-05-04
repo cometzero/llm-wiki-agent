@@ -1,20 +1,24 @@
 ---
-title: "DimensionalityReduction"
+title: "Dimensionality Reduction"
 type: concept
-tags: [machine-learning, representation, compression]
-sources: [2026-04-25-day03-ai-ml-learning-review]
-last_updated: 2026-04-25
+tags: [feature-engineering, unsupervised, pca]
+sources: [2026-05-04-day12-ai-ml-learning-review]
+last_updated: 2026-05-04
 ---
 
-# Dimensionality Reduction
+**Dimensionality Reduction** is the process of reducing the number of features (dimensions) in a dataset while preserving as much relevant information as possible. It helps with visualization, noise reduction, and computational efficiency.
 
-[[DimensionalityReduction]] is the process of compressing data into fewer dimensions while preserving useful structure.
+## Methods
+- **Linear**: [[PCA]] (Principal Component Analysis), LDA (Linear Discriminant Analysis).
+- **Non-linear**: t-SNE, UMAP, autoencoders.
 
-## Core Idea
-- It reduces computational and statistical burden.
-- It can make distances and neighborhoods more meaningful again.
-- It is often used before clustering, visualization, or downstream learning.
+## Key Points
+- [[PCA]] is unsupervised; finds directions of maximum variance.
+- Dimensionality reduction is not always beneficial for prediction; it may discard discriminative information.
+- Commonly used to visualize high-dimensional embeddings (e.g., from LLMs).
 
 ## Connections
-- [[CurseOfDimensionality]] — a direct remedy for high-dimensional sparsity.
-- [[RepresentationLearning]] — a closely related strategy when the reduced space is learned.
+- [[PCA]] — most common linear method.
+- [[Embedding]] — often reduced for visualization.
+- FeatureScaling — important preprocessing.
+- Noise — reduction can help remove noise.
