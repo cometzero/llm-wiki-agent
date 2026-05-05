@@ -1,27 +1,36 @@
 # Wiki Overview
 
-## Living Synthesis
+This wiki synthesizes knowledge from ingested sources. It is a living document that evolves as new sources are added.
 
-This wiki synthesizes knowledge from diverse sources: AI hardware (NVIDIA GPUs, Groq, memory), software-defined vehicles, Linux kernel internals, AI/ML learning diaries, and more.
+## Core Themes
 
-### AI/ML Foundations
+### AI/ML Learning Journey
+A structured 30-day learning path covering AI/ML fundamentals. Key milestones include:
+- **Days 1-4**: Basic concepts, derivatives, gradients, backpropagation
+- **Days 5-11**: Classical ML (Random Forest, Boosting, PCA), neural network foundations
+- **Day 12**: Random Forest, Boosting, PCA
+- **Day 13**: [[Perceptron]], [[MultiLayerPerceptron]], [[ActivationFunction]] — core neural network building blocks
 
-A series of daily learning logs (Days 1–12) builds up core ML concepts from derivatives and backpropagation through neural networks to classical models. Day 12 introduces three foundational classical ML techniques:
+The learning emphasizes intuition, mathematical foundations, and connections to modern AI systems like [[LLM]]s and [[Transformer]]s.
 
-- **[[RandomForest]]**: An [[Ensemble]] method that builds many [[DecisionTree|decision trees]] using [[Bootstrap]] sampling and FeatureSubsampling, then averages their predictions to reduce variance and combat [[Overfitting]].
-- **[[Boosting]]**: A sequential ensemble approach ([[AdaBoost]], [[GradientBoosting]]) where weak learners are added one by one, each correcting the residuals of the previous ensemble. Forms an AdditiveModel.
-- **[[PCA]] (Principal Component Analysis)**: An unsupervised [[DimensionalityReduction]] technique that finds the directions of maximum variance (principal components) via eigenvectors of the [[Covariance]] matrix. ExplainedVariance measures information retained.
+### Neural Network Fundamentals
+- [[Perceptron]]: Basic unit performing linear combination (weighted sum + bias) with threshold output.
+- [[MultiLayerPerceptron]]: Stacked layers with nonlinearities enabling complex pattern learning.
+- [[ActivationFunction]]: Essential for nonlinearity; [[ReLU]], [[Sigmoid]], [[Tanh]] are common.
+- [[Backpropagation]]: Training algorithm that propagates gradients; activation function choice affects gradient flow.
 
-These models remain important baselines, especially for tabular data (XGBoost, LightGBM, CatBoost). The ensemble philosophy also connects to modern LLM techniques like SelfConsistency.
+### Hardware & Systems
+- [[NVIDIA]] GPU architectures (Hopper, Blackwell, Vera Rubin)
+- [[Groq]] LPX inference accelerators
+- [[Linux]] kernel topics (scheduling, isolation, safety)
+- [[NPU]] design and programming
 
-### Hardware & Inference
+### Industry & Trends
+- AI inference scaling, memory bandwidth, tokenomics
+- Software-defined vehicles, embedded systems
+- Robotics (Figure, Helix)
 
-... (existing content preserved) ...
-
-### Software & Systems
-
-... (existing content preserved) ...
-
-### Other Domains
-
-... (existing content preserved) ...
+## Key Connections
+- [[Perceptron]] → [[MultiLayerPerceptron]] → [[Transformer]] → [[LLM]]
+- [[ActivationFunction]] → [[Backpropagation]] → [[VanishingGradient]]
+- [[LinearCombination]] → [[HiddenLayer]] → [[UniversalApproximation]]

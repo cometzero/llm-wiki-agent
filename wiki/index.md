@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [2026-05-05 AI/ML Learning Day 13 — Perceptron, MLP, Activation Functions](sources/2026-05-05-day13-ai-ml-learning-review.md) — Neural network fundamentals: perceptron, MLP, activation functions.
 - [2026-05-04 AI/ML Learning Day 12 — Random Forest, Boosting, PCA](sources/2026-05-04-day12-ai-ml-learning-review.md) — Classical ML models: Random Forest, Boosting, PCA
 - [TMEM vs Registers: How NVIDIA and AMD Feed Tensor Compute | LinkedIn](sources/1-tmem-vs-registers-how-nvidia-and-amd-feed-tensor-compute-linkedin.md) — source page
 - [1주택자인데 이걸 안 했다: 집 팔 때 세금 2배로 맞는다](sources/1주택자인데-이걸-안-했다-집-팔-때-세금-2배로-맞는다-공찬규-세무사-풀버전.md) — source page
@@ -375,6 +376,16 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [UniversalApproximation](concepts/UniversalApproximation.md) — MLP expressivity result for approximating functions
+- [Tanh](concepts/Tanh.md) — activation function squashing values to -1..1
+- [ReLU](concepts/ReLU.md) — activation function max(0, x)
+- [Perceptron](concepts/Perceptron.md) — basic artificial neuron based on weighted sums and thresholds
+- [Nonlinearity](concepts/Nonlinearity.md) — property enabling models to represent complex non-straight patterns
+- [MultiLayerPerceptron](concepts/MultiLayerPerceptron.md) — feed-forward neural network made of stacked layers
+- [LinearLayer](concepts/LinearLayer.md) — matrix multiplication plus bias layer used in neural networks
+- [LinearCombination](concepts/LinearCombination.md) — weighted sum calculation such as z = w·x + b
+- [HiddenLayer](concepts/HiddenLayer.md) — intermediate neural-network layer that learns hidden representations
+- [ActivationFunction](concepts/ActivationFunction.md) — function that adds nonlinearity to neural network layers
 - [AdaBoost](concepts/AdaBoost.md) — boosting algorithm that reweights misclassified samples
 - [Bagging](concepts/Bagging.md) — bootstrap aggregating ensemble method
 - [Bootstrap](concepts/Bootstrap.md) — sampling with replacement for resampling and bagging
