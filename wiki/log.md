@@ -1,3 +1,7 @@
+## [2026-05-06] ingest | AI/ML Learning Review Day 14 (2026-05-06)
+
+Added source. Key claims: Forward pass is the computation flow from input to output; backpropagation computes gradients via chain rule; parameters (weights and biases) are learnable values adjusted during training.
+
 ## [2026-05-05] ingest | 2026-05-05 AI/ML Learning Day 13 — Perceptron, MLP, Activation Functions
 
 Added source. Key claims: Perceptron performs linear combination with weights and bias; MLP stacks layers with nonlinearities to learn complex patterns; activation functions are essential for nonlinearity; ReLU, sigmoid, tanh discussed; sigmoid saturation can hinder gradient-based learning.
@@ -503,3 +507,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-05] graph | Knowledge graph rebuilt
 
 1532 nodes, 5069 edges (5069 extracted, 0 inferred).
+
+## [2026-05-06] graph | Knowledge graph rebuilt
+
+1539 nodes, 5114 edges (5114 extracted, 0 inferred).

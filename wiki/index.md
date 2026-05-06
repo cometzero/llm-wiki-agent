@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review Day 14 (2026-05-06)](sources/2026-05-06-day14-ai-ml-learning-review.md) — Neural network training fundamentals: forward pass, backpropagation, parameters.
 - [2026-05-05 AI/ML Learning Day 13 — Perceptron, MLP, Activation Functions](sources/2026-05-05-day13-ai-ml-learning-review.md) — Neural network fundamentals: perceptron, MLP, activation functions.
 - [2026-05-04 AI/ML Learning Day 12 — Random Forest, Boosting, PCA](sources/2026-05-04-day12-ai-ml-learning-review.md) — Classical ML models: Random Forest, Boosting, PCA
 - [TMEM vs Registers: How NVIDIA and AMD Feed Tensor Compute | LinkedIn](sources/1-tmem-vs-registers-how-nvidia-and-amd-feed-tensor-compute-linkedin.md) — source page
@@ -376,6 +377,11 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [Weights](concepts/Weights.md) — trainable parameters controlling input influence in neural-network layers
+- [GradientFlow](concepts/GradientFlow.md) — movement of gradient signals through layers during backpropagation
+- [CreditAssignment](concepts/CreditAssignment.md) — assigning loss responsibility to internal parameters and layers
+- [Biases](concepts/Biases.md) — trainable parameters shifting a layer's baseline output
+- [AffineTransform](concepts/AffineTransform.md) — linear-plus-bias calculation `Wx + b` inside neural-network layers
 - [UniversalApproximation](concepts/UniversalApproximation.md) — MLP expressivity result for approximating functions
 - [Tanh](concepts/Tanh.md) — activation function squashing values to -1..1
 - [ReLU](concepts/ReLU.md) — activation function max(0, x)
