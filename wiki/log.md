@@ -1,3 +1,7 @@
+## [2026-05-07] ingest | AI/ML Learning Review Day 15 (2026-05-07)
+
+Added source. Key claims: clarified [[RepresentationLearning]] and [[LatentRepresentation]] as core of deep models, linked learnable feature learning to practical image/text robustness, introduced [[Initialization]] as a stability control axis (including [[SymmetryBreaking]], [[XavierInitialization]], [[HeInitialization]]), and formalized [[VanishingGradient]]/[[ExplodingGradient]] behavior through chain-rule multiplicative intuition with examples 0.5 and 2. Added updated concept pages for [[RepresentationLearning]], [[LatentRepresentation]], [[LatentSpace]], [[Initialization]], [[SymmetryBreaking]], [[XavierInitialization]], [[HeInitialization]], [[VanishingGradient]], [[ExplodingGradient]], and [[GradientClipping]].
+
 ## [2026-05-06] ingest | AI/ML Learning Review Day 14 (2026-05-06)
 
 Added source. Key claims: Forward pass is the computation flow from input to output; backpropagation computes gradients via chain rule; parameters (weights and biases) are learnable values adjusted during training.
@@ -511,3 +515,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-06] graph | Knowledge graph rebuilt
 
 1539 nodes, 5114 edges (5114 extracted, 0 inferred).
+
+## [2026-05-07] graph | Knowledge graph rebuilt
+
+1556 nodes, 5215 edges (5215 extracted, 0 inferred).
