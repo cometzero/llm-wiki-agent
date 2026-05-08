@@ -12,6 +12,7 @@ A structured 30-day learning path covering AI/ML fundamentals. Key milestones in
 - **Day 13**: [[Perceptron]], [[MultiLayerPerceptron]], [[ActivationFunction]]
 - **Day 14**: [[ForwardPass]], [[Backpropagation]], and [[Parameters]] / [[Weights]] / [[Biases]]
 - **Day 15**: [[RepresentationLearning]], [[Initialization]], [[VanishingGradient]], [[ExplodingGradient]], and stable training mechanics
+- **Day 16**: [[Epoch]], [[Iteration]], [[BatchSize]], [[BatchNormalization]], and [[Dropout]] as practical deep learning training controls
 
 The learning sequence progressively links intuitive understanding with mathematical grounding and modern AI systems such as [[LLM]]s and [[Transformer]]s.
 
@@ -24,10 +25,12 @@ The learning sequence progressively links intuitive understanding with mathemati
 - [[XavierInitialization]] / [[HeInitialization]]: fan-in/fan-out 기반 스케일링 규칙으로 안정적 시작값 제어.
 - [[VanishingGradient]] / [[ExplodingGradient]]: 다층 미분 연쇄에서 작은/큰 local gradient의 누적로 발생.
 - [[GradientClipping]], [[ResidualConnection]], [[LayerNorm]]: 깊은 네트워크에서 [[TrainingStability]] 확보를 위한 주요 완화장치.
+- [[BatchNormalization]], [[LayerNormalization]], and [[Dropout]]: training-time stabilization and regularization techniques that control activation scale and reduce overfitting.
 
 ### Practical Training Signals
 - [[ForwardPass]] → [[BackwardPass]] 흐름에서 [[GradientFlow]]가 균형을 잃으면 학습이 정체되거나 발산한다.
 - [[Optimizer]], [[LearningRate]], [[Initialization]], [[Normalization]], [[GradientClipping]]은 상호 의존적이다.
+- [[Epoch]], [[Iteration]], [[BatchSize]], and [[GradientAccumulation]] determine how data volume, optimizer steps, and GPU memory trade off during training.
 - 이론은 특히 [[Transformer]], [[CNN]], [[RNN]]의 실제 학습 튜닝에서 재현되는 핵심 체크리스트로 수렴한다.
 
 ## Key Connections
@@ -37,6 +40,7 @@ The learning sequence progressively links intuitive understanding with mathemati
 - [[Initialization]] → [[GradientFlow]] 안정화 → [[TrainingStability]] 향상
 - [[SymmetryBreaking]] + [[XavierInitialization]] / [[HeInitialization]] → 뉴런 특이성 + 안정적 학습
 - [[ResidualConnection]] + [[LayerNorm]] + [[GradientClipping]] → [[VanishingGradient]]/[[ExplodingGradient]] 완화
+- [[BatchNormalization]] + [[Dropout]] → activation scale control and stochastic regularization in deep learning training
 
 ## Hardware & Systems
 - [[NVIDIA]] GPU architectures (Hopper, Blackwell, Vera Rubin)

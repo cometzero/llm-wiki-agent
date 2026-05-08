@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review Day 16 (2026-05-08)](sources/2026-05-08-day16-ai-ml-learning-review.md) — Deep learning training mechanics: epoch/iteration/batch size, BatchNorm, and Dropout.
 - [AI/ML Learning Review Day 15 (2026-05-07)](sources/2026-05-07-day15-ai-ml-learning-review.md) — Deep learning as layered representation learning and stable training via initialization and gradient flow.
 - [AI/ML Learning Review Day 14 (2026-05-06)](sources/2026-05-06-day14-ai-ml-learning-review.md) — Neural network training fundamentals: forward pass, backpropagation, parameters.
 - [2026-05-05 AI/ML Learning Day 13 — Perceptron, MLP, Activation Functions](sources/2026-05-05-day13-ai-ml-learning-review.md) — Neural network fundamentals: perceptron, MLP, activation functions.
@@ -378,6 +379,12 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [Batch Normalization](concepts/BatchNormalization.md) — normalizes mini-batch activations to stabilize deep learning training.
+- [Internal Covariate Shift](concepts/InternalCovariateShift.md) — shifting internal activation distributions during training.
+- [Gradient Accumulation](concepts/GradientAccumulation.md) — accumulates gradients across micro-batches to simulate larger batch sizes.
+- [Layer Normalization](concepts/LayerNormalization.md) — per-sample feature normalization commonly used in Transformers.
+- [Iteration](concepts/Iteration.md) — one optimizer update step over a mini-batch.
+- [ResNet](concepts/ResNet.md) — residual CNN architecture often paired with BatchNorm.
 - [Feature Extraction](concepts/FeatureExtraction.md) — process of deriving useful features from raw data.
 - [Residual Connection](concepts/ResidualConnection.md) — skip connection that helps deep networks preserve signal and gradient flow.
 - [LayerNorm](concepts/LayerNorm.md) — normalization method used to stabilize deep Transformer/LLM training.
@@ -527,7 +534,7 @@
 - [BarrierSynchronization](concepts/BarrierSynchronization.md) — placeholder page for wikilink integrity
 - [Basis](concepts/Basis.md) — concept page
 - [BatchInference](concepts/BatchInference.md) — placeholder page for wikilink integrity
-- [BatchSize](concepts/BatchSize.md) — placeholder page for wikilink integrity
+- [BatchSize](concepts/BatchSize.md) — number of samples processed in one training mini-batch.
 - [BayesTheorem](concepts/BayesTheorem.md) — concept page
 - [BDC](concepts/BDC.md) — concept page
 - [BenchmarkContamination](concepts/BenchmarkContamination.md) — placeholder page for wikilink integrity
