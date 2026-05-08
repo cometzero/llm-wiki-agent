@@ -1,3 +1,7 @@
+## [2026-05-08] ingest | AI/ML Learning Review Day 16 (2026-05-08)
+
+Added source covering epoch/iteration/batch size, BatchNorm, and Dropout. Updated or created concept pages for Epoch, Iteration, BatchSize, BatchNormalization, Dropout, Regularization, Overfitting, InternalCovariateShift, GradientAccumulation, LayerNormalization, and ResNet. Updated overview with Day 16 training mechanics.
+
 ## [2026-05-07] ingest | AI/ML Learning Review Day 15 (2026-05-07)
 
 Added source. Key claims: clarified [[RepresentationLearning]] and [[LatentRepresentation]] as core of deep models, linked learnable feature learning to practical image/text robustness, introduced [[Initialization]] as a stability control axis (including [[SymmetryBreaking]], [[XavierInitialization]], [[HeInitialization]]), and formalized [[VanishingGradient]]/[[ExplodingGradient]] behavior through chain-rule multiplicative intuition with examples 0.5 and 2. Added updated concept pages for [[RepresentationLearning]], [[LatentRepresentation]], [[LatentSpace]], [[Initialization]], [[SymmetryBreaking]], [[XavierInitialization]], [[HeInitialization]], [[VanishingGradient]], [[ExplodingGradient]], and [[GradientClipping]].
@@ -519,3 +523,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-07] graph | Knowledge graph rebuilt
 
 1556 nodes, 5215 edges (5215 extracted, 0 inferred).
+
+## [2026-05-08] graph | Knowledge graph rebuilt
+
+1563 nodes, 5256 edges (5256 extracted, 0 inferred).
