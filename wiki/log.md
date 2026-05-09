@@ -1,3 +1,7 @@
+## [2026-05-09] ingest | AI/ML Learning Review Day 17 (2026-05-09)
+
+Added source. Key claims: Learning curves for diagnosing overfitting/underfitting; CNN local connectivity via local receptive fields and parameter sharing; convolution operation with kernel, stride, padding. Created concept pages for [[LearningCurves]], [[ConvolutionalNeuralNetworks]], [[Convolution]], and [[EarlyStopping]]. Updated overview to include these concepts.
+
 ## [2026-05-08] ingest | AI/ML Learning Review Day 16 (2026-05-08)
 
 Added source covering epoch/iteration/batch size, BatchNorm, and Dropout. Updated or created concept pages for Epoch, Iteration, BatchSize, BatchNormalization, Dropout, Regularization, Overfitting, InternalCovariateShift, GradientAccumulation, LayerNormalization, and ResNet. Updated overview with Day 16 training mechanics.
@@ -527,3 +531,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-08] graph | Knowledge graph rebuilt
 
 1563 nodes, 5256 edges (5256 extracted, 0 inferred).
+
+## [2026-05-09] graph | Knowledge graph rebuilt
+
+1567 nodes, 5247 edges (5247 extracted, 0 inferred).
+
+## [2026-05-09] graph | Knowledge graph rebuilt
+
+1572 nodes, 5262 edges (5262 extracted, 0 inferred).

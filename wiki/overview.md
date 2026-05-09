@@ -1,52 +1,49 @@
 # Wiki Overview
 
-This wiki synthesizes knowledge from ingested sources. It is a living document that evolves as new sources are added.
+This wiki synthesizes knowledge from ingested sources. It is updated after each ingest to reflect the current state of understanding.
 
 ## Core Themes
 
-### AI/ML Learning Journey
-A structured 30-day learning path covering AI/ML fundamentals. Key milestones include:
-- **Days 1-4**: Basic concepts, derivatives, gradients, backpropagation
-- **Days 5-11**: Classical ML, ensemble methods, and early neural foundations
-- **Day 12**: [[RandomForest]], [[Boosting]], [[PCA]]
-- **Day 13**: [[Perceptron]], [[MultiLayerPerceptron]], [[ActivationFunction]]
-- **Day 14**: [[ForwardPass]], [[Backpropagation]], and [[Parameters]] / [[Weights]] / [[Biases]]
-- **Day 15**: [[RepresentationLearning]], [[Initialization]], [[VanishingGradient]], [[ExplodingGradient]], and stable training mechanics
-- **Day 16**: [[Epoch]], [[Iteration]], [[BatchSize]], [[BatchNormalization]], and [[Dropout]] as practical deep learning training controls
+### AI/ML Learning Series
+A structured 30-day AI/ML learning journey from fundamentals to advanced topics. The series covers classical ML (Random Forest, Boosting, PCA), neural network foundations (perceptron, MLP, activation functions, backpropagation), and deep learning training mechanics (epoch/batch, BatchNorm, Dropout).
 
-The learning sequence progressively links intuitive understanding with mathematical grounding and modern AI systems such as [[LLM]]s and [[Transformer]]s.
+**Day 17** introduces three key deep learning concepts:
+- **Learning curves** — monitoring train/validation loss to detect overfitting and underfitting, and using early stopping.
+- **CNN local connectivity** — how CNNs exploit spatial locality via local receptive fields, parameter sharing, and hierarchical feature learning.
+- **Convolution operation** — the mechanics of kernel, stride, and padding for pattern detection.
 
-### Neural Network Fundamentals
-- [[RepresentationLearning]]: 학습 가능한 내부 특징 공간을 통해 원본 입력이 문제 해결에 유리한 표현으로 변환됨.
-- [[LatentRepresentation]]: 관찰되지 않는 의미/구조를 캡처하는 내부 공간 내 벡터 표현.
-- [[Embedding]] / [[HiddenState]] / [[LatentSpace]]: 텍스트·시각 신호에서 문맥적 유사도와 의미군집을 만드는데 핵심적인 벡터 공간 메커니즘.
-- [[Initialization]]: 학습 시작 시점의 [[Weights]] 분포가 forward/backward 신호의 scale을 결정.
-- [[SymmetryBreaking]]: 같은 초기값을 피하고 뉴런이 서로 다른 표현을 배우게 만듦.
-- [[XavierInitialization]] / [[HeInitialization]]: fan-in/fan-out 기반 스케일링 규칙으로 안정적 시작값 제어.
-- [[VanishingGradient]] / [[ExplodingGradient]]: 다층 미분 연쇄에서 작은/큰 local gradient의 누적로 발생.
-- [[GradientClipping]], [[ResidualConnection]], [[LayerNorm]]: 깊은 네트워크에서 [[TrainingStability]] 확보를 위한 주요 완화장치.
-- [[BatchNormalization]], [[LayerNormalization]], and [[Dropout]]: training-time stabilization and regularization techniques that control activation scale and reduce overfitting.
+### Hardware & Systems
+Sources cover GPU architecture (NVIDIA Blackwell, Hopper, Vera Rubin), inference accelerators (Groq 3 LPX), memory technology (HBM, HBF), and Linux kernel topics (real-time, isolation, NPU subsystems, SDV).
 
-### Practical Training Signals
-- [[ForwardPass]] → [[BackwardPass]] 흐름에서 [[GradientFlow]]가 균형을 잃으면 학습이 정체되거나 발산한다.
-- [[Optimizer]], [[LearningRate]], [[Initialization]], [[Normalization]], [[GradientClipping]]은 상호 의존적이다.
-- [[Epoch]], [[Iteration]], [[BatchSize]], and [[GradientAccumulation]] determine how data volume, optimizer steps, and GPU memory trade off during training.
-- 이론은 특히 [[Transformer]], [[CNN]], [[RNN]]의 실제 학습 튜닝에서 재현되는 핵심 체크리스트로 수렴한다.
+### AI Industry & Research
+Topics include speculative decoding, context rot, reasoning models (Cosmos-Reason1), robotics (Figure 03, Helix 02), and AI coding agents (Claude Code, Karpathy's views).
 
-## Key Connections
-- [[Perceptron]] → [[MultiLayerPerceptron]] → [[Transformer]] → [[LLM]]
-- [[ForwardPass]] → [[Backpropagation]] → [[GradientFlow]] → [[Optimizer]]
-- [[RepresentationLearning]] → [[LatentSpace]] / [[Embedding]] / [[HiddenState]] → [[Transformer]] / [[LLM]]
-- [[Initialization]] → [[GradientFlow]] 안정화 → [[TrainingStability]] 향상
-- [[SymmetryBreaking]] + [[XavierInitialization]] / [[HeInitialization]] → 뉴런 특이성 + 안정적 학습
-- [[ResidualConnection]] + [[LayerNorm]] + [[GradientClipping]] → [[VanishingGradient]]/[[ExplodingGradient]] 완화
-- [[BatchNormalization]] + [[Dropout]] → activation scale control and stochastic regularization in deep learning training
+### Other Domains
+Personal finance (Korean real estate tax), geopolitics (global intelligence crisis), and education (high school strategy).
 
-## Hardware & Systems
-- [[NVIDIA]] GPU architectures (Hopper, Blackwell, Vera Rubin)
-- [[Groq]] LPX inference accelerators
-- [[LinuxKernel]] topics (scheduling, isolation, safety)
-- [[NPU]] design and deployment
+## Key Entities
+- [[NVIDIA]] — GPU architecture, inference platforms
+- [[AMD]] — competitor in inference benchmarks
+- [[Groq]] — LPU inference accelerator
+- [[OpenAI]] — referenced in context of reasoning models
+- [[Anthropic]] — Claude Code, MCP
+- [[Google]] — Android boot security, TPU
+- [[Samsung]] / [[SKHynix]] — HBM/HBF memory
 
-### AI Education and Concept Graph
-- This repo now includes a deeper chain linking representation learning to optimization mechanics, useful as a bridge from intuition to implementation in [[NeuralNetwork]] training.
+## Key Concepts
+- [[LearningCurves]] — train/validation loss analysis
+- [[ConvolutionalNeuralNetworks]] — local connectivity, parameter sharing
+- [[Convolution]] — kernel, stride, padding
+- [[EarlyStopping]] — validation-based training termination
+- [[Overfitting]] / [[Underfitting]] — diagnosis via learning curves
+- [[Backpropagation]] — gradient-based weight updates
+- [[BatchNormalization]] / [[Dropout]] — regularization techniques
+- [[SpeculativeDecoding]] — LLM inference acceleration
+- [[ContextRot]] — LLM performance degradation with long inputs
+- [[Quantization]] — number formats for efficient inference
+- [[RAG]] — retrieval-augmented generation
+- [[VisionTransformer]] — attention-based alternative to CNNs
+
+## Open Questions
+- How do learning curve patterns differ for very large models (e.g., LLMs) where validation loss may not be available?
+- What are the practical trade-offs between CNNs and Vision Transformers for modern computer vision tasks?
