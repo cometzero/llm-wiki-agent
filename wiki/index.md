@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review Day 17 (2026-05-09)](sources/2026-05-09-day17-ai-ml-learning-review.md) — Learning curves, CNN local connectivity, and convolution operation.
 - [AI/ML Learning Review Day 16 (2026-05-08)](sources/2026-05-08-day16-ai-ml-learning-review.md) — Deep learning training mechanics: epoch/iteration/batch size, BatchNorm, and Dropout.
 - [AI/ML Learning Review Day 15 (2026-05-07)](sources/2026-05-07-day15-ai-ml-learning-review.md) — Deep learning as layered representation learning and stable training via initialization and gradient flow.
 - [AI/ML Learning Review Day 14 (2026-05-06)](sources/2026-05-06-day14-ai-ml-learning-review.md) — Neural network training fundamentals: forward pass, backpropagation, parameters.
@@ -379,6 +380,14 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [Learning Curves](concepts/LearningCurves.md) — diagnostic plots for train and validation performance over training.
+- [Convolutional Neural Networks](concepts/ConvolutionalNeuralNetworks.md) — image-oriented neural networks using local connectivity and shared kernels.
+- [Convolution](concepts/Convolution.md) — sliding kernel operation that produces feature maps in CNNs.
+- [Vision Transformer](concepts/VisionTransformer.md) — transformer architecture that processes images as patch sequences.
+- [Spatial Locality](concepts/SpatialLocality.md) — nearby pixels or positions tend to be more strongly related.
+- [Pooling](concepts/Pooling.md) — local summarization operation commonly used in CNNs.
+- [Feature Map](concepts/FeatureMap.md) — spatial output map showing learned pattern activations.
+- [Receptive Field](concepts/ReceptiveField.md) — input region that influences a neuron or feature value.
 - [Batch Normalization](concepts/BatchNormalization.md) — normalizes mini-batch activations to stabilize deep learning training.
 - [Internal Covariate Shift](concepts/InternalCovariateShift.md) — shifting internal activation distributions during training.
 - [Gradient Accumulation](concepts/GradientAccumulation.md) — accumulates gradients across micro-batches to simulate larger batch sizes.
