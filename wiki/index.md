@@ -4,6 +4,9 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [EmbodiedMidtrain study guide](sources/embodiedmidtrain-2604-20012-study-guide.md) — [[EmbodiedMidtrain]]의 sample-level [[ProximityEstimator]] 기반 [[MidTraining]] 워크플로를 정리하고 [[Calvin]], [[SimplerEnv]], [[LIBERO]] 성능 개선 실무 포인트를 제시한다.
+- [EmbodiedMidtrain references and related work notes](sources/embodiedmidtrain-2604-20012-references.md) — [[EmbodiedMidtrain]]의 데이터 기반 성능 정렬 관점, 특히 [[ProximityEstimator]] 기반 sample-level mid-training 실험 포인트를 정리한다.
+- [EmbodiedMidtrain: VLM과 VLA 사이의 간극을 Mid-training으로 잇기](sources/embodiedmidtrain-2604-20012-ko-analysis.md) — [[EmbodiedMidtrain]]가 [[VLM]] 샘플의 분포 정렬 기반 [[DataSelection]]으로 [[VLA]] 성능을 끌어올리는 과정을 정리한다.
 - [Unveiling the Inner Workings of IREE: An MLIR-Based Compiler for Diverse H/W](sources/unveiling-the-inner-workings-of-iree-an-mlir-based-compiler-for-diverse-h-w.md) — [[IREE]]의 [[MLIR]] 기반 컴파일 스택을 호스트-디바이스 분할, [[HAL]], [[Dispatch]], [[Transform Dialect]], [[VMFB]] 중심으로 정리한다.
 - [QEMU 에뮬레이터 내부 구조: TCG, 메모리, 디바이스 모델링 및 디버깅](sources/qemu-에뮬레이터-내부-구조-tcg-메모리-디바이스-모델링-및-디버깅.md) — [[QEMU]]의 런타임 변환기, 장치 객체 모델([[QOM]]), SoftMMU, PCI 모델링, 디버깅 파이프라인을 한 번에 정리한 실무형 내부 구조 보고서.
 - [2025 EuroLLVM - Deep Dive into the MLIR to LLVM IR Translation Mechanism](sources/2025-eurollvm-deep-dive-into-the-mlir-to-llvm-ir-translation-mechanism.md) — [[MLIR]]과 [[LLVM]] 통합사의 초기 단순 번역에서 다이얼렉트-인터페이스 기반 확장, 그리고 다이얼렉트 과잉 확대에 따른 비용·설계 문서화 필요성까지 정리한 내용.
@@ -167,6 +170,19 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [Chenyan Xiong](entities/ChenyanXiong.md) — generated support page
+- [Gretton et al.](entities/GrettonEtAl.md) — generated support page
+- [Kosmos-2](entities/Kosmos-2.md) — generated support page
+- [Liu Ren](entities/LiuRen.md) — generated support page
+- [OpenVLA](entities/OpenVLA.md) — generated support page
+- [PaliGemma](entities/PaliGemma.md) — generated support page
+- [π0 / Pi0](entities/Pi0.md) — generated support page
+- [Qwen-VL](entities/Qwen-VL.md) — generated support page
+- [Qwen2.5VL](entities/Qwen2.5VL.md) — generated support page
+- [SigLIP](entities/SigLIP.md) — generated support page
+- [Xin Ye](entities/XinYe.md) — generated support page
+- [Yiyang Du](entities/YiyangDu.md) — generated support page
+- [Zhanqiu Guo](entities/ZhanqiuGuo.md) — generated support page
 - [Alessandro Carminati](entities/AlessandroCarminati.md) — entity page
 - [AlexNet](entities/AlexNet.md) — entity page
 - [Alibaba Cloud](entities/AlibabaCloud.md) — entity page
@@ -400,6 +416,21 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [EmbSpatial-Bench](concepts/EmbSpatial-Bench.md) — generated support page
+- [Embodied AI](concepts/EmbodiedAI.md) — generated support page
+- [InternVL3.5](concepts/InternVL3.5.md) — generated support page
+- [Qwen3-VL](concepts/Qwen3VL.md) — generated support page
+- [RefSpatial](concepts/RefSpatial.md) — generated support page
+- [Representation Alignment](concepts/RepresentationAlignment.md) — generated support page
+- [Robo2VLM](concepts/Robo2VLM.md) — generated support page
+- [RoboPoint](concepts/RoboPoint.md) — generated support page
+- [RoboRefer](concepts/RoboRefer.md) — generated support page
+- [Robot Manipulation](concepts/RobotManipulation.md) — generated support page
+- [Temporal Consistency](concepts/TemporalConsistency.md) — generated support page
+- [Training Dynamics](concepts/TrainingDynamics.md) — generated support page
+- [UMAP](concepts/UMAP.md) — generated support page
+- [VLM4VLA](concepts/VLM4VLA.md) — generated support page
+- [t-SNE](concepts/t-SNE.md) — generated support page
 - [Channel, Feature Map, Filter](concepts/ChannelFeatureMapFilter.md) — CNN tensor channels, learned filters, and feature-map outputs.
 - [Pooling and Downsampling](concepts/PoolingDownsampling.md) — spatial reduction methods that lower computation and add mild shift robustness.
 - [Residual Network](concepts/ResidualNetwork.md) — skip-connection architecture that learns residual changes for deeper networks.

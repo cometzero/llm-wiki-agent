@@ -1,3 +1,17 @@
+## [2026-05-10] ingest | EmbodiedMidtrain study guide
+
+Added source. Key claims: [[EmbodiedMidtrain]] improves [[VLA]] transfer by selecting VLM samples with high target alignment via [[ProximityEstimator]], rather than relying only on scale or full fine-tuning.
+Compared against baseline [[VLA]] settings, the source reports consistent gains on [[Calvin]], [[SimplerEnv]], and [[LIBERO]] for both [[InternVL3.5|InternVL3.5-1B]] and [[Qwen3VL|Qwen3VL-2B]].
+It also links performance interpretation to [[DistributionShift]], [[RepresentationAlignment]], and sample-level quality effects even when training loss is similar.
+
+## [2026-05-10] ingest | EmbodiedMidtrain references and related work notes
+
+Added source. Key claims: 정답형 모델 스케일보다 target 분포 정렬이 중요하며, [[ProximityEstimator]] 기반 sample-level [[DataSelection]]과 [[MidTraining]]이 [[RobotManipulation]] 벤치에서 성능을 유의미하게 개선한다. 또한 [[EmbodiedMidtrain]]의 관련 연구 맥락을 [[RefSpatial]], [[EmbSpatial-Bench]], [[Robo2VLM]], [[RoboPoint]], [[VLM4VLA]] 등으로 정리하고, 백본 간 전이 가능성까지 연결해 기록했다.
+
+## [2026-05-10] ingest | EmbodiedMidtrain: VLM과 VLA 사이의 간극을 Mid-training으로 잇기
+
+Added source. Key claims: distribution alignment is a first-order lever in robotics adaptation; VLM pretraining scale alone is insufficient; sample-level [[DataSelection]] with lightweight [[ProximityEstimator|proximity scoring]] improved Calvin, SimplerEnv-Bridge, and LIBERO-10 under [[VLA]] fine-tuning; and smaller backbones can remain competitive when adaptation data is well aligned.
+
 ## [2026-05-10] ingest | LilysAI bulk ingest maintenance
 
 Created 184 placeholder concept pages for wikilink integrity and auto-indexed 225 generated pages after recent LilysAI imports.
@@ -636,3 +650,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-10] graph | Knowledge graph rebuilt
 
 1903 nodes, 6231 edges (6231 extracted, 0 inferred).
+
+## [2026-05-10] graph | Knowledge graph rebuilt
+
+1946 nodes, 6458 edges (6458 extracted, 0 inferred).
