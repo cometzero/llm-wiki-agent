@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 18 (2026-05-10)](sources/2026-05-10-day18-ai-ml-learning-review.md) — CNN channels, feature maps, filters; pooling and downsampling; Residual Networks.
 - [AI/ML Learning Review Day 17 (2026-05-09)](sources/2026-05-09-day17-ai-ml-learning-review.md) — Learning curves, CNN local connectivity, and convolution operation.
 - [AI/ML Learning Review Day 16 (2026-05-08)](sources/2026-05-08-day16-ai-ml-learning-review.md) — Deep learning training mechanics: epoch/iteration/batch size, BatchNorm, and Dropout.
 - [AI/ML Learning Review Day 15 (2026-05-07)](sources/2026-05-07-day15-ai-ml-learning-review.md) — Deep learning as layered representation learning and stable training via initialization and gradient flow.
@@ -380,6 +381,9 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [Channel, Feature Map, Filter](concepts/ChannelFeatureMapFilter.md) — CNN tensor channels, learned filters, and feature-map outputs.
+- [Pooling and Downsampling](concepts/PoolingDownsampling.md) — spatial reduction methods that lower computation and add mild shift robustness.
+- [Residual Network](concepts/ResidualNetwork.md) — skip-connection architecture that learns residual changes for deeper networks.
 - [Learning Curves](concepts/LearningCurves.md) — diagnostic plots for train and validation performance over training.
 - [Convolutional Neural Networks](concepts/ConvolutionalNeuralNetworks.md) — image-oriented neural networks using local connectivity and shared kernels.
 - [Convolution](concepts/Convolution.md) — sliding kernel operation that produces feature maps in CNNs.
