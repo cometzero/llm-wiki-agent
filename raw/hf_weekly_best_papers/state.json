@@ -1,4 +1,14 @@
 {
-  "processed_paper_ids": [],
-  "runs": []
+  "processed_paper_ids": [
+    "2604.20012"
+  ],
+  "runs": [
+    {
+      "date_kst": "2026-05-10",
+      "selected_paper_id": "2604.20012",
+      "title": "EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training",
+      "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/embodiedmidtrain-2604.20012",
+      "notes": "Added Korean analysis, references, study guide, and figures; ingested into wiki."
+    }
+  ]
 }
