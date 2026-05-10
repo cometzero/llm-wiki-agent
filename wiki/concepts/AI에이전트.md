@@ -1,27 +1,21 @@
 ---
 title: "AI에이전트"
 type: concept
-tags: [ai, automation, workforce, productivity]
-sources: [인간의-가치는-오직-의지만-남을-겁니다-노정석-대표-비팩토리]
-last_updated: 2026-04-20
+tags: [agentic-systems, automation, AI-era]
+sources: [그만-알아야할만-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필요-인스터스]
+last_updated: 2026-05-10
 ---
 
-## Definition
-[[AI에이전트]]는 특정 직무의 반복·조정·문서·의사결정 지원 업무를 자동화하기 위해 **모델, 데이터 커넥터, 프롬프트/규칙**이 결합된 실행 단위를 뜻한다.
+## 정의
 
-## Key Characteristics
-- 직무 맥락에 맞는 입력(이메일, 문서, 메신저, 회의 기록 등)을 구조화한다.
-- 단순 업무를 먼저 자동화해 사람이 고부가가치 판단에 집중하도록 설계한다.
-- 실사용 피드백(검토·수정·재학습) 루프를 통해 성능과 신뢰도를 개선한다.
-- 성능 임계치 자체보다 **도입 설계의 품질**이 실무 성과를 좌우한다.
+[[AI에이전트]]는 사용자 대신 문제 분해, 실행, 점검, 보고까지 수행하는 자동화 작업 주체이다. 그러나 [[AndrejKapassi]]의 관점에서는 이들 에이전트의 생산성은 감독 가능한 인프라와 [[Verifiability]] 구조에 의해 결정된다.
 
-## In this source
-- [[노정석]]의 [[비팩토리]]에서는 직무 해설서 생성, 내부 보고서 정리, 상품 기획 보조, 고객응대, 자료 요약/생성에 활용되었다.
-- AI 성능 향상(특히 [[ClaudeOpus46]], [[GPT-5.4]])이 기존 비효율을 실전에서 급격히 줄였다는 경험적 관측이 제시된다.
+## 핵심 내용
 
-## Related Pages
-- [[LLMAgents]]
-- [[VibeCoding]]
-- [[ClaudeCode]]
-- [[AI인재양극화]]
-- [[제로클릭사회]]
+- [[AI 에이전트]]는 작업 처리에서 일관성을 높일 수 있으나, 비채점 영역에서는 미묘한 실패(허위, 비상식적 판단)를 내놓을 수 있다.
+- [[Thinking]]은 에이전트에 넘겨도 되지만 [[Understanding]]은 사람이 유지해야 한다.
+- [[ContextWindow]] 구성, 프롬프트 품질, API/인프라 노출성 설계가 성능에 직결된다.
+
+## 연결
+
+- [[AgenticEngineering]], [[Verifiability]], [[ContextWindow]], [[Reinforcement Learning]], [[ClaudeCode]], [[OpenClaw]]

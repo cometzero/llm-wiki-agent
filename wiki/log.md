@@ -1,3 +1,88 @@
+## [2026-05-10] ingest | LilysAI bulk ingest maintenance
+
+Created 184 placeholder concept pages for wikilink integrity and auto-indexed 225 generated pages after recent LilysAI imports.
+
+## [2026-05-10] ingest | Unveiling the Inner Workings of IREE: An MLIR-Based Compiler for Diverse H/W
+
+Added source. Key claims: [[IREE]]’s MLIR-based stack combines [[Host-Device Programming Model]], [[Progressive Lowering]], and [[HAL]] for heterogeneous hardware deployment; [[VMFB]] is its key deployment artifact; default scheduling and transform/plugin extensibility are central, while full out-of-box parity and auto-tuning in heterogeneous settings remain active work items.
+
+## [2026-05-10] ingest | QEMU 에뮬레이터 내부 구조: TCG, 메모리, 디바이스 모델링 및 디버깅
+
+Added source. Key claims: [[QEMU]] 동작의 중심은 [[TCG]] 기반 동적 바이너리 변환이며, `Translation Block` 캐시와 체이닝으로 성능을 확보한다. 장치 모델은 [[QOM]]/[[TypeInfo]]/[[ObjectClass]] 기반으로 생성·초기화·등록되며, [[PCI]] 장치 주입·BAR 콜백은 사용자 공간 상호작용 검증에 직접 활용된다. 메모리 서브시스템은 [[SoftMMU]]-[[AddressSpace]]-[[MemoryRegion]]-[[RAMBlock]]으로 게스트 물리주소를 호스트 주소로 연결한다. 디버깅은 QEMU 프로세스 GDB와 게스트 커널 GDB 경로를 분리해 실행된다.
+
+## [2026-05-10] ingest | 2025 EuroLLVM - Deep Dive into the MLIR to LLVM IR Translation Mechanism
+
+Added source. Key claims: [[MLIR]]는 초기에는 [[LLVM]] 호환성 중심의 단순 번역으로 출발했으나, GPU/가속기/OpenMP 확장으로 [[Dialect]]-[[Interface]] 기반 하향 구조로 진화했다. 핵심 번역 훅(`translateOperation`, `amendOperation`, `convertParameter`)과 [[LLVMTranslationDialectInterface]]로 다이얼렉트 책임이 분산되었고, 다이얼렉트 과잉 추가가 성능/인지/유지보수 비용을 키우는 점이 주요 경고로 제시되었다.
+
+## [2026-05-10] ingest | Tesla's Shift to End-To-End Deep Learning: Full Breakdown
+
+Added source. Key claims: 2021년 [[Tesla]]는 [[HydraNet]] 중심의 모듈형 인지-계획 분리 구조를 사용했고, 2022년에는 [[OccupancyNetwork]]와 [[OccupancyFlow]]를 통해 3D 공간 점유 기반 인지를 강화했으나 planning 규칙이 남아 있었다. FSD v12 단계에서 [[EndToEndDeepLearning]] 전환을 통해 [[Perception]]과 [[Planning]]을 하나의 목표로 함께 최적화해 [[EndToEndAutonomy]] 정합을 높였고, 기존 모듈도 완전 폐기보다 진단·미세조정 가능한 하위 구성요소로 유지한다.
+
+## [2026-05-10] ingest | Tesla's Occupancy Networks: A look at How They Work
+
+Added source. Key claims: Tesla applies an occupancy-first 3D representation to replace fixed-box/object-class limitations, introduces voxel-based [[OccupancyGrid]] reasoning plus [[OccupancyFlow]] for dynamics, and uses [[NeuralRadianceField]]-based reconstruction checks to improve robustness in ambiguous and long-tail driving conditions.
+
+## [2026-05-10] ingest | Tesla’s AI Can EXPLAIN Itself?! Ashok’s Mind-Blowing FSD Demo
+
+Added source. Key claims: [[Tesla]] FSD는 자연어 판단 설명 가능성, [[System1]]/[[System2]] 기반 이원 판단, 및 [[WorldSimulator]] 기반 폐쇄루프 시나리오 학습을 통해 엣지 케이스 대응과 해석 가능한 안전성 확보를 강화한다.
+
+## [2026-05-10] ingest | NVIDIA GR00T vs Gemini Robotics vs Physical Intelligence π: VLA 모델 3대장 비교 분석
+
+Added source. Key claims: 휴머노이드 중심의 [[NVIDIAGR00T]], [[ThinkingBeforeActing]]/[[MotionTransfer]] 중심의 [[GeminiRobotics]], 그리고 범용 정책 중심의 [[PhysicalIntelligencePi]]가 각각 데이터, 추론-행동 분할, 지식 보존을 통해 [[VLA]] 로봇 AI의 일반화·확장성 문제를 서로 다르게 해결한다. 또한 세 모델 모두 [[CrossEmbodimentTransfer]] 성능을 핵심 제약으로 공유한다.
+
+## [2026-05-10] ingest | Ashok Elluswamy: Building Foundational Models for Robotics at Tesla
+
+Added source. Key claims: [[Tesla]]은 [[EndToEndAutonomy]] 기반으로 센서-제어 직접 매핑 파이프라인을 강화하고, [[WorldSimulator]] 기반 폐쇄루프 검증으로 안전성과 long-tail 강건성을 점검한다. 또한 동일한 파운데이션을 [[Optimus]]와 [[Cybercab]] 같은 로보틱스/이동성 서비스로 확장 가능하다는 확장 전략을 제시한다.
+
+## [2026-05-10] ingest | A Peek into Tesla’s Autonomous Future: Core Tech Revealed by VP Ashok Elluswamy at ICCV25 WDFM-AD
+
+Added source. Key claims: [[Tesla]]의 핵심 자율주행 방향이 단일 대규모 [[EndToEndAutonomy]]로 수렴하며, 모듈식 파이프라인의 인터페이스 손실을 줄이고 규칙 기반 설계 한계를 극복하려 한다는 점을 반영했다. 대규모 센서 데이터와 폐쇄루프 [[Simulation]] 기반 검증으로 희귀 시나리오 처리 능력 및 선제적 안전 제어를 강화하고, 동일 기술을 [[Cybercab]]·[[Optimus]]로 확장하는 로보틱스 확장성을 정리했다.
+
+## [2026-05-10] ingest | 삼성 성과급 논쟁, 진짜 문제는 따로 있다 | 김지형 경제사회노동위원회 위원장 [신과대화]
+
+Added source. Key claims: 삼성 성과급 쟁점은 단순 노사 분쟁이 아니라 주주와 이해관계자 분배 구조의 사회적 쟁점이다; [[사회적대화]]를 권리 다툼형에서 미래 과제 해결형인 [[사회적대화 2.0]]으로 전환해야 한다; AI 초과이익 배분 및 인구·일자리 전환 정책이 핵심 후속 의제다.
+
+## [2026-05-10] ingest | 매도했다면 미련을 버리세요...여러 섹터가 주도하는 진짜 강세장 대처법 | 박병창 교보증권 자산관리전략부 이사 [여의도 인사이트]
+
+Added source. Key claims: 시장에서 FOMO 추격매수의 위험과 주도섹터 순환의 중요성을 정리하고, 매도 후 미련(후회) 제거와 빠른 재의사결정을 통한 규율투자 원칙을 제시함.
+
+## [2026-05-10] ingest | ARKInvest Big Ideas 2026
+
+Added source. Key claims: [[ARKInvest]]의 10번째 연례 보고서인 [[ARKInvest Big Ideas 2026]]은 [[AI]]가 [[PublicBlockchain]], [[Robotics]], [[EnergyStorage]], [[Multiomics]]과 결합해 혁신 속도를 가속하며 거시경제 성장률 및 자본 구조에 구조적 변화를 만들 수 있다고 정리한다. 핵심은 단기 노이즈 대응이 아닌 장기 혁신 플랫폼 결합이다. 보고서에는 재사용 [[Rocket]] 기반 [[SpaceBasedAIComputing]], 휴머노이드 확산의 GDP 임팩트, AI 칩 수요가 촉진하는 자본 형성 가속, 양자컴퓨팅의 상대적 지연 논의가 포함된다.
+
+## [2026-05-10] ingest | 그만 알아야할만 안드레 카파시 30분 인터뷰 완전정리 - AI시대의 필요 인스터스
+
+Added source. Key claims: 
+- [[AndrejKapassi]]는 AI 생산성에서 [[Thinking]]은 모델에 위임 가능하지만 [[Understanding]]은 인간이 유지해야 하는 핵심 역량으로 구분했다.
+- [[Software 1.0]], [[Software 2.0]], [[Software 3.0]] 전이를 통해 AI 코딩은 단순 코드 작성에서 [[Prompting]]과 [[ContextWindow]] 중심의 패러다임으로 이동한다.
+- [[LLM]]은 채점 가능한 영역에서 강력하지만 [[JaggedIntelligence]]로 인해 비일관성이 존재해 인간 감독과 [[Verifiability]]가 필수다.
+- [[NeuralComputer]] 관점에서 향후 많은 앱/워크플로우가 신경망 기반 실행으로 대체될 수 있다는 장기 예측을 제시한다.
+- [[AI 시대의 인간 가치]] 관점에서 미학, 판단, 감독, 스펙 설계 능력은 여전히 사람 중심 역량으로 남는다.
+
+## [2026-05-10] ingest | The Coding Assistant Breakdown: More Tokens Please
+
+Added source. Key claims: (1) [[GPT-5.5]]은 복잡한 추론 작업에서 강점이 있어 Codex 계열의 정밀 구현에 적합하고, (2) [[Claude Opus 4.7]]은 사용자 의도 추론과 개방형 작업에서 강해 초기 계획/스캐폴딩에 유리하며, (3) 실사용에서는 벤치마크 수치보다 [[SWE-bench]]/[[SWE-bench Verified]]/[[SWE-bench Pro]] 계열의 하네스 편향을 고려한 하이브리드 운영이 더 중요하다는 점을 강조한다.
+
+## [2026-05-10] ingest | HC2022.Google.Pienaar.v1.pdf
+
+Added source. Key claims: [[MLIR]]은 트리/그래프/저수준 IR을 하나의 점진적 저수준화 체계로 통합하고, [[Parsimony|파시모니]]·[[Traceability|추적성]]·[[Progressivity|점진성]]을 핵심 원칙으로 한 모듈형 컴파일러 인프라를 제시한다. 도메인 특화 IR이 반복 재구현해 온 비용과 진단/패스 중복 문제를 줄이기 위해 [[Dialect]], [[Operation]], [[Pass]], [[Pattern]], [[TableGen]] 기반의 조합을 강조한다.
+
+## [2026-05-10] ingest | EP 96. LLM 추론 인프라와 토큰 경제학
+
+Added source. Key claims: [[LLM]] 추론은 [[t_compute]]와 [[t_memory]] 병목의 최댓값이 지연·비용을 결정하며, [[Transformer]]의 [[Prefill]]/[[Decode]] 구분, [[KVCache]] 운용, [[Roofline Analysis]] 기반 배치 최적화, 그리고 [[TokenEconomy]]가 실제 가격·수익성의 핵심 연결 고리임을 정리한다.
+
+## [2026-05-10] ingest | Andrej Karpathy: From Vibe Coding to Agentic Engineering
+
+Added source. Key claims: This source reframes [[VibeCoding]] as a low-barrier entry path, while introducing [[AgenticEngineering]] for production-grade AI work via [[Software 3.0]], [[Prompting]], and strong [[Verifiability]] boundaries. It emphasizes [[JaggedIntelligence]], [[DistributionShift]], and the persistent need for human judgment, taste, and supervision in AI software workflows.
+
+## [2026-05-10] ingest | 99%가 모르는 하네스 엔지니어링 — AI 에이전트 생산성을 10배 올리는 세팅법
+
+Added source. Key claims: AI productivity is improved by separating planning and execution through [[HarnessEngineering]], using [[Task]]/[[TaskPhase]] decomposition for context-safe automation, and enforcing documentation-first change control via [[docs_diff]] before review and merge. The source also highlights that humans must retain control over planning, implicit knowledge transfer, and final decision quality, while [[AI에이전트]] executes repetitive implementation/review workflow loops.
+
+## [2026-05-10] ingest | Code with Claude 2026: Opening Keynote
+
+Added source. Key claims: Anthropic introduced [[MultiAgentOrchestration]], [[Outcomes]], and [[Dreaming]] in [[Claude Managed Agents]] to scale autonomous execution quality; [[ClaudeCode]] evolved toward asynchronous developer workflows with [[Routines]], [[Autofix]], and remote-control support; API and infrastructure updates target production gaps between AI capability and real deployment.
+
 ## [2026-05-10] ingest | AI/ML Learning Review — Day 18
 
 Added source covering CNN channels/feature maps/filters, pooling/downsampling, and Residual Networks. Created concept pages for ChannelFeatureMapFilter, PoolingDownsampling, and ResidualNetwork. Updated overview to reflect new CNN concepts and their connections to Transformers and LLMs.
@@ -547,3 +632,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-10] graph | Knowledge graph rebuilt
 
 1576 nodes, 5266 edges (5266 extracted, 0 inferred).
+
+## [2026-05-10] graph | Knowledge graph rebuilt
+
+1903 nodes, 6231 edges (6231 extracted, 0 inferred).

@@ -4,6 +4,25 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Unveiling the Inner Workings of IREE: An MLIR-Based Compiler for Diverse H/W](sources/unveiling-the-inner-workings-of-iree-an-mlir-based-compiler-for-diverse-h-w.md) — [[IREE]]의 [[MLIR]] 기반 컴파일 스택을 호스트-디바이스 분할, [[HAL]], [[Dispatch]], [[Transform Dialect]], [[VMFB]] 중심으로 정리한다.
+- [QEMU 에뮬레이터 내부 구조: TCG, 메모리, 디바이스 모델링 및 디버깅](sources/qemu-에뮬레이터-내부-구조-tcg-메모리-디바이스-모델링-및-디버깅.md) — [[QEMU]]의 런타임 변환기, 장치 객체 모델([[QOM]]), SoftMMU, PCI 모델링, 디버깅 파이프라인을 한 번에 정리한 실무형 내부 구조 보고서.
+- [2025 EuroLLVM - Deep Dive into the MLIR to LLVM IR Translation Mechanism](sources/2025-eurollvm-deep-dive-into-the-mlir-to-llvm-ir-translation-mechanism.md) — [[MLIR]]과 [[LLVM]] 통합사의 초기 단순 번역에서 다이얼렉트-인터페이스 기반 확장, 그리고 다이얼렉트 과잉 확대에 따른 비용·설계 문서화 필요성까지 정리한 내용.
+- [Tesla's Shift to End-To-End Deep Learning: Full Breakdown](sources/tesla-s-shift-to-end-to-end-deep-learning-full-breakdown.md) — [[Tesla]]의 2021~2022 모듈형 스택에서 [[FSD v12]]의 [[EndToEndDeepLearning]] 통합 전환 과정을 정리하고 [[OccupancyNetwork]], [[HydraNet]], [[MonteCarloTreeSearch]]의 역할 변화를 설명한다.
+- [Tesla's Occupancy Networks: A look at How They Work](sources/tesla-s-occupancy-networks-a-look-at-how-they-work.md) — [[Tesla]]의 자율주행에서 [[OccupancyNetwork]] 기반 3D 공간 점유 표현을 통해 고정 박스 기반 검출의 한계를 완화하고, [[OccupancyFlow]]·[[NeuralRadianceField]]로 안정성·강건성을 강화한 기술 전환을 정리한다.
+- [Tesla’s AI Can EXPLAIN Itself?! Ashok’s Mind-Blowing FSD Demo](sources/tesla-s-ai-can-explain-itself-ashok-s-mind-blowing-fsd-demo.md) — [[Tesla]] FSD의 자연어 판단 설명, [[GaussianSplatting]] 기반 장면 이해, [[System1]]/[[System2]] 의사결정, [[WorldSimulator]] 기반 폐쇄루프 시뮬레이션 검증을 통합한 엔드투엔드 자율주행·로보틱스 확장 프레임을 정리한다.
+- [NVIDIA GR00T vs Gemini Robotics vs Physical Intelligence π: VLA 모델 3대장 비교 분석](sources/nvidia-gr00t-vs-gemini-robotics-vs-pi-로봇의-뇌는-어떻게-다르게-설계됐을까-vla-모델-3대장-비교-분석.md) — [[NVIDIA]]의 [[NVIDIAGR00T]], [[Google]]의 [[GeminiRobotics]], [[PhysicalIntelligencePi]]를 통해 [[VLA]] 설계 철학을 휴머노이드 중심, 사고-행동 분리, 범용 정책 중심으로 비교한다.
+- [Ashok Elluswamy: Building Foundational Models for Robotics at Tesla](sources/ashok-elluswamy-building-foundational-models-for-robots-at-tesla.md) — [[Tesla]]의 [[EndToEndAutonomy]]를 기반으로 한 차량-로봇 공통 파운데이션 모델, 시뮬레이션 검증, 로보택시/휴머노이드 확장 전략을 정리한다.
+- [A Peek into Tesla’s Autonomous Future: Core Tech Revealed by VP Ashok Elluswamy at ICCV25 WDFM-AD](sources/a-peek-into-tesla-s-autonomous-future-core-tech-revealed-by-vp-ashok-elluswamy-at-iccv25-wdfm-ad.md) — [[Tesla]]가 단일 [[EndToEndAutonomy]]로 [[AutonomousVehicle]]와 [[Robotics]]을 확장하는 방식, 대규모 데이터·시뮬레이션 기반 검증 및 디버깅 전략을 정리한다.
+- [삼성 성과급 논쟁, 진짜 문제는 따로 있다 | 김지형 경제사회노동위원회 위원장 [신과대화]](sources/삼성-성과급-논쟁-진짜-문제는-따로-있다-김지형-경제사회노동위원회-위원장-신과대화.md) — [[김지형]]의 해석으로 [[삼성전자]] 성과급을 [[주주자본주의]] 대 [[이해관계자자본주의]] 분배 구조 논쟁으로 재정의하고, [[사회적대화2.0]]와 [[AI초과이익]] 배분 설계를 함께 제시한다.
+- [매도했다면 미련을 버리세요...여러 섹터가 주도하는 진짜 강세장 대처법 | 박병창 교보증권 자산관리전략부 이사 [여의도 인사이트]](sources/매도했다면-미련을-버리세요-...여러-섹터가-주도하는-진짜-강세장-대처법-박병창-교보증권-자산관리전략부-이사-여의도-인사이트.md) — [[박병창]]은 FOMO 추격 매수의 위험을 경고하고, [[주도섹터]] 흐름과 감정 통제 기반의 강세 대응 원칙을 제시한다.
+- [ARKInvest Big Ideas 2026](sources/arkinvest-bigideas2026-pdf.md) — [[ARKInvest]]의 10번째 연례 보고서를 바탕으로 [[AI]], [[PublicBlockchain]], [[Robotics]], [[EnergyStorage]], [[Multiomics]]의 가속화가 거시 성장 변곡점을 만든다는 혁신 플랫폼 프레임을 정리한 내용.
+- [그만 알아야할만 안드레 카파시 30분 인터뷰 완전정리 - AI시대의 필요 인스터스](sources/그만-알아야할만-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필요-인스터스.md) — [[AndrejKapassi]] 의 여러 점을 대제한 AI 프로시한 싱장 구축을 [[Software 1.0]]/…[[NeuralComputer]] 항목에 바람.
+- [The Coding Assistant Breakdown: More Tokens Please](sources/the-coding-assistant-breakdown-more-tokens-please.md) — [[GPT-5.5]]와 [[Claude Opus 4.7]], [[DeepSeek V4]]의 코딩 AI 장단점과 벤치마크 한계를 비교해 하이브리드 워크플로우 필요성을 정리한 분석
+- [HC2022.Google.Pienaar.v1.pdf](sources/hc2022-google-pienaar-v1-pdf.md) — [[MLIR]]의 파시모니·추적성·점진성 원칙과 다이얼렉트/패스/패턴 기반의 모듈형 컴파일러 재사용 전략을 정리한 기술 문헌 요약.
+- [EP 96. LLM 추론 인프라와 토큰 경제학](sources/ep-96-llm-추론-인프라와-토큰-경제학.md) — [[LLM]] 추론의 [[t_compute]]/[[t_memory]] 균형, [[Transformer]] prefill-decode 구조, [[TokenEconomy]]와 배치 전략을 정리한 강의형 요약.
+- [Andrej Karpathy: From Vibe Coding to Agentic Engineering](sources/andrej-karpathy-from-vibe-coding-to-agentic-engineering.md) — [[Andrej Karpathy]]가 [[VibeCoding]]과 [[LLM]] 기반 [[AI에이전트]]의 한계·가능성을 구분하고, [[AgenticEngineering]]/[[Verifiability]]/인간 감독 중심의 생산성 패러다임을 제시한다.
+- [99%가 모르는 하네스 엔지니어링 — AI 에이전트 생산성을 10배 올리는 세팅법 (바이브마피아 최수민님)](sources/99-가-모르는-하네스-엔지니어링-ai-에이전트-생산성을-10배-올리는-세팅법-바이브마피아-최수민님.md) — [[AI에이전트]]의 자율 실행성을 높이는 [[HarnessEngineering]] 방법을 기획 구체화, 태스크-페이즈 설계, PR/리뷰 자동화, 암묵지 이식 흐름 관점에서 정리한다.
+- [Code with Claude 2026: Opening Keynote](sources/code-with-claude-2026-opening-keynote.md) — Anthropic의 클로드 에이전트 오케스트레이션(멀티에이전트, 아웃컴, 드리밍)과 Claude Code의 운영형 워크플로우 전환을 다룬 키노트.
 - [AI/ML Learning Review — Day 18 (2026-05-10)](sources/2026-05-10-day18-ai-ml-learning-review.md) — CNN channels, feature maps, filters; pooling and downsampling; Residual Networks.
 - [AI/ML Learning Review Day 17 (2026-05-09)](sources/2026-05-09-day17-ai-ml-learning-review.md) — Learning curves, CNN local connectivity, and convolution operation.
 - [AI/ML Learning Review Day 16 (2026-05-08)](sources/2026-05-08-day16-ai-ml-learning-review.md) — Deep learning training mechanics: epoch/iteration/batch size, BatchNorm, and Dropout.
@@ -1582,3 +1601,229 @@
 - [희토류](concepts/희토류.md) — concept page
 
 ## Syntheses
+## Auto-indexed Generated Pages
+- [2D](concepts/2D.md) — auto-indexed concept page
+- [2차전지](concepts/2차전지.md) — auto-indexed concept page
+- [AI for social good](concepts/AIForSocialGood.md) — auto-indexed concept page
+- [AI를 미님드립한 것은 최저력의 적절한 다른 버스를 반선하는 확정이 되어야하는 것입니다.](concepts/AI를미님드립한것은최저력의적절한다른버스를반선하는확정이되어야하는것입니다AI를자여하는트랜자.md) — auto-indexed concept page
+- [AI를 주는 사람](concepts/AI를주는사람.md) — auto-indexed concept page
+- [AI세](concepts/AI세.md) — auto-indexed concept page
+- [AI시대사회적합의](concepts/AI시대사회적합의.md) — auto-indexed concept page
+- [ARKInvest Big Ideas 2026](concepts/ARKInvestBigIdeas2026.md) — auto-indexed concept page
+- [Action Chunking](concepts/ActionChunking.md) — auto-indexed concept page
+- [Action Prediction](concepts/ActionPrediction.md) — auto-indexed concept page
+- [Address Translation](concepts/AddressTranslation.md) — auto-indexed concept page
+- [AdvisorStrategy](concepts/AdvisorStrategy.md) — auto-indexed concept page
+- [Ashok Elluswamy: Building Foundational Models for Robotics at Tesla](concepts/AshokElluswamyBuildingFoundationalModelsForRoboticsAtTesla.md) — auto-indexed concept page
+- [Autofix](concepts/Autofix.md) — auto-indexed concept page
+- [Automated Code Review](concepts/AutomatedCodeReview.md) — auto-indexed concept page
+- [AutonomousAgent](concepts/AutonomousAgent.md) — auto-indexed concept page
+- [Bayes risk?](concepts/BayesRisk.md) — auto-indexed concept page
+- [BiFPN](concepts/BiFPN.md) — auto-indexed concept page
+- [BlackBox](concepts/BlackBox.md) — auto-indexed concept page
+- [TCG Chaining](concepts/Chaining.md) — auto-indexed concept page
+- [Chunked Prefill](concepts/ChunkedPrefill.md) — auto-indexed concept page
+- [Clang](concepts/Clang.md) — auto-indexed concept page
+- [Claude Managed Agents](concepts/ClaudeManagedAgents.md) — auto-indexed concept page
+- [Claude Platform](concepts/ClaudePlatform.md) — auto-indexed concept page
+- [Closed-Loop Simulation Evaluation](concepts/ClosedLoopSimulationEvaluation.md) — auto-indexed concept page
+- [Code Cache](concepts/CodeCache.md) — auto-indexed concept page
+- [CodeReview](concepts/CodeReview.md) — auto-indexed concept page
+- [Coding LLM Benchmarks](concepts/CodingLLMBenchmarks.md) — auto-indexed concept page
+- [ComputerVision](concepts/ComputerVision.md) — auto-indexed concept page
+- [Confluence](concepts/Confluence.md) — auto-indexed concept page
+- [Cost Based Pricing](concepts/CostBasedPricing.md) — auto-indexed concept page
+- [CostPlusPricing](concepts/CostPlusPricing.md) — auto-indexed concept page
+- [Cross-Embodiment Transfer](concepts/CrossEmbodimentTransfer.md) — auto-indexed concept page
+- [Cybercab](concepts/Cybercab.md) — auto-indexed concept page
+- [Data Pyramid for Robotics](concepts/DataPyramidForRobotics.md) — auto-indexed concept page
+- [Deconvolution](concepts/Deconvolution.md) — auto-indexed concept page
+- [DeepEP](concepts/DeepEP.md) — auto-indexed concept page
+- [DeepGEMM](concepts/DeepGEMM.md) — auto-indexed concept page
+- [DeveloperExperience](concepts/DeveloperExperience.md) — auto-indexed concept page
+- [DeviceModeling](concepts/DeviceModeling.md) — auto-indexed concept page
+- [DigitalWallet](concepts/DigitalWallet.md) — auto-indexed concept page
+- [Discord](concepts/Discord.md) — auto-indexed concept page
+- [Domain-specific compiler](concepts/DomainSpecificCompiler.md) — auto-indexed concept page
+- [Dreaming](concepts/Dreaming.md) — auto-indexed concept page
+- [동적 바이너리 변환 (Dynamic Binary Translation)](concepts/DynamicBinaryTranslation.md) — auto-indexed concept page
+- [ESG](concepts/ESG.md) — auto-indexed concept page
+- [EducationMethod](concepts/EducationMethod.md) — auto-indexed concept page
+- [Evaluation Method](concepts/EvaluationMethod.md) — auto-indexed concept page
+- [Fast](concepts/Fast.md) — auto-indexed concept page
+- [Felicia Krakura](concepts/FeliciaKrakura.md) — auto-indexed concept page
+- [Fine-tuning](concepts/FineTuning.md) — auto-indexed concept page
+- [FixedRectangles](concepts/FixedRectangles.md) — auto-indexed concept page
+- [FlashMLA](concepts/FlashMLA.md) — auto-indexed concept page
+- [Flashcard](concepts/Flashcard.md) — auto-indexed concept page
+- [FleetAverage](concepts/FleetAverage.md) — auto-indexed concept page
+- [Flow Matching](concepts/FlowMatching.md) — auto-indexed concept page
+- [Fortran](concepts/Fortran.md) — auto-indexed concept page
+- [GDB](concepts/GDB.md) — auto-indexed concept page
+- [GDP7% 시대 시작된다](concepts/GDP7시대시작된다.md) — auto-indexed concept page
+- [GDPval](concepts/GDPval.md) — auto-indexed concept page
+- [GPQA](concepts/GPQA.md) — auto-indexed concept page
+- [GPT-5.5(Codex)](concepts/GPT55Codex.md) — auto-indexed concept page
+- [GPT-5.5 Pro](concepts/GPT55Pro.md) — auto-indexed concept page
+- [Gaussian Modeling in Autonomy](concepts/GaussianModelingInAutonomy.md) — auto-indexed concept page
+- [GitHub](concepts/GitHub.md) — auto-indexed concept page
+- [Grok](concepts/Grok.md) — auto-indexed concept page
+- [HLE](concepts/HLE.md) — auto-indexed concept page
+- [Healthcare](concepts/Healthcare.md) — auto-indexed concept page
+- [HierarchicalPolicy](concepts/HierarchicalPolicy.md) — auto-indexed concept page
+- [Host-Device Programming Model](concepts/HostDeviceProgrammingModel.md) — auto-indexed concept page
+- [HostMemoryBackend](concepts/HostMemoryBackend.md) — auto-indexed concept page
+- [Huawei Ascend](concepts/HuaweiAscend.md) — auto-indexed concept page
+- [Hybrid LLM Coding Workflow](concepts/HybridLLMCodingWorkflow.md) — auto-indexed concept page
+- [ICCV25 WDFM-AD](concepts/ICCV25WDFMAD.md) — auto-indexed concept page
+- [혁신 플랫폼](concepts/InnovationPlatform.md) — auto-indexed concept page
+- [Interface](concepts/Interface.md) — auto-indexed concept page
+- [InterfaceClass](concepts/InterfaceClass.md) — auto-indexed concept page
+- [Internal Representation](concepts/InternalRepresentation.md) — auto-indexed concept page
+- [Intuit](concepts/Intuit.md) — auto-indexed concept page
+- [Jagged Intelligence](concepts/JaggedIntelligence.md) — auto-indexed concept page
+- [Joy of Missing Out](concepts/JoyOfMissingOut.md) — auto-indexed concept page
+- [Judgment](concepts/Judgment.md) — auto-indexed concept page
+- [Julia](concepts/Julia.md) — auto-indexed concept page
+- [Knowledge Insulation](concepts/KnowledgeInsulation.md) — auto-indexed concept page
+- [LLM Inference Infrastructure](concepts/LLMInferenceInfrastructure.md) — auto-indexed concept page
+- [LLM 인프라](concepts/LLM인프라.md) — auto-indexed concept page
+- [LLM 추론 인프라](concepts/LLM추론인프라.md) — auto-indexed concept page
+- [LLVMTranslationDialectInterface](concepts/LLVMTranslationDialectInterface.md) — auto-indexed concept page
+- [Linalg](concepts/Linalg.md) — auto-indexed concept page
+- [MFU](concepts/MFU.md) — auto-indexed concept page
+- [MMLU](concepts/MMLU.md) — auto-indexed concept page
+- [MachineModel](concepts/MachineModel.md) — auto-indexed concept page
+- [MembasedRoboticsMemory](concepts/MembasedRoboticsMemory.md) — auto-indexed concept page
+- [MemoryRegion](concepts/MemoryRegion.md) — auto-indexed concept page
+- [mlir.dev/chat](concepts/MlirDevChat.md) — auto-indexed concept page
+- [mlir.dev/forum](concepts/MlirDevForum.md) — auto-indexed concept page
+- [mlir-opt](concepts/MlirOpt.md) — auto-indexed concept page
+- [Model Labs](concepts/ModelLabs.md) — auto-indexed concept page
+- [Model Provider Margins](concepts/ModelProviderMargins.md) — auto-indexed concept page
+- [Model Training](concepts/ModelTraining.md) — auto-indexed concept page
+- [MotionTransfer](concepts/MotionTransfer.md) — auto-indexed concept page
+- [Multi-Agent Orchestration](concepts/MultiAgentOrchestration.md) — auto-indexed concept page
+- [NVVM](concepts/NVVM.md) — auto-indexed concept page
+- [NeRF](concepts/NeRF.md) — auto-indexed concept page
+- [OSWorld](concepts/OSWorld.md) — auto-indexed concept page
+- [ObjectClass](concepts/ObjectClass.md) — auto-indexed concept page
+- [ObjectDetection](concepts/ObjectDetection.md) — auto-indexed concept page
+- [OccupancyGrid](concepts/OccupancyGrid.md) — auto-indexed concept page
+- [OccupancyVolume](concepts/OccupancyVolume.md) — auto-indexed concept page
+- [Ontology](concepts/Ontology.md) — auto-indexed concept page
+- [Opaque pointers](concepts/OpaquePointers.md) — auto-indexed concept page
+- [OpenAI API](concepts/OpenAIAPI.md) — auto-indexed concept page
+- [OpenMP](concepts/OpenMP.md) — auto-indexed concept page
+- [Outcomes](concepts/Outcomes.md) — auto-indexed concept page
+- [PCIDevice](concepts/PCIDevice.md) — auto-indexed concept page
+- [PR 자동화](concepts/PR자동화.md) — auto-indexed concept page
+- [PagedAttention](concepts/PagedAttention.md) — auto-indexed concept page
+- [Parsimony](concepts/Parsimony.md) — auto-indexed concept page
+- [PassBase.td](concepts/PassBaseTd.md) — auto-indexed concept page
+- [Pattern Description Language](concepts/PatternDescriptionLanguage.md) — auto-indexed concept page
+- [Perception](concepts/Perception.md) — auto-indexed concept page
+- [Phase](concepts/Phase.md) — auto-indexed concept page
+- [Phi nodes](concepts/PhiNodes.md) — auto-indexed concept page
+- [Policy Network](concepts/PolicyNetwork.md) — auto-indexed concept page
+- [PrecisionTherapy](concepts/PrecisionTherapy.md) — auto-indexed concept page
+- [Progressive Lowering](concepts/ProgressiveLowering.md) — auto-indexed concept page
+- [Progressivity](concepts/Progressivity.md) — auto-indexed concept page
+- [Prompting](concepts/Prompting.md) — auto-indexed concept page
+- [QEMU Object Model](concepts/QEMUObjectModel.md) — auto-indexed concept page
+- [QMP](concepts/QMP.md) — auto-indexed concept page
+- [qemu-system-x86_64](concepts/QemuSystemX8664.md) — auto-indexed concept page
+- [RAMBlock](concepts/RAMBlock.md) — auto-indexed concept page
+- [ROCDL](concepts/ROCDL.md) — auto-indexed concept page
+- [ramfs](concepts/Ramfs.md) — auto-indexed concept page
+- [Rate Limits](concepts/RateLimits.md) — auto-indexed concept page
+- [RegNet](concepts/RegNet.md) — auto-indexed concept page
+- [RemoteControl](concepts/RemoteControl.md) — auto-indexed concept page
+- [Rewrite](concepts/Rewrite.md) — auto-indexed concept page
+- [Roofline Analysis](concepts/RooflineAnalysis.md) — auto-indexed concept page
+- [Routines](concepts/Routines.md) — auto-indexed concept page
+- [SGLang](concepts/SGLang.md) — auto-indexed concept page
+- [SOCAMM](concepts/SOCAMM.md) — auto-indexed concept page
+- [SPV](concepts/SPV.md) — auto-indexed concept page
+- [SWE-bench](concepts/SWEBench.md) — auto-indexed concept page
+- [SWE-bench Pro](concepts/SWEBenchPro.md) — auto-indexed concept page
+- [SWE-bench Verified](concepts/SWEBenchVerified.md) — auto-indexed concept page
+- [SceneUnderstanding](concepts/SceneUnderstanding.md) — auto-indexed concept page
+- [Shark](concepts/Shark.md) — auto-indexed concept page
+- [Shark Runtime](concepts/SharkRuntime.md) — auto-indexed concept page
+- [Shark Studio](concepts/SharkStudio.md) — auto-indexed concept page
+- [Shark Tank](concepts/SharkTank.md) — auto-indexed concept page
+- [Shark Turbine](concepts/SharkTurbine.md) — auto-indexed concept page
+- [Simulation](concepts/Simulation.md) — auto-indexed concept page
+- [SmartContract](concepts/SmartContract.md) — auto-indexed concept page
+- [Software 1.0](concepts/Software1.0.md) — auto-indexed concept page
+- [Software 2.0](concepts/Software2.0.md) — auto-indexed concept page
+- [Software 3.0](concepts/Software3.0.md) — auto-indexed concept page
+- [Software 3.0](concepts/Software30.md) — auto-indexed concept page
+- [Stripe](concepts/Stripe.md) — auto-indexed concept page
+- [SubAgent](concepts/SubAgent.md) — auto-indexed concept page
+- [Swift](concepts/Swift.md) — auto-indexed concept page
+- [t_compute](concepts/TCompute.md) — auto-indexed concept page
+- [TFGraph](concepts/TFGraph.md) — auto-indexed concept page
+- [TableGen](concepts/TableGen.md) — auto-indexed concept page
+- [Task/Phase Workflow](concepts/TaskPhase.md) — auto-indexed concept page
+- [Tau-bench](concepts/TauBench.md) — auto-indexed concept page
+- [Terminal-bench](concepts/TerminalBench.md) — auto-indexed concept page
+- [Tesla Occupancy Networks: A look at How They Work](concepts/TeslaOccupancyNetworksALookAtHowTheyWork.md) — auto-indexed concept page
+- [Thinking](concepts/Thinking.md) — auto-indexed concept page
+- [Thinking Before Acting](concepts/ThinkingBeforeActing.md) — auto-indexed concept page
+- [Traceability](concepts/Traceability.md) — auto-indexed concept page
+- [Transform Dialect](concepts/TransformDialect.md) — auto-indexed concept page
+- [Translation Block](concepts/TranslationBlock.md) — auto-indexed concept page
+- [TypeImpl](concepts/TypeImpl.md) — auto-indexed concept page
+- [TypeInfo](concepts/TypeInfo.md) — auto-indexed concept page
+- [vLLM](concepts/VLLM.md) — auto-indexed concept page
+- [VLM](concepts/VLM.md) — auto-indexed concept page
+- [VR NVL72](concepts/VRNVL72.md) — auto-indexed concept page
+- [Value Based Pricing](concepts/ValueBasedPricing.md) — auto-indexed concept page
+- [Voxel](concepts/Voxel.md) — auto-indexed concept page
+- [docs_diff](concepts/docs_diff.md) — auto-indexed concept page
+- [가격 정책](concepts/가격정책.md) — auto-indexed concept page
+- [경사노위](concepts/경사노위.md) — auto-indexed concept page
+- [공론화](concepts/공론화.md) — auto-indexed concept page
+- [기본소득](concepts/기본소득.md) — auto-indexed concept page
+- [기획 구체화](concepts/기획구체화.md) — auto-indexed concept page
+- [노사노조](concepts/노사노조.md) — auto-indexed concept page
+- [노사자치](concepts/노사자치.md) — auto-indexed concept page
+- [대만](concepts/대만.md) — auto-indexed concept page
+- [로봇세](concepts/로봇세.md) — auto-indexed concept page
+- [매도했다면 미련을 버리세요...여러-섹터가-주도하는-진짜-강세장-대처법-박병창-교보증권-자산관리전략부-이사-여의도-인사이트.md](concepts/매도했다면미련을버리세요여러섹터가주도하는진짜강세장대처법박병창교보증권자산관리전략부이사여의도인사이트Md.md) — auto-indexed concept page
+- [매도후미련](concepts/매도후미련.md) — auto-indexed concept page
+- [문서 기반 에이전트](concepts/문서기반에이전트.md) — auto-indexed concept page
+- [사회적대타협](concepts/사회적대타협.md) — auto-indexed concept page
+- [사회적합의](concepts/사회적합의.md) — auto-indexed concept page
+- [설계 의도 문서](concepts/설계의도문서.md) — auto-indexed concept page
+- [오케스트레이터](concepts/오케스트레이터.md) — auto-indexed concept page
+- [의견수렴](concepts/의견수렴.md) — auto-indexed concept page
+- [일자리전환](concepts/일자리전환.md) — auto-indexed concept page
+- [자동 테스트 생성](concepts/자동테스트생성.md) — auto-indexed concept page
+- [전력기기](concepts/전력기기.md) — auto-indexed concept page
+- [조선](concepts/조선.md) — auto-indexed concept page
+- [준법감시위원회](concepts/준법감시위원회.md) — auto-indexed concept page
+- [AIG Shark](entities/AIGShark.md) — auto-indexed entitie page
+- [Ashok Elluswamy](entities/AshokElluswamy.md) — auto-indexed entitie page
+- [Binti](entities/Binti.md) — auto-indexed entitie page
+- [BusyBox](entities/BusyBox.md) — auto-indexed entitie page
+- [Claude Managed Agents](entities/ClaudeManagedAgents.md) — auto-indexed entitie page
+- [Claude Opus 4.7](entities/ClaudeOpus47.md) — auto-indexed entitie page
+- [CodeRabbit](entities/CodeRabbit.md) — auto-indexed entitie page
+- [Codex](entities/Codex.md) — auto-indexed entitie page
+- [Cybercab](entities/Cybercab.md) — auto-indexed entitie page
+- [DeepSeek V4](entities/DeepSeekV4.md) — auto-indexed entitie page
+- [Dwarkesh](entities/Dwarkesh.md) — auto-indexed entitie page
+- [Eve Legal](entities/EveLegal.md) — auto-indexed entitie page
+- [Felicia Krakuru](entities/FeliciaKrakuru.md) — auto-indexed entitie page
+- [KVM](entities/KVM.md) — auto-indexed entitie page
+- [Lumara](entities/Lumara.md) — auto-indexed entitie page
+- [Nod.ai](entities/Nodai.md) — auto-indexed entitie page
+- [Reiner Pope](entities/ReinerPope.md) — auto-indexed entitie page
+- [SpaceBase AI](entities/SpaceBaseAI.md) — auto-indexed entitie page
+- [TFLite](entities/TFLite.md) — auto-indexed entitie page
+- [XLA](entities/XLA.md) — auto-indexed entitie page
+- [AI Value Capture - The Shift To Model Labs](sources/ai-value-capture-the-shift-to-model-labs.md) — auto-indexed source page
+- [그만 알아야할 항목: 안드레 카파시 30분 인터뷰 완전정리 - AI시대의 필요 인스터스](sources/큰계-알아야할만-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필요-인스팀시스.md.md) — auto-indexed source page

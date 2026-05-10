@@ -1,32 +1,39 @@
 ---
 title: "QEMU"
 type: entity
-tags: [entity, project]
-sources: [address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia, erofs-and-containers-xiang-gao-alibaba-cloud, kunit-testing-insufficiencies-matthew-whitehead-the-boeing-company, power-management-and-usb-mr-darrion-ramos-ms-victoria-siver-dr-ken-yihang-bai-dr-tuba-yavuz, towards-a-decade-of-industrial-grade-linux-cips-journey-and-the-road-ahead-yoshitake-kobayashi, zephyrbased-virtio-backend-on-xen-toward-open-source-functional-safety-hiroshi-tokita]
-last_updated: 2026-04-16
+tags:
+  - 가상화
+  - 에뮬레이터
+  - 시스템 소프트웨어
+  - 오픈소스
+sources:
+  - qemu-에뮬레이터-내부-구조-tcg-메모리-디바이스-모델링-및-디버깅
+last_updated: 2026-05-10
 ---
 
-## Summary
-QEMU appears as an accessible environment for prototyping and evaluating low-level kernel isolation techniques.
+## 정체성
 
-## Mentioned In
-- [[address-space-isolation-for-enhanced-safety-of-the-linux-kernel-igor-stoppa-nvidia]]
-- [[erofs-and-containers-xiang-gao-alibaba-cloud]]
-- [[kunit-testing-insufficiencies-matthew-whitehead-the-boeing-company]]
-- [[power-management-and-usb-mr-darrion-ramos-ms-victoria-siver-dr-ken-yihang-bai-dr-tuba-yavuz]]
-- [[towards-a-decade-of-industrial-grade-linux-cips-journey-and-the-road-ahead-yoshitake-kobayashi]]
-- [[zephyrbased-virtio-backend-on-xen-toward-open-source-functional-safety-hiroshi-tokita]]
+[[QEMU]]는 오픈소스 가상화/에뮬레이션 프레임워크로, [[TCG]] 기반 동적 바이너리 변환으로 이기종 아키텍처 실행을 지원한다.
 
-## Related
-- [[AlibabaCloud]]
-- [[Android]]
-- [[AutomotiveGradeLinux]]
-- [[CivilInfrastructurePlatform]]
-- [[ELISA]]
-- [[Google]]
-- [[AddressSpaceIsolation]]
-- [[DevicetreeAndFwnodes]]
-- [[EROFS]]
-- [[FunctionalSafety]]
-- [[HypervisorVirtualization]]
-- [[IndustrialLinuxMaintenance]]
+## 핵심 역할
+
+- [[TCG]]를 통해 게스트 바이너리를 런타임에서 번역해 실행.
+- 전체 시스템 에뮬레이션(디바이스, CPU, BIOS, 부트 디바이스 포함) 또는 사용자 모드 에뮬레이션 수행.
+- [[QOM]] 기반 장치 모델링으로 하드웨어 객체 생성 및 등록 관리.
+- [[SoftMMU]] 기반 메모리 가상화(소프트웨어 MMU).
+- `qemu-system-*` 계열로 게스트 커널/루트FS/디바이스 조합 실행.
+
+## 최신 소스 연결
+
+- [[qemu-에뮬레이터-내부-구조-tcg-메모리-디바이스-모델링-및-디버깅]]은 [[QEMU]]의 내부 구성을 번역기, 객체 모델, PCI 디바이스, 메모리, 디버깅 관점으로 한 번에 정리한다.
+
+## 주요 하위 링크
+
+- [[TCG]]
+- [[KVM]]
+- [[QOM]]
+- [[TypeInfo]]
+- [[PCI]]
+- [[SoftMMU]]
+- [[GDB]]
+- [[QMP]]

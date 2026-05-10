@@ -1,26 +1,26 @@
 ---
-title: "TokenEconomy"
+title: "Token Economy"
 type: concept
-tags:
-  - AIInfrastructure
-  - Inference
-  - BusinessModel
-  - Economics
-sources:
-  - nvidia-gtc-keynote-2026
-last_updated: 2026-05-03
+tags: [LLM, cost, pricing, inference]
+last_updated: 2026-05-10
+sources: [ep-96-llm-추론-인프라와-토큰-경제학]
 ---
 
-## Summary
-[[TokenEconomy]]는 AI 서비스에서 토큰 처리량·토큰 속도·토큰당 비용이 가격 계층과 서비스 품질을 좌우하는 새로운 상업 모델 구조다.
+## 정의
 
-## Core Claims
-- 동일 모델이라도 처리량/지연 요구에 따라 여러 가격층이 가능하다.
-- 빠른 속도와 긴 컨텍스트를 제공하는 고급 계층은 고가격대가 형성되기 쉽다.
-- 추론 중심 시대에서 token throughput은 수익성의 실시간 계량 지표가 된다.
+[[TokenEconomy]]는 [[LLM]] 서비스에서 토큰 사용량, 처리 지연, 비용, 가격 정책을 묶어 수익성과 자원 효율성을 설명하는 개념이다.
 
-## Links
-- [[AIFactory]]
-- [[InteractiveInference]]
-- [[HeterogeneousInference]]
-- [[LLM]]
+## 핵심 요소
+- 입력 토큰/출력 토큰 가격 차이
+- 컨텍스트 길이에 따른 인프라 비용 증가
+- 캐시 유지/하강 정책에 따른 실제 비용 변동
+- 모델/런타임 특성의 상호작용
+
+## 결정 요인
+- 긴 컨텍스트는 캐시와 메모리 대역폭 사용을 증가시켜 처리량 단가를 높일 수 있다.
+- 긴 요청이 많을수록 prefill/decode 혼재에서 스케줄 충돌이 발생해 효율이 떨어질 수 있다.
+- `t_compute`와 `t_memory` 균형이 좋은 구간에서 단가·지연·품질 삼각형이 개선된다.
+
+## 운영 함의
+- 가격 티어 설계(예: 긴 context 구간)와 하드웨어 자원 조합은 별개가 아닌 연동 변수다.
+- 동일 모델이라도 워크로드 형식에 따라 실제 토큰 단가가 크게 달라진다.
