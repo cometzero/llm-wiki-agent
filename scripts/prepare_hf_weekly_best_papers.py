@@ -144,6 +144,81 @@ def parse_hf_week(url: str) -> list[dict]:
     return sorted(out, key=lambda x: (x["score"], x["upvotes"]), reverse=True)
 
 
+ARXIV_ID_RE = re.compile(r"(?<!\d)(\d{4}\.\d{4,5})(?:v\d+)?(?!\d)")
+
+
+def normalize_paper_id(value: str) -> str | None:
+    """Return a stable arXiv/HF paper id without version suffix."""
+    match = ARXIV_ID_RE.search(value or "")
+    if not match:
+        return None
+    return match.group(1)
+
+
+def state_processed_ids() -> set[str]:
+    if not STATE_PATH.exists():
+        return set()
+    try:
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return set()
+    ids = set()
+    for raw_id in state.get("processed_paper_ids", []):
+        pid = normalize_paper_id(str(raw_id))
+        if pid:
+            ids.add(pid)
+    return ids
+
+
+def extract_metadata_block(text: str) -> str:
+    """Extract likely frontmatter/header text to avoid treating references as analyzed papers."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            return text[: end + 4]
+    # Include the opening region where title/source metadata normally lives, but
+    # not full References sections where cited-but-not-analyzed arXiv IDs appear.
+    return "\n".join(text.splitlines()[:80])
+
+
+def collect_existing_analysis_ids() -> dict[str, list[str]]:
+    """Find papers that already have analysis material in raw/wiki.
+
+    This is intentionally conservative: all ids in paths count, and ids in
+    frontmatter/header metadata count. Full-body scanning is only enabled for this
+    automation's own folders, where every paper folder is an analyzed deliverable.
+    """
+    roots = [RAW_BASE, REPO / "wiki" / "sources"]
+    found: dict[str, list[str]] = {}
+    for root in roots:
+        if not root.exists():
+            continue
+        for path in root.rglob("*"):
+            if path.is_dir():
+                pid = normalize_paper_id(str(path.relative_to(REPO)))
+                if pid:
+                    found.setdefault(pid, []).append(str(path.relative_to(REPO)))
+                continue
+            if path.suffix.lower() not in {".md", ".json", ".txt"}:
+                continue
+            rel = str(path.relative_to(REPO))
+            pid = normalize_paper_id(rel)
+            if pid:
+                found.setdefault(pid, []).append(rel)
+            try:
+                text = path.read_text(encoding="utf-8", errors="ignore")
+            except Exception:
+                continue
+            scan_text = extract_metadata_block(text)
+            # Our generated paper folders are all analyzed deliverables, so a
+            # full scan there is safe and catches older metadata variants.
+            if "HuggingFaceWeeklyPapers" in rel:
+                scan_text = text
+            for match in ARXIV_ID_RE.finditer(scan_text):
+                found.setdefault(match.group(1), []).append(rel)
+    return {pid: sorted(set(paths)) for pid, paths in found.items()}
+
+
 def iso_week_label(day: dt.date) -> str:
     iso = day.isocalendar()
     return f"{iso.year}-W{iso.week:02d}"
@@ -169,21 +244,28 @@ def main() -> int:
             error = repr(exc)
         weeks.append({"week": label, "url": url, "error": error, "papers": papers})
 
-    processed_ids = []
-    if STATE_PATH.exists():
-        try:
-            state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
-            processed_ids = sorted(set(state.get("processed_paper_ids", [])))
-        except Exception:
-            processed_ids = []
+    state_ids = state_processed_ids()
+    existing_analysis = collect_existing_analysis_ids()
+    processed_ids_set = state_ids | set(existing_analysis)
+    processed_ids = sorted(processed_ids_set)
 
     # Keep high-scoring papers first, but include a few zero-score top-HF papers so
-    # the LLM can catch relevant papers that use unexpected wording.
+    # the LLM can catch relevant papers that use unexpected wording. Candidates
+    # already present in state or existing raw/wiki analysis are excluded here.
     candidates = []
+    excluded_candidates = []
     added = set()
     for w in weeks:
-        positives = [p for p in w["papers"] if p["score"] > 0 and p["id"] not in processed_ids]
-        fallback = [p for p in w["papers"][:30] if p["id"] not in processed_ids]
+        for p in w["papers"]:
+            if p["id"] in processed_ids_set:
+                q = dict(p)
+                q["week"] = w["week"]
+                q["week_url"] = w["url"]
+                q["excluded_reason"] = "already analyzed"
+                q["analysis_paths"] = existing_analysis.get(p["id"], [])[:8]
+                excluded_candidates.append(q)
+        positives = [p for p in w["papers"] if p["score"] > 0 and p["id"] not in processed_ids_set]
+        fallback = [p for p in w["papers"][:30] if p["id"] not in processed_ids_set]
         for p in positives[:20] + fallback[:10]:
             key = p["id"]
             if key in added:
@@ -208,10 +290,17 @@ def main() -> int:
         "topic": ["autonomous driving", "VLA", "VLM", "E2E Autonomous Driving", "NPU"],
         "weeks_checked": [{k: v for k, v in w.items() if k != "papers"} | {"paper_count": len(w["papers"])} for w in weeks],
         "processed_paper_ids": processed_ids,
+        "processed_paper_sources": {
+            "state_json_ids": sorted(state_ids),
+            "existing_analysis_ids": sorted(existing_analysis),
+            "existing_analysis_paths_sample": {pid: paths[:5] for pid, paths in sorted(existing_analysis.items())[:50]},
+        },
+        "excluded_candidates_sample": excluded_candidates[:30],
         "candidates": candidates,
         "instructions": [
-            "Select 1-2 genuinely relevant papers from candidates, prioritizing non-processed IDs with high score/upvotes.",
-            "If current ISO week lacks good matches, use previous week candidates.",
+            "Select 1-2 genuinely relevant papers from candidates only; excluded_candidates_sample are already analyzed and must not be selected.",
+            "Before final selection, search the repo for the candidate id and exact/near title. If the id/title already exists in raw/ or wiki/, skip it even if it appears in candidates.",
+            "If current ISO week lacks good new matches, use previous week candidates.",
             "After successful ingest/commit/push, append selected IDs to state_path.",
         ],
     }
