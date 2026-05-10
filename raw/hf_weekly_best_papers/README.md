@@ -20,4 +20,6 @@
 
 주의:
 - `state.json`은 이미 처리한 Hugging Face/arXiv paper id를 추적해 중복 처리를 줄입니다.
+- 준비 스크립트는 `state.json`뿐 아니라 기존 `raw/` 및 `wiki/sources/`의 파일명·frontmatter·source metadata에서 arXiv/HF paper id를 찾아 이미 분석된 논문을 후보에서 제외합니다.
+- cron agent는 최종 선정 전에도 candidate id와 제목을 repo에서 다시 검색해, 이미 번역/분석된 흔적이 있으면 건너뜁니다.
 - 논문 그림은 가능하면 arXiv HTML/PDF에서 내려받아 각 논문 폴더의 `figures/`에 저장하고 markdown에서 상대 경로로 참조합니다.
