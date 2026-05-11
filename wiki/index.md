@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT](sources/2026-05-11-day19-ai-ml-learning-review.md) — Sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and the long-term dependency problem.
 - [EmbodiedMidtrain study guide](sources/embodiedmidtrain-2604-20012-study-guide.md) — [[EmbodiedMidtrain]]의 sample-level [[ProximityEstimator]] 기반 [[MidTraining]] 워크플로를 정리하고 [[Calvin]], [[SimplerEnv]], [[LIBERO]] 성능 개선 실무 포인트를 제시한다.
 - [EmbodiedMidtrain references and related work notes](sources/embodiedmidtrain-2604-20012-references.md) — [[EmbodiedMidtrain]]의 데이터 기반 성능 정렬 관점, 특히 [[ProximityEstimator]] 기반 sample-level mid-training 실험 포인트를 정리한다.
 - [EmbodiedMidtrain: VLM과 VLA 사이의 간극을 Mid-training으로 잇기](sources/embodiedmidtrain-2604-20012-ko-analysis.md) — [[EmbodiedMidtrain]]가 [[VLM]] 샘플의 분포 정렬 기반 [[DataSelection]]으로 [[VLA]] 성능을 끌어올리는 과정을 정리한다.
@@ -416,6 +417,16 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [Autoregressive](concepts/Autoregressive.md) — next-token prediction framing for sequence models and LLMs.
+- [BPTT](concepts/BPTT.md) — Backpropagation Through Time for training RNNs over time steps.
+- [LongTermDependency](concepts/LongTermDependency.md) — dependency where distant earlier sequence information affects later predictions.
+- [SequenceModel](concepts/SequenceModel.md) — model family for ordered data such as text, speech, and time series.
+- [Context](concepts/Context.md) — preceding information used to predict the next token or value.
+- [CrossEntropyLoss](concepts/CrossEntropyLoss.md) — loss for probability distributions over tokens or classes.
+- [GPT](concepts/GPT.md) — decoder-only generative pre-trained Transformer language-model family.
+- [LSTM](concepts/LSTM.md) — gated RNN variant for longer-term sequence memory.
+- [GRU](concepts/GRU.md) — simplified gated RNN variant for sequence modeling.
+- [NLP](concepts/NLP.md) — natural language processing, a major sequence-model application area.
 - [EmbSpatial-Bench](concepts/EmbSpatial-Bench.md) — generated support page
 - [Embodied AI](concepts/EmbodiedAI.md) — generated support page
 - [InternVL3.5](concepts/InternVL3.5.md) — generated support page

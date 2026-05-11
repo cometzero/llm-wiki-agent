@@ -1,3 +1,7 @@
+## [2026-05-11] ingest | AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT
+
+Added source covering sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and long-term dependency problem. Created concept pages: Autoregressive, RNN, BPTT, LongTermDependency, VanishingGradient, HiddenState, SequenceModel. Key claims: autoregressive models predict P(next token | context); RNN hidden state compresses past info via recurrence; BPTT gradients vanish over many time steps, motivating attention and Transformer.
+
 ## [2026-05-10] ingest | EmbodiedMidtrain study guide
 
 Added source. Key claims: [[EmbodiedMidtrain]] improves [[VLA]] transfer by selecting VLM samples with high target alignment via [[ProximityEstimator]], rather than relying only on scale or full fine-tuning.
@@ -654,3 +658,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-10] graph | Knowledge graph rebuilt
 
 1946 nodes, 6458 edges (6458 extracted, 0 inferred).
+
+## [2026-05-11] graph | Knowledge graph rebuilt
+
+1957 nodes, 6535 edges (6535 extracted, 0 inferred).
