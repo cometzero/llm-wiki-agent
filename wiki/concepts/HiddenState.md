@@ -1,15 +1,35 @@
 ---
 title: "HiddenState"
 type: concept
-tags: [ml, llm, sequence-modeling]
-sources: [2026-04-23-day01-ai-ml-learning-review]
-last_updated: 2026-04-25
+tags: [rnn, sequence-model, memory]
+sources: [2026-05-11-day19-ai-ml-learning-review]
+last_updated: 2026-05-11
 ---
 
-[[HiddenState]]는 모델이 입력을 처리하며 내부적으로 유지하는 중간 표현 벡터다. [[LLM]]에서는 문맥 정보가 누적된 token-level representation으로 이해할 수 있다.
+The hidden state in an [[RNN]] is a vector that serves as the model's internal memory, summarizing information seen so far in the sequence. It is updated at each time step by combining the current input with the previous hidden state.
 
-## Connections
-- [[Vector]] — hidden state도 벡터 표현이다
-- [[Embedding]] — 초기 입력 표현이 hidden state로 변환됨
-- [[Attention]] — hidden state 간 상호작용을 조절함
-- [[LLM]] — 문맥을 유지하는 핵심 내부 상태
+## Key Properties
+
+- **Learned**: The hidden state is not hand-designed; it emerges from training to minimize loss.
+- **Fixed-size**: The dimensionality is a hyperparameter (e.g., 5, 768, 4096).
+- **Sequential**: Each hidden state depends on all previous inputs via the recurrence.
+- **Compression**: All past information must be compressed into this fixed-size vector, which is a bottleneck for long sequences.
+
+## Role in Sequence Tasks
+
+- **Classification**: The final hidden state can be used as a sequence representation for classification.
+- **Generation**: The hidden state is passed to a decoder to generate the next token.
+- **Encoder-Decoder**: The encoder's final hidden state initializes the decoder.
+
+## Limitations
+
+- Information from early time steps can be overwritten or diluted as the hidden state is updated.
+- Fixed capacity limits the amount of information that can be retained.
+- This bottleneck motivates [[Attention]], which allows direct access to all past hidden states.
+
+## Related
+- [[RNN]]
+- [[LSTM]]
+- [[GRU]]
+- [[Attention]]
+- [[SequenceModel]]
