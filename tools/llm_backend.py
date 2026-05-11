@@ -65,7 +65,7 @@ load_runtime_env()
 
 
 NVIDIA_BASE_URL = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
-NVIDIA_DEFAULT_MODEL = "deepseek-ai/deepseek-v4-flash"
+NVIDIA_DEFAULT_MODEL = "minimaxai/minimax-m2.7"
 NVIDIA_DEFAULT_FAST_MODEL = NVIDIA_DEFAULT_MODEL
 
 
@@ -111,7 +111,18 @@ def _nvidia_model_profile(model: str) -> dict:
         "thinking": _env_bool("NVIDIA_THINKING", True),
         "stream": _env_bool("NVIDIA_STREAM", True),
         "request_timeout": float(os.getenv("NVIDIA_REQUEST_TIMEOUT", "300")),
+        "system_prompt": True,
     }
+
+    # minimaxai/minimax-m2.7 is the currently usable NVIDIA model for this repo.
+    # Match NVIDIA's OpenAI-compatible reference request: stream=True, temperature=1,
+    # top_p=0.95, and no chat_template_kwargs/thinking extra_body unless explicitly set.
+    if "minimaxai/minimax-m2.7" in model_lower:
+        if os.getenv("NVIDIA_TEMPERATURE") is None:
+            profile["temperature"] = 1.0
+        if os.getenv("NVIDIA_THINKING") is None:
+            profile["thinking"] = False
+        profile["system_prompt"] = False
 
     # deepseek-v4-pro is stricter about chat_template_kwargs support in this repo's usage.
     # Keep the global env override, but make the default safer for structured ingest.
@@ -133,9 +144,10 @@ def _is_degraded_thinking_error(exc: Exception) -> bool:
 
 def _nvidia_request_kwargs(prompt: str, model: str, max_tokens: int, profile: dict, *, thinking_override: bool | None = None) -> dict:
     thinking = profile["thinking"] if thinking_override is None else thinking_override
-    request_kwargs = dict(
-        model=model,
-        messages=[
+    messages = [{"role": "user", "content": prompt}]
+    if profile.get("system_prompt", True):
+        messages.insert(
+            0,
             {
                 "role": "system",
                 "content": (
@@ -144,8 +156,10 @@ def _nvidia_request_kwargs(prompt: str, model: str, max_tokens: int, profile: di
                     "Return only the final answer requested by the user prompt."
                 ),
             },
-            {"role": "user", "content": prompt},
-        ],
+        )
+    request_kwargs = dict(
+        model=model,
+        messages=messages,
         temperature=profile["temperature"],
         top_p=profile["top_p"],
         max_tokens=max_tokens,
