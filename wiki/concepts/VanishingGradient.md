@@ -1,36 +1,46 @@
 ---
-title: "VanishingGradient"
+title: "Vanishing Gradient Problem"
 type: concept
-tags: [training, optimization, deep-learning]
-sources: [2026-05-11-day19-ai-ml-learning-review]
-last_updated: 2026-05-11
+tags: [neural-networks, training, optimization]
+sources: [2026-05-12-day20-ai-ml-learning-review, 2026-05-11-day19-ai-ml-learning-review]
+last_updated: 2026-05-12
 ---
 
-The vanishing gradient problem occurs when gradients become extremely small as they are backpropagated through many layers or time steps, causing early layers or time steps to receive negligible learning signal.
+## Definition
+The vanishing gradient problem occurs when gradients become extremely small during backpropagation through time (BPTT) or deep networks, making it difficult to learn long-range dependencies.
 
-## Cause
+## Root Cause
+In RNNs, the recurrence multiplication of gradient terms:
+```
+∂L/∂h_t = ∂L/∂h_{t+n} × Π(∂h_{i+1}/∂h_i)
+```
 
-- In deep networks, gradients are multiplied by weight matrices at each layer.
-- In [[RNN]]s, the same weight matrix is multiplied at each time step during [[BPTT]].
-- If the eigenvalues of the weight matrix are less than 1, repeated multiplication causes exponential decay.
+If the product of derivatives is < 1, gradients shrink exponentially as they propagate backward through time.
 
 ## Consequences
+- Early time steps receive almost zero gradient updates
+- Model cannot learn dependencies between distant positions
+- Long sequences behave like short sequences
 
-- Early layers / time steps learn very slowly or not at all.
-- The model fails to capture [[LongTermDependency|long-term dependencies]].
-- Performance on tasks requiring long-range context is poor.
+## Solutions
 
-## Mitigations
+| Approach | Mechanism |
+|----------|----------|
+| [[LSTM]]/[[GRU]] | Additive paths + gating to preserve gradient flow |
+| Residual Networks | Skip connections for gradient bypass |
+| [[AttentionMechanism]] | Direct connections between all positions |
+| Careful initialization | Heuristic to keep gradients in healthy range |
 
-- [[LSTM]] / [[GRU]]: gating mechanisms create paths where gradients can flow with less attenuation.
-- [[ResidualConnection]]: skip connections allow gradients to bypass layers.
-- [[Normalization]]: keeps activations in a reasonable range.
-- Careful weight initialization (e.g., Xavier, He).
-- [[Attention]]: eliminates the need to propagate gradients through many time steps.
+## Why LSTM/GRU Help
+LSTM's cell state uses **additive updates**:
+```
+new_cell_state = forget_gate × old_state + input_gate × new_info
+```
 
-## Related
-- [[BPTT]]
-- [[RNN]]
-- [[LongTermDependency]]
-- [[ExplodingGradient]]
-- [[ResidualConnection]]
+The addition means gradient can flow unchanged (not multiplied repeatedly), preventing exponential decay.
+
+## Connections
+- [[LSTM]] — first major practical solution
+- [[GRU]] — simplified solution
+- [[AttentionMechanism]] — eventual solution in [[Transformer]]
+- BPTT — the backprop method that reveals the problem

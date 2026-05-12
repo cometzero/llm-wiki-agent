@@ -1,35 +1,42 @@
 ---
-title: "HiddenState"
+title: "Hidden State"
 type: concept
-tags: [rnn, sequence-model, memory]
-sources: [2026-05-11-day19-ai-ml-learning-review]
-last_updated: 2026-05-11
+tags: [neural-networks, rnn, representation]
+sources: [2026-05-12-day20-ai-ml-learning-review, 2026-05-11-day19-ai-ml-learning-review]
+last_updated: 2026-05-12
 ---
 
-The hidden state in an [[RNN]] is a vector that serves as the model's internal memory, summarizing information seen so far in the sequence. It is updated at each time step by combining the current input with the previous hidden state.
+## Definition
+Hidden state is the model's internal representation that compresses all processed information into a fixed-size vector, updated at each time step.
 
-## Key Properties
+## Role Across Architectures
 
-- **Learned**: The hidden state is not hand-designed; it emerges from training to minimize loss.
-- **Fixed-size**: The dimensionality is a hyperparameter (e.g., 5, 768, 4096).
-- **Sequential**: Each hidden state depends on all previous inputs via the recurrence.
-- **Compression**: All past information must be compressed into this fixed-size vector, which is a bottleneck for long sequences.
+### Vanilla RNN
+Single hidden state must:
+- Encode all past information
+- Serve as input for next step
+- Output prediction at final step
 
-## Role in Sequence Tasks
+### [[LSTM]]
+- **Cell state**: Long-term memory (separate)
+- **Hidden state**: Current computational output
 
-- **Classification**: The final hidden state can be used as a sequence representation for classification.
-- **Generation**: The hidden state is passed to a decoder to generate the next token.
-- **Encoder-Decoder**: The encoder's final hidden state initializes the decoder.
+### [[GRU]]
+Only hidden state exists—no separate cell state.
 
-## Limitations
+## Bottleneck Problem
+Hidden state has fixed capacity. For long sequences:
+- Important early information gets overwritten
+- Compression loses detail
+- Model struggles with long-range dependencies
 
-- Information from early time steps can be overwritten or diluted as the hidden state is updated.
-- Fixed capacity limits the amount of information that can be retained.
-- This bottleneck motivates [[Attention]], which allows direct access to all past hidden states.
+This bottleneck motivated both gated architectures and [[AttentionMechanism]].
 
-## Related
-- [[RNN]]
-- [[LSTM]]
-- [[GRU]]
-- [[Attention]]
-- [[SequenceModel]]
+## Shape
+Typically `[batch_size, hidden_size]` or `[batch_size, sequence_length, hidden_size]` depending on context.
+
+## Connections
+- [[LSTM]] — uses hidden state alongside cell state
+- [[GRU]] — uses hidden state as sole memory
+- [[AttentionMechanism]] — alternative to hidden state compression
+- [[CellState]] — LSTM's specialized memory channel
