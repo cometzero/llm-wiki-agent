@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 20 (2026-05-12): LSTM/GRU, Embedding, Attention](sources/2026-05-12-day20-ai-ml-learning-review.md) — LSTM/GRU gating, word embedding compression, and attention mechanism for sequence modeling.
 - [AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT](sources/2026-05-11-day19-ai-ml-learning-review.md) — Sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and the long-term dependency problem.
 - [EmbodiedMidtrain study guide](sources/embodiedmidtrain-2604-20012-study-guide.md) — [[EmbodiedMidtrain]]의 sample-level [[ProximityEstimator]] 기반 [[MidTraining]] 워크플로를 정리하고 [[Calvin]], [[SimplerEnv]], [[LIBERO]] 성능 개선 실무 포인트를 제시한다.
 - [EmbodiedMidtrain references and related work notes](sources/embodiedmidtrain-2604-20012-references.md) — [[EmbodiedMidtrain]]의 데이터 기반 성능 정렬 관점, 특히 [[ProximityEstimator]] 기반 sample-level mid-training 실험 포인트를 정리한다.
@@ -426,6 +427,8 @@
 - [GPT](concepts/GPT.md) — decoder-only generative pre-trained Transformer language-model family.
 - [LSTM](concepts/LSTM.md) — gated RNN variant for longer-term sequence memory.
 - [GRU](concepts/GRU.md) — simplified gated RNN variant for sequence modeling.
+- [AttentionMechanism](concepts/AttentionMechanism.md) — attention weights and context-vector mechanism for selecting relevant sequence information.
+- [CellState](concepts/CellState.md) — LSTM memory pathway that carries longer-term information through time.
 - [NLP](concepts/NLP.md) — natural language processing, a major sequence-model application area.
 - [EmbSpatial-Bench](concepts/EmbSpatial-Bench.md) — generated support page
 - [Embodied AI](concepts/EmbodiedAI.md) — generated support page

@@ -1,3 +1,16 @@
+## [2026-05-12] ingest | AI/ML Learning Review — Day 20: LSTM/GRU, Embedding, Attention
+
+Added source covering three foundational sequence modeling concepts. Key claims:
+- LSTM/GRU gates (0-1 sigmoid values) provide selective memory by controlling information flow
+- Embedding compresses tokens into dense vectors capturing semantic relationships
+- Attention mechanism enables dynamic information selection via query-key-value weighted sums
+
+Created entity pages: [[LSTM]], [[GRU]], [[Embedding]], [[AttentionMechanism]], [[VanishingGradient]], [[CellState]], [[HiddenState]]
+
+Updated overview.md to reflect Day 19-20 sequence modeling foundation and curriculum progression.
+
+Part of ongoing AI/ML learning series (currently Day 20/30, milestone: sequence models and attention)
+
 ## [2026-05-11] ingest | AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT
 
 Added source covering sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and long-term dependency problem. Created concept pages: Autoregressive, RNN, BPTT, LongTermDependency, VanishingGradient, HiddenState, SequenceModel. Key claims: autoregressive models predict P(next token | context); RNN hidden state compresses past info via recurrence; BPTT gradients vanish over many time steps, motivating attention and Transformer.
@@ -662,3 +675,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-11] graph | Knowledge graph rebuilt
 
 1957 nodes, 6535 edges (6535 extracted, 0 inferred).
+
+## [2026-05-12] graph | Knowledge graph rebuilt
+
+1960 nodes, 6508 edges (6508 extracted, 0 inferred).

@@ -1,15 +1,73 @@
 ---
-title: "Embedding"
+title: "Embedding (Word/Token Embedding)"
 type: concept
-tags: [ml, representation, llm]
-sources: [2026-04-23-day01-ai-ml-learning-review]
-last_updated: 2026-04-25
+tags: [nlp, representation-learning, vector-space]
+sources: [2026-05-12-day20-ai-ml-learning-review]
+last_updated: 2026-05-12
 ---
 
-[[Embedding]]은 토큰·문서·개체를 연속 벡터로 매핑한 표현이다. [[VectorSpace]] 위에서 유사도와 변환을 다루기 때문에 [[DotProduct]], [[Norm]], [[CosineSimilarity]]가 모두 직접 연결된다.
+## Definition
+Embedding transforms discrete tokens (words, subwords) into dense numerical vectors in a continuous space, enabling semantic relationships to be represented as geometric proximity.
+
+## Core Properties
+
+### vs One-Hot Vector
+| Aspect | One-Hot | Embedding |
+|--------|---------|----------|
+| Dimensions | Vocabulary size (e.g., 50,000) | Compact (e.g., 256, 768) |
+| Density | Sparse (single 1) | Dense (all non-zero) |
+| Semantic info | None | Encoded |
+| Learnable | No | Yes |
+
+### Semantic Similarity
+Semantically similar words cluster together in embedding space. For example:
+- `cat` and `dog` → nearby vectors
+- `car` and `bus` → nearby vectors
+- `cat` and `car` → distant vectors
+
+## Mathematical View
+Embedding is a lookup operation:
+```
+output = embedding_table[token_id]  # Shape: [embedding_dim]
+```
+
+The embedding table E has shape `[V, D]` where V = vocabulary size, D = embedding dimension.
+
+### Learning Signal
+Embedding vectors are learned parameters—adjusted during backpropagation to minimize task loss. Words appearing in similar contexts tend to acquire similar vectors.
+
+## Key Metrics
+- **Cosine Similarity**: Measures directional alignment (ignores magnitude)
+  ```
+  cos_sim(a, b) = (a · b) / (||a|| × ||b||)
+  ```
+- **Euclidean Distance**: Absolute position difference
+
+## Applications
+
+### In [[LLM]]
+Token IDs → Embedding vectors → [[Transformer]] layers
+
+### In [[RAG]]
+- Query embedding + Document embedding → Semantic similarity search
+- Enables finding "refund policy" when user asks about "반품 정책"
+
+### Other Domains
+- Recommendation systems (user/item embeddings)
+- Image-text models (cross-modal alignment)
+- Code search (code snippet embeddings)
+
+## Contextual vs Static Embedding
+
+| Type | Description | Example |
+|------|-------------|----------|
+| Static | Fixed vector per token | Word2Vec |
+| Contextual | Varies by context | [[Transformer]] layer outputs |
+
+Note: "bank" in "river bank" vs "bank account" gets different contextual embeddings.
 
 ## Connections
-- [[VectorSpace]] — embedding이 놓이는 기하학적 공간
-- [[CosineSimilarity]] — 의미 유사도 비교에 자주 사용되는 척도
-- [[Attention]] — token embedding이 attention의 입력 표현이 됨
-- [[LLM]] — 언어 모델이 학습하는 대표적인 표현 형식
+- [[LLM]] — embeddings are the input layer
+- [[AttentionMechanism]] — attention operates over embedded tokens
+- [[RAG]] — embedding-based semantic search
+- [[CosineSimilarity]] — common similarity metric
