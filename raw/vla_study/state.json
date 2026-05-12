@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 3,
-  "last_completed_date": "2026-05-05",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-02-end-to-end-ad-기본기-2026-05-05.md",
+  "next_week": 4,
+  "last_completed_date": "2026-05-12",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-03-world-model-기초-2026-05-12.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -17,6 +17,12 @@
       "title": "End-to-End AD 기본기",
       "date": "2026-05-05",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-02-end-to-end-ad-기본기-2026-05-05.md"
+    },
+    {
+      "week": 3,
+      "title": "World Model 기초",
+      "date": "2026-05-12",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-03-world-model-기초-2026-05-12.md"
     }
   ]
 }
