@@ -1,0 +1,70 @@
+{
+  "paper": {
+    "id": "2605.04647",
+    "slug": "reflectdrive-2-2605-04647",
+    "dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647",
+    "week": "2026-W19",
+    "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+    "ko_title": "ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing",
+    "hf_url": "https://huggingface.co/papers/2605.04647",
+    "arxiv_url": "https://arxiv.org/abs/2605.04647",
+    "pdf_url": "https://arxiv.org/pdf/2605.04647",
+    "html_url": "https://arxiv.org/html/2605.04647",
+    "project_page": null,
+    "github_repo": null,
+    "category": "Robotics / Autonomous Driving / VLA planner",
+    "selected_reason": "후보 중 자율주행 E2E/VLA planning과 가장 직접적으로 연결되며, trajectory token, masked discrete diffusion, RL 기반 closed-loop reward, NVIDIA Thor latency까지 포함해 실전 배포 관점의 학습 가치가 큼."
+  },
+  "arxiv": {
+    "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+    "authors": [
+      "Huimin Wang",
+      "Yue Wang",
+      "Bihao Cui",
+      "Pengxiang Li",
+      "Ben Lu",
+      "Mingqian Wang",
+      "Tong Wang",
+      "Chuan Tang",
+      "Teng Zhang",
+      "Kun Zhan"
+    ],
+    "published": "2026-05-06",
+    "updated": "2026-05-06",
+    "summary": "We introduce ReflectDrive-2, a masked discrete diffusion planner with separate action expert for autonomous driving that represents plans as discrete trajectory tokens and generates them through parallel masked decoding. This discrete token space enables in-place trajectory revision: AutoEdit rewrites selected tokens using the same model, without requiring an auxiliary refinement network. To train this capability, we use a two-stage procedure. First, we construct structure-aware perturbations of expert trajectories along longitudinal progress and lateral heading directions and supervise the model to recover the original expert trajectory. We then fine-tune the full decision--draft--reflect rollout with reinforcement learning (RL), assigning terminal driving reward to the final post-edit trajectory and propagating policy-gradient credit through full-rollout transitions. Full-rollout RL proves crucial for coupling drafting and editing: under supervised training alone, inference-time AutoEdit improves PDMS by at most $0.3$, whereas RL increases its gain to $1.9$. We also co-design an efficient reflective decoding stack for the decision--draft--reflect pipeline, combining shared-prefix KV reuse, Alternating Step Decode, and fused on-device unmasking. On NAVSIM, ReflectDrive-2 achieves $91.0$ PDMS with camera-only input and $94.8$ PDMS in a best-of-6 oracle setting, while running at $31.8$ ms average latency on NVIDIA Thor.",
+    "versioned_id": "2605.04647v1",
+    "categories": [
+      "cs.RO"
+    ]
+  },
+  "figures": [
+    [
+      "figures/figure-01.png",
+      "https://arxiv.org/html/2605.04647v2/figs/rd2_teaser.png"
+    ],
+    [
+      "figures/figure-02.png",
+      "https://arxiv.org/html/2605.04647v2/x1.png"
+    ],
+    [
+      "figures/figure-03.png",
+      "https://arxiv.org/html/2605.04647v2/x2.png"
+    ],
+    [
+      "figures/figure-04.png",
+      "https://arxiv.org/html/2605.04647v2/figs/goodcase_gp.png"
+    ],
+    [
+      "figures/figure-05.png",
+      "https://arxiv.org/html/2605.04647v2/figs/goodcase_reedit.png"
+    ],
+    [
+      "figures/figure-06.png",
+      "https://arxiv.org/html/2605.04647v2/x3.png"
+    ],
+    [
+      "figures/figure-07.png",
+      "https://arxiv.org/html/2605.04647v2/x4.png"
+    ]
+  ]
+}

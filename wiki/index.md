@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — learning](sources/reflectdrive-2-2605-04647-learning.md) — ReflectDrive-2 학습 자료: discrete trajectory token, masked diffusion, AutoEdit, closed-loop RL reward, latency optimization을 단계적으로 정리.
+- [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — references](sources/reflectdrive-2-2605-04647-references.md) — ReflectDrive-2 관련 연구 10개 정리: DriveFine, LLaDA, NAVSIM, UniAD, TransFuser, VLA planner 계열.
+- [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — analysis](sources/reflectdrive-2-2605-04647-analysis.md) — Decision-Draft-Reflect VLA planner, discrete trajectory token, masked diffusion draft + AutoEdit rewrite, RL closed-loop reward, NAVSIM 91.0 PDMS.
+- [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing](sources/reflectdrive-2-2605-04647.md) — 이산 diffusion + RL alignment로 자율주행 trajectory planning하는 Decision-Draft-Reflect 파이프라인, NAVSIM 91.0 PDMS, NVIDIA Thor ~30ms latency.
+- [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — learning](sources/humannet-2605-06747-learning.md) — HumanNet 학습 자료: 선수 지식, 핵심 개념(glossary), Mermaid flowchart, 단계별 이해, 구현 메모, study questions, reading roadmap 포함.
+- [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — references](sources/humannet-2605-06747-references.md) — HumanNet(arXiv 2605.06747)의 참고 문헌 정리: [[Ego4D]], [[EPIC-KITCHENS]], [[Open X-Embodiment]], [[R3M]], [[GR00T N1]] 등 [[VLA]]/로보틱스 관련 핵심 레퍼런스.
+- [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — analysis](sources/humannet-2605-06747-analysis.md) — VLA pretraining용 100만 시간 human-centric video corpus 제안, [[Qwen]]/[[LingBot-VLA]]로 egocentric video의 transfer value 검증.
+- [HumanNet: Scaling Human-centric Video Learning to One Million Hours](sources/humannet-2605-06747.md) — 100만 시간 규모의 human-centric video corpus로 VLA pretraining에 있어 인간 비디오가 robot data의 비용 효율적 대체재가 될 수 있음을 증명.
 - [AI/ML Learning Review — Day 21 (2026-05-13): QKV, Scaled Attention, Self-Attention](sources/2026-05-13-day21-ai-ml-learning-review.md) — Query/Key/Value role separation, Scaled Dot-Product Attention with sqrt(d_k) scaling, and Self-Attention's expressive power for contextual token representation.
 - [AI/ML Learning Review — Day 20 (2026-05-12): LSTM/GRU, Embedding, Attention](sources/2026-05-12-day20-ai-ml-learning-review.md) — LSTM/GRU gating, word embedding compression, and attention mechanism for sequence modeling.
 - [AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT](sources/2026-05-11-day19-ai-ml-learning-review.md) — Sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and the long-term dependency problem.
@@ -173,6 +181,30 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [AutoVLA](entities/AutoVLA.md) — AutoVLA는 자율주행领域的 VLA planner 비교군으로, [[ReflectDrive-2]]가 성능 비교에 사용하는 대상 중 하나이다.
+- [BlockDiffusion](entities/BlockDiffusion.md) — block 단위 masked/diffusion generation을 사용하는 효율적 생성 방법 계열.
+- [D3PM](entities/D3PM.md) — Discrete Denoising Diffusion Probabilistic Models 계열 discrete diffusion 방법.
+- [DAGroupPKU](entities/DAGroupPKU.md) — Beijing University 산하 robotics 연구 그룹으로, [[HumanNet]] 프로젝트를 주도했다. Yufan Deng, Daquan Zhou 등이 소속되어 있다.
+- [DaquanZhou](entities/DaquanZhou.md) — [[HumanNet]]의 저자로, [[DAGroup-PKU]] 소속 연구자이다.
+- [Ego-Exo4D](entities/Ego-Exo4D.md) — Ego-Exo4D는 제1인칭(first-person)과 제3인칭(third-person) paired view를 제공하는 데이터셋으로, skilled activity 이해에서 first-person과 third-person 관점의 조합이 중요함을 제시
+- [EgoMimic](entities/EgoMimic.md) — EgoMimic은 제1인칭 인간 궤적과 로봇 데모를 정렬(alignment)하여 모방 학습(imitation learning)을 수행하는 연구로, [[HumanNet]]의 읽기 우선순위 1순위에 포함된다. 인간 비디오에서 로봇 정책 prior를 추출하
+- [Fast-dLLM](entities/Fast-dLLM.md) — diffusion language model serving/decoding을 가속하는 방법 계열.
+- [GR00T-N1](entities/GR00T-N1.md) — GR00T N1은 NVIDIA가 개발한 VLA(Vision-Language-Action) 로보틱스 파운데이션 모델로, 이종 로봇/인간 데이터 혼합을 활용한다. [[HumanNet]]의 검증에서 사용된 [[LingBot-VLA]]와 함께 VLA post
+- [HOI4D](entities/HOI4D.md) — HOI4D는 hand-object geometry와 dense interaction supervision을 강조하는 데이터셋으로, [[HumanNet]]의 관련 연구 목록에 포함되어 인간-물체 상호작용의 정밀한 학습 데이터로서의 가치를 제시한다.
+- [LLaDA2.0](entities/LLaDA2.0.md) — LLaDA 계열 discrete diffusion language model의 버전/후속 연구.
+- [LLaDA2.1](entities/LLaDA2.1.md) — LLaDA 계열 discrete diffusion language model의 버전/후속 연구.
+- [LingBotVLA](entities/LingBotVLA.md) — HumanNet validation 실험에 사용된 VLA 아키텍처. Qwen 백본에 action expert를 결합한 구조로, 20,000시간 real-robot training을 받은 상태.
+- [MDLM](entities/MDLM.md) — Masked Diffusion Language Model 계열 discrete language diffusion 방법.
+- [MaskGIT](entities/MaskGIT.md) — masked token modeling과 iterative parallel decoding을 결합한 generative transformer 방법.
+- [NVIDIAThor](entities/NVIDIAThor.md) — NVIDIA DRIVE Thor 계열 automotive/robotics compute platform.
+- [OpenX-Embodiment](entities/OpenX-Embodiment.md) — Open X-Embodiment(통칭 RT-X)은 이종(heterogeneous) 로봇 로그를 통해 로봇 파운데이션 모델 스케일링의 대표 사례로, 다양한 로봇 플랫폼의 데이터를 통합하여 범용 로봇 정책 학습을 가능케 한다. [[HumanNet]]은 r
+- [RT-X](entities/RT-X.md) — Open X-Embodiment/RT-X 계열 로봇 학습 데이터·정책 연구.
+- [ReCogDrive](entities/ReCogDrive.md) — ReCogDrive는 camera-only VLA planner로, [[ReflectDrive-2]]가 비교하는 peer 모델이다. ReflectDrive-2는 이보다 강력한 trajectory generation과 RL alignment를 통해 차별
+- [ReflectDrive2](entities/ReflectDrive2.md) — ReflectDrive-2는 자율주행 VLA planner에서 trajectory를 discrete token으로 만들고, masked diffusion draft와 AutoEdit rewrite를 RL terminal reward로 함께 정렬하는 D
+- [SEDD](entities/SEDD.md) — Score Entropy Discrete Diffusion 계열 discrete diffusion model.
+- [SeedDiffusion](entities/SeedDiffusion.md) — discrete diffusion 또는 masked generation 계열 선행 연구 placeholder.
+- [YufanDeng](entities/YufanDeng.md) — [[HumanNet]]의 저자로, [[DAGroup-PKU]] 소속 연구자이다.
+- [nuPlan](entities/nuPlan.md) — 자율주행 planning dataset/benchmark로 NAVSIM 등 closed-loop 평가 기반이 되는 데이터셋.
 - [Chenyan Xiong](entities/ChenyanXiong.md) — generated support page
 - [Gretton et al.](entities/GrettonEtAl.md) — generated support page
 - [Kosmos-2](entities/Kosmos-2.md) — generated support page
@@ -419,6 +451,38 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [BEVTrajectory](concepts/BEVTrajectory.md) — Bird’s-eye-view 공간에서 표현되는 자율주행 trajectory representation.
+- [CameraOnlyPerception](concepts/CameraOnlyPerception.md) — LiDAR 없이 카메라 입력만으로 scene understanding/planning을 수행하는 perception setup.
+- [ClosedLoopPlanning](concepts/ClosedLoopPlanning.md) — Closed-Loop Planning은 시뮬레이션 환경에서 planned trajectory를 실행하고 feedback을 받아 재계획하는 iterative planning 패러다임이다. [[NAVSIM]] 벤치마크를 통해 평가되며, [[ReflectD
+- [ClosedLoopReward](concepts/ClosedLoopReward.md) — Closed-loop reward는 환경과의 상호작용을 통해 산출된 terminal reward를 policy 학습에 사용하는 RL 접근법이다.
+- [DDPO](concepts/DDPO.md) — Denoising Diffusion Policy Optimization 계열의 diffusion model RL fine-tuning 방법.
+- [DPPO](concepts/DPPO.md) — Diffusion Policy Policy Optimization 계열의 diffusion policy 강화학습 방법.
+- [DecisionDraftReflectPipeline](concepts/DecisionDraftReflectPipeline.md) — Decision-Draft-Reflect는 VLA planner에서 trajectory를 생성하고 수정하는 3단계 파이프라인이다.
+- [DiscreteDiffusion](concepts/DiscreteDiffusion.md) — Discrete diffusion는 연속적 noise를 추가하는 표준 diffusion과 달리, discrete token 시퀀스에 masked noise를 적용하고 역순으로 복원하는 생성 모델링 기법이다.
+- [DiscreteToken](concepts/DiscreteToken.md) — 연속 신호나 범주를 모델이 처리할 수 있는 이산 symbol/token으로 표현하는 방법.
+- [E2EAutonomousDriving](concepts/E2EAutonomousDriving.md) — End-to-End Autonomous Driving(E2E AD)는 perception-prediction-planning을 단일 신경망으로 통합하는 패러다임이다. [[UniAD]], [[TransFuser]] 등初期 연구에서 [[NAVSIM]] 등
+- [EfficientInference](concepts/EfficientInference.md) — ReflectDrive-2는 modeling과 serving을 함께 설계하여 NVIDIA Thor에서 약 30ms latency를 달성한다.
+- [EgocentricVideo](concepts/EgocentricVideo.md) — 행위자 시점의 1인칭 비디오. 카메라를 착용한 사람의 시점에서 촬영된 영상으로, 손과 물체의 직접적인 상호작용을 가까이서 볼 수 있다.
+- [EmbodiedIntelligence](concepts/EmbodiedIntelligence.md) — 환경과 물리적으로 상호작용하는 AI 시스템에 대한 연구 분야. [[VLM]]과 달리 실제 세계의 물리적 제약을 가진 행동을 수행한다.
+- [EmbodiedLearning](concepts/EmbodiedLearning.md) — 물리 환경에서 perception, action, feedback을 통해 학습하는 embodied AI 학습 패러다임.
+- [EmbodimentGap](concepts/EmbodimentGap.md) — 인간의 몸/손과 robot의 morphology/control space 사이의 차이. 인간 비디오에서 학습한 prior를 robot에 적용할 때 발생하는 핵심 도전 과제.
+- [ExocentricVideo](concepts/ExocentricVideo.md) — 관찰자(제3자) 시점의 3인칭 비디오. 행위자가 착용한 카메라가 아닌, 외부에 설치된 카메라로 촬영된 영상.
+- [FoundationModels](concepts/FoundationModels.md) — 대규모 데이터로 사전학습되어 여러 downstream task에 전이되는 범용 모델 계열.
+- [GroupRelativeAdvantage](concepts/GroupRelativeAdvantage.md) — 한 prompt/scene에서 여러 sample reward를 비교해 relative advantage를 계산하는 방식.
+- [HumanCentricVideo](concepts/HumanCentricVideo.md) — 인간 활동이 비디오 clip의 중심 신호인 비디오 데이터. 행위자의 동작, 물체와의 상호작용, 환경 내 활동이 핵심 콘텐츠로 담긴다.
+- [ImitationLearning](concepts/ImitationLearning.md) — Imitation Learning(모방 학습)은 전문가의 행동 시연으로부터 로봇 정책을 학습하는 방법으로, [[EgoMimic]]은 제1인칭 인간 궤적과 로봇 데모의 정렬을 통해 이 접근을 구현한다.
+- [InteractionAwareLearning](concepts/InteractionAwareLearning.md) — HumanNet이 제안한 학습 패러다임으로, 인간-물체 상호작용의 의미론적 구조를 이해하여 robot-relevant representation을 학습한다.
+- [InteractionCentricAnnotation](concepts/InteractionCentricAnnotation.md) — 단순한 caption을 넘어서, 손/몸/물체/동작/상태 변화 정보를 모두 담는 비디오 어노테이션 방식.
+- [MaskedDiffusion](concepts/MaskedDiffusion.md) — Masked Diffusion은 토큰을 점진적으로 마스킹/언마스킹하여 데이터를 생성하는 discrete diffusion 패러다임이다. [[MaskGIT]], [[LLaDA]] 등 recent discrete LM에 적용되며, [[ReflectDriv
+- [MaskedDiscreteDiffusion](concepts/MaskedDiscreteDiffusion.md) — [[MaskedDiscreteDiffusion]]은 categorical token space에서 parallel generation과 editing을 지원하는 diffusion 패러다임이다. 기존 continuous diffusion과 달리 Gaus
+- [MotionAwareLearning](concepts/MotionAwareLearning.md) — HumanNet이 제안한 학습 패러다임으로, 비디오에서 물체(object)와 손/몸의 움직임을 동시에 이해하여 물리적 상호작용을 학습한다.
+- [PolicyGradient](concepts/PolicyGradient.md) — 정책 확률의 gradient를 reward-weighted objective로 최적화하는 reinforcement learning 방법.
+- [RLAlignment](concepts/RLAlignment.md) — [[RLAlignment]]는 [[ReflectDrive-2]]에서 사용하는 기법으로, draft-and-edit rollout 전체에 terminal reward를 부여하여 policy를 최적화한다.
+- [Retargeting](concepts/Retargeting.md) — 인간 또는 한 embodiment의 행동을 다른 robot/body morphology로 옮기는 기술.
+- [RobotFoundationModel](concepts/RobotFoundationModel.md) — Robot Foundation Model(로봇 파운데이션 모델)은 대규모 데이터로 사전 학습되어 다양한 로봇 태스크에 전이 가능한 범용 로봇 정책을 학습하는 접근으로, [[VLA]]가 핵심 구현체가 된다.
+- [RobotLearning](concepts/RobotLearning.md) — 로봇이 demonstration, interaction, reinforcement signal 등으로 행동 정책을 학습하는 분야.
+- [RobotReadySubset](concepts/RobotReadySubset.md) — HumanNet에서 robot learning에 바로 사용 가능한高品质 비디오 subset을 선별하는 기준.
+- [SPG](concepts/SPG.md) — Step-aware policy gradient 또는 diffusion trajectory 단계별 gradient 연구를 가리키는 placeholder.
 - [Autoregressive](concepts/Autoregressive.md) — next-token prediction framing for sequence models and LLMs.
 - [BPTT](concepts/BPTT.md) — Backpropagation Through Time for training RNNs over time steps.
 - [LongTermDependency](concepts/LongTermDependency.md) — dependency where distant earlier sequence information affects later predictions.
