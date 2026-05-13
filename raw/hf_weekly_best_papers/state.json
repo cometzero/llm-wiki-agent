@@ -45,8 +45,9 @@
         "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/references.md",
         "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/learning.md"
       ],
-      "commit_hash": "ae26fdc3b61012c7a49e64a50754b47f89f12a26",
-      "notes": "Generated Korean translation, analysis, references, learning notes, figures; ingested into wiki; graph rebuilt with --no-infer fallback."
+      "commit_hash": "9ca18dd72d922537092c5f7d7ad9efc048b7d6a3",
+      "notes": "Generated Korean translation, analysis, references, learning notes, figures; ingested into wiki; graph rebuilt with --no-infer fallback.",
+      "state_record_note": "This field records the content commit for the weekly paper update; a following state-only commit may record it."
     }
   ]
 }
