@@ -1,6 +1,8 @@
 {
   "processed_paper_ids": [
-    "2604.20012"
+    "2604.20012",
+    "2605.06747",
+    "2605.04647"
   ],
   "runs": [
     {
@@ -9,6 +11,42 @@
       "title": "EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training",
       "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/embodiedmidtrain-2604.20012",
       "notes": "Added Korean analysis, references, study guide, and figures; ingested into wiki."
+    },
+    {
+      "date_kst": "2026-05-13 09:40:08 KST",
+      "week": "2026-W20/2026-W19",
+      "selected_paper_ids": [
+        "2605.06747",
+        "2605.04647"
+      ],
+      "papers": [
+        {
+          "id": "2605.06747",
+          "title": "HumanNet: Scaling Human-centric Video Learning to One Million Hours",
+          "week": "2026-W20",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W20/humannet-2605-06747"
+        },
+        {
+          "id": "2605.04647",
+          "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+          "week": "2026-W19",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W20/humannet-2605-06747/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W20/humannet-2605-06747/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W20/humannet-2605-06747/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W20/humannet-2605-06747/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W19/reflectdrive-2-2605-04647/learning.md"
+      ],
+      "commit_hash": "ae26fdc3b61012c7a49e64a50754b47f89f12a26",
+      "notes": "Generated Korean translation, analysis, references, learning notes, figures; ingested into wiki; graph rebuilt with --no-infer fallback."
     }
   ]
 }

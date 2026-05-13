@@ -1,3 +1,43 @@
+## [2026-05-13] update | Hugging Face Weekly Papers W20/W19 refresh
+
+Selected and processed two new papers: HumanNet (2605.06747, 2026-W20) and ReflectDrive-2 (2605.04647, 2026-W19). Added Korean translation, analysis, references, learning notes, figures, wiki source pages, entity/concept pages, placeholder pages for wikilink integrity, and rebuilt graph artifacts with --no-infer fallback after semantic inference failed.
+
+## [2026-05-13] ingest | ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — references
+
+Added source. Key claims: References page for ReflectDrive-2 (arXiv 2605.04647) documenting 10 key related works including DriveFine (closest prior), LLaDA (discrete diffusion LM foundation), NAVSIM (evaluation benchmark), UniAD/TransFuser (E2E AD baselines), and AutoVLA/ReCogDrive (VLA planner peers). Created entity pages for DriveFine, LLaDA, NAVSIM, UniAD, TransFuser, AutoVLA, ReCogDrive. Created concept pages for MaskedDiffusion, E2EAutonomousDriving, VLA, ClosedLoopPlanning.
+
+## [2026-05-13] ingest | ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — analysis
+
+Added source. Key claims: ReflectDrive-2는 Decision-Draft-Reflect 파이프라인으로 VLA planner의 editable trajectory generation을 구현, masked discrete diffusion draft + AutoEdit rewrite + RL closed-loop reward 정렬, NAVSIM 91.0 PDMS, NVIDIA Thor ~30ms latency 달성. Created entity page for [[ReflectDrive2]], concept pages for [[DecisionDraftReflectPipeline]], [[DiscreteDiffusion]], [[AutoEdit]], [[ClosedLoopReward]].
+
+## [2026-05-13] ingest | ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing
+
+Added source. Key claims: (1) Masked discrete diffusion + AutoEdit로 editable trajectory generation, (2) Supervised perturbation recovery만으로는 self-editing gain이 작아 RL reward-coupled draft-and-edit rollout 필수적, (3) NAVSIM에서 camera-only 91.0 PDMS, best-of-6 oracle 94.8 PDMS, (4) Shared-prefix KV reuse, ASD, fused unmasking으로 NVIDIA Thor ~30ms latency 달성. New entity pages: NAVSIM. New concept pages: MaskedDiscreteDiffusion, AutoEdit, DecisionDraftReflectPipeline, RLAlignment, EfficientInference.
+
+## [2026-05-13] ingest | HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — learning
+
+Added source. Key claims: HumanNet 100만 시간 코퍼스로 VLA 사전학습 데이터 병목 해소, egocentric video가 VLA에 중요(손-물체 접촉/intent 직접 담김), embodiment gap으로 robot-specific post-training 여전히 필요, closed-loop evaluation 추가 필요.
+
+Created: 5 concept pages (HumanCentricVideo, EgocentricVideo, ExocentricVideo, InteractionCentricAnnotation, EmbodimentGap).
+
+## [2026-05-13] ingest | HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — references
+
+Added source. Key claims: HumanNet(arXiv 2605.06747)의 참고 문헌을 정리하며, [[Ego4D]], [[EPIC-KITCHENS]], [[Ego-Exo4D]], [[HOI4D]] 등 egocentric video 데이터셋과 [[Open X-Embodiment]], [[DROID]] 등 로봇 데이터셋, [[R3M]], [[EgoMimic]] 등 인간-로봇 전이 연구를 포괄. 읽기 우선순위로 (1) R3M/EgoMimic, (2) Ego4D/Ego-Exo4D, (3) Open X-Embodiment/DROID, (4) GR00T/LingBot-VLA를 제시.
+
+New entity pages: [[Ego4D]], [[EPIC-KITCHENS]], [[Ego-Exo4D]], [[HOI4D]], [[Open X-Embodiment]], [[DROID]], [[R3M]], [[EgoMimic]], [[GR00T N1]], [[LingBot-VLA]]
+
+New concept pages: [[EgocentricVideo]], [[VLA]], [[ImitationLearning]], [[RobotFoundationModel]]
+
+Contradictions: none
+
+## [2026-05-13] ingest | HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — analysis
+
+Added source. Key claims: VLA 데이터 부족 문제 해결을 위한 100만 시간 human-centric video corpus 제안, egocentric/exocentric viewpoint taxonomy, pose/motion/caption annotation, [[Qwen]]/[[LingBot-VLA]]로 transfer value 검증. Created entity pages for [[Qwen]], [[LingBot]], concept pages for [[VLA]], [[Embodied AI]], [[HumanNet]]. Updated overview with embodied AI and VLA trends.
+
+## [2026-05-13] ingest | HumanNet: Scaling Human-centric Video Learning to One Million Hours
+
+Added source. Key claims: 100만 시간 규모 human-centric video corpus로 VLA pretraining 데이터 병목 해결, 1,000시간 egocentric pretraining ≈ 100시간 robot data 성능. Created entity pages for [[DAGroupPKU]], [[YufanDeng]], [[DaquanZhou]], [[LingBotVLA]]. Created concept pages for [[HumanNet]], [[HumanCentricVideo]], [[EmbodiedIntelligence]], [[MotionAwareLearning]], [[InteractionAwareLearning]], [[RobotReadySubset]]. Updated overview with embodied AI/VLA 관련 섹션.
+
 ## [2026-05-13] ingest | AI/ML Learning Review — Day 21: QKV, Scaled Attention, Self-Attention
 
 Added source covering Transformer attention fundamentals. Key claims: QKV separates query (what I'm looking for), key (search tags), and value (actual content); Scaled Dot-Product Attention uses sqrt(d_k) to prevent softmax from becoming too extreme; Self-Attention enables tokens to reference each other for context-dependent representations. Created 13 concept pages: Query, Key, Value, ScaledDotProductAttention, SelfAttention, TokenInteraction, ContextMixing, AttentionWeight, ContextualEmbedding, MultiHeadAttention, Softmax, DotProduct, CompatibilityScore.
@@ -687,3 +727,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-13] graph | Knowledge graph rebuilt
 
 1975 nodes, 6576 edges (6576 extracted, 0 inferred).
+
+## [2026-05-13] graph | Knowledge graph rebuilt
+
+2054 nodes, 6879 edges (6879 extracted, 0 inferred).
