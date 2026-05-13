@@ -1,3 +1,7 @@
+## [2026-05-13] ingest | AI/ML Learning Review — Day 21: QKV, Scaled Attention, Self-Attention
+
+Added source covering Transformer attention fundamentals. Key claims: QKV separates query (what I'm looking for), key (search tags), and value (actual content); Scaled Dot-Product Attention uses sqrt(d_k) to prevent softmax from becoming too extreme; Self-Attention enables tokens to reference each other for context-dependent representations. Created 13 concept pages: Query, Key, Value, ScaledDotProductAttention, SelfAttention, TokenInteraction, ContextMixing, AttentionWeight, ContextualEmbedding, MultiHeadAttention, Softmax, DotProduct, CompatibilityScore.
+
 ## [2026-05-12] ingest | AI/ML Learning Review — Day 20: LSTM/GRU, Embedding, Attention
 
 Added source covering three foundational sequence modeling concepts. Key claims:
@@ -679,3 +683,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-12] graph | Knowledge graph rebuilt
 
 1960 nodes, 6508 edges (6508 extracted, 0 inferred).
+
+## [2026-05-13] graph | Knowledge graph rebuilt
+
+1975 nodes, 6576 edges (6576 extracted, 0 inferred).

@@ -1,23 +1,27 @@
 ---
-title: "DotProduct"
+title: "Dot Product"
 type: concept
-tags: [linear-algebra, similarity]
-last_updated: 2026-04-26
-sources: [2026-04-23-day01-ai-ml-learning-review]
+tags: [math, attention, linear-algebra]
+sources: [2026-05-13-day21-ai-ml-learning-review]
+last_updated: 2026-05-13
 ---
 
-## 핵심 정의
-[[DotProduct]]는 두 벡터의 대응 성분곱을 합산한 값으로, 방향성과 크기 정보를 동시에 반영한다.
+## Definition
+**Dot Product** (inner product) of two vectors is the sum of element-wise products: `a·b = Σ a_i × b_i`. In attention, it measures similarity between query and key vectors.
 
-`a · b = Σ_i a_i b_i`
+## Key Concepts
+- Higher dot product = vectors point in similar directions = more relevant
+- Used to compute [[AttentionWeight|compatibility scores]]
+- `QK^T` computes all query-key dot products simultaneously
 
-## AI/ML 연결
-- [[Attention]]에서 Query와 Key의 연산 점수로 자주 사용된다.
-- 값이 크면 일반적으로 방향 정합 + 크기 요인이 모두 강하게 작동한다.
-- 단순 유사도 비교만으로는 크기 영향이 섞이므로, [[CosineSimilarity]]로 정규화하기도 한다.
+## Example
+```
+q = [1, 2]
+k = [3, 1]
+q·k = 1×3 + 2×1 = 5
+```
 
-## 관련 개념
-- [[CosineSimilarity]]
-- [[Norm]]
-- [[Embedding]]
-- [[Attention]]
+## Connections
+- [[ScaledDotProductAttention]] — computes QK^T
+- [[Query]], [[Key]] — vectors whose similarity is measured
+- [[CompatibilityScore]] — the resulting similarity measure

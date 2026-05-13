@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 21 (2026-05-13): QKV, Scaled Attention, Self-Attention](sources/2026-05-13-day21-ai-ml-learning-review.md) — Query/Key/Value role separation, Scaled Dot-Product Attention with sqrt(d_k) scaling, and Self-Attention's expressive power for contextual token representation.
 - [AI/ML Learning Review — Day 20 (2026-05-12): LSTM/GRU, Embedding, Attention](sources/2026-05-12-day20-ai-ml-learning-review.md) — LSTM/GRU gating, word embedding compression, and attention mechanism for sequence modeling.
 - [AI/ML Learning Review — Day 19 (2026-05-11): Sequence Models, RNN, BPTT](sources/2026-05-11-day19-ai-ml-learning-review.md) — Sequence data and autoregressive modeling, RNN hidden state and recurrence, BPTT and the long-term dependency problem.
 - [EmbodiedMidtrain study guide](sources/embodiedmidtrain-2604-20012-study-guide.md) — [[EmbodiedMidtrain]]의 sample-level [[ProximityEstimator]] 기반 [[MidTraining]] 워크플로를 정리하고 [[Calvin]], [[SimplerEnv]], [[LIBERO]] 성능 개선 실무 포인트를 제시한다.
@@ -428,6 +429,24 @@
 - [LSTM](concepts/LSTM.md) — gated RNN variant for longer-term sequence memory.
 - [GRU](concepts/GRU.md) — simplified gated RNN variant for sequence modeling.
 - [AttentionMechanism](concepts/AttentionMechanism.md) — attention weights and context-vector mechanism for selecting relevant sequence information.
+- [Query](concepts/Query.md) — attention role representing the information a token is looking for.
+- [Key](concepts/Key.md) — attention role representing searchable features of candidate tokens.
+- [Value](concepts/Value.md) — attention role carrying the content mixed into outputs.
+- [QKV](concepts/QKV.md) — Query-Key-Value role separation for Transformer attention.
+- [Scaled Dot-Product Attention](concepts/ScaledDotProductAttention.md) — Transformer attention computation using QK^T scaling, softmax, and value mixing.
+- [Self-Attention](concepts/SelfAttention.md) — same-sequence attention that builds contextual token representations.
+- [Token Interaction](concepts/TokenInteraction.md) — token-to-token relationships created by attention.
+- [Context Mixing](concepts/ContextMixing.md) — combining token values into context-dependent representations.
+- [Attention Weight](concepts/AttentionWeight.md) — softmax weight controlling how much each value contributes.
+- [Contextual Embedding](concepts/ContextualEmbedding.md) — embedding whose meaning changes with surrounding context.
+- [Multi-Head Attention](concepts/MultiHeadAttention.md) — parallel attention heads that learn different relationship patterns.
+- [Softmax](concepts/Softmax.md) — function that converts scores into positive weights summing to one.
+- [Dot Product](concepts/DotProduct.md) — vector operation used for query-key compatibility scoring.
+- [Compatibility Score](concepts/CompatibilityScore.md) — query-key relevance score before softmax.
+- [Weighted Sum](concepts/WeightedSum.md) — combines values according to attention weights.
+- [Long-Range Dependency](concepts/LongRangeDependency.md) — distant sequence relationship handled well by self-attention.
+- [Positional Encoding](concepts/PositionalEncoding.md) — order signal added because attention alone has no inherent sequence order.
+- [FlashAttention](concepts/FlashAttention.md) — optimized attention implementation for faster, memory-efficient Transformer computation.
 - [CellState](concepts/CellState.md) — LSTM memory pathway that carries longer-term information through time.
 - [NLP](concepts/NLP.md) — natural language processing, a major sequence-model application area.
 - [EmbSpatial-Bench](concepts/EmbSpatial-Bench.md) — generated support page
