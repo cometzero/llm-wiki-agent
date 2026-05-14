@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 22 (2026-05-14): Transformer Block, Multi-Head Attention, Positional Encoding](sources/2026-05-14-day22-ai-ml-learning-review.md) — Transformer block architecture, multi-head attention benefits, and positional encoding necessity for order awareness.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — learning](sources/reflectdrive-2-2605-04647-learning.md) — ReflectDrive-2 학습 자료: discrete trajectory token, masked diffusion, AutoEdit, closed-loop RL reward, latency optimization을 단계적으로 정리.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — references](sources/reflectdrive-2-2605-04647-references.md) — ReflectDrive-2 관련 연구 10개 정리: DriveFine, LLaDA, NAVSIM, UniAD, TransFuser, VLA planner 계열.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — analysis](sources/reflectdrive-2-2605-04647-analysis.md) — Decision-Draft-Reflect VLA planner, discrete trajectory token, masked diffusion draft + AutoEdit rewrite, RL closed-loop reward, NAVSIM 91.0 PDMS.
@@ -451,6 +452,8 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [TransformerBlock](concepts/TransformerBlock.md) — core Transformer layer combining attention, FFN, residual connections, and LayerNorm.
+- [FeedForwardNetwork](concepts/FeedForwardNetwork.md) — per-token Transformer sublayer that refines hidden states after attention.
 - [BEVTrajectory](concepts/BEVTrajectory.md) — Bird’s-eye-view 공간에서 표현되는 자율주행 trajectory representation.
 - [CameraOnlyPerception](concepts/CameraOnlyPerception.md) — LiDAR 없이 카메라 입력만으로 scene understanding/planning을 수행하는 perception setup.
 - [ClosedLoopPlanning](concepts/ClosedLoopPlanning.md) — Closed-Loop Planning은 시뮬레이션 환경에서 planned trajectory를 실행하고 feedback을 받아 재계획하는 iterative planning 패러다임이다. [[NAVSIM]] 벤치마크를 통해 평가되며, [[ReflectD

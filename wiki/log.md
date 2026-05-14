@@ -1,3 +1,7 @@
+## [2026-05-14] ingest | AI/ML Learning Review — Day 22: Transformer Block, Multi-Head Attention, Positional Encoding
+
+Added source. Key claims: TransformerBlock combines attention + FFN + residual + LayerNorm; MultiHeadAttention enables diverse relationship patterns via parallel heads; PositionalEncoding is essential for order awareness since self-attention processes tokens simultaneously. Created concept pages for [[TransformerBlock]], [[MultiHeadAttention]], [[PositionalEncoding]], [[FeedForwardNetwork]], [[ResidualConnection]], and [[LayerNorm]]. Aligned with previous days covering [[Attention]], [[QKV]], and [[SelfAttention]].
+
 ## [2026-05-13] update | Hugging Face Weekly Papers W20/W19 refresh
 
 Selected and processed two new papers: HumanNet (2605.06747, 2026-W20) and ReflectDrive-2 (2605.04647, 2026-W19). Added Korean translation, analysis, references, learning notes, figures, wiki source pages, entity/concept pages, placeholder pages for wikilink integrity, and rebuilt graph artifacts with --no-infer fallback after semantic inference failed.
@@ -731,3 +735,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-13] graph | Knowledge graph rebuilt
 
 2054 nodes, 6879 edges (6879 extracted, 0 inferred).
+
+## [2026-05-14] graph | Knowledge graph rebuilt
+
+2057 nodes, 6895 edges (6895 extracted, 0 inferred).
