@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN](sources/2026-05-15-day23-ai-ml-learning-review.md) — Transformer block stabilization: residual connections, LayerNorm, and position-wise FFN roles.
 - [AI/ML Learning Review — Day 22 (2026-05-14): Transformer Block, Multi-Head Attention, Positional Encoding](sources/2026-05-14-day22-ai-ml-learning-review.md) — Transformer block architecture, multi-head attention benefits, and positional encoding necessity for order awareness.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — learning](sources/reflectdrive-2-2605-04647-learning.md) — ReflectDrive-2 학습 자료: discrete trajectory token, masked diffusion, AutoEdit, closed-loop RL reward, latency optimization을 단계적으로 정리.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — references](sources/reflectdrive-2-2605-04647-references.md) — ReflectDrive-2 관련 연구 10개 정리: DriveFine, LLaDA, NAVSIM, UniAD, TransFuser, VLA planner 계열.
@@ -551,6 +552,10 @@
 - [Feature Extraction](concepts/FeatureExtraction.md) — process of deriving useful features from raw data.
 - [Residual Connection](concepts/ResidualConnection.md) — skip connection that helps deep networks preserve signal and gradient flow.
 - [LayerNorm](concepts/LayerNorm.md) — normalization method used to stabilize deep Transformer/LLM training.
+- [Position-wise FFN](concepts/PositionWiseFFN.md) — Transformer feed-forward sublayer applied independently to each token position.
+- [Skip Path](concepts/SkipPath.md) — direct residual route that preserves information and shortens gradient paths.
+- [Pre-LN](concepts/PreLN.md) — Transformer block variant that applies LayerNorm before attention and FFN sublayers.
+- [Post-LN](concepts/PostLN.md) — original Transformer block variant that applies LayerNorm after sublayer residual additions.
 - [Transfer Learning](concepts/TransferLearning.md) — reuse of learned representations for downstream tasks.
 - [Training Stability](concepts/TrainingStability.md) — condition where loss, activations, and gradients remain usable during learning.
 - [Normalization](concepts/Normalization.md) — scale-control methods that support stable model training.

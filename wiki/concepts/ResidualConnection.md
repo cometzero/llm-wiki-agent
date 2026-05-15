@@ -1,38 +1,49 @@
 ---
 title: "Residual Connection"
 type: concept
-tags: [deep-learning, neural-network, architecture]
-sources: [2026-05-07-day15-ai-ml-learning-review, 2026-05-14-day22-ai-ml-learning-review]
-last_updated: 2026-05-14
+tags: [deep-learning, transformer, optimization]
+sources: [2026-05-15-day23-ai-ml-learning-review.md]
+last_updated: 2026-05-15
 ---
 
 ## Definition
 
-A **Residual Connection** (or skip connection) adds the input of a sublayer directly to its output, creating a pathway for information to flow unchanged through deep networks.
-
-## In Transformer Block
+A neural network architectural pattern where the input `x` is added to the output of a transformation `F(x)`:
 
 ```
-X_after_attention = X + Attention(X)
-X_after_ffn = X_after_attention + FFN(X_after_attention)
+y = x + F(x)
 ```
 
-## Benefits
+The direct path from input to output is called the **skip path** or **shortcut connection**.
 
-1. **Information preservation** — original information never fully lost
-2. **Gradient flow** — direct path helps gradients propagate in backpropagation
-3. **Training stability** — easier optimization of deeper networks
-4. **Identity learning** — network can learn to "skip" if sublayer isn't useful
+## Key Properties
 
-## Connections
+1. **Information Preservation** — Original hidden state passes unchanged through the block
+2. **Incremental Learning** — Each block learns a "delta" or correction rather than full representation
+3. **Gradient Path** — Creates direct gradient route to early layers without passing through complex transformations
 
-- [[TransformerBlock]] — key component alongside attention and FFN
-- [[LayerNorm]] — typically used with residual connections
-- [[FFN]] — residual added after FFN output
-- [[MultiHeadAttention]] — residual added after attention output
+## Mathematical Significance
 
-## Mathematical Intuition
+Gradient can flow through two paths:
+1. Direct path: gradient reaches `x` without passing through `F(x)` weights
+2. Through-path: gradient passes through `F(x)` computations
 
-Without residual: `output = sublayer(input)` — small changes could dramatically alter output
+This multi-path structure prevents gradient vanishing in deep networks.
 
-With residual: `output = input + sublayer(input)` — at minimum, output can equal input (identity)
+## In Transformers
+
+Applied after [[Attention]] and [[PositionWiseFFN]]:
+
+```
+x₁ = x + Attention(x)
+x₂ = x₁ + FFN(x₁)
+```
+
+Enables stacking 12–100+ transformer layers in models like [[GPT]], [[BERT]], and LLaMA.
+
+## Related Concepts
+
+- [[SkipPath]] — alternative term for the direct x→y path
+- [[Gradient]] — benefits from shortened propagation path
+- [[HiddenState]] — preserved and incrementally modified
+- [[PreLN]] — LayerNorm variant that works synergistically with residual connections
