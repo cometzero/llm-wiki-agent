@@ -1,3 +1,7 @@
+## [2026-05-15] ingest | AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN
+
+Added source covering three Transformer block stabilization components: ResidualConnection, LayerNorm, and PositionWiseFFN. Created 7 concept pages: ResidualConnection, LayerNorm, PositionWiseFFN, SkipPath, PreLN, PostLN, and updated overview to connect Day 23 with prior Transformer learning days. No contradictions detected.
+
 ## [2026-05-14] ingest | AI/ML Learning Review — Day 22: Transformer Block, Multi-Head Attention, Positional Encoding
 
 Added source. Key claims: TransformerBlock combines attention + FFN + residual + LayerNorm; MultiHeadAttention enables diverse relationship patterns via parallel heads; PositionalEncoding is essential for order awareness since self-attention processes tokens simultaneously. Created concept pages for [[TransformerBlock]], [[MultiHeadAttention]], [[PositionalEncoding]], [[FeedForwardNetwork]], [[ResidualConnection]], and [[LayerNorm]]. Aligned with previous days covering [[Attention]], [[QKV]], and [[SelfAttention]].
@@ -739,3 +743,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-14] graph | Knowledge graph rebuilt
 
 2057 nodes, 6895 edges (6895 extracted, 0 inferred).
+
+## [2026-05-15] graph | Knowledge graph rebuilt
+
+2062 nodes, 6909 edges (6909 extracted, 0 inferred).
+
+## [2026-05-15] graph | Knowledge graph rebuilt
+
+2062 nodes, 6909 edges (6909 extracted, 0 inferred).
