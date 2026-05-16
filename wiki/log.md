@@ -1,3 +1,7 @@
+## [2026-05-16] ingest | AI/ML Learning Review — Day 24
+
+Added source covering three Transformer fundamentals: [[CausalMask]] and [[PaddingMask]] for attention masking, [[EncoderDecoderAttention]] for input-output connection, and [[TransformerParallelism]] with its [[QuadraticComplexity]] trade-offs. Created 8 concept pages for masking types, cross attention, memory, parallelism, and inference concepts (KVCache). No contradictions with existing wiki content.
+
 ## [2026-05-15] ingest | AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN
 
 Added source covering three Transformer block stabilization components: ResidualConnection, LayerNorm, and PositionWiseFFN. Created 7 concept pages: ResidualConnection, LayerNorm, PositionWiseFFN, SkipPath, PreLN, PostLN, and updated overview to connect Day 23 with prior Transformer learning days. No contradictions detected.
@@ -751,3 +755,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-15] graph | Knowledge graph rebuilt
 
 2062 nodes, 6909 edges (6909 extracted, 0 inferred).
+
+## [2026-05-16] graph | Knowledge graph rebuilt
+
+2070 nodes, 6947 edges (6947 extracted, 0 inferred).
