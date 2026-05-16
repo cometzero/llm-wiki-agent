@@ -1,20 +1,39 @@
 ---
 title: "KV Cache"
 type: concept
-tags: [LLM, Transformer, memory, attention]
-last_updated: 2026-05-10
-sources: [ep-96-llm-추론-인프라와-토큰-경제학]
+tags: [llm, inference, autoregressive, memory]
+sources: [2026-05-16-day24-ai-ml-learning-review.md]
+last_updated: 2026-05-16
 ---
 
-## 정의
+## Definition
+The **KV cache** stores computed key and value matrices from previous tokens during autoregressive inference, avoiding recomputation when generating each new token.
 
-[[KVCache]]는 [[Transformer]] self-attention에서 각 토큰 처리 시 계산된 [[Key]]/[[Value]] 상태를 누적 저장해 다음 토큰 생성에서 재연산을 줄이는 캐시이다.
+## Why It Matters
+Without cache: Each new token recomputes attention over all previous tokens (O(n²) per step)
+With cache: Each new token only computes for current step, retrieves past from cache (O(1) per step per token)
 
-## 추론에서의 역할
-- prefill에서 키·밸류를 생성/저장하고 decode에서 재사용한다.
-- 긴 입력과 다수 동시 사용자 상황에서 메모리 사용량이 크게 커질 수 있다.
-- 캐시 상태는 캐시 계층(예: HBM→DRAM→flash→삭제) 이탈 시 지연/비용 특성이 달라진다.
+## Trade-offs
+- **Memory**: Cache grows linearly with context length (n × d_k × d_v)
+- **Speed**: Reduces redundant computation at cost of memory
+- **Long contexts**: Cache size becomes significant (e.g., 128K context)
 
-## 최적화 이슈
-- 블록 단위 관리(PagedAttention), 압축(Mixed/ sparse 전략), TTL 기반 유지 정책은 고밀도 서비스에서 유효하다.
-- 컨텍스트 폭발형 워크로드에서 캐시 효율이 곧 직접 비용으로 전이된다.
+## Implementation
+```python
+# Simplified concept
+cache_k = []
+cache_v = []
+for token in generated_sequence:
+    q = compute_query(token)
+    k, v = compute_kv(token)
+    cache_k.append(k)
+    cache_v.append(v)
+    # Attend to all cached K/V + current
+    output = attention(q, cache_k + [k], cache_v + [v])
+```
+
+## Related Concepts
+- [[Autoregressive]] — Generation paradigm KV cache enables
+- [[Transformer]] — Architecture using this optimization
+- Memory bottleneck — Cache contributes to memory pressure
+- [[InferenceOptimization]] — Key technique for LLM serving

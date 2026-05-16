@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 24 (2026-05-16): Causal Mask, Padding Mask, Encoder-Decoder Attention, Transformer Parallelism](sources/2026-05-16-day24-ai-ml-learning-review.md) — Transformer masking, cross attention, and O(n²) attention complexity fundamentals.
 - [AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN](sources/2026-05-15-day23-ai-ml-learning-review.md) — Transformer block stabilization: residual connections, LayerNorm, and position-wise FFN roles.
 - [AI/ML Learning Review — Day 22 (2026-05-14): Transformer Block, Multi-Head Attention, Positional Encoding](sources/2026-05-14-day22-ai-ml-learning-review.md) — Transformer block architecture, multi-head attention benefits, and positional encoding necessity for order awareness.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — learning](sources/reflectdrive-2-2605-04647-learning.md) — ReflectDrive-2 학습 자료: discrete trajectory token, masked diffusion, AutoEdit, closed-loop RL reward, latency optimization을 단계적으로 정리.
@@ -515,6 +516,9 @@
 - [Long-Range Dependency](concepts/LongRangeDependency.md) — distant sequence relationship handled well by self-attention.
 - [Positional Encoding](concepts/PositionalEncoding.md) — order signal added because attention alone has no inherent sequence order.
 - [FlashAttention](concepts/FlashAttention.md) — optimized attention implementation for faster, memory-efficient Transformer computation.
+- [PaddingMask](concepts/PaddingMask.md) — attention mask that prevents models from attending to non-semantic `<pad>` tokens.
+- [QuadraticComplexity](concepts/QuadraticComplexity.md) — O(n²) attention cost growth with sequence length in full self-attention.
+- [TransformerParallelism](concepts/TransformerParallelism.md) — Transformer property enabling simultaneous token-position computation during training.
 - [CellState](concepts/CellState.md) — LSTM memory pathway that carries longer-term information through time.
 - [NLP](concepts/NLP.md) — natural language processing, a major sequence-model application area.
 - [EmbSpatial-Bench](concepts/EmbSpatial-Bench.md) — generated support page
@@ -679,6 +683,7 @@
 - [AsynchronousTransactionBarriers](concepts/AsynchronousTransactionBarriers.md) — placeholder page for wikilink integrity
 - [AttachedMatrixExtensions](concepts/AttachedMatrixExtensions.md) — concept page
 - [Attention](concepts/Attention.md) — concept page
+- [AttentionMasking](concepts/AttentionMasking.md) — masking attention scores so specific positions receive near-zero attention weight.
 - [Attention FFN Disaggregation](concepts/AttentionFFNDisaggregation.md) — concept page
 - [AUROC](concepts/AUROC.md) — concept page
 - [Autograd](concepts/Autograd.md) — concept page
@@ -728,6 +733,7 @@
 - [Calibration](concepts/Calibration.md) — concept page
 - [Camera Sensor Integration](concepts/CameraSensorIntegration.md) — concept page
 - [Capacity](concepts/Capacity.md) — concept page
+- [CausalMask](concepts/CausalMask.md) — autoregressive attention mask that prevents tokens from attending to future positions.
 - [CAPEX](concepts/CAPEX.md) — concept page
 - [CDF](concepts/CDF.md) — concept page
 - [CDNA3](concepts/CDNA3.md) — placeholder page for wikilink integrity
@@ -868,6 +874,7 @@
 - [Electromagnetic Mass Driver](concepts/ElectromagneticMassDriver.md) — concept page
 - [Embedded ELF](concepts/EmbeddedELF.md) — concept page
 - [Embedding](concepts/Embedding.md) — concept page
+- [Encoder-Decoder Attention](concepts/EncoderDecoderAttention.md) — cross attention where decoder queries attend to encoder key/value memory.
 - [EmbodiedReasoning](concepts/EmbodiedReasoning.md) — concept page
 - [Empirical Risk](concepts/EmpiricalRisk.md) — concept page
 - [Empirical Risk Minimization](concepts/EmpiricalRiskMinimization.md) — concept page
@@ -1084,6 +1091,7 @@
 - [MEM](concepts/MEM.md) — placeholder page for wikilink integrity
 - [MemoryBoundKernel](concepts/MemoryBoundKernel.md) — placeholder page for wikilink integrity
 - [MemoryCentricAI](concepts/MemoryCentricAI.md) — concept page
+- [Memory](concepts/Memory.md) — encoder hidden states used as reusable cross-attention memory in encoder-decoder Transformers.
 - [Memory Hierarchy](concepts/MemoryHierarchy.md) — concept page
 - [MemoryLayout](concepts/MemoryLayout.md) — placeholder page for wikilink integrity
 - [MemorySupercycle](concepts/MemorySupercycle.md) — concept page
