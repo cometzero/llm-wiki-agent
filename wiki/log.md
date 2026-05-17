@@ -1,3 +1,7 @@
+## [2026-05-17] ingest | AI/ML Learning Review — Day 25 (2026-05-17): LLM Baseline Learning Pipeline
+
+Added source. Key claims: 1) [[NextTokenPrediction]] is the core objective for GPT-style models and requires [[Autoregressive]] token-by-token generation, 2) [[Tokenization]] and especially [[Subword]]/[[BytePairEncoding]] directly control OOV handling and sequence-length cost, and 3) [[Pretraining]] is largely [[SelfSupervisedLearning]] driven with objective-loss-optimizer loops that shape downstream model behavior.
+
 ## [2026-05-16] ingest | AI/ML Learning Review — Day 24
 
 Added source covering three Transformer fundamentals: [[CausalMask]] and [[PaddingMask]] for attention masking, [[EncoderDecoderAttention]] for input-output connection, and [[TransformerParallelism]] with its [[QuadraticComplexity]] trade-offs. Created 8 concept pages for masking types, cross attention, memory, parallelism, and inference concepts (KVCache). No contradictions with existing wiki content.
@@ -759,3 +763,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-16] graph | Knowledge graph rebuilt
 
 2070 nodes, 6947 edges (6947 extracted, 0 inferred).
+
+## [2026-05-17] graph | Knowledge graph rebuilt
+
+2088 nodes, 7047 edges (7047 extracted, 0 inferred).

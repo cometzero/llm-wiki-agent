@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 25 (2026-05-17): Language Models, Tokenization, Pretraining Objective](sources/2026-05-17-day25-ai-ml-learning-review.md) — LLM 기본 축인 next-token prediction, tokenization, pretraining objective를 통합 정리하고 causal vs masked 학습 목적의 차이를 비교한다.
 - [AI/ML Learning Review — Day 24 (2026-05-16): Causal Mask, Padding Mask, Encoder-Decoder Attention, Transformer Parallelism](sources/2026-05-16-day24-ai-ml-learning-review.md) — Transformer masking, cross attention, and O(n²) attention complexity fundamentals.
 - [AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN](sources/2026-05-15-day23-ai-ml-learning-review.md) — Transformer block stabilization: residual connections, LayerNorm, and position-wise FFN roles.
 - [AI/ML Learning Review — Day 22 (2026-05-14): Transformer Block, Multi-Head Attention, Positional Encoding](sources/2026-05-14-day22-ai-ml-learning-review.md) — Transformer block architecture, multi-head attention benefits, and positional encoding necessity for order awareness.
@@ -184,6 +185,7 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [LLaMA](entities/LLaMA.md) — Meta decoder-only LLM family used as an example of causal language modeling.
 - [AutoVLA](entities/AutoVLA.md) — AutoVLA는 자율주행领域的 VLA planner 비교군으로, [[ReflectDrive-2]]가 성능 비교에 사용하는 대상 중 하나이다.
 - [BlockDiffusion](entities/BlockDiffusion.md) — block 단위 masked/diffusion generation을 사용하는 효율적 생성 방법 계열.
 - [D3PM](entities/D3PM.md) — Discrete Denoising Diffusion Probabilistic Models 계열 discrete diffusion 방법.
@@ -454,6 +456,22 @@
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
 
 ## Concepts
+- [NextTokenPrediction](concepts/NextTokenPrediction.md) — LLM objective that predicts the next token from prior context.
+- [Tokenization](concepts/Tokenization.md) — converts text into model-readable token IDs.
+- [Subword](concepts/Subword.md) — tokenization unit smaller than or comparable to a word, useful for OOV handling.
+- [BytePairEncoding](concepts/BytePairEncoding.md) — subword tokenizer algorithm that repeatedly merges frequent pairs.
+- [CausalLanguageModel](concepts/CausalLanguageModel.md) — left-to-right language modeling objective for generation.
+- [MaskedLanguageModel](concepts/MaskedLanguageModel.md) — bidirectional masked-token prediction objective.
+- [Pretraining](concepts/Pretraining.md) — large-scale initial training stage that builds general representations.
+- [LanguageModel](concepts/LanguageModel.md) — model that assigns probabilities to token sequences.
+- [Vocabulary](concepts/Vocabulary.md) — finite set of tokens known by a tokenizer/model.
+- [SelfSupervisedLearning](concepts/SelfSupervisedLearning.md) — training setup that derives labels from data itself.
+- [TokenId](concepts/TokenId.md) — integer identifier for a vocabulary token.
+- [SequenceLength](concepts/SequenceLength.md) — number of tokens in a sequence, a driver of attention cost.
+- [AutoregressiveObjective](concepts/AutoregressiveObjective.md) — objective that predicts tokens using previous tokens only.
+- [SpecialToken](concepts/SpecialToken.md) — reserved tokenizer token such as <pad>, <eos>, or [MASK].
+- [EmbeddingLookup](concepts/EmbeddingLookup.md) — maps token IDs to learned embedding vectors.
+- [PreferenceOptimization](concepts/PreferenceOptimization.md) — post-pretraining alignment using preference signals.
 - [TransformerBlock](concepts/TransformerBlock.md) — core Transformer layer combining attention, FFN, residual connections, and LayerNorm.
 - [FeedForwardNetwork](concepts/FeedForwardNetwork.md) — per-token Transformer sublayer that refines hidden states after attention.
 - [BEVTrajectory](concepts/BEVTrajectory.md) — Bird’s-eye-view 공간에서 표현되는 자율주행 trajectory representation.
