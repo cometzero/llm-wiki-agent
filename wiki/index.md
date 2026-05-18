@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF](sources/2026-05-18-day26-ai-ml-learning-review.md) — LLM 학습 파이프라인 핵심: scaling law로 모델 크기 설계, SFT로 instruction-following 학습, RLHF로 인간 선호도 정렬.
 - [AI/ML Learning Review — Day 25 (2026-05-17): Language Models, Tokenization, Pretraining Objective](sources/2026-05-17-day25-ai-ml-learning-review.md) — LLM 기본 축인 next-token prediction, tokenization, pretraining objective를 통합 정리하고 causal vs masked 학습 목적의 차이를 비교한다.
 - [AI/ML Learning Review — Day 24 (2026-05-16): Causal Mask, Padding Mask, Encoder-Decoder Attention, Transformer Parallelism](sources/2026-05-16-day24-ai-ml-learning-review.md) — Transformer masking, cross attention, and O(n²) attention complexity fundamentals.
 - [AI/ML Learning Review — Day 23 (2026-05-15): Residual Connection, LayerNorm, Position-wise FFN](sources/2026-05-15-day23-ai-ml-learning-review.md) — Transformer block stabilization: residual connections, LayerNorm, and position-wise FFN roles.
@@ -472,6 +473,24 @@
 - [SpecialToken](concepts/SpecialToken.md) — reserved tokenizer token such as <pad>, <eos>, or [MASK].
 - [EmbeddingLookup](concepts/EmbeddingLookup.md) — maps token IDs to learned embedding vectors.
 - [PreferenceOptimization](concepts/PreferenceOptimization.md) — post-pretraining alignment using preference signals.
+- [ScalingLaw](concepts/ScalingLaw.md) — empirical relationship between model size, data scale, compute budget, and loss.
+- [ParameterCount](concepts/ParameterCount.md) — number of learnable parameters that defines model capacity and cost.
+- [ComputeBudget](concepts/ComputeBudget.md) — GPU time, FLOPs, and cost available for model training.
+- [DataScaling](concepts/DataScaling.md) — increasing training token volume, diversity, and quality.
+- [InstructionTuning](concepts/InstructionTuning.md) — training models to respond to human instructions.
+- [SupervisedFineTuning](concepts/SupervisedFineTuning.md) — supervised adaptation using instruction-response examples.
+- [InstructionFollowing](concepts/InstructionFollowing.md) — ability to follow task, format, tone, and safety constraints in prompts.
+- [RLHF](concepts/RLHF.md) — reinforcement learning from human feedback for preference-aligned assistant behavior.
+- [RewardModel](concepts/RewardModel.md) — model that scores responses according to learned human preferences.
+- [PreferenceData](concepts/PreferenceData.md) — chosen/rejected comparison data for preference optimization.
+- [PolicyOptimization](concepts/PolicyOptimization.md) — adjusting a model policy toward higher reward or preferred outputs.
+- [DPO](concepts/DPO.md) — direct preference optimization without a separate reward model.
+- [ChinchillaScaling](concepts/ChinchillaScaling.md) — compute-optimal balancing of model size and training tokens.
+- [TransformerArchitecture](concepts/TransformerArchitecture.md) — attention-based architecture behind modern LLMs.
+- [PromptEngineering](concepts/PromptEngineering.md) — prompt design for clear task instructions and response constraints.
+- [DataCurriculum](concepts/DataCurriculum.md) — ordering or mixture of training data to improve learning.
+- [DistributedTraining](concepts/DistributedTraining.md) — multi-device or multi-node model training for large compute budgets.
+- [ParameterEfficientFineTuning](concepts/ParameterEfficientFineTuning.md) — adapting large models by updating a small subset of parameters.
 - [TransformerBlock](concepts/TransformerBlock.md) — core Transformer layer combining attention, FFN, residual connections, and LayerNorm.
 - [FeedForwardNetwork](concepts/FeedForwardNetwork.md) — per-token Transformer sublayer that refines hidden states after attention.
 - [BEVTrajectory](concepts/BEVTrajectory.md) — Bird’s-eye-view 공간에서 표현되는 자율주행 trajectory representation.
