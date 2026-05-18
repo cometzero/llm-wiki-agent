@@ -1,3 +1,7 @@
+## [2026-05-18] ingest | AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF
+
+Added source. Key claims: Scaling laws define predictable performance relationships with model size, data, and compute; SFT teaches instruction-following through curated examples; RLHF and preference optimization align model outputs with human preferences using reward models and policy optimization.
+
 ## [2026-05-17] ingest | AI/ML Learning Review — Day 25 (2026-05-17): LLM Baseline Learning Pipeline
 
 Added source. Key claims: 1) [[NextTokenPrediction]] is the core objective for GPT-style models and requires [[Autoregressive]] token-by-token generation, 2) [[Tokenization]] and especially [[Subword]]/[[BytePairEncoding]] directly control OOV handling and sequence-length cost, and 3) [[Pretraining]] is largely [[SelfSupervisedLearning]] driven with objective-loss-optimizer loops that shape downstream model behavior.
@@ -767,3 +771,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-17] graph | Knowledge graph rebuilt
 
 2088 nodes, 7047 edges (7047 extracted, 0 inferred).
+
+## [2026-05-18] graph | Knowledge graph rebuilt
+
+2107 nodes, 7113 edges (7113 extracted, 0 inferred).
