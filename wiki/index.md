@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 27 (2026-05-19): Decoding Strategies, Context Window, Hallucination/Calibration/Grounding](sources/2026-05-19-day27-ai-ml-learning-review.md) — LLM 추론 시 디코딩 전략(greey/top-k/top-p), 컨텍스트 윈도우/KV cache 메모리 한계, 환각/calibration/grounding의 신뢰성 프레임워크를 정리.
 - [AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF](sources/2026-05-18-day26-ai-ml-learning-review.md) — LLM 학습 파이프라인 핵심: scaling law로 모델 크기 설계, SFT로 instruction-following 학습, RLHF로 인간 선호도 정렬.
 - [AI/ML Learning Review — Day 25 (2026-05-17): Language Models, Tokenization, Pretraining Objective](sources/2026-05-17-day25-ai-ml-learning-review.md) — LLM 기본 축인 next-token prediction, tokenization, pretraining objective를 통합 정리하고 causal vs masked 학습 목적의 차이를 비교한다.
 - [AI/ML Learning Review — Day 24 (2026-05-16): Causal Mask, Padding Mask, Encoder-Decoder Attention, Transformer Parallelism](sources/2026-05-16-day24-ai-ml-learning-review.md) — Transformer masking, cross attention, and O(n²) attention complexity fundamentals.
@@ -484,6 +485,12 @@
 - [RewardModel](concepts/RewardModel.md) — model that scores responses according to learned human preferences.
 - [PreferenceData](concepts/PreferenceData.md) — chosen/rejected comparison data for preference optimization.
 - [PolicyOptimization](concepts/PolicyOptimization.md) — adjusting a model policy toward higher reward or preferred outputs.
+- [GreedyDecoding](concepts/GreedyDecoding.md) — decoding strategy that always selects the highest-probability next token.
+- [BeamSearch](concepts/BeamSearch.md) — decoding strategy that keeps multiple candidate sequences while generating.
+- [Temperature](concepts/Temperature.md) — setting that sharpens or flattens token probability distributions during sampling.
+- [TopK](concepts/TopK.md) — sampling constraint that keeps only the k highest-probability next-token candidates.
+- [TopP](concepts/TopP.md) — nucleus sampling constraint that keeps candidates up to a cumulative probability threshold.
+- [Uncertainty](concepts/Uncertainty.md) — expression of model doubt when evidence or confidence is limited.
 - [DPO](concepts/DPO.md) — direct preference optimization without a separate reward model.
 - [ChinchillaScaling](concepts/ChinchillaScaling.md) — compute-optimal balancing of model size and training tokens.
 - [TransformerArchitecture](concepts/TransformerArchitecture.md) — attention-based architecture behind modern LLMs.

@@ -1,3 +1,7 @@
+## [2026-05-19] ingest | AI/ML Learning Review — Day 27 (2026-05-19): Decoding Strategies, Context Window, Hallucination/Calibration/Grounding
+
+Added source. Key claims: (1) decoding strategies (greedy, beam search, temperature, top-k, top-p) control creativity/accuracy balance without changing model knowledge; (2) context window is max tokens LLM can process, KV cache enables fast generation but consumes memory; (3) hallucination arises from next-token-prediction training objective, grounding and calibration mitigate trustworthiness issues. Created 10 concept pages: [[GreedyDecoding]], [[BeamSearch]], [[Temperature]], [[TopK]], [[TopP]], [[ContextWindow]], [[KVCache]], [[Hallucination]], [[Calibration]], [[Grounding]].
+
 ## [2026-05-18] ingest | AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF
 
 Added source. Key claims: Scaling laws define predictable performance relationships with model size, data, and compute; SFT teaches instruction-following through curated examples; RLHF and preference optimization align model outputs with human preferences using reward models and policy optimization.
@@ -775,3 +779,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-18] graph | Knowledge graph rebuilt
 
 2107 nodes, 7113 edges (7113 extracted, 0 inferred).
+
+## [2026-05-19] graph | Knowledge graph rebuilt
+
+2115 nodes, 7123 edges (7123 extracted, 0 inferred).
+
+## [2026-05-19] graph | Knowledge graph rebuilt
+
+2116 nodes, 7126 edges (7126 extracted, 0 inferred).
