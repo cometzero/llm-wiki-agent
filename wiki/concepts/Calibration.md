@@ -1,15 +1,37 @@
 ---
 title: "Calibration"
 type: concept
-tags: [ml, evaluation, probabilistic-modeling]
-sources: [2026-04-24-day02-ai-ml-learning-review]
-last_updated: 2026-04-25
+tags: [llm, reliability, uncertainty, evaluation]
+sources: [2026-05-19-day27-ai-ml-learning-review]
+last_updated: 2026-05-19
 ---
 
-[[Calibration]]은 모델이 출력한 확률이 실제 빈도와 얼마나 잘 맞는지 평가하는 개념이다. 확률 예측 모델의 신뢰도를 해석할 때 중요하다.
+## Definition
+Calibration measures how well a model's confidence estimates match its actual accuracy. A well-calibrated model says "90% confident" and is correct ~90% of the time. Poor calibration means confidence and accuracy diverge.
 
-## Connections
-- [[BayesTheorem]] — 확률 예측을 업데이트하는 기본 틀
-- [[Expectation]] — 평균적 예측 정확도와 연결됨
-- [[ProbabilityDistribution]] — 확률 출력의 해석 기반
-- [[Classification]] — confidence score의 신뢰도 점검에 자주 쓰임
+## Key Metrics
+- **Expected Calibration Error (ECE)**: Weighted average of confidence-accuracy gap
+- **Overconfidence**: Model says 80% but only correct 50% of the time
+- **Underconfidence**: Model says 50% but correct 80% of the time
+
+## Why Calibration Matters
+- **Risk assessment**: In high-stakes domains, knowing model uncertainty enables appropriate responses
+- **Human-AI collaboration**: Calibrated confidence helps humans decide when to trust model outputs
+- **Reliability**: Users can set thresholds based on confidence levels
+
+## Calibration vs Hallucination
+- [[Hallucination]] deals with whether outputs are factually correct
+- Calibration deals with whether the model knows WHAT IT DOESN'T KNOW
+- Well-calibrated models can still hallucinate, but they should express uncertainty
+
+## Improving Calibration
+- Temperature scaling: Post-hoc adjustment of confidence
+- Teaching models to say "I don't know"
+- Constitutional AI / RLHF focused on uncertainty expression
+- Ensemble methods for more robust confidence estimation
+
+## Related Concepts
+- [[Hallucination]] — what calibration helps mitigate
+- [[Grounding]] — external evidence for factual grounding
+- [[Uncertainty]] — expressing what the model doesn't know
+- Temperature scaling — calibration technique
