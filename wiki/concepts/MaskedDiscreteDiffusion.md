@@ -21,5 +21,5 @@ ReflectDrive-2에서는:
 - [[D3PM]], [[MaskGIT]], [[LLaDA]], [[SeedDiffusion]], [[MDLM]], [[SEDD]], [[BlockDiffusion]], [[Fast-dLLM]] 등 연구와 관련
 
 ## Connections
-- [[ReflectDrive-2]] — trajectory generation에 적용
+- [[ReflectDrive2]] — trajectory generation에 적용
 - [[AutoEdit]] — 같은 discrete action space에서 동작하는 editor

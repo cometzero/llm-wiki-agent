@@ -16,7 +16,7 @@ DROID은 실환경(real-world) 로봇 조작 데이터셋으로, [[HumanNet]]이
 
 ## Connections
 - [[Open X-Embodiment]] — 이종 로봇 데이터 통합
-- [[GR00T N1]] — 실환경 로봇 데이터 활용 VLA 계열
+- [[GR00T-N1]] — 실환경 로봇 데이터 활용 VLA 계열
 - [[HumanNet]] — robot data 비용 문제의 핵심 인용
 
 ## References

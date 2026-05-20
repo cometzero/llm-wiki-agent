@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning](sources/physbrain-1-0-2605-15298-learning.md) — VLA adaptation을 위한 egocentric video → [[PhysicalCommonsense]] extraction → [[PhysicalQA]] → capability-preserving fine-tuning 학습 가이드
+- [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — references](sources/physbrain-1-0-2605-15298-references.md) — [[VLA]]/[[Pi0]]/[[GR00T-N1]] 등 10개 레퍼런스 정리: [[OpenVLA]], [[Ego4D]], [[EgoDex]], [[EPIC-KITCHENS]], [[VGGT]], [[SimplerEnv]], [[LIBERO]], [[RoboCasa]]
+- [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — analysis](sources/physbrain-1-0-2605-15298-analysis.md) — VLM에 물리 상식 주입 후 capability-preserving VLA adaptation으로 전이하는 PhysBrain 1.0 기술 분석
+- [PhysBrain 1.0 기술 보고서](sources/physbrain-1-0-2605-15298.md) — human egocentric video를 physical commonsense supervision으로 변환해 VLA로 전이하는 기술 보고서
+- [MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — learning](sources/mobileego-anywhere-2605-05945-learning.md) — VLA scaling 병목 해결을 위한 smartphone 기반 egocentric 데이터 수집 인프라 STERA 파이프라인 학습 가이드.
+- [MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — references](sources/mobileego-anywhere-2605-05945-references.md) — EgoScale, UMI, Ego4D, EPIC-KITCHENS, Ego-Exo4D, HOI4D, HOT3D, ARCTIC, WiLoR, MCAP 등 10개 레퍼런스 정리.
+- [MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — analysis](sources/mobileego-anywhere-2605-05945-analysis.md) — iPhone 기반 200시간 egocentric dataset + STERA 파이프라인으로 VLA 학습용 long-horizon trajectory 수집 인프라 공개.
+- [MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라](sources/mobileego-anywhere-2605-05945.md) — commodity smartphone 기반 200시간 egocentric dataset 공개, VLA 학습용 long-horizon trajectory 수집 인프라 STERA 제안.
 - [AI/ML Learning Review — Day 28 (2026-05-20): Foundation Model, Transfer Learning, Multimodal](sources/2026-05-20-day28-ai-ml-learning-review.md) — Foundation model 패러다임, PEFT/LoRA 파라미터 효율화, 멀티모달 모델 구조와 cross-modal alignment 정리.
 - [AI/ML Learning Review — Day 27 (2026-05-19): Decoding Strategies, Context Window, Hallucination/Calibration/Grounding](sources/2026-05-19-day27-ai-ml-learning-review.md) — LLM 추론 시 디코딩 전략(greey/top-k/top-p), 컨텍스트 윈도우/KV cache 메모리 한계, 환각/calibration/grounding의 신뢰성 프레임워크를 정리.
 - [AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF](sources/2026-05-18-day26-ai-ml-learning-review.md) — LLM 학습 파이프라인 핵심: scaling law로 모델 크기 설계, SFT로 instruction-following 학습, RLHF로 인간 선호도 정렬.
@@ -16,7 +24,7 @@
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing — analysis](sources/reflectdrive-2-2605-04647-analysis.md) — Decision-Draft-Reflect VLA planner, discrete trajectory token, masked diffusion draft + AutoEdit rewrite, RL closed-loop reward, NAVSIM 91.0 PDMS.
 - [ReflectDrive-2: 이산 Diffusion Driving을 위한 강화학습 정렬 Self-Editing](sources/reflectdrive-2-2605-04647.md) — 이산 diffusion + RL alignment로 자율주행 trajectory planning하는 Decision-Draft-Reflect 파이프라인, NAVSIM 91.0 PDMS, NVIDIA Thor ~30ms latency.
 - [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — learning](sources/humannet-2605-06747-learning.md) — HumanNet 학습 자료: 선수 지식, 핵심 개념(glossary), Mermaid flowchart, 단계별 이해, 구현 메모, study questions, reading roadmap 포함.
-- [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — references](sources/humannet-2605-06747-references.md) — HumanNet(arXiv 2605.06747)의 참고 문헌 정리: [[Ego4D]], [[EPIC-KITCHENS]], [[Open X-Embodiment]], [[R3M]], [[GR00T N1]] 등 [[VLA]]/로보틱스 관련 핵심 레퍼런스.
+- [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — references](sources/humannet-2605-06747-references.md) — HumanNet(arXiv 2605.06747)의 참고 문헌 정리: [[Ego4D]], [[EPIC-KITCHENS]], [[Open X-Embodiment]], [[R3M]], [[GR00T-N1]] 등 [[VLA]]/로보틱스 관련 핵심 레퍼런스.
 - [HumanNet: 인간 중심 비디오 학습을 100만 시간 규모로 확장하기 — analysis](sources/humannet-2605-06747-analysis.md) — VLA pretraining용 100만 시간 human-centric video corpus 제안, [[Qwen]]/[[LingBot-VLA]]로 egocentric video의 transfer value 검증.
 - [HumanNet: Scaling Human-centric Video Learning to One Million Hours](sources/humannet-2605-06747.md) — 100만 시간 규모의 human-centric video corpus로 VLA pretraining에 있어 인간 비디오가 robot data의 비용 효율적 대체재가 될 수 있음을 증명.
 - [AI/ML Learning Review — Day 21 (2026-05-13): QKV, Scaled Attention, Self-Attention](sources/2026-05-13-day21-ai-ml-learning-review.md) — Query/Key/Value role separation, Scaled Dot-Product Attention with sqrt(d_k) scaling, and Self-Attention's expressive power for contextual token representation.
@@ -193,7 +201,7 @@
 - [BLIP](entities/BLIP.md) — Bootstrapped Language-Image Pre-training vision-language model family.
 - [LLaVA](entities/LLaVA.md) — Large Language and Vision Assistant model family connecting image inputs to LLM reasoning.
 - [LLaMA](entities/LLaMA.md) — Meta decoder-only LLM family used as an example of causal language modeling.
-- [AutoVLA](entities/AutoVLA.md) — AutoVLA는 자율주행领域的 VLA planner 비교군으로, [[ReflectDrive-2]]가 성능 비교에 사용하는 대상 중 하나이다.
+- [AutoVLA](entities/AutoVLA.md) — AutoVLA는 자율주행领域的 VLA planner 비교군으로, [[ReflectDrive2]]가 성능 비교에 사용하는 대상 중 하나이다.
 - [BlockDiffusion](entities/BlockDiffusion.md) — block 단위 masked/diffusion generation을 사용하는 효율적 생성 방법 계열.
 - [D3PM](entities/D3PM.md) — Discrete Denoising Diffusion Probabilistic Models 계열 discrete diffusion 방법.
 - [DAGroupPKU](entities/DAGroupPKU.md) — Beijing University 산하 robotics 연구 그룹으로, [[HumanNet]] 프로젝트를 주도했다. Yufan Deng, Daquan Zhou 등이 소속되어 있다.
@@ -211,7 +219,7 @@
 - [NVIDIAThor](entities/NVIDIAThor.md) — NVIDIA DRIVE Thor 계열 automotive/robotics compute platform.
 - [OpenX-Embodiment](entities/OpenX-Embodiment.md) — Open X-Embodiment(통칭 RT-X)은 이종(heterogeneous) 로봇 로그를 통해 로봇 파운데이션 모델 스케일링의 대표 사례로, 다양한 로봇 플랫폼의 데이터를 통합하여 범용 로봇 정책 학습을 가능케 한다. [[HumanNet]]은 r
 - [RT-X](entities/RT-X.md) — Open X-Embodiment/RT-X 계열 로봇 학습 데이터·정책 연구.
-- [ReCogDrive](entities/ReCogDrive.md) — ReCogDrive는 camera-only VLA planner로, [[ReflectDrive-2]]가 비교하는 peer 모델이다. ReflectDrive-2는 이보다 강력한 trajectory generation과 RL alignment를 통해 차별
+- [ReCogDrive](entities/ReCogDrive.md) — ReCogDrive는 camera-only VLA planner로, [[ReflectDrive2]]가 비교하는 peer 모델이다. ReflectDrive-2는 이보다 강력한 trajectory generation과 RL alignment를 통해 차별
 - [ReflectDrive2](entities/ReflectDrive2.md) — ReflectDrive-2는 자율주행 VLA planner에서 trajectory를 discrete token으로 만들고, masked diffusion draft와 AutoEdit rewrite를 RL terminal reward로 함께 정렬하는 D
 - [SEDD](entities/SEDD.md) — Score Entropy Discrete Diffusion 계열 discrete diffusion model.
 - [SeedDiffusion](entities/SeedDiffusion.md) — discrete diffusion 또는 masked generation 계열 선행 연구 placeholder.
@@ -461,6 +469,63 @@
 - [하나증권](entities/하나증권.md) — entity page
 - [현대건설](entities/현대건설.md) — entity page
 - [호르무즈해협](entities/호르무즈해협.md) — entity page
+- [ARCTIC](entities/ARCTIC.md) — ARCTIC는 CVPR 2023의 dexterous bimanual hand-object manipulation dataset으로, MobileEgo의 MANO hand-pose 평가와 비교되는 controlled high-precision dataset이다.
+- [ARCore](entities/ARCore.md) — Google의 Android AR framework로 visual-inertial tracking과 환경 이해 기능을 제공한다.
+- [ARKit](entities/ARKit.md) — Apple의 iOS/iPadOS AR framework로 visual-inertial pose tracking과 scene understanding 기능을 제공한다.
+- [Abhishek Anand](entities/AbhishekAnand.md) — [[mobileego-anywhere-2605-05945]] 논문의 저자.
+- [AndrejKapassi](entities/AndrejKapassi.md) — [[AndrejKapassi]]는 [[AI]] 시대의 패러다임 전환을 [[Software 1.0]] / [[Software 2.0]] / [[Software 3.0]] 관점에서 정리하며,
+- [CLIP](entities/CLIP.md) — CLIP은 image-text contrastive learning 기반 VLM 계열 모델이며, EmbodiedMidtrain 학습자료에서는 frozen feature와 logistic regression 실습 예시로 연결된다.
+- [DROID](entities/DROID.md) — DROID은 실환경(real-world) 로봇 조작 데이터셋으로, [[HumanNet]]이 제시하는 "robot 데이터는 비싸다"는 문제의식과 직접 연결된다. 로봇 데이터 수집의 높은 비용과 현실적 한계를 보여주는 핵심 인용 대상으로, [[HumanNet]]의 인간 중심 비디오 학습이 
+- [DriveFine](entities/DriveFine.md) — DriveFine (arXiv 2602.14577)은 masked diffusion driving VLA에 refinement를 추가한 연구로, ReflectDrive-2의 가장 가까운 선행 연구이다. drafter/editor 구조를 제안하지만 joint RL coupling이 약하다
+- [EPIC-KITCHENS](entities/EPIC-KITCHENS.md) — EPIC-KITCHENS는 주방 도메인의 egocentric activity dataset으로, actor-centered intent와 hand-object contact의 중요성을 보여주는 연구에 활용된다. [[HumanNet]]의 관련 연구 목록에 포함되어 인간 중심 비디오 학습의
+- [ERQA](entities/ERQA.md) — PhysBrain 1.0에서 사용된 embodied reasoning QA 계열 평가 벤치마크로 물리 상식 이해를 점검한다.
+- [Ego4D](entities/Ego4D.md) — Ego4D는 제1인칭 시점(egocentric) 비디오 데이터셋의 대표 주자로, narration, forecasting, hand-object interaction 학습에 유용한 대규모 코퍼스를 제공한다. [[HumanNet]]은 Ego4D와 같은 egocentric video cor
+- [EgoDex](entities/EgoDex.md) — Egocentric video에서 dexterous manipulation을 학습하는 연구(arXiv:2505.11709). [[physbrain-1-0-2605-15298]]의 egocentric-to-robot transfer 맥락과 직접적으로 연관되며, 인간의 첫인칭 시점 영상을 
+- [EgoScale](entities/EgoScale.md) — EgoScale는 egocentric manipulation의 scaling law를探究한 연구로(arXiv:2602.16710), MobileEgo Anywhere가 직접 인용하는 선행 연구이다.
+- [EmbodiedMidtrain](entities/EmbodiedMidtrain.md) — [[EmbodiedMidtrain]]는 로봇 조작 과업에서 바로 적용 가능한 거대한 모델 확장보다, VLM 내부의 [[DistributionShift]]와 목표 도메인 정합을 기반으로 한 데이터 선택이 더 큰 성능 이득을 낼 수 있음을 보인 파이프라인/연구 축이다.
+- [GPT-5.5](entities/GPT-5.5.md) — [[GPT-5.5]]는 [[OpenAI]]가 제시한 코딩 중심 고성능 추론 모델군으로, 복잡한 추론과 구조 분석이 필요한 작업에서 강점이 있다고 요약된다.
+- [NVIDIA GR00T](entities/GR00T.md) — NVIDIA GR00T는 범용 로봇/휴머노이드용 foundation model 계열이며, VLA와 embodied policy 연구의 대표 비교 축이다.
+- [Gemini Robotics](entities/GeminiRobotics.md) — [[Google]]이 제시한 로봇 제어 아키텍처 계열로, 거대 모델 기반의 추론과 로봇 실행을 분리해 실시간성과 일반화를 같이 확보하려는 접근을 가진다.
+- [HOT3D](entities/HOT3D.md) — HOT3D는 CVPR 2025의 고정밀 hand/object tracking benchmark로, MobileEgo가 ground-truth-free consistency metric으로 hand pose 품질을 점검하는 기준점이 된다.
+- [HydraNet](entities/HydraNet.md) — [[HydraNet]]는 여러 인식 과업을 하나의 네트워크 백본에서 처리하는 멀티태스크 구조로, 같은 피처 인코딩을 공유하면서 객체/차선/차선경계 같은 인지 신호를 동시에 산출한다.
+- [Kai Chen](entities/KaiChen.md) — Kai Chen은 [[physbrain-1-0-2605-15298]] 기술 보고서의 마지막 저자로,human egocentric video 기반 VLA 연구에 참여했다.
+- [LIBERO](entities/LIBERO.md) — Long-horizon manipulation benchmark(NeurIPS 2023). [[physbrain-1-0-2605-15298]]의 embodied control transfer를 평가하는 주요 벤치마크로, 복잡한 장기 조작 작업을 통해 VLA 정책의 planning 능력을
+- [LLVM](entities/LLVM.md) — [[LLVM]]는 20년 이상 사용되어 온 컴파일러 인프라로, 정적 단일 할당([[SSA]]) 기반 IR과 최적화 파이프라인을 핵심으로 한다. [[MLIR]]은 다양한 타깃을 잇기 위해 LLVM의 설계 일부를 반영한 다층 IR 시스템으로 성장하면서, LLVM로의 하위 번역을 중요 경로로
+- [LLaDA](entities/LLaDA.md) — LLaDA(Language Large Discrete Diffusion Model)는 Meta의 discrete diffusion language model 시리즈이다. [[ReflectDrive2]]는 이 discrete diffusion LM 아키텍처를 driving domain에 
+- [LingBot-VLA](entities/LingBot-VLA.md) — LingBot-VLA는 [[HumanNet]] 검증에 사용된 VLA post-training architecture/protocol의 기반이 되는 모델로, 이종 데이터의 VLA 통합 학습 방법을 제공한다. [[GR00T-N1]]과 함께 [[HumanNet]]의 인간 중심 비디오 데이터가
+- [LingBot](entities/LingBot.md) — [[LingBot]]은 HumanNet 논문에서 VLA 모델로 사용된 robot-specific VLA(Vision-Language-Action) 시스템이다. HumanNet egocentric video subset으로 continued training한 후, downstream ro
+- [MCAP (Mcap)](entities/MCAP.md) — MCAP(mcap.dev)은 RGB-D/IMU/pose raw stream을 표준 로그 포맷으로 저장하기 위한 container 포맷으로, downstream VLA dataset conversion의 기반이 된다.
+- [MobileEgo Anywhere](entities/MobileEgoAnywhere.md) — iPhone 기반 범용 하드웨어로 장기 egocentric 데이터를 수집하는 오픈 인프라 프로젝트. VLA 정책 학습에 필요한 long-horizon trajectory 데이터를 commodity hardware로 확장 수집하는 것을 목표로 한다.
+- [NAVSIM](entities/NAVSIM.md) — NAVSIM (arXiv 2406.15349)은 nuPlan 기반 closed-loop planning benchmark이다. [[ReflectDrive2]]의 주요 평가 환경으로 사용되며, 91.0 PDMS 성능 달성에 핵심적인 역할을 한다.
+- [NVIDIA GR00T](entities/NVIDIAGR00T.md) — [[NVIDIA|NVIDIA]]의 로봇 AI 제품군으로, 휴머노이드 및 다중 인바디먼트를 대상으로 한 [[VisionLanguageAction]](VLA) 파운데이션 전략이다.
+- [ONNX-MLIR](entities/ONNX-MLIR.md) — [[ONNX-MLIR]]는 [[ONNX]] 모델을 [[MLIR]] 기반으로 다루는 구현 축으로, 도메인 간 IR 변환과 중간 표현 재사용의 실전 접점이다.
+- [OccupancyNetwork](entities/OccupancyNetwork.md) — [[OccupancyNetwork]]는 환경의 연속적 공간 점유 상태를 학습해 추정하는 자율주행 인지 구성요소로, 고정 크기 객체 박스보다 공간적 존재성 자체를 예측하는 데 강점을 둔다.
+- [PhysBench](entities/PhysBench.md) — 물리 상식 및 embodied reasoning 능력을 평가하는 벤치마크 계열이다.
+- [PhysBrain](entities/PhysBrain.md) — PhysBrain은 대규모 human egocentric video에서 [[PhysicalCommonsenseSupervision]]을 추출하여 [[VLA]]로 전이하는 연구 프레임워크다. [[ShijieLian]] 등이 주도하며 arXiv 2605.15298으로 발표되었다.
+- [PhysicalIntelligence](entities/PhysicalIntelligence.md) — 로보틱스 분야에서 활동하는 AI 연구 스타트업. [[Pi0]](π0) VLA 정책 모델을 개발했으며, [[physbrain-1-0-2605-15298]]의 주요 성능 비교 대상으로서 generalist robot action generation 분야의 강력한 baseline을 제공한다.
+- [Physical Intelligence Pi](entities/PhysicalIntelligencePi.md) — [[Physical Intelligence]]의 대표 모델 계열로, 범용 로봇 정책을 중심으로 [[VisionLanguageAction]]를 구현해 다양한 몸체·작업으로의 전이를 시도한다.
+- [Pratyush Patnaik](entities/PratyushPatnaik.md) — [[mobileego-anywhere-2605-05945]] 논문의 저자.
+- [Qwen](entities/Qwen.md) — [[Qwen]]는 Alibaba Cloud가 개발한 대규모 Vision-Language Model(VLM) 시리즈이다. HumanNet 분석에서는 VLM backbone으로 사용되어, human-centric video 데이터로 continued training后的 transfer va
+- [R3M](entities/R3M.md) — R3M은 수동적(passive) 인간 비디오 representation이 로봇 조작에 전이(transfer)될 수 있음을 보인 선행 연구로, [[HumanNet]]의 핵심 근거 중 하나다. 인간 행동의 비디오를 사전 학습하여 로봇 정책의 초기화를 도모하는 방식을 검증함으로써, [[Hum
+- [RoboCasa](entities/RoboCasa.md) — Household manipulation benchmark(RSS 2024). 다양한 가정형 manipulation task를 제공하는 [[RoboCasa]]과 함께, [[physbrain-1-0-2605-15298]]의 VLA adaptation 성능 비교에 사용되는 벤치마크.
+- [STERA](entities/STERA.md) — MobileEgo Anywhere의 오프라인 처리 파이프라인. 2D hand keypoints(WiLoR)에서 3D world-frame MANO hand trajectory를 생성하고, atomic action labeling 및 hierarchical task instruction 
+- [Satpal Singh Rathor](entities/SatpalSinghRathor.md) — [[mobileego-anywhere-2605-05945]] 논문의 저자.
+- [Senthil Palanisamy](entities/SenthilPalanisamy.md) — [[mobileego-anywhere-2605-05945]] 논문의 제1저자. MobileEgo Anywhere 연구의 리드 연구자 및 저자.
+- [Shijie Lian](entities/ShijieLian.md) — Shijie Lian은 [[physbrain-1-0-2605-15298]] 기술 보고서의 제1저자로, human egocentric video 기반 physical commonsense supervision 연구를 주도했다.
+- [Shubhanshu Khatana](entities/ShubhanshuKhatana.md) — [[mobileego-anywhere-2605-05945]] 논문의 저자.
+- [SimplerEnv](entities/SimplerEnv.md) — VLA/robot policy simulation benchmark(CoRL 2024). [[physbrain-1-0-2605-15298]]의 out-of-domain 성능 주장 평가에 핵심적인 평가장으로, 시뮬레이션 환경에서의 VLA 정책 일반화 능력을 측정한다.
+- [TensorRT](entities/TensorRT.md) — [[TensorRT]]는 NVIDIA 계열 추론 최적화 런타임/컴파일러 계열의 대표 사례로, 모델 변환과 런타임 최적화가 분리된 도메인별 스택의 전형이다.
+- [TransFuser](entities/TransFuser.md) — TransFuser (arXiv 2205.15997)는 camera/LiDAR fusion 기반 E2E planner baseline이다. [[UniAD]]와 함께 ReflectDrive-2가 비교 대상으로 삼는 E2E AD 아키텍처.
+- [UMI (Universal Manipulation Interface)](entities/UMI.md) — UMI(Universal Manipulation Interface)는 RSS 2024에서 발표된 in-the-wild robot teaching을 낮은 장벽으로 만든 대표 연구이다. 특수 gripper와 마운트 장비를 사용한다.
+- [UniAD](entities/UniAD.md) — UniAD (arXiv 2212.10156)는 perception/prediction/planning을 통합한 end-to-end autonomous driving baseline이다. [[ReflectDrive2]]의 E2E AD 백본으로 참고되는 핵심 연구.
+- [VGGT](entities/VGGT.md) — Camera parameter/depth 추정 foundation model(CVPR 2025). [[physbrain-1-0-2605-15298]]의 camera motion filtering 및 [[DepthAwareAugmentation]]에 활용되며, 비디오에서 3D 공간 정보를
+- [ViT](entities/ViT.md) — > Placeholder page created during the 2026-05-13 Hugging Face Weekly Papers ingest to preserve wikilink integrity. Expand with primary sources when this topic b
+- [WiLoR (End-to-end 3D Hand Localization and Reconstruction in-the-wild)](entities/WiLoR.md) — WiLoR(arXiv:2409.12259)는 End-to-end 3D Hand Localization and Reconstruction in-the-wild 연구로, MobileEgo의 3D hand trajectory pipeline에서 핵심 hand pose estimation 방법
+- [경제사회노동위원회](entities/경제사회노동위원회.md) — [[경제사회노동위원회]]는 노동·사회·고용 관련 현안을 다자간으로 다루는 국가 기관/정책 조정 플랫폼으로, 한국에서 [[노사노조]]와 사회적 합의 과정을 연결하는 장치로 활용된다.
+- [김지형](entities/김지형.md) — [[김지형]]은 법률가 출신으로 대법관을 역임했으며, 현재 [[경제사회노동위원회]] 위원장으로 알려져 있다.
+- [바이브마피아](entities/바이브마피아.md) — [[바이브마피아]]는 이 소스에서 [[AI에이전트]] 운영 방법론(특히 [[HarnessEngineering]])의 맥락으로 언급되는 커뮤니티/브랜드 성격의 출처로 제시된다.
+- [여의도 인사이트](entities/여의도-인사이트.md) — [[여의도 인사이트]]는 국내 시장과 개인 투자자 심리에 대한 해설형 콘텐츠 채널/맥락으로, 매매 심리·섹터 흐름·자금 운영 습관에 대한 조언을 다룬다.
+- [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
 - [NextTokenPrediction](concepts/NextTokenPrediction.md) — LLM objective that predicts the next token from prior context.
@@ -536,7 +601,7 @@
 - [MaskedDiscreteDiffusion](concepts/MaskedDiscreteDiffusion.md) — [[MaskedDiscreteDiffusion]]은 categorical token space에서 parallel generation과 editing을 지원하는 diffusion 패러다임이다. 기존 continuous diffusion과 달리 Gaus
 - [MotionAwareLearning](concepts/MotionAwareLearning.md) — HumanNet이 제안한 학습 패러다임으로, 비디오에서 물체(object)와 손/몸의 움직임을 동시에 이해하여 물리적 상호작용을 학습한다.
 - [PolicyGradient](concepts/PolicyGradient.md) — 정책 확률의 gradient를 reward-weighted objective로 최적화하는 reinforcement learning 방법.
-- [RLAlignment](concepts/RLAlignment.md) — [[RLAlignment]]는 [[ReflectDrive-2]]에서 사용하는 기법으로, draft-and-edit rollout 전체에 terminal reward를 부여하여 policy를 최적화한다.
+- [RLAlignment](concepts/RLAlignment.md) — [[RLAlignment]]는 [[ReflectDrive2]]에서 사용하는 기법으로, draft-and-edit rollout 전체에 terminal reward를 부여하여 policy를 최적화한다.
 - [Retargeting](concepts/Retargeting.md) — 인간 또는 한 embodiment의 행동을 다른 robot/body morphology로 옮기는 기술.
 - [RobotFoundationModel](concepts/RobotFoundationModel.md) — Robot Foundation Model(로봇 파운데이션 모델)은 대규모 데이터로 사전 학습되어 다양한 로봇 태스크에 전이 가능한 범용 로봇 정책을 학습하는 접근으로, [[VLA]]가 핵심 구현체가 된다.
 - [RobotLearning](concepts/RobotLearning.md) — 로봇이 demonstration, interaction, reinforcement signal 등으로 행동 정책을 학습하는 분야.
@@ -1797,6 +1862,123 @@
 - [후회](concepts/후회.md) — placeholder page for wikilink integrity
 - [휴머노이드로봇](concepts/휴머노이드로봇.md) — concept page
 - [희토류](concepts/희토류.md) — concept page
+- [ADR](concepts/ADR.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [AI초과이익](concepts/AI초과이익.md) — [[AI초과이익]]은 AI 자동화/데이터 스케일업으로 발생하는 초과적 경제이익을 뜻하며, 기존 조세·사회안전망·기금 체계와 어떻게 결합할지에 대한 정책 논의 대상이다.
+- [Augmented Reality](concepts/AR.md) — 카메라 기반 pose tracking, scene understanding, overlay rendering을 결합하는 증강현실 기술 영역이다.
+- [AST](concepts/AST.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [AX](concepts/AX.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Address Space](concepts/AddressSpace.md) — Address Space는 동일 주소 공간 안의 여러 [[MemoryRegion]]을 묶어 가상 주소 접근을 모델링하는 추상화다.
+- [Agentic Engineering](concepts/AgenticEngineering.md) — [[AgenticEngineering]]은 [[LLM]] 기반 [[AI에이전트]]를 단순 코드 생성기처럼 쓰지 않고, 명확한 목표·제약·검증 규칙 아래에서 운영하는 소프트웨어 엔지니어링 방식이다.
+- [AutoEdit](concepts/AutoEdit.md) — AutoEdit는 draft trajectory tokens를 입력으로 받아 token-to-token rewrite를 수행하는 self-correcting 모듈이다.
+- [BigIdeas](concepts/BigIdeas.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [BigIdeas2026](concepts/BigIdeas2026.md) — > Placeholder page created during the 2026-05-13 Hugging Face Weekly Papers ingest to preserve wikilink integrity. Expand with primary sources when this topic b
+- [Boosting](concepts/Boosting.md) — **Boosting** is an [[Ensemble]] method that sequentially adds weak learners (e.g., shallow [[DecisionTree|decision trees]]), each trained to correct the errors 
+- [Calvin / CALVIN ABC-D](concepts/Calvin.md) — CALVIN은 language-conditioned robot manipulation 평가 benchmark이며, EmbodiedMidtrain 논문에서는 ABC split 학습 후 unseen D split 평가로 VLA 일반화를 측정한다.
+- [Capability-Preserving Adaptation](concepts/CapabilityPreservingAdaptation.md) — [[VLM]]의 일반 multimodal capability(텍스트 이해, 비전 reasoning 등)를 잃지 않도록 하는 [[VLA]] fine-tuning 기법.
+- [Catastrophic Forgetting](concepts/CatastrophicForgetting.md) — 모델을 새 과제/도메인에 적응시킬 때 기존 capability가 급격히 손상되는 현상이다.
+- [Control](concepts/Control.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Data](concepts/Data.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Data Selection](concepts/DataSelection.md) — [[DataSelection]]은 대규모 사전학습 모델을 특정 목표 도메인에 맞게 성능을 끌어올리는 과정에서, 대상 과업에 유리한 샘플을 선별해 사용하거나 가중치를 부여하는 전략이다.
+- [DeFi](concepts/DeFi.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Debugging](concepts/Debugging.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Depth-Aware Augmentation](concepts/DepthAwareAugmentation.md) — depth/3D 단서를 supervision이나 augmentation에 포함해 spatial reasoning과 action grounding을 강화하는 방법이다.
+- [Dexterous Manipulation](concepts/DexterousManipulation.md) — Dexterous Manipulation은 손이나 특수 그리퍼를 사용한 정밀한 물체 조작으로, 로봇 학습 및 인간 행동 이해의 핵심 과제이다. VLA 모델의 고품질 조작 능력 학습에 필수적이다.
+- [Dialect](concepts/Dialect.md) — [[Dialect]]는 컴파일러 IR에서 특정 도메인/타깃/프로그래밍 모델 전용 연산과 타입 집합을 표현하는 추상 레이어다.
+- [Dispatch](concepts/Dispatch.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Ego4D](concepts/Ego4D.md) — Ego4D는 대규모 egocentric 비디오 데이터셋으로, [[VLA]] 및 [[EgocentricVision]] 연구의 핵심 벤치마크다.
+- [EgoScale](concepts/EgoScale.md) — EgoScale은 egocentric 비디오의 [[DataScaling]]에 관한 연구로, [[VLA]] 학습을 위한 대규모 데이터셋 구축 전략을 다룬다.
+- [Egocentric Video](concepts/Egocentric-Video.md) — 첫인칭 시점(Head-mounted camera)으로 촬영된 비디오로, 인간이 일상에서 경험하는 물리적 상호작용을 직접적으로 캡처한다. [[VLA]] 정책 학습에서 robot trajectory 데이터의 비용 효율적 대안으로 주목받으며, [[physbrain-1-0-2605-15298]
+- [Egocentric Data](concepts/EgocentricData.md) — First-person view(1인칭 시점)에서 촬영된 영상 및 센서 데이터. 머리 착용 카메라로 촬영하며, 사용자의 손과 작업 공간을 포함하는 것이 특징.
+- [Egocentric Data Collection](concepts/EgocentricDataCollection.md) — 제3자 시점이 아닌 착용자(행위자) 시점에서第一人称 시점(egocentric perspective)으로 비디오, 센서 데이터, trajectory를 수집하는 방법론.
+- [Egocentric Video Dataset](concepts/EgocentricVideoDataset.md) — Egocentric Video Dataset은 1인칭 시점에서 촬영된 비디오를 기반으로 한 데이터셋으로, VLA(Vision-Language-Action) 모델의 pretraining에 핵심적인 역할을 한다.
+- [Egocentric Vision](concepts/EgocentricVision.md) — Egocentric Vision(자각 시점 비전)은 first-person camera로 사용자의 손·도구·환경을 관측하는 방식이다.
+- [EmbodiedMidtrain](concepts/EmbodiedMidtrain.md) — [[EmbodiedMidtrain]]는 [[VLM]]에서 바로 [[VLA]]로 파인튜닝하는 대신, VLA에 가까운 샘플을 선별해 추가 학습([[MidTraining]])을 수행해 백본의 출발점을 정렬하는 학습 전략이다.
+- [EndToEnd](concepts/EndToEnd.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [EndToEndAutonomy](concepts/EndToEndAutonomy.md) — [[EndToEndAutonomy]]는 원시 센서 입력(예: 카메라 영상)에서 제어 신호까지 가능한 한 단일 학습 경로로 이어서 생성하는 자율주행·로보틱스 아키텍처 전략이다.
+- [EndToEndDeepLearning](concepts/EndToEndDeepLearning.md) — [[EndToEndDeepLearning]]은 전체 의사결정 파이프라인을 분리된 모듈 손실 함수가 아니라 단일 목표 함수로 통합해 학습하는 접근이다.
+- [에너지 저장](concepts/EnergyStorage.md) — 에너지 저장은 배터리·분산 전력 시스템·정책 결합형 그리드 연계 설비를 통해 전력 수요 피크와 간헐성을 완화하고, 고소비 전기 시스템의 운영 안정성과 비용 효율을 높이는 체계이다.
+- [FOMO](concepts/FOMO.md) — [[FOMO]]는 Fear Of Missing Out의 약자로, 타인이 수익을 내는 것 같은 환경에서 자신이 소외될 것 같은 불안을 느껴 과도하게 추격 매수하게 되는 심리 상태를 뜻한다.
+- [FSD](concepts/FSD.md) — [[FSD]]는 Tesla의 자율주행 기능군(특히 [[AutonomousVehicle]])을 가리키며, 센서 입력 기반 실시간 제어 결정과 안전성·해석 가능성 평가를 함께 다루는 운영 시스템으로 본 소스에서 강조된다.
+- [GDP](concepts/GDP.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Gaussian Splatting](concepts/GaussianSplatting.md) — [[GaussianSplatting]]은 다수 카메라 시점에서 연속적인 3D 장면을 빠르게 재구성하는 기법군으로, 이번 소스에서 [[Tesla]] FSD의 장면 인식 및 안전성 설명력 향상 목적에 연결되어 소개된다.
+- [Grounding](concepts/Grounding.md) — Grounding connects LLM outputs to external evidence — documents, databases, search results, tool outputs, or citations — ensuring that generated content is anch
+- [HLO](concepts/HLO.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Hallucination](concepts/Hallucination.md) — Hallucination refers to the phenomenon where an LLM generates confident-sounding but factually incorrect, fabricated, or nonsensical content. The model produces
+- [Hand Pose Estimation](concepts/HandPoseEstimation.md) — 이미지/비디오에서 손의 3D 관절 위치 및 자세(pose)를 추정하는 컴퓨터 비전 기술.
+- [Hand Tracking](concepts/HandTracking.md) — Hand Tracking은 비디오에서 손의 위치와 자세를 추정하는 기술로, robotics, VR/AR, egocentric vision에서 핵심적인 역할을 한다. MobileEgo Anywhere에서 3D hand trajectory 파이프라인의 기반 기술이다.
+- [Hand Trajectory](concepts/HandTrajectory.md) — 3D 공간에서 인간의 손 움직임을 추적한 경로. 2D keypoint를 depth로 unproject한 뒤 camera pose로 global frame에 정렬하여 생성.
+- [Harness](concepts/Harness.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Harness Engineering](concepts/HarnessEngineering.md) — [[HarnessEngineering]]은 [[AI에이전트]]가 자율적으로 개발, 테스트, 리뷰 준비 작업을 수행하도록 지원하는 운영 설계 방식이다. 핵심은 AI에게 무제한 권한을 주는 것이 아니라, 사람의 의도와 제약을 문서화해 실행 규칙으로 변환한 뒤 반복 실행 가능한 세션/페이즈 
+- [Hierarchical Task Instruction](concepts/HierarchicalTaskInstruction.md) — 복잡한 과업을 상위 instruction → sub-goals → atomic actions으로 계층 구조화한 언어 태그 체계.
+- [HumanNet](concepts/HumanNet.md) — [[HumanNet]]은 "100만 시간 규모의 인간 중심 비디오 corpus"를 제안하는 데이터 중심 논문(arXiv:2605.06747)이다. [[VLA]]의 action grounding을 robot log 밖에서 확장하는 "data-centric approach"를 제시하며, 인
+- [InferenceX](concepts/InferenceX.md) — [[InferenceX]]는 모델 추론 성능, 토큰 처리량, 실제 운영 기준 성능을 시간축으로 추적하는 벤치마크/분석 프레임으로 언급되는 시스템이다. 본 소스에서는 오픈소스 및 상용 모델의 성능 변화를 파악하고 하드웨어-소프트웨어 결합이 단가/생산성에 미치는 영향을 정량적으로 이해하는 
+- [Initialization](concepts/Initialization.md) — [[Initialization]] defines the starting values of model parameters before training.
+- [LIBERO / LIBERO-10](concepts/LIBERO.md) — LIBERO는 long-horizon robot manipulation benchmark 계열이며, LIBERO-10은 긴 과업 10개로 구성된 어려운 평가 suite이다.
+- [LLVM IR](concepts/LLVM IR.md) — [[LLVM IR]]은 [[LLVM]] 생태계의 중간 표현으로, 최적화/타깃 코드 생성 파이프라인과 맞닿아 있는 정적 정형 IR이다.
+- [Language-Sensitive Adaptation](concepts/LanguageSensitiveAdaptation.md) — Policy가 language instruction을 무시하지 않도록 유지하는 [[VLA]] adaptation 기법.
+- [Linux](concepts/Linux.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Long-Horizon Trajectory](concepts/LongHorizonTrajectory.md) — Long-horizon trajectory는 수십 분 이상 이어지는 연속 행동/상태 경로를 말하며, [[VLA]] 학습에서 중요한 데이터 유형이다.
+- [MANO (hand Model)](concepts/MANO.md) — MANO는 21-joint 손 pose와 mesh를 표현하는 매개변화 손 모델로, [[EgocentricVision]] 및 로보틱스 연구에서 손 추적에 널리 사용된다.
+- [MCAP (rosbag2/MCAP)](concepts/MCAP.md) — MCAP은 ROS2의 serialization-agnostic log container로, robotics 및 데이터 수집에서 multi-modal sensor data를 통합 저장하는 데 사용된다. MCAP은 [[VIO]], RGB, LiDAR, IMU 등 다양한 센서 데이터를 tim
+- [MMD](concepts/MMD.md) — [[MMD]](Maximum Mean Discrepancy)는 두 분포의 거리(kernel-based nonparametric distance)를 측정하는 지표로, 분포 차이가 있는 representation space에서 집합 간 정렬 정도를 비교할 때 쓰인다.
+- [MidTraining](concepts/MidTraining.md) — [[MidTraining]]은 pretraining과 최종 fine-tuning 사이에서 도메인 정렬 목적의 추가 학습 단계로, 기존 모델 구조를 바꾸지 않고 데이터 분포를 맞추는 작업에 초점을 둔다.
+- [MonteCarloTreeSearch](concepts/MonteCarloTreeSearch.md) — [[MonteCarloTreeSearch]]는 상태-행동 후보를 트리 기반으로 샘플링·확장·평가해 최적 경로를 탐색하는 방법으로, 큰 분기 수를 확률적으로 정밀 탐색한다.
+- [멀티오믹스](concepts/Multiomics.md) — [[Multiomics]]은 유전체, 전사체, 단백질체, 대사체 등 생물학적 다층 데이터 통합 및 해석을 통해 질병 진단·약물 개발·정밀 치료를 가속화하는 접근이다.
+- [Mythos](concepts/Mythos.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [NeuralComputer](concepts/NeuralComputer.md) — [[NeuralComputer]]는 기존 명시적 코드 구현을 대체하거나 압축하는 방식으로, 다수의 작업이 신경망 추론 파이프라인으로 처리되는 미래형 연산체계 개념이다.
+- [Neural Radiance Field](concepts/NeuralRadianceField.md) — [[NeuralRadianceField]](NeRF)는 다중 시점 이미지에서 장면의 3D 방사 특성을 재구성하는 기법군으로, 장면을 연속적 색/밀도 분포로 근사한다.
+- [Object](concepts/Object.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [OccupancyFlow](concepts/OccupancyFlow.md) — [[OccupancyFlow]]는 [[OccupancyGrid]]의 각 셀에 대해 시간축 이동 방향/속도 성분을 추정해 장면의 동적 변화를 표현하는 보조 신호다.
+- [Occupancy Network](concepts/OccupancyNetwork.md) — [[OccupancyNetwork]]는 3차원 공간을 정규 그리드(대개 [[Voxel]] 단위)로 나누고, 각 셀의 점유 상태(비어 있음/점유됨)를 추정하는 모델/표현 체계다.
+- [Operation](concepts/Operation.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [PCI](concepts/PCI.md) — PCI(Peripheral Component Interconnect)는 범용 장치 연결 버스 계열 규격으로, QEMU 장치 모델링에서 중요한 시스템 인터페이스이다.
+- [PR](concepts/PR.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Parameters](concepts/Parameters.md) — Parameters are the learnable values inside a model that are adjusted during training to minimize the loss. The two primary types are [[Weights]] and [[Biases]].
+- [Pass](concepts/Pass.md) — 컴파일러 IR 변환을 수행하는 하나의 논리적 단계 집합을 [[Pass]]라고 하며, 성능·크기·정확성 조건을 충족하도록 연속 실행된다.
+- [Pattern](concepts/Pattern.md) — [[Pattern]]은 컴파일러 연산 그래프에서 특정 형태를 다른 형태로 치환하는 규칙 집합으로, 최적화/단순화/하향 변환의 단위이다.
+- [Physical Commonsense Supervision](concepts/Physical-Commonsense-Supervision.md) — Human egocentric video에서 추출한 물리적 상식(중력, 객체 상호작용, 힘의 방향 등)에 대한 감독 신호. [[VLA]] 정책 학습에서 단순 trajectory imitation을 넘어, 물리적 근본 원리를 사전 학습하여 out-of-domain generalizatio
+- [Physical Commonsense](concepts/PhysicalCommonsense.md) — Object, depth, contact, reachability, state change에 관한 상식적 물리 이해. [[VLA|Vision-Language-Action]] 모델이 물리적으로 타당한 행동을 계획하기 위해 필요한 핵심 prior.
+- [Physical Commonsense Supervision](concepts/PhysicalCommonsenseSupervision.md) — Physical Commonsense Supervision은 [[VLA]] 모델이 인간의 물리적 상식(contact, reachability, object state change, tool use, spatial constraint, multi-step task structure)을 이
+- [Physical QA](concepts/PhysicalQA.md) — Human egocentric video에서 추출한 structured physical record(scene elements, spatial dynamics, action execution, depth-aware relations)를 자연어 question-answer 쌍으로 rend
+- [Physically Grounded QA](concepts/PhysicallyGroundedQA.md) — scene element, spatial relation, action execution, depth relation을 질문-답변 supervision으로 구성해 물리 상식을 학습시키는 방식이다.
+- [Planning](concepts/Planning.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Proximity Estimator](concepts/ProximityEstimator.md) — [[ProximityEstimator]]는 특정 샘플이 [[VLA]] 목표 분포에 얼마나 가까운지 예측하는 점수 함수로, 보통 frozen [[VLM]] 표현공간에서 학습된 분류기 출력으로 구현한다.
+- [Public Blockchain](concepts/PublicBlockchain.md) — [[PublicBlockchain]]은 공개성, 검증성, 소유권 증명 가능성 및 계약 실행 자동화를 통해 디지털 자산을 다루는 기반 구조다.
+- [QOM](concepts/QOM.md) — QOM(QEMU Object Model)은 [[QEMU]]의 객체 기반 장치/클래스/인스턴스 모델링 체계다.
+- [Quantization](concepts/Quantization.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Region](concepts/Region.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Rust](concepts/Rust.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [SLAM](concepts/SLAM.md) — Simultaneous Localization and Mapping: 이동체가 지도 작성과 자기 위치추정을 동시에 수행하는 로보틱스 핵심 문제다.
+- [SSA](concepts/SSA.md) — [[SSA]](Static Single Assignment)는 각 값이 정확히 한 번 정의되는 것을 원칙으로 하는 IR 형식이다.
+- [STERA](concepts/STERA.md) — [[mobileego-anywhere-2605-05945]]에서 공개하는 open infrastructure 이름. Raw mobile capture(MCAP format)를 VLA/foundation model 학습 가능한 표준 포맷으로 변환하는 Python processing sui
+- [SimplerEnv / SimplerEnv-Bridge](concepts/SimplerEnv.md) — SimplerEnv는 real-to-sim tabletop manipulation benchmark로, EmbodiedMidtrain에서는 Bridge 설정의 평균 성공률로 VLA 성능을 측정한다.
+- [SoftMMU](concepts/SoftMMU.md) — SoftMMU는 QEMU에서 게스트의 메모리 접근을 소프트웨어적으로 처리하는 메모리 가상화 계층이다.
+- [Stack](concepts/Stack.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Stereo Depth Estimation](concepts/StereoDepthEstimation.md) — 두 시점 이상의 영상 차이를 이용해 dense 또는 sparse depth를 추정하는 3D perception 기법이다.
+- [Structured Meta-Record](concepts/StructuredMetaRecord.md) — Raw human egocentric video를 JSON-like schema로 변환한 중간 physical record representation.
+- [TCG](concepts/TCG.md) — Tiny Code Generator([[TCG]])는 [[QEMU]]에서 게스트 명령어를 호스트 실행 가능한 코드로 변환하는 핵심 JIT/번역 계층이다.
+- [t_memory](concepts/TMemory.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Task](concepts/Task.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Tasks](concepts/Tasks.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Token](concepts/Token.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [UMI (Universal Manipulation Interface)](concepts/UMI.md) — UMI는 로봇 조작을 위한 범용 데이터 수집 인터페이스로, 인간의 teleoperation 데이터를 로봇 정책 학습에 활용한다.
+- [Understanding](concepts/Understanding.md) — [[Understanding]]은 정보가 단발성 추론을 넘어 자기 체계와 문맥에 통합되어, 왜 이 결정을 내려야 하는지 설명 가능한 수준으로 정리되는 인지 상태를 뜻한다.
+- [Visual-Inertial Odometry](concepts/VIO.md) — 카메라 영상과 IMU를 결합해 ego pose와 trajectory를 추정하는 모바일/로보틱스 위치추정 기술이다.
+- [VLA Policy (Vision-Language-Action Policy)](concepts/VLA-Policy.md) — VLA(Vision-Language-Action) Policy는 비전, 언어, 행동 생성을 통합하는 로보틱스 정책 학습 패러다임. VLM(Vision-Language Model)의 사전 지식을 로봇 제어에 전이하여, generic visual understanding과 reasoning
+- [VMFB](concepts/VMFB.md) — [[VMFB]](VM File)는 [[IREE]]가 생성하는 최종 배포 아티팩트로, 디바이스별 실행 가능한 바이너리 조합이 VM 관점에서 링크된 형태다.
+- [Validation](concepts/Validation.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Virtualization](concepts/Virtualization.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [Visual-Spatial Representation](concepts/VisualSpatialRepresentation.md) — VLA/VLM이 장면의 geometry, pose, depth, object relation을 action에 필요한 상태 표현으로 보존하는 표현 계층이다.
+- [WiLoR (World-coordinate hand Keypoint Detection)](concepts/WiLoR.md) — WiLoR은 world 좌표계에서 손的关键点(21 joint)을 검출하는 모델로, 2D image에서의 손 pose를 3D world coordinate로 변환한다.
+- [World Simulator](concepts/WorldSimulator.md) — [[WorldSimulator]]는 과거 상태와 행동을 바탕으로 미래 상태를 합성 생성하는 폐쇄루프형 시뮬레이션 엔진 개념으로, 드문 실패와 적대적 시나리오를 반복적으로 생성해 정책을 재훈련하는 데 쓰인다.
+- [매도](concepts/매도.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [매수](concepts/매수.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+- [사회적대화](concepts/사회적대화.md) — [[사회적대화]]는 노사정·정부·사회가 이슈를 대화로 조정해 정책 또는 제도 합의를 도출하는 메커니즘이다.
+- [사회적대화 2.0](concepts/사회적대화2.0.md) — [[사회적대화 2.0]]은 권리 쟁점 중심의 대결형 협의에서 벗어나, 인구·AI 전환·일자리 구조 전환 같은 중기 과제 해결을 선제적으로 설계하는 협치 모델이다.
+- [이해관계자자본주의](concepts/이해관계자자본주의.md) — [[이해관계자자본주의]]는 기업 성과의 수혜와 비용을 주주만이 아닌 노동자, 협력사, 소비자, 지역사회, 미래세대 등 다수 이해관계자에 걸쳐 해석하려는 분배·의사결정 원칙을 뜻한다.
+- [주도섹터](concepts/주도섹터.md) — [[주도섹터]]는 시장 전체 강세에서 상대적으로 먼저 수급과 기대를 선도하고, 경기·정책·상품순환에 따라 다른 섹터를 끌고 가는 업종 군을 뜻한다.
+- [주주자본주의](concepts/주주자본주의.md) — [[주주자본주의]]는 기업의 성과와 이익 배분의 주체를 주로 주주권에 두는 체계를 가리킨다.
+- [투자](concepts/투자.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
 
 ## Syntheses
 ## Auto-indexed Generated Pages

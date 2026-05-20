@@ -1,0 +1,45 @@
+{
+  "week": "2026-W21",
+  "slug": "physbrain-1-0-2605-15298",
+  "category": "Robotics",
+  "title": "PhysBrain 1.0 Technical Report",
+  "ko_title": "PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기",
+  "authors": [
+    "Shijie Lian",
+    "Bin Yu",
+    "Xiaopeng Lin",
+    "Changti Wu",
+    "Hang Yuan",
+    "Xiaolin Hu",
+    "Zhaolong Shen",
+    "Yuzhuo Miao",
+    "Haishan Liu",
+    "Yuxuan Tian",
+    "Yukun Shi",
+    "Cong Huang",
+    "Kai Chen"
+  ],
+  "hf_url": "https://huggingface.co/papers/2605.15298",
+  "project_page": "https://phys-brain.github.io/",
+  "github_repo": "https://github.com/Phys-Brain/PhysBrain-VLA",
+  "selected_reason": "현재 주(2026-W21) 후보 중 VLA 정책의 physical commonsense, human egocentric video 기반 supervision, capability-preserving VLA adaptation을 다뤄 VLA/embodied action grounding 학습에 직접적으로 중요함.",
+  "arxiv_id": "2605.15298",
+  "arxiv_url": "https://arxiv.org/abs/2605.15298",
+  "pdf_url": "https://arxiv.org/pdf/2605.15298",
+  "figures": [
+    {
+      "file": null,
+      "caption": "Figure 1 : PhysBrain 1.0 overall system overview. PhysBrain 1.0 transforms large-scale human egocentric interaction videos into structured physical supervision, including scene elements, spatial dynamics, action execution, and depth- aware relations, and renders these records into physically grounded QA for training a stronger base VLM. The learned physical priors are then transferred to robot control through capability-preserving VLA adaptation, supporting language-conditioned action generation across simulated and real-world embodied tasks.",
+      "url": "https://arxiv.org/html/2605.15298/2605.15298v1/x1.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": null,
+      "caption": "Figure 2 : Example of structured meta-information and generated physical QA. We uniformly sample from an egocentric manipulation clip and convert the clip into a compact JSON-style source record. The record separates static scene elements, spatial changes, and action execution details, which are then used to generate physically grounded QA supervision.",
+      "url": "https://arxiv.org/html/2605.15298/2605.15298v1/x2.png",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "created_at_kst": "2026-05-20 09:40:06 KST",
+  "raw_path": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298"
+}

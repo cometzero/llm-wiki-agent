@@ -1,23 +1,19 @@
 ---
 title: "HOI4D"
 type: entity
-tags: [egocentric-video, hand-object, dataset, embodied-ai]
-sources: [humannet-2605-06747-references]
-last_updated: 2026-05-13
+tags: [human-object-interaction, 4D, dataset, manipulation]
+sources: [mobileego-anywhere-2605-05945-references]
+last_updated: 2026-05-20
 ---
 
 ## Overview
-HOI4D는 hand-object geometry와 dense interaction supervision을 강조하는 데이터셋으로, [[HumanNet]]의 관련 연구 목록에 포함되어 인간-물체 상호작용의 정밀한 학습 데이터로서의 가치를 제시한다.
+HOI4D는 CVPR 2022의 4D human-object interaction dataset으로, MobileEgo의 hand-object interaction annotation 필요성과 연결된다.
 
-## Key Characteristics
-- **Focus**: Hand-object geometry
-- **Supervision Type**: Dense interaction supervision
-- **Role**: [[HumanNet]]에서 인간 비디오의 세밀한 상호작용 패턴 학습에 기여
+## Key Claims
+- 4D 시퀀스의 인간-물체 상호작용 데이터 제공
+- 시맨틱 시퀀스 주석이 MobileEgo의 핸드-오브젝트 인터랙션设计与 공통점
 
 ## Connections
-- [[Ego4D]] — egocentric video의 대표 corpus
-- [[EPIC-KITCHENS]] — 주방 도메인의 egocentric activity
-- [[HumanNet]] — 인간-물체 상호작용 학습 데이터 소스
-
-## References
-- https://hoi4d.github.io/
+- [[mobileego-anywhere-2605-05945]] — hand-object interaction annotation 관련
+- [[HOT3D]] — 정밀 hand tracking 관련
+- [[VLA]] — manipulation 데이터셋

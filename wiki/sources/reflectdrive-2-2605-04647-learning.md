@@ -37,7 +37,7 @@ flowchart TD
 
 ## Connections
 - [[ReflectDrive2]] — 본 논문/모델의 entity page
-- [[ReflectDrive-2]] — 원문 번역 source page
+- [[ReflectDrive2]] — 원문 번역 source page
 - [[MaskedDiscreteDiffusion]] — trajectory draft 생성 방식
 - [[AutoEdit]] — self-editing correction module
 - [[DecisionDraftReflectPipeline]] — 전체 architecture

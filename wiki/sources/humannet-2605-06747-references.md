@@ -23,7 +23,7 @@ HumanNet 논문(arXiv 2605.06747)의 참고 문헌을 정리한 페이지로, Se
 ### Robot Data & Foundation Models
 - **[[Open X-Embodiment]] / [[RT-X]]** — heterogeneous robot logs를 통한 robot foundation model scaling의 대표 사례; HumanNet은 human-video side scaling으로 보완
 - **[[DROID]]** — real-world robot manipulation dataset; HumanNet의 "robot 데이터는 비싸다"는 문제의식과 연결
-- **[[GR00T N1]]** — heterogeneous robot/human data mixture를 사용하는 [[VLA]]/robot foundation model 계열
+- **[[GR00T-N1]]** — heterogeneous robot/human data mixture를 사용하는 [[VLA]]/robot foundation model 계열
 - **[[LingBot-VLA]]** — HumanNet validation에서 사용한 VLA post-training architecture/protocol의 기반
 
 ### Human-to-Robot Transfer
@@ -35,13 +35,13 @@ HumanNet 논문(arXiv 2605.06747)의 참고 문헌을 정리한 페이지로, Se
 1. **R3M / [[EgoMimic]]**: human video가 robot policy prior가 되는 원리
 2. **[[Ego4D]] / [[Ego-Exo4D]]**: egocentric/exocentric viewpoint 설계
 3. **[[Open X-Embodiment]] / [[DROID]]**: robot data scale의 현실적 한계
-4. **[[GR00T N1]] / [[LingBot-VLA]]**: heterogeneous data를 [[VLA]] post-training에 섞는 방법
+4. **[[GR00T-N1]] / [[LingBot-VLA]]**: heterogeneous data를 [[VLA]] post-training에 섞는 방법
 
 ## Connections
 - [[HumanNet]] — 이 참조 페이지가 속한 메인 소스
 - [[VLA]] — HumanNet이 목표로 하는 Vision-Language-Action 모델
 - [[EgocentricVideo]] — 인간 중심 비디오 학습의 핵심 데이터 모달리티
-- [[RobotFoundationModel]] — [[Open X-Embodiment]], [[GR00T N1]]과 공유하는 목표
+- [[RobotFoundationModel]] — [[Open X-Embodiment]], [[GR00T-N1]]과 공유하는 목표
 
 ## Contradictions
 - 없음. 기존 wiki에서 [[R3M]]과 [[EgoMimic]]은 이미 [[EmbodiedAI]] 맥락으로 등장한 바 있으며, HumanNet의 관점(robot data 병목 우회)을 보완하는 내용으로 일관됨.

@@ -15,7 +15,7 @@ DriveFine (arXiv 2602.14577)은 masked diffusion driving VLA에 refinement를 �
 - Joint RL coupling이 충분히 강력하지 않은 한계
 
 ## Connections
-- [[ReflectDrive-2]] — inherits refinement architecture, strengthens RL alignment
+- [[ReflectDrive2]] — inherits refinement architecture, strengthens RL alignment
 - [[MaskedDiffusion]] — core diffusion paradigm
 - [[VLA]] — model category
 
