@@ -37,6 +37,6 @@ NVIDIA Thor에서 평균 약 30ms (세부 최적화 표 기준 약 30.2ms) laten
 VLA/LLM-style reasoning planner가 real-time constraint를 만족하려면 model architecture뿐 아니라 cache와 token update path까지 같이 설계해야 함을 시사.
 
 ## Connections
-- [[ReflectDrive-2]] — 적용 대상
+- [[ReflectDrive2]] — 적용 대상
 - [[NVIDIA]] — 타겟 하드웨어 Thor
 - [[KVCache]] — Shared prefix reuse 기법

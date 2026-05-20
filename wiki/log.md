@@ -1,3 +1,44 @@
+## [2026-05-20] ingest | PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning
+
+Added source. Key claims: egocentric video → structured meta-record → [[PhysicalQA]] → [[CapabilityPreservingAdaptation]] → [[VLA]] transfer pipeline. Created 6 concept pages: [[PhysicalCommonsense]], [[CapabilityPreservingAdaptation]], [[PhysicalQA]], [[ActionGrounding]], [[LanguageSensitiveAdaptation]], [[StructuredMetaRecord]]. Related to existing PhysBrain analysis/learning sources.
+
+## [2026-05-20] ingest | PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — references
+
+Added source. Key claims: PhysBrain 1.0의 10개 레퍼런스 정리 — [[VLA]] 정책 baseline([[OpenVLA]], [[Pi0]], [[GR00T-N1]]), egocentric video 데이터셋([[Ego4D]], [[EgoDex]], [[EPIC-KITCHENS]]), depth 추정([[VGGT]]), 평가 벤치마크([[SimplerEnv]], [[LIBERO]], [[RoboCasa]]).
+
+New entity pages: [[OpenVLA]], [[Pi0]], [[GR00T-N1]], [[EgoDex]], [[VGGT]], [[SimplerEnv]], [[LIBERO]], [[RoboCasa]], [[PhysicalIntelligence]].
+
+New concept pages: [[VLA Policy]], [[Physical Commonsense Supervision]], [[Egocentric Video]].
+
+## [2026-05-20] ingest | PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — analysis
+
+Added source. Key claims: PhysBrain 1.0은 VLM→VLA adaptation에서 physical commonsense를 Egocentric video에서 structured QA로 추출해 주입하는 'physical prior → action grounding' 접근을 제안. Capability-preserving adaptation으로 VLM capability를 유지하면서 VLA policy로 전이. VLM benchmark(ERQA, PhysBench)와 VLA benchmark(SimplerEnv, LIBERO, RoboCasa)를 함께 평가하여 action grounding 효과를 검증.
+
+Created concept pages: [[VLA]], [[PhysicalCommonsense]], [[CapabilityPreservingAdaptation]], [[EgocentricVideo]]
+
+## [2026-05-20] ingest | PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기
+
+Added source. Key claims: (1) Human egocentric video를 structured physical QA supervision으로 변환하는 Data Engine 설계, (2) Capability-preserving VLA adaptation으로 catastrophic forgetting 방지, (3) Limited robot data로도 physical prior transfer 가능. Related pages: [[physbrain-1-0-2605-15298]], [[PhysicalCommonsenseSupervision]], [[CapabilityPreservingAdaptation]], [[ShijieLian]], [[KaiChen]]. Connected to [[HumanNet]], [[MobileEgoAnywhere]], [[VLA]].
+
+## [2026-05-20] ingest | MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — learning
+
+Added source. Key claims: (1) VLA scaling의 핵심 병목은 data coverage이며, (2) smartphone은 commodity sensor suite로 RGB-D/IMU/camera pose를 동시에 제공, (3) STERA 파이프라인으로 3D hand trajectory와 hierarchical language instruction 추출, (4) MobileEgo는 VLA pretraining과 human-to-robot retargeting의 bridge 역할. Created 9 concept pages: [[VLA]], [[EgocentricVision]], [[Ego4D]], [[UMI]], [[EgoScale]], [[WiLoR]], [[MANO]], [[MCAP]], [[LongHorizonTrajectory]]. No contradictions detected.
+
+## [2026-05-20] ingest | MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — references
+
+Added source. Key claims: 10개 관련 논문 레퍼런스 정리 (EgoScale, UMI, Ego4D, EPIC-KITCHENS, Ego-Exo4D, HOI4D, HOT3D, ARCTIC, WiLoR, MCAP). 기존 [[mobileego-anywhere-2605-05945]] 소스와 일관됨. Egocentric vision/hand tracking/dexterous manipulation 데이터셋 생태계 확장.
+
+New entity pages: EgoScale, UMI, Ego-Exo4D, HOI4D, HOT3D, ARCTIC, WiLoR, MCAP
+New concept pages: EgocentricVideoDataset, HandTracking, DexterousManipulation
+
+## [2026-05-20] ingest | MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라 — analysis
+
+Added source. Key claims: iPhone 기반 200시간 egocentric dataset + STERA 파이프라인으로 VLA 학습용 long-horizon trajectory 수집 인프라 공개. 354세션, pose drift <1cm, hand pose 86.2% detection. 주요 entities: MobileEgo Anywhere, STERA. 주요 concepts: EgocentricDataCollection, LongHorizonTrajectory, ActionGrounding, HandPoseEstimation, HierarchicalTaskInstruction.
+
+## [2026-05-20] ingest | MobileEgo Anywhere: 범용 하드웨어 기반 장기 egocentric 데이터 수집 오픈 인프라
+
+Added source. Key claims: commodity smartphone(LiDAR iPhone Pro) 기반 200시간 egocentric dataset 공개, 평균 21.2분/최장 108분 session, ARKit pose drift 0.1% 미만, STERA processing pipeline로 3D hand trajectory/atomic action labels/hierarchical instruction 생성. Authors 5명(SenthilPalanisamy, AbhishekAnand, SatpalSinghRathor, PratyushPatnaik, ShubhanshuKhatana) entity page 생성. Concepts: [[EgocentricData]], [[STERA]], [[LongHorizonTrajectory]], [[HandTrajectory]] page 생성.
+
 ## [2026-05-20] ingest | AI/ML Learning Review — Day 28 (2026-05-20): Foundation Model, Transfer Learning, Multimodal
 
 Added source covering Foundation Model paradigm, PEFT/LoRA parameter-efficient fine-tuning, and multimodal model architecture with cross-modal alignment.
@@ -58,7 +99,7 @@ Created: 5 concept pages (HumanCentricVideo, EgocentricVideo, ExocentricVideo, I
 
 Added source. Key claims: HumanNet(arXiv 2605.06747)의 참고 문헌을 정리하며, [[Ego4D]], [[EPIC-KITCHENS]], [[Ego-Exo4D]], [[HOI4D]] 등 egocentric video 데이터셋과 [[Open X-Embodiment]], [[DROID]] 등 로봇 데이터셋, [[R3M]], [[EgoMimic]] 등 인간-로봇 전이 연구를 포괄. 읽기 우선순위로 (1) R3M/EgoMimic, (2) Ego4D/Ego-Exo4D, (3) Open X-Embodiment/DROID, (4) GR00T/LingBot-VLA를 제시.
 
-New entity pages: [[Ego4D]], [[EPIC-KITCHENS]], [[Ego-Exo4D]], [[HOI4D]], [[Open X-Embodiment]], [[DROID]], [[R3M]], [[EgoMimic]], [[GR00T N1]], [[LingBot-VLA]]
+New entity pages: [[Ego4D]], [[EPIC-KITCHENS]], [[Ego-Exo4D]], [[HOI4D]], [[Open X-Embodiment]], [[DROID]], [[R3M]], [[EgoMimic]], [[GR00T-N1]], [[LingBot-VLA]]
 
 New concept pages: [[EgocentricVideo]], [[VLA]], [[ImitationLearning]], [[RobotFoundationModel]]
 
@@ -805,3 +846,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-20] graph | Knowledge graph rebuilt
 
 2126 nodes, 7170 edges (7170 extracted, 0 inferred).
+
+## [2026-05-20] graph | Knowledge graph rebuilt
+
+2194 nodes, 7502 edges (7502 extracted, 0 inferred).

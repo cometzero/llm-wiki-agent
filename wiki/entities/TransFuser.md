@@ -15,7 +15,7 @@ TransFuser (arXiv 2205.15997)는 camera/LiDAR fusion 기반 E2E planner baseline
 - Real-time inference 가능한 경량 설계
 
 ## Connections
-- [[ReflectDrive-2]] — comparison baseline
+- [[ReflectDrive2]] — comparison baseline
 - [[UniAD]] — related E2E planner
 - [[E2EAutonomousDriving]] — shared domain
 

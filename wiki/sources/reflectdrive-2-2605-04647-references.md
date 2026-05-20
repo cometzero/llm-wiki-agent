@@ -38,7 +38,7 @@ flowchart LR
 ```
 
 ## Connections
-- [[ReflectDrive-2]] — parent paper this references page belongs to
+- [[ReflectDrive2]] — parent paper this references page belongs to
 - [[DriveFine]] — closest prior work
 - [[LLaDA]] — discrete diffusion LM foundation
 - [[NAVSIM]] — evaluation benchmark

@@ -8,7 +8,7 @@ last_updated: 2026-05-13
 
 # RL Alignment for Diffusion Models
 
-[[RLAlignment]]는 [[ReflectDrive-2]]에서 사용하는 기법으로, draft-and-edit rollout 전체에 terminal reward를 부여하여 policy를 최적화한다.
+[[RLAlignment]]는 [[ReflectDrive2]]에서 사용하는 기법으로, draft-and-edit rollout 전체에 terminal reward를 부여하여 policy를 최적화한다.
 
 ## 핵심 통찰
 Supervised perturbation recovery만으로는 self-editing gain이 작다. Editor 자체의 존재보다 reward-coupled rollout이 중요하다.
@@ -25,6 +25,6 @@ Supervised perturbation recovery만으로는 self-editing gain이 작다. Editor
 - ReflectDrive-2는 단일 diffusion rollout이 아니라 `draft → AutoEdit`로 구성된 composed rollout 전체에 terminal reward 부여
 
 ## Connections
-- [[ReflectDrive-2]] — 적용 대상
+- [[ReflectDrive2]] — 적용 대상
 - [[PolicyGradient]] — 기본 학습 방법론
 - [[GroupRelativeAdvantage]] — Advantage 계산 방식

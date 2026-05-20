@@ -17,7 +17,7 @@ Open X-Embodiment(통칭 RT-X)은 이종(heterogeneous) 로봇 로그를 통해 
 
 ## Connections
 - [[DROID]] — real-world robot manipulation dataset
-- [[GR00T N1]] — heterogeneous data mixture를 사용하는 [[VLA]] 계열
+- [[GR00T-N1]] — heterogeneous data mixture를 사용하는 [[VLA]] 계열
 - [[HumanNet]] — robot data 병목 우회方案的 비교 대상
 - [[RobotFoundationModel]] — 범용 로봇 파운데이션 모델 구축 목표 공유
 

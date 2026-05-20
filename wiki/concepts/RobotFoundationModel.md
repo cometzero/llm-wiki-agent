@@ -11,7 +11,7 @@ Robot Foundation Model(로봇 파운데이션 모델)은 대규모 데이터로 
 
 ## Key Approaches
 - **Heterogeneous Robot Data**: [[Open X-Embodiment]], [[DROID]] — 다양한 로봇 플랫폼 데이터 통합
-- **Human-Robot Data Mixture**: [[GR00T N1]], [[LingBot-VLA]] — 인간 데이터 혼합
+- **Human-Robot Data Mixture**: [[GR00T-N1]], [[LingBot-VLA]] — 인간 데이터 혼합
 - **Human Video Scaling**: [[HumanNet]] — 100만 시간 인간 중심 비디오로 스케일링
 
 ## Data Bottleneck Problem
@@ -21,7 +21,7 @@ Robot Foundation Model(로봇 파운데이션 모델)은 대규모 데이터로 
 - [[HumanNet]] — 인간 비디오 기반 로봇 파운데이션 모델 학습
 - [[VLA]] — 로봇 파운데이션 모델의 핵심 구현
 - [[Open X-Embodiment]] — 이종 로봇 데이터 기반 범용 모델
-- [[GR00T N1]] — 인간/로봇 혼합 데이터 활용 VLA 모델
+- [[GR00T-N1]] — 인간/로봇 혼합 데이터 활용 VLA 모델
 
 ## Summary
 로봇 파운데이션 모델은 [[HumanNet]]의 핵심 목표이며, 인간 중심 비디오의 대규모 확보를 통해 로봇 데이터 병목을 우회하는 방향이 제시된다.

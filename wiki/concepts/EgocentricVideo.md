@@ -1,29 +1,27 @@
 ---
-title: "Egocentric Video"
+title: "Egocentric Video (자가 중심 비디오)"
 type: concept
-tags: [video, first-person, robotics]
-sources: [humannet-2605-06747-learning]
-last_updated: 2026-05-13
+tags: [video, robotics, human-activity]
+sources: [physbrain-1-0-2605-15298-analysis, humannet-2605-06747-analysis, mobileego-anywhere-2605-05945-analysis]
+last_updated: 2026-05-20
 ---
 
-## 정의
-행위자 시점의 1인칭 비디오. 카메라를 착용한 사람의 시점에서 촬영된 영상으로, 손과 물체의 직접적인 상호작용을 가까이서 볼 수 있다.
+## Overview
+Egocentric video(자가 중심 비디오)는 착용자가 보는視点で 촬영된 비디오로, [[Ego4D]], EPIC-KITCHENS 등의 대규모 데이터셋으로 공개되어 있다. 인간이 물체를 조작하고 환경을 탐색하는 자연스러운 행동 데이터를 포함하여, robot learning의 supervision source로 활용된다.
 
-## 왜 VLA에 중요한가?
+## Characteristics
+- **First-person perspective**: 착용자의 시점에서 촬영
+- **Action-rich**: 물체 조작, 이동, 탐색 등의 자연스러운 행동 포함
+- **Scale advantages**: 수집 비용이 robot trajectory보다 저렴
+- **Physical prior extraction**: scene elements, spatial dynamics, action execution 추출 가능
 
-1. **손-물체 접촉 정보**: 물체 잡기, 조작 동작의 시각적 단서가 프레임에 직접 담김
-2. **Actor intent**: 행위자가 무엇을 하려는지 시점에서 직접 유추 가능
-3. **Action visual consequence**: 동작의 시각적 결과가 즉각적으로 관찰됨
+## Applications in Robot Learning
+- [[physbrain-1-0-2605-15298]] — physical QA supervision 추출
+- [[HumanNet]] — VLA pretraining corpus
+- [[mobileego-anywhere-2605-05945]] — smartphone 기반 데이터 수집 인프라
 
-## 관련 데이터셋
-- [[Ego4D]]: 대규모 egocentric video benchmark
-- [[EgoExo4D]]: egocentric + exocentric view 통합 데이터셋
-
-## HumanNet에서의 활용
-HumanNet은 Egocentric video에서 **action-centric visual prior**를 추출하여 [[VLA]] 모델의 사전학습에 활용한다.
-
-## Related Concepts
-- [[ExocentricVideo]]
-- [[HumanCentricVideo]]
-- [[VLA]]
-- [[R3M]]
+## Related Datasets
+- [[Ego4D]]
+- EPIC-KITCHENS
+- EgoDex, BuildAI
+- SEA-Small, FineVision
