@@ -2,7 +2,9 @@
   "processed_paper_ids": [
     "2604.20012",
     "2605.06747",
-    "2605.04647"
+    "2605.04647",
+    "2605.05945",
+    "2605.15298"
   ],
   "runs": [
     {
@@ -48,6 +50,43 @@
       "commit_hash": "9ca18dd72d922537092c5f7d7ad9efc048b7d6a3",
       "notes": "Generated Korean translation, analysis, references, learning notes, figures; ingested into wiki; graph rebuilt with --no-infer fallback.",
       "state_record_note": "This field records the content commit for the weekly paper update; a following state-only commit may record it."
+    },
+    {
+      "date_kst": "2026-05-20 09:40:06 KST",
+      "week": "2026-W21",
+      "selected_paper_ids": [
+        "2605.05945",
+        "2605.15298"
+      ],
+      "papers": [
+        {
+          "id": "2605.05945",
+          "title": "MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware",
+          "week": "2026-W21",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/mobileego-anywhere-2605-05945"
+        },
+        {
+          "id": "2605.15298",
+          "title": "PhysBrain 1.0 Technical Report",
+          "week": "2026-W21",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/mobileego-anywhere-2605-05945/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/mobileego-anywhere-2605-05945/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/mobileego-anywhere-2605-05945/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/mobileego-anywhere-2605-05945/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W21/physbrain-1-0-2605-15298/learning.md"
+      ],
+      "commit_hash": "33fade1b2302",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables; ingested into wiki; graph rebuilt with --no-infer fallback after full inference hung; validation passed with no broken wikilinks.",
+      "limitations": "No local figure image files were saved; deliverables reference figure/architecture content textually where available."
     }
   ]
 }
