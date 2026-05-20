@@ -1,3 +1,7 @@
+## Linux / Open Source Weekly 기술 동향
+
+LWN.net Weekly Edition for May 7, 2026 번역 소스는 Linux 커널 ABI 호환성, LLM 기반 취약점 보고가 coordinated disclosure에 미치는 영향, Fedora/GNOME 패키지 유지보수 정책, Prolly tree 기반 database versioning, s390/Arm virtualization testing, 주간 보안 업데이트와 커널 패치 흐름을 한 번에 정리한다. 이 소스는 AI/ML 중심 corpus와 별도로 Linux/open-source 운영·보안·시스템 소프트웨어 동향을 추적하는 기준점 역할을 한다.
+
 ## Embodied AI & VLA 연구 동향
 
 ### Physical Commonsense 기반 VLA 학습
