@@ -858,3 +858,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-20] graph | Knowledge graph rebuilt
 
 2195 nodes, 7502 edges (7502 extracted, 0 inferred).
+
+## [2026-05-20] graph | Knowledge graph rebuilt
+
+2202 nodes, 7517 edges (7517 extracted, 0 inferred).
