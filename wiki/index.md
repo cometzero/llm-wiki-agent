@@ -197,6 +197,8 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [Fedora Project](entities/FedoraProject.md) — community Linux distribution project discussed in Fedora GNOME bug-monitoring expectations.
+- [GNOME](entities/GNOME.md) — free-software desktop environment involved in Fedora downstream bug-triage discussion.
 - [ChatGPT](entities/ChatGPT.md) — production conversational LLM assistant cited as a foundation-model example.
 - [GPT-4o](entities/GPT-4o.md) — production multimodal/vision-capable model cited as a vision-language example.
 - [BLIP](entities/BLIP.md) — Bootstrapped Language-Image Pre-training vision-language model family.
@@ -529,6 +531,11 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [Coordinated Vulnerability Disclosure](concepts/CoordinatedVulnerabilityDisclosure.md) — private security reporting/embargo workflow pressured by LLM-assisted bug discovery.
+- [Linux Kernel ABI Compatibility](concepts/LinuxKernelABICompatibility.md) — kernel regression and user-space compatibility norms illustrated by rseq/TCMalloc.
+- [Linux Distribution Maintenance](concepts/LinuxDistributionMaintenance.md) — packaging, bug triage, security updates, and downstream support obligations.
+- [Prolly Tree](concepts/ProllyTree.md) — probabilistic B-tree/Merkle-style structure for efficient database versioning.
+- [Version-Controlled Databases](concepts/VersionControlledDatabases.md) — applying branching, diffing, merging, and history to structured data.
 - [NextTokenPrediction](concepts/NextTokenPrediction.md) — LLM objective that predicts the next token from prior context.
 - [Tokenization](concepts/Tokenization.md) — converts text into model-readable token IDs.
 - [Subword](concepts/Subword.md) — tokenization unit smaller than or comparable to a word, useful for OOV handling.

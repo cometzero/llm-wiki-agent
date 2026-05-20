@@ -24,11 +24,11 @@ LWN.net Weekly Edition for May 7, 2026의 공개 bigpage를 한국어 기술 번
 > "regression rules apply" — Linux 커널 개발에서 userspace가 실제로 깨지는 변화는 문서상 정당성만으로 밀어붙이기 어렵다는 ABI 안정성 원칙을 요약한다.
 
 ## Connections
-- Linux kernel ABI compatibility — rseq/TCMalloc 사례의 핵심 배경.
-- Coordinated vulnerability disclosure — LLM 기반 취약점 보고가 흔드는 보안 운영 모델.
-- Version-controlled databases — Prolly tree가 해결하려는 database diff/merge/versioning 문제.
-- Virtualization testing — s390에서 Arm VM을 실행하는 cross-architecture 검증 목적.
-- Linux distribution maintenance — Fedora GNOME bug-monitoring 및 Alpine outage 항목과 연결된다.
+- [[LinuxKernelABICompatibility]] — rseq/TCMalloc 사례의 핵심 배경.
+- [[CoordinatedVulnerabilityDisclosure]] — LLM 기반 취약점 보고가 흔드는 보안 운영 모델.
+- [[VersionControlledDatabases]]와 [[ProllyTree]] — database diff/merge/versioning 문제.
+- [[Virtualization]] — s390에서 Arm VM을 실행하는 cross-architecture 검증 목적.
+- [[LinuxDistributionMaintenance]], [[FedoraProject]], [[GNOME]] — Fedora GNOME bug-monitoring 및 Alpine outage 항목과 연결된다.
 
 ## Contradictions
 - No contradictions with existing wiki content found.
