@@ -1,3 +1,7 @@
+## [2026-05-20] ingest | LWN.net Weekly Edition for May 7, 2026 기술 번역
+
+Added source manually after LLM-backed ingest failed with an upstream streaming RemoteProtocolError on the large translated report. Key claims: LLM-driven vulnerability reports pressure coordinated disclosure/embargo workflows; Linux rseq/TCMalloc discussion reinforces userspace ABI regression rules; Fedora GNOME bug-monitoring policy illustrates downstream maintenance expectations; Prolly trees support version-controlled databases; s390 Arm VMs improve cross-architecture virtualization testing; weekly security updates and kernel patch lists provide operational signal.
+
 ## [2026-05-20] ingest | PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning
 
 Added source. Key claims: egocentric video → structured meta-record → [[PhysicalQA]] → [[CapabilityPreservingAdaptation]] → [[VLA]] transfer pipeline. Created 6 concept pages: [[PhysicalCommonsense]], [[CapabilityPreservingAdaptation]], [[PhysicalQA]], [[ActionGrounding]], [[LanguageSensitiveAdaptation]], [[StructuredMetaRecord]]. Related to existing PhysBrain analysis/learning sources.
@@ -850,3 +854,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-20] graph | Knowledge graph rebuilt
 
 2194 nodes, 7502 edges (7502 extracted, 0 inferred).
+
+## [2026-05-20] graph | Knowledge graph rebuilt
+
+2195 nodes, 7502 edges (7502 extracted, 0 inferred).

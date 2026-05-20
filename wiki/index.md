@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for May 7, 2026 기술 번역](sources/lwn-weekly-edition-2026-05-07-1070466.md) — LLM 기반 보안 보고와 coordinated disclosure, rseq/TCMalloc ABI regression, Fedora GNOME bug monitoring, Prolly tree, s390 Arm VM, 보안 업데이트/커널 패치 동향을 한국어 기술 번역 리포트로 정리.
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning](sources/physbrain-1-0-2605-15298-learning.md) — VLA adaptation을 위한 egocentric video → [[PhysicalCommonsense]] extraction → [[PhysicalQA]] → capability-preserving fine-tuning 학습 가이드
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — references](sources/physbrain-1-0-2605-15298-references.md) — [[VLA]]/[[Pi0]]/[[GR00T-N1]] 등 10개 레퍼런스 정리: [[OpenVLA]], [[Ego4D]], [[EgoDex]], [[EPIC-KITCHENS]], [[VGGT]], [[SimplerEnv]], [[LIBERO]], [[RoboCasa]]
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — analysis](sources/physbrain-1-0-2605-15298-analysis.md) — VLM에 물리 상식 주입 후 capability-preserving VLA adaptation으로 전이하는 PhysBrain 1.0 기술 분석
