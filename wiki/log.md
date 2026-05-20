@@ -1,3 +1,13 @@
+## [2026-05-20] ingest | AI/ML Learning Review — Day 28 (2026-05-20): Foundation Model, Transfer Learning, Multimodal
+
+Added source covering Foundation Model paradigm, PEFT/LoRA parameter-efficient fine-tuning, and multimodal model architecture with cross-modal alignment.
+
+Key claims:
+- Foundation models enable transfer learning by pre-training on massive data then adapting to downstream tasks
+- LoRA achieves 92%+ parameter reduction by learning low-rank A,B matrices instead of full weight updates
+- Cross-modal alignment connects different modalities in shared embedding space via cosine similarity
+- Created concept pages: [[FoundationModel]], [[TransferLearning]], [[PEFT]], [[LoRA]], [[MultimodalModel]], [[VisionLanguageModel]], [[CrossModalAlignment]]
+
 ## [2026-05-19] ingest | AI/ML Learning Review — Day 27 (2026-05-19): Decoding Strategies, Context Window, Hallucination/Calibration/Grounding
 
 Added source. Key claims: (1) decoding strategies (greedy, beam search, temperature, top-k, top-p) control creativity/accuracy balance without changing model knowledge; (2) context window is max tokens LLM can process, KV cache enables fast generation but consumes memory; (3) hallucination arises from next-token-prediction training objective, grounding and calibration mitigate trustworthiness issues. Created 10 concept pages: [[GreedyDecoding]], [[BeamSearch]], [[Temperature]], [[TopK]], [[TopP]], [[ContextWindow]], [[KVCache]], [[Hallucination]], [[Calibration]], [[Grounding]].
@@ -787,3 +797,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-19] graph | Knowledge graph rebuilt
 
 2116 nodes, 7126 edges (7126 extracted, 0 inferred).
+
+## [2026-05-20] graph | Knowledge graph rebuilt
+
+2122 nodes, 7158 edges (7158 extracted, 0 inferred).
+
+## [2026-05-20] graph | Knowledge graph rebuilt
+
+2126 nodes, 7170 edges (7170 extracted, 0 inferred).

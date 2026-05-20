@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 28 (2026-05-20): Foundation Model, Transfer Learning, Multimodal](sources/2026-05-20-day28-ai-ml-learning-review.md) — Foundation model 패러다임, PEFT/LoRA 파라미터 효율화, 멀티모달 모델 구조와 cross-modal alignment 정리.
 - [AI/ML Learning Review — Day 27 (2026-05-19): Decoding Strategies, Context Window, Hallucination/Calibration/Grounding](sources/2026-05-19-day27-ai-ml-learning-review.md) — LLM 추론 시 디코딩 전략(greey/top-k/top-p), 컨텍스트 윈도우/KV cache 메모리 한계, 환각/calibration/grounding의 신뢰성 프레임워크를 정리.
 - [AI/ML Learning Review — Day 26 (2026-05-18): Scaling Laws, Instruction Tuning, RLHF](sources/2026-05-18-day26-ai-ml-learning-review.md) — LLM 학습 파이프라인 핵심: scaling law로 모델 크기 설계, SFT로 instruction-following 학습, RLHF로 인간 선호도 정렬.
 - [AI/ML Learning Review — Day 25 (2026-05-17): Language Models, Tokenization, Pretraining Objective](sources/2026-05-17-day25-ai-ml-learning-review.md) — LLM 기본 축인 next-token prediction, tokenization, pretraining objective를 통합 정리하고 causal vs masked 학습 목적의 차이를 비교한다.
@@ -187,6 +188,10 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [ChatGPT](entities/ChatGPT.md) — production conversational LLM assistant cited as a foundation-model example.
+- [GPT-4o](entities/GPT-4o.md) — production multimodal/vision-capable model cited as a vision-language example.
+- [BLIP](entities/BLIP.md) — Bootstrapped Language-Image Pre-training vision-language model family.
+- [LLaVA](entities/LLaVA.md) — Large Language and Vision Assistant model family connecting image inputs to LLM reasoning.
 - [LLaMA](entities/LLaMA.md) — Meta decoder-only LLM family used as an example of causal language modeling.
 - [AutoVLA](entities/AutoVLA.md) — AutoVLA는 자율주행领域的 VLA planner 비교군으로, [[ReflectDrive-2]]가 성능 비교에 사용하는 대상 중 하나이다.
 - [BlockDiffusion](entities/BlockDiffusion.md) — block 단위 masked/diffusion generation을 사용하는 효율적 생성 방법 계열.
@@ -498,6 +503,11 @@
 - [DataCurriculum](concepts/DataCurriculum.md) — ordering or mixture of training data to improve learning.
 - [DistributedTraining](concepts/DistributedTraining.md) — multi-device or multi-node model training for large compute budgets.
 - [ParameterEfficientFineTuning](concepts/ParameterEfficientFineTuning.md) — adapting large models by updating a small subset of parameters.
+- [FoundationModel](concepts/FoundationModel.md) — 대규모 pretraining 뒤 prompt, fine-tuning, RAG 등으로 여러 downstream task에 적응하는 범용 기반 모델 패러다임.
+- [PEFT](concepts/PEFT.md) — large model의 대부분을 고정하고 작은 trainable parameters만 학습하는 parameter-efficient fine-tuning 방법군.
+- [MultimodalModel](concepts/MultimodalModel.md) — 텍스트, 이미지, 오디오, 비디오 등 여러 modality를 함께 처리하는 AI 모델 구조.
+- [VisionLanguageModel](concepts/VisionLanguageModel.md) — image encoder와 language model/decoder를 연결해 이미지-텍스트 이해와 질의응답을 수행하는 모델.
+- [CrossModalAlignment](concepts/CrossModalAlignment.md) — 서로 다른 modality의 embedding을 같은 의미 공간에서 가깝게 정렬하는 학습 과정.
 - [TransformerBlock](concepts/TransformerBlock.md) — core Transformer layer combining attention, FFN, residual connections, and LayerNorm.
 - [FeedForwardNetwork](concepts/FeedForwardNetwork.md) — per-token Transformer sublayer that refines hidden states after attention.
 - [BEVTrajectory](concepts/BEVTrajectory.md) — Bird’s-eye-view 공간에서 표현되는 자율주행 trajectory representation.

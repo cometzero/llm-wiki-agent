@@ -1,14 +1,34 @@
 ---
 title: "Transfer Learning"
 type: concept
-tags: [representation-learning]
-sources: [2026-05-07-day15-ai-ml-learning-review]
-last_updated: 2026-05-07
+tags: [transfer-learning, foundation-model, adaptation]
+sources: [2026-05-20-day28-ai-ml-learning-review.md]
+last_updated: 2026-05-20
 ---
 
-## Summary
-큰 데이터에서 미리 학습한 representation을 다른 작업에 재사용하는 방법이다. Day 15에서는 좋은 representation이 downstream task를 쉽게 만드는 대표 사례로 연결된다.
+## Definition
+Transfer learning is the approach of reusing knowledge learned from one task or large dataset to improve performance on a different but related task. Rather than training from scratch, transfer learning leverages pre-trained weights, embeddings, and hidden representations as a starting point.
+
+## Process
+1. **Source Learning**: Pre-train on large data or related tasks
+2. **Reuse**: Use learned weights, embeddings, or representations as starting point
+3. **Adaptation**: Adjust model to new task with task-specific data
+4. **Evaluation**: Verify performance improvement on new task
+
+## Example: Visual Domain
+A model trained on natural images already learned to recognize edges, textures, and shapes. These capabilities transfer to medical X-ray classification without learning visual basics from scratch.
+
+## Example: LLM Domain
+A language model that learned language structure, context, factual knowledge, and code patterns can adapt to legal document summarization or customer service response generation with less data.
+
+## Connection to Foundation Models
+Foundation models are the modern embodiment of transfer learning:
+- Pre-training on massive data captures general knowledge
+- Fine-tuning or prompt engineering adapts to specific tasks
+- One base model serves multiple downstream applications
 
 ## Connections
-- [[2026-05-07-day15-ai-ml-learning-review]] — introduced or reinforced this concept in the Day 15 AI/ML lesson.
-- [[RepresentationLearning]] and [[LatentRepresentation]] — related representation-learning context.
+- [[FoundationModel]] — modern transfer learning implementation
+- [[FineTuning]] — adaptation method
+- [[LoRA]] — efficient transfer learning technique
+- [[PEFT]] — parameter-efficient variants
