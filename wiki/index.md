@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering](sources/2026-05-21-day29-ai-ml-learning-review.md) — [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]의 검색-생성 결합, 의미 벡터 검색, 지시문 설계 한계를 통합 정리.
 - [LWN.net Weekly Edition for May 7, 2026 기술 번역](sources/lwn-weekly-edition-2026-05-07-1070466.md) — LLM 기반 보안 보고와 coordinated disclosure, rseq/TCMalloc ABI regression, Fedora GNOME bug monitoring, Prolly tree, s390 Arm VM, 보안 업데이트/커널 패치 동향을 한국어 기술 번역 리포트로 정리.
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning](sources/physbrain-1-0-2605-15298-learning.md) — VLA adaptation을 위한 egocentric video → [[PhysicalCommonsense]] extraction → [[PhysicalQA]] → capability-preserving fine-tuning 학습 가이드
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — references](sources/physbrain-1-0-2605-15298-references.md) — [[VLA]]/[[Pi0]]/[[GR00T-N1]] 등 10개 레퍼런스 정리: [[OpenVLA]], [[Ego4D]], [[EgoDex]], [[EPIC-KITCHENS]], [[VGGT]], [[SimplerEnv]], [[LIBERO]], [[RoboCasa]]
@@ -531,6 +532,16 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [EmbeddingModel](concepts/EmbeddingModel.md) — converts text, image, or code inputs into semantic vectors for search and retrieval.
+- [VectorDatabase](concepts/VectorDatabase.md) — stores embedding vectors and metadata for fast similarity retrieval.
+- [NearestNeighborSearch](concepts/NearestNeighborSearch.md) — finds vectors closest to a query vector.
+- [ApproximateNearestNeighborSearch](concepts/ApproximateNearestNeighborSearch.md) — scalable approximate retrieval for large vector collections.
+- [EmbeddingSpace](concepts/EmbeddingSpace.md) — vector coordinate space where semantic proximity is represented.
+- [Chunking](concepts/Chunking.md) — splits long documents into retrieval-sized units for RAG.
+- [FewShotPrompting](concepts/FewShotPrompting.md) — uses small input-output examples inside a prompt.
+- [PromptSensitivity](concepts/PromptSensitivity.md) — output variability caused by prompt wording and structure.
+- [InstructionDesign](concepts/InstructionDesign.md) — prompt design focused on task, constraints, and output format.
+- [SystemPrompt](concepts/SystemPrompt.md) — high-priority prompt layer defining model role and behavior rules.
 - [Coordinated Vulnerability Disclosure](concepts/CoordinatedVulnerabilityDisclosure.md) — private security reporting/embargo workflow pressured by LLM-assisted bug discovery.
 - [Linux Kernel ABI Compatibility](concepts/LinuxKernelABICompatibility.md) — kernel regression and user-space compatibility norms illustrated by rseq/TCMalloc.
 - [Linux Distribution Maintenance](concepts/LinuxDistributionMaintenance.md) — packaging, bug triage, security updates, and downstream support obligations.

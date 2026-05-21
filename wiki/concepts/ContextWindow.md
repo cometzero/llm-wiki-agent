@@ -2,8 +2,8 @@
 title: "Context Window"
 type: concept
 tags: [llm, memory, inference, architecture]
-sources: [2026-05-19-day27-ai-ml-learning-review]
-last_updated: 2026-05-19
+sources: [2026-05-19-day27-ai-ml-learning-review, 2026-05-21-day29-ai-ml-learning-review]
+last_updated: 2026-05-21
 ---
 
 ## Definition
@@ -29,7 +29,7 @@ The context window (context length) is the maximum number of tokens an LLM can p
 - [[KVCache]] — memory optimization for faster generation
 - [[RAG]] — retrieval to handle longer contexts
 - [[Attention]] — computational cost grows quadratically with context length
-- Chunking — splitting long documents to fit within window
+- [[Chunking]] — splitting long documents to fit within window
 
 ## Examples of Context Window Sizes
 - GPT-3.5: 4K, 16K tokens

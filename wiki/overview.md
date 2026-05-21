@@ -12,3 +12,7 @@ LWN.net Weekly Edition for May 7, 2026 번역 소스는 Linux 커널 ABI 호환�
 [[physbrain-1-0-2605-15298]] — egocentric video → structured physical QA → VLA transfer
 [[EmbodiedMidtrain]] — VLM 샘플 분포 정렬 기반 VLA 성능 향상
 [[MobileEgoAnywhere]] — commodity smartphone 기반 200시간 egocentric 데이터 수집
+
+## AI/ML Learning — 실전 LLM 시스템
+
+2026-05-21 Day 29 학습은 현대 LLM 서비스가 단일 모델만으로 구성되지 않고 [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]을 결합해 외부 지식 검색, context 보강, 답변 형식 제어를 수행한다는 점을 정리한다. [[Hallucination]]을 줄이기 위해서는 검색 품질, [[Chunking]], [[CosineSimilarity]], [[ContextWindow]] 관리, 그리고 필요 시 [[ToolUse]]나 [[FineTuning]]과의 역할 분리가 함께 중요하다.

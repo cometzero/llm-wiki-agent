@@ -1,25 +1,49 @@
 ---
-title: "CosineSimilarity"
+title: "Cosine Similarity"
 type: concept
-tags: [similarity, retrieval, embedding]
-last_updated: 2026-04-26
-sources: [2026-04-23-day01-ai-ml-learning-review]
+tags: [vector, similarity, math]
+sources: ["2026-05-21-day29-ai-ml-learning-review"]
+last_updated: 2026-05-21
 ---
 
-## 핵심 정의
-[[CosineSimilarity]]는 두 벡터의 내적을 각 벡터의 크기로 정규화해 방향 유사도만 비교한다.
+# Cosine Similarity
 
-## 직관
-- 크기(스케일)가 다르더라도 방향이 비슷하면 높은 유사도를 준다.
-- 의미 검색에서 표현 벡터 간 "유사도" 판단으로 자주 쓰인다.
+## 정의
 
-## AI/ML 연결
-- [[Embedding]] retrieval에서 질의-문서 문장 유사도 비교
-- [[RAG]] 검색 정렬
-- [[LLM]] 기반 의미 검색 파이프라인에서 [[Attention]]의 직접 점수화 방식과는 다른 쓰임새를 가진다.
+Cosine similarity는 두 벡터의 방향이 얼마나 비슷한지 재는 값이다.
 
-## 관련 개념
-- [[DotProduct]]
-- [[Norm]]
-- [[Embedding]]
-- [[RAG]]
+## 수학적 정의
+
+$$\text{cosine\_similarity}(A, B) = \frac{A \cdot B}{\|A\| \|B\|}$$
+
+## 해석
+
+| 값 범위 | 의미 |
+|---------|------|
+| 1.0 | 같은 방향 (완전히 동일) |
+| 0.0 | 직각 (관련 없음) |
+| -1.0 | 반대 방향 (완전히 다름) |
+
+## [[VectorSearch]]에서의 역할
+
+- [[EmbeddingModel]]로 변환된 벡터 간 거리를 측정
+- 질문 벡터와 문서 벡터의 similarity가 높은 문서를 선택
+- 예: similarity 0.92는 강하게 관련, 0.11은 거의 관련 없음
+
+## 직관적 이해
+
+2차원 벡터로 생각하면:
+- "환불하고 싶어요" → [1.0, 0.1]
+- "돈을 돌려받고 싶어요" → [0.9, 0.2]
+- 방향이 비슷하므로 높은 similarity
+
+## 연관 개념
+
+- [[VectorSearch]] — 검색 방식
+- [[EmbeddingModel]] — 벡터 변환
+- [[NearestNeighborSearch]] — 검색 알고리즘
+- [[ApproximateNearestNeighborSearch]] — 대규모용
+
+## 출처
+
+- [[2026-05-21-day29-ai-ml-learning-review]]

@@ -1,3 +1,7 @@
+## [2026-05-21] ingest | AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering
+
+Added source. Key claims: RAG는 검색-생성 결합으로 LLM의 최신 정보 활용과 hallucination 감소; EmbeddingModel은 문장 의미를 벡터로 표현하여 키워드 없이도 의미 검색 가능; PromptEngineering은 답변 방향 조절과 모델 지식 한계 보완을 위한 인터페이스다. 관련 concept pages updated/created: RAG, EmbeddingModel, VectorSearch, PromptEngineering, Hallucination, Chunking, CosineSimilarity, ContextWindow, ToolUse, FineTuning, VectorDatabase, NearestNeighborSearch, ApproximateNearestNeighborSearch, EmbeddingSpace, FewShotPrompting, PromptSensitivity, InstructionDesign, SystemPrompt.
+
 ## [2026-05-20] ingest | LWN.net Weekly Edition for May 7, 2026 기술 번역
 
 Added source manually after LLM-backed ingest failed with an upstream streaming RemoteProtocolError on the large translated report. Key claims: LLM-driven vulnerability reports pressure coordinated disclosure/embargo workflows; Linux rseq/TCMalloc discussion reinforces userspace ABI regression rules; Fedora GNOME bug-monitoring policy illustrates downstream maintenance expectations; Prolly trees support version-controlled databases; s390 Arm VMs improve cross-architecture virtualization testing; weekly security updates and kernel patch lists provide operational signal.
@@ -862,3 +866,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-20] graph | Knowledge graph rebuilt
 
 2202 nodes, 7517 edges (7517 extracted, 0 inferred).
+
+## [2026-05-21] graph | Knowledge graph rebuilt
+
+2213 nodes, 7607 edges (7607 extracted, 0 inferred).
