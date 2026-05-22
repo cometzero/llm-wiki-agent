@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 30 (2026-05-22): Evaluation, Serving, and AI System Design](sources/2026-05-22-day30-ai-ml-learning-review.md) — AI 시스템 설계의 네 기둥([[DataPipeline]], [[TrainingStack]], [[InferenceStack]], [[FeedbackLoop]])과 [[Evaluation]]/[[Benchmark]]/[[Serving]]/[[Latency]]/[[Throughput]] 등 핵심 개념 정리.
 - [AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering](sources/2026-05-21-day29-ai-ml-learning-review.md) — [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]의 검색-생성 결합, 의미 벡터 검색, 지시문 설계 한계를 통합 정리.
 - [LWN.net Weekly Edition for May 7, 2026 기술 번역](sources/lwn-weekly-edition-2026-05-07-1070466.md) — LLM 기반 보안 보고와 coordinated disclosure, rseq/TCMalloc ABI regression, Fedora GNOME bug monitoring, Prolly tree, s390 Arm VM, 보안 업데이트/커널 패치 동향을 한국어 기술 번역 리포트로 정리.
 - [PhysBrain 1.0 기술 보고서: 인간 egocentric video에서 물리 상식 supervision을 추출해 VLA로 전이하기 — learning](sources/physbrain-1-0-2605-15298-learning.md) — VLA adaptation을 위한 egocentric video → [[PhysicalCommonsense]] extraction → [[PhysicalQA]] → capability-preserving fine-tuning 학습 가이드
@@ -1998,6 +1999,12 @@
 - [주도섹터](concepts/주도섹터.md) — [[주도섹터]]는 시장 전체 강세에서 상대적으로 먼저 수급과 기대를 선도하고, 경기·정책·상품순환에 따라 다른 섹터를 끌고 가는 업종 군을 뜻한다.
 - [주주자본주의](concepts/주주자본주의.md) — [[주주자본주의]]는 기업의 성과와 이익 배분의 주체를 주로 주주권에 두는 체계를 가리킨다.
 - [투자](concepts/투자.md) — Placeholder page created to preserve wikilink integrity after the 2026-05-10 LilysAI bulk ingest. Expand this page when a future source provides enough detail.
+
+- [Batching](concepts/Batching.md) — groups multiple requests for parallel processing to improve serving throughput.
+- [Benchmark](concepts/Benchmark.md) — standardized task set and scoring procedure for comparing model performance.
+- [Human Evaluation](concepts/HumanEvaluation.md) — manual judgment of model outputs when automatic metrics are insufficient.
+- [Inference](concepts/Inference.md) — using a trained model to compute outputs for new inputs.
+- [Scaling Laws](concepts/ScalingLaws.md) — empirical relationships between model performance, data, parameters, and compute.
 
 ## Syntheses
 ## Auto-indexed Generated Pages

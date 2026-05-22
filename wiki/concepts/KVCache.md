@@ -1,35 +1,37 @@
 ---
 title: "KV Cache"
 type: concept
-tags: [llm, inference, memory, optimization]
-sources: [2026-05-19-day27-ai-ml-learning-review]
-last_updated: 2026-05-19
+tags: [ai-ml, transformer, attention, memory-optimization]
+sources: [2026-05-22-day30-ai-ml-learning-review]
+last_updated: 2026-05-22
 ---
 
 ## Definition
-KV cache stores the key (K) and value (V) activations from previous tokens during autoregressive generation, avoiding recomputation of attention for already-processed tokens.
 
-## Why It Exists
-LLMs generate tokens one at a time autoregressively. Without KV cache, each new token would require recomputing attention over ALL previous tokens, leading to O(n²) computation per step. KV cache enables incremental computation.
+The [[KVCache]] (Key-Value Cache) stores the key and value matrices from previous tokens during autoregressive generation, allowing the model to reference them without recomputation for each new token.
 
-## Key Properties
-- **Trade-off**: Speed vs memory — stores K/V for each token at each layer
-- **Memory grows**: Proportional to sequence length × num layers × hidden size
-- **Flash Attention**: Modern technique that reduces KV cache memory footprint
-- **Prefill phase**: Initial pass computes and caches K/V for input tokens
-- **Decode phase**: Uses cached K/V + computes K/V for new token only
+## Why It Matters
 
-## Memory Calculation (Simplified)
-For each layer: 2 × seq_len × hidden_size × 4 bytes (float32)
-For 70B model with 80 layers, 8K context: significant GPU memory requirement
+Transformer attention requires each token to attend to all previous tokens. Without caching:
+- Token 100 generation recomputes keys/values for all 99 previous tokens
+- Token 101 generation recomputes keys/values for all 100 previous tokens
+- Massive redundant computation
 
-## Related Concepts
-- [[ContextWindow]] — limits how long sequences can be
-- [[Transformer]] — architecture where KV cache applies
-- [[Attention]] — mechanism that generates K/V values
-- Prefill/Decode — two-phase inference where KV cache is populated then used
+With KVCache:
+- Keys/values computed once, stored in cache
+- Each new token reuses cached values
+- Dramatic speedup for long contexts
 
-## Production Considerations
-- Limits concurrent users (memory per session)
-- Affects batch size feasibility
-- KV cache eviction strategies for long conversations
+## Memory Trade-off
+
+KVCache trades compute for memory. For:
+- **Long contexts**: Cache grows linearly with context length
+- **Many concurrent users**: Cache memory multiplies by number of users
+- **GPU memory pressure**: Long-context LLMs require careful memory management
+
+## Connections
+- [[Serving]] — critical for efficient LLM serving
+- [[Latency]] — reduces per-token generation time
+- [[Throughput]] — enables more efficient batching
+- [[Attention]] — the mechanism that KVCache optimizes
+- [[InferenceStack]] — memory management is a key design consideration

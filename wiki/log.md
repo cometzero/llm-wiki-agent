@@ -1,3 +1,7 @@
+## [2026-05-22] ingest | AI/ML Learning Review — Day 30 (2026-05-22): Evaluation, Serving, and AI System Design
+
+Added source. Key claims: AI system design requires four pillars (data pipeline, training stack, inference stack, feedback loop); model evaluation differs from training loss; benchmarks measure specific tasks, not overall capability; serving optimization balances latency and throughput; quantization trades accuracy for efficiency. Created 12 concept pages for Evaluation, Serving, Latency, Throughput, Quantization, KVCache, Batching, Streaming, DataPipeline, TrainingStack, InferenceStack, and FeedbackLoop.
+
 ## [2026-05-21] ingest | AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering
 
 Added source. Key claims: RAG는 검색-생성 결합으로 LLM의 최신 정보 활용과 hallucination 감소; EmbeddingModel은 문장 의미를 벡터로 표현하여 키워드 없이도 의미 검색 가능; PromptEngineering은 답변 방향 조절과 모델 지식 한계 보완을 위한 인터페이스다. 관련 concept pages updated/created: RAG, EmbeddingModel, VectorSearch, PromptEngineering, Hallucination, Chunking, CosineSimilarity, ContextWindow, ToolUse, FineTuning, VectorDatabase, NearestNeighborSearch, ApproximateNearestNeighborSearch, EmbeddingSpace, FewShotPrompting, PromptSensitivity, InstructionDesign, SystemPrompt.
@@ -870,3 +874,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-21] graph | Knowledge graph rebuilt
 
 2213 nodes, 7607 edges (7607 extracted, 0 inferred).
+
+## [2026-05-22] graph | Knowledge graph rebuilt
+
+2221 nodes, 7651 edges (7651 extracted, 0 inferred).
+
+## [2026-05-22] graph | Knowledge graph rebuilt
+
+2225 nodes, 7669 edges (7669 extracted, 0 inferred).
