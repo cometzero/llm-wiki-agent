@@ -1,3 +1,7 @@
+## [2026-05-22] ingest | LWN.net Weekly Edition for May 14, 2026 — 한국어 기술 번역
+
+Added source. Key claims: (1) Fedora AI Developer Desktop 구상이 커뮤니티 논쟁 후 Council 승인→반대표 전환으로 중단, (2) Forgejo carrot disclosure가 비표준 취약점 공개 방식으로 비판과 반론 모두 촉발, (3) Andrew Morton 메모리 관리 유지관리 은퇴正式开始, David Hildenbrand 인수, (4) 커널 7.1-rc3 대규모 개발 사이클 (2,141명 기여자, 13,922 changeset), (5) Dirty Frag LPE 취약점 공개로 엠바고 깨짐, (6) Debian 재현 가능한 빌드 의무화. Created 8 entity pages (Fedora, Forgejo, AndrewMorton, DavidHildenbrand, DirtyFrag, LSFMM+BPF 2026, DAMON, JulienVoisin) and 8 concept pages (CarrotDisclosure, TransparentHugePage, DMAbuf, MemoryManagement, VulnerabilityDisclosure, ReproducibleBuilds, Mshare, KernelKillswitch).
+
 ## [2026-05-22] ingest | AI/ML Learning Review — Day 30 (2026-05-22): Evaluation, Serving, and AI System Design
 
 Added source. Key claims: AI system design requires four pillars (data pipeline, training stack, inference stack, feedback loop); model evaluation differs from training loss; benchmarks measure specific tasks, not overall capability; serving optimization balances latency and throughput; quantization trades accuracy for efficiency. Created 12 concept pages for Evaluation, Serving, Latency, Throughput, Quantization, KVCache, Batching, Streaming, DataPipeline, TrainingStack, InferenceStack, and FeedbackLoop.
@@ -882,3 +886,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-22] graph | Knowledge graph rebuilt
 
 2225 nodes, 7669 edges (7669 extracted, 0 inferred).
+
+## [2026-05-22] graph | Knowledge graph rebuilt
+
+2254 nodes, 7728 edges (7728 extracted, 0 inferred).
