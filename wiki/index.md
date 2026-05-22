@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for May 14, 2026 — 한국어 기술 번역](sources/lwn-weekly-edition-2026-05-14-1071535.md) — Fedora AI 데스크톱 논쟁, Forgejo carrot disclosure, LSFMM+BPF 메모리 관리 동향, 커널 7.1-rc3, Dirty Frag LPE 취약점 등 종합 번역
 - [AI/ML Learning Review — Day 30 (2026-05-22): Evaluation, Serving, and AI System Design](sources/2026-05-22-day30-ai-ml-learning-review.md) — AI 시스템 설계의 네 기둥([[DataPipeline]], [[TrainingStack]], [[InferenceStack]], [[FeedbackLoop]])과 [[Evaluation]]/[[Benchmark]]/[[Serving]]/[[Latency]]/[[Throughput]] 등 핵심 개념 정리.
 - [AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering](sources/2026-05-21-day29-ai-ml-learning-review.md) — [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]의 검색-생성 결합, 의미 벡터 검색, 지시문 설계 한계를 통합 정리.
 - [LWN.net Weekly Edition for May 7, 2026 기술 번역](sources/lwn-weekly-edition-2026-05-07-1070466.md) — LLM 기반 보안 보고와 coordinated disclosure, rseq/TCMalloc ABI regression, Fedora GNOME bug monitoring, Prolly tree, s390 Arm VM, 보안 업데이트/커널 패치 동향을 한국어 기술 번역 리포트로 정리.
@@ -199,6 +200,13 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [Andrew Morton](entities/AndrewMorton.md) — Linux memory-management maintainer transitioning duties after long service.
+- [DAMON](entities/DAMON.md) — Linux Data Access MONitoring framework discussed in the 2026 update.
+- [David Hildenbrand](entities/DavidHildenbrand.md) — Kernel developer taking over memory-management integration tree duties.
+- [Debian](entities/Debian.md) — Linux distribution tied to reproducible-build policy in this corpus.
+- [Dirty Frag](entities/DirtyFrag.md) — Linux local privilege escalation vulnerability family discussed by LWN.
+- [Julien Voisin](entities/JulienVoisin.md) — Security researcher involved in Forgejo carrot disclosure follow-up.
+- [LSFMM+BPF Summit 2026](entities/LSFMMBPFSummit2026.md) — Linux storage, filesystem, memory-management, and BPF summit source entity.
 - [Fedora Project](entities/FedoraProject.md) — community Linux distribution project discussed in Fedora GNOME bug-monitoring expectations.
 - [GNOME](entities/GNOME.md) — free-software desktop environment involved in Fedora downstream bug-triage discussion.
 - [ChatGPT](entities/ChatGPT.md) — production conversational LLM assistant cited as a foundation-model example.
@@ -533,6 +541,24 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [Carrot Disclosure](concepts/CarrotDisclosure.md) — Forgejo-related nonstandard vulnerability disclosure pattern.
+- [CMA](concepts/CMA.md) — Contiguous Memory Allocator for physically contiguous Linux memory.
+- [DMA-buf](concepts/DMAbuf.md) — Linux buffer-sharing mechanism used across devices and subsystems.
+- [Fragnesia](concepts/Fragnesia.md) — Dirty Frag-related Linux vulnerability case.
+- [HugeTLB](concepts/HugeTLB.md) — Explicit huge-page management in Linux.
+- [HugeTLBFS](concepts/HugeTLBFS.md) — Filesystem interface for reserved huge pages.
+- [IOMMU](concepts/IOMMU.md) — I/O memory management unit for DMA translation and isolation.
+- [io_uring](concepts/IOUring.md) — Linux high-performance asynchronous I/O interface.
+- [Kernel Development](concepts/KernelDevelopment.md) — Linux kernel release and patch integration process.
+- [Kernel Killswitch](concepts/KernelKillswitch.md) — Short-term emergency vulnerability mitigation switch pattern.
+- [Memory Management](concepts/MemoryManagement.md) — Linux memory-management concepts from LWN May 14.
+- [Memory Tiering](concepts/MemoryTiering.md) — Placement across heterogeneous memory tiers.
+- [mshare](concepts/Mshare.md) — Linux memory-sharing proposal revisited at LSFMM.
+- [RCE](concepts/RCE.md) — Remote Code Execution vulnerability class.
+- [Reproducible Builds](concepts/ReproducibleBuilds.md) — Build reproducibility as supply-chain integrity mechanism.
+- [Security Mitigation](concepts/SecurityMitigation.md) — Temporary or permanent defenses reducing exploitability.
+- [Supply Chain Security](concepts/SupplyChainSecurity.md) — Security of source-build-distribution-update pipelines.
+- [Transparent Huge Page](concepts/TransparentHugePage.md) — Automatic Linux huge-page mechanism discussed at 1GB scale.
 - [EmbeddingModel](concepts/EmbeddingModel.md) — converts text, image, or code inputs into semantic vectors for search and retrieval.
 - [VectorDatabase](concepts/VectorDatabase.md) — stores embedding vectors and metadata for fast similarity retrieval.
 - [NearestNeighborSearch](concepts/NearestNeighborSearch.md) — finds vectors closest to a query vector.
