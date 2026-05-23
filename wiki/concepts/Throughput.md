@@ -1,41 +1,37 @@
 ---
 title: "Throughput"
 type: concept
-tags: [ai-ml, performance, serving, metrics]
-sources: [2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-22
+tags: [ai-ml, serving, performance]
+sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
+last_updated: 2026-05-23
 ---
 
 ## Definition
+Throughput은 단위 시간에 처리할 수 있는 요청 수 또는 token 수이다. 시스템 전체의 처리 능력을 나타내며, 대규모 서비스에서 GPU 비용과 직결된다.
 
-[[Throughput]] is the amount of work a system can process per unit time—measured as requests/second, tokens/second, or queries/second.
+## Restaurant Analogy
+- 식당이 한 시간에 처리할 수 있는 전체 손님 수
+- throughput이 높으면 더 많은 고객을 서비스할 수 있음
 
-## Why Throughput Matters
+## Latency vs Throughput
+| 구분 | Latency | Throughput |
+|------|---------|------------|
+| 의미 | 한 요청의 대기 시간 | 전체 처리량 |
+| 관점 | 개별 사용자 체감 | 시스템 능력 |
+| 최적화 | 속도 향상 | 병렬 처리, batching |
 
-A system may respond instantly to a single user but fail when 1,000 concurrent users arrive. [[Throughput]] determines how many users the service can handle simultaneously without degradation.
+## Why It Matters
+- 대규모 API 서비스에서 throughput이 낮으면 GPU 비용이 폭발함
+- 대량 문서 요약, 배치 번역, 로그 분석처럼 많은 작업을 한꺼번에 처리하는 경우에 중요
+- 1초에 몇 개의 요청 또는 token을 처리할 수 있느냐가 비용을 좌우
 
-## Latency vs. Throughput
-
-| Metric | Perspective | Question |
-|--------|-------------|----------|
-| [[Latency]] | Individual user | "How long do I wait?" |
-| [[Throughput]] | System operator | "How many can we serve?" |
-
-High throughput with high latency means "many users get slow responses." Low throughput with low latency means "few users get fast responses." The goal is balanced optimization.
-
-## Optimization Techniques
-
-- **[[Batching]]**: Process multiple requests together for GPU efficiency
-- **[[Quantization]]**: Smaller weights = faster computation
-- **[[KVCache]]**: Reuse computations across tokens
-- **Hardware scaling**: More GPUs for parallel processing
-
-## Trade-offs
-
-Batching increases throughput but may increase individual latency (waiting for batch to fill). Serving strategies must balance these based on use case—interactive chatbots prioritize latency, batch processing prioritizes throughput.
+## Optimization
+- Batching으로 GPU 효율 향상
+- [[Quantization]]으로 메모리/계산 효율화
+- [[KVCache]]로 반복 계산 제거
+- Model parallelism
 
 ## Connections
-- [[Serving]] — throughput is a core serving metric
-- [[Latency]] — often in tension with throughput
-- [[Batching]] — increases throughput at potential latency cost
-- [[Quantization]] — enables higher throughput
+- [[Latency]] — throughput과 함께 균형 잡아야 함
+- [[Serving]] — throughput이 측정되는 영역
+- [[InferenceOptimization]] — throughput 향상 기법

@@ -2,53 +2,32 @@
 title: "Serving"
 type: concept
 tags: [ai-ml, serving, inference, deployment]
-sources: [2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-22
+sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
+last_updated: 2026-05-23
 ---
 
 ## Definition
-
-[[Serving]] is the process of making a trained model respond to real user requests in production. It encompasses the entire flow: user submits a query via app, server calls the model, model generates an answer, and the result is returned to the user.
-
-## Relationship to Inference
-
-- **[[Inference]]**: Computing outputs from a trained model for new inputs (the computation itself)
-- **[[Serving]]**: Providing this inference as an actual service (the operational layer)
+서빙(serving)은 학습이 끝난 모델을 실제 사용자가 쓸 수 있게 제공하는 전체 과정이다. 모델 파일을 서버에 올리고, API를 만들고, 여러 사용자의 요청을 처리하며, 속도와 비용을 관리하는 일이 포함된다.
 
 ## Serving Components
+1. **모델 로딩**: 학습된 weight를 GPU/CPU 메모리에 올림
+2. **입력 전처리**: 텍스트를 token으로, 이미지를 tensor로 변환
+3. **Forward Pass**: 모델이 입력을 layer별로 계산
+4. **Decoding**: LLM은 다음 token을 하나씩 예측 (greedy, sampling, beam search)
+5. **동시 요청 처리**: 여러 요청을 batch로 묶어 GPU 효율적으로 사용
 
-1. **Model selection**: Choosing which model to deploy
-2. **Hardware**: CPU, GPU, NPU selection
-3. **Request handling**: Sequential vs. batched processing
-4. **Memory management**: Storing model parameters, hidden states, KV cache
-5. **Response streaming**: Token-by-token delivery to reduce perceived latency
+## Serving vs Inference
+- **Inference**: 모델이 입력을 받아 예측/답변을 만드는 과정
+- **Serving**: inference를 실제 서비스 형태로 제공하는 것
 
 ## Key Metrics
-
-- **[[Latency]]**: Time from request to first/last token response
-- **[[Throughput]]**: Requests or tokens processed per unit time
-- **Cost per query**: Critical for business viability
-
-## Optimization Techniques
-
-- **[[Batching]]**: Grouping multiple requests for parallel GPU utilization
-- **[[Streaming]]**: Sending tokens as generated rather than waiting
-- **[[Quantization]]**: Reducing model weight precision for faster inference
-- **[[KVCache]]**: Reusing computed keys/values across tokens
-
-## Why Serving Matters
-
-Even smart models fail as services if:
-- Response is too slow (users abandon)
-- Cost per query is too high
-- System can't handle concurrent users
-- Memory constraints limit context length
+- **Latency**: 요청 하나가 들어와서 응답이 나올 때까지 걸리는 시간
+- **Throughput**: 단위 시간에 처리할 수 있는 요청 수 또는 token 수
 
 ## Connections
-- [[Inference]] — the computation being served
-- [[Latency]] — critical user experience metric
-- [[Throughput]] — system capacity metric
-- [[Quantization]] — serving optimization technique
-- [[KVCache]] — memory optimization for LLM serving
-- [[Batching]] — throughput optimization technique
-- [[Streaming]] — latency optimization technique
+- [[InferenceOptimization]] — 서빙 최적화 기법
+- [[Latency]] — 응답 대기 시간
+- [[Throughput]] — 처리량
+- [[Quantization]] — 메모리/속도 최적화
+- [[KVCache]] — attention 계산 재사용
+- [[InferenceStack]] — 서빙을 운영하는 기술 스택
