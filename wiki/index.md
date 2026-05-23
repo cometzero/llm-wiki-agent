@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [AI/ML Learning Review — Day 30 (2026-05-23): Evaluation, Serving, and AI System Design](sources/2026-05-23-day30-ai-ml-learning-review.md) — 평가/벤치마크, 서빙/추론 최적화, AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [LWN.net Weekly Edition for May 14, 2026 — 한국어 기술 번역](sources/lwn-weekly-edition-2026-05-14-1071535.md) — Fedora AI 데스크톱 논쟁, Forgejo carrot disclosure, LSFMM+BPF 메모리 관리 동향, 커널 7.1-rc3, Dirty Frag LPE 취약점 등 종합 번역
 - [AI/ML Learning Review — Day 30 (2026-05-22): Evaluation, Serving, and AI System Design](sources/2026-05-22-day30-ai-ml-learning-review.md) — AI 시스템 설계의 네 기둥([[DataPipeline]], [[TrainingStack]], [[InferenceStack]], [[FeedbackLoop]])과 [[Evaluation]]/[[Benchmark]]/[[Serving]]/[[Latency]]/[[Throughput]] 등 핵심 개념 정리.
 - [AI/ML Learning Review — Day 29 (2026-05-21): RAG, Embedding Search, Prompt Engineering](sources/2026-05-21-day29-ai-ml-learning-review.md) — [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]의 검색-생성 결합, 의미 벡터 검색, 지시문 설계 한계를 통합 정리.
@@ -541,6 +542,10 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [AI System Design](concepts/AISystemDesign.md) — production AI system view connecting data, training, evaluation, inference, product, and feedback layers.
+- [Data Drift](concepts/DataDrift.md) — distribution shift between training data and real service data that can degrade model performance.
+- [LLM-as-a-Judge](concepts/LLMasJudge.md) — using an LLM to score or compare model outputs while accounting for judge bias.
+- [Monitoring](concepts/Monitoring.md) — ongoing observation of deployed AI performance, quality, drift, errors, and cost.
 - [Carrot Disclosure](concepts/CarrotDisclosure.md) — Forgejo-related nonstandard vulnerability disclosure pattern.
 - [CMA](concepts/CMA.md) — Contiguous Memory Allocator for physically contiguous Linux memory.
 - [DMA-buf](concepts/DMAbuf.md) — Linux buffer-sharing mechanism used across devices and subsystems.
