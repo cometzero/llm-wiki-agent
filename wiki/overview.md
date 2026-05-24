@@ -16,3 +16,5 @@ LWN.net Weekly Edition for May 14, 2026 번역 소스는 Fedora AI Developer Des
 ## AI/ML Learning — 실전 LLM 시스템
 
 2026-05-21 Day 29 학습은 현대 LLM 서비스가 단일 모델만으로 구성되지 않고 [[RAG]], [[EmbeddingModel]], [[VectorSearch]], [[PromptEngineering]]을 결합해 외부 지식 검색, context 보강, 답변 형식 제어를 수행한다는 점을 정리한다. [[Hallucination]]을 줄이기 위해서는 검색 품질, [[Chunking]], [[CosineSimilarity]], [[ContextWindow]] 관리, 그리고 필요 시 [[ToolUse]]나 [[FineTuning]]과의 역할 분리가 함께 중요하다.
+
+2026-05-24 Day 30 학습은 [[Evaluation]]·[[Benchmark]]로 품질을 검증하고, [[Serving]]·[[InferenceOptimization]]으로 실제 요청을 빠르고 저렴하게 처리하며, [[DataPipeline]]·[[TrainingStack]]·[[InferenceStack]]·[[FeedbackLoop]]가 연결된 전체 AI 시스템 관점으로 학습 과정을 마무리한다.

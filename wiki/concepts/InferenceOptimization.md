@@ -1,43 +1,39 @@
 ---
 title: "Inference Optimization"
 type: concept
-tags: [ai-ml, inference, optimization, serving]
-sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-23
+tags: [ai-ml, inference, optimization, mlops]
+sources: [2026-05-24-day30-ai-ml-learning-review]
+last_updated: 2026-05-24
 ---
 
 ## Definition
-추론 최적화(inference optimization)는 모델의 품질을 크게 해치지 않으면서 더 빠르게, 더 적은 메모리로, 더 많은 요청을 처리하도록 만드는 방법이다.
 
-## Key Techniques
+[[InferenceOptimization]]은 모델이 더 빠르고 싸게 추론하도록 만드는 기술이다. [[Latency]] 줄이기, [[Throughput]] 늘리기, [[Quantization]], [[Batching]], [[KVCache]], GPU 메모리 관리 등을 포함한다.
 
-### Quantization (양자화)
-- Weight나 activation의 숫자 정밀도를 낮춤
-- 예: 32-bit float → 8-bit integer (약 1/4 크기)
-- 속도와 메모리는 좋아지지만 품질이 조금 떨어질 수 있음
+## Key Concepts
 
-### KV Cache
-- Transformer attention에서 이전 token들의 key/value 중간값을 저장
-- 다음 token 생성 시 재사용하여 계산 낭비 줄임
-- "나는 밥을" 다음에 "먹었다"를 생성한 뒤, 다시 전체를 처음부터 계산하지 않음
+### Core Metrics
+- **[[Latency]]**: 요청 하나가 들어와 결과가 나올 때까지 걸리는 시간
+- **[[Throughput]]**: 단위 시간에 처리할 수 있는 요청 수나 token 수 (requests/sec, tokens/sec)
+- **[[Latency]]** vs **[[Throughput]]** 구분 중요: 한 사람에게 빨리 답하는 것과 많은 사람을 동시에 처리하는 것은 다름
 
-### Batching
-- 여러 요청을 묶어서 한 번에 계산
-- GPU를 효율적으로 사용하여 throughput 향상
-- 단, batch가 모일 때까지 기다리면 개별 latency 증가 가능
+### Optimization Techniques
+1. **[[Quantization]]**: 숫자 표현 bit 수 줄이기 (FP16 → INT8 등), 메모리 약 절반 절감
+2. **[[KVCache]]**: 이전 token의 key/value 저장하여 attention 재계산 방지
+3. **[[Batching]]**: 여러 요청 묶어 GPU에서 동시 처리, throughput 향상
+4. **Model routing**: 쉬운 질문은 작은 모델, 어려운 질문은 큰 모델
 
-### Other Techniques
-- Speculative decoding
-- Model parallelism
-- Tokenizer/prompt 최적화
-
-## Trade-offs
-모델 품질, 속도, 비용, 안정성은 서로 trade-off가 있다. 가장 큰 모델이 항상 서비스에 적합한 것은 아니다. 작은 모델을 잘 fine-tuning하고 [[RAG]]를 붙이는 편이 더 빠르고 안정적일 수 있다.
+### Trade-offs
+- [[Quantization]]은 무조건 공짜 성능 향상 아님: 품질 흔들릴 수 있음, 특히 수학/코드/긴 추론에서 민감
+- [[Batching]]은 throughput는 높이지만 개별 latency 증가 가능
 
 ## Connections
-- [[Serving]] — 최적화가 적용되는 영역
-- [[Quantization]] — 대표적인 최적화 기법
-- [[KVCache]] — attention 최적화 기법
-- [[Latency]] — 최적화의 주요 대상
-- [[Throughput]] — 최적화의 주요 대상
-- [[InferenceStack]] — 최적화가 통합되는 기술 스택
+- [[Serving]] — inference optimization의 적용 대상
+- [[Latency]] — 최적화 핵심 지표
+- [[Throughput]] — 최적화 핵심 지표
+- [[Quantization]] — 메모리/비용 최적화 기법
+- [[KVCache]] — attention 계산 최적화
+
+## Practical Notes
+
+실제 운영에서는 "가장 똑똑한 모델 하나"만 쓰지 않을 때도 많다. 쉬운 질문은 작은 모델이 처리하고, 어려운 질문만 큰 모델로 보내는 routing으로 품질과 비용 사이 균형 잡기.

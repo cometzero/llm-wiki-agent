@@ -1,30 +1,34 @@
 ---
 title: "Quantization"
 type: concept
-tags: [ai-ml, optimization, model-compression]
-sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-23
+tags: [ai-ml, optimization, memory, inference]
+sources: [2026-05-24-day30-ai-ml-learning-review]
+last_updated: 2026-05-24
 ---
 
 ## Definition
-양자화(quantization)는 weight나 activation의 숫자 정밀도를 낮춰 메모리와 계산 비용을 줄이는 방법이다. 예를 들어 weight를 32-bit float로 저장하면 숫자 하나가 32비트를 쓰지만, 8-bit integer로 줄이면 약 1/4 크기로 줄어든다.
 
-## How It Works
-- 32-bit float (FP32) → 16-bit float (FP16) 또는 bf16
-- 32-bit float → 8-bit integer (INT8)
-- 더 낮은 정밀도로 갈수록 더 큰 압축이지만 품질 손실 증가
+[[Quantization]]은 모델의 숫자 표현 bit 수를 줄여 메모리와 비용을 낮추는 기법이다. 예를 들어 FP16(16-bit) 가중치를 INT8(8-bit)으로 변환하여 메모리를 약 절반으로 줄인다.
 
-## Trade-offs
-- **장점**: 메모리 사용량 감소, 계산 속도 향상, 더 많은 요청을 같은 GPU에서 처리 가능
-- **단점**: 너무 낮은 정밀도는 모델 품질(정확도, 생성 품질) 하락 가능
+## Key Concepts
 
-## When to Use
-- 모바일 AI처럼 메모리와 배터리가 제한적인 환경
-- 대규모 API 서비스에서 GPU 비용 절감
-- latency와 throughput 개선이 필요한 경우
+### How it Works
+- 원래 가중치 하나를 16-bit로 저장 → 8-bit로 줄이면 메모리 약 50% 절감
+- 1,000개 숫자 × 16-bit = 16,000bit → 1,000개 × 8-bit = 8,000bit
+
+### Trade-offs
+- 메모리 감소 + 속도 향상 가능
+- 품질 손실(정밀도 감소) 가능성
+- 특히 수학, 코드, 긴 추론 작업에서 정밀도 손실이 민감할 수 있음
+
+### Common Formats
+- FP32 → FP16 → BF16 → INT8 → INT4 등 다양한 precision 수준
 
 ## Connections
-- [[InferenceOptimization]] — 대표적인 최적화 기법
-- [[Serving]] — 양자화된 모델을 서빙
-- [[Latency]] — 양자화로 latency 감소
-- [[Throughput]] — 양자화로 throughput 향상
+- [[Serving]] — 메모리/비용 최적화
+- [[InferenceOptimization]] — 핵심 최적화 기법
+- [[Latency]] — 속도 향상 가능
+
+## Practical Notes
+
+70B 모델을 FP16으로 올리면 GPU 메모리 매우 크게 필요. [[Quantization]]으로 memory burden 경감 가능하지만, 너무 aggressive하면 출력 품질 저하 발생.
