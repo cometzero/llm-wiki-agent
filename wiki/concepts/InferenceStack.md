@@ -1,30 +1,38 @@
 ---
 title: "Inference Stack"
 type: concept
-tags: [ai-ml, system-design, serving]
-sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-23
+tags: [ai-ml, inference, mlops, system-design]
+sources: [2026-05-24-day30-ai-ml-learning-review]
+last_updated: 2026-05-24
 ---
 
 ## Definition
-Inference stack은 학습된 모델을 실제 요청에 응답하도록 운영하는 serving 구조이다. 모델을 API로 배포하고 실제 요청을 처리하며, serving, batching, KV cache, quantization, monitoring이 포함된다.
 
-## Components
-1. **모델 배포**: 학습된 weight를 서버에 올림
-2. **API 서버**: 사용자 요청을 받아 모델에 전달
-3. **Batching**: 여러 요청을 묶어 GPU 효율화
-4. **KV Cache**: attention 계산 재사용
-5. **Quantization**: 메모리/속도 최적화
-6. **Monitoring**: latency, error rate, 품질 관찰
+[[InferenceStack]]은 학습된 모델을 실제 요청에 대해 실행하고 응답을 돌려주는 서빙 구조이다. [[TrainingStack]]과 달리 weight 업데이트 없이 현재 파라미터로 예측만 수행하며, latency, throughput, 비용, 안정성이 핵심이다.
 
-## Key Metrics
-- [[Latency]]: 응답 시간
-- [[Throughput]]: 처리량
-- Error rate: 실패율
-- Cost per request: 요청당 비용
+## Key Components
+1. **Tokenizer**: 텍스트를 token으로 변환
+2. **Model server**: 모델 실행 (GPU/CPU forward pass)
+3. **Batching**: 요청 묶음 처리
+4. **KV cache**: attention 결과 재사용
+5. **Quantization**: 메모리/비용 최적화
+6. **Safety filter**: 출력 후처리
+7. **Monitoring**: latency, throughput, error rate 추적
+
+## Training vs Inference Stack
+|Aspect|Training Stack|Inference Stack|
+|---|---|---|
+|Focus|loss, gradient, optimizer|latency, throughput, stability|
+|Updates|Weight 변경|Weight 불변|
+|Memory|Gradient 저장 필요|상대적으로 적음|
+|Parallelism|데이터/모델 병렬화|요청 batching|
 
 ## Connections
-- [[TrainingStack]] — 학습된 모델의 도착지
-- [[Serving]] — inference stack의 핵심 기능
-- [[InferenceOptimization]] — 최적화 기법 적용
-- [[FeedbackLoop]] — 모니터링 결과가 개선에 반영
+- [[TrainingStack]] — 학습된 모델 공급
+- [[Serving]] — inference stack을 사용한 모델 운영
+- [[Latency]] — 핵심 성능 지표
+- [[Throughput]] — 핵심 성능 지표
+
+## Practical Notes
+
+사용자가 질문을 보내면 tokenizer → model server → 결과를 다시 문장으로 변환 → 응답. 학습처럼 weight를 바꾸지 않으며, 빠르게 계산하고 많은 요청을 처리하는 것이 목표.

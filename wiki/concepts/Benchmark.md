@@ -2,25 +2,36 @@
 title: "Benchmark"
 type: concept
 tags: [ai-ml, evaluation, benchmarking]
-sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-23
+sources: [2026-05-24-day30-ai-ml-learning-review]
+last_updated: 2026-05-24
 ---
 
 ## Definition
-벤치마크(benchmark)는 여러 모델을 같은 조건에서 비교하기 위해 만든 데이터셋과 평가 방식의 묶음이다. "공통 시험 문제 + 채점 기준"으로, 한 학생이 학교마다 다른 시험을 보면 실력을 비교하기 어려운 것처럼, AI 모델도 benchmark로 공정하게 비교할 수 있다.
 
-## Key Points
-- **Benchmark ≠ 전체 능력**: 평가 점수는 특정 문제 묶음에서의 성능만 보여줌
-- **대표성 중요**: benchmark가 실제 사용 상황과 다르면 점수가 높아도 서비스에서는 부적합할 수 있음
-- **내부 Eval Set**: 회사들은 공개 benchmark뿐 아니라 자기 서비스에 맞는 내부 eval set을 따로 만듦
+[[Benchmark]]는 미리 정해진 데이터셋, 문제 형식, 채점 기준을 묶어 놓은 평가 세트이다. 여러 모델을 같은 조건에서 비교하기 위한 "공통 시험장" 역할을 한다.
 
-## Limitations
-1. 실제 사용자의 질문 방식이 benchmark와 다를 수 있음
-2. 속도, 비용, 안전성, 환각 등은 점수로 잘 포착되지 않음
-3. LLM에서는 정답이 하나로 고정되지 않아 평가가 어려움
-4. "벤치마크 점수 1등"보다 "우리 사용자의 실제 문제를 해결하는가"가更重要
+## Key Concepts
+
+### Why Benchmarks Matter
+- 수능처럼 모두가 같은 문제를 풀어야 점수 비교 가능
+- "모델 A가 모델 B보다 어떤 작업에서 더 낫다"를 정량적으로 판단
+
+### Benchmark Limitations
+- [[Benchmark]] 점수가 높으면 실제 업무 능력이 좋은 것은 아님
+- 시험 성적 vs 실제 업무 수행 능력 비유와 동일
+- Data contamination: 평가 문제가 학습 데이터에 섞여 점수 부풀림
+- [[Benchmark]] 데이터가 오래되어 모델이 이미 유사 문제 학습 가능
+
+### Best Practices
+- 공개 [[Benchmark]] + private eval + [[HumanEvaluation]] 조합
+- "답이 정확한가", "근거 문서 따르는가", "hallucination 줄었는가" 동시 평가
+- 사용자 만족도, 안전성, 응답 속도, 비용도 함께考量
 
 ## Connections
-- [[Evaluation]] — benchmark를 사용하는 평가 과정
-- [[HumanEvaluation]] — benchmark 점수 외의 보완 평가
-- [[DataDrift]] — 학습 데이터와 실제 서비스 데이터의 분포 차이
+- [[Evaluation]] — 벤치마크를 포함하는 평가 절차
+- [[HumanEvaluation]] — 벤치마크alone으로는 부족한 품질 판단
+- [[DataPipeline]] — 평가 데이터 준비
+
+## Practical Notes
+
+LLM 시대에는 답이 하나의 정답으로 딱 떨어지지 않는 경우가 많다. "좋은 요약", "친절한 답변", "근거 있는 답변"은 자동 metric만으로 판단 어려워 [[HumanEvaluation]] 필수.

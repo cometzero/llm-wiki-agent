@@ -1,31 +1,36 @@
 ---
 title: "Data Pipeline"
 type: concept
-tags: [ai-ml, system-design, data-engineering]
-sources: [2026-05-23-day30-ai-ml-learning-review, 2026-05-22-day30-ai-ml-learning-review]
-last_updated: 2026-05-23
+tags: [ai-ml, data, mlops, system-design]
+sources: [2026-05-24-day30-ai-ml-learning-review]
+last_updated: 2026-05-24
 ---
 
 ## Definition
-Data pipeline은 데이터를 수집하고, 정제하고, 저장하고, 학습 가능한 형태로 만드는 흐름이다. 텍스트라면 tokenization, 이미지라면 resize와 normalization, tabular data라면 결측치 처리가 포함된다.
 
-## Role in AI System
-1. **수집**: 다양한 소스로부터 데이터 모으기
-2. **정제**: 개인정보 제거, 중복 제거, 형식 통일
-3. **변환**: 모델 입력 형태로 변환 (tokenization, embedding 등)
-4. **저장**: 학습/추론에 적합한 형태로 저장
+[[DataPipeline]]은 원천 데이터가 정리되어 학습이나 검색에 쓸 수 있는 형태로 되는 흐름이다. 데이터 수집, 중복 제거, 개인정보 처리, label 부착, train/validation/test 분리, RAG에서는 문서 chunking과 embedding 저장을 포함한다.
 
-## Why It Matters
-"Garbage in, garbage out" — 좋은 모델도 나쁜 데이터 위에서는 나쁜 결과를 낸다. 실제 AI 프로젝트 실패의 주요 원인 중 하나가 데이터质量问题이다.
+## Key Concepts
 
-## Common Issues
-- 학습 데이터와 실제 서비스 데이터의 분포 차이 ([[DataDrift]])
-- 데이터가 지저분해서 학습이 잘 안 됨
-- 개인정보/민감정보 포함
-- 레이블 품질 문제
+### Pipeline Stages
+1. 데이터 수집 (웹 크롤링, 로그 수집, 문서 모으기 등)
+2. 정제 (중복 제거, 노이즈 필터링)
+3. 개인정보 처리 (anonymization)
+4. Labeling (필요시)
+5. Split (train/validation/test)
+6. (RAG 경우) Chunk → Embedding → Vector DB 저장
+
+### Importance
+- 데이터가 나쁘면 모델이 좋아지기 어렵다
+- [[TrainingStack]]의 품질은 [[DataPipeline]]에 의존
+- [[Evaluation]]의 품질도 적절한 평가 데이터 분리 필요
 
 ## Connections
-- [[TrainingStack]] — pipeline으로 가공된 데이터가 학습에 사용됨
-- [[FeedbackLoop]] — 사용자 feedback이 pipeline에 다시流入
-- [[Evaluation]] — pipeline 데이터로 eval set 구성
-- [[DataDrift]] — 학습/서비스 데이터 불일치 문제
+- [[TrainingStack]] — 학습의 재료 공급
+- [[InferenceStack]] — 추론 시 데이터 공급 (RAG 등)
+- [[FeedbackLoop]] — 실패 사례 데이터 재收集
+- [[Evaluation]] — 평가 데이터 준비
+
+## Practical Notes
+
+AI 고객상담 봇 예시: 회사 FAQ, 환불 정책, 배송 안내 문서를 모으고 → 너무 긴 문서는 chunk로 나누고 → embedding 만들어 vector DB에 저장 = [[DataPipeline]]의 일부.
