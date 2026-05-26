@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 5,
-  "last_completed_date": "2026-05-19",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-04-early-vla와-explainable-driving-2026-05-19.md",
+  "next_week": 6,
+  "last_completed_date": "2026-05-26",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-05-cot-retrieval-instruction-following-2026-05-26.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -29,6 +29,12 @@
       "title": "Early VLA와 explainable driving",
       "date": "2026-05-19",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-04-early-vla와-explainable-driving-2026-05-19.md"
+    },
+    {
+      "week": 5,
+      "title": "CoT, Retrieval, Instruction Following",
+      "date": "2026-05-26",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-05-cot-retrieval-instruction-following-2026-05-26.md"
     }
   ]
 }
