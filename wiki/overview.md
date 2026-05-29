@@ -1,6 +1,6 @@
 ## Linux / Open Source Weekly 기술 동향
 
-LWN.net Weekly Edition for May 14, 2026 번역 소스는 Fedora AI Developer Desktop 논쟁, Forgejo carrot disclosure, LSFMM+BPF 2026의 메모리 관리·BPF 논의, [[DMAbuf]], [[TransparentHugePage]], [[Mshare]], [[DAMON]], [[ReproducibleBuilds]], [[KernelKillswitch]] 등을 통해 Linux/open-source 운영·보안·커널 개발 흐름을 확장한다. May 7, 2026 번역 소스는 Linux 커널 ABI 호환성, LLM 기반 취약점 보고가 coordinated disclosure에 미치는 영향, Fedora/GNOME 패키지 유지보수 정책, Prolly tree 기반 database versioning, s390/Arm virtualization testing, 주간 보안 업데이트와 커널 패치 흐름을 한 번에 정리한다. 이 두 LWN 소스는 AI/ML 중심 corpus와 별도로 Linux/open-source 운영·보안·시스템 소프트웨어 동향을 추적하는 기준점 역할을 한다.
+LWN.net Weekly Edition for May 21, 2026 번역 소스는 openSUSE terms-of-site 연령 제한 논란, [[BufferedAtomicWrites]]와 `RWF_WRITETHROUGH`, [[COWContext]], [[PolicyGroups]], [[HugeTLB]], [[SwapTable]], [[FlashFriendlySwap]], [[MGLRU]], [[CXL]], [[OpenPGP]], [[Post-Quantum-Cryptography]], 보안 업데이트와 커널 패치 흐름을 통해 Linux/open-source 운영·보안·커널 개발 흐름을 최신화한다. May 14, 2026 번역 소스는 Fedora AI Developer Desktop 논쟁, Forgejo carrot disclosure, LSFMM+BPF 2026의 메모리 관리·BPF 논의, [[DMAbuf]], [[TransparentHugePage]], [[Mshare]], [[DAMON]], [[ReproducibleBuilds]], [[KernelKillswitch]] 등을 통해 Linux/open-source 운영·보안·커널 개발 흐름을 확장한다. May 7, 2026 번역 소스는 Linux 커널 ABI 호환성, LLM 기반 취약점 보고가 coordinated disclosure에 미치는 영향, Fedora/GNOME 패키지 유지보수 정책, Prolly tree 기반 database versioning, s390/Arm virtualization testing, 주간 보안 업데이트와 커널 패치 흐름을 한 번에 정리한다. 이 LWN 소스들은 AI/ML 중심 corpus와 별도로 Linux/open-source 운영·보안·시스템 소프트웨어 동향을 추적하는 기준점 역할을 한다.
 
 ## Embodied AI & VLA 연구 동향
 

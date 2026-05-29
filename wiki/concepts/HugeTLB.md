@@ -1,13 +1,28 @@
 ---
 title: "HugeTLB"
 type: concept
-tags: [linux, kernel, memory]
-sources: [lwn-weekly-edition-2026-05-14-1071535]
-last_updated: 2026-05-22
+tags: [kernel, memory, huge-pages]
+sources: [lwn-weekly-edition-2026-05-21-1072730]
+last_updated: 2026-05-29
 ---
 
-## Summary
-HugeTLB는 Linux에서 명시적으로 관리되는 huge page 체계다. Transparent Huge Page가 자동 승격을 지향하는 반면 HugeTLB는 예약과 정책 제어를 통해 대형 페이지의 TLB 효율을 안정적으로 확보하려는 방식이다.
+## Overview
+[[HugeTLB]]는 [[hugetlbfs]] 서브시스템이 제공하는 대형 페이지 메모리로, [[VM]] 실행에 효율적이지만 [[LiveUpdate]] 중 보존이 어렵다.
 
-## Connections
-- [[lwn-weekly-edition-2026-05-14-1071535]] — 이 개념/엔티티가 소개되거나 중요 맥락으로 연결된 LWN 주간 번역 소스.
+## Live Update Preservation
+[[Pratyush Yadav]]의 제안:
+1. 보존할 huge page 동결 (address-space 플래그 또는 inode 플래그)
+2. 크기/위치 메타데이터 기록
+3. 새 커널에서 [[hugetlbfs-backed-memfd]]로 복원
+4. [[cgroup]] 과금 및 페이지 캐시 편입
+
+## Current Limitations
+- [[CMA]] (Contiguous Memory Allocator)와의 상호작용 미해결
+- Live update 활성화 시 CMA+hugetlbfs 병용 비활성화
+
+## Related
+- [[hugetlbfs]]
+- [[LiveUpdate]]
+- [[KexecHandover]]
+- [[CMA]]
+- [[LSFMM+BPF Summit]]
