@@ -1,3 +1,7 @@
+## [2026-05-29] ingest | LWN.net Weekly Edition for May 21, 2026
+
+Added source covering openSUSE ToS age restriction controversy, LSFMM+BPF Summit memory management discussions (MGLRU integration, COW context, BufferedAtomicWrites, SwapTable, CXL, HugeTLB live update), 10th OpenPGP Email Summit PQC transition, and kernel 7.1-rc4 release. Created entity pages for Kairui Song, Lorenzo Stoakes, Shakeel Butt, Dan Williams, Phil Zimmermann, Peter G. Neumann, openSUSE, LSFMM+BPF Summit, OpenPGP Email Summit. Created concept pages for BufferedAtomicWrites, MGLRU, COWContext, CXL, SwapTable, FlashFriendlySwap, Post-Quantum Cryptography, PolicyGroups, HugeTLB, Autocrypt, HKPv2.
+
 ## [2026-05-24] ingest | AI/ML Learning Review — Day 30 (2026-05-24): Evaluation, Serving, and AI System Design
 
 Added source. Key claims: [[Evaluation]]과 [[Benchmark]]의 차이와 한계, [[Serving]]과 [[InferenceOptimization]] (latency/throughput/quantization/KV cache), AI 시스템 네 층 ([[DataPipeline]], [[TrainingStack]], [[InferenceStack]], [[FeedbackLoop]])을 통합 정리. 13개 concept page 생성: [[Evaluation]], [[Benchmark]], [[HumanEvaluation]], [[Serving]], [[InferenceOptimization]], [[Latency]], [[Throughput]], [[Quantization]], [[KVCache]], [[DataPipeline]], [[TrainingStack]], [[InferenceStack]], [[FeedbackLoop]]. Overview 업데이트로 Day 1-30 전체 아키텍처 요약 포함. 기존 Day 30 (2026-05-22, 2026-05-23) 소스와 중복 → 최신 버전으로 교체 권장.
@@ -910,3 +914,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-24] graph | Knowledge graph rebuilt
 
 2261 nodes, 7774 edges (7774 extracted, 0 inferred).
+
+## [2026-05-29] graph | Knowledge graph rebuilt
+
+2364 nodes, 7991 edges (7991 extracted, 0 inferred).

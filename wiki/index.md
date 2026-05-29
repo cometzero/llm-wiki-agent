@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for May 21, 2026](sources/lwn-weekly-edition-2026-05-21-1072730.md) — openSUSE ToS 논란, LSFMM+BPF 메모리 관리 동향, OpenPGP PQC 전환, 커널 7.1-rc4 등 종합
 - [AI/ML Learning Review — Day 30 (2026-05-24): Evaluation, Serving, and AI System Design](sources/2026-05-24-day30-ai-ml-learning-review.md) — 평가/벤치마크/서빙/추론 최적화/AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [AI/ML Learning Review — Day 30 (2026-05-23): Evaluation, Serving, and AI System Design](sources/2026-05-23-day30-ai-ml-learning-review.md) — 평가/벤치마크, 서빙/추론 최적화, AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [LWN.net Weekly Edition for May 14, 2026 — 한국어 기술 번역](sources/lwn-weekly-edition-2026-05-14-1071535.md) — Fedora AI 데스크톱 논쟁, Forgejo carrot disclosure, LSFMM+BPF 메모리 관리 동향, 커널 7.1-rc3, Dirty Frag LPE 취약점 등 종합 번역
@@ -202,6 +203,14 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [Dan Williams](entities/Dan-Williams.md) — entity page
+- [Kairui Song](entities/Kairui-Song.md) — entity page
+- [LSFMM+BPF Summit](entities/LSFMM-BPF-Summit.md) — entity page
+- [Lorenzo Stoakes](entities/Lorenzo-Stoakes.md) — entity page
+- [OpenPGP Email Summit](entities/OpenPGP-Email-Summit.md) — entity page
+- [Peter G. Neumann](entities/Peter-G-Neumann.md) — entity page
+- [Phil Zimmermann](entities/Phil-Zimmermann.md) — entity page
+- [Shakeel Butt](entities/Shakeel-Butt.md) — entity page
 - [Andrew Morton](entities/AndrewMorton.md) — Linux memory-management maintainer transitioning duties after long service.
 - [DAMON](entities/DAMON.md) — Linux Data Access MONitoring framework discussed in the 2026 update.
 - [David Hildenbrand](entities/DavidHildenbrand.md) — Kernel developer taking over memory-management integration tree duties.
@@ -543,6 +552,88 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [ActiveInactive](concepts/ActiveInactive.md) — concept page
+- [Andres Freund](concepts/AndresFreund.md) — concept page
+- [Autocrypt v2](concepts/Autocrypt.md) — concept page
+- [Buffered Atomic Writes](concepts/BufferedAtomicWrites.md) — concept page
+- [BufferedIO](concepts/BufferedIO.md) — concept page
+- [COW Context](concepts/COWContext.md) — concept page
+- [Chris Li](concepts/ChrisLi.md) — concept page
+- [CodeOfConduct](concepts/CodeOfConduct.md) — concept page
+- [ComputeExpressLink](concepts/ComputeExpressLink.md) — concept page
+- [ComputerSecurity](concepts/ComputerSecurity.md) — concept page
+- [ControlGroups](concepts/ControlGroups.md) — concept page
+- [CopyOnWrite](concepts/CopyOnWrite.md) — concept page
+- [Deduplication](concepts/Deduplication.md) — concept page
+- [Delta Chat](concepts/DeltaChat.md) — concept page
+- [DeviceDAX](concepts/DeviceDAX.md) — concept page
+- [Dominik George](concepts/DominikGeorge.md) — concept page
+- [DynamicCapacity](concepts/DynamicCapacity.md) — concept page
+- [Emil Tsalapatis](concepts/EmilTsalapatis.md) — concept page
+- [EraseBlock](concepts/EraseBlock.md) — concept page
+- [ExtendedAttributes](concepts/ExtendedAttributes.md) — concept page
+- [Flash-Friendly Swap](concepts/FlashFriendlySwap.md) — concept page
+- [FullPageWrites](concepts/FullPageWrites.md) — concept page
+- [GracePeriod](concepts/GracePeriod.md) — concept page
+- [GuestMemfd](concepts/GuestMemfd.md) — concept page
+- [HKPv2](concepts/HKPv2.md) — concept page
+- [HONOR](concepts/HONOR.md) — concept page
+- [HQC](concepts/HQC.md) — concept page
+- [Hagrid](concepts/Hagrid.md) — concept page
+- [Hockeypuck](concepts/Hockeypuck.md) — concept page
+- [KexecHandover](concepts/KexecHandover.md) — concept page
+- [KeysOpenpgp.org](concepts/KeysOpenpgp.org.md) — concept page
+- [LRU](concepts/LRU.md) — concept page
+- [LiveUpdate](concepts/LiveUpdate.md) — concept page
+- [MGLRU (Multi-Generational LRU)](concepts/MGLRU.md) — concept page
+- [ML-KEM-768+X25519](concepts/ML-KEM-768+X25519.md) — concept page
+- [MemoryControlGroups](concepts/MemoryControlGroups.md) — concept page
+- [MemoryController](concepts/MemoryController.md) — concept page
+- [OOMKiller](concepts/OOMKiller.md) — concept page
+- [O_DIRECT](concepts/O_DIRECT.md) — concept page
+- [Ojaswin Mujoo](concepts/OjaswinMujoo.md) — concept page
+- [Open Build Service](concepts/OpenBuildService.md) — concept page
+- [PageCache](concepts/PageCache.md) — concept page
+- [Pankaj Raghav](concepts/PankajRaghav.md) — concept page
+- [PerCPUMemory](concepts/PerCPUMemory.md) — concept page
+- [Policy Groups](concepts/PolicyGroups.md) — concept page
+- [Post-Quantum Cryptography (PQC)](concepts/Post-Quantum-Cryptography.md) — concept page
+- [PostgreSQL](concepts/PostgreSQL.md) — concept page
+- [Pratyush Yadav](concepts/PratyushYadav.md) — concept page
+- [Proton](concepts/Proton.md) — concept page
+- [QuantumComputing](concepts/QuantumComputing.md) — concept page
+- [RISKSDigest](concepts/RISKSDigest.md) — concept page
+- [RWF_WRITETHROUGH](concepts/RWF_WRITETHROUGH.md) — concept page
+- [Readahead](concepts/Readahead.md) — concept page
+- [Reclaim](concepts/Reclaim.md) — concept page
+- [ReliableDeletion](concepts/ReliableDeletion.md) — concept page
+- [RemoteNUMA](concepts/RemoteNUMA.md) — concept page
+- [ReverseMapping](concepts/ReverseMapping.md) — concept page
+- [Roman Gushchin](concepts/RomanGushchin.md) — concept page
+- [SHA2-256](concepts/SHA2-256.md) — concept page
+- [SwapCache](concepts/SwapCache.md) — concept page
+- [SwapSubsystem](concepts/SwapSubsystem.md) — concept page
+- [Swap Table](concepts/SwapTable.md) — concept page
+- [SwapTiers](concepts/SwapTiers.md) — concept page
+- [THP](concepts/THP.md) — concept page
+- [Teckids](concepts/Teckids.md) — concept page
+- [Thunderbird](concepts/Thunderbird.md) — concept page
+- [TraditionalLRU](concepts/TraditionalLRU.md) — concept page
+- [VMA](concepts/VMA.md) — concept page
+- [WKD](concepts/WKD.md) — concept page
+- [Wau Holland Foundation](concepts/WauHollandFoundation.md) — concept page
+- [WearLeveling](concepts/WearLeveling.md) — concept page
+- [WriteAmplification](concepts/WriteAmplification.md) — concept page
+- [WriteThrough](concepts/WriteThrough.md) — concept page
+- [Yang Shi](concepts/YangShi.md) — concept page
+- [Youngjun Park](concepts/YoungjunPark.md) — concept page
+- [cgroup](concepts/cgroup.md) — concept page
+- [folio](concepts/folio.md) — concept page
+- [hugetlbfs-backed-memfd](concepts/hugetlbfs-backed-memfd.md) — concept page
+- [mm_struct](concepts/mm_struct.md) — concept page
+- [openpgp.org](concepts/openpgp.org.md) — concept page
+- [vfio-cxl](concepts/vfio-cxl.md) — concept page
+- [zram](concepts/zram.md) — concept page
 - [TaskMetric](concepts/TaskMetric.md) — task-specific scoring rule used to evaluate model outputs for a given AI task.
 - [AI System Design](concepts/AISystemDesign.md) — production AI system view connecting data, training, evaluation, inference, product, and feedback layers.
 - [Data Drift](concepts/DataDrift.md) — distribution shift between training data and real service data that can degrade model performance.
