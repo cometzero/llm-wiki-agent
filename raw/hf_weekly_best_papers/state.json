@@ -4,7 +4,9 @@
     "2605.06747",
     "2605.04647",
     "2605.05945",
-    "2605.15298"
+    "2605.15298",
+    "2606.02277",
+    "2605.30011"
   ],
   "runs": [
     {
@@ -87,6 +89,43 @@
       "commit_hash": "33fade1b2302",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables; ingested into wiki; graph rebuilt with --no-infer fallback after full inference hung; validation passed with no broken wikilinks.",
       "limitations": "No local figure image files were saved; deliverables reference figure/architecture content textually where available."
+    },
+    {
+      "date_kst": "2026-06-03 09:40:17 KST",
+      "week": "2026-W23",
+      "selected_paper_ids": [
+        "2606.02277",
+        "2605.30011"
+      ],
+      "papers": [
+        {
+          "id": "2606.02277",
+          "title": "RoboSemanticBench: Diagnosing Semantic Grounding in Action Prediction for VLA Models",
+          "week": "2026-W23",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/robosemanticbench-2606-02277"
+        },
+        {
+          "id": "2605.30011",
+          "title": "VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies",
+          "week": "2026-W23",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/visualthink-vla-2605-30011"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/robosemanticbench-2606-02277/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/robosemanticbench-2606-02277/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/robosemanticbench-2606-02277/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/robosemanticbench-2606-02277/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/visualthink-vla-2605-30011/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/visualthink-vla-2605-30011/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/visualthink-vla-2605-30011/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/visualthink-vla-2605-30011/learning.md"
+      ],
+      "commit_hash": "1bd9922ddb26265a3d9ed386895f500ca8cc5ee0",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; ingested into wiki; graph rebuilt with --no-infer fallback after semantic inference failed on NVIDIA no-content; validation passed with no broken wikilinks and all pages indexed.",
+      "limitations": "Paper appendices and dense numeric tables were summarized rather than exhaustively translated; graph semantic inference fallback used extracted wikilinks only; validation repair created placeholder pages for ingest-emitted links."
     }
   ]
 }
