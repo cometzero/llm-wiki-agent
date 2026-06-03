@@ -1,18 +1,9 @@
 ---
 title: "Shijie Lian"
 type: entity
-tags: [researcher, VLA, embodied-ai]
-sources: [physbrain-1-0-2605-15298]
-last_updated: 2026-05-20
+tags: [researcher, vla, bayesian]
+sources: [robosemanticbench-2606-02277-references]
+last_updated: 2026-06-03
 ---
 
-## Overview
-Shijie Lian은 [[physbrain-1-0-2605-15298]] 기술 보고서의 제1저자로, human egocentric video 기반 physical commonsense supervision 연구를 주도했다.
-
-## Affiliation
-- (Paper author affiliation not specified in source)
-
-## Related Work
-- [[physbrain-1-0-2605-15298]] — arXiv 2605.15298
-- [[PhysicalCommonsenseSupervision]] — 핵심 기여 영역
-- [[KaiChen]] — 공저자
+[[Shijie Lian]]은 [[LangForce]](arXiv:2601.15197)의 저자로 베이지안 분해를 통한 VLA latent action queries 연구. [[LanguageGrounding]] → [[ActionPrediction]] 변환을 분석했다.

@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [VisualThink-VLA: Visual Intermediate Reasoning — learning](sources/visualthink-vla-2605-30011-learning.md) — VLA action grounding을 위한 visual intermediate reasoning 학습 가이드; textual CoT vs visual evidence, selective routing, teacher-student distillation 핵심 정리
+- [VisualThink-VLA: Visual Intermediate Reasoning References](sources/visualthink-vla-2605-30011-references.md) — VLA [[VisualReasoning]] 관련 10개 레퍼런스: [[DeepThinkVLA]], [[InternVLA-M1]], [[FastECoT]], [[SmolVLA]], [[VisualPlanning]], [[π0.5]] 등 정리
+- [VisualThink-VLA: 효과적이고 저지연인 VLA 정책을 위한 Visual Intermediate Reasoning — analysis](sources/visualthink-vla-2605-30011-ko-analysis.md) — textual CoT 대신 visual evidence states 사용으로 VLA latency 22.8× 감소(8.377s→0.367s), closed-loop robot control에 적합한 visual intermediate reasoning 접근법
+- [VisualThink-VLA: 효과적이고 저지연인 VLA 정책을 위한 Visual Intermediate Reasoning](sources/visualthink-vla-2605-30011.md) — compact visual evidence interface로 textual CoT의 latency(8.377s→0.367s, 22.8× speedup)와 grounding 문제를 동시에 해결하는 VLA reasoning approach
+- [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — learning](sources/robosemanticbench-2606-02277-learning.md) — VLA [[SemanticGrounding]] 진단 benchmark 학습 가이드: 선수 지식/용어/아키텍처/단계별 이해/구현 메모/Study Questions 정리
+- [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — references](sources/robosemanticbench-2606-02277-references.md) — [[SemanticGrounding]] 관련 10개 레퍼런스 정리: [[StarVLA]], [[LangForce]], [[ActionsAsLanguage]] 등 VLA 핵심 연구
+- [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — analysis](sources/robosemanticbench-2606-02277-ko-analysis.md) — RSB benchmark 분석: GSR/TSR/nSG 메트릭으로 [[SemanticGrounding]] 격차 실증, [[OpenVLA]]/[[GR00T]] 계열의 near-random 수준 실패 확인
+- [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기](sources/robosemanticbench-2606-02277-ko.md) — [[VLA]] 모델의 [[SemanticGrounding]] 격차를 진단하는 embodied benchmark; grasp는 성공하지만 semantic target selection은 near-random 수준임을 보여줌
 - [LWN.net Weekly Edition for May 21, 2026](sources/lwn-weekly-edition-2026-05-21-1072730.md) — openSUSE ToS 논란, LSFMM+BPF 메모리 관리 동향, OpenPGP PQC 전환, 커널 7.1-rc4 등 종합
 - [AI/ML Learning Review — Day 30 (2026-05-24): Evaluation, Serving, and AI System Design](sources/2026-05-24-day30-ai-ml-learning-review.md) — 평가/벤치마크/서빙/추론 최적화/AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [AI/ML Learning Review — Day 30 (2026-05-23): Evaluation, Serving, and AI System Design](sources/2026-05-23-day30-ai-ml-learning-review.md) — 평가/벤치마크, 서빙/추론 최적화, AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
@@ -2357,3 +2365,69 @@
 - [XLA](entities/XLA.md) — auto-indexed entitie page
 - [AI Value Capture - The Shift To Model Labs](sources/ai-value-capture-the-shift-to-model-labs.md) — auto-indexed source page
 - [그만 알아야할 항목: 안드레 카파시 30분 인터뷰 완전정리 - AI시대의 필요 인스터스](sources/큰계-알아야할만-안드레-카파시-30분-인터뷰-완전정리-ai시대의-필요-인스팀시스.md.md) — auto-indexed source page
+
+## Validation repair additions (2026-06-03)
+
+- [Action Expert](concepts/ActionExpert.md) — validation repair / auto-indexed page
+- [Attention Recalibration](concepts/AttentionRecalibration.md) — validation repair / auto-indexed page
+- [BenchmarkMetrics](concepts/BenchmarkMetrics.md) — validation repair / auto-indexed page
+- [ClosedLoopControl](concepts/ClosedLoopControl.md) — validation repair / auto-indexed page
+- [Closed-Loop Latency](concepts/ClosedLoopLatency.md) — validation repair / auto-indexed page
+- [CoT-VLA](concepts/CoT-VLA.md) — validation repair / auto-indexed page
+- [Counterfactual Failure](concepts/CounterfactualFailure.md) — validation repair / auto-indexed page
+- [Counterfactual Utility](concepts/CounterfactualUtility.md) — validation repair / auto-indexed page
+- [Embodied Benchmark](concepts/EmbodiedBenchmark.md) — validation repair / auto-indexed page
+- [EmbodiedTask](concepts/EmbodiedTask.md) — validation repair / auto-indexed page
+- [FaithfulnessAudit](concepts/FaithfulnessAudit.md) — validation repair / auto-indexed page
+- [GroundingLatency](concepts/GroundingLatency.md) — validation repair / auto-indexed page
+- [GroundingLoss](concepts/GroundingLoss.md) — validation repair / auto-indexed page
+- [Language Grounding](concepts/LanguageGrounding.md) — validation repair / auto-indexed page
+- [Linguistic Diversity](concepts/LinguisticDiversity.md) — validation repair / auto-indexed page
+- [RealTimeControl](concepts/RealTimeControl.md) — validation repair / auto-indexed page
+- [Reasoning-Augmented VLA](concepts/ReasoningAugmentedVLA.md) — validation repair / auto-indexed page
+- [ReasoningVLA](concepts/ReasoningVLA.md) — validation repair / auto-indexed page
+- [Route Supervision](concepts/RouteSupervision.md) — validation repair / auto-indexed page
+- [RSB-General](concepts/RSB-General.md) — validation repair / auto-indexed page
+- [RSB-HardMath](concepts/RSB-HardMath.md) — validation repair / auto-indexed page
+- [RSB-Math](concepts/RSB-Math.md) — validation repair / auto-indexed page
+- [Selective Routing](concepts/SelectiveRouting.md) — validation repair / auto-indexed page
+- [Semantic Expert](concepts/SemanticExpert.md) — validation repair / auto-indexed page
+- [Shortcut Behavior](concepts/ShortcutBehavior.md) — validation repair / auto-indexed page
+- [Teacher-Student Distillation](concepts/TeacherStudentDistillation.md) — validation repair / auto-indexed page
+- [TwinBrainVLA](concepts/TwinBrainVLA.md) — validation repair / auto-indexed page
+- [UnsafeAction](concepts/UnsafeAction.md) — validation repair / auto-indexed page
+- [Vision Override](concepts/VisionOverride.md) — validation repair / auto-indexed page
+- [VisualEvidence-Kit](concepts/VisualEvidenceKit.md) — validation repair / auto-indexed page
+- [Visual Intermediate Reasoning](concepts/VisualIntermediateReasoning.md) — validation repair / auto-indexed page
+- [VLA Forgetting](concepts/VLAForgetting.md) — validation repair / auto-indexed page
+- [VLMPretraining](concepts/VLMPretraining.md) — validation repair / auto-indexed page
+- [VQA](concepts/VQA.md) — validation repair / auto-indexed page
+- [Agnes Luhtaru](entities/AgnesLuhtaru.md) — validation repair / auto-indexed page
+- [Asher Hancock](entities/AsherHancock.md) — validation repair / auto-indexed page
+- [Bin Yu](entities/BinYu.md) — validation repair / auto-indexed page
+- [Bin Zhu](entities/BinZhu.md) — validation repair / auto-indexed page
+- [Chuheng Zhang](entities/ChuhengZhang.md) — validation repair / auto-indexed page
+- [Dong Jing](entities/DongJing.md) — validation repair / auto-indexed page
+- [Evidence Bank](entities/EvidenceBank.md) — validation repair / auto-indexed page
+- [FullSoft Teacher Distillation](entities/FullSoftTeacherDistillation.md) — validation repair / auto-indexed page
+- [Jianke Zhang](entities/JiankeZhang.md) — validation repair / auto-indexed page
+- [Jonathan Salfity](entities/JonathanSalfity.md) — validation repair / auto-indexed page
+- [Lihan Zha](entities/LihanZha.md) — validation repair / auto-indexed page
+- [Ning Zhang](entities/NingZhang.md) — validation repair / auto-indexed page
+- [Rushuai Yang](entities/RushuaiYang.md) — validation repair / auto-indexed page
+- [S. Community](entities/SCommunity.md) — validation repair / auto-indexed page
+- [Selma Wanna](entities/SelmaWanna.md) — validation repair / auto-indexed page
+- [Shijie Zhou](entities/ShijieZhou.md) — validation repair / auto-indexed page
+- [Suhwan Choi](entities/SuhwanChoi.md) — validation repair / auto-indexed page
+- [VisualEvidence-Agent](entities/VisualEvidenceAgent.md) — validation repair / auto-indexed page
+- [Visual State Composer](entities/VisualStateComposer.md) — validation repair / auto-indexed page
+- [VisualThink-VLA](entities/VisualThinkVLA.md) — validation repair / auto-indexed page
+- [Xiaopeng Lin](entities/XiaopengLin.md) — validation repair / auto-indexed page
+- [Xiaoyu Chen](entities/XiaoyuChen.md) — validation repair / auto-indexed page
+- [Xindi Wu](entities/XindiWu.md) — validation repair / auto-indexed page
+- [Yuanfei Luo](entities/YuanfeiLuo.md) — validation repair / auto-indexed page
+- [Yubeen Park](entities/YubeenPark.md) — validation repair / auto-indexed page
+- [Yucheng Hu](entities/YuchengHu.md) — validation repair / auto-indexed page
+- [Yuchun Feng](entities/YuchunFeng.md) — validation repair / auto-indexed page
+- [Yu Fang](entities/YuFang.md) — validation repair / auto-indexed page
+- [YUN-OO Lee](entities/YUNOOLEe.md) — validation repair / auto-indexed page

@@ -1,3 +1,43 @@
+## [2026-06-03] ingest | VisualThink-VLA: Visual Intermediate Reasoning — learning
+
+Added learning source for VisualThink-VLA paper. Key claims: Visual reasoning > textual CoT for VLA latency (22.8× speedup), semantic decision과 motor execution 분리 중요, VQA performance ≠ action grounding capability. Created concept pages for [[ActionGrounding]], [[VisualReasoning]], [[TeacherStudentDistillation]].
+
+## [2026-06-03] ingest | VisualThink-VLA: Visual Intermediate Reasoning References
+
+Added source. Key claims: VisualThink-VLA(2605.30011) 관련 10개 레퍼런스 정리 - [[DeepThinkVLA]]/[[InternVLA-M1]]은 [[LanguageGrounding]]→[[Action]] 과제, [[FastECoT]]/[[VisualPlanning]]은 textual vs visual reasoning 비교 기준, [[π0.5]]/[[SmolVLA]]는 대표 [[VLAPolicy]] baseline. 신규 entity: [[PhysicalIntelligence]]; 신규 concept: [[ReasoningAugmentedVLA]], [[π0.5]].
+
+## [2026-06-03] ingest | VisualThink-VLA: 효과적이고 저지연인 VLA 정책을 위한 Visual Intermediate Reasoning — analysis
+
+Added source. Key claims: textual CoT 대신 visual evidence states 사용으로 22.8× latency reduction (8.377s→0.367s), candidate evidence bank + selective routing + visual state composer 구조, route supervision + counterfactual utility training. 연결: [[SemanticGrounding]] 해결, [[ClosedLoopLatency]] 개선, [[RoboSemanticBench]] 평가 맥락과 일치.
+
+## [2026-06-03] ingest | VisualThink-VLA: 효과적이고 저지연인 VLA 정책을 위한 Visual Intermediate Reasoning
+
+Added source. Key claims: Visual intermediate reasoning으로 textual CoT의 latency(8.377s→0.367s, 22.8× speedup)와 weak visual grounding 문제를 동시에 해결. 6-channel evidence bank → selective router → visual state composer → action decoder 파이프라인. VisualEvidence-Kit (754.7k supervision/audit set) 제공.
+
+New pages: source, 3 concept pages (VisualIntermediateReasoning, ECoT, VisualEvidenceKit), 1 entity page (VisualEvidenceAgent)
+
+## [2026-06-03] ingest | RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — learning
+
+Added source. Key claims: (1) VLA의 VQA 성능 ≠ action grounding 능력, (2) GSR/TSR/nSG metric으로 motor vs semantic 병목 분리 가능, (3) high GSR + low TSR = semantic action grounding 실패, (4) shortcut behavior는 색/위치 편향으로 인한 spurious success. Created concept pages: [[SemanticGrounding]], [[ShortcutBehavior]], [[ActionPrediction]].
+
+## [2026-06-03] ingest | RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — references
+
+Added source. Key claims: RoboSemanticBench(arXiv:2606.02277)의 관련 연구 레퍼런스 10편 정리. 핵심 연결은 [[SemanticGrounding]]이 [[ActionPrediction]]으로 전달되지 않는 문제. [[LangForce]], [[StarVLA]], [[ActionsAsLanguage]], [[AttentionRecalibration]] 등 VLA [[SemanticGrounding]] 핵심 연구 포함. 25개 엔티티(연구자) 페이지, 11개 컨셉(VLAForgetting, VisionOverride, LinguisticDiversity 등) 페이지 생성.
+
+## [2026-06-03] ingest | RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — analysis
+
+Added analysis source. Key claims: RSB benchmark로 VLA의 [[SemanticGrounding]] 격차를 GSR/TSR/nSG 메트릭으로 분리 측정, [[OpenVLA]]/[[GR00T]] 계열의 near-random 수준 semantic target selection 실패 실증, 자율주행 VLA에도 동일한 위험 적용. Created entity pages for GSR, TSR, nSG, RSB-Math, RSB-HardMath, RSB-General concepts.
+
+## [2026-06-03] ingest | RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기
+
+Added source. Key claims: [[VLA]] 모델의 [[SemanticGrounding]] 격차를 진단하는 [[RoboSemanticBench]] benchmark 도입 — grasp는 성공하지만 semantic target selection은 near-random 수준임을 실험적으로 보여줌. Semantic expert와 action expert 간 integration 실패가 motor control 문제가 아님을 입증.
+
+Created entity pages: [[RoboSemanticBench]]
+
+Created concept pages: [[SemanticGrounding]], [[SemanticExpert]], [[ActionExpert]], [[EmbodiedBenchmark]]
+
+Updated sources/index.md
+
 ## [2026-05-29] ingest | LWN.net Weekly Edition for May 21, 2026
 
 Added source covering openSUSE ToS age restriction controversy, LSFMM+BPF Summit memory management discussions (MGLRU integration, COW context, BufferedAtomicWrites, SwapTable, CXL, HugeTLB live update), 10th OpenPGP Email Summit PQC transition, and kernel 7.1-rc4 release. Created entity pages for Kairui Song, Lorenzo Stoakes, Shakeel Butt, Dan Williams, Phil Zimmermann, Peter G. Neumann, openSUSE, LSFMM+BPF Summit, OpenPGP Email Summit. Created concept pages for BufferedAtomicWrites, MGLRU, COWContext, CXL, SwapTable, FlashFriendlySwap, Post-Quantum Cryptography, PolicyGroups, HugeTLB, Autocrypt, HKPv2.
@@ -918,3 +958,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-05-29] graph | Knowledge graph rebuilt
 
 2364 nodes, 7991 edges (7991 extracted, 0 inferred).
+
+## [2026-06-03] graph | Knowledge graph rebuilt
+
+2454 nodes, 8240 edges (8240 extracted, 0 inferred).
