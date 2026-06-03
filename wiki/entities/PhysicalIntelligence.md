@@ -1,19 +1,21 @@
 ---
-title: "PhysicalIntelligence"
+title: "Physical Intelligence"
 type: entity
-tags: [robotics, ai-company, vla]
-sources: [physbrain-1-0-2605-15298-references]
-last_updated: 2026-05-20
+tags: [company, robotics, vla]
+sources: [visualthink-vla-2605-30011-references, reflectdrive-2-2605-04647-references, physbrain-1-0-2605-15298-references]
+last_updated: 2026-06-03
 ---
 
-## Overview
-로보틱스 분야에서 활동하는 AI 연구 스타트업. [[Pi0]](π0) VLA 정책 모델을 개발했으며, [[physbrain-1-0-2605-15298]]의 주요 성능 비교 대상으로서 generalist robot action generation 분야의 강력한 baseline을 제공한다.
+## Summary
+[[Physical Intelligence]]는 로봇 [[VLA]] 정책 개발을 이끄는 대표적인 AI 로보틱스 스타트업이다. π0.5 등 [[VLA]] 분야의 핵심 연구를 발표했으며, 본 wiki에서 다수의 관련 논문과 연결된다.
 
-## Key Characteristics
-- 로보틱스 AI 전문 회사
-- [[Pi0]] VLA 모델 개발
-- Generalist robot policy 연구 선두
+## Key People
+- Kevin Black
+- Noah Brown
+
+## Key Papers
+- [[π0.5]] — VLA with open-world generalization (966 citations)
 
 ## Connections
-- [[Pi0]] — 개발한 flagship VLA 모델
-- [[physbrain-1-0-2605-15298]] — 주요 비교 baseline 제공
+- [[VLAPolicy]] — primary research focus
+- [[π0.5]] — flagship model
