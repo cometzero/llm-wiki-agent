@@ -12,3 +12,8 @@ VisualThink-VLA는 VLA(Vision-Language-Action) 정책에서 textual chain-of-tho
 - [[VLA]]: Vision-Language-Action policy framework
 - [[SemanticGrounding]]: VLA에서 textual vs visual reasoning의 grounding 차이
 - [[ECoT]]: Textual chain-of-thought baseline
+
+## Linux Kernel, BPF, and Open-Source AI Governance
+
+The LWN Weekly corpus now tracks a sequence of 2026 Linux kernel and open-source infrastructure discussions. The May 28 edition connects [[LinusTorvalds]]'s AI/security-report workflow concerns with LSFMM+BPF coverage of [[BPF]], [[GCC]], [[PageCache]], [[MemoryController]], [[MemoryTiering]], and [[TransparentHugePage]], plus [[OpenSource]] AI governance concerns around openwashing.
+
