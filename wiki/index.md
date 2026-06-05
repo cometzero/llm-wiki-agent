@@ -12,6 +12,7 @@
 - [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — references](sources/robosemanticbench-2606-02277-references.md) — [[SemanticGrounding]] 관련 10개 레퍼런스 정리: [[StarVLA]], [[LangForce]], [[ActionsAsLanguage]] 등 VLA 핵심 연구
 - [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — analysis](sources/robosemanticbench-2606-02277-ko-analysis.md) — RSB benchmark 분석: GSR/TSR/nSG 메트릭으로 [[SemanticGrounding]] 격차 실증, [[OpenVLA]]/[[GR00T]] 계열의 near-random 수준 실패 확인
 - [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기](sources/robosemanticbench-2606-02277-ko.md) — [[VLA]] 모델의 [[SemanticGrounding]] 격차를 진단하는 embodied benchmark; grasp는 성공하지만 semantic target selection은 near-random 수준임을 보여줌
+- [LWN.net Weekly Edition for May 28, 2026](sources/lwn-weekly-edition-2026-05-28-1073782.md) — AI와 커널 개발, GCC/BPF 지원, page-cache·page-fault·memcg·THP 메모리 관리, LLM 패치 리뷰, openwashing/MOT, 보안 업데이트를 종합 번역
 - [LWN.net Weekly Edition for May 21, 2026](sources/lwn-weekly-edition-2026-05-21-1072730.md) — openSUSE ToS 논란, LSFMM+BPF 메모리 관리 동향, OpenPGP PQC 전환, 커널 7.1-rc4 등 종합
 - [AI/ML Learning Review — Day 30 (2026-05-24): Evaluation, Serving, and AI System Design](sources/2026-05-24-day30-ai-ml-learning-review.md) — 평가/벤치마크/서빙/추론 최적화/AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [AI/ML Learning Review — Day 30 (2026-05-23): Evaluation, Serving, and AI System Design](sources/2026-05-23-day30-ai-ml-learning-review.md) — 평가/벤치마크, 서빙/추론 최적화, AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
@@ -379,6 +380,7 @@
 - [Leif Lindholm](entities/LeifLindholm.md) — entity page
 - [LilysAI](entities/LilysAI.md) — entity page
 - [Linus Torvalds](entities/LinusTorvalds.md) — entity page
+- [Dirk Hohndel](entities/DirkHohndel.md) — Linux/open-source executive and recurring conversation partner for Linus Torvalds
 - [The Linux Foundation](entities/LinuxFoundation.md) — entity page
 - [Linux Kernel](entities/LinuxKernel.md) — entity page
 - [LNF](entities/LNF.md) — entity page

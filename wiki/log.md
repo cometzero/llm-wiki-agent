@@ -1,3 +1,7 @@
+## [2026-06-05] ingest | LWN.net Weekly Edition for May 28, 2026
+
+Added Korean LWN Weekly translation source. Key claims: AI-generated bug reports are reshaping Linux kernel security workflow; GCC-BPF is closing feature gaps with LLVM; LSFMM+BPF discussions connect [[BPF]], [[PageCache]], [[MemoryController]], [[MemoryTiering]], and [[TransparentHugePage]]; MOT frames openwashing as a measurable [[OpenSource]] AI problem.
+
 ## [2026-06-03] ingest | VisualThink-VLA: Visual Intermediate Reasoning — learning
 
 Added learning source for VisualThink-VLA paper. Key claims: Visual reasoning > textual CoT for VLA latency (22.8× speedup), semantic decision과 motor execution 분리 중요, VQA performance ≠ action grounding capability. Created concept pages for [[ActionGrounding]], [[VisualReasoning]], [[TeacherStudentDistillation]].
@@ -962,3 +966,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-03] graph | Knowledge graph rebuilt
 
 2454 nodes, 8240 edges (8240 extracted, 0 inferred).
+
+## [2026-06-05] graph | Knowledge graph rebuilt
+
+2456 nodes, 8261 edges (8261 extracted, 0 inferred).
