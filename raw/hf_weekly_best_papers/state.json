@@ -162,7 +162,7 @@
         "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/references.md",
         "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/learning.md"
       ],
-      "commit_hash": "pending",
+      "commit_hash": "426df7f83e89",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with figures where feasible; ingested into wiki; validation passed; graph rebuilt with --no-infer fallback after semantic inference failed on NVIDIA no-content.",
       "limitations": "TBD-VLA figures were downloaded from arXiv HTML; OmniDreams arXiv HTML was unavailable, so PDF text and PyMuPDF image extraction were used. Dense appendices/tables were summarized rather than exhaustively translated."
     }
