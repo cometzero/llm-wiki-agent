@@ -6,7 +6,9 @@
     "2605.05945",
     "2605.15298",
     "2606.02277",
-    "2605.30011"
+    "2605.30011",
+    "2606.07895",
+    "2606.03159"
   ],
   "runs": [
     {
@@ -126,6 +128,43 @@
       "commit_hash": "1bd9922ddb26265a3d9ed386895f500ca8cc5ee0",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; ingested into wiki; graph rebuilt with --no-infer fallback after semantic inference failed on NVIDIA no-content; validation passed with no broken wikilinks and all pages indexed.",
       "limitations": "Paper appendices and dense numeric tables were summarized rather than exhaustively translated; graph semantic inference fallback used extracted wikilinks only; validation repair created placeholder pages for ingest-emitted links."
+    },
+    {
+      "date_kst": "2026-06-10 09:40:00 KST",
+      "week": "2026-W24/2026-W23",
+      "selected_paper_ids": [
+        "2606.07895",
+        "2606.03159"
+      ],
+      "papers": [
+        {
+          "id": "2606.07895",
+          "title": "TBD-VLA: Temporal Block Diffusion Vision Language Action Model",
+          "week": "2026-W24",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W24/tbd-vla-2606-07895"
+        },
+        {
+          "id": "2606.03159",
+          "title": "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation",
+          "week": "2026-W23",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W24/tbd-vla-2606-07895/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W24/tbd-vla-2606-07895/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W24/tbd-vla-2606-07895/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W24/tbd-vla-2606-07895/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W23/omnidreams-2606-03159/learning.md"
+      ],
+      "commit_hash": "pending",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables with figures where feasible; ingested into wiki; validation passed; graph rebuilt with --no-infer fallback after semantic inference failed on NVIDIA no-content.",
+      "limitations": "TBD-VLA figures were downloaded from arXiv HTML; OmniDreams arXiv HTML was unavailable, so PDF text and PyMuPDF image extraction were used. Dense appendices/tables were summarized rather than exhaustively translated."
     }
   ]
 }

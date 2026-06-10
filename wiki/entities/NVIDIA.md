@@ -1,18 +1,27 @@
 ---
 title: "NVIDIA"
 type: entity
-tags: [Hardware, GPU, AI, Quantization]
-sources: [neural-network-quantization-number-formats-from-first-principles]
-last_updated: 2026-05-03
+tags: [company, GPU, AI]
+sources: [nvidia-omnidreams-2606-03159-analysis]
+last_updated: 2026-06-10
 ---
 
-NVIDIA is referenced here as the dominant vendor driving practical [[NeuralNetworkQuantization]] and low-precision AI hardware adoption. In this source, NVIDIA appears through its use of [[FP8]], [[FP4]], [[FP6]], [[TensorCores]], and related hardware design choices that shape the efficiency/accuracy tradeoff for [[LLM]] inference and training.
+# NVIDIA
+
+GPU 및 AI 컴퓨팅 회사. OmniDreams 개발사.
+
+## Overview
+NVIDIA는 GPU 및 AI 컴퓨팅 분야의 선도적 기업으로, Cosmos 비디오 생성 모델 제품군과 OmniDreams generative world model을 개발함. GB300 GPU를 사용하여 real-time multi-view generation을 실현.
+
+## Key Products in This Context
+- [[OmniDreams]]: Autonomous driving용 generative world model
+- [[CosmosPredict]]: 비디오 생성 모델 백본
+- GB300: Real-time inference용 GPU
+- [[AlpaSim]]: Autonomous driving 시뮬레이터
+- [[Alpamayo]]: Autonomous driving policy
 
 ## Connections
-- [[NeuralNetworkQuantization]] — major hardware driver of reduced-precision deployment.
-- [[FP8]] — low-precision format emphasized in Hopper-era training.
-- [[FP4]] — low-precision inference format emphasized in Blackwell-era design.
-- [[FP6]] — additional low-precision format used in Blackwell-era design.
-- [[TensorCores]] — the compute substrate for low-precision matrix math.
-- [[Hopper]] — generation that popularized FP8 training recipes.
-- [[Blackwell]] — generation that extends low-precision and tensor-memory design.
+- [[OmniDreams]] — 개발사
+- [[CosmosPredict]] — 제품군
+- [[Alpamayo]] — 개발 모델
+- [[GB300]] — GPU 하드웨어

@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — learning](sources/nvidia-omnidreams-2606-03159-learning.md) — WAM vs VLA, Diffusion Forcing, Self Forcing 핵심 정리
+- [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — references](sources/nvidia-omnidreams-2606-03159-references.md) — Cosmos, Alpamayo, Diffusion Forcing, World Action Model 등 OmniDreams 관련 레퍼런스 정리
+- [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — analysis](sources/nvidia-omnidreams-2606-03159-analysis.md) — WAM backbone과 closed-loop simulation 중심의 generative world model 분석; VLA vs world dynamics 병목 논의
+- [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model](sources/nvidia-omnidreams-2606-03159.md) — Cosmos 기반 generative world model로 720p 68~105 FPS 실시간 sensor 생성 및 [[WorldActionModel]] backbone 제안
+- [TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — learning](sources/tbd-vla-2606-07895-learning.md) — VLA [[BlockDiffusion]] 학습 가이드: [[TemporalAR]], [[RTC]], [[ActionTokenization]] 핵심 정리
+- [TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — references](sources/tbd-vla-2606-07895-references.md) — TBD-VLA 관련 10개 레퍼런스: Fast-dVLA, Discrete Diffusion VLA, Qwen3-VL, OpenVLA, π0.5 등 정리
+- [TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — analysis](sources/tbd-vla-2606-07895-analysis.md) — block discrete diffusion으로 VLA의 temporal coherence와 low-latency를 동시에 달성하는 framework 분석
+- [TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델](sources/tbd-vla-2606-07895.md) — block discrete diffusion으로 VLA의 temporal coherence와 low-latency를 동시에 달성하는 framework; RTC 지원
 - [VisualThink-VLA: Visual Intermediate Reasoning — learning](sources/visualthink-vla-2605-30011-learning.md) — VLA action grounding을 위한 visual intermediate reasoning 학습 가이드; textual CoT vs visual evidence, selective routing, teacher-student distillation 핵심 정리
 - [VisualThink-VLA: Visual Intermediate Reasoning References](sources/visualthink-vla-2605-30011-references.md) — VLA [[VisualReasoning]] 관련 10개 레퍼런스: [[DeepThinkVLA]], [[InternVLA-M1]], [[FastECoT]], [[SmolVLA]], [[VisualPlanning]], [[π0.5]] 등 정리
 - [VisualThink-VLA: 효과적이고 저지연인 VLA 정책을 위한 Visual Intermediate Reasoning — analysis](sources/visualthink-vla-2605-30011-ko-analysis.md) — textual CoT 대신 visual evidence states 사용으로 VLA latency 22.8× 감소(8.377s→0.367s), closed-loop robot control에 적합한 visual intermediate reasoning 접근법
@@ -212,6 +220,32 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [AlpaSim](entities/AlpaSim.md) — generated support page
+- [Alpamayo 1.5](entities/Alpamayo1.5.md) — generated support page
+- [Alpamayo 1](entities/Alpamayo1.md) — generated support page
+- [CARLA](entities/CARLA.md) — generated support page
+- [ControlNet](entities/ControlNet.md) — generated support page
+- [Cosmos-Predict 2.5](entities/Cosmos-Predict2.5.md) — generated support page
+- [Cosmos Predict](entities/CosmosPredict.md) — generated support page
+- [Discrete Diffusion VLA](entities/DiscreteDiffusionVLA.md) — generated support page
+- [DriveDreamer](entities/DriveDreamer.md) — generated support page
+- [Drive-WM](entities/DriveWM.md) — generated support page
+- [GB300](entities/GB300.md) — generated support page
+- [LIBERO-Plus](entities/LIBERO-Plus.md) — generated support page
+- [LLaDA-VLA](entities/LLaDA-VLA.md) — generated support page
+- [MolmoAct](entities/MolmoAct.md) — generated support page
+- [NuRec](entities/NuRec.md) — generated support page
+- [OpenVLA-OFT](entities/OpenVLA-OFT.md) — generated support page
+- [PAI AV NuRec](entities/PAIAVNuRec.md) — generated support page
+- [Qwen2.5-VL-7B](entities/Qwen2.5-VL-7B.md) — generated support page
+- [RDS-HQ-1M](entities/RDS-HQ-1M.md) — generated support page
+- [SIL-Wheel](entities/SIL-Wheel.md) — generated support page
+- [Sanja Fidler](entities/SanjaFidler.md) — generated support page
+- [Sung-Wook Lee](entities/SungWookLee.md) — generated support page
+- [VLA-0](entities/VLA-0.md) — generated support page
+- [Waymo](entities/Waymo.md) — generated support page
+- [Xuhui Kang](entities/XuhuiKang.md) — generated support page
+- [Yen-Ling Kuo](entities/YenLingKuo.md) — generated support page
 - [Dan Williams](entities/Dan-Williams.md) — entity page
 - [Kairui Song](entities/Kairui-Song.md) — entity page
 - [LSFMM+BPF Summit](entities/LSFMM-BPF-Summit.md) — entity page
@@ -562,6 +596,47 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [Action-Conditioned Generation](concepts/ActionConditioning.md) — generated support page
+- [Action Decoding](concepts/ActionDecoding.md) — generated support page
+- [Attention Factorization](concepts/AttentionFactorization.md) — generated support page
+- [Autonomous Navigation](concepts/AutonomousNavigation.md) — generated support page
+- [Autoregressive Generation (AR Generation)](concepts/AutoregressiveGeneration.md) — generated support page
+- [Block Diffusion Decoding](concepts/BlockDiffusionDecoding.md) — generated support page
+- [Block Discrete Diffusion](concepts/BlockDiscreteDiffusion.md) — generated support page
+- [Continuous Action](concepts/ContinuousAction.md) — generated support page
+- [Distribution Matching Distillation (DMD)](concepts/DMD.md) — generated support page
+- [DiffusionForcing](concepts/DiffusionForcing.md) — generated support page
+- [Diffusion Model](concepts/DiffusionModel.md) — generated support page
+- [Discrete VLA Latency](concepts/DiscreteVLALatency.md) — generated support page
+- [Distribution Matching Distillation](concepts/DistributionMatchingDistillation.md) — generated support page
+- [Exposure Bias](concepts/ExposureBias.md) — generated support page
+- [Flex-Attention](concepts/FlexAttention.md) — generated support page
+- [Generative World Model](concepts/GenerativeWorldModel.md) — generated support page
+- [Language Diffusion Model](concepts/LanguageDiffusionModel.md) — generated support page
+- [Multi-View Consistency](concepts/MultiViewConsistency.md) — generated support page
+- [Multi-View Generation](concepts/MultiViewGeneration.md) — generated support page
+- [Novel Event Generation](concepts/NovelEventGeneration.md) — generated support page
+- [Policy Reactivity](concepts/PolicyReactivity.md) — generated support page
+- [RTC (Real-Time Chunking)](concepts/RTCRealTimeChunking.md) — generated support page
+- [Real-Time Chunking (RTC)](concepts/RealTimeChunking.md) — generated support page
+- [Reconstruction-Based Simulator](concepts/ReconstructionBasedSimulator.md) — generated support page
+- [Reconstruction Simulator](concepts/ReconstructionSimulator.md) — generated support page
+- [Robotic Control](concepts/RoboticControl.md) — generated support page
+- [Robotic Manipulation](concepts/RoboticManipulation.md) — generated support page
+- [Rollout Drift](concepts/RolloutDrift.md) — generated support page
+- [SelfForcing](concepts/SelfForcing.md) — generated support page
+- [TBD-VLA](concepts/TBDVLA.md) — generated support page
+- [TBD-VLA Analysis](concepts/TBDVLAAnalysis.md) — generated support page
+- [Temporal Action Grounding](concepts/TemporalActionGrounding.md) — generated support page
+- [Temporal Autoregression](concepts/TemporalAutoregression.md) — generated support page
+- [Temporal Block](concepts/TemporalBlock.md) — generated support page
+- [Temporal Block Diffusion](concepts/TemporalBlockDiffusion.md) — generated support page
+- [Temporal Grounding](concepts/TemporalGrounding.md) — generated support page
+- [Temporal In-painting](concepts/TemporalInpainting.md) — generated support page
+- [Temporal Modeling](concepts/TemporalModeling.md) — generated support page
+- [Temporal Reasoning](concepts/TemporalReasoning.md) — generated support page
+- [World Model](concepts/WorldModel.md) — generated support page
+- [WorldScenarioMap](concepts/WorldScenarioMap.md) — generated support page
 - [ActiveInactive](concepts/ActiveInactive.md) — concept page
 - [Andres Freund](concepts/AndresFreund.md) — concept page
 - [Autocrypt v2](concepts/Autocrypt.md) — concept page

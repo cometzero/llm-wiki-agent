@@ -1,0 +1,10 @@
+---
+title: "VisualThink-VLA"
+type: entity
+tags: [vla, visual-reasoning, chain-of-thought, latency-optimization, embodied-ai, robotics, visual-grounding, selective-routing, action-prediction]
+sources: ['overview.md', 'visualthink-vla-2605-30011-references.md', 'visualthink-vla-2605-30011-ko-analysis.md', 'visualthink-vla-2605-30011.md', 'nvidia-omnidreams-2606-03159-analysis.md', 'tbd-vla-2606-07895-analysis.md', 'visualthink-vla-2605-30011-learning.md']
+---
+
+# VisualThink-VLA
+
+VisualThink‑VLA is a Vision‑Language‑Action (VLA) reasoning framework that replaces the conventional textual chain‑of‑thought (CoT) with a compact visual evidence interface to bootstrap action prediction. By injecting **visual evidence states** directly into the policy network instead of generating verbose textual rationales, it eliminates the high decoding overhead that makes textual CoT too slow for closed‑loop robot control (reducing latency from ≈8.4 s to ≈0.37 s – a 22.8× speedup). The method rests on three key components: a **candidate evidence bank** that stores short, spatially‑precise visual cues, a **task‑adaptive selective routing** mechanism that dynamically chooses low‑latency or high‑capacity reasoning paths, and a **visual state composer** that aggregates selected evidence into a compact representation fed to the action head. This design preserves fine‑grained spatial information that textual CoT often discards, thereby improving visual grounding and enabling real‑time manipulation tasks. VisualThink‑VLA also cleanly separates semantic decision making from motor execution, mitigating the shortcut problem where a VQA‑style semantic answer does not translate into correct actions. It is evaluated on benchmarks such as RoboSemanticBench and is contrasted with textual CoT baselines (ECoT) and related VLA approaches like DeepThinkVLA and InternVLA‑M1, establishing its role as a foundational technique for low‑latency, visually‑grounded VLA policies in embodied AI.
