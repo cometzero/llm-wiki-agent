@@ -1,3 +1,44 @@
+## [2026-06-10] ingest | NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — learning
+
+Added source. Key claims: WAM architecture가 VLA보다 driving에 적합, Diffusion Forcing + Self Forcing으로 closed-loop AR generation 구현, world-scenario map이 simulator state와 photorealistic generation을 연결. Created entity pages for Cosmos, AlpaSim, Alpamayo. Created concept pages for WorldActionModel, DiffusionForcing, SelfForcing, WorldScenarioMap.
+
+## [2026-06-10] ingest | NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — references
+
+Added source. Key claims: Cosmos/Cosmos-Predict2.5 백본 의존성, Alpamayo baseline 비교 기준, Diffusion Forcing/Self Forcing training 안정화 기법, WAM vs VLA architecture 논쟁, closed-loop evaluation 패러다임의 중요성. Created 11 entity pages (Cosmos, Cosmos-Predict2.5, Alpamayo1, Alpamayo1.5, AlpaSim, NuRec, DriveDreamer, Drive-WM, Waymo, CARLA, nuPlan) and 5 concept pages (WorldActionModel, DiffusionForcing, SelfForcing, DistributionMatchingDistillation, ClosedLoopSimulation).
+
+## [2026-06-10] ingest | NVIDIA OmniDreams analysis
+
+Added source. Key claims: OmniDreams는 Cosmos-Predict 2.5 기반 realtime action-conditioned generative world model로 68-105 FPS multi-view generation 달성. WAM(World Action Model)이 VLA보다 parameter-efficient할 수 있다는 관점 제시. Closed-loop reactivity가 핵심 지표이며, reconstruction simulator의 novel event generation 한계를 극복. Created 6 entity pages (CosmosPredict, AlpaSim, Alpamayo, NVIDIA, GB300) and 11 concept pages (WorldActionModel, ClosedLoopSimulation, PolicyReactivity, ReconstructionSimulator, WorldScenarioMap, DiffusionForcing, ExposureBias, AutoregressiveGeneration, RolloutDrift, SelfForcing, MultiViewConsistency). 기존 VLA 중심 연구와의 관점差异 noted.
+
+## [2026-06-10] ingest | NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model
+
+Added source. Key claims: (1) Cosmos 기반 generative world model로 720p 68~105 FPS 실시간 생성, (2) [[WorldActionModel]] backbone으로 2B param이 10B VLA보다 나은 collision metric 달성, (3) KV cache + factorized attention으로 efficient multi-view generation. Created 10 entity pages (NVIDIA, Cosmos, Alpamayo, AlpaSim, GB300, PAI-AV-NuRec, RDS, RDS-HQ-1M, Sanja Fidler, Qwen2.5-VL-7B, SIL-Wheel) and 9 concept pages (WorldModel, WorldActionModel, ClosedLoopSimulation, DiffusionForcing, SelfForcing, DMD, MultiViewGeneration, ActionConditioning, FlexAttention).
+
+## [2026-06-10] ingest | TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — learning
+
+Added source. Key claims: VLA [[BlockDiffusion]] 학습 가이드로 [[TemporalAR]] 구조로 병렬 디노이징과 순차 블록 처리를 결합하여 closed-loop latency와 temporal coherence를 동시에 달성. [[RTC]] 실시간 chunk 갱신, [[ActionTokenization]]의 discrete token 사용 이유, block size `m` hyperparameter의 latency-quality 트레이드오프 정리.
+
+New concept pages created:
+- [[BlockDiffusion]] — block 단위 병렬 디노이징 기법
+- [[TemporalAR]] — 시간적 자기회귀 구조
+- [[RTCRealTimeChunking]] — 실시간 chunk 갱신 메커니즘
+- [[ActionTokenization]] — continuous action의 discrete token 변환
+
+## [2026-06-10] ingest | TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — references
+
+Added source. Key claims: TBD-VLA 관련 10개 레퍼런스 정리 (Fast-dVLA, Discrete Diffusion VLA, Qwen3-VL, LIBERO-Plus, InternVLA-M1, VLA-0, LLaDA-VLA, OpenVLA, π0.5, FAST). 읽기 우선순위: Discrete Diffusion 계열(1순위) → Qwen3-VL backbone(2순위) → baseline 비교(VLA-0, OpenVLA, π0.5, 3순위) → evaluation benchmarks(LIBERO-Plus, 4순위). Created entity pages for Fast-dVLA, DiscreteDiffusionVLA, VLA-0, LLaDA-VLA, FAST. Created concept pages for TemporalBlock, TemporalAutoregression, BlockDiffusionDecoding.
+
+## [2026-06-10] ingest | TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델 — analysis
+
+Added source. Key claims: Block Discrete Diffusion으로 discrete VLA의 action-token latency를 줄이면서 Block-level AR로 temporal coherence를 유지. RTC 지원으로 closed-loop control 가능. Qwen3-VL 2B backbone, SimplerEnv Google Robot 88.7%/0.086s 성능. [[ReflectDrive2]]와 trajectory tokenization 관점에서 연결.
+
+New entity pages: [[Qwen3VL]], [[SimplerEnv]], [[LIBERO]]
+New concept pages: [[BlockDiscreteDiffusion]], [[TemporalBlockDiffusion]], [[RealTimeChunking]], [[DiscreteVLALatency]]
+
+## [2026-06-10] ingest | TBD-VLA: 시간 블록 Diffusion 기반 Vision-Language-Action 모델
+
+Added source. Key claims: Block discrete diffusion achieves 0.086s latency with 88.7% SimplerEnv success; enables Real-Time Chunking via temporal in-painting; outperforms π0.5 (50.0% → 67.1%) in real-world manipulation. Created entity pages for SungWookLee, XuhuiKang, YenLingKuo, Qwen3VL. Created concept pages for TBDVLA, BlockDiffusion, RealTimeChunking, VisionLanguageAction, TemporalInpainting.
+
 ## [2026-06-05] ingest | LWN.net Weekly Edition for May 28, 2026
 
 Added Korean LWN Weekly translation source. Key claims: AI-generated bug reports are reshaping Linux kernel security workflow; GCC-BPF is closing feature gaps with LLVM; LSFMM+BPF discussions connect [[BPF]], [[PageCache]], [[MemoryController]], [[MemoryTiering]], and [[TransparentHugePage]]; MOT frames openwashing as a measurable [[OpenSource]] AI problem.
@@ -970,3 +1011,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-05] graph | Knowledge graph rebuilt
 
 2456 nodes, 8261 edges (8261 extracted, 0 inferred).
+
+## [2026-06-10] graph | Knowledge graph rebuilt
+
+2549 nodes, 8595 edges (8595 extracted, 0 inferred).

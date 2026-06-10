@@ -1,18 +1,15 @@
 ---
 title: "nuPlan"
 type: entity
-tags: [placeholder]
-sources: []
-last_updated: 2026-05-13
+tags: [autonomous-driving, benchmark]
+sources: [nvidia-omnidreams-2606-03159-references]
+last_updated: 2026-06-10
 ---
 
-# nuPlan
-
-> Placeholder page created during the 2026-05-13 Hugging Face Weekly Papers ingest to preserve wikilink integrity. Expand with primary sources when this topic becomes central.
-
-자율주행 planning dataset/benchmark로 NAVSIM 등 closed-loop 평가 기반이 되는 데이터셋.
+## Overview
+자율주행 planning 평가용 벤치마크로, closed-loop evaluation을 지원하는 프레임워크.
 
 ## Connections
-- [[VLA]] — related embodied/VLA wiki context.
-- [[ReflectDrive2]] — current ingest context where applicable.
-- [[HumanNet]] — current ingest context where applicable.
+- [[Waymo]] — 개발 주체
+- [[CARLA]] — 통합 가능한 시뮬레이터
+- [[ClosedLoopSimulation]] — nuPlan이 제공하는 평가 패러다임
