@@ -15,5 +15,5 @@ VisualThink-VLA는 VLA(Vision-Language-Action) 정책에서 textual chain-of-tho
 
 ## Linux Kernel, BPF, and Open-Source AI Governance
 
-The LWN Weekly corpus now tracks a sequence of 2026 Linux kernel and open-source infrastructure discussions. The May 28 edition connects [[LinusTorvalds]]'s AI/security-report workflow concerns with LSFMM+BPF coverage of [[BPF]], [[GCC]], [[PageCache]], [[MemoryController]], [[MemoryTiering]], and [[TransparentHugePage]], plus [[OpenSource]] AI governance concerns around openwashing.
+The LWN Weekly corpus now tracks a sequence of 2026 Linux kernel and open-source infrastructure discussions. The May 28 edition connects [[LinusTorvalds]]'s AI/security-report workflow concerns with LSFMM+BPF coverage of [[BPF]], [[GCC]], [[PageCache]], [[MemoryController]], [[MemoryTiering]], and [[TransparentHugePage]], plus [[OpenSource]] AI governance concerns around openwashing. The June 4 edition extends that thread with [[MeshCore]] trademark governance, [[X32ABI]] maintenance economics, collaborative open-source security, [[PackageMetadata]] semantics, [[FilesystemMergePolicy]], [[KernelFunctionSignatures]], [[XattrCaching]], agentic-era [[BPF]], and [[FIPSCertification]] boundaries for kernel crypto.
 

@@ -1,3 +1,7 @@
+## [2026-06-12] ingest | LWN.net Weekly Edition for June 4, 2026
+
+Added Korean LWN Weekly translation source. Key claims: MeshCore shows trademark governance can constrain open-source naming; x32 ABI maintenance depends on user/test coverage more than technical efficiency; open-source security is a coordinated ecosystem activity; kernel coverage connects [[FilesystemMergePolicy]], [[MemoryManagement]], [[KernelFunctionSignatures]], [[XattrCaching]], [[BPF]], and [[FIPSCertification]].
+
 ## [2026-06-10] ingest | NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — learning
 
 Added source. Key claims: WAM architecture가 VLA보다 driving에 적합, Diffusion Forcing + Self Forcing으로 closed-loop AR generation 구현, world-scenario map이 simulator state와 photorealistic generation을 연결. Created entity pages for Cosmos, AlpaSim, Alpamayo. Created concept pages for WorldActionModel, DiffusionForcing, SelfForcing, WorldScenarioMap.
@@ -1015,3 +1019,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-10] graph | Knowledge graph rebuilt
 
 2549 nodes, 8595 edges (8595 extracted, 0 inferred).
+
+## [2026-06-12] graph | Knowledge graph rebuilt
+
+2557 nodes, 8628 edges (8628 extracted, 0 inferred).
