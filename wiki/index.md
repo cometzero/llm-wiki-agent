@@ -21,6 +21,7 @@
 - [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기 — analysis](sources/robosemanticbench-2606-02277-ko-analysis.md) — RSB benchmark 분석: GSR/TSR/nSG 메트릭으로 [[SemanticGrounding]] 격차 실증, [[OpenVLA]]/[[GR00T]] 계열의 near-random 수준 실패 확인
 - [RoboSemanticBench: VLA 모델의 Action Prediction에서 Semantic Grounding 진단하기](sources/robosemanticbench-2606-02277-ko.md) — [[VLA]] 모델의 [[SemanticGrounding]] 격차를 진단하는 embodied benchmark; grasp는 성공하지만 semantic target selection은 near-random 수준임을 보여줌
 - [LWN.net Weekly Edition for May 28, 2026](sources/lwn-weekly-edition-2026-05-28-1073782.md) — AI와 커널 개발, GCC/BPF 지원, page-cache·page-fault·memcg·THP 메모리 관리, LLM 패치 리뷰, openwashing/MOT, 보안 업데이트를 종합 번역
+- [LWN.net Weekly Edition for June 4, 2026](sources/lwn-weekly-edition-2026-06-04-1074950.md) — MeshCore 상표 분쟁, x32 ABI 재검토, 오픈소스 보안 협업, 패키지 메타데이터, 파일시스템 병합 정책, BPF/커널 함수 시그니처, FIPS 암호 모듈, 보안 업데이트를 종합 번역
 - [LWN.net Weekly Edition for May 21, 2026](sources/lwn-weekly-edition-2026-05-21-1072730.md) — openSUSE ToS 논란, LSFMM+BPF 메모리 관리 동향, OpenPGP PQC 전환, 커널 7.1-rc4 등 종합
 - [AI/ML Learning Review — Day 30 (2026-05-24): Evaluation, Serving, and AI System Design](sources/2026-05-24-day30-ai-ml-learning-review.md) — 평가/벤치마크/서빙/추론 최적화/AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
 - [AI/ML Learning Review — Day 30 (2026-05-23): Evaluation, Serving, and AI System Design](sources/2026-05-23-day30-ai-ml-learning-review.md) — 평가/벤치마크, 서빙/추론 최적화, AI 시스템 설계 전체 그림을 Day 30 마일스톤으로 정리.
@@ -220,6 +221,7 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [MeshCore](entities/MeshCore.md) — open-source project name involved in a trademark/governance dispute covered by LWN 2026-06-04.
 - [AlpaSim](entities/AlpaSim.md) — generated support page
 - [Alpamayo 1.5](entities/Alpamayo1.5.md) — generated support page
 - [Alpamayo 1](entities/Alpamayo1.md) — generated support page
@@ -596,6 +598,12 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [x32 ABI](concepts/X32ABI.md) — Linux x86-64 ABI variant with 32-bit pointers and long-term maintenance concerns.
+- [Package Metadata](concepts/PackageMetadata.md) — package-manager data semantics for dependencies, security updates, SBOM, and supply-chain automation.
+- [Filesystem Merge Policy](concepts/FilesystemMergePolicy.md) — Linux mainline criteria for accepting and maintaining new filesystems.
+- [Kernel Function Signatures](concepts/KernelFunctionSignatures.md) — BTF/kfunc type metadata needed for safe BPF interaction with kernel functions.
+- [Xattr Caching](concepts/XattrCaching.md) — caching extended attributes for filesystem/security metadata performance.
+- [FIPS Certification](concepts/FIPSCertification.md) — cryptographic module compliance boundary relevant to Linux kernel crypto design.
 - [Action-Conditioned Generation](concepts/ActionConditioning.md) — generated support page
 - [Action Decoding](concepts/ActionDecoding.md) — generated support page
 - [Attention Factorization](concepts/AttentionFactorization.md) — generated support page
