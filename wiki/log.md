@@ -1023,3 +1023,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-12] graph | Knowledge graph rebuilt
 
 2557 nodes, 8628 edges (8628 extracted, 0 inferred).
+## [2026-06-17] ingest | HF Weekly 2026-W25 VLA papers: ReCAP and APT
+- Created raw Korean translation/analysis/reference/learning deliverables for 2606.15631 and 2606.12366.
+- Materialized source pages under wiki/sources because automated Codex ingest was blocked by expired Codex refresh token and NVIDIA returned no content in smoke test.
+- Added support pages: [[ReCAP]], [[APT]], [[RetrievalAugmentedPolicy]], [[ActionExpertPretraining]].
+
+## [2026-06-17] graph | Knowledge graph rebuilt
+
+2569 nodes, 8699 edges (8699 extracted, 0 inferred).

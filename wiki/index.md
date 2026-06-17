@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Retrieve, Don't Retrain: 테스트 시점 검색으로 VLA를 새 태스크에 확장하기](sources/retrieve-dont-retrain-2606-15631.md) — retrieval pool update로 VLA 새 task adaptation을 수행하는 ReCAP/WAM framework
+- [Retrieve, Don't Retrain — analysis](sources/retrieve-dont-retrain-2606-15631-analysis.md) — ReCAP architecture, I/O, training, deployment risk 분석
+- [Retrieve, Don't Retrain — references](sources/retrieve-dont-retrain-2606-15631-references.md) — ReCAP 관련 WAM/VLA/cross-embodiment 레퍼런스 정리
+- [Retrieve, Don't Retrain — learning](sources/retrieve-dont-retrain-2606-15631-learning.md) — retrieval-augmented policy 학습 자료
+- [APT: Action Expert Pretraining으로 VLA의 Instruction Generalization 개선하기](sources/apt-action-expert-pretraining-2606-12366.md) — VA prior + gated fusion으로 continuous action expert VLA의 언어 일반화 개선
+- [APT — analysis](sources/apt-action-expert-pretraining-2606-12366-analysis.md) — APT Bayesian factorization/action expert pretraining 분석
+- [APT — references](sources/apt-action-expert-pretraining-2606-12366-references.md) — APT 관련 π/GR00T/OpenVLA/LIBERO 레퍼런스 정리
+- [APT — learning](sources/apt-action-expert-pretraining-2606-12366-learning.md) — action expert pretraining 학습 자료
 - [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — learning](sources/nvidia-omnidreams-2606-03159-learning.md) — WAM vs VLA, Diffusion Forcing, Self Forcing 핵심 정리
 - [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — references](sources/nvidia-omnidreams-2606-03159-references.md) — Cosmos, Alpamayo, Diffusion Forcing, World Action Model 등 OmniDreams 관련 레퍼런스 정리
 - [NVIDIA OmniDreams: Closed-loop 자율주행 시뮬레이션을 위한 실시간 생성형 World Model — analysis](sources/nvidia-omnidreams-2606-03159-analysis.md) — WAM backbone과 closed-loop simulation 중심의 generative world model 분석; VLA vs world dynamics 병목 논의
@@ -221,6 +229,8 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [ReCAP](entities/ReCAP.md) — retrieval-conditioned action policy for test-time VLA task extension
+- [APT](entities/APT.md) — Action Expert PreTraining method for VLA instruction generalization
 - [MeshCore](entities/MeshCore.md) — open-source project name involved in a trademark/governance dispute covered by LWN 2026-06-04.
 - [AlpaSim](entities/AlpaSim.md) — generated support page
 - [Alpamayo 1.5](entities/Alpamayo1.5.md) — generated support page
@@ -598,6 +608,8 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [Retrieval-Augmented Policy](concepts/RetrievalAugmentedPolicy.md) — retrieved demonstrations/trajectories as action-generation priors
+- [Action Expert Pretraining](concepts/ActionExpertPretraining.md) — pretrain continuous action expert as a VA prior before language conditioning
 - [x32 ABI](concepts/X32ABI.md) — Linux x86-64 ABI variant with 32-bit pointers and long-term maintenance concerns.
 - [Package Metadata](concepts/PackageMetadata.md) — package-manager data semantics for dependencies, security updates, SBOM, and supply-chain automation.
 - [Filesystem Merge Policy](concepts/FilesystemMergePolicy.md) — Linux mainline criteria for accepting and maintaining new filesystems.
