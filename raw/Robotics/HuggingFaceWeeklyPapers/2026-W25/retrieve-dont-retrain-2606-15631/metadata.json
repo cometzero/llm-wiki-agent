@@ -1,0 +1,252 @@
+{
+  "paper": {
+    "id": "2606.15631",
+    "slug": "retrieve-dont-retrain-2606-15631",
+    "title": "Retrieve, Don't Retrain: Extending Vision Language Action Models to New Tasks at Test Time",
+    "ko_title": "Retrieve, Don't Retrain: 테스트 시점 검색으로 VLA를 새 태스크에 확장하기",
+    "authors": [
+      "Jeongeun Park",
+      "Juhan Park",
+      "Taekyung Kim",
+      "Sungjoon Choi",
+      "Dongyoon Han",
+      "Sangdoo Yun"
+    ],
+    "week": "2026-W25",
+    "hf_url": "https://huggingface.co/papers/2606.15631",
+    "project_page": "https://recap-robot.github.io/",
+    "github_repo": null,
+    "selected_reason": "현재 주(2026-W25) 후보 중 VLA/action policy 관련 점수가 가장 높고, per-task retraining 대신 retrieval pool 확장으로 새 작업을 흡수하는 test-time adaptation 패러다임을 제안해 VLA 스케일링 병목과 직접 연결된다.",
+    "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+    "taxonomy": "VLA / representation transfer·retrieval-augmented action policy / world-action model",
+    "one_sentence": "ReCAP은 새 태스크마다 VLA를 다시 fine-tuning하지 않고, cheap source-embodiment demo를 retrieval pool에 추가해 frozen policy가 test time에 행동 prior를 가져오게 만드는 retrieval-conditioned VLA/WAM 정책이다.",
+    "abstract_ko": "VLA 정책을 새 태스크에 확장하려면 보통 target embodiment에서 teleoperation demonstration을 모으고 태스크별 fine-tuning을 수행해야 한다. 이 논문은 그 비용을 retrieval로 대체할 수 있음을 보인다. ReCAP은 target embodiment(query)와 더 저렴한 source/pool embodiment(예: 인간 손 비디오) 사이의 paired demonstration으로 한 번 학습한 뒤 frozen 상태로 둔다. 이후 새 태스크는 pool-side demonstration을 retrieval memory에 추가하는 것만으로 흡수된다. 정책은 매 control step마다 검색된 trajectory에 조건화되며, retrieval은 coarse task progression을 제공하고 Cosmos Policy 같은 World-Action Model(WAM)은 future-image objective로 시각적 일관성을 보강한다. PushT, RoboTwin 2.0, 실제 로봇 실험에서 cross-embodiment generalization과 unseen-task 성능 향상을 보고한다.",
+    "sections": [
+      [
+        "1 Introduction",
+        "일반-purpose robot policy는 자연어 지시와 시각 관찰에서 조작 행동을 생성해야 하지만, 새 embodiment나 새 task가 등장할 때마다 target robot demo와 fine-tuning이 필요하다는 문제가 있다. 저자들은 인간 손 비디오처럼 싸고 풍부한 source embodiment 행동 지식을 검색 가능한 memory로 두고, target robot policy가 이를 step마다 참조하면 per-task optimization 없이도 행동 coverage를 늘릴 수 있다고 주장한다. 핵심은 policy parameter를 업데이트하지 않고 retrieval index만 업데이트한다는 점이다."
+      ],
+      [
+        "2 Related Work",
+        "논문은 OpenVLA, π0.5, GR00T 계열처럼 language/vision backbone에 action head를 붙이는 VLA와, Cosmos Policy·DreamZero·Fast-WAM처럼 video/world model 안에 action을 통합하는 World-Action Model 계열을 구분한다. ReCAP은 후자에 retrieval을 결합한다. 기존 retrieval imitation learning이 single embodiment나 offline nearest neighbor에 머물렀다면, 이 논문은 cross-embodiment source pool을 target policy 실행 중에 계속 조건으로 주는 점이 다르다."
+      ],
+      [
+        "3 Problem Formulation",
+        "입력은 target robot의 현재 observation, language instruction, 그리고 retrieval pool의 source-embodiment demonstration이다. 목표는 target robot action을 생성하는 것이다. 새 태스크가 들어와도 target robot demonstration이나 gradient update를 요구하지 않고, source pool에 cheap demo만 추가한다고 가정한다. 따라서 learning problem은 'source trajectory가 target robot 실행에 유용한 high-level motion prior가 되도록 policy를 학습하는 것'으로 바뀐다."
+      ],
+      [
+        "4 Proposed Method",
+        "ReCAP은 retrieval-conditioned residual policy로 설계된다. Retrieval은 high-level motion과 task progression을 제공하고, policy는 retrieved trajectory와 target observation 사이의 embodiment-specific correction을 학습한다. WAM의 future-image prediction objective는 검색된 trajectory가 실제 다음 관찰과 맞도록 visual consistency signal을 제공한다. 즉 retrieval은 coarse plan, WAM은 physical/visual feasibility, action head는 target embodiment control을 담당한다."
+      ],
+      [
+        "4.1 Retrieval-Augmented WAM",
+        "Cosmos Policy 기반 WAM은 future visual latent와 action latent를 함께 다루므로, 검색된 demonstration을 단순 prompt가 아니라 trajectory prior로 주입할 수 있다. action latent를 retrieved trajectory에 대한 residual로 parameterize하면 policy가 새 태스크의 전체 motion을 처음부터 생성하지 않아도 된다."
+      ],
+      [
+        "4.2 Retrieval",
+        "검색은 task instruction과 현재 visual context에 맞는 source-embodiment trajectory를 찾는다. deployment에서 새 태스크를 추가할 때 필요한 일은 새 source demonstration을 pool에 indexing하는 것이다. 이 구조는 parameter update가 아니라 memory update로 adaptation을 수행한다."
+      ],
+      [
+        "5 Experiments",
+        "평가는 PushT, RoboTwin 2.0 simulation, real robot으로 구성된다. PushT에서는 unseen goal angle에 대한 cross-embodiment generalization과 retrieval이 reusable high-level motion prior를 주는지를 분석한다. RoboTwin 2.0에서는 unseen tasks에서 cross-embodiment baseline을 능가한다고 보고한다. 실제 로봇 실험은 retrieval-conditioned policy가 simulation 밖에서도 동작함을 보여주기 위한 sanity check 역할을 한다."
+      ],
+      [
+        "6 Discussion",
+        "가장 중요한 시사점은 VLA scaling을 '모델을 계속 재학습하는 문제'가 아니라 'cheap behavior memory를 잘 구축하고 검색하는 문제'로 일부 전환한다는 점이다. 단, retrieval 품질, source-target embodiment gap, memory 규모에 따른 latency, 잘못 검색된 trajectory의 safety risk가 실제 배포 병목이 될 수 있다."
+      ]
+    ],
+    "key_refs": [
+      [
+        "Cosmos Policy",
+        "World-Action Model 기반 정책. ReCAP의 backbone으로 사용되어 retrieval trajectory와 future-image objective를 결합한다."
+      ],
+      [
+        "OpenVLA",
+        "VLM backbone에 action generation을 붙이는 대표 VLA baseline. ReCAP은 이런 standard VLA에도 retrieval 효과가 있으나 WAM에서 더 크다고 설명한다."
+      ],
+      [
+        "π0.5",
+        "Physical Intelligence 계열 generalist robot policy. action expert/continuous control 계열 비교 축이다."
+      ],
+      [
+        "GR00T N1.6",
+        "NVIDIA 로보틱스 foundation model 계열로, VLA scaling 및 cross-embodiment generalization 맥락의 비교군이다."
+      ],
+      [
+        "DreamZero / Fast-WAM",
+        "Video/world-action model 계열. ReCAP이 retrieval을 결합하는 WAM family의 선행 흐름이다."
+      ],
+      [
+        "RoboTwin 2.0",
+        "unseen task/cross-embodiment simulation benchmark로 사용된다."
+      ],
+      [
+        "PushT",
+        "2D pushing benchmark. retrieval이 goal-angle generalization과 motion prior를 제공하는지 분석하는 실험장이다."
+      ],
+      [
+        "Open X-Embodiment / RT-X",
+        "여러 embodiment 데이터를 통합해 robot foundation model을 학습하는 대표 흐름. ReCAP은 이보다 test-time memory 확장을 더 강조한다."
+      ]
+    ]
+  },
+  "arxiv_meta": {
+    "versioned_id": "2606.15631v1",
+    "title": "Retrieve, Don't Retrain: Extending Vision Language Action Models to New Tasks at Test Time",
+    "authors": [
+      "Jeongeun Park",
+      "Juhan Park",
+      "Taekyung Kim",
+      "Sungjoon Choi",
+      "Dongyoon Han",
+      "Sangdoo Yun"
+    ],
+    "summary": "Extending a vision-language-action (VLA) policy to a new task typically requires task-specific teleoperated demonstrations and per-task fine-tuning, making adaptation costly in both data collection and compute. In this paper, we show that this target-side per-task adaptation cost can be replaced by retrieval. Our retrieval-augmented policy is trained once on paired demonstrations from the target embodiment (query) and a cheaper embodiment (pool, e.g., human-hand video), then frozen. New tasks are added at deployment by appending pool-side demonstrations to a retrieval pool. The frozen policy conditions on retrieved trajectories at every control step, so new tasks are absorbed by indexing data rather than updating parameters. Fine-tuning is needed only to take on a new, unseen embodiment, not for each new task. We show that retrieval improves policies beyond a specific backbone, including standard VLA policies, but its effect is especially pronounced in Cosmos Policy, a video-generation-based world-action model (WAM). In this setting, retrieval supplies coarse task progression, while the WAM's future-image objective provides an additional visual consistency signal that strengthens the retrieval-conditioned actions. On PushT, we study how retrieval provides a reusable high-level motion prior for cross-embodiment generalization to unseen goal angles, while on RoboTwin 2.0 our method outperforms cross-embodiment baselines on unseen tasks, and we additionally demonstrate the method on a real robot.",
+    "published": "2026-06-14",
+    "updated": "2026-06-14",
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ]
+  },
+  "html_info": {
+    "html_available": true,
+    "headings": [
+      "Retrieve, Don’t Retrain: Extending Vision-Language-Action Models to New Tasks at Test Time",
+      "1 Introduction",
+      "2 Related Work",
+      "3 Problem Formulation",
+      "4 Proposed Method",
+      "4.1 Retrieval-Augmented World Action Model",
+      "4.2 Retrieval",
+      "5 Experiments",
+      "5.1 Experiment Setup",
+      "5.2 PushT Experiments",
+      "5.3 RoboTwin Simulation Experiments",
+      "5.4 Real Robot Experiments",
+      "6 Discussions",
+      "References",
+      "Appendix A Additional PushT Results",
+      "Comparison with prior cross-embodiment recipes.",
+      "Full action-parameterization × \\times next-state ablation.",
+      "Appendix B PushT Mechanism Analysis",
+      "Probe protocol.",
+      "Two-stage routing: L10 intake, L15 commit.",
+      "Both axes require retrieval.",
+      "Both axes are causally necessary.",
+      "Appendix C PushT Failure Case Analysis",
+      "Axis 1 (L15 commit): weakened on every failure.",
+      "Axis 2 (L10 intake): an under-/over-anchoring spectrum.",
+      "A behavior-level split mirrors the attention axes.",
+      "Implications for future work.",
+      "Appendix D RoboTwin Setup Details",
+      "Train and test tasks.",
+      "Excluded query episodes.",
+      "Progressive retrieval pool.",
+      "Retrieval scoring weights.",
+      "Appendix E Retrieval Rule Details",
+      "Stage 1: initial-scene trajectory retrieval.",
+      "Stage 2: subframe retrieval (training).",
+      "Distance choices.",
+      "Role of the action term at training.",
+      "Stage 2: subframe retrieval (inference).",
+      "Pool extension at deployment.",
+      "Per-feature weights.",
+      "Inference loop.",
+      "Appendix F Hyperparameters",
+      "Instructions for reporting errors"
+    ],
+    "figures": [
+      {
+        "file": "figures/figure-01.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x1.png",
+        "caption": "Figure 1: ReCAP overview. Instead of teleoperating each new task and fine-tuning the policy (top, ∼ \\sim 24 GPU-hours/task for Cosmos Policy [ 10 ] ), ReCAP appends cheap human-hand demonstrations to a retrieval pool while keeping the policy frozen (bottom), 18 × \\times cheaper [ 24 , 26 ] , no additional training."
+      },
+      {
+        "file": "figures/figure-02.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x2.png",
+        "caption": "Figure 2: ReCAP framework. The current observation retrieves a matching state-action chunk from the pool database; the retrieved chunk and the current observation then condition a world action model that denoises the next action and next observation in one video sequence."
+      },
+      {
+        "file": "figures/figure-03.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x3.png",
+        "caption": "Figure 3: PushT cross-embodiment pool database setting. The training set pairs the triangle (target) and disc (pool) at ± 45 ∘ \\pm 45^{\\circ} . The test set is a pool database of disc-pusher demonstrations spanning all goal angles, which the frozen triangle policy retrieves from on the seven unseen angles."
+      },
+      {
+        "file": "figures/figure-04.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x4.png",
+        "caption": "Figure 4: Test-time pool progression on PushT. The leftmost panel is the no-retrieval baseline with our full-pool curve overlaid (shaded gap). The other panels show per-angle success as the pool grows with no retraining, with the previous snapshot in gray and the incremental gain shaded."
+      },
+      {
+        "file": "figures/figure-05.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x5.png",
+        "caption": "(a) Backbone comparison."
+      },
+      {
+        "file": "figures/figure-06.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x6.png",
+        "caption": "(b) Joint training (Cosmos)."
+      },
+      {
+        "file": "figures/figure-07.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x7.png",
+        "caption": "(c) ROI ratio across layers."
+      },
+      {
+        "file": "figures/figure-08.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x8.png",
+        "caption": "Figure 5: Comparative analyses of ReCAP and baseline on PushT. (a) Unseen-angle success with and without retrieval on a π 0.5 \\pi_{0.5} and a Cosmos (WAM) backbone; retrieval helps both, and the WAM benefits more. (b) The future-image objective improves unseen success only when paired with retrieval. (c) Action-slot attention across decoder layers, which peaks on the T-block and then on the predicted next position under retrieval but stays near uniform without it."
+      },
+      {
+        "file": "figures/figure-09.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x9.png",
+        "caption": "Table 1: Quantitative analysis on RoboTwin. We report per-task success rate ( % \\% ) on RoboTwin, with Aloha-Agilex as the target embodiment and UR5 as the retrieval pool. The left block shows seen tasks, and the right block shows unseen tasks."
+      },
+      {
+        "file": "figures/figure-10.png",
+        "url": "https://arxiv.org/html/2606.15631v1/x10.png",
+        "caption": "Figure 6: Qualitative comparison on the held-out hand-over-mic task. Baseline (top-left) and Co-training (bottom-left) fail to grasp the microphone; Retrieval Only (top-right) knocks it over (red box); Ours (bottom-right) grasps it successfully. Each inset shows the retrieved UR5 chunk that the policy conditions on."
+      }
+    ],
+    "references": [
+      "[1] A. Bahety, P. Mandikal, B. Abbatematteo, and R. Martín-Martín (2024) ScrewMimic: bimanual imitation from human videos with screw space projection . In Proc. of the Robotics: Science and Systems (RSS), 2024 , Cited by: §2 .",
+      "[2] J. Bjorck et al. (2025) GR00T n: an open foundation model for generalist humanoid robots . arXiv preprint arXiv:2503.14734 . Cited by: §1 , §2 .",
+      "[3] R. Cadene, S. Alibert, A. Soare, Q. Gallouedec, A. Zouitine, S. Palma, P. Kooijmans, M. Aractingi, M. Shukor, D. Aubakirova, M. Russi, F. Capuano, C. Pascal, J. Choghari, J. Moss, and T. Wolf (2024) LeRobot: state-of-the-art machine learning for real-world robotics in pytorch . Note: https://github.com/huggingface/lerobot Cited by: §5.1 .",
+      "[4] N. Carion, L. Gustafson, Y. Hu, S. Debnath, R. Hu, D. Suris, C. Ryali, K. V. Alwala, H. Khedr, A. Huang, J. Lei, T. Ma, B. Guo, A. Kalla, M. Marks, J. Greer, M. Wang, P. Sun, R. Rädle, T. Afouras, E. Mavroudi, K. Xu, T. Wu, Y. Zhou, L. Momeni, R. Hazra, S. Ding, S. Vaze, F. Porcher, F. Li, S. Li, A. Kamath, H. K. Cheng, P. Dollár, N. Ravi, K. Saenko, P. Zhang, and C. Feichtenhofer (2025) SAM 3: segment anything with concepts . External Links: 2511.16719 , Link Cited by: Appendix E , §4.2 .",
+      "[5] T. Chen, Z. Chen, B. Chen, Z. Cai, Y. Liu, Z. Li, Q. Liang, X. Lin, Y. Ge, Z. Gu, et al. (2025) Robotwin 2.0: a scalable data generator and benchmark with strong domain randomization for robust bimanual robotic manipulation . arXiv preprint arXiv:2506.18088 . Cited by: §1 , §5.1 , §5.3 , §5 , §6 .",
+      "[6] C. Chi, Z. Xu, S. Feng, E. Cousineau, Y. Du, B. Burchfiel, R. Tedrake, and S. Song (2025) Diffusion policy: visuomotor policy learning via action diffusion . The International Journal of Robotics Research 44 ( 10-11 ), pp. 1684–1704 . Cited by: §1 , §5.1 , §5.2 , §5 .",
+      "[7] M. Du, S. Nair, D. Sadigh, and C. Finn (2024) Behavior retrieval: few-shot imitation learning by querying unlabeled datasets . In Proc. of the Robotics: Science and Systems (RSS), 2024 , Cited by: §2 .",
+      "[8] M. Hong, A. Liang, K. Kim, H. Rajaprakash, J. Thomason, E. Bıyık, and J. Zhang (2025) Hand me the data: fast robot adaptation via hand path retrieval . arXiv preprint arXiv:2505.20455 . Cited by: §2 .",
+      "[9] V. Jain, M. Attarian, N. J. Joshi, A. Wahid, D. Driess, Q. Vuong, P. R. Sanketi, P. Sermanet, S. Welker, C. Chan, I. Gilitschenski, Y. Bisk, and D. Dwibedi (2024) Vid2Robot: end-to-end video-conditioned policy learning with cross-attention transformers . In Proc. of the Robotics: Science and Systems (RSS), 2024 , Cited by: §2 .",
+      "[10] M. J. Kim, Y. Gao, T. Lin, Y. Lin, Y. Ge, G. Lam, P. Liang, S. Song, M. Liu, C. Finn, and J. Gu (2026) Cosmos policy: fine-tuning video models for visuomotor control and planning . In Proc. of the Fourteenth International Conference on Learning Representations (ICLR) , External Links: Link Cited by: Figure 1 , §1 , §1 , §1 , §1 , §2 , §4.1 , §5.3 , Table 1 .",
+      "[11] M. J. Kim, K. Pertsch, S. Karamcheti, T. Xiao, A. Balakrishna, S. Nair, R. Rafailov, E. P. Foster, P. R. Sanketi, Q. Vuong, T. Kollar, B. Burchfiel, R. Tedrake, D. Sadigh, S. Levine, P. Liang, and C. Finn (2024) OpenVLA: an open-source vision-language-action model . In Proc. of the 8th Annual Conference on Robot Learning (CoRL) , External Links: Link Cited by: §1 , §2 .",
+      "[12] J. Lee, J. Duan, H. Fang, Y. Deng, S. Liu, B. Li, B. Fang, J. Zhang, Y. R. Wang, S. Lee, et al. (2025) Molmoact: action reasoning models that can reason in space . arXiv preprint arXiv:2508.07917 . Cited by: §1 .",
+      "[13] L. Li, Q. Zhang, Y. Luo, S. Yang, R. Wang, F. Han, M. Yu, Z. Gao, N. Xue, X. Zhu, et al. (2026) Causal world modeling for robot control . arXiv preprint arXiv:2601.21998 . Cited by: §1 .",
+      "[14] S. Li, Y. Gao, D. Sadigh, and S. Song (2025) Unified video action model . In Proc. of the Robotics: Science and Systems (RSS), 2025 , Cited by: §1 .",
+      "[15] L. Lin, Y. Cui, A. Xie, T. Hua, and D. Sadigh (2024) FlowRetrieval: flow-guided data retrieval for few-shot imitation learning . In Proc. of the 8th Annual Conference on Robot Learning (CoRL) , External Links: Link Cited by: §2 .",
+      "[16] S. Liu, L. Wu, B. Li, H. Tan, H. Chen, Z. Wang, K. Xu, H. Su, and J. Zhu (2025) RDT-1b: a diffusion foundation model for bimanual manipulation . In Proc. of the Thirteenth International Conference on Learning Representations (ICLR) , External Links: Link Cited by: §1 .",
+      "[17] M. Memmel, J. Berg, B. Chen, A. Gupta, and J. Francis (2025) STRAP: robot sub-trajectory retrieval for augmented policy learning . In Proc. of the Thirteenth International Conference on Learning Representations (ICLR) , External Links: Link Cited by: §2 , §5.3 .",
+      "[18] J. Pai, L. Achenbach, V. Montesinos, B. Forrai, O. Mees, and E. Nava (2025) Mimic-video: video-action models for generalizable robot control beyond vlas . arXiv preprint arXiv:2512.15692 . Cited by: §1 , §2 .",
+      "[19] G. Papagiannis, N. Di Palo, P. Vitiello, and E. Johns (2025) R+ x: retrieval and execution from everyday human videos . In Proc. of the 2025 IEEE International Conference on Robotics and Automation (ICRA) , pp. 8284–8290 . Cited by: §2 .",
+      "[20] Physical Intelligence, K. Black, N. Brown, J. Darpinian, K. Dhabalia, D. Driess, A. Esmail, M. Equi, C. Finn, N. Fusai, et al. (2025) π 0.5 \\pi_{0.5} : a vision-language-action model with open-world generalization . arXiv preprint arXiv:2504.16054 . Cited by: §1 , §2 , §5.2 .",
+      "[21] R. Punamiya, D. Patel, P. Aphiwetsa, P. Kuppili, L. Y. Zhu, S. Kareer, J. Hoffman, and D. Xu (2026) EgoBridge: domain adaptation for generalizable imitation from egocentric human data . In Proc. of the Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS) , External Links: Link Cited by: §2 , §5.3 .",
+      "[22] C. Schaff and M. R. Walter (2020) Residual policy learning for shared autonomy . In Proc. of the Robotics: Science and Systems (RSS), 2020 , Cited by: §4.1 .",
+      "[23] S. Sha, Y. Wang, B. Huang, A. Loquercio, and Y. Li (2026) Efficient and reliable teleoperation through real-to-sim-to-real shared autonomy . arXiv preprint arXiv:2603.17016 . Cited by: §4.1 .",
+      "[24] R. Shah, S. Liu, Q. Wang, Z. Jiang, S. Kumar, M. Seo, R. Martín-Martín, and Y. Zhu (2025) Mimicdroid: in-context learning for humanoid robot manipulation from human play videos . arXiv preprint arXiv:2509.09769 . Cited by: Figure 1 , §1 , §2 .",
+      "[25] O. Siméoni, H. V. Vo, M. Seitzer, F. Baldassarre, M. Oquab, C. Jose, V. Khalidov, M. Szafraniec, S. Yi, M. Ramamonjisoa, et al. (2025) Dinov3 . arXiv preprint arXiv:2508.10104 . Cited by: Appendix E , §4.2 .",
+      "[26] C. Wang, L. Fan, J. Sun, R. Zhang, L. Fei-Fei, D. Xu, Y. Zhu, and A. Anandkumar (2023) MimicPlay: long-horizon imitation learning by watching human play . In Proc. of the 7th Annual Conference on Robot Learning (CoRL) , External Links: Link Cited by: Figure 1 , §1 .",
+      "[27] S. Wang, J. Shi, Z. Fu, X. He, F. Liu, C. Yang, Y. Zhou, Z. Fei, J. Gong, J. Fu, et al. (2026) World action models: the next frontier in embodied ai . arXiv preprint arXiv:2605.12090 . Cited by: §1 .",
+      "[28] S. Ye, Y. Ge, K. Zheng, S. Gao, S. Yu, G. Kurian, S. Indupuru, Y. L. Tan, C. Zhu, J. Xiang, et al. (2026) World action models are zero-shot policies . arXiv preprint arXiv:2602.15922 . Cited by: §1 , §1 , §1 , §2 .",
+      "[29] T. Yuan, Z. Dong, Y. Liu, and H. Zhao (2026) Fast-wam: do world action models need test-time future imagination? . arXiv preprint arXiv:2603.16666 . External Links: Link Cited by: §1 , §1 , §2 .",
+      "[30] T. Z. Zhao, V. Kumar, S. Levine, and C. Finn (2023) Learning fine-grained bimanual manipulation with low-cost hardware . arXiv preprint arXiv:2304.13705 . Cited by: §5.1 .",
+      "[31] J. Zheng, J. Li, Z. Wang, D. Liu, X. Kang, Y. Feng, Y. Zheng, J. Zou, Y. Chen, J. Zeng, T. Wang, Y. Zhang, J. Liu, and X. Zhan (2026) X-VLA: soft-prompted transformer as scalable cross-embodiment vision-language-action model . In Proc. of the Fourteenth International Conference on Learning Representations (ICLR) , External Links: Link Cited by: §1 ."
+    ],
+    "html_bytes": 356435
+  },
+  "semantic_refs": [
+    {
+      "error": "<HTTPError 404: 'Not Found'>"
+    }
+  ],
+  "generated_at_kst": "2026-06-17 09:40:19 KST"
+}

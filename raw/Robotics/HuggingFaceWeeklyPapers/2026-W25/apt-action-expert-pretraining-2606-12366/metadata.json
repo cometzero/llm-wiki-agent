@@ -1,0 +1,496 @@
+{
+  "paper": {
+    "id": "2606.12366",
+    "slug": "apt-action-expert-pretraining-2606-12366",
+    "title": "APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies",
+    "ko_title": "APT: Action Expert Pretraining으로 VLA의 Instruction Generalization 개선하기",
+    "authors": [
+      "Kechun Xu",
+      "Zhenjie Zhu",
+      "Anzhe Chen",
+      "Rong Xiong",
+      "Yue Wang"
+    ],
+    "week": "2026-W25",
+    "hf_url": "https://huggingface.co/papers/2606.12366",
+    "project_page": "https://xukechun.github.io/papers/APT/",
+    "github_repo": "https://github.com/xukechun/APT",
+    "selected_reason": "현재 주(2026-W25) 후보 중 VLA/VLM/action expert 구조를 직접 다루며, continuous action expert가 언어 불균형 때문에 OOD instruction generalization에 실패하는 원인을 Bayesian factorization과 two-stage pretraining으로 분석한다.",
+    "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+    "taxonomy": "VLA / continuous action expert / VA prior + language-conditioned likelihood / instruction generalization",
+    "one_sentence": "APT는 VLA policy를 language-agnostic Vision-Action prior와 language-conditioned likelihood로 나누고, 먼저 action expert를 VA prior로 pretraining한 뒤 gated language fusion을 넣어 OOD instruction generalization을 개선한다.",
+    "abstract_ko": "VLM과 continuous action expert를 결합한 VLA는 조작 성능은 강하지만, 훈련 분포 밖의 language instruction 일반화가 약하다. 근본 원인 중 하나는 VLA 데이터의 구조적 불균형이다. 긴 vision-action trajectory에 비해 언어 지시는 훨씬 덜 다양하므로, policy가 언어를 무시하고 visual shortcut을 학습하기 쉽다. discrete action token 계열은 vision-language co-training으로 이를 완화하지만, continuous action expert는 random initialization에서 imbalanced data를 바로 학습해 noisy gradient가 VLM을 오염시키고 언어 능력을 충분히 활용하지 못한다. APT는 policy를 language-agnostic VA prior와 language-conditioned VLA likelihood로 Bayesian factorization하고, 1단계에서 frozen VLM의 visual token만으로 action expert를 VA prior로 pretrain한 뒤, 2단계에서 gated fusion으로 language token을 주입한다. π/GR00T-style architecture 모두에 적용 가능하며 unseen instruction과 compositional task에서 일관된 성능 향상을 보인다.",
+    "sections": [
+      [
+        "1 Introduction",
+        "VLA의 실제 배포에서 중요한 능력은 단순히 seen task를 수행하는 것이 아니라, 언어가 바뀌거나 조합형 지시가 들어와도 올바르게 행동하는 OOD instruction generalization이다. 그러나 많은 VLA dataset은 하나의 instruction에 다수의 visual-action frame이 붙는 구조라 언어 다양성이 낮다. 그 결과 모델은 언어를 읽지 않고 scene visual cue만으로 action을 예측하는 visual shortcut을 학습할 수 있다."
+      ],
+      [
+        "2 Related Work",
+        "논문은 discrete-action VLA와 continuous-action expert VLA를 대비한다. Discrete action token 방식은 VLM의 token prediction objective와 더 잘 맞아 language co-training의 보호를 받지만, continuous action expert는 별도 module이 random initialization에서 시작해 imbalanced data에 노출된다. APT는 continuous expert를 버리지 않고 pretraining 순서를 바꿔 이 문제를 완화한다."
+      ],
+      [
+        "3 Method",
+        "핵심 공식은 π(a|v,l) ∝ π^p(a|v) · L(l|v,a)이다. 여기서 π^p는 language-agnostic Vision-Action prior, L은 language-conditioned likelihood이다. 먼저 시각 관찰에서 가능한 행동 분포를 안정적으로 학습한 다음, 언어가 그 행동 prior를 어떻게 선택·조정하는지 학습하게 한다."
+      ],
+      [
+        "3.2 Action Pretraining under Bayesian Formulation",
+        "Stage 1에서는 VLM backbone을 frozen하고 visual token만 action expert에 제공해 VA prior를 학습한다. 이 단계는 언어 불균형을 우회한다. action expert가 먼저 안정적인 visuomotor mapping을 학습하면, Stage 2에서 언어 conditioning이 들어올 때 noisy action gradient가 VLM semantic representation을 망가뜨릴 가능성이 줄어든다."
+      ],
+      [
+        "3.3 Action Expert Design",
+        "APT는 layer-wise gated fusion을 통해 VLM feature를 action expert에 주입한다. 단순 concat이나 cross-attention보다 중요한 점은 learned gate가 visuomotor prior를 보존하면서 instruction-relevant language feature만 선택적으로 통합한다는 것이다. 따라서 language가 action distribution을 완전히 덮어쓰기보다 prior를 조건부로 reweight한다."
+      ],
+      [
+        "4 Experiments",
+        "시뮬레이션에서는 LIBERO/LIBERO-Plus류 benchmark, unseen instruction, compositional task를 중심으로 평가하고, π-style 및 GR00T-style architecture 양쪽에서 gain을 확인한다. 실제 로봇 실험은 single-task generalization과 compositional task generalization을 분리해, 단순 visual memorization이 아니라 instruction 변화에 대한 대응을 측정한다."
+      ],
+      [
+        "5 Conclusion",
+        "APT의 메시지는 continuous action expert VLA에서 action module 학습 순서가 language grounding 품질을 좌우한다는 것이다. 강한 VLM을 붙이는 것만으로 충분하지 않고, action expert가 먼저 안정적인 VA prior가 되어야 언어 조건부 likelihood가 깨끗하게 작동한다."
+      ]
+    ],
+    "key_refs": [
+      [
+        "π0 / π0.5",
+        "continuous action expert 기반 generalist robot policy 계열. APT가 적용 가능한 대표 architecture family다."
+      ],
+      [
+        "GR00T-style architecture",
+        "NVIDIA 계열 VLA stack. APT는 π 계열뿐 아니라 GR00T-style에도 적용 가능하다고 주장한다."
+      ],
+      [
+        "OpenVLA",
+        "discrete action token 기반 VLA baseline. continuous expert와 대비되는 language co-training 장점을 보여주는 reference 축이다."
+      ],
+      [
+        "LIBERO / LIBERO-Plus",
+        "simulation manipulation benchmark. unseen instruction 및 compositional generalization 평가에 사용된다."
+      ],
+      [
+        "Visual shortcut learning",
+        "언어 지시보다 visual cue에 의존하는 failure mode. APT의 핵심 문제 정의다."
+      ],
+      [
+        "Bayesian policy factorization",
+        "π(a|v,l)를 VA prior와 language-conditioned likelihood로 나누는 이론적 틀."
+      ],
+      [
+        "Diffusion action expert",
+        "continuous action sequence 생성을 위한 action module. APT의 Stage 1 pretraining 대상이다."
+      ],
+      [
+        "Gated multimodal fusion",
+        "VLM feature와 action expert feature를 layer-wise gate로 결합하는 설계. visuomotor prior 보존과 language conditioning의 균형을 만든다."
+      ]
+    ]
+  },
+  "arxiv_meta": {
+    "versioned_id": "2606.12366v1",
+    "title": "APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies",
+    "authors": [
+      "Kechun Xu",
+      "Zhenjie Zhu",
+      "Anzhe Chen",
+      "Rong Xiong",
+      "Yue Wang"
+    ],
+    "summary": "Vision-Language-Action (VLA) models that couple pretrained Vision-Language Models (VLMs) with continuous action experts have achieved strong manipulation performance, yet generalization to out-of-distribution (OOD) language instructions remains poor. A known challenge is the structural imbalance in VLA data, where language is far less diverse than visual and action content, making policies prone to visual shortcuts. While discrete-action methods mitigate this through vision-language co-training, continuous action experts lack such protection: they start from random initialization and learn entirely from imbalanced data, producing noisy gradients that corrupt the VLM and fail to exploit its language capability. We address this from a Bayesian perspective, factorizing the policy into a language-agnostic Vision-Action (VA) prior and a language-conditioned VLA likelihood, and propose APT, a two-stage training method emphasizing Action expert PreTraining. In Stage 1, the action expert is pretrained as a VA prior on vision-action pairs from a frozen VLM, bypassing the language imbalance. In Stage 2, language tokens are injected through a gated fusion mechanism that integrates VLM features while preserving the learned visuomotor prior. APT applies to mainstream VLA architectures, including the $π$ and GR00T-style architectures. Comprehensive experiments validate that APT achieves consistent gains on unseen instructions and compositional tasks. Project Page: https://xukechun.github.io/papers/APT/",
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.RO"
+    ]
+  },
+  "html_info": {
+    "html_available": true,
+    "headings": [
+      "APT: Action Expert Pretraining Improves Instruction Generalization of Vision-Language-Action Policies",
+      "1 Introduction",
+      "2 Related Work",
+      "3 Method",
+      "3.1 Problem Statement",
+      "3.2 Action Pretraining under Bayesian Formulation",
+      "3.3 Action Expert Design",
+      "4 Experiments",
+      "4.1 Simulation Experiments",
+      "4.1.1 Benchmarks",
+      "4.1.2 Baselines",
+      "4.1.3 Main Results",
+      "4.1.4 More Ablation Studies",
+      "4.2 Real-World Experiments",
+      "4.2.1 Experiment Setup",
+      "4.2.2 Single Task Generalization",
+      "4.2.3 Compositional Task Generalization",
+      "5 Conclusion",
+      "References",
+      "Appendix A Implementation Details",
+      "Appendix B Visual Shortcut Analysis",
+      "B.1 Shortcut Learning",
+      "B.2 Two-stage Conditioning",
+      "Appendix C Baseline Details",
+      "Appendix D Simulation Experiment Details",
+      "D.1 Benchmark Details",
+      "D.2 Results on Original LIBERO",
+      "D.3 Results on LIBERO-Plus",
+      "D.4 Case Studies on Rigid Object Pick-Place",
+      "Appendix E Real-world Experiment Details",
+      "E.1 Real-world Setup",
+      "E.2 Single Task Detailed Settings",
+      "E.3 Compositional Task Detailed Settings",
+      "E.4 Detailed Results",
+      "E.5 Case Studies",
+      "E.6 Failure Studies",
+      "Instructions for reporting errors"
+    ],
+    "figures": [
+      {
+        "file": "figures/figure-01.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x1.png",
+        "caption": "Figure 1: Action expert pretraining (APT) enables effective instruction following."
+      },
+      {
+        "file": "figures/figure-02.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x2.png",
+        "caption": "Figure 2: Overview of APT. In Stage 1, the action expert is pretrained as a VA prior conditioned solely on visual tokens from a frozen VLM backbone. In Stage 2, language tokens are injected, training the full VLA policy to align the pretrained action distribution with the task instruction."
+      },
+      {
+        "file": "figures/figure-03.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x3.png",
+        "caption": "Figure 3: Action Expert Design. VLM features are injected into action expert via gated fusion. The action expert processes multimodal tokens by self-attention."
+      },
+      {
+        "file": "figures/figure-04.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x4.png",
+        "caption": "Table 1: Results on LIBERO-PRO (success rate %)."
+      },
+      {
+        "file": "figures/figure-05.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x5.png",
+        "caption": "Table 2: Results on Pick-Place (rate %)."
+      },
+      {
+        "file": "figures/figure-06.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x6.png",
+        "caption": "Figure 4: Action expert pretraining applies to diverse architectures."
+      },
+      {
+        "file": "figures/figure-07.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x7.png",
+        "caption": "Figure 5: Ablation on large-scale pretraining and language injection mechanism."
+      },
+      {
+        "file": "figures/figure-08.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x8.png",
+        "caption": "Figure 6: Results on compositional task."
+      },
+      {
+        "file": "figures/figure-09.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x9.png",
+        "caption": "Table 3: Real-world task generalization results (successes/trials)."
+      },
+      {
+        "file": "figures/figure-10.png",
+        "url": "https://arxiv.org/html/2606.12366v1/x10.png",
+        "caption": "Figure 7: Real-world cases. (a) pick-place task, (b) clutter pick-place task, (c) compositional task chaining."
+      }
+    ],
+    "references": [
+      "[1] S. Bai, Y. Cai, R. Chen, K. Chen, X. Chen, Z. Cheng, L. Deng, W. Ding, C. Gao, C. Ge, et al. (2025) Qwen3-vl technical report . arXiv preprint arXiv:2511.21631 . Cited by: Appendix A , Appendix A , Appendix C , §2 , §3.1 , §3.3 .",
+      "[2] L. Beyer, A. Steiner, A. S. Pinto, A. Kolesnikov, X. Wang, D. Salz, M. Neumann, I. Alabdulmohsin, M. Tschannen, E. Bugliarello, et al. (2024) Paligemma: a versatile 3b vlm for transfer . arXiv preprint arXiv:2407.07726 . Cited by: Appendix C , §2 , §3.1 .",
+      "[3] J. Bjorck, F. Castañeda, N. Cherniadev, X. Da, R. Ding, L. Fan, Y. Fang, D. Fox, F. Hu, S. Huang, et al. (2025) Gr00t n1: an open foundation model for generalist humanoid robots . arXiv preprint arXiv:2503.14734 . Cited by: §1 , §1 , §1 , §2 , §3.1 , §3.1 , §4.1.4 .",
+      "[4] J. Bjorck, F. Castañeda, N. Cherniadev, X. Da, R. Ding, L. Fan, Y. Fang, D. Fox, F. Hu, S. Huang, et al. (2025) GR00T n1.5: an improved open foundation model for generalist humanoid robots . Cited by: §1 , §1 , §2 , §2 , §3.1 , §4.1.4 .",
+      "[5] K. Black, N. Brown, D. Driess, A. Esmail, M. Equi, C. Finn, N. Fusai, L. Groom, K. Hausman, B. Ichter, et al. (2024) π 0 \\pi_{0} : A vision-language-action flow model for general robot control . arXiv preprint arXiv:2410.24164 . Cited by: Appendix C , Table 4 , Table 5 , §1 , §1 , §1 , §2 , §3.1 , §3.1 , §4.1.2 , Table 1 , §4.1.4 .",
+      "[6] A. Brohan, N. Brown, J. Carbajal, Y. Chebotar, J. Dabis, C. Finn, K. Gopalakrishnan, K. Hausman, A. Herzog, J. Hsu, et al. (2023) RT-1: robotics transformer for real-world control at scale . Robotics: Science and Systems (RSS) . Cited by: §2 .",
+      "[7] Q. Bu, J. Cai, L. Chen, X. Cui, Y. Ding, S. Feng, S. Gao, X. He, X. Hu, X. Huang, et al. (2025) Agibot world colosseo: a large-scale manipulation platform for scalable and intelligent embodied systems . arXiv preprint arXiv:2503.06669 . Cited by: 2nd item , §2 .",
+      "[8] Q. Bu, H. Li, L. Chen, J. Cai, J. Zeng, H. Cui, M. Yao, and Y. Qiao (2024) Towards synergistic, generalized, and efficient dual-system for robotic manipulation . arXiv preprint arXiv:2410.08001 . Cited by: §2 .",
+      "[9] Q. Bu, Y. Yang, J. Cai, S. Gao, G. Ren, M. Yao, P. Luo, and H. Li (2025) Univla: learning to act anywhere with task-centric latent actions . arXiv preprint arXiv:2505.06111 . Cited by: Appendix C , Table 4 , Table 5 .",
+      "[10] J. Cen, C. Yu, H. Yuan, Y. Jiang, S. Huang, J. Guo, X. Li, Y. Song, H. Luo, F. Wang, et al. (2025) WorldVLA: towards autoregressive action world model . arXiv preprint arXiv:2506.21539 . Cited by: Appendix C , Table 4 , §2 .",
+      "[11] C. Cheang, S. Chen, Z. Cui, Y. Hu, L. Huang, T. Kong, H. Li, Y. Li, Y. Liu, X. Ma, et al. (2025) Gr-3 technical report . arXiv preprint arXiv:2507.15493 . Cited by: §2 .",
+      "[12] A. Chen, Y. Yang, Z. Zhu, K. Xu, Z. Zhou, R. Xiong, and Y. Wang (2025) Toward embodiment equivariant vision-language-action policy . arXiv preprint arXiv:2509.14630 . Cited by: Appendix A .",
+      "[13] T. Chen, Z. Chen, B. Chen, Z. Cai, Y. Liu, Z. Li, Q. Liang, X. Lin, Y. Ge, Z. Gu, et al. (2025) Robotwin 2.0: a scalable data generator and benchmark with strong domain randomization for robust bimanual robotic manipulation . arXiv preprint arXiv:2506.18088 . Cited by: §2 .",
+      "[14] X. Chen, Y. Chen, Y. Fu, N. Gao, J. Jia, W. Jin, H. Li, Y. Mu, J. Pang, Y. Qiao, et al. (2025) Internvla-m1: a spatially guided vision-language-action framework for generalist robot policy . arXiv preprint arXiv:2510.13778 . Cited by: 4th item .",
+      "[15] Z. Chen, Q. Yan, Y. Chen, T. Wu, J. Zhang, Z. Ding, J. Li, Y. Yang, and H. Dong (2025) ClutterDexGrasp: a Sim-to-Real system for general dexterous grasping in cluttered scenes . In Conference on Robot Learning (CoRL) , pp. 885–905 . Cited by: §E.2 , §4.2.2 .",
+      "[16] C. Chi, S. Feng, Y. Du, Z. Xu, E. Cousineau, B. Burchfiel, and S. Song (2023) Diffusion policy: visuomotor policy learning via action diffusion . In Robotics: Science and Systems (RSS) , Cited by: §2 .",
+      "[17] O. X. Collaboration (2023) Open X-Embodiment: robotic learning datasets and RT-X models . Note: https://arxiv.org/abs/2310.08864 Cited by: Appendix C , §2 .",
+      "[18] C. Cui, P. Ding, W. Song, S. Bai, X. Tong, Z. Ge, R. Suo, W. Zhou, Y. Liu, B. Jia, et al. (2025) Openhelix: a short survey, empirical analysis, and open-source dual-system vla model for robotic manipulation . arXiv preprint arXiv:2505.03912 . Cited by: §2 .",
+      "[19] D. Driess, J. T. Springenberg, L. Yu, A. Li-Bell, K. Pertsch, A. Z. Ren, H. Walke, Q. Vuong, L. X. Shi, S. Levine, et al. (2025) Knowledge insulating vision-language-action models: train fast, run fast, generalize better . In Advances in Neural Information Processing Systems (NeurIPS) , Cited by: §1 , §2 , §2 , §3.1 , §4.1.2 , §4.1.3 .",
+      "[20] H. Fang, H. Fang, Z. Tang, J. Liu, C. Wang, J. Wang, H. Zhu, and C. Lu (2024) Rh20t: a comprehensive robotic dataset for learning diverse skills in one-shot . In IEEE International Conference on Robotics and Automation (ICRA) , pp. 653–660 . Cited by: §2 .",
+      "[21] I. Fang, J. Zhang, S. Tong, and C. Feng (2025) From intention to execution: probing the generalization boundaries of vision-language-action models . arXiv preprint arXiv:2506.09930 . Cited by: §2 .",
+      "[22] Y. Fang, Y. Feng, D. Jing, J. Liu, Y. Yang, Z. Wei, D. Szafir, and M. Ding (2026) When vision overrides language: evaluating and mitigating counterfactual failures in vlas . arXiv preprint arXiv:2602.17659 . Cited by: §1 , §2 , §3.1 .",
+      "[23] S. Fei, S. Wang, J. Shi, Z. Dai, J. Cai, P. Qian, L. Ji, X. He, S. Zhang, Z. Fei, et al. (2025) Libero-plus: in-depth robustness analysis of vision-language-action models . arXiv preprint arXiv:2510.13626 . Cited by: §D.1 , §2 .",
+      "[24] M. Fu, J. Yu, K. El-Refai, E. Kou, H. Xue, H. Huang, W. Xiao, G. Wang, F. Li, G. Shi, et al. (2026) CaP-x: a framework for benchmarking and improving coding agents for robot manipulation . arXiv preprint arXiv:2603.22435 . Cited by: Appendix C , Table 1 .",
+      "[25] J. Gao, S. Belkhale, S. Dasari, A. Balakrishna, D. Shah, and D. Sadigh (2025) A taxonomy for evaluating generalist robot policies . arXiv preprint arXiv:2503.01238 . Cited by: §1 , §2 , §2 .",
+      "[26] K. Gao, D. Lau, B. Huang, K. E. Bekris, and J. Yu (2022) Fast high-quality tabletop rearrangement in bounded workspace . In IEEE International Conference on Robotics and Automation (ICRA) , pp. 1961–1967 . Cited by: Table 5 .",
+      "[27] H. Geng, F. Wang, S. Wei, Y. Li, B. Wang, B. An, C. T. Cheng, H. Lou, P. Li, Y. Wang, et al. (2025) RoboVerse: towards a unified platform, dataset and benchmark for scalable and generalizable robot learning . arXiv preprint arXiv:2504.18904 . Cited by: §2 .",
+      "[28] J. Guo, Z. Wu, C. Tu, Y. Ma, X. Kong, Z. Liu, J. Ji, S. Zhang, Y. Chen, K. Chen, et al. (2025) On robustness of vision-language-action model against multi-modal perturbations . arXiv preprint arXiv:2510.00037 . Cited by: §2 .",
+      "[29] J. Ho, A. Jain, and P. Abbeel (2020) Denoising diffusion probabilistic models . Advances in Neural Information Processing Systems (NeurIPS) 33 , pp. 6840–6851 . Cited by: Appendix A .",
+      "[30] H. Huang, F. Liu, L. Fu, T. Wu, M. Mukadam, J. Malik, K. Goldberg, and P. Abbeel OTTER: a vision-language-action model with text-aware visual feature extraction . In International Conference on Machine Learning (ICML) , Cited by: §2 .",
+      "[31] P. Intelligence, B. Ai, A. Amin, R. Aniceto, A. Balakrishna, G. Balke, K. Black, G. Bokinsky, S. Cao, T. Charbonnier, et al. (2026) π 0.7 \\pi_{0.7} : A steerable generalist robotic foundation model with emergent capabilities . arXiv preprint arXiv:2604.15483 . Cited by: §2 .",
+      "[32] P. Intelligence, K. Black, N. Brown, J. Darpinian, K. Dhabalia, D. Driess, A. Esmail, M. Equi, C. Finn, N. Fusai, et al. (2025) π 0.5 \\pi_{0.5} : A vision-language-action model with open-world generalization . arXiv preprint arXiv:2504.16054 . Cited by: Appendix C , Table 4 , Table 7 , Table 8 , §1 , §1 , §2 , §2 , §3.1 , §4.1.2 , Table 1 , §4.1.4 , §4.2.1 , §4.2.2 .",
+      "[33] Y. Jiang, S. Huang, S. Xue, Y. Zhao, J. Cen, S. Leng, K. Li, J. Guo, K. Wang, M. Chen, et al. (2025) RynnVLA-001: using human demonstrations to improve robot manipulation . arXiv preprint arXiv:2509.15212 . Cited by: §2 .",
+      "[34] Y. Jiang, A. Gupta, Z. Zhang, G. Wang, Y. Dou, Y. Chen, L. Fei-Fei, A. Anandkumar, Y. Zhu, and L. Fan (2023) VIMA: robot manipulation with multimodal prompts . In International Conference on Machine Learning (ICML) , pp. 14975–15022 . Cited by: §2 .",
+      "[35] S. Karamcheti, S. Nair, A. Balakrishna, P. Liang, T. Kollar, and D. Sadigh (2024) Prismatic vlms: investigating the design space of visually-conditioned language models . In International Conference on Machine Learning (ICML) , pp. 23123–23144 . Cited by: Appendix C .",
+      "[36] A. Khazatsky, K. Pertsch, S. Nair, A. Balakrishna, S. Dasari, S. Karamcheti, S. Nasiriany, M. K. Srirama, L. Y. Chen, K. Ellis, et al. (2024) DROID: a large-scale in-the-wild robot manipulation dataset . In Robotics: Science and Systems (RSS) , Cited by: 1st item , Appendix C , §2 .",
+      "[37] M. J. Kim, C. Finn, and P. Liang (2025) Fine-tuning vision-language-action models: optimizing speed and success . arXiv preprint arXiv:2502.19645 . Cited by: Appendix C , Table 5 , §2 , §3.1 , §4.1.2 .",
+      "[38] M. J. Kim, K. Pertsch, S. Karamcheti, T. Xiao, A. Balakrishna, S. Nair, R. Rafailov, E. P. Foster, P. R. Sanketi, Q. Vuong, et al. (2024) OpenVLA: an open-source vision-language-action model . In Conference on Robot Learning (CoRL) , pp. 2679–2713 . Cited by: Appendix C , §1 , §2 , §3.1 , §4.1.2 , Table 1 .",
+      "[39] L. Li, Q. Zhang, Y. Luo, S. Yang, R. Wang, F. Han, M. Yu, Z. Gao, N. Xue, X. Zhu, et al. (2026) Causal world modeling for robot control . arXiv preprint arXiv:2601.21998 . Cited by: §2 .",
+      "[40] R. Li, B. Yi, J. Liu, H. Gao, Y. Ma, and A. Kanazawa (2025) Cameras as relative positional encoding . In Advances in Neural Information Processing Systems (NeurIPS) , Cited by: Appendix A .",
+      "[41] X. Li, P. Li, L. Qian, M. Liu, D. Wang, J. Liu, B. Kang, X. Ma, X. Wang, D. Guo, et al. (2026) What matters in building vision-language-action models for generalist robots . Nature Machine Intelligence , pp. 1–15 . Cited by: §2 .",
+      "[42] S. Lian, B. Yu, X. Lin, L. T. Yang, Z. Shen, C. Wu, Y. Miao, C. Huang, and K. Chen (2026) LangForce: Bayesian decomposition of vision language action models via latent action queries . arXiv preprint arXiv:2601.15197 . Cited by: Appendix C , §2 , §3.1 , §4.1.2 , Table 1 .",
+      "[43] B. Liu, Y. Zhu, C. Gao, Y. Feng, Q. Liu, Y. Zhu, and P. Stone (2023) Libero: benchmarking knowledge transfer for lifelong robot learning . Advances in Neural Information Processing Systems (NeurIPS) 36 , pp. 44776–44791 . Cited by: §D.1 , §2 , §4.1.1 .",
+      "[44] J. Liu, H. Chen, P. An, Z. Liu, R. Zhang, C. Gu, X. Li, Z. Guo, S. Chen, M. Liu, et al. (2025) Hybridvla: collaborative diffusion and autoregression in a unified vision-language-action model . arXiv preprint arXiv:2503.10631 . Cited by: §2 .",
+      "[45] S. Liu, L. Wu, B. Li, H. Tan, H. Chen, Z. Wang, K. Xu, H. Su, and J. Zhu (2025) RDT-1B: a diffusion foundation model for bimanual manipulation . In International Conference on Learning Representations (ICLR) , Cited by: §1 , §2 .",
+      "[46] M. Nakamoto, O. Mees, A. Kumar, and S. Levine (2025) Steering your generalists: improving robotic foundation models via value guidance . In Conference on Robot Learning (CoRL) , pp. 4996–5013 . Cited by: §2 .",
+      "[47] S. Nasiriany, A. Maddukuri, L. Zhang, A. Parikh, A. Lo, A. Joshi, A. Mandlekar, and Y. Zhu (2024) Robocasa: large-scale simulation of everyday tasks for generalist robots . arXiv preprint arXiv:2406.02523 . Cited by: §2 .",
+      "[48] Isaac Sim External Links: Link Cited by: §D.1 .",
+      "[49] S. Orjuela et al. (2026) Robust skills, brittle grounding: diagnosing restricted generalization in vision-language action policies via multi-object picking . arXiv preprint arXiv:2602.24143 . Cited by: §2 .",
+      "[50] E. Perez, F. Strub, H. De Vries, V. Dumoulin, and A. Courville (2018) Film: visual reasoning with a general conditioning layer . In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI) , Vol. 32 , pp. 3942–3951 . Cited by: §3.3 .",
+      "[51] K. Pertsch, K. Stachowicz, B. Ichter, D. Driess, S. Nair, Q. Vuong, O. Mees, C. Finn, and S. Levine (2025) Fast: efficient action tokenization for vision-language-action models . arXiv preprint arXiv:2501.09747 . Cited by: Appendix C , §1 , §2 , §3.1 .",
+      "[52] M. Shukor, D. Aubakirova, F. Capuano, P. Kooijmans, S. Palma, A. Zouitine, M. Aractingi, C. Pascal, M. Russi, A. Marafioti, et al. (2025) Smolvla: a vision-language-action model for affordable and efficient robotics . arXiv preprint arXiv:2506.01844 . Cited by: §2 .",
+      "[53] J. Song, C. Meng, and S. Ermon Denoising diffusion implicit models . In International Conference on Learning Representations , Cited by: Appendix A .",
+      "[54] J. Su, M. Ahmed, Y. Lu, S. Pan, W. Bo, and Y. Liu (2024) Roformer: enhanced transformer with rotary position embedding . Neurocomputing 568 , pp. 127063 . Cited by: Appendix A .",
+      "[55] J. Sun, W. Zhang, Z. Qi, S. Ren, Z. Liu, H. Zhu, G. Sun, X. Jin, and Z. Chen (2026) VLA-JEPA: enhancing vision-language-action model with latent world model . arXiv preprint arXiv:2602.10098 . Cited by: §2 .",
+      "[56] S. Tan, K. Dou, Y. Zhao, and P. Krähenbühl (2025) Interactive post-training for vision-language-action models . arXiv preprint arXiv:2505.17016 . Cited by: Appendix C , Table 5 .",
+      "[57] G. R. Team, S. Abeyruwan, J. Ainslie, J. Alayrac, M. G. Arenas, T. Armstrong, A. Balakrishna, R. Baruch, M. Bauza, M. Blokzijl, et al. (2025) Gemini robotics: bringing ai into the physical world . arXiv preprint arXiv:2503.20020 . Cited by: §1 .",
+      "[58] G. A. Team (2025) GEN-0: embodied foundation models that scale with physical interaction . Generalist AI Blog . Note: https://generalistai.com/blog/preview-uqlxvb-bb.html Cited by: §1 , §2 .",
+      "[59] O. M. Team, D. Ghosh, H. Walke, K. Pertsch, K. Black, O. Mees, S. Dasari, J. Hejna, T. Kreiman, C. Xu, et al. (2024) Octo: an open-source generalist robot policy . arXiv preprint arXiv:2405.12213 . Cited by: §2 .",
+      "[60] Y. Tian, Y. Yang, Y. Xie, Z. Cai, X. Shi, N. Gao, H. Liu, X. Jiang, Z. Qiu, F. Yuan, et al. (2026) Interndata-a1: pioneering high-fidelity synthetic data for pre-training generalist policy . In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pp. 976–985 . Cited by: 3rd item .",
+      "[61] S. L. Wanna, A. Luhtaru, R. Barron, J. Salfity, J. Moore, C. Matuszek, and M. Pryor Let’s talk about language! investigating linguistic diversity in embodied ai datasets . In 1st Workshop on Safely Leveraging Vision-Language Foundation Models in Robotics: Challenges and Opportunities , Cited by: §2 .",
+      "[62] J. Wen, Y. Zhu, M. Zhu, Z. Tang, J. Li, Z. Zhou, X. Liu, C. Shen, Y. Peng, and F. Feng (2025) DiffusionVLA: scaling robot foundation models via unified diffusion and autoregression . In International Conference on Machine Learning (ICML) , pp. 66558–66574 . Cited by: §1 , §2 .",
+      "[63] K. Wu, C. Hou, J. Liu, Z. Che, X. Ju, Z. Yang, M. Li, Y. Zhao, Z. Xu, G. Yang, et al. (2024) Robomind: benchmark on multi-embodiment intelligence normative data for robot manipulation . arXiv preprint arXiv:2412.13877 . Cited by: §2 .",
+      "[64] W. Wu, F. Lu, Y. Wang, S. Yang, S. Liu, F. Wang, Q. Zhu, H. Sun, Y. Wang, S. Ma, et al. (2026) A pragmatic vla foundation model . arXiv preprint arXiv:2601.18692 . Cited by: §2 .",
+      "[65] Y. Wu, R. Tian, G. Swamy, and A. Bajcsy (2025) From foresight to forethought: vlm-in-the-loop policy steering via latent alignment . arXiv preprint arXiv:2502.01828 . Cited by: §2 .",
+      "[66] K. Xu, H. Yu, Q. Lai, Y. Wang, and R. Xiong (2021) Efficient learning of goal-oriented push-grasping synergy in clutter . IEEE Robotics and Automation Letters 6 ( 4 ), pp. 6337–6344 . Cited by: §E.2 .",
+      "[67] K. Xu, Z. Zhu, A. Chen, S. Zhao, Q. Huang, Y. Yang, H. Lu, R. Xiong, M. Tomizuka, and Y. Wang (2025) Seeing to act, prompting to specify: a bayesian factorization of vision language action policy . arXiv preprint arXiv:2512.11218 . Cited by: Appendix B , §D.1 , §1 , §2 , §3.1 , §3.3 , §4.1.1 .",
+      "[68] Z. Xu, Z. He, J. Wu, and S. Song (2021) Learning 3d dynamic scene representations for robot manipulation . In Conference on Robot Learning (CoRL) , pp. 126–142 . Cited by: §4.2.2 .",
+      "[69] S. Yang, H. Li, Y. Chen, B. Wang, Y. Tian, T. Wang, H. Wang, F. Zhao, Y. Liao, and J. Pang (2025) Instructvla: vision-language-action instruction tuning from understanding to manipulation . arXiv preprint arXiv:2507.17520 . Cited by: §2 .",
+      "[70] Z. Zhan, Y. Chen, J. Zhou, Q. Lv, H. Liu, K. Wang, L. Lin, and G. Wang (2026) Stable language guidance for vision-language-action models . arXiv preprint arXiv:2601.04052 . Cited by: §2 .",
+      "[71] W. Zhang, H. Liu, Z. Qi, Y. Wang, X. Yu, J. Zhang, R. Dong, J. He, H. Wang, Z. Zhang, et al. (2025) DreamVLA: a vision-language-action model dreamed with comprehensive world knowledge . In Advances in Neural Information Processing Systems (NeurIPS) , Cited by: §2 .",
+      "[72] Y. Zhang, C. Wang, O. Lu, Y. Zhao, Y. Ge, Z. Sun, X. Li, C. Zhang, C. Bai, and X. Li (2025) Align-then-steer: adapting the vision-language action models through unified latent guidance . arXiv preprint arXiv:2509.02055 . Cited by: §2 .",
+      "[73] Q. Zhao, Y. Lu, M. J. Kim, Z. Fu, Z. Zhang, Y. Wu, Z. Li, Q. Ma, S. Han, C. Finn, et al. (2025) Cot-vla: visual chain-of-thought reasoning for vision-language-action models . In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , pp. 1702–1713 . Cited by: §1 , §2 .",
+      "[74] T. Z. Zhao, V. Kumar, S. Levine, and C. Finn (2023) Learning fine-grained bimanual manipulation with low-cost hardware . Robotics: Science and Systems (RSS) . Cited by: §2 .",
+      "[75] J. Zheng, J. Li, Z. Wang, D. Liu, X. Kang, Y. Feng, Y. Zheng, J. Zou, Y. Chen, J. Zeng, et al. (2025) X-vla: soft-prompted transformer as scalable cross-embodiment vision-language-action model . arXiv preprint arXiv:2510.10274 . Cited by: Appendix C , Table 5 .",
+      "[76] Y. Zhong, F. Bai, S. Cai, X. Huang, Z. Chen, X. Zhang, Y. Wang, S. Guo, T. Guan, K. N. Lui, et al. (2025) A survey on vision-language-action models: an action tokenization perspective . arXiv preprint arXiv:2507.01925 . Cited by: §2 .",
+      "[77] X. Zhou, Y. Xu, G. Tie, Y. Chen, G. Zhang, D. Chu, P. Zhou, and L. Sun (2025) LIBERO-pro: towards robust and fair evaluation of vision-language-action models beyond memorization . arXiv preprint arXiv:2510.03827 . Cited by: §D.1 , §1 , §2 , §2 , §4.1.1 .",
+      "[78] Y. Zhou, C. Barnes, J. Lu, J. Yang, and H. Li (2019) On the continuity of rotation representations in neural networks . In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , Vol. , pp. 5738–5746 . Cited by: Appendix A .",
+      "[79] M. Zhu, Y. Zhu, J. Li, J. Wen, Z. Xu, N. Liu, R. Cheng, C. Shen, Y. Peng, F. Feng, et al. (2025) Scaling diffusion policy in transformer to 1 billion parameters for robotic manipulation . In IEEE International Conference on Robotics and Automation (ICRA) , pp. 10838–10845 . Cited by: §2 .",
+      "[80] B. Zitkovich, T. Yu, S. Xu, P. Xu, T. Xiao, F. Xia, J. Wu, P. Wohlhart, S. Welker, A. Wahid, et al. (2023) RT-2: vision-language-action models transfer web knowledge to robotic control . In Conference on Robot Learning (CoRL) , pp. 2165–2183 . Cited by: §1 , §2 ."
+    ],
+    "html_bytes": 364300
+  },
+  "semantic_refs": [
+    {
+      "title": "${\\pi}_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities",
+      "year": 2026,
+      "authors": [
+        "Physical Intelligence",
+        "Bo Ai",
+        "A. Amin",
+        "Raichelle J. Aniceto"
+      ],
+      "citationCount": 38,
+      "externalIds": {
+        "ArXiv": "2604.15483",
+        "CorpusId": 287607456
+      },
+      "abstract": "We present a new robotic foundation model, called ${\\pi}_{0.7}$, that can enable strong out-of-the-box performance in a wide range of scenarios. ${\\pi}_{0.7}$ can follow diverse language instructions in unseen environments, including multi-stage tasks with various kitchen appliances, provide zero-shot cross-embodiment generalization, for example enabling a robot to fold laundry without seeing the task before, and perform challenging tasks such as operating an espresso machine out of the box at a level of performance that matches much more specialized RL-finetuned models. The main idea behind ${\\pi}_{0.7}$ is to use diverse context conditioning during training. This conditioning information, contained in the prompt, makes it possible to steer the model precisely to perform many tasks with different strategies. It is conditioned not just on a language command that describes what it should do, but on additional multimodal information that also describes the manner or strategy in which it should do it, including metadata about task performance and subgoal images. This enables ${\\pi}_{0.7}$ to use very diverse data, including demonstrations, potentially suboptimal (autonomous) data including failures, and data from non-robot sources. Our experiments evaluate ${\\pi}_{0.7}$ across numerous tasks with multiple robot platforms, on tasks that require speed and dexterity, language following, and compositional task generalization."
+    },
+    {
+      "title": "CaP-X: A Framework for Benchmarking and Improving Coding Agents for Robot Manipulation",
+      "year": 2026,
+      "authors": [
+        "Max Fu",
+        "Justin Yu",
+        "Karim El-Refai",
+        "Ethan Kou"
+      ],
+      "citationCount": 10,
+      "externalIds": {
+        "ArXiv": "2603.22435",
+        "CorpusId": 286770427
+      },
+      "abstract": "\"Code-as-Policy\"considers how executable code can complement data-intensive Vision-Language-Action (VLA) methods, yet their effectiveness as autonomous controllers for embodied manipulation remains underexplored. We present CaP-X, an open-access framework for systematically studying Code-as-Policy agents in robot manipulation. At its core is CaP-Gym, an interactive environment in which agents control robots by synthesizing and executing programs that compose perception and control primitives. Building on this foundation, CaP-Bench evaluates frontier language and vision-language models across varying levels of abstraction, interaction, and perceptual grounding. Across 12 models, CaP-Bench reveals a consistent trend: performance improves with human-crafted abstractions but degrades as these priors are removed, exposing a dependence on designer scaffolding. At the same time, we observe that this gap can be mitigated through scaling agentic test-time computation--through multi-turn interaction, structured execution feedback, visual differencing, automatic skill synthesis, and ensembled reasoning--substantially improves robustness even when agents operate over low-level primitives. These findings allow us to derive CaP-Agent0, a training-free framework that recovers human-level reliability on several manipulation tasks in simulation and on real embodiments. We further introduce CaP-RL, showing reinforcement learning with verifiable rewards improves success rates and transfers from sim2real with minimal gap. Together, CaP-X provides a principled, open-access platform for advancing embodied coding agents."
+    },
+    {
+      "title": "Robust Skills, Brittle Grounding: Diagnosing Restricted Generalization in Vision-Language Action Policies via Multi-Object Picking",
+      "year": 2026,
+      "authors": [
+        "David Emukpere",
+        "Romain Deffayet",
+        "J. Renders"
+      ],
+      "citationCount": 1,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2602-24143",
+        "ArXiv": "2602.24143",
+        "DOI": "10.48550/arXiv.2602.24143",
+        "CorpusId": 286171099
+      },
+      "abstract": "Vision-language action (VLA) policies often report strong manipulation benchmark performance with relatively few demonstrations, but it remains unclear whether this reflects robust language-to-object grounding or reliance on object--location correlations that do not transfer beyond the training distribution. We present a controlled multi-object picking study that progressively increases object placement variability up to full workspace randomization and evaluates held-out object--location pairings that break familiar associations without increasing spatial difficulty. Across these stress tests and data scaling, we find that for representative VLA policies, including SmolVLA and $\\pi_{0.5}$, execution of the manipulation primitive remains substantially more reliable than instruction-conditioned task success in harder regimes, suggesting that manipulation skill acquisition is decoupled from instruction following. We recommend augmenting manipulation benchmarks with task ladders and decomposed metrics that separately measure primitive execution and instruction-conditioned success to better diagnose instruction-grounded generalization."
+    },
+    {
+      "title": "When Vision Overrides Language: Evaluating and Mitigating Counterfactual Failures in VLAs",
+      "year": 2026,
+      "authors": [
+        "Yu Fang",
+        "Yuchun Feng",
+        "Dong Jing",
+        "Jiaqi Liu"
+      ],
+      "citationCount": 6,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2602-17659",
+        "ArXiv": "2602.17659",
+        "DOI": "10.48550/arXiv.2602.17659",
+        "CorpusId": 285787587
+      },
+      "abstract": "Vision-Language-Action models (VLAs) promise to ground language instructions in robot control, yet in practice often fail to faithfully follow language. When presented with instructions that lack strong scene-specific supervision, VLAs suffer from counterfactual failures: they act based on vision shortcuts induced by dataset biases, repeatedly executing well-learned behaviors and selecting objects frequently seen during training regardless of language intent. To systematically study it, we introduce LIBERO-CF, the first counterfactual benchmark for VLAs that evaluates language following capability by assigning alternative instructions under visually plausible LIBERO layouts. Our evaluation reveals that counterfactual failures are prevalent yet underexplored across state-of-the-art VLAs. We propose Counterfactual Action Guidance (CAG), a simple yet effective dual-branch inference scheme that explicitly regularizes language conditioning in VLAs. CAG combines a standard VLA policy with a language-unconditioned Vision-Action (VA) module, enabling counterfactual comparison during action selection. This design reduces reliance on visual shortcuts, improves robustness on under-observed tasks, and requires neither additional demonstrations nor modifications to existing architectures or pretrained models. Extensive experiments demonstrate its plug-and-play integration across diverse VLAs and consistent improvements. For example, on LIBERO-CF, CAG improves $\\pi_{0.5}$ by 9.7% in language following accuracy and 3.6% in task success on under-observed tasks using a training-free strategy, with further gains of 15.5% and 8.5%, respectively, when paired with a VA model. In real-world evaluations, CAG reduces counterfactual failures of 9.4% and improves task success by 17.2% on average."
+    },
+    {
+      "title": "VLA-JEPA: Enhancing Vision-Language-Action Model with Latent World Model",
+      "year": 2026,
+      "authors": [
+        "Jingwen Sun",
+        "Wenyao Zhang",
+        "Zekun Qi",
+        "Shaojie Ren"
+      ],
+      "citationCount": 21,
+      "externalIds": {
+        "ArXiv": "2602.10098",
+        "DBLP": "journals/corr/abs-2602-10098",
+        "DOI": "10.48550/arXiv.2602.10098",
+        "CorpusId": 285462792
+      },
+      "abstract": "Pretraining Vision-Language-Action (VLA) policies on internet-scale video is appealing, yet current latent-action objectives often learn the wrong thing: they remain anchored to pixel variation rather than action-relevant state transitions, making them vulnerable to appearance bias, nuisance motion, and information leakage. We introduce VLA-JEPA, a JEPA-style pretraining framework that sidesteps these pitfalls by design. The key idea is leakage-free state prediction: a target encoder produces latent representations from future frames, while the student pathway sees only the current observation -- future information is used solely as supervision targets, never as input. By predicting in latent space rather than pixel space, VLA-JEPA learns dynamics abstractions that are robust to camera motion and irrelevant background changes. This yields a simple two-stage recipe -- JEPA pretraining followed by action-head fine-tuning -- without the multi-stage complexity of prior latent-action pipelines. Experiments on LIBERO, LIBERO-Plus, SimplerEnv and real-world manipulation tasks show that VLA-JEPA achieves consistent gains in generalization and robustness over existing methods."
+    },
+    {
+      "title": "Causal World Modeling for Robot Control",
+      "year": 2026,
+      "authors": [
+        "Lin Li",
+        "Qihang Zhang",
+        "Yiming Luo",
+        "Shuai Yang"
+      ],
+      "citationCount": 88,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2601-21998",
+        "ArXiv": "2601.21998",
+        "DOI": "10.48550/arXiv.2601.21998",
+        "CorpusId": 285140583
+      },
+      "abstract": "This work highlights that video world modeling, alongside vision-language pre-training, establishes a fresh and independent foundation for robot learning. Intuitively, video world models provide the ability to imagine the near future by understanding the causality between actions and visual dynamics. Inspired by this, we introduce LingBot-VA, an autoregressive diffusion framework that learns frame prediction and policy execution simultaneously. Our model features three carefully crafted designs: (1) a shared latent space, integrating vision and action tokens, driven by a Mixture-of-Transformers (MoT) architecture, (2) a closed-loop rollout mechanism, allowing for ongoing acquisition of environmental feedback with ground-truth observations, (3) an asynchronous inference pipeline, parallelizing action prediction and motor execution to support efficient control. We evaluate our model on both simulation benchmarks and real-world scenarios, where it shows significant promise in long-horizon manipulation, data efficiency in post-training, and strong generalizability to novel configurations. The code and model are made publicly available to facilitate the community."
+    },
+    {
+      "title": "A Pragmatic VLA Foundation Model",
+      "year": 2026,
+      "authors": [
+        "Wei Wu",
+        "Fan Lu",
+        "Yunnan Wang",
+        "Shuai Yang"
+      ],
+      "citationCount": 38,
+      "externalIds": {
+        "ArXiv": "2601.18692",
+        "DBLP": "journals/corr/abs-2601-18692",
+        "DOI": "10.48550/arXiv.2601.18692",
+        "CorpusId": 285051006
+      },
+      "abstract": "Offering great potential in robotic manipulation, a capable Vision-Language-Action (VLA) foundation model is expected to faithfully generalize across tasks and platforms while ensuring cost efficiency (e.g., data and GPU hours required for adaptation). To this end, we develop LingBot-VLA with around 20,000 hours of real-world data from 9 popular dual-arm robot configurations. Through a systematic assessment on 3 robotic platforms, each completing 100 tasks with 130 post-training episodes per task, our model achieves clear superiority over competitors, showcasing its strong performance and broad generalizability. We have also built an efficient codebase, which delivers a throughput of 261 samples per second with an 8-GPU training setup, representing a 1.5~2.8$\\times$ (depending on the relied VLM base model) speedup over existing VLA-oriented codebases. The above features ensure that our model is well-suited for real-world deployment. To advance the field of robot learning, we provide open access to the code, base model, and benchmark data, with a focus on enabling more challenging tasks and promoting sound evaluation standards."
+    },
+    {
+      "title": "LangForce: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries",
+      "year": 2026,
+      "authors": [
+        "Shijie Lian",
+        "Bin Yu",
+        "Xiaopeng Lin",
+        "L. T. Yang"
+      ],
+      "citationCount": 12,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2601-15197",
+        "ArXiv": "2601.15197",
+        "DOI": "10.48550/arXiv.2601.15197",
+        "CorpusId": 284917078
+      },
+      "abstract": "Vision-Language-Action (VLA) models have shown promise in robot manipulation but often struggle to generalize to new instructions or complex multi-task scenarios. We identify a critical pathology in current training paradigms where goal-driven data collection creates a dataset bias. In such datasets, language instructions are highly predictable from visual observations alone, causing the conditional mutual information between instructions and actions to vanish, a phenomenon we term Information Collapse. Consequently, models degenerate into vision-only policies that ignore language constraints and fail in out-of-distribution (OOD) settings. To address this, we propose LangForce, a novel framework that enforces instruction following via Bayesian decomposition. By introducing learnable Latent Action Queries, we construct a dual-branch architecture to estimate both a vision-only prior $p(a \\mid v)$ and a language-conditioned posterior $\\pi(a \\mid v, \\ell)$. We then optimize the policy to maximize the conditional Pointwise Mutual Information (PMI) between actions and instructions. This objective effectively penalizes the vision shortcut and rewards actions that explicitly explain the language command. Without requiring new data, LangForce significantly improves generalization. Extensive experiments across on SimplerEnv and RoboCasa demonstrate substantial gains, including an 11.3% improvement on the challenging OOD SimplerEnv benchmark, validating the ability of our approach to robustly ground language in action."
+    },
+    {
+      "title": "Stable Language Guidance for Vision-Language-Action Models",
+      "year": 2026,
+      "authors": [
+        "Zhihao Zhan",
+        "Yuhao Chen",
+        "Jiaying Zhou",
+        "Qinhan Lv"
+      ],
+      "citationCount": 5,
+      "externalIds": {
+        "ArXiv": "2601.04052",
+        "DBLP": "journals/corr/abs-2601-04052",
+        "DOI": "10.48550/arXiv.2601.04052",
+        "CorpusId": 284532442
+      },
+      "abstract": "Vision-Language-Action (VLA) models have demonstrated impressive capabilities in generalized robotic control; however, they remain notoriously brittle to linguistic perturbations. We identify a critical ``modality collapse''phenomenon where strong visual priors overwhelm sparse linguistic signals, causing agents to overfit to specific instruction phrasings while ignoring the underlying semantic intent. To address this, we propose Residual Semantic Steering (RSS), a probabilistic framework that disentangles physical affordance from semantic execution. RSS introduces two theoretical innovations: (1) Monte Carlo Syntactic Integration, which approximates the true semantic posterior via dense, LLM-driven distributional expansion, and (2) Residual Affordance Steering, a dual-stream decoding mechanism that explicitly isolates the causal influence of language by subtracting the visual affordance prior. Theoretical analysis suggests that RSS effectively maximizes the mutual information between action and intent while suppressing visual distractors. Empirical results across diverse manipulation benchmarks demonstrate that RSS achieves state-of-the-art robustness, maintaining performance even under adversarial linguistic perturbations. We release our code at https://github.com/Doo-mon/RSS."
+    },
+    {
+      "title": "Seeing to Act, Prompting to Specify: A Bayesian Factorization of Vision Language Action Policy",
+      "year": 2025,
+      "authors": [
+        "Kechun Xu",
+        "Zhenjie Zhu",
+        "An-Jen Chen",
+        "Shuqi Zhao"
+      ],
+      "citationCount": 7,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2512-11218",
+        "ArXiv": "2512.11218",
+        "DOI": "10.48550/arXiv.2512.11218",
+        "CorpusId": 283883572
+      },
+      "abstract": "The pursuit of out-of-distribution generalization in Vision-Language-Action (VLA) models is often hindered by catastrophic forgetting of the Vision-Language Model (VLM) backbone during fine-tuning. While co-training with external reasoning data helps, it requires experienced tuning and data-related overhead. Beyond such external dependencies, we identify an intrinsic cause within VLA datasets: modality imbalance, where language diversity is much lower than visual and action diversity. This imbalance biases the model toward visual shortcuts and language forgetting. To address this, we introduce BayesVLA, a Bayesian factorization that decomposes the policy into a visual-action prior, supporting seeing-to-act, and a language-conditioned likelihood, enabling prompt-to-specify. This inherently preserves generalization and promotes instruction following. We further incorporate pre- and post-contact phases to better leverage pre-trained foundation models. Information-theoretic analysis formally validates our effectiveness in mitigating shortcut learning. Extensive experiments show superior generalization to unseen instructions, objects, and environments compared to existing methods. Project page is available at: https://xukechun.github.io/papers/BayesVLA."
+    },
+    {
+      "title": "Qwen3-VL Technical Report",
+      "year": 2025,
+      "authors": [
+        "Shuai Bai",
+        "Yuxuan Cai",
+        "Ruizhe Chen",
+        "Ke-qin Chen"
+      ],
+      "citationCount": 1242,
+      "externalIds": {
+        "ArXiv": "2511.21631",
+        "DBLP": "journals/corr/abs-2511-21631",
+        "DOI": "10.48550/arXiv.2511.21631",
+        "CorpusId": 283262018
+      },
+      "abstract": "We introduce Qwen3-VL, the most capable vision-language model in the Qwen series to date, achieving superior performance across a broad range of multimodal benchmarks. It natively supports interleaved contexts of up to 256K tokens, seamlessly integrating text, images, and video. The model family includes both dense (2B/4B/8B/32B) and mixture-of-experts (30B-A3B/235B-A22B) variants to accommodate diverse latency-quality trade-offs. Qwen3-VL delivers three core pillars: (i) markedly stronger pure-text understanding, surpassing comparable text-only backbones in several cases; (ii) robust long-context comprehension with a native 256K-token window for both text and interleaved multimodal inputs, enabling faithful retention, retrieval, and cross-referencing across long documents and videos; and (iii) advanced multimodal reasoning across single-image, multi-image, and video tasks, demonstrating leading performance on comprehensive evaluations such as MMMU and visual-math benchmarks (e.g., MathVista and MathVision). Architecturally, we introduce three key upgrades: (i) an enhanced interleaved-MRoPE for stronger spatial-temporal modeling across images and video; (ii) DeepStack integration, which effectively leverages multi-level ViT features to tighten vision-language alignment; and (iii) text-based time alignment for video, evolving from T-RoPE to explicit textual timestamp alignment for more precise temporal grounding. Under comparable token budgets and latency constraints, Qwen3-VL achieves superior performance in both dense and Mixture-of-Experts (MoE) architectures. We envision Qwen3-VL serving as a foundational engine for image-grounded reasoning, agentic decision-making, and multimodal code intelligence in real-world workflows."
+    },
+    {
+      "title": "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy",
+      "year": 2025,
+      "authors": [
+        "Yang Tian",
+        "Yuyin Yang",
+        "Yiman Xie",
+        "Zetao Cai"
+      ],
+      "citationCount": 29,
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2511-16651",
+        "ArXiv": "2511.16651",
+        "DOI": "10.48550/arXiv.2511.16651",
+        "CorpusId": 283110021
+      },
+      "abstract": "Recent works explore how real and synthetic data contribute to Vision-Language-Action (VLA) models'generalization. While current VLA models have shown the strong effectiveness of large-scale real-robot pre-training, synthetic data has not previously demonstrated comparable capability at scale. This paper provides the first evidence that synthetic data alone can match the performance of the strongest $\\pi$-dataset in pre-training a VLA model, revealing the substantial value of large-scale simulation. The resulting model also exhibits surprisingly zero-shot sim-to-real transfer on several challenging tasks. Our synthetic dataset, InternData-A1, contains over 630k trajectories and 7,433 hours across 4 embodiments, 18 skills, 70 tasks, and 227 scenes, covering rigid, articulated, deformable, and fluid-object manipulation. It is generated through a highly autonomous, fully decoupled, and compositional simulation pipeline that enables long-horizon skill composition, flexible task assembly, and heterogeneous embodiments with minimal manual tuning. Using the same architecture as $\\pi_0$, we pre-train a model entirely on InternData-A1 and find that it matches the official $\\pi_0$ across 49 simulation tasks, 5 real-world tasks, and 4 long-horizon dexterous tasks. We release the dataset and will open-source the generation pipeline to broaden access to large-scale robotic data and to lower the barrier to scalable data creation for embodied AI research."
+    }
+  ],
+  "generated_at_kst": "2026-06-17 09:40:19 KST"
+}
