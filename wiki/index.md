@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for June 11, 2026](sources/lwn-weekly-edition-2026-06-11-1076254.md) — AI 에이전트 오작동, spawn template, vmsplice() 제거, BPF 루프 검증, Trusted Publishing 등 종합 번역
 - [Retrieve, Don't Retrain: 테스트 시점 검색으로 VLA를 새 태스크에 확장하기](sources/retrieve-dont-retrain-2606-15631.md) — retrieval pool update로 VLA 새 task adaptation을 수행하는 ReCAP/WAM framework
 - [Retrieve, Don't Retrain — analysis](sources/retrieve-dont-retrain-2606-15631-analysis.md) — ReCAP architecture, I/O, training, deployment risk 분석
 - [Retrieve, Don't Retrain — references](sources/retrieve-dont-retrain-2606-15631-references.md) — ReCAP 관련 WAM/VLA/cross-embodiment 레퍼런스 정리
@@ -229,6 +230,20 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [Nathan Giovannini](entities/NathanGiovannini.md) — Fedora/Anaconda AI 에이전트 오작동 사례와 연결된 인물
+- [Adam Williamson](entities/AdamWilliamson.md) — Fedora 테스트/QA 맥락에서 AI 에이전트 오작동을 다룬 인물
+- [Mike Fiedler](entities/MikeFiedler.md) — PyPI 공급망 보안과 trusted publishing 논의에 연결된 인물
+- [Li Chen](entities/LiChen.md) — `vmsplice()` 제거 논의와 연결된 커널 개발자
+- [Eduard Zingerman](entities/EduardZingerman.md) — BPF loop verification/scalar evolution 발표자
+- [Martin Kolman](entities/MartinKolman.md) — Anaconda/Fedora installer 맥락과 연결된 개발자
+- [Anaconda](entities/Anaconda.md) — Python/R 데이터 과학 배포판 및 Fedora installer 맥락의 프로젝트/회사
+- [PyPI](entities/PyPI.md) — Python 패키지 레지스트리와 공급망 보안 맥락
+- [Kevin Fenzi](entities/KevinFenzi.md) — Fedora infrastructure/packaging 커뮤니티 인물
+- [Alpha-Omega](entities/AlphaOmega.md) — 오픈소스 공급망 보안 지원 이니셔티브
+- [Christian Brauner](entities/ChristianBrauner.md) — Linux VFS/filesystem 관련 커널 개발자
+- [Askar Safin](entities/AskarSafin.md) — `vmsplice()` 제거 논의와 연결된 커널 개발자
+- [Amir Goldstein](entities/AmirGoldstein.md) — fanotify/filesystem 관련 커널 개발자
+- [Sigstore](entities/Sigstore.md) — 오픈소스 아티팩트 서명과 transparency log 공급망 보안 프로젝트
 - [ReCAP](entities/ReCAP.md) — retrieval-conditioned action policy for test-time VLA task extension
 - [APT](entities/APT.md) — Action Expert PreTraining method for VLA instruction generalization
 - [MeshCore](entities/MeshCore.md) — open-source project name involved in a trademark/governance dispute covered by LWN 2026-06-04.
@@ -608,6 +623,13 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [Spawn Template](concepts/SpawnTemplate.md) — `fork()+exec()` 이후의 안전한 프로세스 생성 API 설계 논의
+- [Trusted Publishing](concepts/TrustedPublishing.md) — 장기 credentials 없이 패키지를 게시하는 공급망 보안 방식
+- [vmsplice](concepts/Vmsplice.md) — Linux pipe/user-memory zero-copy ABI와 제거 논의
+- [fanotify](concepts/Fanotify.md) — Linux 파일 이벤트 통지 인터페이스와 최신 변화
+- [BPF Scalar Evolution](concepts/BPFScalarEvolution.md) — BPF verifier 루프 검증에 scalar evolution을 적용하는 기술
+- [Scalar Evolution](concepts/ScalarEvolution.md) — 루프 내 스칼라 값 변화를 추론하는 정적 분석 기법
+- [posix_spawn](concepts/PosixSpawn.md) — `fork()+exec()` 비용을 줄이는 POSIX 프로세스 생성 API
 - [Retrieval-Augmented Policy](concepts/RetrievalAugmentedPolicy.md) — retrieved demonstrations/trajectories as action-generation priors
 - [Action Expert Pretraining](concepts/ActionExpertPretraining.md) — pretrain continuous action expert as a VA prior before language conditioning
 - [x32 ABI](concepts/X32ABI.md) — Linux x86-64 ABI variant with 32-bit pointers and long-term maintenance concerns.
