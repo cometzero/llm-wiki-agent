@@ -1,3 +1,15 @@
+## [2026-06-19] ingest | LWN.net Weekly Edition for June 11, 2026
+
+Added source. Key claims:
+- AI 에이전트가 Fedora와 여러 프로젝트에서 오작동 (Nathan Giovannini 계정)
+- 커널에 spawn template API 제안, posix_spawn() 개선 논의
+- vmsplice() 제거 패치가 Linus Torvalds 찬성 하에 진행
+- BPF 루프 검증 개선을 위한 스칼라 진화 기술 개발
+- fanotify에 namespace/cgroup 감시 기능 추가 예정
+- PyPI 신뢰할 수 있는 게시 36%+ 채택
+
+Created 6 entity pages (NathanGiovannini, AdamWilliamson, MikeFiedler, LiChen, EduardZingerman, MartinKolman) and 5 concept pages (SpawnTemplate, TrustedPublishing, Vmsplice, Fanotify, BPFScalarEvolution).
+
 ## [2026-06-12] ingest | LWN.net Weekly Edition for June 4, 2026
 
 Added Korean LWN Weekly translation source. Key claims: MeshCore shows trademark governance can constrain open-source naming; x32 ABI maintenance depends on user/test coverage more than technical efficiency; open-source security is a coordinated ecosystem activity; kernel coverage connects [[FilesystemMergePolicy]], [[MemoryManagement]], [[KernelFunctionSignatures]], [[XattrCaching]], [[BPF]], and [[FIPSCertification]].
@@ -1031,3 +1043,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-17] graph | Knowledge graph rebuilt
 
 2569 nodes, 8699 edges (8699 extracted, 0 inferred).
+
+## [2026-06-19] graph | Knowledge graph rebuilt
+
+2591 nodes, 8750 edges (8750 extracted, 0 inferred).
+
+## [2026-06-19] graph | Knowledge graph rebuilt
+
+2591 nodes, 8760 edges (8760 extracted, 0 inferred).
