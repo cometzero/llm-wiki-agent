@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 9,
-  "last_completed_date": "2026-06-16",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-08-dual-system-vla-2026-06-16.md",
+  "next_week": 10,
+  "last_completed_date": "2026-06-23",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-09-vlm-supervision-distillation-2026-06-23.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -53,6 +53,12 @@
       "title": "Dual-System VLA",
       "date": "2026-06-16",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-08-dual-system-vla-2026-06-16.md"
+    },
+    {
+      "week": 9,
+      "title": "VLM supervision / distillation",
+      "date": "2026-06-23",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-09-vlm-supervision-distillation-2026-06-23.md"
     }
   ]
 }
