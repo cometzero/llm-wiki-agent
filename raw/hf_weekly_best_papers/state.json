@@ -10,7 +10,9 @@
     "2606.07895",
     "2606.03159",
     "2606.15631",
-    "2606.12366"
+    "2606.12366",
+    "2606.20781",
+    "2606.22540"
   ],
   "runs": [
     {
@@ -204,6 +206,43 @@
       "commit_hash": "c073ae0d9e89202ddc252c1c4a1ef12b20cfaa07",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; manually materialized wiki pages after automated Codex ingest failed due expired token; graph rebuilt with --no-infer fallback; validation passed.",
       "limitations": "Dense appendices/tables were summarized; semantic graph inference failed on NVIDIA no-content so extracted-wikilink graph was committed."
+    },
+    {
+      "date_kst": "2026-06-24 09:40:00 KST",
+      "week": "2026-W26",
+      "selected_paper_ids": [
+        "2606.20781",
+        "2606.22540"
+      ],
+      "papers": [
+        {
+          "id": "2606.20781",
+          "title": "World Action Models: A Survey",
+          "week": "2026-W26",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/world-action-models-survey-2606-20781"
+        },
+        {
+          "id": "2606.22540",
+          "title": "PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models",
+          "week": "2026-W26",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/policytrim-2606-22540"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/world-action-models-survey-2606-20781/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/world-action-models-survey-2606-20781/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/world-action-models-survey-2606-20781/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/world-action-models-survey-2606-20781/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/policytrim-2606-22540/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/policytrim-2606-22540/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/policytrim-2606-22540/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W26/policytrim-2606-22540/learning.md"
+      ],
+      "commit_hash": "375bfb478b1b",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; ingested all 8 markdown files into wiki; graph rebuilt with --no-infer fallback after NVIDIA no-content; validation passed with raw coverage complete.",
+      "limitations": "Dense survey census tables, appendices, and some detailed numeric tables were summarized rather than exhaustively translated; Semantic Scholar references API returned 429, so references were curated from paper context and visible benchmark/model axes; graph semantic inference failed and deterministic extracted-wikilink graph was committed."
     }
   ]
 }
