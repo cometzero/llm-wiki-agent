@@ -1,3 +1,49 @@
+## [2026-06-24] ingest | Hugging Face Weekly 2026-W26 VLA/WAM update pass
+
+Added World Action Models survey and PolicyTrim raw deliverables; repaired validation links and index coverage.
+
+## [2026-06-24] ingest | PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — learning
+
+Added source. Key claims: PolicyTrim은 2단계 RL post-training으로 VLA [[ActionChunk]] utilization 3배, [[PhysicalSteps]] 51.4% 감소, 5.83배 speedup 달성. Phase 1 [[HorizonSuccessReward]]로 [[TailDegradation]] 완화, Phase 2 [[RedundancyAwareReward]]로 불필요 step 절감. [[IntrinsicPolicyEfficiency]]는 architecture efficiency(pruning/quantization)와 구분되는 개념으로, policy behavior 자체의 효율성을 최적화함. Benchmarks: [[LIBERO]], [[ManiSkill]], [[MetaWorld]]. Created 7 concept pages: [[PolicyTrim]], [[IntrinsicPolicyEfficiency]], [[TailDegradation]], [[HorizonSuccessReward]], [[RedundancyAwareReward]], [[PhysicalSteps]], [[ActionChunk]]. No contradictions with existing wiki.
+
+## [2026-06-24] ingest | PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — references
+
+Added source. Key claims: PolicyTrim 논문의 8개 축 레퍼런스 정리(π0/OpenVLA/GR00T VLA 계열, LIBERO/ManiSkill/Meta-World benchmark, RL post-training, efficient VLA 연구). 읽기 순서 제안 포함. [[ActionChunk]] concept page 생성.
+
+## [2026-06-24] ingest | PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — analysis
+
+Added source. Key claims: RL 2-stage post-training으로 VLA deployment 병목인 action chunk tail degradation와 redundant steps를 해결, 3x action chunk utilization, 51.4% physical steps 감소, 5.83x speedup 달성. 적용 모델: π0.5, OpenVLA-OFT, GR00T. Created entity pages: OpenVLA-OFT. Created concept pages: ActionChunk, PolicyEfficiency, RLPostTraining.
+
+## [2026-06-24] ingest | PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training
+
+Added source. Key claims: VLA deployment 병목은 compute-centric efficiency가 아닌 intrinsic policy efficiency 문제; PolicyTrim은 두 단계 RL post-training(신뢰 가능한 action chunk 확장 + 중복 단계 감축)으로 action chunk utilization 3배, physical steps 51.4% 감소, 5.83배 speedup 달성. Entity pages 생성: π0.5, GR00T, OpenVLA-OFT, LIBERO, ManiSkill, Meta-World. Concept pages 생성: IntrinsicPolicyEfficiency, ActionChunk, RLPostTraining, ComputeCentricEfficiency.
+
+## [2026-06-24] ingest | World Action Models: A Survey — WAM 서베이 학습 자료
+
+Added source: raw/learning.md → sources/world-action-models-survey-2606-20781-learning.md
+
+Key claims:
+- WAM은 "dream less, act more" 철학으로 action-facing future prediction에 집중
+- Predictive substrate (pixel/latent/language/geometry) 4가지 수준
+- Action coupling 3가지 패턴: Render-and-Decode, Latent-Only, Video-Generation-Free
+- 5단계 step-by-step WAM 분석 프레임워크 제공
+
+New concept pages: [[WorldActionModel]], [[PredictiveSubstrate]], [[ActionCoupling]], [[RenderAndDecode]], [[LatentOnly]], [[VideoGenerationFree]]
+
+## [2026-06-24] ingest | World Action Models: A Survey — references
+
+Added source. Key claims: WAM survey(2606.20781) 레퍼런스를 7축으로 정리 — VLA 일반, Video World Models, DriveDreamer/Drive-WM/OmniDreams 계열, VisualThink-VLA/TBD-VLA/ReflectDrive, Latent world model, Action-scoring/MPC, Evaluation papers. 읽기 순서 제안: VLA4AD → DriveDreamer/OmniDreams → VLA repo 논문 → WAM survey 통합 정리. Created [[Vision-Language-ActionModels]], [[LatentWorldModels]], [[Model-PredictiveControl]] concept pages; [[DriveDreamer]], [[VLA4AD]] entity pages. No contradictions.
+
+## [2026-06-24] ingest | World Action Models: A Survey — analysis
+
+Added source. Key claims: WAM을 "action-facing predictive model"로 정의하여 VLA/video world model/broad world model과 경계 재정립; 3분류 taxonomy(Render-and-Decode, Latent-Only, Video-Generation-Free); 4축 anatomy(predictive substrate, backbone, action coupling, deployment regime); 평가 지표를 visual quality(FVD)에서 action utility/causality/latency/generalization으로 재정렬. Entities: OmniDreams, ReflectDrive, TBD-VLA, VisualThink-VLA. Concepts: WorldActionModel, ActionFacingPredictiveModel, PredictiveSubstrate, WAMTaxonomy.
+
+## [2026-06-24] ingest | World Action Models: A Survey — WAM 서베이
+
+Added source. Key claims: WAM은 [[PredictiveAction]] method로 VLA, broad world model, video generation과 구분되며, 세 가지 설계 철학(Render-and-Decode, Latent-Only, Video-Generation-Free)과 네 축 해부(Predictive substrate, Backbone, Action coupling, Deployment regime)를 제시함. 자율주행 VLA에서 WAM은 lane change, braking, yielding, cut-in 대응 같은 executable decision 개선에 초점을 둠.
+
+New concept pages: [[WorldActionModel]], [[PredictiveSubstrate]], [[ActionCoupling]], [[RenderAndDecode]], [[LatentOnlyWAM]], [[VideoGenerationFreeWAM]]
+
 ## [2026-06-19] ingest | LWN.net Weekly Edition for June 11, 2026
 
 Added source. Key claims:
@@ -1051,3 +1097,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-19] graph | Knowledge graph rebuilt
 
 2591 nodes, 8760 edges (8760 extracted, 0 inferred).
+
+## [2026-06-24] graph | Knowledge graph rebuilt
+
+2633 nodes, 8932 edges (8932 extracted, 0 inferred).
+
+## [2026-06-24] graph | Knowledge graph rebuilt
+
+2633 nodes, 8937 edges (8937 extracted, 0 inferred).

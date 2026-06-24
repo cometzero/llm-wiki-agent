@@ -1,0 +1,109 @@
+{
+  "id": "2606.20781",
+  "title": "World Action Models: A Survey",
+  "ko_title": "World Action Models: A Survey — 미래를 덜 꿈꾸고 행동을 더 잘하게 만드는 WAM 서베이",
+  "slug": "world-action-models-survey-2606-20781",
+  "week": "2026-W26",
+  "hf_url": "https://huggingface.co/papers/2606.20781",
+  "arxiv_url": "https://arxiv.org/abs/2606.20781",
+  "pdf_url": "https://arxiv.org/pdf/2606.20781",
+  "html_url": "https://arxiv.org/html/2606.20781",
+  "project_page": "https://world-action-models.github.io/",
+  "github_repo": "https://github.com/world-action-models/awesome-world-action-models",
+  "authors": [
+    "Qiuhong Shen",
+    "Shihua Zhang",
+    "Yue Liao",
+    "Qi Li",
+    "Zhenxiong Tan",
+    "Shizun Wang",
+    "Shuicheng Yan",
+    "Xinchao Wang"
+  ],
+  "selected_reason": "현재 주(2026-W26) 후보 중 VLA와 world model의 경계를 직접 정리하고, World Action Model(WAM)을 action-facing predictive model로 정의해 VLA for AD/robotics 학습 로드맵에 기준 taxonomy를 제공한다.",
+  "one_line": "WAM은 단순 video generation이 아니라, 예측된 미래 표현이 action 선택 경로 안에 남아 제어 의사결정에 쓰이는 predictive-action model이다.",
+  "taxonomy": "Foundation / Survey / Benchmark, World model + VLA",
+  "abstract": "World Action Models (WAMs) are embodied predictive-action models that make a forecast of the future available to action. Recent WAMs repurpose large video generation models, and a parallel line relies on language or vision-language backbones without a video-generation core. This rapid expansion has blurred the boundary among broad world models, video generation models, action-grounded video world models, Vision-Language-Action policies, and WAMs. This survey gives the field a common account. It first clarifies these boundaries, then organizes existing works through two complementary views. The first view asks what each method is required to generate, spanning rendered futures, latent futures, and video-generation-free action reasoning. The second view decomposes each method by predictive substrate, backbone, action coupling, and deployment regime. This anatomy supports a unified discussion of interactability, causality, persistence, physical plausibility, and generalization, followed by data, evaluation, and open challenges. Across these axes, a consistent design pattern emerges: WAMs are not simply video generators with action heads, but predictive-action methods whose design choices trade representational richness against compute, memory, latency, and action-label cost. The field is moving toward methods that generate less of the future while preserving what control requires. The survey homepage is available at https://world-action-models.github.io/ .",
+  "headings": [
+    "1 Introduction",
+    "2 The Emergence of World Action Models",
+    "2.1 Vision-Language-Action Models: Policies from Vision-Language Pretraining",
+    "2.2 World Models: Predictive Dynamics Beyond Video",
+    "2.3 World Action Models: Making the Future Action-Facing",
+    "3 Three Design Philosophies of World Action Models",
+    "3.1 Render-and-Decode World Action Models",
+    "3.2 Latent-Only World Action Models",
+    "3.3 Video-Generation-Free World Action Models",
+    "3.4 Where the three philosophies meet the formal anatomy",
+    "4 What Makes a World Action Model",
+    "4.1 A Unified Notation for World Action Models",
+    "4.2 Predictive Substrate: Where WAMs Dream",
+    "4.3 Action Coupling: How Action Enters and Leaves",
+    "4.4 Architectural Backbone: How the Prediction Is Produced",
+    "4.5 Deployment Regime: Interactive, Rollout, Open Loop, Closed Loop",
+    "4.6 Putting the Four Ingredients Together",
+    "5 Core Properties of World Action Models",
+    "5.1 Interactability",
+    "5.2 Causality",
+    "5.3 Persistence",
+    "5.4 Physical Plausibility",
+    "5.5 Generalization",
+    "6 Data and Evaluation",
+    "6.1 Data sources",
+    "6.2 Evaluation",
+    "7 Open Challenges",
+    "7.1 Dream More or Act More?",
+    "7.2 What Data Should Each Stage Learn From?",
+    "7.3 Can Memory Keep Up?",
+    "7.4 How Can WAMs Generalize?",
+    "7.5 What Grounds Abstract Action?",
+    "7.6 When Is a Future Physical?",
+    "7.7 What Should Evaluation Report?",
+    "The challenges are coupled",
+    "8 Conclusion",
+    "References",
+    "Instructions for reporting errors"
+  ],
+  "figures": [
+    {
+      "local": "figures/figure-01.png",
+      "src": "2606.20781v1/x1.png",
+      "caption": "Figure 1: Definition of a World Action Model. A direct VLA predicts action from the present context, and a world model predicts a future observation. A WAM requires that future to stay in the action path, either through predict-then-act cascades, action-scoring rollouts, or joint future-action prediction."
+    },
+    {
+      "local": "figures/figure-02.png",
+      "src": "2606.20781v1/x2.png",
+      "caption": "Figure 2: Three design philosophies of World Action Models. The columns separate the last future representation required before action is decoded: a rendered pixel future, an intermediate video-derived latent or feature, or a non-video-generation representation. The categorization is exhaustive over the WAM census and separable from the action-coupling and backbone choices treated in Section 4 ."
+    },
+    {
+      "local": "figures/figure-03.png",
+      "src": "2606.20781v1/x3.png",
+      "caption": "Figure 3: Chronological stream of representative WAMs grouped by design philosophy. The timeline uses coarse bins for 2023, 2024, and 2025 H1, then finer bins for the denser late-2025 and early-2026 period through May. Each date marker attaches a compact vertical stack to the curve, alternating above and below the stream. Dense periods retain early or central verified WAMs so labels remain legible. Stacks above the curve place the widest block nearest the stream, while stacks below the curve begin with the narrowest block. Render-and-Decode appears earliest, Latent-Only emerges as the field starts to drop pixel decoding from the control path, and Video-Generation-Free entries appear as LLM, VLM, JEPA, and non-video diffusion or hybrid backbones begin to carry the predictive component without a video-generation core."
+    },
+    {
+      "local": "figures/figure-04.png",
+      "src": "2606.20781v1/x4.png",
+      "caption": "Figure 4: The anatomy of a world action model. Any existing WAM can be specified by four separable but interacting choices: what it predicts (Section 4.2 ), how action is coupled to that prediction (Section 4.3 ), the function family that produces the prediction (Section 4.4 ), and the deployment regime it is intended for (Section 4.5 ). Two methods with the same labels but different choices on any one axis behave very differently in practice."
+    },
+    {
+      "local": "figures/figure-05.png",
+      "src": "2606.20781v1/x5.png",
+      "caption": "Figure 5: The four predictive-substrate categories of Section 4.2 , classified by the representational space in which the WAM forms its future. Pixel-grounded substrates include decoded observations and pixel-decodable latents, with Audio-WM treated as a rare acoustic observation-latent edge case ( unipi , GR-1 , WorldVLA , tau0wm2026 , learningrobotmanipulation2025 ). Feature substrates include encoder-only, feature-tap, teacher-target, and VLM-token futures with no fixed observation decoder ( FastWAM , hu2024vpp , FLARE , dawnworldaction2026 , alamalgebraicallyconsistent2026 ). Geometric substrates expose flow, point clouds, depth, polylines, or motion vectors ( TesserAct1 , pointworldscaling3d2026 , hifvlahindsight2025 ). Affordance substrates expose value maps, masks, affordances, or heatmaps ( AIM , lou2026mwm , palmprogressaware2026 ). Joint cells use the ∧ \\wedge separator when one forward pass predicts futures in two categories."
+    },
+    {
+      "local": "figures/figure-06.png",
+      "src": "2606.20781v1/x6.png",
+      "caption": "Figure 6: Three common action-coupling families in existing WAMs. The arrangements differ in where the action representation is bound to the substrate prediction, and that binding is what determines latency, controllability, and per-step inference cost."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 1: Census of World Action Models in the Render-and-Decode and Latent-Only philosophies of Section 3 . The upper band lists Render-and-Decode methods and the lower band lists Latent-Only methods. Columns give the four-axis anatomy of Section 4 , locating each work on the design tuple of Equation 37 , and within each band rows follow arXiv first-submission date."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 2: Census of Video-Generation-Free World Action Models, the third design philosophy of Section 3 . No video-generation backbone is in the predictive path. Columns match Table LABEL:tab:wams-video , locating each work on the design tuple of Equation 37 , and rows follow arXiv first-submission date."
+    }
+  ]
+}

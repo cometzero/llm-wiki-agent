@@ -1,5 +1,7 @@
 ## 2026-W25 HF Weekly VLA update: retrieval adaptation and action-expert pretraining
 
+이번 2026-W26 업데이트는 WAM taxonomy와 VLA deployment efficiency를 보강한다. World Action Models survey는 VLA, video world model, broad world model을 action-facing predictive model 관점으로 정리하고, PolicyTrim은 action chunk tail degradation과 redundant physical steps를 RL post-training으로 줄여 VLA의 intrinsic policy efficiency를 개선한다.
+
 이번 업데이트는 VLA scaling의 두 병목을 추가한다. [[ReCAP]]/[[retrieve-dont-retrain-2606-15631]]은 새 task를 parameter update가 아니라 retrieval pool 확장으로 흡수하는 [[RetrievalAugmentedPolicy]] 방향을 제시한다. [[APT]]/[[apt-action-expert-pretraining-2606-12366]]는 continuous action expert가 language imbalance 때문에 visual shortcut을 학습하는 문제를 [[ActionExpertPretraining]]과 gated fusion으로 완화한다. 두 논문 모두 manipulation 중심이지만, 자율주행 VLA에서는 waypoint/trajectory planner, closed-loop latency, safety verifier와 결합해야 한다.
 
 ## Visual Intermediate Reasoning in VLA Systems
