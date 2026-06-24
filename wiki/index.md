@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — learning](sources/policytrim-2606-22540-learning.md) — VLA policy efficiency, action chunk, RL 2-phase post-training 학습 가이드: glossary/아키텍처/단계별 설명/equations/implementation notes/Study Q/Reading Roadmap
+- [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — references](sources/policytrim-2606-22540-references.md) — PolicyTrim 논문의 8개 축 레퍼런스: π0/OpenVLA/GR00T, LIBERO/ManiSkill/Meta-World benchmark, RL post-training, efficient VLA 연구 정리
+- [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — analysis](sources/policytrim-2606-22540-analysis.md) — RL 2단계 post-training으로 action chunk utilization 3배, physical steps 51.4% 감소, 5.83배 speedup 달성
+- [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training](sources/policytrim-2606-22540.md) — RL 기반 두 단계 post-training으로 VLA action chunk utilization 3배 향상, 51.4% 물리 단계 감소, 5.83배 속도 개선
+- [World Action Models: A Survey — WAM 서베이 학습 자료](sources/world-action-models-survey-2606-20781-learning.md) — WAM 정의/용어/아키텍처/5단계 분석/Study Q&A/Reading Roadmap 정리
+- [World Action Models: A Survey — references](sources/world-action-models-survey-2606-20781-references.md) — WAM survey(2606.20781) 관련 레퍼런스를 VLA일반/VideoWM/DriveWM/VLA논문/LatentWM/MPC/Evaluation 7축으로 정리, 읽기 순서 제안
+- [World Action Models: A Survey — analysis](sources/world-action-models-survey-2606-20781-analysis.md) — WAM을 action-facing predictive model로 정의, VLA/video world model/ broad world model과 경계 정리, 4축 taxonomy 제시
+- [World Action Models: A Survey — WAM 서베이](sources/world-action-models-survey-2606-20781.md) — VLA/world model/video generation과 WAM 경계 정리, 세 가지 설계 철학, 네 축 해부 taxonomy
 - [LWN.net Weekly Edition for June 11, 2026](sources/lwn-weekly-edition-2026-06-11-1076254.md) — AI 에이전트 오작동, spawn template, vmsplice() 제거, BPF 루프 검증, Trusted Publishing 등 종합 번역
 - [Retrieve, Don't Retrain: 테스트 시점 검색으로 VLA를 새 태스크에 확장하기](sources/retrieve-dont-retrain-2606-15631.md) — retrieval pool update로 VLA 새 task adaptation을 수행하는 ReCAP/WAM framework
 - [Retrieve, Don't Retrain — analysis](sources/retrieve-dont-retrain-2606-15631-analysis.md) — ReCAP architecture, I/O, training, deployment risk 분석
@@ -230,6 +238,8 @@
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
 ## Entities
+- [VLA4AD](entities/VLA4AD.md) — VLA for autonomous driving survey/project anchor
+- [Pi05](entities/Pi05.md) — π0/π0.5 계열 VLA policy/entity 정리
 - [Nathan Giovannini](entities/NathanGiovannini.md) — Fedora/Anaconda AI 에이전트 오작동 사례와 연결된 인물
 - [Adam Williamson](entities/AdamWilliamson.md) — Fedora 테스트/QA 맥락에서 AI 에이전트 오작동을 다룬 인물
 - [Mike Fiedler](entities/MikeFiedler.md) — PyPI 공급망 보안과 trusted publishing 논의에 연결된 인물
@@ -623,6 +633,33 @@
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
 ## Concepts
+- [VLAPlanner](concepts/VLAPlanner.md) — VLA 기반 executable planning output 생성기
+- [PredictiveAction](concepts/PredictiveAction.md) — 미래 예측과 action selection을 결합하는 설계 원리
+- [VideoWorldModels](concepts/VideoWorldModels.md) — video/latent future를 예측하는 world model 계열
+- [VideoGeneration](concepts/VideoGeneration.md) — 미래 또는 새 visual sequence를 생성하는 모델 계열
+- [Pruning](concepts/Pruning.md) — 모델/토큰/연산 경로를 줄이는 compute 효율화 기법
+- [SuccessRate](concepts/SuccessRate.md) — task 성공 비율 metric
+- [PolicyTrim](concepts/PolicyTrim.md) — VLA action chunk reliability와 redundant step을 줄이는 RL post-training framework
+- [ComputeCentricEfficiency](concepts/ComputeCentricEfficiency.md) — pruning/quantization/token reduction 등 per-step compute 효율화
+- [ActionCoupling](concepts/ActionCoupling.md) — action이 prediction과 decoder에 결합되는 방식
+- [VideoGenerationFreeWAM](concepts/VideoGenerationFreeWAM.md) — video generator 없이 action-facing future를 구성하는 WAM
+- [PredictiveSubstrate](concepts/PredictiveSubstrate.md) — WAM이 미래를 표현하는 pixel/latent/language/geometric 공간
+- [RenderAndDecode](concepts/RenderAndDecode.md) — rendered future를 만든 뒤 action을 decode하는 WAM 방식
+- [IntrinsicPolicyEfficiency](concepts/IntrinsicPolicyEfficiency.md) — model compute가 아닌 policy behavior 자체의 실행 효율
+- [WAMTaxonomy](concepts/WAMTaxonomy.md) — WAM을 substrate/backbone/action coupling/deployment로 분류하는 taxonomy
+- [HorizonSuccessReward](concepts/HorizonSuccessReward.md) — 더 긴 reliable action horizon을 성공적으로 실행하도록 주는 reward
+- [PolicyEfficiency](concepts/PolicyEfficiency.md) — policy가 성공을 유지하며 얼마나 적은 호출/step으로 task를 끝내는지
+- [Model-PredictiveControl](concepts/Model-PredictiveControl.md) — rollout/prediction으로 action을 선택하는 control 프레임워크
+- [LatentOnlyWAM](concepts/LatentOnlyWAM.md) — latent-only predictive substrate를 사용하는 World Action Model
+- [PhysicalSteps](concepts/PhysicalSteps.md) — 실제 환경에서 수행되는 physical action step 수
+- [TailDegradation](concepts/TailDegradation.md) — action chunk 뒤쪽 예측 신뢰도가 낮아지는 현상
+- [RLPostTraining](concepts/RLPostTraining.md) — pretrained policy를 rollout reward로 후학습하는 절차
+- [LatentOnly](concepts/LatentOnly.md) — pixel rendering 없이 latent future를 사용하는 WAM 방식
+- [RedundancyAwareReward](concepts/RedundancyAwareReward.md) — 성공을 유지하며 불필요 physical step을 줄이는 reward
+- [LatentWorldModels](concepts/LatentWorldModels.md) — latent space에서 환경 dynamics/future를 예측하는 world model
+- [Vision-Language-ActionModels](concepts/Vision-Language-ActionModels.md) — vision/language context에서 executable action을 생성하는 모델 계열
+- [ActionFacingPredictiveModel](concepts/ActionFacingPredictiveModel.md) — 예측된 미래가 action path에 남는 predictive model 개념
+- [VideoGenerationFree](concepts/VideoGenerationFree.md) — video generation 없이 action-facing reasoning을 구성하는 WAM 방식
 - [Spawn Template](concepts/SpawnTemplate.md) — `fork()+exec()` 이후의 안전한 프로세스 생성 API 설계 논의
 - [Trusted Publishing](concepts/TrustedPublishing.md) — 장기 credentials 없이 패키지를 게시하는 공급망 보안 방식
 - [vmsplice](concepts/Vmsplice.md) — Linux pipe/user-memory zero-copy ABI와 제거 논의

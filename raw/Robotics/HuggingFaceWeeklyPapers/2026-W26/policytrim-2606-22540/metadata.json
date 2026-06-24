@@ -1,0 +1,162 @@
+{
+  "id": "2606.22540",
+  "title": "PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models",
+  "ko_title": "PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training",
+  "slug": "policytrim-2606-22540",
+  "week": "2026-W26",
+  "hf_url": "https://huggingface.co/papers/2606.22540",
+  "arxiv_url": "https://arxiv.org/abs/2606.22540",
+  "pdf_url": "https://arxiv.org/pdf/2606.22540",
+  "html_url": "https://arxiv.org/html/2606.22540",
+  "project_page": "https://inceptionwang.github.io/PolicyTrim/",
+  "github_repo": "https://github.com/INCEPTIONwang/PolicyTrim",
+  "authors": [
+    "Xianghui Wang",
+    "Feng Chen",
+    "Wenbo Zhang",
+    "Hua Yan",
+    "Zixuan Wang",
+    "Changsheng Li",
+    "Yinjie Lei"
+  ],
+  "selected_reason": "현재 주(2026-W26) 후보 중 VLA deployment의 실제 병목인 action chunk 신뢰도와 redundant physical step을 정면으로 다루며, RL post-training으로 end-to-end 속도를 높이는 방법을 제시한다.",
+  "one_line": "PolicyTrim은 action chunk tail degradation과 redundant steps를 줄여 VLA 실행 호출 수를 감소시키는 RL 기반 post-training 프레임워크다.",
+  "taxonomy": "Numerical Action Generation / RL post-training / Deployment efficiency",
+  "abstract": "Vision-Language-Action (VLA) models provide a unified paradigm for robotic manipulation, yet their real-world deployment is often bottlenecked by execution efficiency. While existing efforts predominantly focus on compute-centric efficiency to reduce per-step inference latency, the intrinsic policy efficiency of these models remains largely unexplored. Policy efficiency is fundamentally affected by two factors, namely the effective executable length of predicted action chunks and the total physical steps required to complete a task. These two factors jointly determine the total number of forward inference calls during execution. We observe that current VLA policies struggle with planning unreliability and action redundancy, suffering from severe prediction degradation at the tail of action chunks and tending to generate unnecessarily redundant physical steps. To address this, we propose PolicyTrim , a reinforcement learning-based post-training framework that extends the reliable action chunk length and reduces redundant physical steps. For reliable chunk extension, we employ a dynamic exploration strategy that explicitly rewards the successful completion of longer executable lengths, progressively pushing the trustworthy prediction horizon to its empirical limit. For step efficiency, we design a redundancy-aware reward that directly favors successful task completions with fewer steps while penalizing unreproducible shortcuts, effectively eliminating redundant physical actions. Extensive experiments across three benchmarks and three VLA models demonstrate that PolicyTrim improves action chunk utilization by 3 × \\times and reduces physical execution steps by 51.4%. Ultimately, our framework delivers up to a 5.83 × \\times end-to-end deployment speedup without compromising task success rates. Project Page : https://inceptionwang.github.io/PolicyTrim/",
+  "headings": [
+    "1 Introduction",
+    "2 Related Work",
+    "2.1 Vision-Language-Action Models",
+    "2.2 Efficient Vision-Language-Action Models",
+    "2.3 Reinforcement Learning for VLA",
+    "3 Method",
+    "3.1 Overview",
+    "3.2 Reliable Action Chunk Extension",
+    "3.3 Redundancy-Aware Step Reduction",
+    "3.4 Experimental Setup",
+    "3.5 Main Results",
+    "3.6 Ablation Study",
+    "3.7 Discussion",
+    "4 Conclusion",
+    "Acknowledgment",
+    "References",
+    "Appendix 0.A PolicyTrim Training Algorithm",
+    "0.A.1 PolicyTrim Training Algorithm",
+    "Appendix 0.B Implementation Details",
+    "0.B.1 Training Hyperparameters",
+    "0.B.2 Backbone-Specific Settings",
+    "Appendix 0.C Additional Results",
+    "0.C.1 Qualitative Results",
+    "0.C.2 Ablation on Group Size",
+    "0.C.3 Ablation on Components",
+    "0.C.4 Real-World Deployment",
+    "0.C.5 Robustness under Visual Perturbations",
+    "0.C.6 Post-Training Cost",
+    "0.C.7 Horizon-Sweep Baseline",
+    "0.C.8 Hyperparameter Sensitivity",
+    "Appendix 0.D Failure Case Analysis",
+    "Instructions for reporting errors"
+  ],
+  "figures": [
+    {
+      "local": "figures/figure-01.png",
+      "src": "2606.22540v1/x1.png",
+      "caption": "Figure 1 : Intrinsic policy inefficiency in deployed VLA models manifests along two dimensions. (a) Repeated rollouts on identical tasks reveal substantial variance in step counts, indicating concise execution paths exist but emerge only by chance. (b) Forcing longer action chunk execution simultaneously degrades success rates and inflates physical steps, confirming that unreliable tail predictions are a key factor. (c) A visualization of how tail prediction errors trigger misalignment and grasp failures, compelling the robot into redundant corrective actions before eventual task completion."
+    },
+    {
+      "local": "figures/figure-02.png",
+      "src": "2606.22540v1/x2.png",
+      "caption": "Figure 2 : Overview of PolicyTrim. PolicyTrim is a two-stage RL post-training framework that enhances intrinsic policy efficiency of VLA models. The first stage progressively extends the reliable action chunk horizon by rewarding successful execution of longer chunks. The second stage eliminates redundant physical steps via a step-saving reward coupled with group-anchored stability regularization. Together, the two stages jointly reduce the total number of forward inference calls required to complete a task."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 1 : Evaluation of π 0.5 \\pi_{0.5} , OpenVLA-OFT, and GR00T on the four subsets of the LIBERO benchmark. We report average success rate (SR), average physical steps ( S total S_{\\text{total}} ), average action chunk execution length ( h chunk h_{\\text{chunk}} ), and end-to-end execution Speedup (Spd)."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 2 : Evaluation on ManiSkill and Meta-World. We report average success rate (SR), average physical steps ( S total S_{\\text{total}} ), average action chunk execution length ( h chunk h_{\\text{chunk}} ), and end-to-end execution Speedup (Spd)."
+    },
+    {
+      "local": "figures/figure-05.png",
+      "src": "2606.22540v1/x3.png",
+      "caption": "Figure 3 : Qualitative comparison on randomly sampled LIBERO tasks. Under identical configurations, the baseline incurs redundant physical actions, whereas PolicyTrim achieves task completion in roughly half the steps."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 3 : Cross-architecture results. We report success rate (SR), average physical steps, action horizon h h , and end-to-end speedup."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 4 : Real-world deployment results. Standard uses a fixed target pose, while Dynamic perturbs the target during grasping. Values under Standard and Dynamic are success rates in %, and Time is measured in seconds."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 5 : Ablation study of different components on LIBERO-Spatial benchmarks."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 6 : Ablation of Dynamic Execution Horizon Exploration on LIBERO-Object using π 0.5 \\pi_{0.5} with H = 20 H\\!=\\!20 . Fixed- γ \\gamma variants replace diverse ratio sampling with a single acceptance ratio."
+    },
+    {
+      "local": "figures/figure-10.png",
+      "src": "2606.22540v1/x4.png",
+      "caption": "Figure 4 : Training reward curves without (Left) and with (Right) Group-Anchored Regularization on LIBERO-Spatial ( π 0.5 \\pi_{0.5} )."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 7 : Combining PolicyTrim with VLA-Cache on the four LIBERO subsets using OpenVLA-OFT. PolicyTrim and VLA-Cache target orthogonal efficiency axes and yield compounded speedups."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Algorithm 1 PolicyTrim Post-Training"
+    },
+    {
+      "local": "figures/figure-13.png",
+      "src": "2606.22540v1/x5.png",
+      "caption": "Figure 5 : Qualitative comparisons on GR00T and OpenVLA-OFT. For each instruction, we compare execution snapshots of the baseline policy and PolicyTrim. Across both backbones, PolicyTrim reaches the goal with more compact trajectories and fewer redundant physical steps. Green boxes highlight salient late-stage frames where task completion occurs."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 8 : Ablation on group size G G for π 0.5 \\pi_{0.5} on the four LIBERO subsets. We report success rate (SR), average physical steps ( S total S_{\\text{total}} ), average action chunk execution length ( h chunk h_{\\text{chunk}} ), and end-to-end execution speedup (Spd)."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 9 : Ablation study of different PolicyTrim components on the four LIBERO subsets using π 0.5 \\pi_{0.5} ."
+    },
+    {
+      "local": "figures/figure-16.png",
+      "src": "2606.22540v1/x6.png",
+      "caption": "Figure 6 : Real-world execution visualization on the FlipMug task."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 10 : Simulation robustness results on LIBERO-Spatial under visual perturbations. We report SR / Step, where SR is success rate in % and Step is the average number of physical execution steps."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 11 : Horizon-sweep baseline for π 0.5 \\pi_{0.5} . Fixed larger horizons degrade success rate, while PolicyTrim learns to extend the reliable horizon through RL post-training."
+    },
+    {
+      "local": null,
+      "src": null,
+      "caption": "Table 12 : Hyperparameter sensitivity on LIBERO-Spatial. We report SR / Step. Default values are shown in bold."
+    },
+    {
+      "local": "figures/figure-20.png",
+      "src": "2606.22540v1/x7.png",
+      "caption": "Figure 7 : Failure case without group-anchored stability regularization. The policy approaches the bowl with insufficient clearance, causing a collision and task failure."
+    }
+  ]
+}
