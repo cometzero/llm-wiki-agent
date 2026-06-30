@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 10,
-  "last_completed_date": "2026-06-23",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-09-vlm-supervision-distillation-2026-06-23.md",
+  "next_week": 11,
+  "last_completed_date": "2026-06-30",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-10-dataset-benchmark-집중-2026-06-30.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -59,6 +59,12 @@
       "title": "VLM supervision / distillation",
       "date": "2026-06-23",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-09-vlm-supervision-distillation-2026-06-23.md"
+    },
+    {
+      "week": 10,
+      "title": "Dataset & Benchmark 집중",
+      "date": "2026-06-30",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-10-dataset-benchmark-집중-2026-06-30.md"
     }
   ]
 }
