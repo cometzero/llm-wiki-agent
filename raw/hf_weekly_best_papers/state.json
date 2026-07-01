@@ -12,7 +12,9 @@
     "2606.15631",
     "2606.12366",
     "2606.20781",
-    "2606.22540"
+    "2606.22540",
+    "2606.18112",
+    "2606.18953"
   ],
   "runs": [
     {
@@ -243,6 +245,43 @@
       "commit_hash": "375bfb478b1b",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; ingested all 8 markdown files into wiki; graph rebuilt with --no-infer fallback after NVIDIA no-content; validation passed with raw coverage complete.",
       "limitations": "Dense survey census tables, appendices, and some detailed numeric tables were summarized rather than exhaustively translated; Semantic Scholar references API returned 429, so references were curated from paper context and visible benchmark/model axes; graph semantic inference failed and deterministic extracted-wikilink graph was committed."
+    },
+    {
+      "date_kst": "2026-07-01 09:40:38 KST",
+      "week": "2026-W27",
+      "selected_paper_ids": [
+        "2606.18112",
+        "2606.18953"
+      ],
+      "papers": [
+        {
+          "id": "2606.18112",
+          "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+          "week": "2026-W27",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/qwen-robotnav-2606-18112"
+        },
+        {
+          "id": "2606.18953",
+          "title": "Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement",
+          "week": "2026-W27",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/object-centric-residual-rl-2606-18953"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/qwen-robotnav-2606-18112/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/qwen-robotnav-2606-18112/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/qwen-robotnav-2606-18112/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/qwen-robotnav-2606-18112/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/object-centric-residual-rl-2606-18953/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/object-centric-residual-rl-2606-18953/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/object-centric-residual-rl-2606-18953/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W27/object-centric-residual-rl-2606-18953/learning.md"
+      ],
+      "commit_hash": "030416c288c0cb30df3778bee2def8f69c4da409",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; repaired partial ingest source coverage; validation passed; graph rebuilt with --no-infer fallback after NVIDIA no-content during semantic inference.",
+      "limitations": "Automated batch ingest timed out after partial materialization, so missing source coverage and broken wikilinks were repaired manually with meaningful/placeholder pages; dense appendices/tables were summarized rather than exhaustively translated; semantic graph inference fell back to extracted wikilinks only."
     }
   ]
 }
