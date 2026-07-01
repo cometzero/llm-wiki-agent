@@ -4,6 +4,13 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — references](sources/object-centric-residual-rl-vla-enhancement-2606-18953-references.md) — [[VLA]] backbone, [[ResidualRL]], sim-to-real transfer 관련 10개 레퍼런스 정리; [[π0]]/[[π0.5]]/[[π0.6]]/[[GR00T-N1]]/PLD/Residual-Off-Policy-RL 등
+- [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean analysis](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
+- [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean technical translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
+- [Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System — learning guide](sources/qwen-robotnav-2606-18112-learning.md) — learning guide covering prerequisites, key terminology, step-by-step understanding, architecture, and study Q&A for Qwen-RobotNav navigation model
+- [Qwen-RobotNav Technical Report — references](sources/qwen-robotnav-2606-18112-references.md) — navigation/VLN/autonomous driving 레퍼런스를 3축(Foundation Model, Trajectory Planning, Agentic EQA)으로 정리, [[ABot-N0]]/[[GN0]]/[[ColaVLA]]/[[FAST-EQA]] 등 10개 논문 인용
+- [Qwen-RobotNav Technical Report](sources/qwen-robotnav-2606-18112.md) — [[Qwen3VL]] 기반 scalable navigation model; task-adaptive observation encoding으로 VLN-CE 76.5%, NAVSIM 91.4 PDMS 달성, [[AgenticNavigation]] dual-system interface 제안
+- [Qwen-RobotNav Technical Report — Korean translation](sources/qwen-robotnav-2606-18112.md) — Qwen3-VL 기반 scalable navigation model; task-adaptive observation encoding으로 VLN-CE 76.5%, NAVSIM 91.4 PDMS 달성, agentic navigation dual-system interface 제안
 - [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — learning](sources/policytrim-2606-22540-learning.md) — VLA policy efficiency, action chunk, RL 2-phase post-training 학습 가이드: glossary/아키텍처/단계별 설명/equations/implementation notes/Study Q/Reading Roadmap
 - [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — references](sources/policytrim-2606-22540-references.md) — PolicyTrim 논문의 8개 축 레퍼런스: π0/OpenVLA/GR00T, LIBERO/ManiSkill/Meta-World benchmark, RL post-training, efficient VLA 연구 정리
 - [PolicyTrim: VLA의 intrinsic policy efficiency를 높이는 RL post-training — analysis](sources/policytrim-2606-22540-analysis.md) — RL 2단계 post-training으로 action chunk utilization 3배, physical steps 51.4% 감소, 5.83배 speedup 달성
@@ -237,6 +244,9 @@
 - [환율 1500원 시대 시작되나? 전쟁 끝나도 못 내려오는 이유 | 변정규 다이와증권코리아 본부장 [신과대화]](sources/환율-1500원-시대-시작되나-전쟁-끝나도-못-내려오는-이유-변정규-다이와증권코리아-본부장-신과대화.md) — source page
 - [환율 1500원 시대, 환전하기 두렵다? (ft. SCHD 리밸런싱)](sources/환율-1500원-시대-환전하기-두렵다-ft-schd-리밸런싱.md) — source page
 
+- [Object-Centric Residual RL Learning Guide](sources/object-centric-residual-rl-vla-enhancement-2606-18953-learning.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
 - [VLA4AD](entities/VLA4AD.md) — VLA for autonomous driving survey/project anchor
 - [Pi05](entities/Pi05.md) — π0/π0.5 계열 VLA policy/entity 정리
@@ -632,6 +642,13 @@
 - [여의도 인사이트](entities/여의도-인사이트.md) — [[여의도 인사이트]]는 국내 시장과 개인 투자자 심리에 대한 해설형 콘텐츠 채널/맥락으로, 매매 심리·섹터 흐름·자금 운영 습관에 대한 조언을 다룬다.
 - [최수민](entities/최수민.md) — [[최수민]]은 [[바이브마피아]]의 실무형 AI 도입 접근에서 [[AI에이전트]] 운영을 위한 [[HarnessEngineering]] 실천 프레임을 제시한 발표자로 보인다.
 
+- [AllDayNav](entities/AllDayNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [AstraNav-World](entities/AstraNav-World.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [FR3 Robot](entities/FR3.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Habitat-GS](entities/Habitat-GS.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [MuJoCo](entities/MuJoCo.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
 - [VLAPlanner](concepts/VLAPlanner.md) — VLA 기반 executable planning output 생성기
 - [PredictiveAction](concepts/PredictiveAction.md) — 미래 예측과 action selection을 결합하는 설계 원리
@@ -2294,6 +2311,56 @@
 - [Inference](concepts/Inference.md) — using a trained model to compute outputs for new inputs.
 - [Scaling Laws](concepts/ScalingLaws.md) — empirical relationships between model performance, data, parameters, and compute.
 
+- [ActionHead](concepts/Actionhead.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [AgenticNavigationHarness](concepts/Agenticnavigationharness.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Camera Weight](concepts/CameraWeight.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [ClosedLoopAutonomousDriving](concepts/Closedloopautonomousdriving.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Compounding Error](concepts/CompoundingError.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Confidence Gating](concepts/ConfidenceGating.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Context Modeling (Navigation)](concepts/ContextModeling.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [DualSystemArchitecture](concepts/Dualsystemarchitecture.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Embodied Question Answering (EQA)](concepts/Embodied-Question-Answering-EQA.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Embodiment-Aware Prompt Design](concepts/EmbodiedPromptDesign.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [EmbodiedNavigation](concepts/Embodiednavigation.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [FAST-EQA](concepts/FastEqa.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [FoundationPose](concepts/Foundationpose.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [HierarchicalPlanning](concepts/Hierarchicalplanning.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [ImageBasedSimToReal](concepts/Imagebasedsimtoreal.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Lifelong Navigation](concepts/Lifelong-Navigation.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [MetricEvaluation](concepts/Metricevaluation.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Multi-Agent Embodied QA](concepts/MultiAgentEmbodiedQa.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [MultimodalLLM](concepts/Multimodalllm.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [MultiViewPerception](concepts/Multiviewperception.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Object-Centric Observation](concepts/ObjectCentricObservation.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Object-Centric Residual RL](concepts/ObjectCentricResidualRL.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [ObservationHistory](concepts/Observationhistory.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [OffPolicyRL](concepts/Offpolicyrl.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [On-Device Inference (VLA/Navigation)](concepts/OnDeviceInference.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Paired Sim/Real Training](concepts/PairedSimRealTraining.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Parameterized Navigation Interface](concepts/ParameterizedNavigationInterface.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Pi06](concepts/Pi06.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Planning-aligned Token Compression](concepts/Planning-aligned-Token-Compression.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [PoseEstimator](concepts/Poseestimator.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Refined-Policy-Distillation](concepts/RefinedPolicyDistillation.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Residual-Off-Policy-RL](concepts/ResidualOffPolicyRl.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Residual-RL-Precise-Assembly](concepts/ResidualRlPreciseAssembly.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [SAM2](concepts/Sam2.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Self-Improvement Loop](concepts/SelfImprovementLoop.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Sim-to-Real Transfer](concepts/Sim-to-Real-Transfer.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Sim-to-Real Transfer](concepts/SimToRealTransfer.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [SimToRealGap](concepts/Simtorealgap.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [SpatialVLA](concepts/Spatialvla.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [TD3 (Twin Delayed DDPG)](concepts/TD3.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Task-Adaptive Observation Encoding](concepts/TaskAdaptiveObservationEncoding.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Temporal Decay](concepts/TemporalDecay.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [TokenBudget](concepts/Tokenbudget.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Vision-Language Navigation (VLN)](concepts/Vision-Language-Navigation-VLN.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Vision-Language Co-Training](concepts/VisionLanguageCoTraining.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [VLA Inference Efficiency](concepts/VlaInferenceEfficiency.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [VLN-MME](concepts/VlnMme.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Waypoint Action Head](concepts/WaypointActionHead.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Waypoint Trajectory](concepts/WaypointTrajectory.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [Zero-Shot Sim-to-Real Transfer](concepts/ZeroShotSimToReal.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Syntheses
 ## Auto-indexed Generated Pages
 - [2D](concepts/2D.md) — auto-indexed concept page

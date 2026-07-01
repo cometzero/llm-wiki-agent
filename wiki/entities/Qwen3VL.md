@@ -1,24 +1,19 @@
 ---
 title: "Qwen3-VL"
 type: entity
-tags: [vlm, vision-language-model, backbone]
-sources: [tbd-vla-2606-07895-analysis]
-last_updated: 2026-06-10
+tags: [VLM, vision-language-model, backbone]
+sources: [qwen-robotnav-2606-18112, tbd-vla-2606-07895]
+last_updated: 2026-07-01
 ---
 
 ## Overview
-Qwen3-VL은 Alibaba Cloud에서 개발한 vision-language 모델 시리즈의 최신 버전으로, TBD-VLA의 backbone으로 채택된 2B规模的 VLM이다. Visual observation과 language instruction을 처리하는 multimodal capability를 갖추고 있어 VLA(Vision-Language-Action) policy의 foundation model로 활용된다.
+[[Qwen3VL]]는 Qwen-RobotNav의 백본으로 사용된 Vision-Language Model이다. SigLIP-2 vision encoder와 LLM을 결합하여 multi-view RGB 입력과 자연어 명령을 처리한다.
 
-## Key Properties
-- **Parameters**: 2B规模 (TBD-VLA 사용 기준)
-- **Architecture**: Vision encoder + Language model decoder
-- **Role in TBD-VLA**: Visual observation, proprioceptive state, language instruction을 통합 처리하는 prompt generator 및 action token decoder
+## Role in Navigation
+- Vision encoder: multi-view camera input processing
+- LLM backbone: instruction understanding, scene reasoning
+- Action hidden state extraction: trajectory regression을 위한 hidden state 제공
 
-## Related Concepts
-- [[VisionLanguageAction]] — VLA policy의 foundation model로 활용
-- [[TBDVLA]] — Qwen3-VL을 backbone으로 사용하는 VLA framework
-- [[VisualThinkVLA]] — 또 다른 VLA reasoning approach
-
-## References
-- TBD-VLA paper: https://huggingface.co/papers/2606.07895
-- Qwen3-VL: Alibaba Cloud multimodal model
+## Connections
+- [[QwenRobotNav]] — navigation model built on Qwen3-VL
+- [[VisionLanguageAction]] — model family

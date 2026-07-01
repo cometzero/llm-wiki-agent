@@ -1,21 +1,20 @@
 ---
 title: "Physical Intelligence"
 type: entity
-tags: [company, robotics, vla]
-sources: [visualthink-vla-2605-30011-references, reflectdrive-2-2605-04647-references, physbrain-1-0-2605-15298-references]
-last_updated: 2026-06-03
+tags: [robotics, AI, VLA, company]
+sources: [object-centric-residual-rl-vla-enhancement-2606-18953-references]
+last_updated: 2026-07-01
 ---
 
-## Summary
-[[Physical Intelligence]]는 로봇 [[VLA]] 정책 개발을 이끄는 대표적인 AI 로보틱스 스타트업이다. π0.5 등 [[VLA]] 분야의 핵심 연구를 발표했으며, 본 wiki에서 다수의 관련 논문과 연결된다.
+## Overview
+Physical Intelligence는 [[VLA]] (Vision-Language-Action) 모델 연구의 선구자로, [[Pi0]], [[π0.5]], [[Pi06]] 등 로봇 제어를 위한 foundation model系列产品를 개발한 회사/연구 그룹이다.
 
-## Key People
-- Kevin Black
-- Noah Brown
-
-## Key Papers
-- [[π0.5]] — VLA with open-world generalization (966 citations)
+## Key Projects
+- [[Pi0]] — Vision-Language-Action flow model for general robot control
+- [[π0.5]] — Open-world generalization을 위한 VLA model
+- [[Pi06]] — RECAP method를 통한 RL-based VLA improvement
 
 ## Connections
-- [[VLAPolicy]] — primary research focus
-- [[π0.5]] — flagship model
+- [[VLA]] — 주요 연구 분야
+- [[ResidualRL]] — [[Pi06]]에서 RL training 적용
+- [[GR00T-N1]] — 경쟁사 Nvidia의 humanoid foundation model

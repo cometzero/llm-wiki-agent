@@ -1,3 +1,38 @@
+## [2026-07-01] ingest | HF Weekly 2026-W27 Qwen-RobotNav and Object-Centric Residual RL validation repair
+- Added missing source coverage pages and placeholder concept nodes for newly emitted wikilinks.
+
+## [2026-07-01] ingest | Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — references
+
+Added source. Key claims: VLA backbone([[π0]]/[[π0.5]]/[[π0.6]]/[[GR00T-N1]])과 ResidualRL의 조합이 sim-to-real transfer의 핵심; reading order로 1)VLA family 2)Residual RL 3)Perception stack([[SAM-2]]) 제안. Created 2 entity pages(PhysicalIntelligence, NvidiaRobotics) and 3 concept pages(VLA, ResidualRL, Sim-to-Real-Transfer).
+
+## [2026-07-01] ingest | Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean analysis
+
+Added source. Key claims: zero-shot sim-to-real transfer via object-centric residual TD3 on frozen VLA, achieving 42%→76% success rate improvement on FR3 robot. Paired sim/real VLA training with pose noise/dropout for robustness. Created entity pages for [[FR3]] and [[MuJoCo]]. Created concept pages for [[ObjectCentricResidualRL]], [[SimToRealTransfer]], [[CompoundingError]], [[PairedSimRealTraining]], [[ResidualRL]], [[TD3]], [[ConfidenceGating]], and [[SelfImprovementLoop]].
+
+## [2026-07-01] ingest | Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement
+
+Added source. Key claims: object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상. Object-centric observation(6-DoF pose + proprioception + base action)이 visual domain gap을 회피하여 simulation-only training으로 real robot에 직접 deployment 가능함을 보여줌. TD3 기반 residual policy, FoundationPose+SAM2 pose tracking, FR3 robot evaluation 포함.
+
+Created/updated: 4 concept pages (ObjectCentricResidualRL, ZeroShotSimToReal, ObjectCentricObservation, ResidualRL), 1 entity page (FR3).
+
+## [2026-07-01] ingest | Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System — learning guide
+
+Added source. Key claims: Task-adaptive observation encoding with (B, γ, w_c) parameters; temporal decay for observation history weighting; camera weight varies by driving situation; Qwen-RobotNav achieves VLN-CE 76.5% and NAVSIM 91.4 PDMS. Created entity pages for Qwen-RobotNav and NAVSIM. Created concept pages for TaskAdaptiveObservationEncoding, TemporalDecay, CameraWeight, ActionGrounding, PDMS, and AgenticNavigation.
+
+## [2026-07-01] ingest | Qwen-RobotNav Technical Report — references
+
+Added source. Key claims: navigation/VLN/autonomous driving 레퍼런스를 3축(Foundation Model, Trajectory Planning, Agentic EQA)으로 정리. [[AllDayNav]], [[GN0]], [[ABot-N0]], [[ColaVLA]], [[FAST-EQA]], [[AstraNav-World]], [[Habitat-GS]], [[Planning-aligned Token Compression]], VLN-MME, Memory Centric EQA 등 10개 논문 인용. 6개 entity page ([[AllDayNav]], [[GN0]], [[ABot-N0]], [[ColaVLA]], [[AstraNav-World]], [[Habitat-GS]])와 4개 concept page ([[Vision-Language Navigation]], [[Lifelong Navigation]], [[Embodied Question Answering]], [[Planning-aligned Token Compression]]) 생성.
+
+## [2026-07-01] ingest | Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System
+
+Added source. Key claims: Qwen3-VL backbone 기반 unified navigation model로 VLN-CE 76.5%, NAVSIM 91.4 PDMS 달성; [[ParameterizedNavigationInterface]]로 inference-time configurable; [[AgenticNavigation]] dual-system interface 제안; 15.6M mixed navigation corpus 사용.
+
+New pages: entities/Qwen3VL.md, entities/NAVSIM.md; concepts/ParameterizedNavigationInterface.md, AgenticNavigation.md, WaypointTrajectory.md, VisionLanguageCoTraining.md
+
+## [2026-07-01] ingest | Qwen-RobotNav Technical Report (Korean translation)
+
+Added source. Key claims: navigation diversity is a context modeling problem (not architecture explosion); Qwen3-VL + parameterized interface handles VLN-CE 76.5%, EVT-Bench 90.0%, NAVSIM 91.4 PDMS; trajectory-only training collapses to reactive mapper — vision-language alignment loss required; synthetic data pipeline uses LLM→video→VLM filter→depth/pose→kinematic filter. Created entity pages for [[Qwen3-VL]] and [[SigLIP]]. Created concept pages for [[AgenticNavigation]], [[TaskAdaptiveObservationEncoding]], [[WaypointActionHead]], [[ContextModeling]], [[NAVSIM]], [[OnDeviceInference]], [[EmbodiedPromptDesign]].
+
 ## [2026-06-24] ingest | Hugging Face Weekly 2026-W26 VLA/WAM update pass
 
 Added World Action Models survey and PolicyTrim raw deliverables; repaired validation links and index coverage.
@@ -1105,3 +1140,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-06-24] graph | Knowledge graph rebuilt
 
 2633 nodes, 8937 edges (8937 extracted, 0 inferred).
+
+## [2026-07-01] graph | Knowledge graph rebuilt
+
+2709 nodes, 9157 edges (9157 extracted, 0 inferred).
