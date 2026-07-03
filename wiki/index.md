@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for June 25, 2026](sources/lwn-weekly-edition-2026-06-25-1078380.md) — Free-threaded Python, AUR 공급망 공격, Fedora 2FA, Linux 7.2 merge window, BPF arena/coroutine/KASAN, RMR/BRMR, OSPM 2026 종합 번역
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — references](sources/object-centric-residual-rl-vla-enhancement-2606-18953-references.md) — [[VLA]] backbone, [[ResidualRL]], sim-to-real transfer 관련 10개 레퍼런스 정리; [[π0]]/[[π0.5]]/[[π0.6]]/[[GR00T-N1]]/PLD/Residual-Off-Policy-RL 등
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean analysis](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean technical translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
@@ -650,7 +651,17 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Free-threaded Python](concepts/FreeThreadedPython.md) — CPython GIL 제거와 병렬 스레드 실행 전환
+- [AUR Supply Chain Attack](concepts/AURSupplyChainAttack.md) — Arch User Repository 고아 패키지 기반 공급망 공격
+- [Fedora 2FA Policy](concepts/Fedora2FA.md) — Fedora provenpackager 권한과 2FA 의무화 논의
+- [Linux Kernel 7.2 Merge Window](concepts/LinuxKernel72.md) — 7.2 merge window 초기 kernel changeset 흐름
+- [BPF Arena Helper Library](concepts/BPFArena.md) — BPF arenas용 libarena/helper library 흐름
+- [BPF Coroutines](concepts/BPFCoroutines.md) — suspend/resume 가능한 BPF program 모델
+- [KASAN for JIT-compiled BPF](concepts/BPFKASAN.md) — BPF JIT code에 KASAN instrumentation 적용
+- [RMR and BRMR Block Replication](concepts/RMRBRMR.md) — RDMA 기반 single-hop block replication 설계
+- [OSPM 2026](concepts/OSPM2026.md) — Linux power management/scheduler summit 2026 논의
 - [VLAPlanner](concepts/VLAPlanner.md) — VLA 기반 executable planning output 생성기
+- [ObjectCentricResidualRL](concepts/ObjectCentricResidualRL.md) — residual RL policy that learns object-centric corrections on top of a frozen VLA base action
 - [PredictiveAction](concepts/PredictiveAction.md) — 미래 예측과 action selection을 결합하는 설계 원리
 - [VideoWorldModels](concepts/VideoWorldModels.md) — video/latent future를 예측하는 world model 계열
 - [VideoGeneration](concepts/VideoGeneration.md) — 미래 또는 새 visual sequence를 생성하는 모델 계열

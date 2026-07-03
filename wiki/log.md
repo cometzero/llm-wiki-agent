@@ -1,3 +1,7 @@
+## [2026-07-03] ingest | LWN.net Weekly Edition for June 25, 2026
+
+Added Korean LWN Weekly translation source. Key claims: [[FreeThreadedPython]] moves GIL removal toward stable runtime adoption; [[AURSupplyChainAttack]] exposes community package repository risk; [[Fedora2FA]] ties provenpackager authority to stronger authentication; [[LinuxKernel72]] and [[BPF]] coverage include [[BPFArena]], [[BPFCoroutines]], [[BPFKASAN]], [[RMRBRMR]], and [[OSPM2026]]. Manual source materialization used after LLM ingest returned malformed JSON.
+
 ## [2026-07-01] ingest | HF Weekly 2026-W27 Qwen-RobotNav and Object-Centric Residual RL validation repair
 - Added missing source coverage pages and placeholder concept nodes for newly emitted wikilinks.
 
@@ -1144,3 +1148,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-01] graph | Knowledge graph rebuilt
 
 2709 nodes, 9157 edges (9157 extracted, 0 inferred).
+
+## [2026-07-03] graph | Knowledge graph rebuilt
+
+2719 nodes, 9194 edges (9194 extracted, 0 inferred).
