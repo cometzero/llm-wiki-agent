@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 11,
-  "last_completed_date": "2026-06-30",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-10-dataset-benchmark-집중-2026-06-30.md",
+  "next_week": 12,
+  "last_completed_date": "2026-07-07",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-11-rl-reasoning-강화-2026-07-07.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -65,6 +65,12 @@
       "title": "Dataset & Benchmark 집중",
       "date": "2026-06-30",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-10-dataset-benchmark-집중-2026-06-30.md"
+    },
+    {
+      "week": 11,
+      "title": "RL / Reasoning 강화",
+      "date": "2026-07-07",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-11-rl-reasoning-강화-2026-07-07.md"
     }
   ]
 }
