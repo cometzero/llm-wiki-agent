@@ -4,6 +4,15 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Embodied.cpp: 이기종 로봇을 위한 Embodied AI 모델의 휴대형 추론 런타임](sources/embodied-cpp-2607-02501-paper-ko.md) — VLA/WAM portable C++ runtime 한국어 기술 번역
+- [Embodied.cpp 학습 노트: VLA/WAM runtime contract](sources/embodied-cpp-2607-02501-learning.md) — embodied runtime contract, five-layer architecture, NPU/heterogeneous scheduling 학습 자료
+- [VLA-Corrector 분석: Action chunk를 adaptive closed-loop로 바꾸기](sources/vla-corrector-2607-01804.md) — LVM+OGG로 action-chunked VLA의 stale action 문제를 완화하는 분석
+- [VLA-Corrector: Adaptive Action Horizon을 위한 경량 Detect-and-Correct 추론](sources/vla-corrector-2607-01804-paper-ko.md) — VLA-Corrector 한국어 기술 번역
+- [VLA-Corrector 참고 레퍼런스 요약](sources/vla-corrector-2607-01804-references.md) — action chunking/closed-loop verification 관련 레퍼런스 정리
+- [VLA-Corrector 학습 노트: Adaptive action horizon과 latent dynamics monitoring](sources/vla-corrector-2607-01804-learning.md) — LVM, OGG, adaptive horizon 학습 자료
+- [Embodied.cpp 참고 레퍼런스 요약](sources/embodied-cpp-2607-02501-references.md) — 10개 선행 연구 요약; Execution-State Capsules, MuseVLA, LaWAM, DAM-VLA, WAM survey, vla.cpp 등
+- [Embodied.cpp 분석: VLA/WAM을 로봇 edge에 올리기 위한 runtime contract](sources/embodied-cpp-2607-02501.md) — VLA/WAM C++ runtime contract; five-layer architecture, multi-rate execution, latency-first batch-1 optimization으로 HY-VLA 100.0%/π0.5 91.0% success rate 달성
+- [Embodied.cpp: 이기종 로봇을 위한 Embodied AI 모델의 휴대형 추론 런타임](sources/embodied-cpp-2607-02501.md) — VLA/WAM용 C++ 추론 런타임; multi-rate execution, latency-first inference, five-layer architecture로 100.0%/91.0% success rate 달성
 - [LWN.net Weekly Edition for June 25, 2026](sources/lwn-weekly-edition-2026-06-25-1078380.md) — Free-threaded Python, AUR 공급망 공격, Fedora 2FA, Linux 7.2 merge window, BPF arena/coroutine/KASAN, RMR/BRMR, OSPM 2026 종합 번역
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — references](sources/object-centric-residual-rl-vla-enhancement-2606-18953-references.md) — [[VLA]] backbone, [[ResidualRL]], sim-to-real transfer 관련 10개 레퍼런스 정리; [[π0]]/[[π0.5]]/[[π0.6]]/[[GR00T-N1]]/PLD/Residual-Off-Policy-RL 등
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean analysis](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
@@ -249,6 +258,17 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [LingBot-VA](entities/LingBot-VA.md) — Embodied.cpp ingest support entity (lingbot-va)
+- [VlaCpp](entities/VlaCpp.md) — Embodied.cpp ingest support entity (vlacpp)
+- [SEU-PAISys](entities/SEU-PAISys.md) — Embodied.cpp ingest support entity (seu-paisys)
+- [LaWAM](entities/LaWAM.md) — placeholder: Latent World Action Model that predicts compact latent visual subgoals for robot policies.
+- [Being-H0.7](entities/Being-H0.7.md) — placeholder: Latent world-action model using future-informed latent queries while discarding training-only future branches at inference.
+- [H2O](entities/H2O.md) — placeholder: Heterogeneity-aware hierarchical orchestration framework for memory-efficient on-device LLM inference.
+- [StopWandering](entities/StopWandering.md) — placeholder: Vision-language navigation work using metacognitive reasoning, spatial memory, and reflective correction.
+- [MuseVLA](entities/MuseVLA.md) — placeholder: Adaptive multimodal sensing VLA that invokes non-RGB sensors as task-dependent tools.
+- [DAM-VLA](entities/DAM-VLA.md) — placeholder: Decoupled asynchronous multimodal VLA that processes modalities at different sensor/control rates.
+- [RT-2](entities/RT-2.md) — placeholder: Robotics Transformer 2, a vision-language-action model family that maps web-scale VLM knowledge to robot actions.
+- [VLA-Corrector](entities/VLACorrector.md) — action-chunked VLA용 detect-and-correct framework
 - [VLA4AD](entities/VLA4AD.md) — VLA for autonomous driving survey/project anchor
 - [Pi05](entities/Pi05.md) — π0/π0.5 계열 VLA policy/entity 정리
 - [Nathan Giovannini](entities/NathanGiovannini.md) — Fedora/Anaconda AI 에이전트 오작동 사례와 연결된 인물
@@ -651,6 +671,45 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [LatentWorldActionModel](concepts/LatentWorldActionModel.md) — Embodied.cpp ingest support page (latentworldactionmodel)
+- [HeterogeneousScheduling](concepts/HeterogeneousScheduling.md) — Embodied.cpp ingest support page (heterogeneousscheduling)
+- [SpatialMemoryNavigation](concepts/SpatialMemoryNavigation.md) — Embodied.cpp ingest support page (spatialmemorynavigation)
+- [HeterogeneityAwareOrchestration](concepts/HeterogeneityAwareOrchestration.md) — Embodied.cpp ingest support page (heterogeneityawareorchestration)
+- [ExecutionStateCapsules](concepts/ExecutionStateCapsules.md) — Embodied.cpp ingest support page (executionstatecapsules)
+- [GGUFQuantization](concepts/GGUFQuantization.md) — Embodied.cpp ingest support page (ggufquantization)
+- [ClosedLoopRobot](concepts/ClosedLoopRobot.md) — Embodied.cpp ingest support page (closedlooprobot)
+- [LatencyFirstInference](concepts/LatencyFirstInference.md) — Embodied.cpp ingest support page (latencyfirstinference)
+- [EmbodiedInterface](concepts/EmbodiedInterface.md) — Embodied.cpp ingest support page (embodiedinterface)
+- [PredictedFuture](concepts/PredictedFuture.md) — Embodied.cpp ingest support page (predictedfuture)
+- [AdaptiveMultimodalSensing](concepts/AdaptiveMultimodalSensing.md) — Embodied.cpp ingest support page (adaptivemultimodalsensing)
+- [MultiRateExecution](concepts/MultiRateExecution.md) — Embodied.cpp ingest support page (multirateexecution)
+- [LatencyFirstBatch1](concepts/LatencyFirstBatch1.md) — Embodied.cpp ingest support page (latencyfirstbatch1)
+- [FiveLayerRuntime](concepts/FiveLayerRuntime.md) — Embodied.cpp ingest support page (fivelayerruntime)
+- [FiveLayerArchitecture](concepts/FiveLayerArchitecture.md) — Embodied.cpp ingest support page (fivelayerarchitecture)
+- [ActionGeneration](concepts/ActionGeneration.md) — placeholder: The process by which a policy produces executable robot actions, action tokens, waypoints, trajectories, or action chunks.
+- [VideoPrediction](concepts/VideoPrediction.md) — placeholder: Prediction of future visual states, often used by world models or WAMs to expose dynamics to a policy.
+- [LatencyFirst](concepts/LatencyFirst.md) — placeholder: Optimization objective prioritizing low latency and low jitter over throughput.
+- [HeterogeneousHardware](concepts/HeterogeneousHardware.md) — placeholder: Deployment setting with multiple device types such as CPU, GPU, NPU, DSP, and edge accelerators.
+- [PersistentMemory](concepts/PersistentMemory.md) — placeholder: Runtime state that persists across steps or episodes, such as spatial maps, history buffers, and task memory.
+- [PlannerState](concepts/PlannerState.md) — placeholder: Explicit state maintained by a planner, including subgoals, progress, route, and recovery context.
+- [ReflectiveReasoning](concepts/ReflectiveReasoning.md) — placeholder: Reasoning loop that diagnoses failures or stagnation and updates future decisions.
+- [InferencePlanning](concepts/InferencePlanning.md) — placeholder: Planning how inference modules execute across time, devices, memory, and control loops.
+- [CheckpointRestore](concepts/CheckpointRestore.md) — placeholder: Runtime mechanism for saving and restoring execution state at defined boundaries.
+- [LatentFuture](concepts/LatentFuture.md) — placeholder: Compact latent representation of predicted future state used by WAM/VLA policies.
+- [ExtensibleIO](concepts/ExtensibleIO.md) — placeholder: Runtime design principle allowing new embodied input and output types to be added without rewriting the full stack.
+- [ModularArchitecture](concepts/ModularArchitecture.md) — placeholder: Architecture style decomposing a system into replaceable modules with explicit interfaces.
+- [InputAdapters](concepts/InputAdapters.md) — placeholder: Runtime layer that converts sensors or dataset samples into typed embodied inputs.
+- [SequenceBuilders](concepts/SequenceBuilders.md) — placeholder: Runtime layer that constructs model sequences, context, and latent buffers from inputs.
+- [BackboneExecution](concepts/BackboneExecution.md) — placeholder: Runtime layer responsible for executing the VLM/Transformer/world-model backbone.
+- [HeadPlugins](concepts/HeadPlugins.md) — placeholder: Runtime extension point for action heads, prediction heads, and model-specific output modules.
+- [DeploymentAdapters](concepts/DeploymentAdapters.md) — placeholder: Runtime layer that maps model outputs to simulator or robot-controller APIs.
+- [Latent Space Vision Monitor](concepts/LatentSpaceVisionMonitor.md) — expected/actual visual latent evolution mismatch monitor
+- [Online Gradient Guidance](concepts/OnlineGradientGuidance.md) — recovery replan을 latent corrective direction으로 guide하는 inference-time 방법
+- [Adaptive Action Horizon](concepts/AdaptiveActionHorizon.md) — drift 감지 시 action horizon을 event-triggered로 줄이는 제어 개념
+- [Open Loop Blind Spot](concepts/OpenLoopBlindSpot.md) — action chunk 실행 중 fresh observation을 반영하지 못하는 구간
+- [Success Per Call](concepts/SuccessPerCall.md) — success rate와 policy-call efficiency를 함께 보는 지표
+- [Autonomous Driving VLA](concepts/AutonomousDrivingVLA.md) — 자율주행용 Vision-Language-Action 연구 축
+- [WAM](concepts/WAM.md) — future state/action prediction을 결합하는 World Action Model 약어
 - [Free-threaded Python](concepts/FreeThreadedPython.md) — CPython GIL 제거와 병렬 스레드 실행 전환
 - [AUR Supply Chain Attack](concepts/AURSupplyChainAttack.md) — Arch User Repository 고아 패키지 기반 공급망 공격
 - [Fedora 2FA Policy](concepts/Fedora2FA.md) — Fedora provenpackager 권한과 2FA 의무화 논의

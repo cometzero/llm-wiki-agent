@@ -1,3 +1,15 @@
+## [2026-07-08] ingest | Embodied.cpp 참고 레퍼런스 요약
+
+Added source. Key claims: 10개 선행 연구 정리 - Execution-State Capsules(complete restorable state), MuseVLA(adaptive multimodal sensing), LaWAM(latent WAM), DAM-VLA(multi-rate execution 100Hz), WAM survey(taxonomy), Being-H0.7(WAM/VLA hybrid), Stop Wandering(spatial memory/planner state as runtime object), H2O(memory orchestration), vla.cpp(predecessor), VLA family(π0/π0.5/OpenVLA/RT-2). Created 1 entity page(vla.cpp), 7 concept pages(Execution-State Capsules, Multi-Rate Execution, LatentWorldActionModel, OnDeviceInference, HeterogeneityAwareOrchestration, AdaptiveMultimodalSensing, SpatialMemoryNavigation).
+
+## [2026-07-08] ingest | Embodied.cpp 분석: VLA/WAM을 로봇 edge에 올리기 위한 runtime contract
+
+Added source. Key claims: five-layer C++ runtime architecture for VLA/WAM deployment; multi-rate execution separates perception/backbone/prediction/action refresh rates; latency-first batch-1 optimization for closed-loop control; HY-VLA 100.0%/π0.5 91.0% success rate; LingBot-VA GGUF Q4_K quantization reduces VRAM 312.2→88.1 MiB. Created entity pages for [[HY-VLA]], [[π0.5]], [[LingBot-VA]]. Created concept pages for [[FiveLayerRuntime]], [[MultiRateExecution]], [[LatencyFirstBatch1]], [[ClosedLoopRobot]], [[GGUFQuantization]], [[HeterogeneousScheduling]], [[PredictedFuture]].
+
+## [2026-07-08] ingest | Embodied.cpp: 이기종 로봇을 위한 Embodied AI 모델의 휴대형 추론 런타임
+
+Added source. Key claims: VLA/WAM을 위한 portable C++ inference runtime 제안, multi-rate execution/latency-first fused inference/extensible I/O 세 가지 핵심 설계, five-layer architecture, HY-VLA 100.0%/π0.5 91.0% success rate, WAM Q4_K에서 3.6× memory reduction. Created 4 entity pages (Embodied-cpp, HY-VLA, LingBot-VA, SEU-PAISys) and 4 concept pages (MultiRateExecution, LatencyFirstInference, EmbodiedInterface, FiveLayerArchitecture).
+
 ## [2026-07-03] ingest | LWN.net Weekly Edition for June 25, 2026
 
 Added Korean LWN Weekly translation source. Key claims: [[FreeThreadedPython]] moves GIL removal toward stable runtime adoption; [[AURSupplyChainAttack]] exposes community package repository risk; [[Fedora2FA]] ties provenpackager authority to stronger authentication; [[LinuxKernel72]] and [[BPF]] coverage include [[BPFArena]], [[BPFCoroutines]], [[BPFKASAN]], [[RMRBRMR]], and [[OSPM2026]]. Manual source materialization used after LLM ingest returned malformed JSON.
@@ -1152,3 +1164,10 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-03] graph | Knowledge graph rebuilt
 
 2719 nodes, 9194 edges (9194 extracted, 0 inferred).
+## [2026-07-08] ingest | HF Weekly 2026-W28 VLA runtime and adaptive action horizon
+- Added Korean translation/analysis/reference/learning pages for Embodied.cpp (2607.02501) and VLA-Corrector (2607.01804).
+- Manual materialization completed after batch ingest stalled on large documents.
+
+## [2026-07-08] graph | Knowledge graph rebuilt
+
+2779 nodes, 9324 edges (9324 extracted, 0 inferred).
