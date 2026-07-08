@@ -1,0 +1,917 @@
+{
+  "id": "2607.02501",
+  "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+  "authors": [
+    "Ling Xu",
+    "Chuyu Han",
+    "Borui Li",
+    "Hao Wu",
+    "Shiqi Jiang",
+    "Ting Cao",
+    "Chuanyou Li",
+    "Sheng Zhong",
+    "Shuai Wang"
+  ],
+  "summary": "Embodied AI models now span vision-language-action (VLA) models and world-action models (WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existing inference runtimes are designed mainly for request-response serving and therefore do not satisfy the runtime contract of embodied deployment: multi-rate execution inside closed-loop control, latency-first batch-1 inference on heterogeneous hardware, and extensible embodied interfaces beyond fixed token I/O. We present Embodied.cpp, a portable C++ inference runtime for embodied models. Based on an architectural analysis of representative VLA models and WAMs, Embodied.cpp captures a shared execution path and organizes it into five layers: input adapters, sequence builders, backbone execution, head plugins, and deployment adapters. The runtime provides modular multi-rate execution, latency-first fused inference, and extensible operator and I/O support, enabling deployment across heterogeneous devices, robots, and simulators through one backend abstraction. We evaluate Embodied.cpp on two VLA models, HY-VLA and pi0.5, and on a preliminary WAM benchmark using a LingBot-VA Transformer block. The VLA deployments achieve successful closed-loop execution with 100.0% and 91.0% task success rates, respectively. The WAM benchmark reduces block memory from 312.2 MiB to 88.1 MiB. These results show that Embodied.cpp improves deployment efficiency while preserving high accuracy across diverse embodied model architectures.",
+  "week": "2026-W28",
+  "hf_url": "https://huggingface.co/papers/2607.02501",
+  "project_page": null,
+  "github_repo": "https://github.com/SEU-PAISys/Embodied.cpp",
+  "slug": "embodied-cpp-portable-inference-runtime-2607-02501",
+  "arxiv_api": {
+    "published": "2026-07-02",
+    "updated": "2026-07-03",
+    "abstract": "Embodied AI models now span vision-language-action (VLA) models and world-action models (WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existing inference runtimes are designed mainly for request-response serving and therefore do not satisfy the runtime contract of embodied deployment: multi-rate execution inside closed-loop control, latency-first batch-1 inference on heterogeneous hardware, and extensible embodied interfaces beyond fixed token I/O. We present Embodied$.$cpp, a portable C++ inference runtime for embodied models. Based on an architectural analysis of representative VLA models and WAMs, Embodied$.$cpp captures a shared execution path and organizes it into five layers: input adapters, sequence builders, backbone execution, head plugins, and deployment adapters. The runtime provides modular multi-rate execution, latency-first fused inference, and extensible operator and I/O support, enabling deployment across heterogeneous devices, robots, and simulators through one backend abstraction. We evaluate Embodied$.$cpp on two VLA models, HY-VLA and pi0.5, and on a preliminary WAM benchmark using a LingBot-VA Transformer block. The VLA deployments achieve successful closed-loop execution with 100.0% and 91.0% task success rates, respectively. The WAM benchmark reduces block memory from 312.2 MiB to 88.1 MiB. These results show that Embodied$.$cpp improves deployment efficiency while preserving high accuracy across diverse embodied model architectures.",
+    "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+    "authors": [
+      "Ling Xu",
+      "Chuyu Han",
+      "Borui Li",
+      "Hao Wu",
+      "Shiqi Jiang",
+      "Ting Cao",
+      "Chuanyou Li",
+      "Sheng Zhong",
+      "Shuai Wang"
+    ]
+  },
+  "html_fetch_error": null,
+  "html_final_url": "https://arxiv.org/html/2607.02501",
+  "figures": [
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/icons/smileybones-small.svg",
+      "path": "figures/figure-01.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/arxiv-logo-primary-light.svg",
+      "path": "figures/figure-02.svg",
+      "alt": "arXiv logo"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/x1.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "[Uncaptioned image]"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/logo-nju.jpg",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "[Uncaptioned image]"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/x2.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "[Uncaptioned image]"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/x3.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "[Uncaptioned image]"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/x4.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/2607.02501v2/x5.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.02501/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "[LOGO]"
+    },
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/funders/simons-foundation.png",
+      "path": "figures/figure-10.png",
+      "alt": "Simons Foundation"
+    },
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/funders/schmidt-sciences.png",
+      "path": "figures/figure-11.png",
+      "alt": "Schmidt Sciences"
+    }
+  ],
+  "semantic_scholar_references": {
+    "offset": 0,
+    "citingPaperInfo": {
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2607.02501, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+      "authors": [
+        {
+          "authorId": "2446939882",
+          "name": "Ling Xu"
+        },
+        {
+          "authorId": "1576547532",
+          "name": "Chuyu Han"
+        },
+        {
+          "authorId": "2261830997",
+          "name": "Borui Li"
+        },
+        {
+          "authorId": "2349380257",
+          "name": "Hao Wu"
+        },
+        {
+          "authorId": "2170664295",
+          "name": "Shiqi Jiang"
+        },
+        {
+          "authorId": "2326975040",
+          "name": "Ting Cao"
+        },
+        {
+          "authorId": "2446535533",
+          "name": "Chuanyou Li"
+        },
+        {
+          "authorId": "2439208308",
+          "name": "Shenghui Zhong"
+        },
+        {
+          "authorId": "2445399831",
+          "name": "Shuai Wang"
+        }
+      ]
+    },
+    "next": 12,
+    "data": [
+      {
+        "citedPaper": {
+          "paperId": "115b4a132df29489460d97500bfcaeb49d17a009",
+          "externalIds": {
+            "ArXiv": "2606.20537",
+            "CorpusId": 289622616
+          },
+          "url": "https://www.semanticscholar.org/paper/115b4a132df29489460d97500bfcaeb49d17a009",
+          "title": "Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2606.20537, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2302286272",
+              "name": "Liangkuan Su"
+            }
+          ],
+          "abstract": "Mainstream LLM serving systems reuse prefix work mainly through paged or radix key-value (KV) caches. This is highly effective for high-throughput, high-concurrency serving, but it manages only one positional fragment of execution state: the KV cache. We study the opposite regime: low-latency, small-batch, on-device physical-AI serving, where interactive LLM agents, speech systems, and robot policies repeatedly branch, reset, interrupt, and re-enter under tight responsiveness budgets. We introduce execution-state capsules, a graph-bound checkpoint and restore mechanism for the complete restorable state at a committed boundary. FlashRT is a white-box, backend-facing kernel runtime whose evaluated NVIDIA CUDA backend runs captured graph plans over contiguous static buffers with no block-table indirection. Because the live state is a closed set of named buffers, a capsule can snapshot, restore, fork, or roll back the whole execution boundary, including KV, recurrent state, convolution state, MTP state, and metadata. This moves reuse from token-addressed KV fragments to graph-bound execution-state boundaries. On an RTX 5090, capsule restore is byte-exact at the stored-state level and token-identical under greedy decode. A KV-only ablation diverges, showing that recurrent state is load-bearing. GPU-resident snapshot and restore are sub-millisecond, and TTFT speedup over cold prefill grows from 3.9x at 2k tokens to 27x at 16k tokens. On Jetson AGX Thor and DGX Spark, the same correctness and structural properties hold. Capsules are not a replacement for high-throughput KV-cache serving; they define a complementary latency-first serving point for explicit execution-state reuse."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "4ee9156c361cb52849893399744bd241703b8f25",
+          "externalIds": {
+            "ArXiv": "2606.17598",
+            "CorpusId": 289625350
+          },
+          "url": "https://www.semanticscholar.org/paper/4ee9156c361cb52849893399744bd241703b8f25",
+          "title": "MuseVLA: An Adaptive Multimodal Sensing Vision-Language-Action Model for Robotic Manipulation",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2606.17598, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2261495696",
+              "name": "Xingyuming Liu"
+            },
+            {
+              "authorId": "2210435658",
+              "name": "Rui Ma"
+            },
+            {
+              "authorId": "1470694215",
+              "name": "Heyuan Guo"
+            },
+            {
+              "authorId": "2282095267",
+              "name": "Qixiu Li"
+            },
+            {
+              "authorId": "2445571701",
+              "name": "Qingwen Yang"
+            },
+            {
+              "authorId": "2333975449",
+              "name": "Lin Luo"
+            },
+            {
+              "authorId": "2328014585",
+              "name": "Shiqi Jiang"
+            },
+            {
+              "authorId": "2248770422",
+              "name": "Chenren Xu"
+            },
+            {
+              "authorId": "2237946707",
+              "name": "Jiaolong Yang"
+            },
+            {
+              "authorId": "2400505652",
+              "name": "Baining Guo"
+            }
+          ],
+          "abstract": "Humans naturally leverage diverse sensing modalities to interact with the physical world, while most Vision-Language-Action (VLA) models for robotics rely solely on RGB observations. This limits their ability to perceive physical properties that are difficult or impossible to infer from RGB cameras, such as temperature, sound, or radar response. We present MuseVLA, an adaptive multimodal sensing VLA model that integrates novel sensors as on-demand tools for robotic manipulation. Given a task instruction and visual context, MuseVLA first generates a sensor token and target description that select the sensing modality to invoke and what to attend to, analogous to a tool call with arguments. It then converts the selected sensor measurement into a grounded sensor image, a unified intermediate representation that encodes heterogeneous readings for multimodal fusion and action generation. This design decouples sensor-specific processing from the VLA backbone, enabling efficient integration of diverse modalities. To reduce the need for expensive multisensory robot datasets, we further introduce a data synthesis pipeline that augments existing RGB video datasets with grounded sensor images, enabling generalization to unseen sensor-guided tasks. We evaluate MuseVLA on a real-world robot across challenging dexterous hand manipulation tasks that require multimodal sensing inputs, including temperature-guided pick-and-place, audio-driven object search, and radar-assisted hidden object retrieval. MuseVLA achieves 80.6% success rate on average, outperforming RGB-only and multisensory VLA baselines significantly, and exhibits strong zero-shot capabilities on unseen tasks."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "996f843abe83a075ec19dd66c7f15fe8e073380e",
+          "externalIds": {
+            "ArXiv": "2606.15768",
+            "CorpusId": 289301201
+          },
+          "url": "https://www.semanticscholar.org/paper/996f843abe83a075ec19dd66c7f15fe8e073380e",
+          "title": "LaWAM: Latent World Action Models for Efficient Dynamics-Aware Robot Policies",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2606.15768, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2253924196",
+              "name": "Jialei Chen"
+            },
+            {
+              "authorId": "2343636119",
+              "name": "Kai Wang"
+            },
+            {
+              "authorId": "2294580844",
+              "name": "Kanghao Chen"
+            },
+            {
+              "authorId": "2336926171",
+              "name": "Shuaihang Chen"
+            },
+            {
+              "authorId": "2319626654",
+              "name": "Feng Gao"
+            },
+            {
+              "authorId": "2323010636",
+              "name": "Wenhao Tang"
+            },
+            {
+              "authorId": "2347184456",
+              "name": "Zhiyuan Li"
+            },
+            {
+              "authorId": "2145452098",
+              "name": "Weiling Liu"
+            },
+            {
+              "authorId": "2283455072",
+              "name": "Zhuyu Yao"
+            },
+            {
+              "authorId": "2381410256",
+              "name": "Boxun Li"
+            },
+            {
+              "authorId": "2313357461",
+              "name": "Yuanbo Xu"
+            },
+            {
+              "authorId": "2306089515",
+              "name": "Chaoyang Yu"
+            }
+          ],
+          "abstract": "Vision-Language-Action models (VLAs) leverage large-scale vision-language pretraining for semantic robot control, but often lack explicit foresight into how robot actions change the scene. World-Action Models (WAMs) address this limitation by conditioning policies on predicted futures, yet existing approaches typically rely on computationally expensive video generation with substantial pixel-level redundancy. We present LaWAM, a Latent World Action Model that exposes predictive dynamics to robot policies through compact latent visual subgoals instead of reconstructed future video. At the core of LaWAM is a latent-action-conditioned Latent World Model (LaWM). We obtain LaWM by training a latent action model in the latent space of a pretrained vision foundation model and repurposing its forward decoder to predict future observation features for scene evolution. LaWAM then conditions action generation on these predicted latent visual subgoals to enable dynamics-aware robot control. LaWAM achieves state-of-the-art or competitive success rates (SRs) across LIBERO (98.6% SR), RoboTwin (91.22% SR), and real-world manipulation tasks while retaining low-latency inference. LaWAM runs in 187 ms per action-chunk prediction and achieves up to 24x lower wall-clock latency than pixel-space WAMs."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "eda103c2b0bb69c40203b637bcc0f2836cb7b2b5",
+          "externalIds": {
+            "ArXiv": "2606.12105",
+            "CorpusId": 289167029
+          },
+          "url": "https://www.semanticscholar.org/paper/eda103c2b0bb69c40203b637bcc0f2836cb7b2b5",
+          "title": "DAM-VLA: Decoupled Asynchronous Multimodal Vision Language Action model",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2606.12105, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "1395904741",
+              "name": "Pankhuri Vanjani"
+            },
+            {
+              "authorId": "2378821549",
+              "name": "Zhuo Li"
+            },
+            {
+              "authorId": "2441893182",
+              "name": "Jakub Suliga"
+            },
+            {
+              "authorId": "2165874245",
+              "name": "Moritz Reuss"
+            },
+            {
+              "authorId": "2301152912",
+              "name": "G. Geraci"
+            },
+            {
+              "authorId": "2243176115",
+              "name": "Xinkai Jiang"
+            },
+            {
+              "authorId": "2931067",
+              "name": "Rudolf Lioutikov"
+            }
+          ],
+          "abstract": "Vision-language-action (VLA) models inherit a shared synchronous clock from vision-language pretraining, processing every input at one rate. This is misaligned with physical interaction, where a high-frequency modality changes at hundreds of hertz, vision evolves more slowly, and language stays constant across an episode. A synchronous VLA oversamples slow modalities, undersamples fast ones, and caps action generation at the lowest effective frequency. We hypothesize that decoupling temporal processing per modality, letting each update and retain information at its own sensor rate, yields stronger representations and more robust control. We present DAM-VLA, which maintains per-modality latent buffers refreshed at sensor rates and read continuously by the action head, integrating new high-frequency modalities through gated cross-attention that leaves the pretrained backbone intact. Across seven contact-rich real-world manipulation tasks, DAM-VLA more than doubles the average success rate of the strongest synchronous baseline (95.2\\% vs.\\ 40.95\\%) while sustaining smooth, reactive 100\\,Hz control. Project website: \\href{https://intuitive-robots.github.io/DAM-VLA/}{intuitive-robots.github.io/DAM-VLA/}"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "dcb340945c51bc665cc9e68518a88fa3409ed0cf",
+          "externalIds": {
+            "ArXiv": "2605.12090",
+            "CorpusId": 288255685
+          },
+          "url": "https://www.semanticscholar.org/paper/dcb340945c51bc665cc9e68518a88fa3409ed0cf",
+          "title": "World Action Models: The Next Frontier in Embodied AI",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2605.12090, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2182224120",
+              "name": "Siyin Wang"
+            },
+            {
+              "authorId": "2348888995",
+              "name": "Junhao Shi"
+            },
+            {
+              "authorId": "46905137",
+              "name": "Zhao-Yang Fu"
+            },
+            {
+              "authorId": "2386416920",
+              "name": "Xinzhe He"
+            },
+            {
+              "authorId": "2395949565",
+              "name": "Fei Liu"
+            },
+            {
+              "authorId": "2368457364",
+              "name": "Chenchen Yang"
+            },
+            {
+              "authorId": "2235153275",
+              "name": "Yikang Zhou"
+            },
+            {
+              "authorId": "2132200788",
+              "name": "Zhaoye Fei"
+            },
+            {
+              "authorId": "2371292918",
+              "name": "Jingjing Gong"
+            },
+            {
+              "authorId": "2243662006",
+              "name": "Jinlan Fu"
+            },
+            {
+              "authorId": "2344762475",
+              "name": "Mike Zheng Shou"
+            },
+            {
+              "authorId": "2257129989",
+              "name": "Xuanjing Huang"
+            },
+            {
+              "authorId": "2282972251",
+              "name": "Xipeng Qiu"
+            },
+            {
+              "authorId": "1717861",
+              "name": "Yu-Gang Jiang"
+            }
+          ],
+          "abstract": "Vision-Language-Action (VLA) models have achieved strong semantic generalization for embodied policy learning, yet they learn reactive observation-to-action mappings without explicitly modeling how the physical world evolves under intervention. A growing body of work addresses this limitation by integrating world models, predictive models of environment dynamics, into the action generation pipeline. We term this emerging paradigm World Action Models (WAMs): embodied foundation models that unify predictive state modeling with action generation, targeting a joint distribution over future states and actions rather than actions alone. However, the literature remains fragmented across architectures, learning objectives, and application scenarios, lacking a unified conceptual framework. We formally define WAMs and disambiguate them from related concepts, and trace the foundations and early integration of VLA and world model research that gave rise to this paradigm. We organize existing methods into a structured taxonomy of Cascaded and Joint WAMs, with further subdivision by generation modality, conditioning mechanism, and action decoding strategy. We systematically analyze the data ecosystem fueling WAMs development, spanning robot teleoperation, portable human demonstrations, simulation, and internet-scale egocentric video, and synthesize emerging evaluation protocols organized around visual fidelity, physical commonsense, and action plausibility. Overall, this survey provides the first systematic account of the WAMs landscape, clarifies key architectural paradigms and their trade-offs, and identifies open challenges and future opportunities for this rapidly evolving field."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "da48590e0c67de7450fda928052386e6baf9a4d1",
+          "externalIds": {
+            "ArXiv": "2605.00078",
+            "CorpusId": 287929812
+          },
+          "url": "https://www.semanticscholar.org/paper/da48590e0c67de7450fda928052386e6baf9a4d1",
+          "title": "Being-H0.7: A Latent World-Action Model from Egocentric Videos",
+          "venue": "",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2605.00078, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2199828096",
+              "name": "Hao Luo"
+            },
+            {
+              "authorId": "2324490975",
+              "name": "Wanpeng Zhang"
+            },
+            {
+              "authorId": "2115319860",
+              "name": "Yicheng Feng"
+            },
+            {
+              "authorId": "2258682220",
+              "name": "Sipeng Zheng"
+            },
+            {
+              "authorId": "2405828697",
+              "name": "Haiweng Xu"
+            },
+            {
+              "authorId": "2373397887",
+              "name": "Chaoyi Xu"
+            },
+            {
+              "authorId": "2405809088",
+              "name": "Ziheng Xi"
+            },
+            {
+              "authorId": "2269755398",
+              "name": "Yuhui Fu"
+            },
+            {
+              "authorId": "2258676670",
+              "name": "Zongqing Lu"
+            }
+          ],
+          "abstract": "Visual-Language-Action models (VLAs) have advanced generalist robot control by mapping multimodal observations and language instructions directly to actions, but sparse action supervision often encourages shortcut mappings rather than representations of dynamics, contact, and task progress. Recent world-action models introduce future prediction through video rollouts, yet pixel-space prediction is a costly and indirect substrate for control, as it may model visual details irrelevant to action generation and introduces substantial training or inference overhead. We present Being-H0.7, a latent world-action model that brings future-aware reasoning into VLA-style policies without generating future frames. Being-H0.7 inserts learnable latent queries between perception and action as a compact reasoning interface, and trains them with a future-informed dual-branch design: a deployable prior branch infers latent states from the current context, while a training-only posterior branch replaces the queries with embeddings from future observations. Jointly aligning the two branches at the latent reasoning space leads the prior branch to reason future-aware, action-useful structure from current observations alone. At inference, Being-H0.7 discards the posterior branch and performs no visual rollout. Experiments across six simulation benchmarks and diverse real-world tasks show that Being-H0.7 achieves state-of-the-art or comparable performance, combining the predictive benefits of world models with the efficiency and deployability of direct VLA policies."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "496be41ddf2643e962badc0665dd0f6e19e152f8",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2604-02318",
+            "ArXiv": "2604.02318",
+            "DOI": "10.48550/arXiv.2604.02318",
+            "CorpusId": 287073912
+          },
+          "url": "https://www.semanticscholar.org/paper/496be41ddf2643e962badc0665dd0f6e19e152f8",
+          "title": "Stop Wandering: Efficient Vision-Language Navigation via Metacognitive Reasoning",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2604.02318, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2404581688",
+              "name": "Xueying Li"
+            },
+            {
+              "authorId": "2380364499",
+              "name": "Feng Lyu"
+            },
+            {
+              "authorId": "2323943186",
+              "name": "Hao Wu"
+            },
+            {
+              "authorId": "2369210370",
+              "name": "Mingliu Liu"
+            },
+            {
+              "authorId": "2319591716",
+              "name": "Jia-Nan Liu"
+            },
+            {
+              "authorId": "2195895048",
+              "name": "Guozi Liu"
+            }
+          ],
+          "abstract": "Training-free Vision-Language Navigation (VLN) agents powered by foundation models can follow instructions and explore 3D environments. However, existing approaches rely on greedy frontier selection and passive spatial memory, leading to inefficient behaviors such as local oscillation and redundant revisiting. We argue that this stems from a lack of metacognitive capabilities: the agent cannot monitor its exploration progress, diagnose strategy failures, or adapt accordingly. To address this, we propose MetaNav, a metacognitive navigation agent integrating spatial memory, history-aware planning, and reflective correction. Spatial memory builds a persistent 3D semantic map. History-aware planning penalizes revisiting to improve efficiency. Reflective correction detects stagnation and uses an LLM to generate corrective rules that guide future frontier selection. Experiments on GOAT-Bench, HM3D-OVON, and A-EQA show that MetaNav achieves state-of-the-art performance while reducing VLM queries by 20.7%, demonstrating that metacognitive reasoning significantly improves robustness and efficiency."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "5ebb4baf53207d405be08d0be839bb874f668de1",
+          "externalIds": {
+            "DBLP": "journals/tmc/ZengLWLLX26",
+            "DOI": "10.1109/TMC.2025.3628498",
+            "CorpusId": 282801158
+          },
+          "url": "https://www.semanticscholar.org/paper/5ebb4baf53207d405be08d0be839bb874f668de1",
+          "title": "H2O: Heterogeneity-Aware Hierarchical Orchestration for Memory-Efficient On-Device LLM Inference",
+          "venue": "IEEE Transactions on Mobile Computing",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TMC.2025.3628498?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TMC.2025.3628498, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2390918366",
+              "name": "Fei Zeng"
+            },
+            {
+              "authorId": "2320307432",
+              "name": "Feng Lyu"
+            },
+            {
+              "authorId": "1944190993",
+              "name": "Hao Wu"
+            },
+            {
+              "authorId": "2304611013",
+              "name": "Zhanxin Li"
+            },
+            {
+              "authorId": "2109104122",
+              "name": "Shucheng Li"
+            },
+            {
+              "authorId": "2287855625",
+              "name": "Fengyuan Xu"
+            },
+            {
+              "authorId": "2382505242",
+              "name": "Yaoxue Zhang"
+            }
+          ],
+          "abstract": "On-device Large Language Model (LLM) inference enables private, personalized AI but faces memory constraints. Despite memory optimization efforts, scaling laws continue to increase model sizes and memory pressure. In this paper, we revisit the core memory bottlenecks in on-device LLM inference and conduct a comprehensive analysis of mainstream optimization techniques. We uncover several overlooked inefficiencies: (1) model weights, not KV caches, dominate memory usage; (2) weight sparsity remains underutilized; (3) OS-level memory behaviors cause redundancy; and (4) naive weight loading leads to excessive memory residency. To address these challenges, we propose H2O, a heterogeneity-aware hierarchical orchestration framework for memory-efficient on-device LLM inference. H2O introduces three key techniques, including hierarchical weight orchestration to reduce redundant memory retention, zero-copy I/O–compute parallelism for safe and efficient memory reuse, and heterogeneity-aware inference planning to adapt to diverse mobile hardware constraints. Extensive experimental results show that H2O reduces peak memory usage by up to 60%, eliminates out-of-memory (OOM) failures for 7 B–13 B models, and improves inference latency by 34%–94% under tight memory budgets."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "b5be12ccbb037be57a1dbc03fbd43d379170055f",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2603-16666",
+            "ArXiv": "2603.16666",
+            "DOI": "10.48550/arXiv.2603.16666",
+            "CorpusId": 286583747
+          },
+          "url": "https://www.semanticscholar.org/paper/b5be12ccbb037be57a1dbc03fbd43d379170055f",
+          "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2603.16666, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2214583235",
+              "name": "Tianyuan Yuan"
+            },
+            {
+              "authorId": "2256465607",
+              "name": "Zibin Dong"
+            },
+            {
+              "authorId": "2284726857",
+              "name": "Yicheng Liu"
+            },
+            {
+              "authorId": "2378973882",
+              "name": "Hang Zhao"
+            }
+          ],
+          "abstract": "World Action Models (WAMs) have emerged as a promising alternative to Vision-Language-Action (VLA) models for embodied control because they explicitly model how visual observations may evolve under action. Most existing WAMs follow an imagine-then-execute paradigm, incurring substantial test-time latency from iterative video denoising, yet it remains unclear whether explicit future imagination is actually necessary for strong action performance. In this paper, we ask whether WAMs need explicit future imagination at test time, or whether their benefit comes primarily from video modeling during training. We disentangle the role of video modeling during training from explicit future generation during inference by proposing \\textbf{Fast-WAM}, a WAM architecture that retains video co-training during training but skips future prediction at test time. We further instantiate several Fast-WAM variants to enable a controlled comparison of these two factors. Across these variants, we find that Fast-WAM remains competitive with imagine-then-execute variants, while removing video co-training causes a much larger performance drop. Empirically, Fast-WAM achieves competitive results with state-of-the-art methods both on simulation benchmarks (LIBERO and RoboTwin) and real-world tasks, without embodied pretraining. It runs in real time with 190ms latency, over 4$\\times$ faster than existing imagine-then-execute WAMs. These results suggest that the main value of video prediction in WAMs may lie in improving world representations during training rather than generating future observations at test time. Project page: https://yuantianyuan01.github.io/FastWAM/"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "badf8adcf2b6a6780a308881de75f148a4cacea0",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2602-15922",
+            "ArXiv": "2602.15922",
+            "DOI": "10.48550/arXiv.2602.15922",
+            "CorpusId": 285726165
+          },
+          "url": "https://www.semanticscholar.org/paper/badf8adcf2b6a6780a308881de75f148a4cacea0",
+          "title": "World Action Models are Zero-shot Policies",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.15922, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2152111477",
+              "name": "Seonghyeon Ye"
+            },
+            {
+              "authorId": "2299104362",
+              "name": "Yunhao Ge"
+            },
+            {
+              "authorId": "2191345759",
+              "name": "Kaiyuan Zheng"
+            },
+            {
+              "authorId": "2177775616",
+              "name": "Shenyuan Gao"
+            },
+            {
+              "authorId": "2052088734",
+              "name": "Sihyun Yu"
+            },
+            {
+              "authorId": "2409497610",
+              "name": "George Kurian"
+            },
+            {
+              "authorId": "73308232",
+              "name": "Suneel Indupuru"
+            },
+            {
+              "authorId": "2350869215",
+              "name": "Y. Tan"
+            },
+            {
+              "authorId": "2118160513",
+              "name": "Chuning Zhu"
+            },
+            {
+              "authorId": "2362827946",
+              "name": "Jiannan Xiang"
+            },
+            {
+              "authorId": "2276271702",
+              "name": "A. Malik"
+            },
+            {
+              "authorId": "2305845947",
+              "name": "Kyungmin Lee"
+            },
+            {
+              "authorId": "2410899324",
+              "name": "William Liang"
+            },
+            {
+              "authorId": "2412072627",
+              "name": "Nadun Ranawaka"
+            },
+            {
+              "authorId": "2275750026",
+              "name": "Jiasheng Gu"
+            },
+            {
+              "authorId": "2351665438",
+              "name": "Yinzhen Xu"
+            },
+            {
+              "authorId": "2316513666",
+              "name": "Guanzhi Wang"
+            },
+            {
+              "authorId": "2352992614",
+              "name": "Fengyuan Hu"
+            },
+            {
+              "authorId": "2014184266",
+              "name": "Avnish Narayan"
+            },
+            {
+              "authorId": "2362299097",
+              "name": "Johan Bjorck"
+            },
+            {
+              "authorId": "2350827994",
+              "name": "Jing Wang"
+            },
+            {
+              "authorId": "2109334279",
+              "name": "Gwanghyun Kim"
+            },
+            {
+              "authorId": "2268757542",
+              "name": "Dantong Niu"
+            },
+            {
+              "authorId": "2345931905",
+              "name": "Ruijie Zheng"
+            },
+            {
+              "authorId": "2218866691",
+              "name": "Yuqi Xie"
+            },
+            {
+              "authorId": "2390404352",
+              "name": "Jimmy Wu"
+            },
+            {
+              "authorId": "2358236936",
+              "name": "Qi Wang"
+            },
+            {
+              "authorId": "144885996",
+              "name": "Ryan C. Julian"
+            },
+            {
+              "authorId": "2299305501",
+              "name": "Dan Xu"
+            },
+            {
+              "authorId": "2378997853",
+              "name": "Yilun Du"
+            },
+            {
+              "authorId": "2527420",
+              "name": "Yevgen Chebotar"
+            },
+            {
+              "authorId": "2344615904",
+              "name": "Scott Reed"
+            },
+            {
+              "authorId": "2364684748",
+              "name": "Jan Kautz"
+            },
+            {
+              "authorId": "2258068214",
+              "name": "Yuke Zhu"
+            },
+            {
+              "authorId": "2350861618",
+              "name": "LinxiJimFan"
+            },
+            {
+              "authorId": "2333419032",
+              "name": "J. Jang"
+            }
+          ],
+          "abstract": "State-of-the-art Vision-Language-Action (VLA) models excel at semantic generalization but struggle to generalize to unseen physical motions in novel environments. We introduce DreamZero, a World Action Model (WAM) built upon a pretrained video diffusion backbone. Unlike VLAs, WAMs learn physical dynamics by predicting future world states and actions, using video as a dense representation of how the world evolves. By jointly modeling video and action, DreamZero learns diverse skills effectively from heterogeneous robot data without relying on repetitive demonstrations. This results in over 2x improvement in generalization to new tasks and environments compared to state-of-the-art VLAs in real robot experiments. Crucially, through model and system optimizations, we enable a 14B autoregressive video diffusion model to perform real-time closed-loop control at 7Hz. Finally, we demonstrate two forms of cross-embodiment transfer: video-only demonstrations from other robots or humans yield a relative improvement of over 42% on unseen task performance with just 10-20 minutes of data. More surprisingly, DreamZero enables few-shot embodiment adaptation, transferring to a new embodiment with only 30 minutes of play data while retaining zero-shot generalization."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "c96983e1b939ead26ba0d7de245bc578517ec509",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2602-04315",
+            "ArXiv": "2602.04315",
+            "DOI": "10.48550/arXiv.2602.04315",
+            "CorpusId": 285286384
+          },
+          "url": "https://www.semanticscholar.org/paper/c96983e1b939ead26ba0d7de245bc578517ec509",
+          "title": "GeneralVLA: Generalizable Vision-Language-Action Models with Knowledge-Guided Trajectory Planning",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.04315, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2345408606",
+              "name": "Guoqing Ma"
+            },
+            {
+              "authorId": "2375153720",
+              "name": "Siheng Wang"
+            },
+            {
+              "authorId": "2396902821",
+              "name": "Zeyu Zhang"
+            },
+            {
+              "authorId": "2344760314",
+              "name": "Shan Yu"
+            },
+            {
+              "authorId": "2291035187",
+              "name": "Hao Tang"
+            }
+          ],
+          "abstract": "Large foundation models have shown strong open-world generalization to complex problems in vision and language, but similar levels of generalization have yet to be achieved in robotics. One fundamental challenge is that the models exhibit limited zero-shot capability, which hampers their ability to generalize effectively to unseen scenarios. In this work, we propose GeneralVLA (Generalizable Vision-Language-Action Models with Knowledge-Guided Trajectory Planning), a hierarchical vision-language-action (VLA) model that can be more effective in utilizing the generalization of foundation models, enabling zero-shot manipulation and automatically generating data for robotics. In particular, we study a class of hierarchical VLA model where the high-level ASM (Affordance Segmentation Module) is finetuned to perceive image keypoint affordances of the scene; the mid-level 3DAgent carries out task understanding, skill knowledge, and trajectory planning to produce a 3D path indicating the desired robot end-effector trajectory. The intermediate 3D path prediction is then served as guidance to the low-level, 3D-aware control policy capable of precise manipulation. Compared to alternative approaches, our method requires no real-world robotic data collection or human demonstration, making it much more scalable to diverse tasks and viewpoints. Empirically, GeneralVLA successfully generates trajectories for 14 tasks, significantly outperforming state-of-the-art methods such as VoxPoser. The generated demonstrations can train more robust behavior cloning policies than training with human demonstrations or from data generated by VoxPoser, Scaling-up, and Code-As-Policies. We believe GeneralVLA can be the scalable method for both generating data for robotics and solving novel tasks in a zero-shot setting. Code: https://github.com/AIGeeksGroup/GeneralVLA. Website: https://aigeeksgroup.github.io/GeneralVLA."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "fede426322c5c40242f6642b816caa8adf782676",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2601-21998",
+            "ArXiv": "2601.21998",
+            "DOI": "10.48550/arXiv.2601.21998",
+            "CorpusId": 285140583
+          },
+          "url": "https://www.semanticscholar.org/paper/fede426322c5c40242f6642b816caa8adf782676",
+          "title": "Causal World Modeling for Robot Control",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2601.21998, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2340512661",
+              "name": "Lin Li"
+            },
+            {
+              "authorId": "151178636",
+              "name": "Qihang Zhang"
+            },
+            {
+              "authorId": "2287763400",
+              "name": "Yiming Luo"
+            },
+            {
+              "authorId": "2406903143",
+              "name": "Shuai Yang"
+            },
+            {
+              "authorId": "2226504527",
+              "name": "Ruilin Wang"
+            },
+            {
+              "authorId": "2064563838",
+              "name": "Fei Han"
+            },
+            {
+              "authorId": "2407470072",
+              "name": "Mingrui Yu"
+            },
+            {
+              "authorId": "2279873506",
+              "name": "Zelin Gao"
+            },
+            {
+              "authorId": "2406835759",
+              "name": "Nan Xue"
+            },
+            {
+              "authorId": "2406915796",
+              "name": "Xing Zhu"
+            },
+            {
+              "authorId": "2392945842",
+              "name": "Yujun Shen"
+            },
+            {
+              "authorId": "121983635",
+              "name": "Yinghao Xu"
+            }
+          ],
+          "abstract": "This work highlights that video world modeling, alongside vision-language pre-training, establishes a fresh and independent foundation for robot learning. Intuitively, video world models provide the ability to imagine the near future by understanding the causality between actions and visual dynamics. Inspired by this, we introduce LingBot-VA, an autoregressive diffusion framework that learns frame prediction and policy execution simultaneously. Our model features three carefully crafted designs: (1) a shared latent space, integrating vision and action tokens, driven by a Mixture-of-Transformers (MoT) architecture, (2) a closed-loop rollout mechanism, allowing for ongoing acquisition of environmental feedback with ground-truth observations, (3) an asynchronous inference pipeline, parallelizing action prediction and motor execution to support efficient control. We evaluate our model on both simulation benchmarks and real-world scenarios, where it shows significant promise in long-horizon manipulation, data efficiency in post-training, and strong generalizability to novel configurations. The code and model are made publicly available to facilitate the community."
+        }
+      }
+    ]
+  }
+}

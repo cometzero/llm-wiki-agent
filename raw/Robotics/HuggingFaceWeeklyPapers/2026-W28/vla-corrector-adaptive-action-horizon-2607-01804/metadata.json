@@ -1,0 +1,811 @@
+{
+  "id": "2607.01804",
+  "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+  "authors": [
+    "Yi Pan",
+    "Miao Pan",
+    "Qi Lu",
+    "Jiaming Huang",
+    "Man Zhang",
+    "Siteng Huang",
+    "Xin Li",
+    "Jie Zhang",
+    "Yongliang Shen",
+    "Xuhong Zhang",
+    "Wenqi Zhang"
+  ],
+  "summary": "Vision-Language-Action (VLA) foundation models have recently achieved strong progress in embodied intelligence. To reduce policy-call frequency while preserving temporal coherence, most generative policies adopt an action chunk mechanism, executing multiple future actions in an open-loop manner under a fixed action horizon. However, this predict-then-blindly-execute paradigm sacrifices closed-loop reactivity: in contact-rich physical interactions, even small local perturbations can rapidly amplify within the open-loop blind spot, leading to compounding errors and ultimately task failure. To address this limitation, we propose VLA-Corrector, a lightweight corrective inference framework for action-chunked VLA policies. Without modifying the backbone policy weights, VLA-Corrector introduces a lightweight Latent-space Vision Monitor (LVM) that continuously compares predicted and actual visual feature evolution, enabling online detection of visual dynamics deviations. Once persistent deviation is detected, the system triggers a truncation event, discards the remaining stale actions, and invokes corrective replanning via Online Gradient Guidance (OGG). The detect-and-correct mechanism naturally induces an event-triggered adaptive action horizon: it preserves long-horizon execution when the current chunk remains reliable, and invokes short-horizon corrective replanning when execution begins to drift.",
+  "week": "2026-W28",
+  "hf_url": "https://huggingface.co/papers/2607.01804",
+  "project_page": "https://zju-omniai.github.io/vla-corrector/",
+  "github_repo": "https://github.com/ZJU-OmniAI/vla-corrector",
+  "slug": "vla-corrector-adaptive-action-horizon-2607-01804",
+  "arxiv_api": {
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "abstract": "Vision-Language-Action (VLA) foundation models have recently achieved strong progress in embodied intelligence. To reduce policy-call frequency while preserving temporal coherence, most generative policies adopt an action chunk mechanism, executing multiple future actions in an open-loop manner under a fixed action horizon. However, this \"predict-then-blindly-execute\" paradigm sacrifices closed-loop reactivity: in contact-rich physical interactions, even small local perturbations can rapidly amplify within the open-loop blind spot, leading to compounding errors and ultimately task failure. To address this limitation, we propose VLA-Corrector, a lightweight corrective inference framework for action-chunked VLA policies. Without modifying the backbone policy weights, VLA-Corrector introduces a lightweight Latent-space Vision Monitor (LVM) that continuously compares predicted and actual visual feature evolution, enabling online detection of visual dynamics deviations. Once persistent deviation is detected, the system triggers a truncation event, discards the remaining stale actions, and invokes corrective replanning via Online Gradient Guidance (OGG). The detect-and-correct mechanism of VLA-Corrector naturally induces an event-triggered adaptive action horizon: it preserves long-horizon execution when the current chunk remains reliable, and invokes short-horizon corrective replanning when execution begins to drift. In doing so, VLA-Corrector mitigates the trade-off imposed by static horizons between execution robustness and policy-call frequency. It can be integrated into different VLA models without further retraining the VLA backbone, interrupting compounding errors while preserving much of the efficiency benefit of action chunking and substantially improving robustness in long-horizon, contact-rich robotic manipulation tasks.",
+    "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+    "authors": [
+      "Yi Pan",
+      "Miao Pan",
+      "Qi Lu",
+      "Jiaming Huang",
+      "Man Zhang",
+      "Siteng Huang",
+      "Xin Li",
+      "Jie Zhang",
+      "Yongliang Shen",
+      "Xuhong Zhang",
+      "Wenqi Zhang"
+    ]
+  },
+  "html_fetch_error": null,
+  "html_final_url": "https://arxiv.org/html/2607.01804",
+  "figures": [
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/icons/smileybones-small.svg",
+      "path": "figures/figure-01.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://arxiv.org/static/base/1.0.1/images/arxiv-logo-primary-light.svg",
+      "path": "figures/figure-02.svg",
+      "alt": "arXiv logo"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x1.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x2.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x3.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x4.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x5.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x6.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x7.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x8.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x9.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    },
+    {
+      "src": "https://arxiv.org/html/2607.01804/2607.01804v1/x10.png",
+      "error": "<HTTPError 404: 'Not Found'>",
+      "alt": "Refer to caption"
+    }
+  ],
+  "semantic_scholar_references": {
+    "offset": 0,
+    "citingPaperInfo": {
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2607.01804, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "title": "VLA-Corrector: Lightweight Detect-and-Correct Inference for Adaptive Action Horizon",
+      "authors": [
+        {
+          "authorId": "2446292152",
+          "name": "Yingying Pan"
+        },
+        {
+          "authorId": "2377317088",
+          "name": "Miao Pan"
+        },
+        {
+          "authorId": "2350729296",
+          "name": "Qianyu Lu"
+        },
+        {
+          "authorId": "2330990548",
+          "name": "Jiaming Huang"
+        },
+        {
+          "authorId": "2446907768",
+          "name": "Man Zhang"
+        },
+        {
+          "authorId": "122132048",
+          "name": "Siteng Huang"
+        },
+        {
+          "authorId": "2376124596",
+          "name": "Xin Li"
+        },
+        {
+          "authorId": "2447365634",
+          "name": "Jie Zhang"
+        },
+        {
+          "authorId": "2337846158",
+          "name": "Yongliang Shen"
+        },
+        {
+          "authorId": "2389465917",
+          "name": "Xuhong Zhang"
+        },
+        {
+          "authorId": "2135282890",
+          "name": "Wenqi Zhang"
+        }
+      ]
+    },
+    "next": 12,
+    "data": [
+      {
+        "citedPaper": {
+          "paperId": "cacd33bdc201306af443eded0162c60eff589396",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2604-21924",
+            "ArXiv": "2604.21924",
+            "DOI": "10.48550/arXiv.2604.21924",
+            "CorpusId": 287702392
+          },
+          "url": "https://www.semanticscholar.org/paper/cacd33bdc201306af443eded0162c60eff589396",
+          "title": "Long-Horizon Manipulation via Trace-Conditioned VLA Planning",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2604.21924, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2310233934",
+              "name": "I. Liu"
+            },
+            {
+              "authorId": "2366117926",
+              "name": "An-Chieh Cheng"
+            },
+            {
+              "authorId": "2395719044",
+              "name": "Rui Yan"
+            },
+            {
+              "authorId": "2360621584",
+              "name": "Geng Chen"
+            },
+            {
+              "authorId": "2290904526",
+              "name": "Ri-Zhao Qiu"
+            },
+            {
+              "authorId": "2319768659",
+              "name": "Xueyan Zou"
+            },
+            {
+              "authorId": "2316591556",
+              "name": "Sha Yi"
+            },
+            {
+              "authorId": "2290208984",
+              "name": "Hongxu Yin"
+            },
+            {
+              "authorId": "2348408036",
+              "name": "Xiaolong Wang"
+            },
+            {
+              "authorId": "2280548977",
+              "name": "Sifei Liu"
+            }
+          ],
+          "abstract": "Long-horizon manipulation remains challenging for vision-language-action (VLA) policies: real tasks are multi-step, progress-dependent, and brittle to compounding execution errors. We present LoHo-Manip, a modular framework that scales short-horizon VLA execution to long-horizon instruction following via a dedicated task-management VLM. The manager is decoupled from the executor and is invoked in a receding-horizon manner: given the current observation, it predicts a progress-aware remaining plan that combines (i) a subtask sequence with an explicit done + remaining split as lightweight language memory, and (ii) a visual trace -- a compact 2D keypoint trajectory prompt specifying where to go and what to approach next. The executor VLA is adapted to condition on the rendered trace, thereby turning long-horizon decision-making into repeated local control by following the trace. Crucially, predicting the remaining plan at each step yields an implicit closed loop: failed steps persist in subsequent outputs, and traces update accordingly, enabling automatic continuation and replanning without hand-crafted recovery logic or brittle visual-history buffers. Extensive experiments spanning embodied planning, long-horizon reasoning, trajectory prediction, and end-to-end manipulation in simulation and on a real Franka robot demonstrate strong gains in long-horizon success, robustness, and out-of-distribution generalization. Project page: https://www.liuisabella.com/LoHoManip"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "e9c03c3a3da64703583673c0f189e0a2b3b4c196",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2604-04161",
+            "ArXiv": "2604.04161",
+            "DOI": "10.48550/arXiv.2604.04161",
+            "CorpusId": 287202540
+          },
+          "url": "https://www.semanticscholar.org/paper/e9c03c3a3da64703583673c0f189e0a2b3b4c196",
+          "title": "Adaptive Action Chunking at Inference-time for Vision-Language-Action Models",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2604.04161, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2307983837",
+              "name": "Yuanchang Liang"
+            },
+            {
+              "authorId": "2356227438",
+              "name": "Xiaobo Wang"
+            },
+            {
+              "authorId": "2303784156",
+              "name": "Kai Wang"
+            },
+            {
+              "authorId": "2259997562",
+              "name": "Shuo Wang"
+            },
+            {
+              "authorId": "2303427354",
+              "name": "Xiaojiang Peng"
+            },
+            {
+              "authorId": "2371141157",
+              "name": "Hao Chen"
+            },
+            {
+              "authorId": "2214827879",
+              "name": "David Kim Huat Chua"
+            },
+            {
+              "authorId": "1812023",
+              "name": "P. Vadakkepat"
+            }
+          ],
+          "abstract": "In Vision-Language-Action (VLA) models, action chunking (i.e., executing a sequence of actions without intermediate replanning) is a key technique to improve robotic manipulation abilities. However, a large chunk size reduces the model's responsiveness to new information, while a small one increases the likelihood of mode-jumping, jerky behavior resulting from discontinuities between chunks. Therefore, selecting the optimal chunk size is an urgent demand to balance the model's reactivity and consistency. Unfortunately, a dominant trend in current VLA models is an empirical fixed chunk length at inference-time, hindering their superiority and scalability across diverse manipulation tasks. To address this issue, we propose a novel Adaptive Action Chunking (AAC) strategy, which exploits action entropy as the cue to adaptively determine the chunk size based on current predictions. Extensive experiments on a wide range of simulated and real-world robotic manipulation tasks have demonstrated that our approach substantially improves performance over the state-of-the-art alternatives. The videos and source code are publicly available at https://lance-lot.github.io/adaptive-chunking.github.io/."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "af49770d14c0e496f2555865969d34eda4fd8d8b",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2604-02965",
+            "ArXiv": "2604.02965",
+            "DOI": "10.48550/arXiv.2604.02965",
+            "CorpusId": 287121835
+          },
+          "url": "https://www.semanticscholar.org/paper/af49770d14c0e496f2555865969d34eda4fd8d8b",
+          "title": "Open-Loop Planning, Closed-Loop Verification: Speculative Verification for VLA",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2604.02965, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2193451398",
+              "name": "Zihua Wang"
+            },
+            {
+              "authorId": "2328788960",
+              "name": "Zhi-Heng Lin"
+            },
+            {
+              "authorId": "2387739922",
+              "name": "Ruibo Li"
+            },
+            {
+              "authorId": "2375147747",
+              "name": "Yu Zhang"
+            },
+            {
+              "authorId": "2333597123",
+              "name": "Xu Yang"
+            },
+            {
+              "authorId": "101401292",
+              "name": "Siya Mi"
+            },
+            {
+              "authorId": "2265262730",
+              "name": "Xiu-Shen Wei"
+            }
+          ],
+          "abstract": "Vision-Language-Action (VLA) models, as large foundation models for embodied control, have shown strong performance in manipulation tasks. However, their performance comes at high inference cost. To improve efficiency, recent methods adopt action chunking, which predicts a sequence of future actions for open-loop execution. Although effective for reducing computation, open-loop execution is sensitive to environmental changes and prone to error accumulation due to the lack of close-loop feedback. To address this limitation, we propose Speculative Verification for VLA Control (SV-VLA), a framework that combines efficient open-loop long-horizon planning with lightweight closed-loop online verification. Specifically, SV-VLA uses a heavy VLA as a low-frequency macro-planner to generate an action chunk together with a planning context, while a lightweight verifier continuously monitors execution based on the latest observations. Conditioned on both the current observation and the planning context, the verifier compares the planned action against a closed-loop reference action and triggers replanning only when necessary. Experiments demonstrate that SV-VLA combines the efficiency of chunked prediction with the robustness of closed-loop control, enabling efficient and reliable VLA-based control in dynamic environments. Code is available: https://github.com/edsad122/SV-VLA."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "991c59a4ffd859258b3e3b26e1fff6c0e7aa7024",
+          "externalIds": {
+            "ArXiv": "2603.20658",
+            "DBLP": "journals/corr/abs-2603-20658",
+            "DOI": "10.48550/arXiv.2603.20658",
+            "CorpusId": 286762273
+          },
+          "url": "https://www.semanticscholar.org/paper/991c59a4ffd859258b3e3b26e1fff6c0e7aa7024",
+          "title": "Speedup Patch: Learning a Plug-and-Play Policy to Accelerate Embodied Manipulation",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2603.20658, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2278216011",
+              "name": "Zhichao Wu"
+            },
+            {
+              "authorId": "2232411195",
+              "name": "Junyin Ye"
+            },
+            {
+              "authorId": "2303416475",
+              "name": "Zhilong Zhang"
+            },
+            {
+              "authorId": "2276179937",
+              "name": "Yihao Sun"
+            },
+            {
+              "authorId": "2175115642",
+              "name": "Hao-Chu Lin"
+            },
+            {
+              "authorId": "2339235957",
+              "name": "Jia Luo"
+            },
+            {
+              "authorId": null,
+              "name": "Haoxiang Ren"
+            },
+            {
+              "authorId": "49785134",
+              "name": "Lei Yuan"
+            },
+            {
+              "authorId": "2303817639",
+              "name": "Yang Yu"
+            }
+          ],
+          "abstract": "While current embodied policies exhibit remarkable manipulation skills, their execution remains unsatisfactorily slow as they inherit the tardy pacing of human demonstrations. Existing acceleration methods typically require policy retraining or costly online interactions, limiting their scalability for large-scale foundation models. In this paper, we propose Speedup Patch (SuP), a lightweight, policy-agnostic framework that enables plug-and-play acceleration using solely offline data. SuP introduces an external scheduler that adaptively downsamples action chunks provided by embodied policies to eliminate redundancies. Specifically, we formalize the optimization of our scheduler as a Constrained Markov Decision Process (CMDP) aimed at maximizing efficiency without compromising task performance. Since direct success evaluation is infeasible in offline settings, SuP introduces World Model based state deviation as a surrogate metric to enforce safety constraints. By leveraging a learned world model as a virtual evaluator to predict counterfactual trajectories, the scheduler can be optimized via offline reinforcement learning. Empirical results on simulation benchmarks (Libero, Bigym) and real-world tasks validate that SuP achieves an overall 1.8x execution speedup for diverse policies while maintaining their original success rates."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "cfc9929866d0da75d40368a628423e227939b343",
+          "externalIds": {
+            "ArXiv": "2603.18091",
+            "DBLP": "journals/corr/abs-2603-18091",
+            "DOI": "10.48550/arXiv.2603.18091",
+            "CorpusId": 286669981
+          },
+          "url": "https://www.semanticscholar.org/paper/cfc9929866d0da75d40368a628423e227939b343",
+          "title": "Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2603.18091, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2279771742",
+              "name": "Chen Zhao"
+            },
+            {
+              "authorId": "2410044200",
+              "name": "Zhuoran Wang"
+            },
+            {
+              "authorId": "2274084217",
+              "name": "Haoyang Li"
+            },
+            {
+              "authorId": "2376405150",
+              "name": "Shifeng Bao"
+            },
+            {
+              "authorId": "2248135485",
+              "name": "Guanlin Li"
+            },
+            {
+              "authorId": "2334698039",
+              "name": "Youhe Feng"
+            },
+            {
+              "authorId": "2371140693",
+              "name": "Yang Li"
+            },
+            {
+              "authorId": "2381786335",
+              "name": "Jie Tang"
+            },
+            {
+              "authorId": "2268783318",
+              "name": "Jing Zhang"
+            }
+          ],
+          "abstract": "Vision-Language-Action (VLA) models have recently demonstrated strong performance across embodied tasks. Modern VLAs commonly employ diffusion action experts to efficiently generate high-precision continuous action chunks, while auto-regressive generation can be slower and less accurate at low-level control. Yet auto-regressive paradigms still provide complementary priors that can improve robustness and generalization in out-of-distribution environments. To leverage both paradigms, we propose Action-Draft-and-Verify (ADV): diffusion action expert drafts multiple candidate action chunks, and the VLM selects one by scoring all candidates in a single forward pass with a perplexity-style metric. Under matched backbones, training data, and action-chunk length, ADV improves success rate by +4.3 points in simulation and +19.7 points in real-world over diffusion-based baseline, with a single-pass VLM reranking overhead."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "353781187b47c73591b8790fb316778291d78afe",
+          "externalIds": {
+            "ArXiv": "2603.01953",
+            "DBLP": "journals/corr/abs-2603-01953",
+            "DOI": "10.48550/arXiv.2603.01953",
+            "CorpusId": 284957245
+          },
+          "url": "https://www.semanticscholar.org/paper/353781187b47c73591b8790fb316778291d78afe",
+          "title": "Closed-Loop Action Chunks with Dynamic Corrections for Training-Free Diffusion Policy",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2603.01953, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2364365788",
+              "name": "Pengyuan Wu"
+            },
+            {
+              "authorId": "2308217874",
+              "name": "Pingrui Zhang"
+            },
+            {
+              "authorId": "2145078379",
+              "name": "Zhigang Wang"
+            },
+            {
+              "authorId": "2287802281",
+              "name": "Dong Wang"
+            },
+            {
+              "authorId": "2256773314",
+              "name": "Bin Zhao"
+            },
+            {
+              "authorId": "2192821449",
+              "name": "Xuelong Li"
+            }
+          ],
+          "abstract": "Diffusion-based policies have achieved remarkable results in robotic manipulation but often struggle to adapt rapidly in dynamic scenarios, leading to delayed responses or task failures. We present DCDP, a Dynamic Closed-Loop Diffusion Policy framework that integrates chunk-based action generation with real-time correction. DCDP integrates a self-supervised dynamic feature encoder, cross-attention fusion, and an asymmetric action encoder-decoder to inject environmental dynamics before action execution, achieving real-time closed-loop action correction and enhancing the system's adaptability in dynamic scenarios. In dynamic PushT simulations, DCDP improves adaptability by 19\\% without retraining while requiring only 5\\% additional computation. Its modular design enables plug-and-play integration, achieving both temporal coherence and real-time responsiveness in dynamic robotic scenarios, including real-world manipulation tasks. The project page is at: https://github.com/wupengyuan/dcdp"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "b21ade97b9fced71da53cdb1aee484b27cad1cf8",
+          "externalIds": {
+            "ArXiv": "2602.07399",
+            "DBLP": "journals/corr/abs-2602-07399",
+            "DOI": "10.48550/arXiv.2602.07399",
+            "CorpusId": 285454269
+          },
+          "url": "https://www.semanticscholar.org/paper/b21ade97b9fced71da53cdb1aee484b27cad1cf8",
+          "title": "VGAS: Value-Guided Action-Chunk Selection for Few-Shot Vision-Language-Action Adaptation",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.07399, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2385774244",
+              "name": "Chang Xu"
+            },
+            {
+              "authorId": "2302819426",
+              "name": "Jie Lu"
+            },
+            {
+              "authorId": "2207125",
+              "name": "Junyu Xuan"
+            },
+            {
+              "authorId": "145945507",
+              "name": "Enshui Yu"
+            }
+          ],
+          "abstract": "Vision--Language--Action (VLA) models bridge multimodal reasoning with physical control, but adapting them to new tasks with scarce demonstrations remains unreliable. While fine-tuned VLA policies often produce semantically plausible trajectories, failures often arise from unresolved geometric ambiguities, where near-miss actions lead to divergent execution outcomes under limited supervision. We study few-shot VLA adaptation from a \\emph{generation--selection} perspective and propose a novel framework \\textbf{VGAS} (\\textbf{V}alue-\\textbf{G}uided \\textbf{A}ction-chunk \\textbf{S}election). It performs inference-time best-of-$N$ selection to identify action chunks that are both semantically faithful and geometrically precise. Specifically, \\textbf{VGAS} employs a finetuned VLA as a high-recall proposal generator and introduces the \\textrm{Q-Chunk-Former}, a geometrically grounded Transformer critic to resolve fine-grained geometric ambiguities. In addition, we propose \\textit{Explicit Geometric Regularization} (\\texttt{EGR}), which shapes a discriminative value landscape to preserve action ranking resolution among near-miss candidates while mitigating value instability under scarce supervision. Experiments and theoretical analysis demonstrate that \\textbf{VGAS} consistently improves success rates and robustness under limited demonstrations and distribution shifts. Our code is available at https://github.com/Jyugo-15/VGAS."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "2bea6a0c2611b4f0e72b5ea11fb204f4d57a8d02",
+          "externalIds": {
+            "ArXiv": "2512.00783",
+            "DBLP": "journals/corr/abs-2512-00783",
+            "DOI": "10.48550/arXiv.2512.00783",
+            "CorpusId": 283449804
+          },
+          "url": "https://www.semanticscholar.org/paper/2bea6a0c2611b4f0e72b5ea11fb204f4d57a8d02",
+          "title": "Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment",
+          "venue": "arXiv.org",
+          "year": 2025,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2512.00783, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2330758875",
+              "name": "Libo Wang"
+            }
+          ],
+          "abstract": "To address a fundamental limitation in cognitive systems, namely the absence of a time-updatable mediating thought space between semantics and continuous control, this work constructs and trains a vision-language-action model termed Sigma, deployed on a single RTX 4090. The model is built upon the open-source pi0.5_base backbone, with the svla_so101_pickplace dataset preprocessed into a structured training corpus. An independently designed VLA architecture is introduced to integrate deep semantic understanding with associative reasoning, enabling telepathic-style alignment between perception and action. Training proceeds through iterative optimization of data preprocessing, LoRA-based fine-tuning, and inference-stage adapter design. Evaluation is conducted using offline closed-loop replay, comparing Sigma against the untuned pi0.5_base under identical data conditions. Experimental results indicate a consistent reduction in control MSE across vector-, fragment-, and trajectory-level scales, while preserving the stability of the telepathy norm and semantic-text alignment quality. These findings demonstrate that mind-responsive alignment control can be quantitatively achieved through semantic and associative architectural integration without retraining the base model, providing a reproducible pathway for semantic alignment and intention-driven behavior."
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "a58106719e5815804dee828a09f6290e9ccf3dc6",
+          "externalIds": {
+            "ArXiv": "2511.19433",
+            "DBLP": "journals/corr/abs-2511-19433",
+            "DOI": "10.48550/arXiv.2511.19433",
+            "CorpusId": 283245149
+          },
+          "url": "https://www.semanticscholar.org/paper/a58106719e5815804dee828a09f6290e9ccf3dc6",
+          "title": "Mixture of Horizons in Action Chunking",
+          "venue": "arXiv.org",
+          "year": 2025,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2511.19433, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2290179467",
+              "name": "Dong Jing"
+            },
+            {
+              "authorId": "2394311702",
+              "name": "Gang Wang"
+            },
+            {
+              "authorId": "2384148523",
+              "name": "Jiaqi Liu"
+            },
+            {
+              "authorId": "13138733",
+              "name": "Weiliang Tang"
+            },
+            {
+              "authorId": "2219743204",
+              "name": "Zelong Sun"
+            },
+            {
+              "authorId": "2352910959",
+              "name": "Yunchao Yao"
+            },
+            {
+              "authorId": "2394124879",
+              "name": "Zhenyu Wei"
+            },
+            {
+              "authorId": "2265756902",
+              "name": "Yunhui Liu"
+            },
+            {
+              "authorId": "2248724636",
+              "name": "Zhiwu Lu"
+            },
+            {
+              "authorId": "2394121432",
+              "name": "Mingyu Ding"
+            }
+          ],
+          "abstract": "Vision-language-action (VLA) models have shown remarkable capabilities in robotic manipulation, but their performance is sensitive to the $\\textbf{action chunk length}$ used during training, termed $\\textbf{horizon}$. Our empirical study reveals an inherent trade-off: longer horizons provide stronger global foresight but degrade fine-grained accuracy, while shorter ones sharpen local control yet struggle on long-term tasks, implying fixed choice of single horizons being suboptimal. To mitigate the trade-off, we propose a $\\textbf{mixture of horizons (MoH)}$ strategy. MoH rearranges the action chunk into several segments with different horizons, processes them in parallel with a shared action transformer, and fuses outputs with a light linear gate. It has three appealing benefits. 1) MoH exploits long-term foresight and short-term precision jointly within a single model, improving both performance and generalizability to complex tasks. 2) MoH is plug-and-play for full-attention action modules with minimal training or inference overhead. 3) MoH enables dynamic inference with adaptive horizons, which selects stable actions through cross-horizon consensus, achieving 2.5$\\times$ higher throughput than baselines while preserving superior performance. Extensive experiments over flow-based policies $\\pi_0$, $\\pi_{0.5}$, and one-step regression policy $\\pi_{\\text{reg}}$ demonstrate that MoH yields consistent and significant gains on both simulations and real-world tasks. Notably, under mixed-task setting, $\\pi_{0.5}$ with MoH reaches a new state-of-the-art with 99$\\%$ average success rate on LIBERO after only $30k$ training iterations. Project page: https://timsty1.github.io/moh/"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "5028fb62d1144f81aa91806798b28eebe0e929c8",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2510-12392",
+            "ArXiv": "2510.12392",
+            "DOI": "10.48550/arXiv.2510.12392",
+            "CorpusId": 282064320
+          },
+          "url": "https://www.semanticscholar.org/paper/5028fb62d1144f81aa91806798b28eebe0e929c8",
+          "title": "Improving Generative Behavior Cloning via Self-Guidance and Adaptive Chunking",
+          "venue": "arXiv.org",
+          "year": 2025,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.12392, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2127769429",
+              "name": "Junhyuk So"
+            },
+            {
+              "authorId": "2325961587",
+              "name": "Chi-Guhn Lee"
+            },
+            {
+              "authorId": "2342557623",
+              "name": "Shinyoung Lee"
+            },
+            {
+              "authorId": "2525635",
+              "name": "Jungseul Ok"
+            },
+            {
+              "authorId": "2271355344",
+              "name": "Eunhyeok Park"
+            }
+          ],
+          "abstract": "Generative Behavior Cloning (GBC) is a simple yet effective framework for robot learning, particularly in multi-task settings. Recent GBC methods often employ diffusion policies with open-loop (OL) control, where actions are generated via a diffusion process and executed in multi-step chunks without replanning. While this approach has demonstrated strong success rates and generalization, its inherent stochasticity can result in erroneous action sampling, occasionally leading to unexpected task failures. Moreover, OL control suffers from delayed responses, which can degrade performance in noisy or dynamic environments. To address these limitations, we propose two novel techniques to enhance the consistency and reactivity of diffusion policies: (1) self-guidance, which improves action fidelity by leveraging past observations and implicitly promoting future-aware behavior; and (2) adaptive chunking, which selectively updates action sequences when the benefits of reactivity outweigh the need for temporal consistency. Extensive experiments show that our approach substantially improves GBC performance across a wide range of simulated and real-world robotic manipulation tasks. Our code is available at https://github.com/junhyukso/SGAC"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "9855c60d2ecdcf7edc4622ecd004f0db147fc22b",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2510-10274",
+            "ArXiv": "2510.10274",
+            "DOI": "10.48550/arXiv.2510.10274",
+            "CorpusId": 282057092
+          },
+          "url": "https://www.semanticscholar.org/paper/9855c60d2ecdcf7edc4622ecd004f0db147fc22b",
+          "title": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+          "venue": "arXiv.org",
+          "year": 2025,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.10274, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2112524681",
+              "name": "Jinliang Zheng"
+            },
+            {
+              "authorId": "2136086524",
+              "name": "Jianxiong Li"
+            },
+            {
+              "authorId": "2313032843",
+              "name": "Zhihao Wang"
+            },
+            {
+              "authorId": "2340937401",
+              "name": "Dongxiu Liu"
+            },
+            {
+              "authorId": "2385783820",
+              "name": "Xirui Kang"
+            },
+            {
+              "authorId": "2385799672",
+              "name": "Yuchun Feng"
+            },
+            {
+              "authorId": "2224472670",
+              "name": "Yinan Zheng"
+            },
+            {
+              "authorId": "2350341310",
+              "name": "Jiayi Zou"
+            },
+            {
+              "authorId": "2236662733",
+              "name": "Yilun Chen"
+            },
+            {
+              "authorId": "2337356727",
+              "name": "Jia Zeng"
+            },
+            {
+              "authorId": "2383105350",
+              "name": "Ya-Qin Zhang"
+            },
+            {
+              "authorId": "2377561990",
+              "name": "Jiangmiao Pang"
+            },
+            {
+              "authorId": "2108435258",
+              "name": "Jingjing Liu"
+            },
+            {
+              "authorId": "2359108866",
+              "name": "Tai Wang"
+            },
+            {
+              "authorId": "2242851906",
+              "name": "Xianyuan Zhan"
+            }
+          ],
+          "abstract": "Successful generalist Vision-Language-Action (VLA) models rely on effective training across diverse robotic platforms with large-scale, cross-embodiment, heterogeneous datasets. To facilitate and leverage the heterogeneity in rich, diverse robotic data sources, we propose a novel Soft Prompt approach with minimally added parameters, by infusing prompt learning concepts into cross-embodiment robot learning and introducing separate sets of learnable embeddings for each distinct data source. These embeddings serve as embodiment-specific prompts, which in unity empower VLA models with effective exploitation of varying cross-embodiment features. Our new X-VLA, a neat flow-matching-based VLA architecture, relies exclusively on soft-prompted standard Transformer encoders, enjoying both scalability and simplicity. Evaluated across 6 simulations as well as 3 real-world robots, our 0.9B instantiation-X-VLA-0.9B simultaneously achieves SOTA performance over a sweep of benchmarks, demonstrating superior results on a wide axes of capabilities, from flexible dexterity to quick adaptation across embodiments, environments, and tasks. Website: https://thu-air-dream.github.io/X-VLA/"
+        }
+      },
+      {
+        "citedPaper": {
+          "paperId": "91e498568adc30045672c57d3991cbd8ae4d859e",
+          "externalIds": {
+            "ArXiv": "2509.23224",
+            "DBLP": "journals/corr/abs-2509-23224",
+            "DOI": "10.48550/arXiv.2509.23224",
+            "CorpusId": 281676331
+          },
+          "url": "https://www.semanticscholar.org/paper/91e498568adc30045672c57d3991cbd8ae4d859e",
+          "title": "Leave No Observation Behind: Real-time Correction for VLA Action Chunks",
+          "venue": "arXiv.org",
+          "year": 2025,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.23224, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "authors": [
+            {
+              "authorId": "2382933408",
+              "name": "Kohei Sendai"
+            },
+            {
+              "authorId": "2163140722",
+              "name": "Maxime Alvarez"
+            },
+            {
+              "authorId": "145930468",
+              "name": "T. Matsushima"
+            },
+            {
+              "authorId": "2241471533",
+              "name": "Yutaka Matsuo"
+            },
+            {
+              "authorId": "1715282",
+              "name": "Yusuke Iwasawa"
+            }
+          ],
+          "abstract": "To improve efficiency and temporal coherence, Vision-Language-Action (VLA) models often predict action chunks; however, this action chunking harms reactivity under inference delay and long horizons. We introduce Asynchronous Action Chunk Correction (A2C2), which is a lightweight real-time chunk correction head that runs every control step and adds a time-aware correction to any off-the-shelf VLA's action chunk. The module combines the latest observation, the predicted action from VLA (base action), a positional feature that encodes the index of the base action within the chunk, and some features from the base policy, then outputs a per-step correction. This preserves the base model's competence while restoring closed-loop responsiveness. The approach requires no retraining of the base policy and is orthogonal to asynchronous execution schemes such as Real Time Chunking (RTC). On the dynamic Kinetix task suite (12 tasks) and LIBERO Spatial, our method yields consistent success rate improvements across increasing delays and execution horizons (+23% point and +7% point respectively, compared to RTC), and also improves robustness for long horizons even with zero injected delay. Since the correction head is small and fast, there is minimal overhead compared to the inference of large VLA models. These results indicate that A2C2 is an effective, plug-in mechanism for deploying high-capacity chunking policies in real-time control."
+        }
+      }
+    ]
+  }
+}
