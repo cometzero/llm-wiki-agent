@@ -13,6 +13,7 @@
 - [Embodied.cpp 참고 레퍼런스 요약](sources/embodied-cpp-2607-02501-references.md) — 10개 선행 연구 요약; Execution-State Capsules, MuseVLA, LaWAM, DAM-VLA, WAM survey, vla.cpp 등
 - [Embodied.cpp 분석: VLA/WAM을 로봇 edge에 올리기 위한 runtime contract](sources/embodied-cpp-2607-02501.md) — VLA/WAM C++ runtime contract; five-layer architecture, multi-rate execution, latency-first batch-1 optimization으로 HY-VLA 100.0%/π0.5 91.0% success rate 달성
 - [Embodied.cpp: 이기종 로봇을 위한 Embodied AI 모델의 휴대형 추론 런타임](sources/embodied-cpp-2607-02501.md) — VLA/WAM용 C++ 추론 런타임; multi-rate execution, latency-first inference, five-layer architecture로 100.0%/91.0% success rate 달성
+- [LWN.net Weekly Edition for July 2, 2026](sources/lwn-weekly-edition-2026-07-02-1079457.md) — Debian protestware, Git 2.55, Rhombus metaprogramming, kernel hardening/writeback/BPF local storage, Secure Boot certificate expiration, object storage alternatives, OSPM 2026 day three 종합 번역
 - [LWN.net Weekly Edition for June 25, 2026](sources/lwn-weekly-edition-2026-06-25-1078380.md) — Free-threaded Python, AUR 공급망 공격, Fedora 2FA, Linux 7.2 merge window, BPF arena/coroutine/KASAN, RMR/BRMR, OSPM 2026 종합 번역
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — references](sources/object-centric-residual-rl-vla-enhancement-2606-18953-references.md) — [[VLA]] backbone, [[ResidualRL]], sim-to-real transfer 관련 10개 레퍼런스 정리; [[π0]]/[[π0.5]]/[[π0.6]]/[[GR00T-N1]]/PLD/Residual-Off-Policy-RL 등
 - [Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement — Korean analysis](sources/object-centric-residual-rl-vla-enhancement-2606-18953.md) — object-centric pose 기반 residual RL로 VLA의 zero-shot sim-to-real transfer 달성, 42%→76% success rate 향상
@@ -719,6 +720,15 @@
 - [KASAN for JIT-compiled BPF](concepts/BPFKASAN.md) — BPF JIT code에 KASAN instrumentation 적용
 - [RMR and BRMR Block Replication](concepts/RMRBRMR.md) — RDMA 기반 single-hop block replication 설계
 - [OSPM 2026](concepts/OSPM2026.md) — Linux power management/scheduler summit 2026 논의
+- [Debian Protestware](concepts/DebianProtestware.md) — Debian xsnow locale-dependent protestware 논란과 배포판 신뢰 체인
+- [Git 2.55](concepts/Git255.md) — Git 2.55 릴리스 기능·성능·UX 변화
+- [Rhombus Metaprogramming](concepts/RhombusMetaprogramming.md) — Racket 계열 Rhombus의 Python-like syntax와 macro/metaprogramming 설계
+- [Kernel Hardening](concepts/KernelHardening.md) — allocation tokens와 bootpatch-SLR 기반 Linux kernel exploit mitigation
+- [Kernel Writeback](concepts/KernelWriteback.md) — dirty page writeback 시작 시점과 I/O latency/memory-pressure trade-off
+- [BPF Local Storage](concepts/BPFLocalStorage.md) — BPF program state를 kernel object lifetime에 붙이는 local storage 모델
+- [Secure Boot Certificate Expiration](concepts/SecureBootCertificateExpiration.md) — UEFI Secure Boot 인증서 만료와 Linux boot trust-chain 운영 리스크
+- [Object Storage Alternatives](concepts/ObjectStorageAlternatives.md) — MinIO 대안으로서 Ceph/Garage와 S3-compatible object storage trade-off
+- [Supply Chain Security](concepts/SupplyChainSecurity.md) — package, artifact, certificate, boot trust chain을 포함한 software supply-chain 보안
 - [VLAPlanner](concepts/VLAPlanner.md) — VLA 기반 executable planning output 생성기
 - [ObjectCentricResidualRL](concepts/ObjectCentricResidualRL.md) — residual RL policy that learns object-centric corrections on top of a frozen VLA base action
 - [PredictiveAction](concepts/PredictiveAction.md) — 미래 예측과 action selection을 결합하는 설계 원리
