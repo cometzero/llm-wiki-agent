@@ -1,3 +1,7 @@
+## [2026-07-10] ingest | LWN.net Weekly Edition for July 2, 2026
+
+Added Korean LWN Weekly translation source. Key claims: [[DebianProtestware]] exposes locale-dependent package behavior as a distribution trust issue; [[Git255]] and [[RhombusMetaprogramming]] cover developer-tool and language-design changes; [[KernelHardening]], [[KernelWriteback]], [[BPFLocalStorage]], and [[LinuxKernel72]] extend kernel security/I/O/BPF coverage; [[SecureBootCertificateExpiration]], [[ObjectStorageAlternatives]], and [[OSPM2026]] cover operational trust, storage, and scheduling. Manual source materialization used after LLM ingest returned malformed NVIDIA JSON.
+
 ## [2026-07-08] ingest | Embodied.cpp 참고 레퍼런스 요약
 
 Added source. Key claims: 10개 선행 연구 정리 - Execution-State Capsules(complete restorable state), MuseVLA(adaptive multimodal sensing), LaWAM(latent WAM), DAM-VLA(multi-rate execution 100Hz), WAM survey(taxonomy), Being-H0.7(WAM/VLA hybrid), Stop Wandering(spatial memory/planner state as runtime object), H2O(memory orchestration), vla.cpp(predecessor), VLA family(π0/π0.5/OpenVLA/RT-2). Created 1 entity page(vla.cpp), 7 concept pages(Execution-State Capsules, Multi-Rate Execution, LatentWorldActionModel, OnDeviceInference, HeterogeneityAwareOrchestration, AdaptiveMultimodalSensing, SpatialMemoryNavigation).
@@ -1171,3 +1175,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-08] graph | Knowledge graph rebuilt
 
 2779 nodes, 9324 edges (9324 extracted, 0 inferred).
+
+## [2026-07-10] graph | Knowledge graph rebuilt
+
+2788 nodes, 9375 edges (9375 extracted, 0 inferred).
