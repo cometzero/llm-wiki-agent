@@ -1,0 +1,27 @@
+{
+  "id": "conv-1783830673272-zjdulru9v",
+  "providerId": "codex",
+  "title": "안녕",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1783830673274,
+  "updatedAt": 1783844694663,
+  "lastResponseAt": 1783844694663,
+  "sessionId": "019f5497-f895-7ac3-9550-cae2282f42b6",
+  "selectedModel": "gpt-5.6-sol",
+  "providerState": {
+    "threadId": "019f5497-f895-7ac3-9550-cae2282f42b6",
+    "sessionFilePath": "/Users/cometzero/.codex/sessions/2026/07/12/rollout-2026-07-12T13-31-13-019f5497-f895-7ac3-9550-cae2282f42b6.jsonl",
+    "transcriptRootPath": "/Users/cometzero/.codex/sessions"
+  },
+  "currentNote": "raw/Linux Kernel/IOMMU/iommu_lesson2_dma_api_iommu_flow_notes.md",
+  "usage": {
+    "inputTokens": 76454,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 67328,
+    "contextWindow": 353400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 76454,
+    "percentage": 22,
+    "model": "gpt-5.6-sol"
+  }
+}
