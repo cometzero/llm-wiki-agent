@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W29 Hugging Face VLA/navigation and traffic simulation update
+- [[ABotN1]] extends the navigation/VLA corpus toward a slow-fast interface: a slow VLM reasoner produces explicit reasoning plus [[PixelGoal]] anchors, and a fast action expert turns them into continuous [[Waypoint]] outputs for point/object/POI/instruction/person-following tasks.
+- [[FlowERD]] extends the autonomous-driving simulation corpus: [[FlowMatching]] is combined with agent-type kinematics and [[EntropyRegularizedDistillation]] to improve the realism-diversity Pareto trade-off in closed-loop traffic rollout.
+- Together these papers shift the weekly thread from only VLA policy generation toward the systems around it: action-grounding interfaces, closed-loop evaluation, simulator diversity, and deployment latency/safety constraints.
+
 ## 2026-W28 Hugging Face VLA deployment/update
 - [[Embodied-cpp]] extends the VLA/WAM corpus toward deployment infrastructure: multi-rate execution, latency-first batch-1 inference, and five-layer C++ runtime abstraction for heterogeneous robots and edge devices.
 - [[VLACorrector]] extends the action-chunking corpus toward adaptive closed-loop execution: [[LatentSpaceVisionMonitor]] detects stale chunks and [[OnlineGradientGuidance]] guides recovery replans.

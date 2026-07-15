@@ -4,6 +4,16 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [ABot-N1 한국어 기술 번역](sources/abot-n1-2607-10383-paper-ko.md) — ABot-N1 원문 기술 번역: slow VLM reasoner, pixel goal, fast waypoint decoder, benchmark/실험 정리
+- [Flow-ERD 한국어 기술 번역](sources/flow-erd-2607-06957-paper-ko.md) — AFM/ERD 기반 diverse traffic simulation 원문 기술 번역
+- [Flow-ERD 참고 레퍼런스 요약](sources/flow-erd-2607-06957-references.md) — traffic simulator, flow matching, WOSAC 관련 참고 문헌 요약
+- [Flow-ERD 학습 노트](sources/flow-erd-2607-06957-learning.md) — flow matching, covariate shift, entropy regularization 학습 자료
+- [Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation](sources/flow-erd-2607-06957.md) — AFM + ERD로 traffic simulation의 realism-diversity trade-off 완화
+- [Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation](sources/flow-erd-2607-06957.md) — multi-agent traffic simulator; AFM + ERD로 realism-diversity Pareto frontier 개선
+- [ABot-N1 학습 노트: slow-fast VLN foundation model 학습 가이드](sources/abot-n1-2607-10383-learning.md) — 선수 지식/glossary/아키텍처/단계별 이해/Study Q&A/Reading roadmap; pixel goal intermediate representation 설명
+- [ABot-N1: 범용 Visual Language Navigation foundation model을 향하여 — References](sources/abot-n1-2607-10383-references.md) — ABot-N1 원문 References 섹션 기준 선별 레퍼런스; benchmark→backbone→deployment 읽기 순서 제안
+- [ABot-N1: Toward a General Visual Language Navigation Foundation Model](sources/abot-n1-2607-10383.md) — slow-fast VLN foundation model; pixel goal intermediate representation으로 point/object/POI/instruction/person-following 통합, POI arrival 77.3%, indoor 95.4%, outdoor 92.9% SR
+- [ABot-N1: Toward a General Visual Language Navigation Foundation Model](sources/abot-n1-2607-10383.md) — slow-fast VLN foundation model; pixel goal intermediate representation으로 point/object/POI/instruction/person-following 통합, POI arrival 77.3%, indoor 95.4%, outdoor 92.9% SR
 - [Embodied.cpp: 이기종 로봇을 위한 Embodied AI 모델의 휴대형 추론 런타임](sources/embodied-cpp-2607-02501-paper-ko.md) — VLA/WAM portable C++ runtime 한국어 기술 번역
 - [Embodied.cpp 학습 노트: VLA/WAM runtime contract](sources/embodied-cpp-2607-02501-learning.md) — embodied runtime contract, five-layer architecture, NPU/heterogeneous scheduling 학습 자료
 - [VLA-Corrector 분석: Action chunk를 adaptive closed-loop로 바꾸기](sources/vla-corrector-2607-01804.md) — LVM+OGG로 action-chunked VLA의 stale action 문제를 완화하는 분석
@@ -259,6 +269,11 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [AMAP-CVLab](entities/AMAP-CVLab.md) — 2026-W29 HF weekly ingest entity
+- [FlowERD](entities/FlowERD.md) — 2026-W29 HF weekly ingest entity
+- [ABotN1](entities/ABotN1.md) — 2026-W29 HF weekly ingest entity
+- [WOSAC](entities/WOSAC.md) — 2026-W29 HF weekly ingest entity
+- [SeulbinHwang](entities/SeulbinHwang.md) — 2026-W29 HF weekly ingest entity
 - [LingBot-VA](entities/LingBot-VA.md) — Embodied.cpp ingest support entity (lingbot-va)
 - [VlaCpp](entities/VlaCpp.md) — Embodied.cpp ingest support entity (vlacpp)
 - [SEU-PAISys](entities/SEU-PAISys.md) — Embodied.cpp ingest support entity (seu-paisys)
@@ -672,6 +687,30 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [SlowFastArchitecture](concepts/SlowFastArchitecture.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [VisualLanguageNavigation](concepts/VisualLanguageNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [EntropyRegularizedDistillation](concepts/EntropyRegularizedDistillation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ModeCollapse](concepts/ModeCollapse.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ParetoFrontier](concepts/ParetoFrontier.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [AgentTypeKinematics](concepts/AgentTypeKinematics.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [FlowERD](concepts/FlowERD.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [PixelGoal](concepts/PixelGoal.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [PixelGoalNavigation](concepts/PixelGoalNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ABotN PointBench](concepts/ABotN-PointBench.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ABotN POIBench](concepts/ABotN-POIBench.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [MultiAgentSimulation](concepts/MultiAgentSimulation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [DriveVLM](concepts/DriveVLM.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [DualAD](concepts/DualAD.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [WaypointNavigation](concepts/WaypointNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [FastActionExpert](concepts/FastActionExpert.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ClosedLoopNavigation](concepts/ClosedLoopNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [NVIDIAOmniDreams](concepts/NVIDIAOmniDreams.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [LMDrive](concepts/LMDrive.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [PointGoalNavigation](concepts/PointGoalNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [VLN CE](concepts/VLN-CE.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [Qwen 3.5 4B](concepts/Qwen-3.5-4B.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [Senna](concepts/Senna.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
+- [ORION](concepts/ORION.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
 - [LatentWorldActionModel](concepts/LatentWorldActionModel.md) — Embodied.cpp ingest support page (latentworldactionmodel)
 - [HeterogeneousScheduling](concepts/HeterogeneousScheduling.md) — Embodied.cpp ingest support page (heterogeneousscheduling)
 - [SpatialMemoryNavigation](concepts/SpatialMemoryNavigation.md) — Embodied.cpp ingest support page (spatialmemorynavigation)

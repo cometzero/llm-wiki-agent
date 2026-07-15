@@ -1,0 +1,44 @@
+{
+  "id": "2607.06957",
+  "slug": "flow-erd-diverse-traffic-simulation-2607-06957",
+  "week": "2026-W29",
+  "category": "Robotics",
+  "title": "Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation",
+  "korean_title": "Flow-ERD: 다양한 traffic simulation을 위한 agent-type aware flow matching과 entropy-regularized distillation",
+  "authors": "Seulbin Hwang, Kiyoung Om, Daejung Kim, Jinhan Lee",
+  "hf_url": "https://huggingface.co/papers/2607.06957",
+  "project_page": "https://seulbinhwang.github.io/flow-erd-project-page/",
+  "selected_reason": "자율주행 개발의 핵심 인프라인 closed-loop traffic simulation에서 realism-diversity trade-off를 직접 다루며, E2E AD/VLA policy 평가용 world/traffic simulator 관점에서 가치가 높다.",
+  "abstract_ko": "자율주행 개발에는 현실적이면서도 다양한 traffic simulation이 필수적이다. 기존 benchmark는 realism을 강하게 보상하지만 diversity는 상대적으로 덜 평가해, 모델이 단일 logged future에 과적합되는 문제가 있다. Flow-ERD는 Agent-Type Aware Flow Matching(AFM)과 Entropy-Regularized Distillation(ERD)을 결합해 realism과 diversity를 동시에 추구하는 multi-agent simulator다. AFM은 flow matching의 multi-modal expressiveness를 vehicle/cyclist/pedestrian 등 type-specific kinematic execution과 결합한다. ERD는 entropy-regularized reverse-KL objective로 closed-loop rollout distribution을 보정하여 covariate shift를 줄이되 high-density mode로 붕괴하지 않게 한다. WOSAC test benchmark에서 높은 realism과 log-free diversity를 함께 달성하며 Pareto frontier를 개선한다.",
+  "arxiv_url": "https://arxiv.org/abs/2607.06957",
+  "pdf_url": "https://arxiv.org/pdf/2607.06957",
+  "source_url": "https://arxiv.org/html/2607.06957",
+  "ingested_at_kst": "2026-07-15 09:40:56 KST",
+  "figures": [
+    {
+      "path": "figures/figure-01.png",
+      "url": "https://arxiv.org/html/2607.06957v1/x1.png",
+      "caption": "Figure 1 : Low-diversity rollouts concentrate on a dominant behavior, whereas low-realism rollouts deviate from plausible traffic motion. Flow-ERD targets the desired regime of realistic and diverse closed-loop rollouts."
+    },
+    {
+      "path": "figures/figure-02.png",
+      "url": "https://arxiv.org/html/2607.06957v1/x2.png",
+      "caption": "Figure 2 : Overview of Flow-ERD. (a) The Agent-Type Aware Flow-Matching (AFM) backbone generates a shared continuous action representation, executed through type-specific kinematics (non-holonomic for vehicles/cyclists, holonomic for pedestrians). (b) Entropy-Regularized Distillation (ERD) then fine-tunes the closed-loop distribution: the vanilla reverse-KL objective ( β = 1 \\beta=1 ) is mode-seeking, easier to collapse onto the dominant (straight) mode, whereas ERD ( β &lt; 1 \\beta&lt;1 ) targe"
+    },
+    {
+      "path": "figures/figure-06.png",
+      "url": "https://arxiv.org/html/2607.06957v1/x3.png",
+      "caption": "Figure 3 : Realism–diversity trade-off on the validation split. UniMM, SMART, and TrajTok sweep k k of top-k decoding during validation rollouts, whereas AFM (ours) sweeps the Gaussian noise scale. AFM traces the upper-right Pareto frontier, reaching an RMM of 0.7840 at noise scale 1.05."
+    },
+    {
+      "path": "figures/figure-07.png",
+      "url": "https://arxiv.org/html/2607.06957v1/x4.png",
+      "caption": "Figure 4 : ERD entropy temperature β \\beta sweep on the WOSAC 2025 validation split. Sweeping β ∈ ( 0 , 1 ] \\beta\\in(0,1] traces Flow-ERD’s realism (RMM) versus diversity (CPD, Eq. 21 ) trade-off: lowering β \\beta flattens the target distribution and raises diversity at a small cost in realism."
+    },
+    {
+      "path": "figures/figure-08.png",
+      "url": "https://arxiv.org/html/2607.06957v1/figures/qualitative_entropy_womd.png",
+      "caption": "Figure 5 : We run multi-agent closed-loop rollouts over 1,048 validation scenes and label ego-maneuver intents following WOMD [ 5 ] . (a) Ego-trajectory diversity on a WOSAC scene, shown by overlaying closed-loop rollouts. (b) Average per-scene intent entropy of the ego rollouts."
+    }
+  ]
+}
