@@ -1,0 +1,27 @@
+{
+  "id": "conv-1784032098052-8x1sckclj",
+  "providerId": "codex",
+  "title": "iommu_domain에 대해서 예를 들어서 쉽게 설명해줘",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1784032098053,
+  "updatedAt": 1784040727185,
+  "lastResponseAt": 1784040727185,
+  "sessionId": "019f6099-8a58-78e2-acf7-26e4fcdfd0c2",
+  "selectedModel": "gpt-5.6-sol",
+  "providerState": {
+    "threadId": "019f6099-8a58-78e2-acf7-26e4fcdfd0c2",
+    "sessionFilePath": "/Users/cometzero/.codex/sessions/2026/07/14/rollout-2026-07-14T21-28-23-019f6099-8a58-78e2-acf7-26e4fcdfd0c2.jsonl",
+    "transcriptRootPath": "/Users/cometzero/.codex/sessions"
+  },
+  "currentNote": "raw/Linux Kernel/IOMMU/iommu_lesson3_linux_iommu_framework_notes.md",
+  "usage": {
+    "inputTokens": 68633,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 6912,
+    "contextWindow": 258400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 68633,
+    "percentage": 27,
+    "model": "gpt-5.6-sol"
+  }
+}
