@@ -1,0 +1,69 @@
+{
+  "id": "2607.10383",
+  "slug": "abot-n1-visual-language-navigation-2607-10383",
+  "week": "2026-W29",
+  "category": "Robotics",
+  "title": "ABot-N1: Toward a General Visual Language Navigation Foundation Model",
+  "korean_title": "ABot-N1: 범용 Visual Language Navigation foundation model을 향하여",
+  "authors": "Ruiyan Gong, Yingnan Guo, Junjun Hu, Jintao Kong, Xiaoxu Leng, Tianlun Li, Weize Li, Fei Liu, Zhicheng Liu, Jia Lu, Minghua Luo, Chenlin Ming, Yanfen Shen, Jiyue Tao, Zhengbo Wang, Mingyang Yin, Minqi Gu, Zihao Guan, Wei Guo, Guoqing Liu, Huachong Pang, Menglin Yang, Zeqian Ye, Xiaoxiao Geng, Zhining Gu, Honglin Han, Di Jing, Hongyu Pan, Mingchao Sun, Kuan Yang, Jianfang Zhang, Yanghong Chen, Ye He, Wei Mei, Jiahao Shi, Xiangpo Yang, Yanqing Zhu, Zedong Chu, Xiaolong Wu, Mu Xu",
+  "hf_url": "https://huggingface.co/papers/2607.10383",
+  "project_page": "https://amap-cvlab.github.io/ABot-Navigation/ABot-N1/",
+  "selected_reason": "2026-W29 Hugging Face 상위권 후보 중 실제 action grounding을 다루는 Visual Language Navigation 논문으로, slow-fast VLM→pixel goal→continuous waypoint 구조가 VLA/자율주행 E2E planning 연구와 직접 연결된다.",
+  "abstract_ko": "Visual Language Navigation(VLN) foundation model은 grounded spatial decision을 위한 깊은 reasoning과 다양한 embodied navigation task에 대한 범용성을 동시에 요구한다. 기존 방식은 observation을 action으로 직접 매핑하는 monolithic policy가 많아 coordinate drift, long-tail semantic 처리 실패, black-box 불투명성을 겪는다. ABot-N1은 cognition과 control을 slow-fast architecture로 분리한다. slow vision-language reasoner는 explicit Chain-of-Thought reasoning과 함께 pixel goal, 즉 이미지 공간 anchor point를 생성하고, fast action expert는 이 pixel guidance와 textual cue를 사용해 native control frequency에서 continuous waypoint를 출력한다. 이 구조는 point-goal, object-goal, POI-goal, instruction-following, person-following을 하나의 인터페이스로 묶고, complex indoor/outdoor 및 urban-scale navigation에서 큰 성공률 향상을 보고한다.",
+  "arxiv_url": "https://arxiv.org/abs/2607.10383",
+  "pdf_url": "https://arxiv.org/pdf/2607.10383",
+  "source_url": "https://arxiv.org/html/2607.10383",
+  "ingested_at_kst": "2026-07-15 09:40:56 KST",
+  "figures": [
+    {
+      "path": "figures/figure-01.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/overview.jpg",
+      "caption": "Figure 1 : Overview of ABot-N1. The model trained on 30M samples across five tasks adopts a slow–fast control architecture: a slow system performs CoT reasoning and emits pixel goals, while a fast action expert consumes this dual language-and-vision guidance to execute safe waypoints. Closed-loop evaluation is conducted on our newly proposed ABotN-PointBench and ABotN-POIBench, together with three established benchmarks (VLN-CE R2R/RxR, Short-Horizon OVON, and EVT-Bench). ABot-N1 achieves leadin"
+    },
+    {
+      "path": "figures/figure-02.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/model.jpg",
+      "caption": "Figure 2 : The Slow-Fast Dual-System Architecture of ABot-N1. Navigation is decoupled into asynchronous cognition and high-frequency control. Slow System (left): A vision-language reasoner processes historical frames and task prompts at low frequency, producing explicit CoT reasoning and visual anchors (Target Pixel and Affordance Pixel). Dual Vision-Language Interface (middle): The language and visual outputs form a unified bridge between the two systems. Fast System (right): A lightweight-VLM-"
+    },
+    {
+      "path": "figures/figure-03.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/data.jpg",
+      "caption": "Figure 3 : Data Pipeline and Composition. The data engine (left) provides diverse indoor and outdoor simulation scenes; trajectory generation (middle) produces expert and Dagger rollouts; the resulting samples (right) span both stages—the five pre-training navigation tasks broken down by slow-system (high-level) and fast-system (low-level) counts, together with the post-training composition stratified into Safe, Critical, Danger, and discarded data."
+    },
+    {
+      "path": "figures/figure-04.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/point_data.jpg",
+      "caption": "Figure 4 : Data Construction Pipeline for the Point-Goal Corpus. Left: the data construction pipeline in two parts. The top half is the CoT data construction, which generates affordance pixels from the traversability and road-graph annotations and perturbs the target coordinate; the bottom half is the VLN data construction, comprising sub-optimal trajectory and OOD-correction trajectory synthesis. Right: an example structured sample with tri-view observations and affordance pixel annotation."
+    },
+    {
+      "path": "figures/figure-05.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/ins_data.jpg",
+      "caption": "Figure 5 : Data Construction Pipeline for the Instruction-Following Corpus. Left: a three-stage pipeline that decomposes long natural-language instructions into short sub-instructions, aligns each sub-instruction to its corresponding frame range along the milestone path, and generates and verifies affordance and target pixels for CoT and VLN data. Right: an example structured sample showing tri-view observations with the language instruction and pixel-level annotations for affordance and target."
+    },
+    {
+      "path": "figures/figure-06.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/object_data.jpg",
+      "caption": "Figure 6 : Data Construction Pipeline for the Object-Goal Corpus. The left panel comprises two parts: the top half illustrates the iterative data flywheel that constructs the CoT rationales, scaling high-capacity VLM data seeds to 110 K high-quality structured samples through A ∗ {}^{\\!*} consistency filtering and self-play harvesting; the bottom half depicts the VLN pipeline that produces the low-level supervision, including pixel annotation and OOD-correction trajectory generation. The right p"
+    },
+    {
+      "path": "figures/figure-07.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/poi_data.jpg",
+      "caption": "Figure 7 : The Data Construction Pipeline for the POI-Goal Corpus . Left: the three-stage construction flow—generating geometric seed annotations via monocular depth (Stage 1), scaling and filtering 31 M street-view pairs using a distilled VLM (Qwen-3.5-4B) to yield 8 M valid paths (Stage 2), and synthesizing tri-view episodes into positive and negative sample pairs that harden the system’s rejection capability under missing-target conditions (Stage 3). Right: an example structured sample."
+    },
+    {
+      "path": "figures/figure-08.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/person_data.jpg",
+      "caption": "Figure 8 : Data Construction Pipeline for the Person-Following Corpus. Left: the data construction pipeline covering both CoT and VLN data. The pixel (CoT) data derives affordance and target pixels from human avatar trajectories through A ∗ waypoint planning, visibility detection, and stochastic prediction perturbation, while the VLN data comprises sub-optimal trajectory and OOD-correction trajectory synthesis. Right: an example structured sample showing tri-view observations with affordance and"
+    },
+    {
+      "path": "figures/figure-09.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/benchmarks.jpg",
+      "caption": "Figure 9 : Overview of the ABotN Benchmark Suites and their Unified Scene Construction Pipeline. Top: Dataset statistics and hierarchical distance splits for ABotN-PointBench (left) and ABotN-POIBench (right). Bottom: The unified three-stage generation pipeline: (1) high-fidelity data collection via LiDAR-inertial SLAM; (2) photorealistic 3DGS scene modeling initialized by aligned dense point clouds; and (3) traversability-aware query sampling and ground-truth reference trajectory generation usi"
+    },
+    {
+      "path": "figures/figure-16.jpg",
+      "url": "https://arxiv.org/html/2607.10383v2/figs_jpg/point_exp.jpg",
+      "caption": "Figure 10 : Point-Goal Deployment. Four segments of a long-range outdoor episode showcasing obstacle avoidance on narrow roads, construction area detour, correct fork selection, and traffic-light-compliant crosswalk traversal."
+    }
+  ]
+}

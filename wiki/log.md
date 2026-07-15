@@ -1,3 +1,36 @@
+## [2026-07-15] ingest | 2026-W29 HF Weekly ABot-N1 and Flow-ERD validation repair
+
+- Added deterministic source pages for missing raw deliverables after partial ingest timeout.
+- Added placeholder concept pages for unresolved ABot-N1/Flow-ERD support wikilinks.
+
+## [2026-07-15] ingest | Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation
+
+Added source. Key claims: AFM backbone + entropy-regularized distillation으로 traffic simulation realism-diversity trade-off 완화; WOSAC benchmark에서 Pareto 개선 입증; VLA/E2E AD policy의 world model/evaluator 역할.
+
+Created entity pages: [[WOSAC]].
+
+Created concept pages: [[FlowMatching]], [[FlowERD]], [[EntropyRegularizedDistillation]], [[AgentTypeKinematics]], [[ClosedLoopEvaluation]].
+
+## [2026-07-15] ingest | Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation
+
+Added source. Key claims: AFM+ERD 결합으로 realism-diversity trade-off 동시 해결, WOSAC benchmark에서 RMM 0.7840 달성 및 Pareto frontier 개선. Entity pages: FlowERD, SeulbinHwang, WOSAC. Concept pages: FlowMatching, MultiAgentSimulation, CovariateShift, ModeCollapse, ParetoFrontier, EntropyRegularizedDistillation.
+
+## [2026-07-15] ingest | ABot-N1: 범용 Visual Language Navigation foundation model을 향하여
+
+Added source. Key claims: slow-fast VLN foundation model; pixel goal intermediate representation; POI arrival 77.3%/indoor 95.4%/outdoor 92.9% SR. Created concept pages for [[SlowFastArchitecture]], [[PixelGoal]], [[VLN]]. Linked to existing [[ABot-N0]], [[Qwen-RobotNav]], [[VisualThink-VLA]] pages.
+
+## [2026-07-15] ingest | ABot-N1: 범용 Visual Language Navigation foundation model을 향하여 — References
+
+Added source. Key claims: ABot-N1 레퍼런스 요약으로 benchmark→backbone→deployment 읽기 순서 제안; [[ABot-N0]], [[Qwen-RobotNav]], [[GR00TN1]], [[π0.5]], [[OpenVLA]] 등 VLN/VLA 핵심 연구와 연결; [[VisualLanguageNavigation]], [[ABot-N1]] entity 생성
+
+## [2026-07-15] ingest | ABot-N1: Toward a General Visual Language Navigation Foundation Model
+
+Added source. Key claims: slow-fast VLM architecture with pixel goal intermediate representation; unifies five navigation tasks (point/object/POI/instruction/person-following); achieves 77.3% POI arrival, 95.4% indoor, 92.9% outdoor SR. Created entity page for [[ABot-N1]]. Created concept pages for [[VisualLanguageNavigation]], [[PixelGoal]], [[SlowFastArchitecture]], [[Waypoint]], [[ActionGrounding]].
+
+## [2026-07-15] ingest | ABot-N1: Toward a General Visual Language Navigation Foundation Model
+
+Added source. Key claims: slow-fast VLN foundation model decouples cognition and control; pixel goal as intermediate representation bridges semantic intent and continuous waypoint; unifies 5 navigation tasks; POI arrival 77.3% (+35.0%p); indoor 95.4%, outdoor 92.9% SR. Created entity pages for [[AMAP-CVLab]], [[ABot-N0]]. Created concept pages for [[VisualLanguageNavigation]], [[SlowFastArchitecture]], [[PixelGoal]], [[PixelGoalNavigation]], [[ABotN-PointBench]], [[ABotN-POIBench]].
+
 ## [2026-07-10] ingest | LWN.net Weekly Edition for July 2, 2026
 
 Added Korean LWN Weekly translation source. Key claims: [[DebianProtestware]] exposes locale-dependent package behavior as a distribution trust issue; [[Git255]] and [[RhombusMetaprogramming]] cover developer-tool and language-design changes; [[KernelHardening]], [[KernelWriteback]], [[BPFLocalStorage]], and [[LinuxKernel72]] extend kernel security/I/O/BPF coverage; [[SecureBootCertificateExpiration]], [[ObjectStorageAlternatives]], and [[OSPM2026]] cover operational trust, storage, and scheduling. Manual source materialization used after LLM ingest returned malformed NVIDIA JSON.
@@ -1179,3 +1212,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-10] graph | Knowledge graph rebuilt
 
 2788 nodes, 9375 edges (9375 extracted, 0 inferred).
+
+## [2026-07-15] graph | Knowledge graph rebuilt
+
+2829 nodes, 9474 edges (9474 extracted, 0 inferred).
+
+## [2026-07-15] graph | Knowledge graph rebuilt
+
+2829 nodes, 9497 edges (9497 extracted, 0 inferred).
