@@ -16,7 +16,9 @@
     "2606.18112",
     "2606.18953",
     "2607.02501",
-    "2607.01804"
+    "2607.01804",
+    "2607.10383",
+    "2607.06957"
   ],
   "runs": [
     {
@@ -321,6 +323,43 @@
       "commit_hash": "9fff4cc9c73e",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; automated ingest partially completed then stalled on large documents, so remaining source pages and support pages were manually materialized with source_file/source_hash coverage; graph rebuilt with --no-infer fallback after NVIDIA no-content semantic inference; validation passed.",
       "limitations": "Dense appendices were summarized rather than exhaustively translated. Embodied.cpp full WAM closed-loop result is not available in the paper; graph semantic inference was skipped in favor of extracted wikilinks."
+    },
+    {
+      "date_kst": "2026-07-15 09:40:56 KST",
+      "week": "2026-W29",
+      "selected_paper_ids": [
+        "2607.10383",
+        "2607.06957"
+      ],
+      "papers": [
+        {
+          "id": "2607.10383",
+          "title": "ABot-N1: Toward a General Visual Language Navigation Foundation Model",
+          "week": "2026-W29",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/abot-n1-visual-language-navigation-2607-10383"
+        },
+        {
+          "id": "2607.06957",
+          "title": "Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation",
+          "week": "2026-W29",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/flow-erd-diverse-traffic-simulation-2607-06957"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/abot-n1-visual-language-navigation-2607-10383/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/abot-n1-visual-language-navigation-2607-10383/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/abot-n1-visual-language-navigation-2607-10383/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/abot-n1-visual-language-navigation-2607-10383/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/flow-erd-diverse-traffic-simulation-2607-06957/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/flow-erd-diverse-traffic-simulation-2607-06957/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/flow-erd-diverse-traffic-simulation-2607-06957/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W29/flow-erd-diverse-traffic-simulation-2607-06957/learning.md"
+      ],
+      "commit_hash": "f6b3a1cfbabb5a592a3b29a7de31e162e1ecb02d",
+      "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; automated batch ingest timed out after partial materialization, so missing source coverage and support wikilinks were repaired manually; graph rebuilt with --no-infer fallback after NVIDIA no-content semantic inference; validation passed.",
+      "limitations": "Dense appendices/tables were summarized rather than exhaustively translated. ABot-N1 figure download captured 10 arXiv HTML images and Flow-ERD captured 5 images; semantic graph inference was skipped in favor of extracted wikilinks."
     }
   ]
 }
