@@ -1,3 +1,11 @@
+## [2026-07-17] ingest | LWN.net Weekly Edition for July 9, 2026
+
+Added source. Key claims: Eric Biggers modernizing kernel crypto with 2.5x faster library functions; iomap layer abstracting filesystem I/O; negative dentry accumulation causing soft-lock issues; RCU expedited grace period improvements reducing memory 33-41%; kmalloc_nolock enabling lockless BPF allocation; two LLM-assisted MM patch sets (van Riel 1GB HugePage, Shutsemau VM tracking) with mixed community reception.
+
+New entity pages: EricBiggers, RikVanRiel, KirylShutsemau, LinuxSecuritySummit, LSFMMbpfSummit2026, ChristianBrauner
+
+New concept pages: KernelCryptography, Iomap, NegativeDentry, RCU, kmalloc_nolock, LLMAssistedKernelDevelopment
+
 ## [2026-07-15] ingest | 2026-W29 HF Weekly ABot-N1 and Flow-ERD validation repair
 
 - Added deterministic source pages for missing raw deliverables after partial ingest timeout.
@@ -1220,3 +1228,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-15] graph | Knowledge graph rebuilt
 
 2829 nodes, 9497 edges (9497 extracted, 0 inferred).
+
+## [2026-07-17] graph | Knowledge graph rebuilt
+
+2869 nodes, 9614 edges (9614 extracted, 0 inferred).
