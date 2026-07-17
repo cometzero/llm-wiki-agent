@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for July 9, 2026](sources/lwn-weekly-edition-2026-07-09-1080835.md) — 커널 암호화 현대화, iomap, negative dentry, RCU 최적화, LLM-assisted 패치 종합
 - [ABot-N1 한국어 기술 번역](sources/abot-n1-2607-10383-paper-ko.md) — ABot-N1 원문 기술 번역: slow VLM reasoner, pixel goal, fast waypoint decoder, benchmark/실험 정리
 - [Flow-ERD 한국어 기술 번역](sources/flow-erd-2607-06957-paper-ko.md) — AFM/ERD 기반 diverse traffic simulation 원문 기술 번역
 - [Flow-ERD 참고 레퍼런스 요약](sources/flow-erd-2607-06957-references.md) — traffic simulator, flow matching, WOSAC 관련 참고 문헌 요약
@@ -269,6 +270,17 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [Harry Yu](entities/HarryYu.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Miklos Szeredi](entities/MiklosSzeredi.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [KernelCI](entities/KernelCI.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Jason Donenfeld](entities/JasonDonenfeld.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Ard Biesheuvel](entities/ArdBiesheuvel.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Claude Opus](entities/ClaudeOpus.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Puranjay Mohan](entities/PuranjayMohan.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
+- [Linux Security Summit](entities/LinuxSecuritySummit.md) — kernel/security conference context for crypto modernization
+- [Kiryl Shutsemau](entities/KirylShutsemau.md) — Linux memory-management/virtualization developer
+- [Rik van Riel](entities/RikVanRiel.md) — Linux MM developer
+- [Eric Biggers](entities/EricBiggers.md) — Linux kernel crypto maintainer
 - [AMAP-CVLab](entities/AMAP-CVLab.md) — 2026-W29 HF weekly ingest entity
 - [FlowERD](entities/FlowERD.md) — 2026-W29 HF weekly ingest entity
 - [ABotN1](entities/ABotN1.md) — 2026-W29 HF weekly ingest entity
@@ -687,6 +699,32 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Hypervisor](concepts/Hypervisor.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [userfaultfd](concepts/Userfaultfd.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Super Page Block](concepts/SuperPageBlock.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Zoned Memory Allocator](concepts/ZonedMemoryAllocator.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [SHAKE256](concepts/SHAKE256.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [SHAKE128](concepts/SHAKE128.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [FIPS 140](concepts/FIPS140.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [dm-verity](concepts/DmVerity.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [fscrypt](concepts/Fscrypt.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [AF_ALG](concepts/AfAlg.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Kernel Crypto API](concepts/CryptoApi.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [ML-DSA](concepts/MLDSA.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Memory Reclamation](concepts/MemoryReclamation.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Kernel Concurrency](concepts/KernelConcurrency.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Lockless Programming](concepts/LocklessProgramming.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Memory Allocation](concepts/MemoryAllocation.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [fs-verity](concepts/FsVerity.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [DAX](concepts/Dax.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Filesystem](concepts/Filesystem.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Pathname Lookup](concepts/PathnameLookup.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [VFS](concepts/VFS.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Dentry Cache](concepts/DentryCache.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
+- [Kernel Cryptography](concepts/KernelCryptography.md) — Linux 커널 crypto API 현대화와 FIPS·알고리즘 지원
+- [LLM-Assisted Kernel Development](concepts/LLMAssistedKernelDevelopment.md) — LLM 생성 패치의 커널 리뷰·검증 이슈
+- [kmalloc_nolock](concepts/kmalloc_nolock.md) — BPF/커널 hot path용 lockless allocation 논의
+- [Negative Dentry](concepts/NegativeDentry.md) — 존재하지 않는 경로 조회 결과를 캐시하는 VFS dentry 정책
 - [SlowFastArchitecture](concepts/SlowFastArchitecture.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
 - [VisualLanguageNavigation](concepts/VisualLanguageNavigation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked
 - [EntropyRegularizedDistillation](concepts/EntropyRegularizedDistillation.md) — 2026-W29 HF weekly ingest support concept / placeholder where marked

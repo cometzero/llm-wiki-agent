@@ -13,3 +13,5 @@
 ## LWN Weekly Linux/Open Source Tracking
 - The July 2, 2026 LWN translation adds [[DebianProtestware]], [[Git255]], [[RhombusMetaprogramming]], [[KernelHardening]], [[KernelWriteback]], [[BPFLocalStorage]], [[SecureBootCertificateExpiration]], and [[ObjectStorageAlternatives]] to the recurring Linux/open-source operations corpus.
 - Across the May–July LWN sources, the wiki now tracks a continuous thread from package and publishing trust ([[SupplyChainSecurity]], [[AURSupplyChainAttack]], [[TrustedPublishing]]) to kernel release flow ([[LinuxKernel72]], [[BPF]], [[KernelHardening]]) and operational infrastructure ([[OSPM2026]], [[RMRBRMR]], [[ObjectStorageAlternatives]]).
+
+- [[lwn-weekly-edition-2026-07-09-1080835]]: LWN.net Weekly Edition 2026-07-09 번역은 kernel cryptography 현대화, iomap, negative dentry 제한, RCU/lockless allocation, LLM-assisted MM patch review를 Linux 커널 지식 축에 추가한다.
