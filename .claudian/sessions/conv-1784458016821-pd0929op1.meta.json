@@ -1,0 +1,27 @@
+{
+  "id": "conv-1784458016821-pd0929op1",
+  "providerId": "codex",
+  "title": "UFS Device Driver의 초기화 순서에 대해서 알려줘",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1784458016821,
+  "updatedAt": 1784470113653,
+  "lastResponseAt": 1784470113653,
+  "sessionId": "019f79fc-7b78-7eb0-9b0f-3d714d1cd864",
+  "selectedModel": "gpt-5.6-sol",
+  "providerState": {
+    "threadId": "019f79fc-7b78-7eb0-9b0f-3d714d1cd864",
+    "sessionFilePath": "/Users/cometzero/.codex/sessions/2026/07/19/rollout-2026-07-19T19-46-57-019f79fc-7b78-7eb0-9b0f-3d714d1cd864.jsonl",
+    "transcriptRootPath": "/Users/cometzero/.codex/sessions"
+  },
+  "currentNote": "raw/Linux Kernel/Chanho_Park_Tesla_Technical_Interview_Preparation.md",
+  "usage": {
+    "inputTokens": 56988,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 49920,
+    "contextWindow": 258400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 56988,
+    "percentage": 22,
+    "model": "gpt-5.6-sol"
+  }
+}
