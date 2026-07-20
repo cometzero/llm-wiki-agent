@@ -1,0 +1,27 @@
+{
+  "id": "conv-1784509601100-dkwlxuykv",
+  "providerId": "codex",
+  "title": "다음 설정에 대해서 설명해줘",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1784509601100,
+  "updatedAt": 1784511685041,
+  "lastResponseAt": 1784511685041,
+  "sessionId": "019f7d0f-963c-7532-abce-36e0e9703abd",
+  "selectedModel": "gpt-5.6-sol",
+  "providerState": {
+    "threadId": "019f7d0f-963c-7532-abce-36e0e9703abd",
+    "sessionFilePath": "/Users/cometzero/.codex/sessions/2026/07/20/rollout-2026-07-20T10-06-41-019f7d0f-963c-7532-abce-36e0e9703abd.jsonl",
+    "transcriptRootPath": "/Users/cometzero/.codex/sessions"
+  },
+  "currentNote": "raw/Linux Kernel/PreemptRT/preempt_rt_final_integrated_notes.md",
+  "usage": {
+    "inputTokens": 36417,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 35584,
+    "contextWindow": 258400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 36417,
+    "percentage": 14,
+    "model": "gpt-5.6-sol"
+  }
+}
