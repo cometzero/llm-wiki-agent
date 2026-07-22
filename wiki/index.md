@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Xiaomi-Robotics-1 학습 노트: VLA scaling과 action grounding](sources/xiaomi-robotics-1-2607-15330-learning.md) — [[Xiaomi-Robotics-1]]의 100K+ trajectory + [[StateTransitionCaptioning]] + [[ActionChunking]] 학습 설계를 한 번에 점검하고 AD 전이 아이디어를 제시하는 학습 노트.
+- [Xiaomi-Robotics-1 참고 레퍼런스 요약](sources/xiaomi-robotics-1-2607-15330-references.md) — [[Xiaomi-Robotics-1]]의 선행군을 UMI, [[pi0]], [[pi0.5]], [[RT-1]], [[Diffusion Policy]], [[Qwen3-VL]], [[Bridge V2]], [[DROID]]로 정렬해 VLA scaling 맥락을 정교화한다.
+- [Xiaomi-Robotics-1: 100K+ trajectory 기반 VLA 스케일링](sources/xiaomi-robotics-1-2607-15330.md) — [[UMI]] 기반 100K+ 시간 real 조작 trajectory, state transition captioning supervision, DiT 기반 action chunk 생성, cross-embodiment 후학습을 결합해 scaling gain을 실제 robot/시뮬레이션 성능으로 이전한 2026-W30 VLA 파이프라인입니다.
+- [Xiaomi-Robotics-1 한국어 기술 번역](sources/xiaomi-robotics-1-2607-15330-paper-ko.md) — 10만 시간 이상 real trajectory로 pre-training+post-training을 분리해, data/model scale이 unseen 환경 성능과 downstream 적응성 및 RoboCasa365/RoboDojo sim 성능으로 이전되는 VLA 확장성을 제시한다.
 - [LWN.net Weekly Edition for July 9, 2026](sources/lwn-weekly-edition-2026-07-09-1080835.md) — 커널 암호화 현대화, iomap, negative dentry, RCU 최적화, LLM-assisted 패치 종합
 - [ABot-N1 한국어 기술 번역](sources/abot-n1-2607-10383-paper-ko.md) — ABot-N1 원문 기술 번역: slow VLM reasoner, pixel goal, fast waypoint decoder, benchmark/실험 정리
 - [Flow-ERD 한국어 기술 번역](sources/flow-erd-2607-06957-paper-ko.md) — AFM/ERD 기반 diverse traffic simulation 원문 기술 번역
@@ -270,6 +274,12 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [Xiaomi](entities/Xiaomi.md) — Xiaomi-Robotics 계열 VLA/로보틱스 연구 맥락의 기업/조직
+- [Xiaomi-Robotics-0](entities/Xiaomi-Robotics-0.md) — Xiaomi 계열 이전 VLA 모델 placeholder
+- [Xiaomi-Robotics-1 alias](entities/XiaomiRobotics1.md) — Xiaomi-Robotics-1 ingest alias page
+- [Qwen3.5-27B](entities/Qwen3.5-27B.md) — state-transition captioning에 사용된 VLM 계열
+- [RoboCasa365](entities/RoboCasa365.md) — large-scale robot manipulation simulation benchmark
+- [BridgeV2](entities/BridgeV2.md) — cross-embodiment robot post-training에 쓰이는 공개 robot dataset
 - [Harry Yu](entities/HarryYu.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
 - [Miklos Szeredi](entities/MiklosSzeredi.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
 - [KernelCI](entities/KernelCI.md) — LWN 2026-07-09 관련 인물/프로젝트 placeholder
@@ -699,6 +709,12 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [DiT](concepts/DiT.md) — diffusion/flow action generator용 Diffusion Transformer 약칭
+- [Diffusion Transformer](concepts/DiffusionTransformer.md) — flow/diffusion 기반 action chunk generator 구조
+- [Open-loop MSE](concepts/OpenLoopMSE.md) — imitation/action prediction open-loop 평가 지표
+- [Teleoperation](concepts/Teleoperation.md) — 사람이 로봇을 조작해 demonstration trajectory를 수집하는 방식
+- [Diffusion Policy](concepts/DiffusionPolicy.md) — visuomotor action distribution을 diffusion model로 학습하는 선행 흐름
+- [CrossEmbodimentLearning](concepts/CrossEmbodimentLearning.md) — 서로 다른 robot embodiment 간 representation/action 정렬 문제
 - [Hypervisor](concepts/Hypervisor.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
 - [userfaultfd](concepts/Userfaultfd.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
 - [Super Page Block](concepts/SuperPageBlock.md) — LWN 2026-07-09 관련 Linux 커널 개념 placeholder
