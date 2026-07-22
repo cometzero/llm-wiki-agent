@@ -18,7 +18,8 @@
     "2607.02501",
     "2607.01804",
     "2607.10383",
-    "2607.06957"
+    "2607.06957",
+    "2607.15330"
   ],
   "runs": [
     {
@@ -360,6 +361,31 @@
       "commit_hash": "f6b3a1cfbabb5a592a3b29a7de31e162e1ecb02d",
       "notes": "Generated Korean translation/analysis/reference/learning deliverables with arXiv HTML figures; automated batch ingest timed out after partial materialization, so missing source coverage and support wikilinks were repaired manually; graph rebuilt with --no-infer fallback after NVIDIA no-content semantic inference; validation passed.",
       "limitations": "Dense appendices/tables were summarized rather than exhaustively translated. ABot-N1 figure download captured 10 arXiv HTML images and Flow-ERD captured 5 images; semantic graph inference was skipped in favor of extracted wikilinks."
+    },
+    {
+      "date_kst": "2026-07-22 09:40:06 KST",
+      "week": "2026-W30",
+      "selected_paper_ids": [
+        "2607.15330"
+      ],
+      "papers": [
+        {
+          "id": "2607.15330",
+          "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+          "week": "2026-W30",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W30/xiaomi-robotics-1-scaling-vla-2607-15330"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W30/xiaomi-robotics-1-scaling-vla-2607-15330/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W30/xiaomi-robotics-1-scaling-vla-2607-15330/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W30/xiaomi-robotics-1-scaling-vla-2607-15330/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W30/xiaomi-robotics-1-scaling-vla-2607-15330/learning.md"
+      ],
+      "commit_hash": "ab92524dd4656274af962f2c10f65a83309b6685",
+      "notes": "Generated Korean technical translation, analysis, references, learning note, metadata, source extract, and 12 arXiv HTML figures; ingested into wiki; added support pages for generated wikilinks; graph rebuilt with --no-infer fallback after NVIDIA no-content semantic inference; validation passed with 4/4 raw markdown source coverage.",
+      "limitations": "Dense appendices/tables were summarized rather than line-by-line translated; Semantic Scholar references API returned 429 so references were curated from arXiv HTML References; full semantic graph inference failed and deterministic extracted-wikilink graph was committed."
     }
   ]
 }
