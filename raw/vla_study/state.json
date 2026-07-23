@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 1,
-  "last_completed_date": "2026-07-14",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-12-최신-논문-업데이트와-개인-research-map-2026-07-14.md",
+  "next_week": 2,
+  "last_completed_date": "2026-07-21",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-01-vla-for-ad-지형도와-taxonomy-2026-07-21.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -77,6 +77,12 @@
       "title": "최신 논문 업데이트와 개인 research map",
       "date": "2026-07-14",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-12-최신-논문-업데이트와-개인-research-map-2026-07-14.md"
+    },
+    {
+      "week": 1,
+      "title": "VLA for AD 지형도와 taxonomy",
+      "date": "2026-07-21",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-01-vla-for-ad-지형도와-taxonomy-2026-07-21.md"
     }
   ]
 }
