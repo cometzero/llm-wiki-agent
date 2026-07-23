@@ -1,3 +1,19 @@
+## [2026-07-22] ingest | Xiaomi-Robotics-1 학습 노트: VLA scaling과 action grounding
+
+Added source. Key claims: 100K+시간 [[UMI]] 궤적 기반 [[Xiaomi-Robotics-1]]의 [[StateTransitionCaptioning]] 설계가 task label보다 action grounding 정합을 높이며, [[Qwen3-VL]] + [[DiT]]/[[FlowMatching]]로 action chunk 생성이 이루어진다는 점, pre-training data/model scaling과 cross-embodiment post-training이 성능 이전 성격을 보이며, 자율주행에는 scene/route transition 서술로의 전환이 유효하다는 점을 반영함.
+
+## [2026-07-22] ingest | Xiaomi-Robotics-1 참고 레퍼런스 요약
+
+Added source. Key claims: UMI 기반 확장 맥락을 중심으로 Xiaomi 계열이 [[pi0]], [[pi0.5]], [[RT-1]] 및 [[Diffusion Policy]] 계열과 어떻게 연결되는지, 그리고 post-training에서 [[Bridge V2]], [[DROID]] 같은 공개 데이터가 cross-embodiment 정합을 보완한다는 점을 정리했다. 또한 [[RoboCasa365]]·[[RoboDojo]] 기반 benchmark 연계를 통해 scaling 논의의 실험 체인을 보강했다.
+
+## [2026-07-22] ingest | Xiaomi-Robotics-1: 100K+ trajectory 기반 VLA 스케일링
+
+Added source. Key claims: 10K+ 조작 horizon을 넘어 100K+시간 UMI 데이터 중심의 pre-training + state-transition language auto-labeling 기반 지도 학습, 2B/5B/10B 모델 스케일링 및 데이터 스케일링 성능 향상, cross-embodiment post-training 정합, OOD 및 RoboCasa365/RoboDojo 시뮬레이션 기반 성능 상향, 그리고 36/144시간 few-shot downstream 적응을 정리했습니다.
+
+## [2026-07-22] ingest | Xiaomi-Robotics-1: 10만+ 시간 실제 궤적으로 Vision-Language-Action 모델 스케일링
+
+Added source. Key claims: 100K+ 시간 UMI/real-world trajectory로 [[Xiaomi-Robotics-1]] 두 단계 학습을 수행해 data/model scaling 이득을 실증하고, unseen 환경 out-of-the-box 성능·새 과제 적은 데이터 fine-tuning·RoboCasa365/RoboDojo SOTA 성능을 정리함.
+
 ## [2026-07-17] ingest | LWN.net Weekly Edition for July 9, 2026
 
 Added source. Key claims: Eric Biggers modernizing kernel crypto with 2.5x faster library functions; iomap layer abstracting filesystem I/O; negative dentry accumulation causing soft-lock issues; RCU expedited grace period improvements reducing memory 33-41%; kmalloc_nolock enabling lockless BPF allocation; two LLM-assisted MM patch sets (van Riel 1GB HugePage, Shutsemau VM tracking) with mixed community reception.
@@ -1232,3 +1248,11 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-17] graph | Knowledge graph rebuilt
 
 2869 nodes, 9614 edges (9614 extracted, 0 inferred).
+
+## [2026-07-22] graph | Knowledge graph rebuilt
+
+2889 nodes, 9753 edges (9753 extracted, 0 inferred).
+
+## [2026-07-22] graph | Knowledge graph rebuilt
+
+2889 nodes, 9759 edges (9759 extracted, 0 inferred).

@@ -1,0 +1,198 @@
+{
+  "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories",
+  "arxiv_id": "2607.15330",
+  "hf_url": "https://huggingface.co/papers/2607.15330",
+  "arxiv_url": "https://arxiv.org/abs/2607.15330",
+  "pdf_url": "https://arxiv.org/pdf/2607.15330",
+  "html_url": "https://arxiv.org/html/2607.15330",
+  "project_page": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
+  "github_repo": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1",
+  "week": "2026-W30",
+  "ingested_at_kst": "2026-07-22 09:40:06 KST",
+  "selected_reason": "2026-W30 candidates 중 고득점/고업보트이며 VLA foundation policy, 100K+ trajectory scaling, action grounding, real-robot/simulation evaluation을 직접 다룸.",
+  "authors": [
+    "Xiaomi Robotics Team",
+    "Jun Guo",
+    "Piaopiao Jin",
+    "Jason Li",
+    "Peiyan Li",
+    "Yingyan Li",
+    "Futeng Liu",
+    "Wanli Peng",
+    "Optimus Qin",
+    "Yifei Su",
+    "Nan Sun",
+    "Qiao Sun",
+    "Runze Suo",
+    "Heyun Wang",
+    "Yunhong Wang",
+    "Rujie Wu",
+    "Caoyu Xia",
+    "Lina Zhang",
+    "Jack Zhao",
+    "Guoliang Chen",
+    "Wenlong Chen",
+    "Xinze He",
+    "Bin Li",
+    "Qing Li",
+    "Zhuorong Li",
+    "Heng Qu",
+    "Wenxuan Song",
+    "Diyun Xiang",
+    "Yifan Xie",
+    "Peiran Xu",
+    "Hangjun Ye",
+    "Wen Ye",
+    "Han Zhao",
+    "Quanyun Zhou"
+  ],
+  "figures": [
+    {
+      "caption": "Figure 1 : Overview. Xiaomi-Robotics-1 is pre-trained on over 100k hours of real-world UMI trajectories with auto-labeled state-transition language prompts. It is then aligned to robot embodiments and imperative instruction prompts via cross-embodiment post-training. Xiaomi-Robotics-1 scales effectively with data and model size. It is able to perform multiple tasks in unseen environment out-of-the-box and learn new tasks efficiently.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x1.png",
+          "path": "figures/figure-01-1.png",
+          "bytes": 970006
+        }
+      ]
+    },
+    {
+      "caption": "Figure 2 : Model Architecture. Xiaomi-Robotics-1 adopts a Mixture-of-Transformers [ 44 ] architecture that couples a pre-trained VLM with a DiT. The VLM encodes the observation and language instruction, and additionally predicts action chunks via Choice Policies [ 59 ] to accelerate training convergence. Conditioned on the robot state and the VLM’s KV cache of the observation and language tokens, the DiT generates the action chunk via flow matching. Note that the action-related tokens from the VLM are excluded from the DiT’s attention computation.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x2.png",
+          "path": "figures/figure-02-1.png",
+          "bytes": 194330
+        }
+      ]
+    },
+    {
+      "caption": "Table 1 : Model configurations for different scaling variants of Xiaomi-Robotics-1 .",
+      "images": []
+    },
+    {
+      "caption": "Figure 3 : Pre-training Dataset. The pre-training dataset of Xiaomi-Robotics-1 contains over 100k hours of real-world manipulation trajectories collected with UMI devices.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x3.png",
+          "path": "figures/figure-04-1.png",
+          "bytes": 2334844
+        }
+      ]
+    },
+    {
+      "caption": "Figure 4 : Post-training Dataset. The post-training dataset of Xiaomi-Robotics-1 comprises about 10k hours of cross-embodiment trajectories, including over 7.2k hours of in-house robot data collected with mobile manipulators and dual-arm robots, over 1k hours of instruction-labeled UMI data, and open-source robot datasets.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x4.png",
+          "path": "figures/figure-05-1.png",
+          "bytes": 1396812
+        }
+      ]
+    },
+    {
+      "caption": "Figure 5 : Scaling of Pre-training. We show the validation action errors (MSE) from the data-scaling and model-scaling pre-training experiments. We terminate the training for 12.5% and 25% data in the data-scaling experiment early as the validation loss indicates overfitting.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x5.png",
+          "path": "figures/figure-06-1.png",
+          "bytes": 189870
+        }
+      ]
+    },
+    {
+      "caption": "Figure 6 : Qualitative Results of Pre-training. After pre-training, Xiaomi-Robotics-1 is able to predict action trajectories for UMI grippers on a held-out validation set according to the language description of state transitions.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x6.png",
+          "path": "figures/figure-07-1.png",
+          "bytes": 1517429
+        }
+      ]
+    },
+    {
+      "caption": "Figure 7 : Post-training Evaluation. We evaluate the post-trained model out-of-the-box across four tasks in novel environments. Crucially, both the environments and object instances are unseen during training.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x7.png",
+          "path": "figures/figure-08-1.png",
+          "bytes": 1687265
+        }
+      ]
+    },
+    {
+      "caption": "Figure 8 : Quantitative Results of Post-training. We showcase the success rates of post-trained models across different pre-training data scales and model sizes.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x8.png",
+          "path": "figures/figure-09-1.png",
+          "bytes": 134304
+        }
+      ]
+    },
+    {
+      "caption": "Figure 9 : Downstream Fine-tuning Evaluation. We fine-tune the post-trained model on four new challenging tasks with a minimal amount of data.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x9.png",
+          "path": "figures/figure-10-1.png",
+          "bytes": 1315974
+        }
+      ]
+    },
+    {
+      "caption": "Figure 10 : Quantitative Results of Downstream Fine-tuning. We report the success rates and progresses of different models across the four different tasks.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x10.png",
+          "path": "figures/figure-11-1.png",
+          "bytes": 487938
+        }
+      ]
+    },
+    {
+      "caption": "Table 2: Results on the RoboCasa Benchmark. We report the average success rate (%). The best and second-best results are highlighted in bold and underline , respectively.",
+      "images": []
+    },
+    {
+      "caption": "Table 3: Results on the RoboCasa365 benchmark. We report task success rates (%). The best and second-best results are highlighted in bold and underline , respectively.",
+      "images": []
+    },
+    {
+      "caption": "Table 4: Results on the VLABench Benchmark. SR, PS, and IS denote success rate, progress score, and intention score, respectively. The best and second-best results are highlighted in bold and underline , respectively.",
+      "images": []
+    },
+    {
+      "caption": "Table 5: Results on the RoboDojo Simulation Benchmark. Each entry reports score / success rate (%). The best and second-best results are highlighted in bold and underline , respectively.",
+      "images": []
+    },
+    {
+      "caption": "Figure 11 : Examples of UMI data in the Pre-training Dataset.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x11.png",
+          "path": "figures/figure-16-1.png",
+          "bytes": 2147017
+        }
+      ]
+    },
+    {
+      "caption": "Figure 12 : Examples of UMI data in the Post-training Dataset.",
+      "images": [
+        {
+          "url": "https://arxiv.org/html/2607.15330v1/x12.png",
+          "path": "figures/figure-17-1.png",
+          "bytes": 2673597
+        }
+      ]
+    },
+    {
+      "caption": "Table 6 : Progress Definition for Evaluation on Efficient Adaptation to New Tasks. Each rollout is assigned a progress score from 0 to 100% according to completed task milestones.",
+      "images": []
+    }
+  ],
+  "source_extract_sha256": "d3fc7f3762375607a51b8a2b03698a6ce0565d9820094916712042d1d9dde41e",
+  "html_bytes": 285973,
+  "hf_page_bytes": 215766
+}
