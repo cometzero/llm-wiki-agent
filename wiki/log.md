@@ -1,3 +1,10 @@
+## [2026-07-24] ingest | LWN.net Weekly Edition for July 16, 2026
+
+Added source. Key claims: AI scraper + residential proxy가 웹 출판사에 지속 위협; io_uring 7.2 MPSC FIFO로 경합 감소; BPF "방패"로 CVE 전 exploit 차단 가능; QBE 1.3 CoreMark 63% 달성; Kitty terminal GPU/프로토콜 확장.
+
+New entity pages: [[Jens Axboe]], [[Kovid Goyal]], [[Quentin Carbonneaux]]
+New concept pages: [[Residential Proxy]], [[MPSC FIFO Queue]], [[BPF Exploit Mitigation]], [[BPF Direct Packet Sending]], [[QBE Compiler Backend]]
+
 ## [2026-07-22] ingest | Xiaomi-Robotics-1 학습 노트: VLA scaling과 action grounding
 
 Added source. Key claims: 100K+시간 [[UMI]] 궤적 기반 [[Xiaomi-Robotics-1]]의 [[StateTransitionCaptioning]] 설계가 task label보다 action grounding 정합을 높이며, [[Qwen3-VL]] + [[DiT]]/[[FlowMatching]]로 action chunk 생성이 이루어진다는 점, pre-training data/model scaling과 cross-embodiment post-training이 성능 이전 성격을 보이며, 자율주행에는 scene/route transition 서술로의 전환이 유효하다는 점을 반영함.
@@ -1256,3 +1263,7 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-22] graph | Knowledge graph rebuilt
 
 2889 nodes, 9759 edges (9759 extracted, 0 inferred).
+
+## [2026-07-24] graph | Knowledge graph rebuilt
+
+2918 nodes, 9803 edges (9803 extracted, 0 inferred).

@@ -22,6 +22,7 @@
 - Together these papers emphasize that VLA progress depends not only on action generation quality, but also on runtime scheduling, monitoring, invalidation, and recovery under real closed-loop constraints.
 
 ## LWN Weekly Linux/Open Source Tracking
+- [[lwn-weekly-edition-2026-07-16-1081915]]: LWN.net Weekly Edition 2026-07-16 번역은 AI scraper/residential proxy를 통한 공개 웹 부담, [[io_uring]] lockless MPSC FIFO, [[BPFExploitMitigation]], [[BPFDirectPacketSending]], [[Kitty]], [[QBECompilerBackend]]를 Linux/open-source 추적 축에 추가한다.
 - The July 2, 2026 LWN translation adds [[DebianProtestware]], [[Git255]], [[RhombusMetaprogramming]], [[KernelHardening]], [[KernelWriteback]], [[BPFLocalStorage]], [[SecureBootCertificateExpiration]], and [[ObjectStorageAlternatives]] to the recurring Linux/open-source operations corpus.
 - Across the May–July LWN sources, the wiki now tracks a continuous thread from package and publishing trust ([[SupplyChainSecurity]], [[AURSupplyChainAttack]], [[TrustedPublishing]]) to kernel release flow ([[LinuxKernel72]], [[BPF]], [[KernelHardening]]) and operational infrastructure ([[OSPM2026]], [[RMRBRMR]], [[ObjectStorageAlternatives]]).
 
