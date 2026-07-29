@@ -19,7 +19,9 @@
     "2607.01804",
     "2607.10383",
     "2607.06957",
-    "2607.15330"
+    "2607.15330",
+    "2607.24744",
+    "2607.23909"
   ],
   "runs": [
     {
@@ -386,6 +388,43 @@
       "commit_hash": "ab92524dd4656274af962f2c10f65a83309b6685",
       "notes": "Generated Korean technical translation, analysis, references, learning note, metadata, source extract, and 12 arXiv HTML figures; ingested into wiki; added support pages for generated wikilinks; graph rebuilt with --no-infer fallback after NVIDIA no-content semantic inference; validation passed with 4/4 raw markdown source coverage.",
       "limitations": "Dense appendices/tables were summarized rather than line-by-line translated; Semantic Scholar references API returned 429 so references were curated from arXiv HTML References; full semantic graph inference failed and deterministic extracted-wikilink graph was committed."
+    },
+    {
+      "date_kst": "2026-07-29 09:40:46 KST",
+      "week": "2026-W31",
+      "selected_paper_ids": [
+        "2607.24744",
+        "2607.23909"
+      ],
+      "papers": [
+        {
+          "id": "2607.24744",
+          "title": "Data Pyramid for Embodied Manipulation",
+          "week": "2026-W31",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/data-pyramid-embodied-manipulation-2607-24744"
+        },
+        {
+          "id": "2607.23909",
+          "title": "WorldDiT: A Unified Diffusion Architecture for World and Action Modeling",
+          "week": "2026-W31",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/worlddit-unified-diffusion-world-action-2607-23909"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/data-pyramid-embodied-manipulation-2607-24744/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/data-pyramid-embodied-manipulation-2607-24744/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/data-pyramid-embodied-manipulation-2607-24744/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/data-pyramid-embodied-manipulation-2607-24744/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/worlddit-unified-diffusion-world-action-2607-23909/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/worlddit-unified-diffusion-world-action-2607-23909/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/worlddit-unified-diffusion-world-action-2607-23909/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W31/worlddit-unified-diffusion-world-action-2607-23909/learning.md"
+      ],
+      "commit_hash": "53939ba1ab6b1bd9623a71a7e0ba52b9a3de3a1a",
+      "notes": "Generated Korean translations, analyses, references, learning notes, downloaded available arXiv HTML figures, ingested into wiki with deterministic source coverage repair, validated no broken links, rebuilt graph with --no-infer fallback after full semantic inference timed out.",
+      "limitations": "Data Pyramid Semantic Scholar references endpoint returned no reference rows, so references were selected from paper-visible dataset/model families. Full semantic graph inference timed out; graph uses extracted wikilinks only."
     }
   ]
 }
