@@ -1,0 +1,22 @@
+{
+  "slug": "data-pyramid-embodied-manipulation-2607-24744",
+  "title": "Data Pyramid for Embodied Manipulation",
+  "ko_title": "임바디드 조작을 위한 데이터 피라미드",
+  "authors": "Yifan Ye 외 29명",
+  "hf_url": "https://huggingface.co/papers/2607.24744",
+  "arxiv_url": "https://arxiv.org/abs/2607.24744",
+  "pdf_url": "https://arxiv.org/pdf/2607.24744",
+  "html_url": "https://arxiv.org/html/2607.24744",
+  "project_page": "https://jasper-aaa.github.io/embodied-data-pyramid/",
+  "github_repo": "https://github.com/worldbench/awesome-embodied-data-pyramid",
+  "week": "2026-W31",
+  "selected_reason": "HF 2026-W31 후보 중 VLA/embodied manipulation 데이터 레시피를 직접 다루며, VLA for AD 학습 커리큘럼의 dataset/benchmark 및 representation transfer 축을 확장한다.",
+  "arxiv_id": "2607.24744",
+  "generated_files": [
+    "paper-ko.md",
+    "analysis.md",
+    "references.md",
+    "learning.md"
+  ],
+  "figure_note": "Figures were downloaded from arXiv HTML when available; some affiliation/logo images were skipped."
+}

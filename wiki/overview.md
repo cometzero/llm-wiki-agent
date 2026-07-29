@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-W31 Data Pyramid & WorldDiT update
+- [[DataPyramidForEmbodiedManipulation]] adds a data-centric lens for VLA/embodied systems: real-robot, UMI-style, egocentric/exocentric, simulation, and general VL data should be mixed according to [[RobotAlignment]], scalability, [[PhysicalFidelity]], diversity, and action grounding.
+- [[WorldDiT]] adds a compact world-action modeling baseline: one shared [[DiffusionTransformer]] learns continuous [[ActionChunking]] and [[FutureRGBPatchPrediction]], then uses [[InferenceTimeActionOnlyDeployment]] with receding-horizon replanning at inference.
+- Together, the W31 papers strengthen the autonomous-driving VLA study thread around data recipe design and deployment-efficient world supervision: future visual/BEV/occupancy prediction can train richer state representations while the runtime path stays action/trajectory focused.
+- Caveat: WorldDiT reports LIBERO simulation results with staged checkpoint-selection caveats, so its parameter-success point should be treated as a useful baseline rather than a fully unbiased deployment estimate.
+
 ## 2026-W30 Robotics Scale & Transfer Update
 - [[Xiaomi-Robotics-1]]은 100K+ 시간대 real-world 조작 trajectory와 [[StateTransitionCaptioning]] 기반 supervision으로 데이터 스케일·모델 스케일·cross-embodiment 정합이 실제 성능으로 이전되는 지점을 보인다.
 - 이 작업은 [[Qwen3-VL]] 백본 + action chunk generator 설계에서 baseline 대비 실행성능과 시뮬레이션 성능(예: [[RoboCasa365]]/[[RoboDojo]])을 함께 다루며, VLA 파운데이션의 "데이터 규모-표현 품질-배치 정합" 축을 확장한다.

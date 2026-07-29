@@ -1,0 +1,22 @@
+{
+  "slug": "worlddit-unified-diffusion-world-action-2607-23909",
+  "title": "WorldDiT: A Unified Diffusion Architecture for World and Action Modeling",
+  "ko_title": "WorldDiT: World Modeling과 Action Modeling을 위한 통합 Diffusion 아키텍처",
+  "authors": "Sen Wang, R. Gnana Praveen, Bidhan Roy, Marcos Villagra",
+  "hf_url": "https://huggingface.co/papers/2607.23909",
+  "arxiv_url": "https://arxiv.org/abs/2607.23909",
+  "pdf_url": "https://arxiv.org/pdf/2607.23909",
+  "html_url": "https://arxiv.org/html/2607.23909",
+  "project_page": null,
+  "github_repo": null,
+  "week": "2026-W31",
+  "selected_reason": "VLM action backbone 없이 continuous action chunk와 future RGB patch prediction을 같은 DiT로 학습하는 compact world-action modeling 논문으로, VLA/World Model track과 배포 지연·파라미터 효율성 관점에 적합하다.",
+  "arxiv_id": "2607.23909",
+  "generated_files": [
+    "paper-ko.md",
+    "analysis.md",
+    "references.md",
+    "learning.md"
+  ],
+  "figure_note": "Figures were downloaded from arXiv HTML when available; some affiliation/logo images were skipped."
+}

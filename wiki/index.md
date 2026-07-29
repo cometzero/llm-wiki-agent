@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Data Pyramid for Embodied Manipulation — 한국어 기술 번역](sources/data-pyramid-for-embodied-manipulation-2607-24744-paper-ko.md) — real-robot/UMI/human video/simulation/general VL data pyramid 기술 번역
+- [Data Pyramid for Embodied Manipulation — 분석](sources/data-pyramid-for-embodied-manipulation-2607-24744.md) — VLA 데이터 레시피와 action grounding 분석
+- [Data Pyramid for Embodied Manipulation — 참고 레퍼런스](sources/data-pyramid-for-embodied-manipulation-2607-24744-references.md) — embodied data 계층별 대표 레퍼런스 요약
+- [Data Pyramid for Embodied Manipulation — 학습 노트](sources/data-pyramid-for-embodied-manipulation-2607-24744-learning.md) — Data Pyramid를 VLA/AD로 확장하는 학습 자료
+- [WorldDiT — 한국어 기술 번역](sources/worlddit-2607-23909-paper-ko.md) — unified DiT action/world modeling 기술 번역
+- [WorldDiT — 분석](sources/worlddit-2607-23909.md) — compact world-action policy와 LIBERO Pareto 분석
+- [WorldDiT — 참고 레퍼런스](sources/worlddit-2607-23909-references.md) — diffusion VLA 및 LIBERO 선행연구 맵
+- [WorldDiT — 학습 노트](sources/worlddit-2607-23909-learning.md) — flow matching, action chunking, receding horizon 학습 자료
 - [LWN.net Weekly Edition for July 16, 2026](sources/lwn-weekly-edition-2026-07-16-1081915.md) — AI scraper 방어, io_uring MPSC FIFO, BPF exploit 방패, QBE 1.3, Kitty terminal 등 종합 번역
 - [Xiaomi-Robotics-1 학습 노트: VLA scaling과 action grounding](sources/xiaomi-robotics-1-2607-15330-learning.md) — [[Xiaomi-Robotics-1]]의 100K+ trajectory + [[StateTransitionCaptioning]] + [[ActionChunking]] 학습 설계를 한 번에 점검하고 AD 전이 아이디어를 제시하는 학습 노트.
 - [Xiaomi-Robotics-1 참고 레퍼런스 요약](sources/xiaomi-robotics-1-2607-15330-references.md) — [[Xiaomi-Robotics-1]]의 선행군을 UMI, [[pi0]], [[pi0.5]], [[RT-1]], [[Diffusion Policy]], [[Qwen3-VL]], [[Bridge V2]], [[DROID]]로 정렬해 VLA scaling 맥락을 정교화한다.
@@ -275,6 +283,14 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [ACoT-VLA](entities/ACoTVLA.md) — action chain-of-thought VLA baseline
+- [VLANeXt](entities/VLANeXt.md) — VLA training recipe baseline
+- [MMaDA-VLA](entities/MMaDAVLA.md) — diffusion VLA baseline
+- [Paris 2.0](entities/Paris20.md) — WorldDiT 관련 decentralized diffusion/video generation reference
+- [Data Pyramid for Embodied Manipulation](entities/DataPyramidForEmbodiedManipulation.md) — embodied data pyramid paper/entity alias
+- [Mobile-ALOHA](entities/Mobile-ALOHA.md) — mobile manipulation teleoperation/data collection platform
+- [ALOHA](entities/ALOHA.md) — bimanual teleoperation 기반 robot manipulation data collection 계열
+- [Yifan Ye](entities/YifanYe.md) — Data Pyramid for Embodied Manipulation 공동 저자
 - [Jens Axboe](entities/JensAxboe.md) — io_uring maintainer associated with lockless MPSC queue work.
 - [Kovid Goyal](entities/KovidGoyal.md) — Kitty terminal emulator maintainer.
 - [Quentin Carbonneaux](entities/QuentinCarbonneaux.md) — QBE compiler backend developer.
@@ -723,6 +739,28 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [AutoRegressive Model](concepts/AutoRegressiveModel.md) — support concept for VLA/HF weekly ingest
+- [Future RGB Patch Prediction](concepts/FutureRGBPatchPrediction.md) — support concept for VLA/HF weekly ingest
+- [Video World Prediction](concepts/VideoWorldPrediction.md) — support concept for VLA/HF weekly ingest
+- [Perceiver Resampler](concepts/PerceiverResampler.md) — support concept for VLA/HF weekly ingest
+- [Training Recipe](concepts/TrainingRecipe.md) — support concept for VLA/HF weekly ingest
+- [Failure Mode Analysis](concepts/FailureModeAnalysis.md) — support concept for VLA/HF weekly ingest
+- [Embodied Brain Model](concepts/EmbodiedBrainModel.md) — support concept for VLA/HF weekly ingest
+- [Physical Fidelity](concepts/PhysicalFidelity.md) — support concept for VLA/HF weekly ingest
+- [Robot Alignment](concepts/RobotAlignment.md) — support concept for VLA/HF weekly ingest
+- [Real Robot Data](concepts/RealRobotData.md) — support concept for VLA/HF weekly ingest
+- [MemoryVLA](concepts/MemoryVLA.md) — memory mechanism을 통해 long-horizon VLA control을 강화하는 접근
+- [VLA Adapter](concepts/VLAAdapter.md) — 작은 VLA 또는 frozen backbone에 action adaptation module을 붙이는 접근
+- [Unified Diffusion VLA](concepts/UnifiedDiffusionVLA.md) — diffusion process로 VLA instruction/action/generation을 결합하는 접근
+- [Receding Horizon](concepts/RecedingHorizon.md) — action chunk 일부 실행 후 재관측·재계획하는 control 방식
+- [Inference-Time Action-Only Deployment](concepts/InferenceTimeActionOnlyDeployment.md) — 학습용 world branch를 제거하고 action path만 배포하는 설계
+- [Unified World-Action Model](concepts/UnifiedWorldActionModel.md) — world prediction과 action generation을 한 backbone/objective로 결합하는 모델
+- [Failure Recovery Trajectory](concepts/FailureRecoveryTrajectory.md) — 실패 및 복구 행동을 포함한 trajectory data
+- [Cross-Embodiment Alignment](concepts/CrossEmbodimentAlignment.md) — 여러 robot embodiment 사이의 representation/action 정렬
+- [Embodied Foundation Model](concepts/EmbodiedFoundationModel.md) — perception/reasoning/action을 physical interaction에 연결하는 foundation model
+- [Data Recipe](concepts/DataRecipe.md) — model capability를 만들기 위한 data mixture와 수집/정렬 설계
+- [Geometric Alignment](concepts/GeometricAlignment.md) — viewpoint/coordinate/sensor geometry를 robot-compatible representation으로 맞추는 문제
+- [Action Space Alignment](concepts/ActionSpaceAlignment.md) — heterogeneous robot action spaces를 공통 policy interface로 정렬하는 문제
 - [Kitty](concepts/Kitty.md) — GPU-accelerated terminal emulator and protocol-extension platform.
 - [Residential Proxy](concepts/ResidentialProxy.md) — proxy model that hides scraper traffic behind consumer ISP addresses.
 - [AI Scraper](concepts/AIScraper.md) — automated AI-training/retrieval crawler pressure on public websites.

@@ -1,3 +1,35 @@
+## [2026-07-29] ingest | WorldDiT: A Unified Diffusion Architecture for World and Action Modeling
+
+Added source. Key claims: [[WorldDiT]]는 shared [[DiffusionTransformer]]로 [[ActionChunking]] 제어와 future [[RGB]] 예측을 함께 학습하고 추론 시 action-only 경로로 운영해 compact 폐루프 성능-지연 균형을 노린다. 학습-추론 분리를 통해 실전 latency/안전 점검 체계를 강화할 수 있으며, [[LIBERO]] 점수는 checkpoint 선택 및 실험 규약에 따른 편향 가능성을 동반할 수 있어 해석 시 주의가 필요하다.
+
+## [2026-07-29] ingest | WorldDiT: 참고 레퍼런스 요약
+
+Added source. Key claims: [[WorldDiT]] sits between large VLM-backed VLA baselines and diffusion/action-centric policies; its reference set clusters around compact diffusion VLA, memory-augmented policy, and world-action coupling families; [[LIBERO]] remains the main evaluation anchor.
+
+## [2026-07-29] ingest | WorldDiT: A Unified Diffusion Architecture for World and Action Modeling
+
+Added source. Key claims: WorldDiT uses one shared [[DiffusionTransformer]] to learn continuous [[ActionChunking]] actions and future normalized RGB patch prediction jointly under [[FlowMatching]], then performs [[InferenceTimeActionOnlyDeployment]] by executing only action branches with a `7-step sample, 3-step execute` receding-horizon loop. It reports compact-model efficiency on [[LIBERO]] suites but notes possible scoreboard bias from staged checkpoint usage.
+
+## [2026-07-29] ingest | WorldDiT: World Modeling과 Action Modeling을 위한 통합 Diffusion 아키텍처
+
+Added source. Key claims: WorldDiT는 [[DiffusionTransformer]] 기반 unified design으로 continuous [[ActionGeneration]]과 미래 시각 예측을 결합해 큰 pretrained [[VisionLanguageModel]] action backbone 없이도 효과를 입증했다. 학습은 [[FlowMatching]]으로 action-velocity와 RGB patch velocity를 함께 최적화하고, 추론은 action-only receding-horizon 운영으로 3-step execute/re-plan을 수행한다. LIBERO 4-suite에서 399M급 compact 모델이 하이엔드 모델 대비 파라미터-성능 Pareto 지점에 위치함을 보고했다.
+
+## [2026-07-29] ingest | Data Pyramid for Embodied Manipulation
+
+Added source. Key claims: introduced a 5-layer Data Pyramid for embodied policy learning centered on executable grounding, emphasized that web-scale semantic data alone is insufficient for deployment-quality [[VisionLanguageAction]], and added failure/recovery trajectories as a first-class requirement for closed-loop robustness and cross-embodiment transfer planning.
+
+## [2026-07-29] ingest | Data Pyramid for Embodied Manipulation — 참고 레퍼런스 요약
+
+Added source. Key claims: 본 레퍼런스 정리는 VLA 성능의 실질적 병목이 모델 크기보다 데이터 레이어 정렬(`action-space alignment`, `geometric alignment`)에 있음을 강화했고, [[RealRobotData]], [[UMI]], egocentric/exocentric 데이터, [[Simulation]], [[VisionLanguageModel]] 기반 층의 장단점을 `DataPyramidForEmbodiedManipulation` 관점에서 재구성했다. 또한 tactile/회복/희귀 이벤트 보강 필요성과 closed-loop 적합성의 중요성을 후속 과제로 명시했다.
+
+## [2026-07-29] ingest | Data Pyramid for Embodied Manipulation
+
+Added source. Key claims: introduced a five-layer [[DataPyramidForEmbodiedManipulation]] for embodied data (RealRobot, [[UMI]], egocentric/exocentric, [[Simulation]], general [[VisionLanguageModel]]) and emphasized that VLA scaling depends on `action-space`/`geometric` alignment and recipe-aware mixing rather than data scale alone. Added concept pages for [[DataPyramidForEmbodiedManipulation]], [[ActionSpaceAlignment]], [[GeometricAlignment]], and [[DataRecipe]].
+
+## [2026-07-29] ingest | Data Pyramid for Embodied Manipulation
+
+Added source. Key claims: embodied AI는 데이터량 자체보다 robot alignment 중심의 다층 레시피가 중요하며, 데이터 source는 RealRobotData/UMI/egocentric-exocentric/Simulation/General vision-language로 나뉘어 robot-aligned supervision을 구성한다. 문서는 [[EmbodiedFoundationModel]]을 embodied brain, [[VisionLanguageAction]], [[WorldActionModel]]로 나누고 action-space·geometric alignment를 핵심 병목으로 제시하며, tactile/failure-recovery/대규모 수집의 개방 과제를 정리했다.
+
 ## [2026-07-24] ingest | LWN.net Weekly Edition for July 16, 2026
 
 Added source. Key claims: AI scraper + residential proxy가 웹 출판사에 지속 위협; io_uring 7.2 MPSC FIFO로 경합 감소; BPF "방패"로 CVE 전 exploit 차단 가능; QBE 1.3 CoreMark 63% 달성; Kitty terminal GPU/프로토콜 확장.
@@ -1267,3 +1299,17 @@ Parse recent entries: `grep "^## \[" wiki/log.md | tail -10`
 ## [2026-07-24] graph | Knowledge graph rebuilt
 
 2918 nodes, 9803 edges (9803 extracted, 0 inferred).
+## [2026-07-29] ingest | HF Weekly W31 source coverage repair
+Added deterministic source pages for all 8 selected raw deliverables and support pages for newly introduced VLA/world-action wikilinks.
+
+## [2026-07-29] graph | Knowledge graph rebuilt
+
+2966 nodes, 9953 edges (9953 extracted, 0 inferred).
+
+## [2026-07-29] graph | Knowledge graph rebuilt
+
+2966 nodes, 9951 edges (9951 extracted, 0 inferred).
+
+## [2026-07-29] graph | Knowledge graph rebuilt
+
+2966 nodes, 9981 edges (9981 extracted, 0 inferred).
