@@ -13,6 +13,7 @@
 - [WorldDiT — 참고 레퍼런스](sources/worlddit-2607-23909-references.md) — diffusion VLA 및 LIBERO 선행연구 맵
 - [WorldDiT — 학습 노트](sources/worlddit-2607-23909-learning.md) — flow matching, action chunking, receding horizon 학습 자료
 - [LWN.net Weekly Edition for July 16, 2026](sources/lwn-weekly-edition-2026-07-16-1081915.md) — AI scraper 방어, io_uring MPSC FIFO, BPF exploit 방패, QBE 1.3, Kitty terminal 등 종합 번역
+- [LWN.net Weekly Edition for July 23, 2026](sources/lwn-weekly-edition-2026-07-23-1083123.md) — LLM kernel community 논쟁, GNOME save/restore, Fedora change process, BPF tracepoint/LSM 보안, famfs, sched_ext, PyPI/XZ 공급망 보안을 종합 번역
 - [Xiaomi-Robotics-1 학습 노트: VLA scaling과 action grounding](sources/xiaomi-robotics-1-2607-15330-learning.md) — [[Xiaomi-Robotics-1]]의 100K+ trajectory + [[StateTransitionCaptioning]] + [[ActionChunking]] 학습 설계를 한 번에 점검하고 AD 전이 아이디어를 제시하는 학습 노트.
 - [Xiaomi-Robotics-1 참고 레퍼런스 요약](sources/xiaomi-robotics-1-2607-15330-references.md) — [[Xiaomi-Robotics-1]]의 선행군을 UMI, [[pi0]], [[pi0.5]], [[RT-1]], [[Diffusion Policy]], [[Qwen3-VL]], [[Bridge V2]], [[DROID]]로 정렬해 VLA scaling 맥락을 정교화한다.
 - [Xiaomi-Robotics-1: 100K+ trajectory 기반 VLA 스케일링](sources/xiaomi-robotics-1-2607-15330.md) — [[UMI]] 기반 100K+ 시간 real 조작 trajectory, state transition captioning supervision, DiT 기반 action chunk 생성, cross-embodiment 후학습을 결합해 scaling gain을 실제 robot/시뮬레이션 성능으로 이전한 2026-W30 VLA 파이프라인입니다.
@@ -739,6 +740,13 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [GNOME Session Restore](concepts/GNOMESessionRestore.md) — GNOME/Wayland 세션 상태 저장·복원 기능 설계 축
+- [Fedora Change Process](concepts/FedoraChangeProcess.md) — Fedora 배포판 변경 제안·승인·QA governance 절차
+- [BPF Tracepoints](concepts/BPFTracepoints.md) — BPF program을 kernel tracepoint에 붙이는 observability 메커니즘
+- [BPF LSM Security](concepts/BPFLsmSecurity.md) — BPF LSM policy 변조 방지와 runtime security boundary
+- [famfs](concepts/Famfs.md) — fabric-attached memory를 filesystem interface로 노출하는 Linux proposal
+- [PyPI Supply Chain Security](concepts/PyPISupplyChainSecurity.md) — PyPI artifact policy와 Python package supply-chain 보안
+- [XZ Backdoor](concepts/XZBackdoor.md) — XZ Utils backdoor 사건과 open-source maintainer compromise 사례
 - [AutoRegressive Model](concepts/AutoRegressiveModel.md) — support concept for VLA/HF weekly ingest
 - [Future RGB Patch Prediction](concepts/FutureRGBPatchPrediction.md) — support concept for VLA/HF weekly ingest
 - [Video World Prediction](concepts/VideoWorldPrediction.md) — support concept for VLA/HF weekly ingest
