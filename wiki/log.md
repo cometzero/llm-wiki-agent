@@ -1,3 +1,9 @@
+## [2026-07-31] ingest | LWN.net Weekly Edition for July 23, 2026
+
+Added source. Key claims: LWN 2026-07-23 tracks LLM use norms in the kernel community, GNOME save/restore, Fedora change governance, BPF tracepoint/LSM hardening, famfs, sched_ext sub-scheduler/proxy execution, PyPI artifact policy, and XZ backdoor supply-chain lessons.
+
+New concept pages: [[GNOMESessionRestore]], [[FedoraChangeProcess]], [[BPFTracepoints]], [[BPFLsmSecurity]], [[Famfs]], [[PyPISupplyChainSecurity]], [[XZBackdoor]]
+
 ## [2026-07-29] ingest | WorldDiT: A Unified Diffusion Architecture for World and Action Modeling
 
 Added source. Key claims: [[WorldDiT]]는 shared [[DiffusionTransformer]]로 [[ActionChunking]] 제어와 future [[RGB]] 예측을 함께 학습하고 추론 시 action-only 경로로 운영해 compact 폐루프 성능-지연 균형을 노린다. 학습-추론 분리를 통해 실전 latency/안전 점검 체계를 강화할 수 있으며, [[LIBERO]] 점수는 checkpoint 선택 및 실험 규약에 따른 편향 가능성을 동반할 수 있어 해석 시 주의가 필요하다.
@@ -1313,3 +1319,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-07-29] graph | Knowledge graph rebuilt
 
 2966 nodes, 9981 edges (9981 extracted, 0 inferred).
+
+## [2026-07-31] graph | Knowledge graph rebuilt
+
+2974 nodes, 10011 edges (10011 extracted, 0 inferred).
