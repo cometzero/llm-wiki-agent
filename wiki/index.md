@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for July 30, 2026](sources/lwn-weekly-edition-2026-07-30-1084315.md) — Korean technical translation: hazard pointers, swap operations, BPF/netkit, BTF, gccrs, distribution policy, security advisories, and kernel patches.
 - [Data Pyramid for Embodied Manipulation — 한국어 기술 번역](sources/data-pyramid-for-embodied-manipulation-2607-24744-paper-ko.md) — real-robot/UMI/human video/simulation/general VL data pyramid 기술 번역
 - [Data Pyramid for Embodied Manipulation — 분석](sources/data-pyramid-for-embodied-manipulation-2607-24744.md) — VLA 데이터 레시피와 action grounding 분석
 - [Data Pyramid for Embodied Manipulation — 참고 레퍼런스](sources/data-pyramid-for-embodied-manipulation-2607-24744-references.md) — embodied data 계층별 대표 레퍼런스 요약
@@ -740,6 +741,11 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Hazard Pointers](concepts/HazardPointers.md) — proposed lockless object-lifetime/reclamation technique for Linux.
+- [Swap Device Operations](concepts/SwapDeviceOperations.md) — abstraction boundary for Linux swap storage backends.
+- [BPF Type Format](concepts/BTF.md) — compact type metadata for BPF tooling and debugging.
+- [gccrs](concepts/Gccrs.md) — GCC Rust frontend progress toward Linux compilation.
+- [GRUB](concepts/GRUB.md) — UEFI bootloader and minimized package trade-offs.
 - [GNOME Session Restore](concepts/GNOMESessionRestore.md) — GNOME/Wayland 세션 상태 저장·복원 기능 설계 축
 - [Fedora Change Process](concepts/FedoraChangeProcess.md) — Fedora 배포판 변경 제안·승인·QA governance 절차
 - [BPF Tracepoints](concepts/BPFTracepoints.md) — BPF program을 kernel tracepoint에 붙이는 observability 메커니즘
