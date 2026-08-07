@@ -1323,3 +1323,11 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-07-31] graph | Knowledge graph rebuilt
 
 2974 nodes, 10011 edges (10011 extracted, 0 inferred).
+
+## [2026-08-07] ingest | LWN.net Weekly Edition for July 30, 2026
+- Added the public Korean technical translation for article 1084315 and manually materialized its source/concept coverage after the NVIDIA backend returned 410 Gone and the Codex ingest exceeded its context window.
+- Covered hazard pointers, swap device operations, BTF, gccrs, GRUB, BPF/netkit, Debian DFSG governance, Fedora boot policy, security advisories, and kernel patch inventories.
+
+## [2026-08-07] graph | Knowledge graph rebuilt
+
+2980 nodes, 10038 edges (10038 extracted, 0 inferred).
