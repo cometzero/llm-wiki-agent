@@ -1,3 +1,35 @@
+## [2026-08-12] ingest | SimWAM 학습 노트: training-only video prior와 trajectory flow matching
+
+Added source. Key claims: training-time video prior can improve action representation without being part of the inference path; FlowMatching jointly trains video latent and trajectory velocity field; IsolatedAttentionMask prevents action-token leakage from future frames; action-only deployment lowers latency while preserving most of the learned prior.
+
+## [2026-08-12] ingest | SimWAM 참고 레퍼런스
+
+Added source. Key claims: SimWAM 관련 선행문헌으로 DriveWAM, DriveVA, ExploreVLA, DriveDreamer-Policy, Uni-World VLA, Fast-WAM, World Action Models are Zero-shot Policies, DriveLaW를 정리해, 학습-time world prior 활용·inference-time action-only 배포·zero-shot 전이·test-time imagination 축의 비교 틀을 보강했다.
+
+## [2026-08-12] ingest | SimWAM 분석: video world prior를 training에만 쓰는 저지연 E2E planner
+
+Added source. Key claims: SimWAM 학습 시에는 대형 video world prior를 사용하고 배포에서는 action-only planner를 남겨 latency를 줄이며, [[IsolatedAttentionMask]]로 leakage를 억제한다는 점과, action-only(86.6) 대비 video prior(90.3) 대비 RL(91.5)로의 단계적 성능 향상을 정리해 closed-loop AD에서 실용적 배포 경로를 제시함.
+
+## [2026-08-12] ingest | SimWAM: End-to-End 자율주행을 위한 단순 World-Action Model
+
+Added source. Key claims: [[SimWAM]]은 학습 단계에서 video world prior를 사용하지만 배포 단계에서는 [[Action]] 경로만 남기는 [[InferenceTimeActionOnlyDeployment]] 구조를 제안하고, [[IsolatedAttentionMask]]로 leakage를 통제한다. [[FLOWMatching]] 기반 공동 학습과 RL 보정으로 NAVSIM 성능(PDMS)을 끌어올리고, action branch의 스케일링 및 백본 유연성을 확인한다.
+
+## [2026-08-12] ingest | DEFT-RLVR 학습 노트: candidate-grounded AD reasoning
+
+Added source. Key claims: candidate-blind reasoning, delayed candidate exposure, AD-MCQ selection, and RLVR+rubric alignment reduce trajectory anchoring bias and post-hoc rationalization.
+
+## [2026-08-12] ingest | DEFT-RLVR 참고 레퍼런스
+
+Added source. Key claims: 정리된 레퍼런스에서 [[DEFT]]/[[DEFT-RLVR]]의 후보 블라인드 reasoning 설계가 [[AD-MCQ]], [[Autorubric]], [[ToolAnchor]], [[ReasoningStopCriterion]], [[RealTimeAlignedReward]]의 최신 문헌 축과 정합됨을 강화했으며, 구조화된 CoT와 후보 노출 제어를 결합한 verifiable decisioning 우선 순환을 제시한다.
+
+## [2026-08-12] ingest | DEFT-RLVR 분석: 자율주행 CoT를 사후 합리화에서 검증 가능한 decision으로
+
+Added source. Key claims: 1) GT 미래 trajectory 조기 노출은 [[TrajectoryAnchoringBias]]와 사후 합리화(hallucination 증가)를 유발할 수 있다. 2) [[DEFT]]는 reasoning 단계와 candidate 노출 단계를 분리해 근거와 결정 경로를 분리 검증한다. 3) [[AD-MCQ]]는 후보 기반 정답 선택으로 verifiable selection 신호를 제공한다. 4) [[DEFT-RLVR]]는 [[RLVR]] + structured rubric reward로 추론-선택 정합성을 통합 정렬한다. 5) nuScenes OOD와 in-domain 성능 개선에서 성능-일반성 trade-off 완화 신호를 보였다. 6) 후보 생성 품질과 후보 집합 설계 의존성이 주요 한계로 남는다.
+
+## [2026-08-12] ingest | DEFT-RLVR: 자율주행 VLM에서 검증 가능한 추론을 위한 미래 trajectory 지연 노출
+
+Added source. Key claims: GT future trajectory를 조기에 노출하면 trajectory anchoring bias와 post-hoc rationalization 위험이 커질 수 있으며, DEFT-2단계 candidate-blind/후보-근거 검증 구조와 RLVR+구조화된 rubric 통합은 자율주행 VLA에서 verifiable reasoning 성능을 개선한다. AD-MCQ 프레임으로 후보 기반 정답 판별을 강화해 AD reasoning의 근거 정합도를 개선하고, general vision 성능까지 동시 고려한 실험 결과를 제시한다.
+
 ## [2026-07-31] ingest | LWN.net Weekly Edition for July 23, 2026
 
 Added source. Key claims: LWN 2026-07-23 tracks LLM use norms in the kernel community, GNOME save/restore, Fedora change governance, BPF tracepoint/LSM hardening, famfs, sched_ext sub-scheduler/proxy execution, PyPI artifact policy, and XZ backdoor supply-chain lessons.
@@ -1331,3 +1363,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-07] graph | Knowledge graph rebuilt
 
 2980 nodes, 10038 edges (10038 extracted, 0 inferred).
+
+## [2026-08-12] graph | Knowledge graph rebuilt
+
+3017 nodes, 10237 edges (10237 extracted, 0 inferred).

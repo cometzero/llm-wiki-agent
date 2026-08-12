@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W32–W33: 검증 가능한 AD reasoning과 저지연 World-Action planning
+- [[DEFT-RLVR]]는 미래 trajectory를 reasoning 전에 숨기고, 장면 근거 생성 뒤 [[AD-MCQ]] 후보를 선택하게 하여 trajectory anchoring bias와 사후 합리화 위험을 줄이는 VLM-for-AD 설계를 추가한다. 후보 선택은 검증 가능하지만 candidate coverage와 실제 closed-loop safety는 별도 검증이 필요하다.
+- [[SimWAM]]은 video dynamics prior를 [[FlowMatching]] 공동학습에 사용하되, 배포에는 action planner만 남긴다. NAVSIM 성능·latency 절충을 개선하는 방향이며 [[nuScenes]] zero-shot transfer를 함께 보고한다.
+- 두 작업은 VLA/AD 시스템에서 큰 reasoning/world branch를 runtime에 그대로 두기보다, **검증 가능한 action interface**와 **training-only world supervision**으로 안전성·지연을 분리해 다뤄야 한다는 공통된 설계 축을 보강한다.
+
 ## 2026-W31 Data Pyramid & WorldDiT update
 - [[DataPyramidForEmbodiedManipulation]] adds a data-centric lens for VLA/embodied systems: real-robot, UMI-style, egocentric/exocentric, simulation, and general VL data should be mixed according to [[RobotAlignment]], scalability, [[PhysicalFidelity]], diversity, and action grounding.
 - [[WorldDiT]] adds a compact world-action modeling baseline: one shared [[DiffusionTransformer]] learns continuous [[ActionChunking]] and [[FutureRGBPatchPrediction]], then uses [[InferenceTimeActionOnlyDeployment]] with receding-horizon replanning at inference.
