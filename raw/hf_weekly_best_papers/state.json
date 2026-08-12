@@ -21,7 +21,9 @@
     "2607.06957",
     "2607.15330",
     "2607.24744",
-    "2607.23909"
+    "2607.23909",
+    "2608.01755",
+    "2608.07468"
   ],
   "runs": [
     {
@@ -425,6 +427,43 @@
       "commit_hash": "53939ba1ab6b1bd9623a71a7e0ba52b9a3de3a1a",
       "notes": "Generated Korean translations, analyses, references, learning notes, downloaded available arXiv HTML figures, ingested into wiki with deterministic source coverage repair, validated no broken links, rebuilt graph with --no-infer fallback after full semantic inference timed out.",
       "limitations": "Data Pyramid Semantic Scholar references endpoint returned no reference rows, so references were selected from paper-visible dataset/model families. Full semantic graph inference timed out; graph uses extracted wikilinks only."
+    },
+    {
+      "date_kst": "2026-08-12 09:40:01 KST",
+      "week": "2026-W32/2026-W33",
+      "selected_paper_ids": [
+        "2608.01755",
+        "2608.07468"
+      ],
+      "papers": [
+        {
+          "id": "2608.01755",
+          "title": "Deferred Exposure of Future Trajectories for Verifiable Reasoning in Autonomous Driving VLMs",
+          "week": "2026-W32",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W32/deft-rlvr-verifiable-ad-vlms-2608-01755"
+        },
+        {
+          "id": "2608.07468",
+          "title": "SimWAM: A Simple World Action Model for End-to-End Autonomous Driving",
+          "week": "2026-W33",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/simwam-world-action-model-2608-07468"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W32/deft-rlvr-verifiable-ad-vlms-2608-01755/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W32/deft-rlvr-verifiable-ad-vlms-2608-01755/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W32/deft-rlvr-verifiable-ad-vlms-2608-01755/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W32/deft-rlvr-verifiable-ad-vlms-2608-01755/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/simwam-world-action-model-2608-07468/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/simwam-world-action-model-2608-07468/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/simwam-world-action-model-2608-07468/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/simwam-world-action-model-2608-07468/learning.md"
+      ],
+      "commit_hash": "42c6bcccf42913fdc47fc60ff8042ee8080cb505",
+      "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; ingested into wiki; source coverage and wiki validation passed.",
+      "limitations": "Full semantic graph inference repeatedly returned HTTP 410 and timed out; graph was rebuilt deterministically with --no-infer. Dense appendices/tables were condensed rather than fully translated."
     }
   ]
 }
