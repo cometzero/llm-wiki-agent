@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [SimWAM 학습 노트: training-only video prior와 trajectory flow matching](sources/simwam-2608-07468-learning.md) — training-only video prior와 trajectory flow matching을 정리한 SimWAM 학습 노트
+- [SimWAM 참고 레퍼런스](sources/simwam-2608-07468-references.md) — DriveWAM/DriveVA/ExploreVLA/Fast-WAM 등 SimWAM 계열 선행연구를 학습-배포 분리 관점으로 정리한 참고 문헌 맵
+- [SimWAM: video world prior를 training에만 쓰는 저지연 E2E planner](sources/simwam-2608-07468-analysis.md) — 학습 단계에서는 비디오 world prior를 유지하고 추론에서는 action-only planner로 전환해 PDMS/latency 개선을 추구하는 SimWAM 분석
+- [SimWAM: End-to-End 자율주행을 위한 단순 World-Action Model](sources/simwam-2608-07468-paper-ko.md) — 훈련-추론 분리형 WAM으로 world prior는 학습 신호만 쓰고 inference에서 action-only planner를 유지해 PDMS/latency 개선을 달성
+- [DEFT-RLVR 학습 노트: candidate-grounded AD reasoning](sources/deft-rlvr-2608-01755-learning.md) — DEFT-RLVR를 candidate-grounded AD reasoning 관점에서 정리한 학습 노트
+- [DEFT-RLVR 참고 레퍼런스](sources/deft-rlvr-2608-01755-references.md) — DEFT/AD-MCQ/autorubric/tooling/중단 기준/실시간 보상 축으로 DEFT-RLVR 관련 선행문헌을 정렬한 읽기 지도
+- [DEFT-RLVR 분석: 자율주행 CoT를 사후 합리화에서 검증 가능한 decision으로](sources/deft-rlvr-2608-01755-analysis.md) — GT trajectory 지연 노출 기반의 AD-MCQ/DEFT/DEFT-RLVR 정합으로 CoT 사후 합리화와 행동 선택 불일치 문제를 줄이는 검증 설계를 분석
+- [DEFT-RLVR: 자율주행 VLM에서 검증 가능한 추론을 위한 미래 trajectory 지연 노출](sources/deft-rlvr-2608-01755-paper-ko.md) — AD-MCQ와 DEFT-RLVR로 GT trajectory 누설 편향을 줄이고 선택 가능한 후보 기반 verifiable reasoning을 실현한 자율주행 VLM 논문
 - [LWN.net Weekly Edition for July 30, 2026](sources/lwn-weekly-edition-2026-07-30-1084315.md) — Korean technical translation: hazard pointers, swap operations, BPF/netkit, BTF, gccrs, distribution policy, security advisories, and kernel patches.
 - [Data Pyramid for Embodied Manipulation — 한국어 기술 번역](sources/data-pyramid-for-embodied-manipulation-2607-24744-paper-ko.md) — real-robot/UMI/human video/simulation/general VL data pyramid 기술 번역
 - [Data Pyramid for Embodied Manipulation — 분석](sources/data-pyramid-for-embodied-manipulation-2607-24744.md) — VLA 데이터 레시피와 action grounding 분석
@@ -285,6 +293,12 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [H-EmbodVis](entities/H-EmbodVis.md) — SimWAM 코드·가중치 공개 조직
+- [Zixuan Huang](entities/ZixuanHuang.md) — DEFT-RLVR 제1저자
+- [Zongchuang Zhao](entities/ZongchuangZhao.md) — SimWAM 제1저자
+- [DriveDreamer-Policy](entities/DriveDreamer-Policy.md) — generation/planning 통합 WAM 선행 연구
+- [Uni-World VLA](entities/Uni-WorldVLA.md) — world modeling과 AD planning을 interleave하는 VLA 선행 연구
+- [World Action Models are Zero-shot Policies](entities/WorldActionModelsAreZeroShotPolicies.md) — WAM의 zero-shot policy 관점 선행 연구
 - [ACoT-VLA](entities/ACoTVLA.md) — action chain-of-thought VLA baseline
 - [VLANeXt](entities/VLANeXt.md) — VLA training recipe baseline
 - [MMaDA-VLA](entities/MMaDAVLA.md) — diffusion VLA baseline
@@ -741,6 +755,19 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [nuScenes](concepts/nuScenes.md) — 자율주행 데이터셋·OOD/zero-shot transfer 평가 맥락
+- [ADMCQ](concepts/ADMCQ.md) — DEFT-RLVR ingest가 생성한 AD-MCQ alias/support page
+- [Autonomous Driving Reference Map](concepts/AutonomousDrivingReferenceMap.md) — SimWAM 관련 WAM/VLA 선행 연구 지도
+- [DEFRLVR](concepts/DEFRLVR.md) — DEFT-RLVR ingest alias/support page
+- [Deferred Exposure](concepts/DeferredExposure.md) — reasoning 전 future/candidate 노출을 지연하는 설계
+- [Isolated Attention Mask](concepts/IsolatedAttentionMask.md) — action token의 future-video access를 막는 SimWAM mask
+- [Real-Time Aligned Reward](concepts/RealTimeAlignedReward.md) — efficient rubric/reward alignment 맥락
+- [Reasoning Stop Criterion](concepts/ReasoningStopCriterion.md) — reasoning length/termination 관련 선행 개념
+- [SimWAM 학습-배포 분리](concepts/SimWAM 학습-배포 분리.md) — video prior training과 action-only deployment 분리
+- [Structured Chain of Thought](concepts/StructuredChainOfThought.md) — AD reasoning trace의 구조화·검증 맥락
+- [ToolAnchor](concepts/ToolAnchor.md) — counterfactual context anchoring 선행 연구
+- [Trajectory Anchoring Bias](concepts/TrajectoryAnchoringBias.md) — GT future 노출이 유발하는 AD CoT 사후 합리화 편향
+- [Very Big Video Reasoning Suite](concepts/VeryBigVideoReasoningSuite.md) — general video reasoning 평가 선행 연구
 - [Hazard Pointers](concepts/HazardPointers.md) — proposed lockless object-lifetime/reclamation technique for Linux.
 - [Swap Device Operations](concepts/SwapDeviceOperations.md) — abstraction boundary for Linux swap storage backends.
 - [BPF Type Format](concepts/BTF.md) — compact type metadata for BPF tooling and debugging.
