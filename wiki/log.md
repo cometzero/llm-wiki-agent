@@ -1,3 +1,7 @@
+## [2026-08-14] ingest | LWN.net Weekly Edition for August 6, 2026
+
+Added public Korean LWN Weekly translation and deterministic manual materialization after automatic ingest failed: the configured NVIDIA model returned HTTP 410, and the bounded Codex retry exhausted its context window. Added source coverage plus [[ProcessBuilderAPI]], [[FUSEFilesystem]], and [[NetworkNamespaces]] support pages.
+
 ## [2026-08-12] ingest | SimWAM 학습 노트: training-only video prior와 trajectory flow matching
 
 Added source. Key claims: training-time video prior can improve action representation without being part of the inference path; FlowMatching jointly trains video latent and trajectory velocity field; IsolatedAttentionMask prevents action-token leakage from future frames; action-only deployment lowers latency while preserving most of the learned prior.
@@ -1367,3 +1371,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-12] graph | Knowledge graph rebuilt
 
 3017 nodes, 10237 edges (10237 extracted, 0 inferred).
+
+## [2026-08-14] graph | Knowledge graph rebuilt
+
+3021 nodes, 10253 edges (10253 extracted, 0 inferred).
