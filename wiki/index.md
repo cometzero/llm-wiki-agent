@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for August 6, 2026](sources/lwn-weekly-edition-2026-08-06-1086134.md) — process-builder API, Fedora governance, FUSE/io_uring, BPF network namespaces, supply-chain security, and kernel patch tracking.
 - [SimWAM 학습 노트: training-only video prior와 trajectory flow matching](sources/simwam-2608-07468-learning.md) — training-only video prior와 trajectory flow matching을 정리한 SimWAM 학습 노트
 - [SimWAM 참고 레퍼런스](sources/simwam-2608-07468-references.md) — DriveWAM/DriveVA/ExploreVLA/Fast-WAM 등 SimWAM 계열 선행연구를 학습-배포 분리 관점으로 정리한 참고 문헌 맵
 - [SimWAM: video world prior를 training에만 쓰는 저지연 E2E planner](sources/simwam-2608-07468-analysis.md) — 학습 단계에서는 비디오 world prior를 유지하고 추론에서는 action-only planner로 전환해 PDMS/latency 개선을 추구하는 SimWAM 분석
@@ -755,6 +756,9 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Process Builder API](concepts/ProcessBuilderAPI.md) — configuration-first UNIX process creation proposal beyond the traditional fork/exec sequence.
+- [FUSE Filesystem](concepts/FUSEFilesystem.md) — Linux userspace filesystem interface and its async-I/O/buffer-lifetime constraints.
+- [Network Namespaces](concepts/NetworkNamespaces.md) — Linux network-stack isolation boundary for containers and BPF observation.
 - [nuScenes](concepts/nuScenes.md) — 자율주행 데이터셋·OOD/zero-shot transfer 평가 맥락
 - [ADMCQ](concepts/ADMCQ.md) — DEFT-RLVR ingest가 생성한 AD-MCQ alias/support page
 - [Autonomous Driving Reference Map](concepts/AutonomousDrivingReferenceMap.md) — SimWAM 관련 WAM/VLA 선행 연구 지도
