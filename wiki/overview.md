@@ -1,43 +1,24 @@
 # Wiki Overview
 
-## 2026-W32–W33: 검증 가능한 AD reasoning과 저지연 World-Action planning
-- [[DEFT-RLVR]]는 미래 trajectory를 reasoning 전에 숨기고, 장면 근거 생성 뒤 [[AD-MCQ]] 후보를 선택하게 하여 trajectory anchoring bias와 사후 합리화 위험을 줄이는 VLM-for-AD 설계를 추가한다. 후보 선택은 검증 가능하지만 candidate coverage와 실제 closed-loop safety는 별도 검증이 필요하다.
-- [[SimWAM]]은 video dynamics prior를 [[FlowMatching]] 공동학습에 사용하되, 배포에는 action planner만 남긴다. NAVSIM 성능·latency 절충을 개선하는 방향이며 [[nuScenes]] zero-shot transfer를 함께 보고한다.
-- 두 작업은 VLA/AD 시스템에서 큰 reasoning/world branch를 runtime에 그대로 두기보다, **검증 가능한 action interface**와 **training-only world supervision**으로 안전성·지연을 분리해 다뤄야 한다는 공통된 설계 축을 보강한다.
+## 2026-W33 Spatial Memory, City-Scale Navigation, and Calibration Trends
+- [[SpatialMemoryAgent]]는 frozen [[VisionLanguageModel|VLM]]을 유지한 채, verifier 보상 기반의 절차적 메모리(`summary + transferable lesson + TRS`)를 생성하고 재사용해 [[RoboSpatial]], [[ERQA]], [[Omni3D]], [[SAT]], [[EmbSpatial]]에서 개선을 보인다.
+- [[360CityArena]]는 photorealistic 360° video 기반 Akihabara 도시 벤치마크로 [[EnvironmentUnderstanding]], [[PathReasoning]], [[SpatialReasoning]]을 한 번에 진단해 city-scale embodied navigation의 병목을 드러낸다.
+- [[360CityArena]]의 결과는 최신 [[LMM]]들이 human 수준과 큰 격차를 보이며, 특히 map navigation과 multi-step route reasoning이 여전히 취약하다는 점을 보여 준다.
+- [[360CityArena]]는 602개의 360° video segment, 193 node, 305 edge pose graph, 175 human-authored task로 구성되어 localization, landmark search, map navigation, VLN, relational spatial reasoning, object count를 함께 측정한다.
+- [[360CityArena]]의 image-goal/language-goal 비교와 난이도 스케일링은 visual grounding과 route reasoning의 상호작용을 정량해, 실무에서 metric 설계의 우선순위를 정리한다.
+- [[SpatialMemoryAgent]]의 참고문헌 축은 세 갈래로 정리된다. [[SpatialVLM]]·[[SpatialRGPT]]·[[EmbSpatial-Bench]]는 공간 grounding을 학습된 표현과 벤치마크 관점에서 다루고, [[RAG]]·[[Mem0]]·[[MemP]]는 retrieval/memory의 기본 가정을, [[SpaceTools]]·[[S-Agent]]·[[SpatialEvo]]는 tool use와 self-evolution 대안을 보여 준다.
+- 이 방법의 핵심은 단순 의미 유사도 검색이 아니라 실제 전이 성과를 반영한 신뢰도 보정이다.
+- 배포 모드는 read-only로 구성되어 `training-free` 성격을 유지한다. 따라서 성능 향상은 재학습이 아니라 메모리 정책(필터링·점수화·쓰기 정책) 개선으로도 가능하다.
+- 반대로 verifier 오판, reflection hallucination, reward credit assignment 불분해성, OOD에서의 embedding 한계는 운영 리스크이며, top-k 제어·trusted write·action safety shield가 필요하다.
 
-## 2026-W31 Data Pyramid & WorldDiT update
-- [[DataPyramidForEmbodiedManipulation]] adds a data-centric lens for VLA/embodied systems: real-robot, UMI-style, egocentric/exocentric, simulation, and general VL data should be mixed according to [[RobotAlignment]], scalability, [[PhysicalFidelity]], diversity, and action grounding.
-- [[WorldDiT]] adds a compact world-action modeling baseline: one shared [[DiffusionTransformer]] learns continuous [[ActionChunking]] and [[FutureRGBPatchPrediction]], then uses [[InferenceTimeActionOnlyDeployment]] with receding-horizon replanning at inference.
-- Together, the W31 papers strengthen the autonomous-driving VLA study thread around data recipe design and deployment-efficient world supervision: future visual/BEV/occupancy prediction can train richer state representations while the runtime path stays action/trajectory focused.
-- Caveat: WorldDiT reports LIBERO simulation results with staged checkpoint-selection caveats, so its parameter-success point should be treated as a useful baseline rather than a fully unbiased deployment estimate.
+## 2026-W33 Urban Navigation Reference Synthesis
+- [[360CityArena]]는 [[SidewalkBench]], [[TOUCHDOWN]], [[StreetLearn]], [[Vid2Sim]], [[EmbodiedCity]], [[CityNav]], [[TagMap|Tag Map]], [[RT-2]], [[CARLA]]와의 비교 축에서 `city-scale photorealistic trajectory traversal`의 위치를 정한다.
+- 이 레퍼런스는 realism(예: [[Vid2Sim]], [[Realistic Virtual World|Takenawa et al. (2025)]], [[EmbodiedCity]]), outdoor VLN lineage(예: [[TOUCHDOWN]], [[StreetLearn]]), map-text grounding(예: [[TagMap|Tag Map]]), VLA/AD action grounding(예: [[RT-2]])로 축을 분리해 [[360CityArena]]의 개선 지점을 좁힌다.
+- 결과적으로 [[360CityArena]]는 AD 전체를 대체하는 도구가 아니라, 특히 [[AutonomousDrivingVLA]]에서 perception-grounding과 long-horizon route reasoning을 검증하는 stress test로 작동한다.
 
-## 2026-W30 Robotics Scale & Transfer Update
-- [[Xiaomi-Robotics-1]]은 100K+ 시간대 real-world 조작 trajectory와 [[StateTransitionCaptioning]] 기반 supervision으로 데이터 스케일·모델 스케일·cross-embodiment 정합이 실제 성능으로 이전되는 지점을 보인다.
-- 이 작업은 [[Qwen3-VL]] 백본 + action chunk generator 설계에서 baseline 대비 실행성능과 시뮬레이션 성능(예: [[RoboCasa365]]/[[RoboDojo]])을 함께 다루며, VLA 파운데이션의 "데이터 규모-표현 품질-배치 정합" 축을 확장한다.
-- 이번 레퍼런스 워크플로 정리는 [[UMI]], [[pi0]], [[pi0.5]], [[RT-1]], [[DROID]] 및 공개 데이터([[Bridge V2]])의 계보를 정리해 Xiaomi 라인을 VLA scaling 및 benchmark 축으로 재구성한다.
-- 이번 학습 노트는 state-transition 언어 감독이 task label보다 높은 grounding 밀도를 제공하며, AD로의 전이에서는 "장면/경로 전이 상태 + traffic-rule 제약" 설계로 바꿔 읽을 수 있음을 제시한다.
-
-## Xiaomi-Robotics-1 레퍼런스 워크플로 정리
-- 선행 정렬 우선순위는 `UMI → π0/π0.5/RT-1 → 공개 데이터(DROID, Bridge V2) → 시뮬레이션 평가(RoboCasa365, RoboDojo)`로 수렴한다.
-- 이 분해는 data scaling(수집), model scaling(사전 학습/액션 생성), post-training 정합(cross-embodiment/benchmark)로 이어져, 기존 [[FlowERD]], [[ABotN1]], [[Embodied-cpp]] 계열을 연결하는 로보틱스 실험 경로를 강화한다.
-- 특히 Xiaomi는 action-generation 표현력뿐 아니라 [[StateTransitionCaptioning]] 기반 grounding으로 action chunk 해석 정합도를 높였다는 점에서 기존 VLA baseline과 차별화된다.
-
-## 2026-W29 Hugging Face VLA/navigation and traffic simulation update
-- [[ABotN1]] extends the navigation/VLA corpus toward a slow-fast interface: a slow VLM reasoner produces explicit reasoning plus [[PixelGoal]] anchors, and a fast action expert turns them into continuous [[Waypoint]] outputs for point/object/POI/instruction/person-following tasks.
-- [[FlowERD]] extends the autonomous-driving simulation corpus: [[FlowMatching]] is combined with agent-type kinematics and [[EntropyRegularizedDistillation]] to improve the realism-diversity Pareto trade-off in closed-loop traffic rollout.
-- Together these papers shift the weekly thread from only VLA policy generation toward the systems around it: action-grounding interfaces, closed-loop evaluation, simulator diversity, and deployment latency/safety constraints.
-
-## 2026-W28 Hugging Face VLA deployment/update
-- [[Embodied-cpp]] extends the VLA/WAM corpus toward deployment infrastructure: multi-rate execution, latency-first batch-1 inference, and five-layer C++ runtime abstraction for heterogeneous robots and edge devices.
-- [[VLACorrector]] extends the action-chunking corpus toward adaptive closed-loop execution: [[LatentSpaceVisionMonitor]] detects stale chunks and [[OnlineGradientGuidance]] guides recovery replans.
-- Together these papers emphasize that VLA progress depends not only on action generation quality, but also on runtime scheduling, monitoring, invalidation, and recovery under real closed-loop constraints.
-
-## LWN Weekly Linux/Open Source Tracking
-- [[lwn-weekly-edition-2026-08-06-1086134]]: August 6 LWN translation adds a [[ProcessBuilderAPI]] discussion around `fork()/exec()` configuration boundaries, [[Fedora]] conflict-of-interest governance, [[FUSEFilesystem]] buffer and [[io_uring]] integration, and [[BPF]] observation across [[NetworkNamespaces]]. Its security briefs connect AI-assisted GitHub compromise, questionable CVE claims, and npm malware to [[SupplyChainSecurity]] maintenance practice.
-- [[lwn-weekly-edition-2026-07-30-1084315]]: July 30 LWN translation extends the Linux/Open Source corpus with [[HazardPointers]] as a possible [[RCU]] lifetime-management alternative, [[SwapDeviceOperations]], netkit/BPF virtual networking, inline [[BTF]] debug metadata, [[Gccrs]] Linux-build progress, and [[GRUB]] minimization under [[Fedora]] policy. [[Debian]]'s DFSG-team report and the advisory/patch inventories connect these design changes to distribution governance and operational patching.
-- [[lwn-weekly-edition-2026-07-23-1083123]]: LWN.net Weekly Edition 2026-07-23 번역은 [[LLMAssistedKernelDevelopment]]의 community/process 논쟁, [[GNOMESessionRestore]], [[FedoraChangeProcess]], [[BPFTracepoints]], [[BPFLsmSecurity]], [[Famfs]], [[SchedExt]], [[PyPISupplyChainSecurity]], [[XZBackdoor]]를 Linux/open-source 추적 축에 추가한다.
-- [[lwn-weekly-edition-2026-07-16-1081915]]: LWN.net Weekly Edition 2026-07-16 번역은 AI scraper/residential proxy를 통한 공개 웹 부담, [[io_uring]] lockless MPSC FIFO, [[BPFExploitMitigation]], [[BPFDirectPacketSending]], [[Kitty]], [[QBECompilerBackend]]를 Linux/open-source 추적 축에 추가한다.
-- The July 2, 2026 LWN translation adds [[DebianProtestware]], [[Git255]], [[RhombusMetaprogramming]], [[KernelHardening]], [[KernelWriteback]], [[BPFLocalStorage]], [[SecureBootCertificateExpiration]], and [[ObjectStorageAlternatives]] to the recurring Linux/open-source operations corpus.
-- Across the May–July LWN sources, the wiki now tracks a continuous thread from package and publishing trust ([[SupplyChainSecurity]], [[AURSupplyChainAttack]], [[TrustedPublishing]]) to kernel release flow ([[LinuxKernel72]], [[BPF]], [[KernelHardening]]) and operational infrastructure ([[OSPM2026]], [[RMRBRMR]], [[ObjectStorageAlternatives]]).
-
-- [[lwn-weekly-edition-2026-07-09-1080835]]: LWN.net Weekly Edition 2026-07-09 번역은 kernel cryptography 현대화, iomap, negative dentry 제한, RCU/lockless allocation, LLM-assisted MM patch review를 Linux 커널 지식 축에 추가한다.
+## 2026-W33 360CityArena learning-note synthesis
+- [[360CityArena]] 학습 노트는 `observation-memory-action` 루프를 실무적으로 분해해 [[ObservationToActionLoop]] 설계의 최소 패턴을 제시한다.
+- map prior 사용은 지도 정확도/좌표 변환/랜드마크 대응이 정합될 때만 유효하며, 정합 실패 시 오히려 오차를 키운다.
+- image-goal 성능 이점은 고정되지 않고, task visibility 및 grounding 정합이 먼저 확보되어야만 안정적으로 유지된다.
+- 배포 관점에서는 `place recognition confidence`, `heading uncertainty`, `stagnation/reroute detector`, `route-progress monitor`를 최소 탑재해야 긴 경로에서의 compounding error를 제어할 수 있다.
+- 본 소스는 closed-loop safety score로 오해되는 한계를 명시해, [[360CityArena]]를 physical simulator와 구분해 사용하는 방향을 제안한다.

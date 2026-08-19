@@ -1,3 +1,31 @@
+## [2026-08-19] ingest | 360CityArena 학습 노트: 도시 embodied navigation의 observation-to-action loop
+
+Added source. Key claims: `360CityArena`는 360° city trajectory 환경에서 partial-observation loop를 점검하는 벤치마크로, map navigation 병목, visual grounding 불안정, closed-loop spatial memory 중요성을 강조한다. New synthesis entry added to wiki overview on open/closed loop distinctions, route reasoning failure modes, and safe-scope limits versus full AD safety simulators.
+
+## [2026-08-19] ingest | 360CityArena 참고 문헌과 urban navigation 연결 고리
+
+Added source. Key claims: 1) [[360CityArena]]는 360° trajectory 기반 도시 내비게이션 생태계의 중심 참조군으로, [[SidewalkBench]], [[StreetLearn]], [[TOUCHDOWN]], [[Vid2Sim]], [[EmbodiedCity]], [[Tag Map]], [[CityNav]], [[RT-2]], [[CARLA]]와의 비교 축으로 읽을 수 있다. 2) reference 맵은 map/path reasoning 병목을 조정하기 위해 map grounding/urban realism/simulation realism/LLM planning 계열을 분리 정렬한다. 3) 기존 도시 뷰 기반 벤치마크 대비 dynamic city observation 기반 trajectory 평가의 의미를 명시하며 [[AutonomousDrivingVLA]]와 [[EmbodiedNavigation]]의 긴 경로·공간 추론 stress-test 지점으로의 활용 가치를 강화한다.
+
+## [2026-08-19] ingest | 360CityArena 분석: photorealistic urban embodied navigation의 진단
+
+Added source. Key claims: 360° video pose-graph benchmark over Akihabara with 175 tasks; evaluates EnvironmentUnderstanding, PathReasoning, and SpatialReasoning in a closed-loop embodied navigation loop; current LMMs remain far below human performance, especially on map navigation and multi-step path reasoning.
+
+## [2026-08-19] ingest | 360CityArena: Realistic Virtual Urban Navigation Benchmark for Embodied Agents
+
+Added source. Key claims: photorealistic 360° video pose-graph benchmark over Akihabara; 175 tasks across environment understanding, path reasoning, and spatial reasoning; large gap remains between human performance and best LMMs, especially on map navigation and city-scale route reasoning.
+
+## [2026-08-19] ingest | Spatial Memory Agent 참고 레퍼런스
+
+Added source. Key claims: spatial grounding baselines ([[SpatialVLM]], [[SpatialRGPT]], [[EmbSpatial-Bench]]), memory baselines ([[RAG]], [[Mem0]], [[MemP]]), and tool/self-evolution alternatives ([[SpaceTools]], [[S-Agent]], [[SpatialEvo]]) clarify SMA's training-free, verifier-guided procedural memory design.
+
+## [2026-08-19] ingest | Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기
+
+Added source. Key claims: frozen [[VisionLanguageModel|VLM]]은 재학습 없이도 [[SpatialMemoryAgent]] 메모리 카드(summary + transferable lesson + TRS)로 성능을 보정할 수 있으며, [[TransferReliabilityScore|TRS]] 기반의 shrinkage 업데이트가 단일 에피소드 편향을 완화한다. one-pass writing + read-only deployment로 메모리 복제/오염을 낮추는 구성과, semantic retrieval + TRS 결합 ranking이 단순 RAG보다 안전한 spatial transfer 선택에 유리하다는 점을 반영해 wiki 개요와 개념 페이지를 정리했다.
+
+## [2026-08-19] ingest | Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기
+
+Added source. Key claims: frozen VLM을 재학습하지 않고 verifier-guided procedure memory와 TRS로 공간 추론을 보정하는 training-free SMA를 정리했고, retrieval 시 semantic similarity와 reliability를 함께 사용한다.
+
 ## [2026-08-14] ingest | LWN.net Weekly Edition for August 6, 2026
 
 Added public Korean LWN Weekly translation and deterministic manual materialization after automatic ingest failed: the configured NVIDIA model returned HTTP 410, and the bounded Codex retry exhausted its context window. Added source coverage plus [[ProcessBuilderAPI]], [[FUSEFilesystem]], and [[NetworkNamespaces]] support pages.
@@ -1375,3 +1403,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-14] graph | Knowledge graph rebuilt
 
 3021 nodes, 10253 edges (10253 extracted, 0 inferred).
+
+## [2026-08-19] graph | Knowledge graph rebuilt
+
+3078 nodes, 10369 edges (10369 extracted, 0 inferred).

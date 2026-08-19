@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Spatial Memory Agent 학습 노트](sources/spatial-memory-agent-2608-12743-learning.md) — verifier-grounded procedure retrieval과 TRS를 설명하는 한국어 학습 자료
+- [360CityArena 학습 노트: 도시 embodied navigation의 observation-to-action loop](sources/360cityarena-2608-08814-learning.md) — [[360CityArena]]를 observation-memory-action loop 관점에서 해석하고 map navigation 병목 및 open-loop/closed-loop 차이를 정리한 학습 자료
+- [360CityArena 참고 문헌과 urban navigation 연결 고리](sources/360cityarena-2608-08814-references.md) — [[360CityArena]]를 city-scale visual navigation 벤치마크 계보(SidewalkBench, StreetLearn, TOUCHDOWN, Tag Map, Vid2Sim, EmbodiedCity, RT-2, CARLA)와 연결해 map/navigation 병목 맥락을 정리한 참고 문헌 맵
+- [360CityArena 분석: photorealistic urban embodied navigation의 진단](sources/360cityarena-2608-08814-analysis.md) — 360° video 도시 벤치마크가 도시 규모 perception·path reasoning·spatial grounding 병목을 드러내는 분석
+- [360CityArena: Realistic Virtual Urban Navigation Benchmark for Embodied Agents](sources/360cityarena-embodied-agent-urban-navigation-benchmark.md) — photorealistic 360° video로 구성한 Akihabara 도시 내비게이션 benchmark
+- [Spatial Memory Agent 참고 레퍼런스](sources/spatial-memory-agent-2608-12743-references.md) — SMA의 공간 grounding, memory, tool-use, self-evolution 계보를 정리한 참고문헌 맵
+- [Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기](sources/spatial-memory-agent-2608-12743-analysis.md) — frozen [[VisionLanguageModel|VLM]]의 검증 가능한 절차 메모리(요약+lesson+TRS)로 [[RoboSpatial]]/[[ERQA]] 성능을 개선하는 [[SpatialMemoryAgent]] 방법
+- [Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기](sources/spatial-memory-agent-2608-12743-paper-ko.md) — frozen VLM의 공간 추론을 verifier-guided procedural memory와 TRS로 보정하는 training-free SMA 제안
 - [LWN.net Weekly Edition for August 6, 2026](sources/lwn-weekly-edition-2026-08-06-1086134.md) — process-builder API, Fedora governance, FUSE/io_uring, BPF network namespaces, supply-chain security, and kernel patch tracking.
 - [SimWAM 학습 노트: training-only video prior와 trajectory flow matching](sources/simwam-2608-07468-learning.md) — training-only video prior와 trajectory flow matching을 정리한 SimWAM 학습 노트
 - [SimWAM 참고 레퍼런스](sources/simwam-2608-07468-references.md) — DriveWAM/DriveVA/ExploreVLA/Fast-WAM 등 SimWAM 계열 선행연구를 학습-배포 분리 관점으로 정리한 참고 문헌 맵
@@ -294,6 +302,9 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [CityNav](entities/CityNav.md) — aerial 관점 real-world navigation 비교 축
+- [SpatialVLM](entities/SpatialVLM.md) — 공간 추론을 위한 VLM post-training 연구 축
+- [TagMap](entities/TagMap.md) — LLM spatial reasoning을 위한 text map 표현
 - [H-EmbodVis](entities/H-EmbodVis.md) — SimWAM 코드·가중치 공개 조직
 - [Zixuan Huang](entities/ZixuanHuang.md) — DEFT-RLVR 제1저자
 - [Zongchuang Zhao](entities/ZongchuangZhao.md) — SimWAM 제1저자
@@ -756,6 +767,46 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [EmbSpatial](concepts/EmbSpatial.md) — embodied language-grounded spatial-relation benchmark
+- [Embodied Agent](concepts/EmbodiedAgent.md) — observation-action loop를 수행하는 환경 상호작용 agent
+- [Embodied Navigation](concepts/EmbodiedNavigation.md) — perception·memory·planning·action을 결합한 navigation 문제
+- [Environment Understanding](concepts/EnvironmentUnderstanding.md) — 장소·landmark·scene context 인식 능력
+- [LMM](concepts/LMM.md) — large multimodal model
+- [Landmark](concepts/Landmark.md) — visual/language navigation의 위치·목표 기준점
+- [Localization](concepts/Localization.md) — 현재 위치와 heading 추정
+- [Map navigation](concepts/Map navigation.md) — map-to-view alignment 기반 route planning
+- [Map and Route Reasoning](concepts/MapAndRouteReasoning.md) — 도시 map, route, visual grounding의 연결
+- [Mem0](concepts/Mem0.md) — scalable long-term agent memory 계열
+- [MemP](concepts/MemP.md) — agent procedural memory baseline
+- [Observation-to-Action Loop](concepts/ObservationToActionLoop.md) — partial observation에서 반복 decision하는 embodied loop
+- [Omni3D](concepts/Omni3D.md) — 3D spatial relation benchmark
+- [POMDP](concepts/POMDP.md) — 부분 관측 sequential decision framework
+- [Path Reasoning](concepts/PathReasoning.md) — route planning과 branch decision 능력
+- [Photorealism](concepts/Photorealism.md) — simulator visual realism 특성
+- [Pose Graph](concepts/PoseGraph.md) — 도시 viewpoint와 transition을 표현하는 graph
+- [Realistic Virtual World](concepts/Realistic Virtual World.md) — 360° video 기반 photorealistic city environment
+- [Reflection](concepts/Reflection.md) — verifier feedback에서 procedure를 추출하는 단계
+- [Reflection Memory](concepts/ReflectionMemory.md) — 다음 action을 위한 observation/hypothesis memory
+- [RoboSpatial](concepts/RoboSpatial.md) — robot-oriented spatial understanding benchmark
+- [S-Agent](concepts/S-Agent.md) — external spatial tool-use agent 대안
+- [SAT](concepts/SAT.md) — temporal·egocentric spatial aptitude benchmark
+- [SITE-image](concepts/SITE-image.md) — image-only spatial reasoning benchmark split
+- [SpaceTools](concepts/SpaceTools.md) — tool-augmented spatial reasoning framework
+- [SpatialEvo](concepts/SpatialEvo.md) — training-based spatial self-evolution baseline
+- [SpatialMemoryAgent](concepts/SpatialMemoryAgent.md) — verifier-guided procedural-memory framework
+- [SpatialRGPT](concepts/SpatialRGPT.md) — grounded spatial reasoning VLM
+- [Spatial Reasoning](concepts/SpatialReasoning.md) — relation, distance, topology, viewpoint 추론
+- [SpatialVLM](concepts/SpatialVLM.md) — spatial VLM representation-learning concept
+- [StreetLearn](concepts/StreetLearn.md) — street-view urban navigation benchmark lineage
+- [TOUCHDOWN](concepts/TOUCHDOWN.md) — outdoor vision-language navigation benchmark
+- [Trajectory-Bound Benchmark](concepts/TrajectoryBoundBenchmark.md) — fixed capture trajectory에 따른 navigation evaluation
+- [Transfer Reliability Score](concepts/TransferReliabilityScore.md) — retrieved procedure의 downstream utility 보정 score
+- [Urban Navigation References](concepts/UrbanNavigationReferences.md) — realism·VLN·map-grounding reference map
+- [Urban Simulated World](concepts/UrbanSimulatedWorld.md) — 도시 navigation을 위한 simulation environment 표현
+- [Verifier](concepts/Verifier.md) — prediction에 reward/pass-fail을 부여하는 evaluator
+- [ViewSpatial](concepts/ViewSpatial.md) — multi-view spatial localization benchmark
+- [Vision-Language Navigation (VLN)](concepts/Vision-Language Navigation (VLN).md) — language instruction을 visual route action으로 grounding하는 task
+- [Visual Navigation](concepts/Visual Navigation.md) — camera observation 기반 embodied navigation
 - [Process Builder API](concepts/ProcessBuilderAPI.md) — configuration-first UNIX process creation proposal beyond the traditional fork/exec sequence.
 - [FUSE Filesystem](concepts/FUSEFilesystem.md) — Linux userspace filesystem interface and its async-I/O/buffer-lifetime constraints.
 - [Network Namespaces](concepts/NetworkNamespaces.md) — Linux network-stack isolation boundary for containers and BPF observation.
