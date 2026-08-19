@@ -23,7 +23,9 @@
     "2607.24744",
     "2607.23909",
     "2608.01755",
-    "2608.07468"
+    "2608.07468",
+    "2608.12743",
+    "2608.08814"
   ],
   "runs": [
     {
@@ -464,6 +466,43 @@
       "commit_hash": "42c6bcccf42913fdc47fc60ff8042ee8080cb505",
       "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; ingested into wiki; source coverage and wiki validation passed.",
       "limitations": "Full semantic graph inference repeatedly returned HTTP 410 and timed out; graph was rebuilt deterministically with --no-infer. Dense appendices/tables were condensed rather than fully translated."
+    },
+    {
+      "date_kst": "2026-08-19 09:40:35 KST",
+      "week": "2026-W33",
+      "selected_paper_ids": [
+        "2608.12743",
+        "2608.08814"
+      ],
+      "papers": [
+        {
+          "id": "2608.12743",
+          "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+          "week": "2026-W33",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/spatial-memory-agent-2608-12743"
+        },
+        {
+          "id": "2608.08814",
+          "title": "360CityArena: A Realistic Virtual Urban Navigation Benchmark for Embodied Agents",
+          "week": "2026-W33",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/360cityarena-urban-navigation-2608-08814"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/spatial-memory-agent-2608-12743/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/spatial-memory-agent-2608-12743/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/spatial-memory-agent-2608-12743/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/spatial-memory-agent-2608-12743/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/360cityarena-urban-navigation-2608-08814/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/360cityarena-urban-navigation-2608-08814/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/360cityarena-urban-navigation-2608-08814/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W33/360cityarena-urban-navigation-2608-08814/learning.md"
+      ],
+      "commit_hash": "95104092487969c87e2dfd7a0bd0933112a8a7a7",
+      "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; ingested with source coverage verification; validation passed with no broken wikilinks.",
+      "limitations": "Spatial Memory Agent learning.md source page was deterministically materialized after one Codex ingest response was malformed. Semantic graph inference returned HTTP 410 and was rebuilt from extracted wikilinks with --no-infer. Dense appendices/tables were condensed rather than fully translated."
     }
   ]
 }
