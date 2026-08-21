@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-08-13 LWN Weekly: Programmable Execution, Isolation, and Failure-Path Engineering
+- 공개 한국어 번역은 BPF 기반 `binfmt_misc` 실행 디스패치가 재배치 가능한 프로그램과 컨테이너의 로더 선택을 유연하게 만드는 한편, setuid·mount namespace·리소스 제한을 신뢰 경계로 유지해야 함을 정리한다.
+- KVM planes와 BPF 형식 검증 기사는 정적 안전성, confidential-computing 격리, 런타임 watchdog 사이의 역할 분리를 보여 준다. 운영 환경에서는 메모리 안전성뿐 아니라 지연·패킷 손실·권한 상승 방지가 검증 대상이다.
+- CrossPoint와 block-layer 오류 주입은 제약된 장치에서의 resource-budget 설계와 스토리지의 failure-path 테스트가 Linux 생태계에서 같은 운영 원칙(명시적 범위와 복구 가능성)으로 연결됨을 보여 준다.
+- 비밀번호 만료 정책과 security advisory 목록은 주기적 일괄 교체보다 MFA·침해 대응·배포판별 신속한 패치 관리로 이동하는 보안 운영 신호를 보존한다.
+
 ## 2026-W33 Spatial Memory, City-Scale Navigation, and Calibration Trends
 - [[SpatialMemoryAgent]]는 frozen [[VisionLanguageModel|VLM]]을 유지한 채, verifier 보상 기반의 절차적 메모리(`summary + transferable lesson + TRS`)를 생성하고 재사용해 [[RoboSpatial]], [[ERQA]], [[Omni3D]], [[SAT]], [[EmbSpatial]]에서 개선을 보인다.
 - [[360CityArena]]는 photorealistic 360° video 기반 Akihabara 도시 벤치마크로 [[EnvironmentUnderstanding]], [[PathReasoning]], [[SpatialReasoning]]을 한 번에 진단해 city-scale embodied navigation의 병목을 드러낸다.

@@ -1,3 +1,7 @@
+## [2026-08-21] ingest | LWN.net Weekly Edition for August 13, 2026
+
+Added public Korean LWN Weekly translation and deterministic manual source materialization after the bounded Codex ingest exhausted its context window. Recorded the full nested raw path and SHA-256; navigation and overview now cover BPF/binfmt_misc, CrossPoint, KVM planes, BPF verification, password policy, and block-I/O fault injection.
+
 ## [2026-08-19] ingest | 360CityArena 학습 노트: 도시 embodied navigation의 observation-to-action loop
 
 Added source. Key claims: `360CityArena`는 360° city trajectory 환경에서 partial-observation loop를 점검하는 벤치마크로, map navigation 병목, visual grounding 불안정, closed-loop spatial memory 중요성을 강조한다. New synthesis entry added to wiki overview on open/closed loop distinctions, route reasoning failure modes, and safe-scope limits versus full AD safety simulators.
@@ -1407,3 +1411,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-19] graph | Knowledge graph rebuilt
 
 3078 nodes, 10369 edges (10369 extracted, 0 inferred).
+
+## [2026-08-21] graph | Knowledge graph rebuilt
+
+3079 nodes, 10369 edges (10369 extracted, 0 inferred).
