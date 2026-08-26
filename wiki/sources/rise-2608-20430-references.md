@@ -4,7 +4,7 @@ type: source
 tags: [autonomous-driving, world-model, references]
 date: 2026-08-26
 source_file: raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/references.md
-source_hash: 25a4cf4199061d7c
+source_hash: 5f3ce000b7b171ea
 ---
 
 ## Summary

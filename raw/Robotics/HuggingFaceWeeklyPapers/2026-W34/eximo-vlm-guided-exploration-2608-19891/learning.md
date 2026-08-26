@@ -86,16 +86,16 @@ $$\mathbf a_t=\mathbf a^{base}_t+\Delta\mathbf a^{RL}_t$$
 
 ## 공부 질문과 답
 
-**Q1. 왜 VLM을 deployment에서 계속 쓰지 않고 SFT하는가?**  
+**Q1. 왜 VLM을 deployment에서 계속 쓰지 않고 SFT하는가?**
 A. VLM orchestration은 high-quality exploration teacher지만 call latency, cost, reliability 문제가 있다. SFT는 그 trajectory prior를 VLA policy에 압축해 standalone action을 가능하게 한다.
 
-**Q2. VLM instruction이 correct하면 task가 반드시 성공하는가?**  
+**Q2. VLM instruction이 correct하면 task가 반드시 성공하는가?**
 A. 아니다. object grounding, grasp/geometry, control noise, scene change 때문에 VLA execution과 feedback replan이 필요하다.
 
-**Q3. EXIMO는 autonomous driving VLA인가?**  
+**Q3. EXIMO는 autonomous driving VLA인가?**
 A. 아니며 ALOHA manipulation 실험이다. 하지만 language route/rule planner와 trajectory/control executor를 나누고 successful closed-loop behavior를 distill한다는 transfer lesson은 driving에 유효하다.
 
-**Q4. residual RL이 왜 마지막인가?**  
+**Q4. residual RL이 왜 마지막인가?**
 A. VLM-orchestrated SFT가 initial success를 높여 RL이 long-horizon random exploration에서 시작하지 않게 한다. 이는 sample efficiency를 높이지만 online distribution shift는 계속 monitor해야 한다.
 
 ## reading roadmap

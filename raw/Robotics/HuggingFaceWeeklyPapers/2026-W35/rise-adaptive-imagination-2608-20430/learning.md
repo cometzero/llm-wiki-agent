@@ -86,16 +86,16 @@ $$d_h=\mathrm{Roll}\iff \widehat B_h-\lambda c_h>0.$$
 
 ## 공부 질문과 답
 
-**Q1. 왜 rollout depth를 scene 시작 시 한 번만 정하지 않는가?**  
+**Q1. 왜 rollout depth를 scene 시작 시 한 번만 정하지 않는가?**
 A. 첫 predicted latent가 interaction ambiguity를 해소하거나 새 위험을 드러낼 수 있다. gain은 prefix에 따라 변하므로 sequential stopping이 더 표현력이 있다.
 
-**Q2. 높은 video-prediction fidelity가 곧 좋은 planner인가?**  
+**Q2. 높은 video-prediction fidelity가 곧 좋은 planner인가?**
 A. 아니다. visually plausible future라도 candidate trajectory의 안전/진행 순위를 바꾸지 못하면 additional compute의 utility는 작다. RISE는 planning gain을 직접 추정한다.
 
-**Q3. 이 논문은 VLA인가?**  
+**Q3. 이 논문은 VLA인가?**
 A. 직접 language input/action을 다루지는 않는다. latent-based VA/WAM이지만, driving VLA가 costly world imagination을 사용할 때 action-grounding backend로 결합될 수 있다.
 
-**Q4. closed-loop score가 왜 필요한가?**  
+**Q4. closed-loop score가 왜 필요한가?**
 A. open-loop L2는 logged future와의 오차일 뿐, agent가 action을 내고 environment가 반응할 때의 collision, route progress, compliance를 완전히 반영하지 않는다.
 
 ## 짧은 reading roadmap

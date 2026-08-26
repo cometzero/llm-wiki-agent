@@ -4,7 +4,7 @@ type: source
 tags: [autonomous-driving, world-action-model, learning]
 date: 2026-08-26
 source_file: raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/learning.md
-source_hash: ec691c5933f99c17
+source_hash: c5c1cc9a44eebfc8
 ---
 
 ## Summary

@@ -4,7 +4,7 @@ type: source
 tags: [vision-language-action, robotics, references]
 date: 2026-08-26
 source_file: raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/references.md
-source_hash: 7092d2ff1a0cba35
+source_hash: 2d5e3e1637da67d8
 ---
 
 ## Summary
