@@ -25,7 +25,9 @@
     "2608.01755",
     "2608.07468",
     "2608.12743",
-    "2608.08814"
+    "2608.08814",
+    "2608.20430",
+    "2608.19891"
   ],
   "runs": [
     {
@@ -503,6 +505,43 @@
       "commit_hash": "95104092487969c87e2dfd7a0bd0933112a8a7a7",
       "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; ingested with source coverage verification; validation passed with no broken wikilinks.",
       "limitations": "Spatial Memory Agent learning.md source page was deterministically materialized after one Codex ingest response was malformed. Semantic graph inference returned HTTP 410 and was rebuilt from extracted wikilinks with --no-infer. Dense appendices/tables were condensed rather than fully translated."
+    },
+    {
+      "date_kst": "2026-08-26 09:40:11 KST",
+      "week": "2026-W35/2026-W34",
+      "selected_paper_ids": [
+        "2608.20430",
+        "2608.19891"
+      ],
+      "papers": [
+        {
+          "id": "2608.20430",
+          "title": "RISE: Adaptive Imagination for World Action Models",
+          "week": "2026-W35",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430"
+        },
+        {
+          "id": "2608.19891",
+          "title": "EXIMO: VLM Guided Exploration of VLA Policies",
+          "week": "2026-W34",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W35/rise-adaptive-imagination-2608-20430/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/learning.md"
+      ],
+      "commit_hash": "78adbbb65c11bda3ded675b7eb08e530d845e824",
+      "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; manually materialized deterministic wiki source pages after Codex ingest returned malformed JSON; validation passed with no broken wikilinks.",
+      "limitations": "Semantic graph inference repeatedly returned HTTP 410 and timed out; graph was rebuilt from extracted wikilinks with --no-infer. Dense appendices/tables were condensed rather than fully translated."
     }
   ]
 }
