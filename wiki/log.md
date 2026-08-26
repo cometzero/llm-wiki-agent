@@ -1,3 +1,7 @@
+## [2026-08-26] ingest | RISE + EXIMO Hugging Face Weekly papers
+
+Manually materialized eight source pages after the bounded Codex ingest returned malformed JSON before any wiki write. Added full nested `source_file` paths and stable SHA-256 prefixes for RISE (adaptive imagination for autonomous-driving WAM) and EXIMO (VLM-guided VLA exploration, distillation, and residual RL); updated navigation and overview.
+
 ## [2026-08-21] ingest | LWN.net Weekly Edition for August 13, 2026
 
 Added public Korean LWN Weekly translation and deterministic manual source materialization after the bounded Codex ingest exhausted its context window. Recorded the full nested raw path and SHA-256; navigation and overview now cover BPF/binfmt_misc, CrossPoint, KVM planes, BPF verification, password policy, and block-I/O fault injection.
@@ -1415,3 +1419,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-21] graph | Knowledge graph rebuilt
 
 3079 nodes, 10369 edges (10369 extracted, 0 inferred).
+
+## [2026-08-26] graph | Knowledge graph rebuilt
+
+3087 nodes, 10369 edges (10369 extracted, 0 inferred).
