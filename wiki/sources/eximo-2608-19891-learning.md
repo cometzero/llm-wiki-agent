@@ -4,7 +4,7 @@ type: source
 tags: [vision-language-action, robotics, learning, reinforcement-learning]
 date: 2026-08-26
 source_file: raw/Robotics/HuggingFaceWeeklyPapers/2026-W34/eximo-vlm-guided-exploration-2608-19891/learning.md
-source_hash: 8fbbf7cd95880646
+source_hash: df5a6460410c9a2e
 ---
 
 ## Summary
