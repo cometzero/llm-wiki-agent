@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [RISE: World Action Model을 위한 적응형 imagination](sources/rise-2608-20430-paper-ko.md) — CounterDrive risk supervision과 selective rollout으로 WAM의 planning-quality/latency trade-off를 제어하는 한국어 기술 번역
+- [RISE 분석: 자율주행 WAM의 selective rollout](sources/rise-2608-20430-analysis.md) — adaptive imagination의 I/O, numerical trajectory grounding, open/closed-loop evaluation 및 deployment risk 분석
+- [RISE 참고 문헌: driving world model과 adaptive planning](sources/rise-2608-20430-references.md) — driving world model, benchmark, counterfactual safety supervision의 읽기 지도
+- [RISE 학습 노트: selective imagination과 자율주행 WAM](sources/rise-2608-20430-learning.md) — latent rollout, gain-cost gate, diffusion planning을 단계별로 설명하는 학습 자료
+- [EXIMO: VLM 안내 탐색으로 VLA policy를 미세조정하기](sources/eximo-2608-19891-paper-ko.md) — VLM orchestration, VLA distillation, residual RL을 결합한 로봇 VLA 기술 번역
+- [EXIMO 분석: VLM planner와 VLA executor의 3단계 적응](sources/eximo-2608-19891-analysis.md) — explicit action guidance, closed-loop action grounding, deployment safety 분석
+- [EXIMO 참고 문헌: VLM 계획·VLA 조작·residual RL](sources/eximo-2608-19891-references.md) — SayCan, RT-1, PaLM-E, ALOHA, residual RL 계보 정리
+- [EXIMO 학습 노트: VLM planner–VLA executor–RL refinement](sources/eximo-2608-19891-learning.md) — hierarchical VLA post-training의 구현·안전 checklist
 - [Spatial Memory Agent 학습 노트](sources/spatial-memory-agent-2608-12743-learning.md) — verifier-grounded procedure retrieval과 TRS를 설명하는 한국어 학습 자료
 - [360CityArena 학습 노트: 도시 embodied navigation의 observation-to-action loop](sources/360cityarena-2608-08814-learning.md) — [[360CityArena]]를 observation-memory-action loop 관점에서 해석하고 map navigation 병목 및 open-loop/closed-loop 차이를 정리한 학습 자료
 - [360CityArena 참고 문헌과 urban navigation 연결 고리](sources/360cityarena-2608-08814-references.md) — [[360CityArena]]를 city-scale visual navigation 벤치마크 계보(SidewalkBench, StreetLearn, TOUCHDOWN, Tag Map, Vid2Sim, EmbodiedCity, RT-2, CARLA)와 연결해 map/navigation 병목 맥락을 정리한 참고 문헌 맵

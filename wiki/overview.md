@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W35/W34: Selective World Imagination and Hierarchical VLA Adaptation
+- **RISE**는 autonomous-driving World Action Model에서 future rollout을 모든 scene에 고정하지 않고, latent prefix의 risk와 **future planning gain**이 cost를 상회할 때만 계속하는 selective imagination을 제시한다. nuScenes open-loop와 NAVSIM closed-loop를 함께 평가하지만, generated counterfactual과 simulator score는 real-vehicle safety guarantee가 아니다.
+- **EXIMO**는 VLM의 high-level language subgoal을 VLA의 closed-loop manipulation execution에 grounding하고, 그 rollout을 SFT로 standalone policy에 증류한 뒤 residual off-policy RL로 refinement한다. 이는 VLA가 language explanation을 직접 actuator로 쓰지 않고, bounded subgoal interface와 motor policy를 분리해야 함을 강조한다.
+- 두 작업은 더 많은 prediction/reasoning 자체보다 **언제 계산하고 어떻게 executable action으로 연결할지**가 deployment latency·safety·data efficiency를 좌우한다는 공통점을 보인다. RISE는 driving trajectory planning의 adaptive compute, EXIMO는 robotics의 hierarchical language-to-action post-training을 다룬다.
+
 ## 2026-08-13 LWN Weekly: Programmable Execution, Isolation, and Failure-Path Engineering
 - 공개 한국어 번역은 BPF 기반 `binfmt_misc` 실행 디스패치가 재배치 가능한 프로그램과 컨테이너의 로더 선택을 유연하게 만드는 한편, setuid·mount namespace·리소스 제한을 신뢰 경계로 유지해야 함을 정리한다.
 - KVM planes와 BPF 형식 검증 기사는 정적 안전성, confidential-computing 격리, 런타임 watchdog 사이의 역할 분리를 보여 준다. 운영 환경에서는 메모리 안전성뿐 아니라 지연·패킷 손실·권한 상승 방지가 검증 대상이다.
