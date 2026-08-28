@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-08-20 LWN Weekly: Governance, Trust Chains, and Kernel Operational Boundaries
+- [[Debian]]의 LLM 사용 투표는 생성형 도구를 허용/금지하는 단순 선택이 아니라 출처, 라이선스, 검토 책임, 커뮤니티 합의를 배포판의 재현 가능한 작업 흐름에 어떻게 연결할지의 문제로 제시한다.
+- Python `pathlib`와 [[BootstrappableBuilds]]는 서로 다른 계층에서 문자열/기존 binary에 암묵적으로 의존하는 경계를 줄인다. 전자는 API의 의미·이식성을, 후자는 compiler/toolchain의 build provenance를 명시한다.
+- Fedora의 [[AFALG]] 제한, Arm page-table 확장, [[BPF]]의 stable-branch CI는 kernel 기능을 추가하는 것만으로 충분하지 않으며, attack surface, backport, architecture coverage, real workload regression을 함께 운영해야 한다는 공통 신호다.
+- 이 호의 AMD memory-controller 연구와 distribution security advisory는 kernel 권한 획득 뒤에도 firmware·hardware trust boundary가 남는다는 점을 보여 주며, patch cadence와 least privilege를 결합한 대응이 필요하다.
+
 ## 2026-W35/W34: Selective World Imagination and Hierarchical VLA Adaptation
 - **RISE**는 autonomous-driving World Action Model에서 future rollout을 모든 scene에 고정하지 않고, latent prefix의 risk와 **future planning gain**이 cost를 상회할 때만 계속하는 selective imagination을 제시한다. nuScenes open-loop와 NAVSIM closed-loop를 함께 평가하지만, generated counterfactual과 simulator score는 real-vehicle safety guarantee가 아니다.
 - **EXIMO**는 VLM의 high-level language subgoal을 VLA의 closed-loop manipulation execution에 grounding하고, 그 rollout을 SFT로 standalone policy에 증류한 뒤 residual off-policy RL로 refinement한다. 이는 VLA가 language explanation을 직접 actuator로 쓰지 않고, bounded subgoal interface와 motor policy를 분리해야 함을 강조한다.
