@@ -20,6 +20,7 @@
 - [Spatial Memory Agent 참고 레퍼런스](sources/spatial-memory-agent-2608-12743-references.md) — SMA의 공간 grounding, memory, tool-use, self-evolution 계보를 정리한 참고문헌 맵
 - [Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기](sources/spatial-memory-agent-2608-12743-analysis.md) — frozen [[VisionLanguageModel|VLM]]의 검증 가능한 절차 메모리(요약+lesson+TRS)로 [[RoboSpatial]]/[[ERQA]] 성능을 개선하는 [[SpatialMemoryAgent]] 방법
 - [Spatial Memory Agent: 경험 기반 절차 메모리로 공간 추론을 보정하기](sources/spatial-memory-agent-2608-12743-paper-ko.md) — frozen VLM의 공간 추론을 verifier-guided procedural memory와 TRS로 보정하는 training-free SMA 제안
+- [LWN.net Weekly Edition for August 20, 2026](sources/lwn-weekly-edition-2026-08-20-1088565.md) — Korean technical translation covering Debian LLM governance, pathlib, bootstrappable builds, AF_ALG, Arm page tables, BPF CI, security updates, and kernel patches.
 - [LWN.net Weekly Edition for August 13, 2026](sources/lwn-weekly-edition-2026-08-13-1087432.md) — Korean technical translation covering BPF/binfmt_misc execution dispatch, CrossPoint firmware, KVM planes, formal BPF verification, password policy, block-I/O fault injection, and weekly maintenance signals.
 - [LWN.net Weekly Edition for August 6, 2026](sources/lwn-weekly-edition-2026-08-06-1086134.md) — process-builder API, Fedora governance, FUSE/io_uring, BPF network namespaces, supply-chain security, and kernel patch tracking.
 - [SimWAM 학습 노트: training-only video prior와 trajectory flow matching](sources/simwam-2608-07468-learning.md) — training-only video prior와 trajectory flow matching을 정리한 SimWAM 학습 노트
@@ -2706,6 +2707,10 @@
 - [Waypoint Action Head](concepts/WaypointActionHead.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Waypoint Trajectory](concepts/WaypointTrajectory.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Zero-Shot Sim-to-Real Transfer](concepts/ZeroShotSimToReal.md) — auto-indexed during 2026-W27 HF Weekly validation repair
+- [AF_ALG](concepts/AFALG.md) — Linux kernel cryptographic socket interface and its distribution-security trade-off.
+- [Bootstrappable Builds](concepts/BootstrappableBuilds.md) — auditable compiler/toolchain reconstruction from a minimal seed.
+- [Python pathlib](concepts/PythonPathlib.md) — object-oriented, cross-platform Python filesystem path API.
+
 ## Syntheses
 ## Auto-indexed Generated Pages
 - [2D](concepts/2D.md) — auto-indexed concept page

@@ -1,3 +1,7 @@
+## [2026-08-28] ingest | LWN.net Weekly Edition for August 20, 2026
+
+Added the complete public Korean Bigpage translation for LWN Weekly 1088565. The bounded Codex ingest exhausted its context window before wiki writes, so a deterministic source page with full raw hash plus [[BootstrappableBuilds]], [[AFALG]], and [[PythonPathlib]] concept pages was materialized manually; index and overview were updated.
+
 ## [2026-08-26] ingest | RISE + EXIMO Hugging Face Weekly papers
 
 Manually materialized eight source pages after the bounded Codex ingest returned malformed JSON before any wiki write. Added full nested `source_file` paths and stable SHA-256 prefixes for RISE (adaptive imagination for autonomous-driving WAM) and EXIMO (VLM-guided VLA exploration, distillation, and residual RL); updated navigation and overview.
@@ -1423,3 +1427,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-26] graph | Knowledge graph rebuilt
 
 3087 nodes, 10369 edges (10369 extracted, 0 inferred).
+
+## [2026-08-28] graph | Knowledge graph rebuilt
+
+3091 nodes, 10378 edges (10378 extracted, 0 inferred).
