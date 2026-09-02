@@ -1,3 +1,35 @@
+## [2026-09-02] ingest | PonderPounce 학습 노트: MLLM causal context를 VLA memory로 연결하기
+
+Added source. Key claims: PonderPounce reuses pretrained MLLM causal context as episode memory; latest-ready scheduling and freshness must be part of the control interface; async serving and fallback are necessary for safe deployment.
+
+## [2026-09-02] ingest | PonderPounce 참고 문헌: VLA memory·demonstration conditioning·slow-fast control
+
+Added source. Key claims: PonderPounce should be read against memory benchmark, retrieval, demonstration grounding, asynchronous slow-fast control, and real-time serving references; the map clarifies that episode context design, refresh latency, and control interface are as important as memory size.
+
+## [2026-09-02] ingest | PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어
+
+Added source. Key claims: pretrained MLLM context reused as episode memory; slow Ponder / fast Pounce split; continuous cognition plus age encoding improve control under partial observability; 20 Hz playback reported with nontrivial serving cost.
+
+## [2026-09-02] ingest | PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어
+
+Added source. Key claims: pretrained MLLM의 native causal context를 episode memory로 재사용하는 dual-system 로봇 제어 프레임워크이며, Ponder/Pounce 비동기 구조와 continuous cognition + age interface가 핵심이다. RoboMME 및 RoboCasa-DC 실험, 78 ms cognition refresh와 25 ms action invocation latency, 그리고 external retrieval memory 대비 설계 차이를 기록했다.
+
+## [2026-09-02] ingest | VLAct 학습 노트: VLA representation-centric continued pre-training
+
+Added source. Key claims: VLAct 학습 노트는 continued pretraining에서 caption mixing, multi-head ([[OFT]], [[PI]], [[GR00T]]) action supervision, [[partial unification]]을 결합해 [[VLM]] prior 보존과 action transfer 성능을 동시에 추구한다고 정리한다. 새로운 페이지는 [[VLAct]] 엔티티와 [[DecoderLockIn]], [[WrapAwareLoss]], [[ContinuedPretraining]] 개념을 추가해 [[VLA]] 학습 설계를 검증 가능한 형태로 정렬했다.
+
+## [2026-09-02] ingest | VLAct 참고 문헌: VLA backbone·action head·cross-embodiment transfer
+
+Added source. Key claims: reference graph 중심의 정합으로 [[VLAct]]를 [[StarVLA]], [[StarVLA-Alpha]], [[pi0.5]], [[GR00T-N1]], [[ABot-M0]], [[Xiaomi-Robotics-1]], [[RoboDojo]], [[VLA-Arena]], [[Xiaomi-Robotics-0]] 계열과 연결했다. This strengthens the view that cross-embodiment transfer is driven by representation-preserving continued pretraining + multi-head action supervision + partial action-space alignment rather than scale alone.
+
+## [2026-09-02] ingest | VLAct 분석: transferable VLA backbone을 위한 표현 중심 지속 사전학습
+
+Added source. Key claims: 표현 중심 지속 사전학습은 scale 우선 전략의 한계를 보완하며, action만을 계속 미세조정할 때 생기는 VLM prior drift를 억제한다. shallow-layer freeze, caption mixing, multi-head action co-supervision([[OFT]], [[PI]], [[GR00T]]), partially unified action layout을 결합해 cross-embodiment transfer에서 downstream head 교체 기반의 모듈성 강화와 data-efficient 전이를 추구한다.
+
+## [2026-09-02] ingest | VLAct: representation-centric continued pretraining for VLA models
+
+Added source. Key claims: preserved VLM priors, multi-head continuous action co-supervision, and partially unified action layouts improve VLA transfer beyond simple data scaling.
+
 ## [2026-08-28] ingest | LWN.net Weekly Edition for August 20, 2026
 
 Added the complete public Korean Bigpage translation for LWN Weekly 1088565. The bounded Codex ingest exhausted its context window before wiki writes, so a deterministic source page with full raw hash plus [[BootstrappableBuilds]], [[AFALG]], and [[PythonPathlib]] concept pages was materialized manually; index and overview were updated.
@@ -1431,3 +1463,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-08-28] graph | Knowledge graph rebuilt
 
 3091 nodes, 10378 edges (10378 extracted, 0 inferred).
+
+## [2026-09-02] graph | Knowledge graph rebuilt
+
+3134 nodes, 10651 edges (10651 extracted, 0 inferred).
