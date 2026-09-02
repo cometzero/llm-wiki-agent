@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [PonderPounce 학습 노트: MLLM causal context를 VLA memory로 연결하기](sources/ponderpounce-2608-24115-learning.md) — [[PonderPounce]]의 episode memory, freshness, async serving, safety fallback을 정리한 학습 자료
+- [PonderPounce 참고 문헌: VLA memory·demonstration conditioning·slow-fast control](sources/ponderpounce-2608-24115-references.md) — PonderPounce를 memory benchmark, retrieval, demo grounding, async control, serving latency 축으로 정렬한 참고문헌 맵
+- [PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어](sources/ponderpounce-2608-24115-analysis.md) — pretrained MLLM의 causal context를 episode memory로 재사용하는 dual-system 로봇 제어 프레임워크
+- [PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어](sources/ponderpounce-2608-24115-paper-ko.md) — pretrained MLLM의 causal context를 episode memory로 재사용하는 dual-system 로봇 제어 프레임워크
+- [VLAct 학습 노트: VLA representation-centric continued pre-training](sources/vlact-2608-27550-learning.md) — continued pretraining의 핵심 레시피(캡션 혼합, 다중 action head, partial unification, wrap-aware loss)와 [[VLA]] 구현·배포 체크리스트를 정리한 학습 자료
+- [VLAct 참고 문헌: VLA backbone·action head·cross-embodiment transfer](sources/vlact-2608-27550-references.md) — [[VLAct]]를 구성하는 핵심 대비군(코드베이스, 모델군, benchmark)을 [[ActionSpaceAlignment]] 중심으로 정렬한 참조 지도
+- [VLAct 분석: transferable VLA backbone을 위한 표현 중심 지속 사전학습](sources/vlact-2608-27550-analysis.md) — [[VLAct]]는 VLM prior를 유지한 채 [[OFT]], [[PI]], [[GR00T]] multi-head와 부분 action-space 정렬로 cross-embodiment transfer를 강화한다
+- [VLAct: representation-centric continued pretraining for VLA models](sources/vlact-2608-27550-paper-ko.md) — representation preservation, multi-head action co-supervision, partial action-space unification으로 VLA 전이성을 높이는 한국어 기술 번역
 - [RISE: World Action Model을 위한 적응형 imagination](sources/rise-2608-20430-paper-ko.md) — CounterDrive risk supervision과 selective rollout으로 WAM의 planning-quality/latency trade-off를 제어하는 한국어 기술 번역
 - [RISE 분석: 자율주행 WAM의 selective rollout](sources/rise-2608-20430-analysis.md) — adaptive imagination의 I/O, numerical trajectory grounding, open/closed-loop evaluation 및 deployment risk 분석
 - [RISE 참고 문헌: driving world model과 adaptive planning](sources/rise-2608-20430-references.md) — driving world model, benchmark, counterfactual safety supervision의 읽기 지도
@@ -312,6 +320,20 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [ABot-M0](entities/ABot-M0.md) — action-manifold learning 기반 VLA baseline
+- [DOMINO](entities/DOMINO.md) — dynamic robot manipulation benchmark
+- [Franka](entities/Franka.md) — VLAct physical evaluation single-arm platform
+- [InternA1](entities/InternA1.md) — VLAct multi-embodiment trajectory data source
+- [Libra-VLA](entities/Libra-VLA.md) — asynchronous coarse-to-fine dual-system VLA
+- [Qwen3-VL-4B](entities/Qwen3-VL-4B.md) — VLAct의 pretrained VLM backbone
+- [RoboCasa-GR1](entities/RoboCasa-GR1.md) — unseen humanoid cross-embodiment transfer benchmark
+- [RoboMME](entities/RoboMME.md) — robotic-policy memory benchmark
+- [RoboTTT](entities/RoboTTT.md) — fast-weight context-scaling robot policy
+- [RoboTwin 2.0](entities/RoboTwin-2.0.md) — dual-arm manipulation generalization benchmark
+- [SeeTraceAct](entities/SeeTraceAct.md) — cross-embodiment demonstration grounding VLA
+- [StarVLA-Alpha](entities/StarVLA-Alpha.md) — Qwen-VL-based VLA comparison anchor
+- [StreamVLA](entities/StreamVLA.md) — streaming reasoning/action-gating VLA
+- [VLA-Arena](entities/VLA-Arena.md) — behavioral VLA generalization benchmark
 - [CityNav](entities/CityNav.md) — aerial 관점 real-world navigation 비교 축
 - [SpatialVLM](entities/SpatialVLM.md) — 공간 추론을 위한 VLM post-training 연구 축
 - [TagMap](entities/TagMap.md) — LLM spatial reasoning을 위한 text map 표현
@@ -777,6 +799,17 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Asynchronous Fast-Slow VLA Policies](concepts/AsynchronousFastSlowVisionLanguageActionPoliciesForWholeBodyRoboticManipulation.md) — whole-body slow-fast asynchronous VLA policy class
+- [Caption Mixing](concepts/CaptionMixing.md) — continual VLA training에서 VLM prior를 보존하는 auxiliary supervision
+- [Continued Pretraining](concepts/ContinuedPretraining.md) — task fine-tuning 전 VLM을 multi-embodiment robot data에 적응시키는 단계
+- [Decoder Lock-In](concepts/DecoderLockIn.md) — single action head에 backbone representation이 과특화되는 failure mode
+- [Episode Context Engine](concepts/EpisodeContextEngine.md) — episode history를 control-ready representation으로 만드는 mechanism
+- [Latent Bridge](concepts/LatentBridge.md) — slow reasoner와 fast controller 사이의 latent interface
+- [Latest Ready](concepts/LatestReady.md) — async controller가 deadline 전 가장 최근 ready state를 선택하는 rule
+- [Partially Unified Action Layout](concepts/PartiallyUnifiedActionLayout.md) — 공유 가능한 embodiment action semantics만 정렬하는 layout
+- [Robot Reference Citation Map](concepts/RobotReferenceCitationMap.md) — VLAct transfer/benchmark reference map
+- [Running VLAs at Real-time Speed](concepts/RunningVLAsAtRealtimeSpeed.md) — VLA serving의 latency·jitter·deadline evaluation 관점
+- [Wrap-Aware Loss](concepts/WrapAwareLoss.md) — periodic joint-angle residual을 위한 circular loss
 - [EmbSpatial](concepts/EmbSpatial.md) — embodied language-grounded spatial-relation benchmark
 - [Embodied Agent](concepts/EmbodiedAgent.md) — observation-action loop를 수행하는 환경 상호작용 agent
 - [Embodied Navigation](concepts/EmbodiedNavigation.md) — perception·memory·planning·action을 결합한 navigation 문제

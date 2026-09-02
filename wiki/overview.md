@@ -39,3 +39,17 @@
 - image-goal 성능 이점은 고정되지 않고, task visibility 및 grounding 정합이 먼저 확보되어야만 안정적으로 유지된다.
 - 배포 관점에서는 `place recognition confidence`, `heading uncertainty`, `stagnation/reroute detector`, `route-progress monitor`를 최소 탑재해야 긴 경로에서의 compounding error를 제어할 수 있다.
 - 본 소스는 closed-loop safety score로 오해되는 한계를 명시해, [[360CityArena]]를 physical simulator와 구분해 사용하는 방향을 제안한다.
+
+## 2026-09-02 VLAct: Representation-Centric Continued Pretraining for VLA
+- [[VLAct]]는 [[VisionLanguageAction]]의 병목을 데이터 규모가 아니라 representation 보존과 alignment 문제로 재정의한다. pretrained [[VisionLanguageModel|VLM]]을 시작점으로 유지하면서 robot trajectory와 caption data를 병합 학습해 visual-language prior drift를 억제한다.
+- 핵심 설계는 shallow-layer protection/caption mixing, [[OFT]]·[[PI]]·[[GR00T]] multi-head continuous action co-supervision, 그리고 partially unified action layout이다. 즉 shared gripper처럼 물리적으로 대응되는 semantics만 embodiment 간 정렬한다.
+- [[LIBERO-Plus]], [[RoboTwin 2.0]], [[VLA-Arena]], [[DOMINO]], [[RoboCasa-GR1]], [[RoboDojo]]의 결과는 transfer와 sample efficiency 신호지만 real-world safety 보증은 아니다. 자율주행 전이에서는 vehicle action semantics와 closed-loop validation을 별도로 설계해야 한다.
+
+## 2026-09-02 PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어
+- [[PonderPounce]]는 pretrained [[MultimodalModel|MLLM]]의 native causal context를 [[PersistentMemory|episode memory]]로 재사용한다. 느린 [[Ponder]]가 history를 누적하고 빠른 [[Pounce]]가 latest continuous cognition과 age를 받아 action chunk를 생성한다.
+- [[RoboMME]]와 RoboCasa-DC에서 memory/demonstration conditioning 개선을 보였지만, 9B+3B serving cost, stale cognition, simulator-derived supervision cost가 핵심 제약이다. closed-loop 배포에는 freshness watchdog과 conservative fallback이 필요하다.
+- 관련 reference map은 [[RoboTTT]], [[MEM]], [[MemoryVLA]], [[SeeTraceAct]], [[Latent Bridge]], [[Libra-VLA]], [[StreamVLA]], [[Running VLAs at Real-time Speed]]를 통해 memory substrate, action grounding, asynchronous serving의 trade-off를 정렬한다.
+
+## 2026-09-02 VLAct 실행·참고 문헌 요약
+- [VLAct 참고 문헌](sources/vlact-2608-27550-references.md)은 [[VLAct]]를 [[StarVLA]], [[StarVLA-Alpha]], [[pi0.5]], [[GR00T-N1]], [[ABot-M0]], [[Xiaomi-Robotics-1]], [[RoboDojo]], [[VLA-Arena]]와 연결한다.
+- [VLAct 학습 노트](sources/vlact-2608-27550-learning.md)는 lower-layer freeze, caption auxiliary supervision, multi-head action co-training, active-dimension masking과 wrap-aware residual의 구현 포인트를 정리한다.
