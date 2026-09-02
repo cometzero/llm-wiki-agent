@@ -27,9 +27,48 @@
     "2608.12743",
     "2608.08814",
     "2608.20430",
-    "2608.19891"
+    "2608.19891",
+    "2608.27550",
+    "2608.24115"
   ],
   "runs": [
+    {
+      "date_kst": "2026-09-02 09:40:54 KST",
+      "week": "2026-W36",
+      "selected_paper_ids": [
+        "2608.27550",
+        "2608.24115"
+      ],
+      "papers": [
+        {
+          "id": "2608.27550",
+          "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+          "week": "2026-W36",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/vlact-representation-centric-vla-2608-27550"
+        },
+        {
+          "id": "2608.24115",
+          "title": "PonderPounce: A Pretrained MLLM as an Episode Context Engine for Robot Control",
+          "week": "2026-W36",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/ponderpounce-episode-context-2608-24115"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/vlact-representation-centric-vla-2608-27550/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/vlact-representation-centric-vla-2608-27550/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/vlact-representation-centric-vla-2608-27550/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/vlact-representation-centric-vla-2608-27550/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/ponderpounce-episode-context-2608-24115/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/ponderpounce-episode-context-2608-24115/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/ponderpounce-episode-context-2608-24115/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/ponderpounce-episode-context-2608-24115/learning.md"
+      ],
+      "commit_hash": "e546f2cd6f36b909fe38a2297edef00310f6eb63",
+      "notes": "Generated Korean technical translations, analyses, reference summaries, learning notes, and available figures; ingested into the wiki; graph rebuilt from extracted wikilinks.",
+      "limitations": "The bounded semantic-inference attempt failed because the configured provider returned HTTP 410 Gone, so graph generation used --no-infer. VLAct arXiv HTML did not expose directly retrievable figure assets through the available extraction path."
+    },
     {
       "date_kst": "2026-05-10",
       "selected_paper_id": "2604.20012",
