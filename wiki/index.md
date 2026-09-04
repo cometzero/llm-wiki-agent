@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for August 27, 2026](sources/lwn-weekly-edition-2026-08-27-1089643.md) — Bambu AGPL compliance, OpenMDW, PQC rollout, Linux 7.2 merge window, Remind, Quickshell, and security/distribution updates
 - [PonderPounce 학습 노트: MLLM causal context를 VLA memory로 연결하기](sources/ponderpounce-2608-24115-learning.md) — [[PonderPounce]]의 episode memory, freshness, async serving, safety fallback을 정리한 학습 자료
 - [PonderPounce 참고 문헌: VLA memory·demonstration conditioning·slow-fast control](sources/ponderpounce-2608-24115-references.md) — PonderPounce를 memory benchmark, retrieval, demo grounding, async control, serving latency 축으로 정렬한 참고문헌 맵
 - [PonderPounce: pretrained MLLM을 episode context engine으로 쓰는 로봇 제어](sources/ponderpounce-2608-24115-analysis.md) — pretrained MLLM의 causal context를 episode memory로 재사용하는 dual-system 로봇 제어 프레임워크
@@ -320,6 +321,18 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [Bambu Lab](entities/BambuLab.md) — 3D-printer vendor discussed in the August 27 LWN copyleft-compliance report.
+- [Bambu Studio](entities/BambuStudio.md) — Bambu Lab printer software implicated in the reported licensing dispute.
+- [Software Freedom Conservancy](entities/SoftwareFreedomConservancy.md) — Nonprofit organization involved in copyleft-compliance enforcement.
+- [OpenMDW](entities/OpenMDW.md) — Proposed license and package for LLM distribution artifacts.
+- [Remind](entities/Remind.md) — Text-oriented calendar and reminder tool.
+- [Quickshell](entities/Quickshell.md) — QML desktop-component toolkit.
+- [OpenSSL](entities/OpenSSL.md) — TLS and cryptography library relevant to PQC rollout.
+- [Open Source Initiative](entities/OpenSourceInitiative.md) — Steward of the Open Source Definition.
+- [TkRemind](entities/TkRemind.md) — Graphical companion to Remind.
+- [Qt](entities/Qt.md) — Cross-platform framework providing QML.
+- [Sway](entities/Sway.md) — Wayland tiling compositor.
+- [niri](entities/Niri.md) — Scrollable-tiling Wayland compositor.
 - [ABot-M0](entities/ABot-M0.md) — action-manifold learning 기반 VLA baseline
 - [DOMINO](entities/DOMINO.md) — dynamic robot manipulation benchmark
 - [Franka](entities/Franka.md) — VLAct physical evaluation single-arm platform
@@ -799,6 +812,18 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [AGPLv3](concepts/AGPLv3.md) — Network-use copyleft license.
+- [GPLv2](concepts/GPLv2.md) — Widely used reciprocal free-software license.
+- [OpenMDW License](concepts/OpenMDWLicense.md) — Proposed unified LLM-artifact licensing approach.
+- [Crypto Agility](concepts/CryptoAgility.md) — Ability to migrate cryptographic algorithms and protocols.
+- [Copyleft](concepts/Copyleft.md) — Reciprocal licensing principle requiring preserved freedoms.
+- [Linux Kernel](concepts/LinuxKernel.md) — Core Linux operating-system kernel.
+- [Linux Kernel 7.2 Merge Window](concepts/LinuxKernel72MergeWindow.md) — Kernel integration period discussed in the issue.
+- [Open Source Definition](concepts/OpenSourceDefinition.md) — OSI criteria for open-source licensing.
+- [Post-Quantum Cryptography (PQC)](concepts/PostQuantumCryptography.md) — Quantum-resistant cryptography migration discipline.
+- [QML](concepts/QML.md) — Qt declarative UI language.
+- [Unix](concepts/Unix.md) — Command-line operating-system tradition.
+- [Wayland](concepts/Wayland.md) — Modern Linux display-server protocol.
 - [Asynchronous Fast-Slow VLA Policies](concepts/AsynchronousFastSlowVisionLanguageActionPoliciesForWholeBodyRoboticManipulation.md) — whole-body slow-fast asynchronous VLA policy class
 - [Caption Mixing](concepts/CaptionMixing.md) — continual VLA training에서 VLM prior를 보존하는 auxiliary supervision
 - [Continued Pretraining](concepts/ContinuedPretraining.md) — task fine-tuning 전 VLM을 multi-embodiment robot data에 적응시키는 단계

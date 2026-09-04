@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-08-27 LWN Weekly: Copyleft Enforcement, AI License Design, and Post-Quantum Migration
+- [[BambuLab|Bambu Lab]]과 [[SoftwareFreedomConservancy|Software Freedom Conservancy]]의 사례는 copyleft가 문구만으로 자동 집행되지 않으며, 권리자·사용자의 검증 및 조치가 필요함을 보여 준다.
+- [[OpenMDW]] 논의는 모델·데이터·가중치·소프트웨어를 하나의 라이선스로 포괄하려는 시도가 [[OpenSourceDefinition|Open Source Definition]] 및 종료 조항과 충돌할 수 있음을 드러낸다.
+- [[PostQuantumCryptography|Post-Quantum Cryptography (PQC)]]는 [[OpenSSL]] 설정, TLS hybrid 전환, [[OpenPGP]] 상호운용성까지 포함하는 운영 과제가 되었다.
+- [[LinuxKernel72MergeWindow|Linux Kernel 7.2 Merge Window]], [[Remind]], [[Quickshell]] 및 주간 보안·배포판 요약은 기술 변화가 유지보수·신뢰 경계·도구 통합 비용과 분리될 수 없음을 보강한다.
+
 ## 2026-08-20 LWN Weekly: Governance, Trust Chains, and Kernel Operational Boundaries
 - [[Debian]]의 LLM 사용 투표는 생성형 도구를 허용/금지하는 단순 선택이 아니라 출처, 라이선스, 검토 책임, 커뮤니티 합의를 배포판의 재현 가능한 작업 흐름에 어떻게 연결할지의 문제로 제시한다.
 - Python `pathlib`와 [[BootstrappableBuilds]]는 서로 다른 계층에서 문자열/기존 binary에 암묵적으로 의존하는 경계를 줄인다. 전자는 API의 의미·이식성을, 후자는 compiler/toolchain의 build provenance를 명시한다.
