@@ -1,3 +1,7 @@
+## [2026-09-04] ingest | LWN.net Weekly Edition for August 27, 2026
+
+Added source. Key claims: Bambu Lab copyleft compliance dispute, OpenMDW license controversy, PQC deployment guidance, Linux 7.2 merge window highlights, and tool coverage for Remind and Quickshell.
+
 ## [2026-09-02] ingest | PonderPounce 학습 노트: MLLM causal context를 VLA memory로 연결하기
 
 Added source. Key claims: PonderPounce reuses pretrained MLLM causal context as episode memory; latest-ready scheduling and freshness must be part of the control interface; async serving and fallback are necessary for safe deployment.
@@ -1467,3 +1471,7 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-09-02] graph | Knowledge graph rebuilt
 
 3134 nodes, 10651 edges (10651 extracted, 0 inferred).
+
+## [2026-09-04] graph | Knowledge graph rebuilt
+
+3159 nodes, 10704 edges (10704 extracted, 0 inferred).
