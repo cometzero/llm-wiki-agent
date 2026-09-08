@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 8,
-  "last_completed_date": "2026-09-01",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-07-numerical-action-generator-2-효율성과-최신-구조-2026-09-01.md",
+  "next_week": 9,
+  "last_completed_date": "2026-09-08",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-08-dual-system-vla-2026-09-08.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -119,6 +119,12 @@
       "title": "Numerical Action Generator 2: 효율성과 최신 구조",
       "date": "2026-09-01",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-07-numerical-action-generator-2-효율성과-최신-구조-2026-09-01.md"
+    },
+    {
+      "week": 8,
+      "title": "Dual-System VLA",
+      "date": "2026-09-08",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-08-dual-system-vla-2026-09-08.md"
     }
   ]
 }
