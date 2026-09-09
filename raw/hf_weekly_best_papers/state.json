@@ -29,9 +29,48 @@
     "2608.20430",
     "2608.19891",
     "2608.27550",
-    "2608.24115"
+    "2608.24115",
+    "2609.00111",
+    "2608.23478"
   ],
   "runs": [
+    {
+      "date_kst": "2026-09-09 09:40:43 KST",
+      "week": "2026-W36",
+      "selected_paper_ids": [
+        "2609.00111",
+        "2608.23478"
+      ],
+      "papers": [
+        {
+          "id": "2609.00111",
+          "title": "Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving",
+          "week": "2026-W36",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/qwen-drive-1-0-2609-00111"
+        },
+        {
+          "id": "2608.23478",
+          "title": "Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models",
+          "week": "2026-W36",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/act-with-intent-indi-2608-23478"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/qwen-drive-1-0-2609-00111/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/qwen-drive-1-0-2609-00111/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/qwen-drive-1-0-2609-00111/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/qwen-drive-1-0-2609-00111/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/act-with-intent-indi-2608-23478/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/act-with-intent-indi-2608-23478/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/act-with-intent-indi-2608-23478/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W36/act-with-intent-indi-2608-23478/learning.md"
+      ],
+      "commit_hash": "ea80cae288751969b6922e8265f032de65088834",
+      "notes": "Generated Korean technical translations, analyses, references, learning notes, six arXiv HTML figure assets, deterministic wiki source materialization, and extracted-wikilink graph artifacts.",
+      "limitations": "Codex ingest exhausted its context before emitting wiki writes. Semantic graph inference repeatedly returned HTTP 410 Gone, so graph generation used --no-infer; dense appendices/tables were condensed."
+    },
     {
       "date_kst": "2026-09-02 09:40:54 KST",
       "week": "2026-W36",
