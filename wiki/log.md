@@ -1475,3 +1475,11 @@ Added deterministic source pages for all 8 selected raw deliverables and support
 ## [2026-09-04] graph | Knowledge graph rebuilt
 
 3159 nodes, 10704 edges (10704 extracted, 0 inferred).
+
+## [2026-09-09] ingest | Qwen-Drive-1.0 + Act with Intent (INDI) Hugging Face Weekly papers
+
+Added eight Korean raw deliverables and deterministic source materialization after the bounded Codex ingest exhausted its context before emitting wiki writes. Qwen-Drive-1.0 covers shared VLM, BEV perception, and numerical ego-trajectory planning; INDI covers training-only teacher intent distillation into a VLA action-decoder latent. Full nested source paths and SHA-256 prefixes were recorded, with index and overview refreshed.
+
+## [2026-09-09] graph | Knowledge graph rebuilt
+
+3167 nodes, 10704 edges (10704 extracted, 0 inferred; `--no-infer` fallback after repeated HTTP 410 Gone responses).

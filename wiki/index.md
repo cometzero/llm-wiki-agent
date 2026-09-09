@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Qwen-Drive-1.0 한국어 기술 번역](sources/qwen-drive-1-0-2609-00111-paper-ko.md) — shared VLM을 3D perception·driving VQA·numerical trajectory planning에 연결한 자율주행 foundation model 번역
+- [Qwen-Drive-1.0 분석: shared VLM에서 BEV와 trajectory planning까지](sources/qwen-drive-1-0-2609-00111-analysis.md) — BEV geometry interface와 Planning Expert의 action grounding·closed-loop 평가 분석
+- [Qwen-Drive-1.0 참고문헌 학습 메모](sources/qwen-drive-1-0-2609-00111-references.md) — UniAD/VAD/DriveLM/NAVSIM/SimWAM/flow matching 문헌 지도
+- [Qwen-Drive-1.0 학습 노트: VLM, BEV, trajectory planner를 잇는 법](sources/qwen-drive-1-0-2609-00111-learning.md) — representation sharing, numerical trajectory, deployment 검증 학습 자료
+- [Act with Intent (INDI) 한국어 기술 번역](sources/act-with-intent-indi-2608-23478-paper-ko.md) — teacher VLM의 behavior intent를 VLA latent action decoder에 증류하는 기술 번역
+- [Act with Intent (INDI) 분석: 행동 목적을 latent action decoder로 증류](sources/act-with-intent-indi-2608-23478-analysis.md) — objective/progress-aware action grounding과 causal intervention 분석
+- [Act with Intent (INDI) 참고문헌 학습 메모](sources/act-with-intent-indi-2608-23478-references.md) — intent model·VLA backbone·robot benchmark 문헌 지도
+- [Act with Intent (INDI) 학습 노트: behavior cloning에서 intent distillation으로](sources/act-with-intent-indi-2608-23478-learning.md) — teacher–student latent grounding의 구현·검증 체크리스트
 - [LWN.net Weekly Edition for August 27, 2026](sources/lwn-weekly-edition-2026-08-27-1089643.md) — Bambu AGPL compliance, OpenMDW, PQC rollout, Linux 7.2 merge window, Remind, Quickshell, and security/distribution updates
 - [PonderPounce 학습 노트: MLLM causal context를 VLA memory로 연결하기](sources/ponderpounce-2608-24115-learning.md) — [[PonderPounce]]의 episode memory, freshness, async serving, safety fallback을 정리한 학습 자료
 - [PonderPounce 참고 문헌: VLA memory·demonstration conditioning·slow-fast control](sources/ponderpounce-2608-24115-references.md) — PonderPounce를 memory benchmark, retrieval, demo grounding, async control, serving latency 축으로 정렬한 참고문헌 맵

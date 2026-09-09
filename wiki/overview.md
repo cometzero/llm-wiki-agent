@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W36: Driving Foundation Model과 Behavior-Intent VLA Supervision
+- **Qwen-Drive-1.0**은 shared vision-language representation에 외부 BEV perception head와 Planning Expert를 결합한다. 3D detection·semantic occupancy·BEV map은 inspectable geometry interface가 되고, cached VLM key/value는 numerical ego trajectory를 생성하는 condition이 된다. 따라서 VQA가 그럴듯한 설명을 만든다는 것만으로 action grounding을 주장하지 않고, open-loop ADE/RFS와 NAVSIM/AlpaSim의 collision·progress·comfort 관점을 분리해 검증한다.
+- **Act with Intent (INDI)** 는 executed behavior를 본 training-only teacher VLM의 semantic intent를 student VLA의 intermediate latent에 증류한다. 목적과 execution progress를 공유 latent로 만들고 action·visual outcome·textual purpose grounding을 공동 학습하며, phase/cross-task intervention으로 latent의 policy 영향력을 시험한다.
+- 두 작업은 VLA가 text를 직접 actuator command로 바꾸는 것보다, **shared representation 또는 latent intent가 어떤 constrained numerical action interface를 통해 실제 control에 전달되는가**가 핵심임을 보인다. 다만 simulator/finite tabletop success는 vehicle/robot safety guarantee가 아니므로 uncertainty, rule/constraint validation, timing watchdog, fallback/shield가 배포 boundary에 남는다.
+
 ## 2026-08-27 LWN Weekly: Copyleft Enforcement, AI License Design, and Post-Quantum Migration
 - [[BambuLab|Bambu Lab]]과 [[SoftwareFreedomConservancy|Software Freedom Conservancy]]의 사례는 copyleft가 문구만으로 자동 집행되지 않으며, 권리자·사용자의 검증 및 조치가 필요함을 보여 준다.
 - [[OpenMDW]] 논의는 모델·데이터·가중치·소프트웨어를 하나의 라이선스로 포괄하려는 시도가 [[OpenSourceDefinition|Open Source Definition]] 및 종료 조항과 충돌할 수 있음을 드러낸다.
