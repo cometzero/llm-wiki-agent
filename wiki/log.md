@@ -1,3 +1,7 @@
+## [2026-09-11] ingest | LWN.net Weekly Edition for September 3, 2026
+
+Added the complete public Korean LWN Weekly translation for article 1090824. NVIDIA ingest failed because the configured model was EOL (HTTP 410), and the bounded Codex retry exhausted context before wiki writes; manually materialized the deterministic source page with full raw hash and refreshed navigation/overview.
+
 ## [2026-09-04] ingest | LWN.net Weekly Edition for August 27, 2026
 
 Added source. Key claims: Bambu Lab copyleft compliance dispute, OpenMDW license controversy, PQC deployment guidance, Linux 7.2 merge window highlights, and tool coverage for Remind and Quickshell.
@@ -1483,3 +1487,7 @@ Added eight Korean raw deliverables and deterministic source materialization aft
 ## [2026-09-09] graph | Knowledge graph rebuilt
 
 3167 nodes, 10704 edges (10704 extracted, 0 inferred; `--no-infer` fallback after repeated HTTP 410 Gone responses).
+
+## [2026-09-11] graph | Knowledge graph rebuilt
+
+3168 nodes, 10711 edges (10711 extracted, 0 inferred).

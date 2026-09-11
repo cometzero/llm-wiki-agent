@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-09-03 LWN Weekly: Runtime Governance, Kernel Change, and Suspend-Security Boundaries
+- [[Python]] JIT 논의는 compiler 성능이 실제 지원 기능이 되려면 PEP 기반 ownership, debugger/profiler·extension 호환성, memory/warm-up/throughput 지표, 그리고 release-manager의 명시적 판단이 필요함을 보여 준다.
+- Rust `rnull` block driver와 [[LinuxKernel|Linux kernel]] 7.3 merge window는 memory-safety language 도입과 기능 병합이 block-layer lifecycle, ABI, concurrency, distribution regression이라는 기존 운영 계약을 대체하지 않음을 보인다.
+- [[Virtualization]]의 steal-time 기반 vCPU moderation은 host contention을 guest scheduling에 반영할 수 있지만, latency-sensitive workload에서는 관측·정책·fallback을 함께 설계해야 한다.
+- LUKS suspend key regression과 security advisory 목록은 crypto correctness가 algorithm selection에 그치지 않고 power-state transition, 물리 접근, package update·reboot의 end-to-end 대응을 포함한다는 점을 보강한다.
+
 ## 2026-W36: Driving Foundation Model과 Behavior-Intent VLA Supervision
 - **Qwen-Drive-1.0**은 shared vision-language representation에 외부 BEV perception head와 Planning Expert를 결합한다. 3D detection·semantic occupancy·BEV map은 inspectable geometry interface가 되고, cached VLM key/value는 numerical ego trajectory를 생성하는 condition이 된다. 따라서 VQA가 그럴듯한 설명을 만든다는 것만으로 action grounding을 주장하지 않고, open-loop ADE/RFS와 NAVSIM/AlpaSim의 collision·progress·comfort 관점을 분리해 검증한다.
 - **Act with Intent (INDI)** 는 executed behavior를 본 training-only teacher VLM의 semantic intent를 student VLA의 intermediate latent에 증류한다. 목적과 execution progress를 공유 latent로 만들고 action·visual outcome·textual purpose grounding을 공동 학습하며, phase/cross-task intervention으로 latent의 policy 영향력을 시험한다.
