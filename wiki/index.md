@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN.net Weekly Edition for September 3, 2026](sources/lwn-weekly-edition-2026-09-03-1090824.md) — Python JIT governance, Rust block driver, vCPU contention, Linux 7.3 merge window, LUKS suspend security, and weekly maintenance updates
 - [Qwen-Drive-1.0 한국어 기술 번역](sources/qwen-drive-1-0-2609-00111-paper-ko.md) — shared VLM을 3D perception·driving VQA·numerical trajectory planning에 연결한 자율주행 foundation model 번역
 - [Qwen-Drive-1.0 분석: shared VLM에서 BEV와 trajectory planning까지](sources/qwen-drive-1-0-2609-00111-analysis.md) — BEV geometry interface와 Planning Expert의 action grounding·closed-loop 평가 분석
 - [Qwen-Drive-1.0 참고문헌 학습 메모](sources/qwen-drive-1-0-2609-00111-references.md) — UniAD/VAD/DriveLM/NAVSIM/SimWAM/flow matching 문헌 지도
