@@ -31,9 +31,48 @@
     "2608.27550",
     "2608.24115",
     "2609.00111",
-    "2608.23478"
+    "2608.23478",
+    "2609.06055",
+    "2609.12641"
   ],
   "runs": [
+    {
+      "date_kst": "2026-09-16 09:40:37 KST",
+      "week": "2026-W37/2026-W38",
+      "selected_paper_ids": [
+        "2609.06055",
+        "2609.12641"
+      ],
+      "papers": [
+        {
+          "id": "2609.06055",
+          "title": "DriveZero: End-to-End Driving Beyond Human Demonstrations",
+          "week": "2026-W37",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W37/drivezero-end-to-end-driving-2609-06055"
+        },
+        {
+          "id": "2609.12641",
+          "title": "Breaking the Vision-Action Shortcut: Latent Interface Training for Generalizable Robotics Foundation Models",
+          "week": "2026-W38",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W38/latent-interface-training-2609-12641"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W37/drivezero-end-to-end-driving-2609-06055/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W37/drivezero-end-to-end-driving-2609-06055/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W37/drivezero-end-to-end-driving-2609-06055/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W37/drivezero-end-to-end-driving-2609-06055/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W38/latent-interface-training-2609-12641/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W38/latent-interface-training-2609-12641/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W38/latent-interface-training-2609-12641/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W38/latent-interface-training-2609-12641/learning.md"
+      ],
+      "commit_hash": "c73079a4b7b3",
+      "notes": "Generated Korean technical translations, analysis, reference maps, learning notes, four verified arXiv HTML figure assets, deterministic wiki source materialization, and extracted-wikilink graph artifacts.",
+      "limitations": "The configured Codex model was unsupported for the active account, so automated ingest could not run. Semantic graph inference repeatedly returned HTTP 410 and graph generation used --no-infer; dense appendices/tables were condensed."
+    },
     {
       "date_kst": "2026-09-09 09:40:43 KST",
       "week": "2026-W36",
