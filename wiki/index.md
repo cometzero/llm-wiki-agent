@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [DriveZero: 인간 시연을 넘어서는 End-to-End 자율주행](sources/drivezero-2609-06055-paper-ko.md) — privileged closed-loop RL teacher를 camera-only E2E planner로 증류
+- [DriveZero 분석](sources/drivezero-2609-06055-analysis.md) — RL teacher, multi-VFM representation, proposal trajectory와 evaluation boundary 분석
+- [DriveZero 핵심 참고문헌](sources/drivezero-2609-06055-references.md) — self-play, post-training, simulation scaling 문헌 지도
+- [DriveZero 학습 노트](sources/drivezero-2609-06055-learning.md) — PPO teacher와 trajectory distillation 학습 가이드
+- [LIT: 일반화 가능한 Robot Foundation Model을 위한 Latent Interface Training](sources/latent-interface-training-2609-12641-paper-ko.md) — pose-supervised latent interface로 VLA/WAM visual shortcut을 완화
+- [Latent Interface Training 분석](sources/latent-interface-training-2609-12641-analysis.md) — ID/OOD robustness, action prior, latency/safety boundary 분석
+- [LIT 핵심 참고문헌](sources/latent-interface-training-2609-12641-references.md) — VLA/WAM conditioning과 robustness benchmark 문헌 지도
+- [LIT 학습 노트](sources/latent-interface-training-2609-12641-learning.md) — two-stage action prior와 latent bottleneck 학습 가이드
 - [LWN.net Weekly Edition for September 3, 2026](sources/lwn-weekly-edition-2026-09-03-1090824.md) — Python JIT governance, Rust block driver, vCPU contention, Linux 7.3 merge window, LUKS suspend security, and weekly maintenance updates
 - [Qwen-Drive-1.0 한국어 기술 번역](sources/qwen-drive-1-0-2609-00111-paper-ko.md) — shared VLM을 3D perception·driving VQA·numerical trajectory planning에 연결한 자율주행 foundation model 번역
 - [Qwen-Drive-1.0 분석: shared VLM에서 BEV와 trajectory planning까지](sources/qwen-drive-1-0-2609-00111-analysis.md) — BEV geometry interface와 Planning Expert의 action grounding·closed-loop 평가 분석
@@ -821,6 +829,10 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [DriveZero](concepts/DriveZero.md) — closed-loop RL teacher를 camera-only trajectory planner로 증류하는 E2E AD system
+- [Latent Interface Training](concepts/LatentInterfaceTraining.md) — pose-supervised latent bottleneck을 통한 VLA/WAM visual conditioning
+- [Vision–Action Shortcut](concepts/VisionActionShortcut.md) — nuisance visual cue에 의존해 action이 OOD에서 흔들리는 failure mode
+- [Closed-Loop Reinforcement Learning](concepts/ClosedLoopReinforcementLearning.md) — policy-induced state에서 action을 최적화하는 interactive learning
 - [AGPLv3](concepts/AGPLv3.md) — Network-use copyleft license.
 - [GPLv2](concepts/GPLv2.md) — Widely used reciprocal free-software license.
 - [OpenMDW License](concepts/OpenMDWLicense.md) — Proposed unified LLM-artifact licensing approach.

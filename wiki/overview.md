@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W37/W38: Closed-Loop Driving Distillation and Robust Vision–Action Interfaces
+- [[DriveZero]]는 autonomous driving에서 perception/action의 학습 regime을 분리한다. privileged structured-state [[ClosedLoopReinforcementLearning]] teacher가 mixed-agent world에서 행동을 만들고, multi-VFM representation을 쓰는 camera-only planner가 그 rollout을 distill한다. 이는 human-log imitation의 단일 미래·policy-induced state 공백을 보완하지만 simulator, reward, privileged perception gap이 안전성 상한을 정한다.
+- [[LatentInterfaceTraining]]은 VLA/WAM의 direct visual conditioning을 terminal-pose reconstruction을 받는 latent bottleneck으로 바꿔 [[VisionActionShortcut]]을 줄이려 한다. LIBERO-Plus의 camera/noise/layout shift 개선은 공간 action grounding 신호지만 language shift 및 broader real-world reliability는 별도 검증이 필요하다.
+- 두 작업의 공통점은 visual/language representation의 크기 자체보다, 어떤 representation이 어떤 constrained interface를 통해 executable trajectory/action으로 전달되고 interactive OOD rollout에서 검증되는지가 중요하다는 것이다.
+
 ## 2026-09-03 LWN Weekly: Runtime Governance, Kernel Change, and Suspend-Security Boundaries
 - [[Python]] JIT 논의는 compiler 성능이 실제 지원 기능이 되려면 PEP 기반 ownership, debugger/profiler·extension 호환성, memory/warm-up/throughput 지표, 그리고 release-manager의 명시적 판단이 필요함을 보여 준다.
 - Rust `rnull` block driver와 [[LinuxKernel|Linux kernel]] 7.3 merge window는 memory-safety language 도입과 기능 병합이 block-layer lifecycle, ABI, concurrency, distribution regression이라는 기존 운영 계약을 대체하지 않음을 보인다.

@@ -1491,3 +1491,11 @@ Added eight Korean raw deliverables and deterministic source materialization aft
 ## [2026-09-11] graph | Knowledge graph rebuilt
 
 3168 nodes, 10711 edges (10711 extracted, 0 inferred).
+
+## [2026-09-16] ingest | DriveZero + Latent Interface Training Hugging Face Weekly papers
+
+Added eight Korean raw deliverables with four verified arXiv figure assets. Automated Codex ingest was unavailable because its configured model is unsupported for the active account, so eight deterministic source pages plus DriveZero, Latent Interface Training, Vision–Action Shortcut, and Closed-Loop Reinforcement Learning concept pages were materialized manually with full nested paths and SHA-256 prefixes.
+
+## [2026-09-16] graph | Knowledge graph rebuilt
+
+3180 nodes, 10737 edges (10737 extracted, 0 inferred; `--no-infer` fallback after the bounded semantic-inference attempt repeatedly returned HTTP 410).
