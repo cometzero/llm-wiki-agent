@@ -33,9 +33,48 @@
     "2609.00111",
     "2608.23478",
     "2609.06055",
-    "2609.12641"
+    "2609.12641",
+    "2609.13231",
+    "2609.24682"
   ],
   "runs": [
+    {
+      "date_kst": "2026-09-23 09:40:29 KST",
+      "week": "2026-W39",
+      "selected_paper_ids": [
+        "2609.13231",
+        "2609.24682"
+      ],
+      "papers": [
+        {
+          "id": "2609.13231",
+          "title": "ShieldVLA: Feasibility-Aware Safety Alignment for Vision-Language-Action Models",
+          "week": "2026-W39",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/shieldvla-safety-alignment-2609-13231"
+        },
+        {
+          "id": "2609.24682",
+          "title": "Think Like a World Model, Act Like a VLA: Distilling World-Model Representations into Compact Robot Policies",
+          "week": "2026-W39",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/thaw-vla-world-model-distillation-2609-24682"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/shieldvla-safety-alignment-2609-13231/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/shieldvla-safety-alignment-2609-13231/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/shieldvla-safety-alignment-2609-13231/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/shieldvla-safety-alignment-2609-13231/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/thaw-vla-world-model-distillation-2609-24682/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/thaw-vla-world-model-distillation-2609-24682/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/thaw-vla-world-model-distillation-2609-24682/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W39/thaw-vla-world-model-distillation-2609-24682/learning.md"
+      ],
+      "commit_hash": "6e7bb99ca4f61e42fbec552e20fd36c7cd95c0aa",
+      "notes": "Generated Korean technical translations, analyses, reference maps, learning notes, five verified arXiv HTML figure assets, deterministic wiki source materialization, and extracted-wikilink graph artifacts.",
+      "limitations": "Configured Codex model gpt-5.3-codex-spark is unavailable for the active account; automatic NVIDIA backend returned HTTP 410 for an EOL model. Dense appendices/tables were condensed; semantic graph inference fell back to --no-infer."
+    },
     {
       "date_kst": "2026-09-16 09:40:37 KST",
       "week": "2026-W37/2026-W38",
