@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [ShieldVLA: VLA를 위한 실행가능성 인지 안전 정렬](sources/shieldvla-2609-13231-paper-ko.md) — VLM rubric과 HJ safety critic으로 VLA update를 feasibility-gating
+- [ShieldVLA 분석](sources/shieldvla-2609-13231-analysis.md) — VLA safety alignment의 I/O, closed-loop SR/CSC, AD 전이 경계 분석
+- [ShieldVLA 참고 레퍼런스](sources/shieldvla-2609-13231-references.md) — constrained VLA, reachability, barrier safety 문헌 지도
+- [ShieldVLA 핵심 기술 학습 자료](sources/shieldvla-2609-13231-learning.md) — rubric score·HJ critic·safety gate 구현 학습 자료
+- [THAW-VLA: World Model 표현을 Compact VLA 정책으로 증류하기](sources/thaw-vla-2609-24682-paper-ko.md) — cached world-model feature로 real-time VLA에 physical prior를 증류
+- [THAW-VLA 분석](sources/thaw-vla-2609-24682-analysis.md) — representation transfer, closed-loop evidence, latency/AD 경계 분석
+- [THAW-VLA 참고 레퍼런스](sources/thaw-vla-2609-24682-references.md) — WAM·world-model·state-guided VLA 문헌 지도
+- [THAW-VLA 핵심 기술 학습 자료](sources/thaw-vla-2609-24682-learning.md) — feature cache·alignment loss·deployment 분리 학습 자료
 - [DriveZero: 인간 시연을 넘어서는 End-to-End 자율주행](sources/drivezero-2609-06055-paper-ko.md) — privileged closed-loop RL teacher를 camera-only E2E planner로 증류
 - [DriveZero 분석](sources/drivezero-2609-06055-analysis.md) — RL teacher, multi-VFM representation, proposal trajectory와 evaluation boundary 분석
 - [DriveZero 핵심 참고문헌](sources/drivezero-2609-06055-references.md) — self-play, post-training, simulation scaling 문헌 지도
@@ -338,6 +346,8 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [ShieldVLA](entities/ShieldVLA.md) — HJ reachability critic으로 VLA safety update를 gate하는 framework
+- [THAW-VLA](entities/THAWVLA.md) — world-model representation을 compact VLA policy로 증류하는 method
 - [Bambu Lab](entities/BambuLab.md) — 3D-printer vendor discussed in the August 27 LWN copyleft-compliance report.
 - [Bambu Studio](entities/BambuStudio.md) — Bambu Lab printer software implicated in the reported licensing dispute.
 - [Software Freedom Conservancy](entities/SoftwareFreedomConservancy.md) — Nonprofit organization involved in copyleft-compliance enforcement.

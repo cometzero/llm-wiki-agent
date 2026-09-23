@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W39: Feasibility-Gated Safety와 World-Model Representation Distillation
+- **ShieldVLA**는 VLM rubric으로 visual safety margin을 만들고 HJ reachability-inspired critic이 VLA update를 feasible reward optimization과 infeasible recovery optimization으로 나눈다. 이는 closed-loop navigation/manipulation에서 SR과 cumulative safety cost를 함께 다루는 explicit safety layer지만, critic/rubric의 learned score는 formal safety guarantee나 real-road rare-event evidence가 아니다.
+- **THAW-VLA**는 heavy world model의 future rollout을 online control에서 제거하고 cached internal feature만 compact VLA student에 distill한다. base policy와 동일한 deployment graph로 physical/dynamics prior를 전달한다는 latency 장점이 있으나, representation alignment는 multi-agent planning·traffic-rule compliance·safety를 자동으로 보장하지 않는다.
+- 두 작업은 VLA 배포에서 "더 많이 reason/generate"하는 것보다 safety/physical representation을 어떤 constrained interface로 action policy에 전달하고, deployment compute를 어떻게 제한하며, closed-loop 위험을 어떤 metric으로 검증하는지가 핵심임을 보강한다.
+
 ## 2026-W37/W38: Closed-Loop Driving Distillation and Robust Vision–Action Interfaces
 - [[DriveZero]]는 autonomous driving에서 perception/action의 학습 regime을 분리한다. privileged structured-state [[ClosedLoopReinforcementLearning]] teacher가 mixed-agent world에서 행동을 만들고, multi-VFM representation을 쓰는 camera-only planner가 그 rollout을 distill한다. 이는 human-log imitation의 단일 미래·policy-induced state 공백을 보완하지만 simulator, reward, privileged perception gap이 안전성 상한을 정한다.
 - [[LatentInterfaceTraining]]은 VLA/WAM의 direct visual conditioning을 terminal-pose reconstruction을 받는 latent bottleneck으로 바꿔 [[VisionActionShortcut]]을 줄이려 한다. LIBERO-Plus의 camera/noise/layout shift 개선은 공간 action grounding 신호지만 language shift 및 broader real-world reliability는 별도 검증이 필요하다.

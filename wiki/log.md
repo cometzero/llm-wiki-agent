@@ -1,3 +1,7 @@
+## [2026-09-23] ingest | ShieldVLA / THAW-VLA (Hugging Face Weekly 2026-W39)
+
+Added eight source pages for Korean translations, analyses, reference maps, and learning guides under two new Robotics weekly-paper folders. Codex ingest failed because configured model `gpt-5.3-codex-spark` is unavailable for the account; automatic backend selected an EOL NVIDIA model (HTTP 410), so source pages, navigation, and two method entities were deterministically materialized. ShieldVLA adds feasibility-gated HJ safety alignment; THAW-VLA adds world-model feature distillation with action-only deployment. Graph rebuilt from extracted wikilinks after normal inference failure.
+
 ## [2026-09-11] ingest | LWN.net Weekly Edition for September 3, 2026
 
 Added the complete public Korean LWN Weekly translation for article 1090824. NVIDIA ingest failed because the configured model was EOL (HTTP 410), and the bounded Codex retry exhausted context before wiki writes; manually materialized the deterministic source page with full raw hash and refreshed navigation/overview.
@@ -1499,3 +1503,7 @@ Added eight Korean raw deliverables with four verified arXiv figure assets. Auto
 ## [2026-09-16] graph | Knowledge graph rebuilt
 
 3180 nodes, 10737 edges (10737 extracted, 0 inferred; `--no-infer` fallback after the bounded semantic-inference attempt repeatedly returned HTTP 410).
+
+## [2026-09-23] graph | Knowledge graph rebuilt
+
+3190 nodes, 10752 edges (10752 extracted, 0 inferred).
