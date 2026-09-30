@@ -35,7 +35,9 @@
     "2609.06055",
     "2609.12641",
     "2609.13231",
-    "2609.24682"
+    "2609.24682",
+    "2609.24749",
+    "2609.04355"
   ],
   "runs": [
     {
@@ -698,6 +700,43 @@
       "commit_hash": "78adbbb65c11bda3ded675b7eb08e530d845e824",
       "notes": "Generated Korean translation, analysis, references, learning notes, and arXiv HTML figures; manually materialized deterministic wiki source pages after Codex ingest returned malformed JSON; validation passed with no broken wikilinks.",
       "limitations": "Semantic graph inference repeatedly returned HTTP 410 and timed out; graph was rebuilt from extracted wikilinks with --no-infer. Dense appendices/tables were condensed rather than fully translated."
+    },
+    {
+      "date_kst": "2026-09-30 09:40:58 KST",
+      "week": "2026-W40",
+      "selected_paper_ids": [
+        "2609.24749",
+        "2609.04355"
+      ],
+      "papers": [
+        {
+          "id": "2609.24749",
+          "title": "D-JEPA: A Decision-Aligned Latent World Model",
+          "week": "2026-W40",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/d-jepa-decision-aligned-world-model-2609-24749"
+        },
+        {
+          "id": "2609.04355",
+          "title": "VLA-Precision: Asymmetric Co-Bootstrapping for Efficient Real-World Online RL of Vision-Language-Action Models",
+          "week": "2026-W40",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/vla-precision-real-world-online-rl-2609-04355"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/d-jepa-decision-aligned-world-model-2609-24749/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/d-jepa-decision-aligned-world-model-2609-24749/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/d-jepa-decision-aligned-world-model-2609-24749/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/d-jepa-decision-aligned-world-model-2609-24749/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/vla-precision-real-world-online-rl-2609-04355/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/vla-precision-real-world-online-rl-2609-04355/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/vla-precision-real-world-online-rl-2609-04355/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W40/vla-precision-real-world-online-rl-2609-04355/learning.md"
+      ],
+      "commit_hash": "5d5be024c7b727ec5ff16b7d053d8640b51e938e",
+      "notes": "Generated Korean technical translations, analyses, reference maps, learning notes, four verified arXiv HTML figure assets, deterministic wiki source materialization, and extracted-wikilink graph artifacts. Validation passed with no broken wikilinks and all pages indexed.",
+      "limitations": "Configured Codex ingest backend was unavailable for the active account, so source/navigation pages were materialized deterministically. Semantic graph inference timed out after a bounded attempt and graph was rebuilt with --no-infer. Dense appendices/tables were condensed rather than fully translated."
     }
   ]
 }
