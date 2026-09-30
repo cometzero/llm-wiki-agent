@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W40: Decision-Aligned World Model과 Real-World VLA RL
+- **D-JEPA**는 latent world model의 global prediction quality와 실행 순간의 local candidate ranking을 분리한다. goal-relative descriptor와 ordinal rank를 set-wise로 보정해 action/trajectory 후보의 실제 outcome을 더 잘 반영하려 하며, RoboTwin·physical robot·7 focused driving scene에서 candidate selection 전이를 보인다. 다만 후보 생성기 coverage, task-local calibration, rare-event safety와 uncertainty는 reranker 바깥의 문제다.
+- **VLA-Precision**은 real-world VLA post-training에서 human correction을 빠른 behavior-cloning signal과 proposal-versus-correction ranking signal로 쓰고, TD return·pessimistic relative advantage·frozen reference regularization으로 policy drift를 줄이려 한다. ACoB-Stream의 KV-context reuse와 action-expert-only synchronization은 closed-loop update freshness를 다루지만, task-specific robot reward·operator intervention·low-level safety constraint에 의존한다.
+- 두 작업은 VLA/WAM 배포에서 더 큰 backbone만으로는 충분하지 않고, **candidate/action interface의 calibration**, **executed-outcome feedback**, **latency-aware state lifecycle**, **독립적인 safety fallback**이 함께 설계되어야 함을 보강한다.
+
 ## 2026-W39: Feasibility-Gated Safety와 World-Model Representation Distillation
 - **ShieldVLA**는 VLM rubric으로 visual safety margin을 만들고 HJ reachability-inspired critic이 VLA update를 feasible reward optimization과 infeasible recovery optimization으로 나눈다. 이는 closed-loop navigation/manipulation에서 SR과 cumulative safety cost를 함께 다루는 explicit safety layer지만, critic/rubric의 learned score는 formal safety guarantee나 real-road rare-event evidence가 아니다.
 - **THAW-VLA**는 heavy world model의 future rollout을 online control에서 제거하고 cached internal feature만 compact VLA student에 distill한다. base policy와 동일한 deployment graph로 physical/dynamics prior를 전달한다는 latency 장점이 있으나, representation alignment는 multi-agent planning·traffic-rule compliance·safety를 자동으로 보장하지 않는다.

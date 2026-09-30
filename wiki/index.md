@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [D-JEPA: 의사결정 정렬 잠재 world model](sources/d-jepa-2609-24749-paper-ko.md) — latent world model의 action 후보 순위를 실제 outcome에 정렬하고 driving trajectory selection까지 평가
+- [D-JEPA 분석](sources/d-jepa-2609-24749-analysis.md) — candidate-set ranking, native latent realization, AD deployment boundary 분석
+- [D-JEPA 참고 레퍼런스](sources/d-jepa-2609-24749-references.md) — JEPA·latent control·VLA planning 문헌 지도
+- [D-JEPA 핵심 기술 학습 자료](sources/d-jepa-2609-24749-learning.md) — decision-local gap과 bounded relational alignment 학습 자료
+- [VLA-Precision: real-world online RL로 VLA 정밀 작업을 개선하는 ACoB](sources/vla-precision-2609-04355-paper-ko.md) — human correction·critic calibration·context streaming을 결합한 VLA post-training
+- [VLA-Precision 분석](sources/vla-precision-2609-04355-analysis.md) — ACoB/ACoB-Stream의 action grounding·closed-loop·system 병목 분석
+- [VLA-Precision 참고 레퍼런스](sources/vla-precision-2609-04355-references.md) — intervention RL·VLA backbone·teleoperation 문헌 지도
+- [VLA-Precision 핵심 기술 학습 자료](sources/vla-precision-2609-04355-learning.md) — real-world online RL와 KV-context lifecycle 학습 자료
 - [ShieldVLA: VLA를 위한 실행가능성 인지 안전 정렬](sources/shieldvla-2609-13231-paper-ko.md) — VLM rubric과 HJ safety critic으로 VLA update를 feasibility-gating
 - [ShieldVLA 분석](sources/shieldvla-2609-13231-analysis.md) — VLA safety alignment의 I/O, closed-loop SR/CSC, AD 전이 경계 분석
 - [ShieldVLA 참고 레퍼런스](sources/shieldvla-2609-13231-references.md) — constrained VLA, reachability, barrier safety 문헌 지도

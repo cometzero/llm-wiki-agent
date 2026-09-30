@@ -1,3 +1,7 @@
+## [2026-09-30] ingest | D-JEPA / VLA-Precision (Hugging Face Weekly 2026-W40)
+
+Added eight Korean raw deliverables and eight deterministic source pages for D-JEPA (decision-aligned latent world-model candidate ranking with driving transfer) and VLA-Precision (human-correction real-world VLA RL with context streaming). The configured Codex model is unavailable for this account, so generated source coverage/navigation/overview were materialized deterministically; graph follows extracted-wikilink fallback after a bounded normal attempt.
+
 ## [2026-09-23] ingest | ShieldVLA / THAW-VLA (Hugging Face Weekly 2026-W39)
 
 Added eight source pages for Korean translations, analyses, reference maps, and learning guides under two new Robotics weekly-paper folders. Codex ingest failed because configured model `gpt-5.3-codex-spark` is unavailable for the account; automatic backend selected an EOL NVIDIA model (HTTP 410), so source pages, navigation, and two method entities were deterministically materialized. ShieldVLA adds feasibility-gated HJ safety alignment; THAW-VLA adds world-model feature distillation with action-only deployment. Graph rebuilt from extracted wikilinks after normal inference failure.
@@ -1507,3 +1511,7 @@ Added eight Korean raw deliverables with four verified arXiv figure assets. Auto
 ## [2026-09-23] graph | Knowledge graph rebuilt
 
 3190 nodes, 10752 edges (10752 extracted, 0 inferred).
+
+## [2026-09-30] graph | Knowledge graph rebuilt
+
+3198 nodes, 10752 edges (10752 extracted, 0 inferred).
