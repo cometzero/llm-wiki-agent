@@ -37,9 +37,45 @@
     "2609.13231",
     "2609.24682",
     "2609.24749",
-    "2609.04355"
+    "2609.04355",
+    "2609.38078",
+    "2610.04616"
   ],
   "runs": [
+    {
+      "date_kst": "2026-10-07 09:40:10 KST",
+      "week": "2026-W41",
+      "selected_paper_ids": ["2609.38078", "2610.04616"],
+      "papers": [
+        {
+          "id": "2609.38078",
+          "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+          "week": "2026-W41",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078"
+        },
+        {
+          "id": "2610.04616",
+          "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
+          "week": "2026-W41",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616/learning.md"
+      ],
+      "commit_hash": "e364ef89f54ccb7646cd63854b82b68840074a17",
+      "notes": "Eight Korean Markdown deliverables, eight verified figure assets, eight exact-path/hash source pages, two entities and GroundFscore concept. Content commit pushed and remote hash verified before this state update. Independent index audit repaired existing direct-link omissions; no broken wikilinks or unindexed pages remain.",
+      "limitations": "NVIDIA ingest returned HTTP 410 and Codex executable was absent, so wiki materialization was deterministic. Bounded semantic graph attempt timed out; --no-infer produced 3209 nodes and 10799 edges. Dense appendices/tables were explicitly condensed; HTML-native plots are preserved through tables/captions rather than separate image files. Results were not independently reproduced."
+    },
     {
       "date_kst": "2026-09-23 09:40:29 KST",
       "week": "2026-W39",
