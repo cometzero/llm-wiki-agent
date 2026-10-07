@@ -1,0 +1,42 @@
+{
+  "arxiv_id": "2609.38078",
+  "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+  "week": "2026-W41",
+  "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/motormind-zero-shot-manipulation-2609-38078",
+  "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+  "selected_reason": "범용 VLM을 mid-level robot action과 asynchronous execution feedback에 연결하는 높은 관련도·득표수의 신규 VLA/robotics 논문",
+  "source_url": "https://arxiv.org/html/2609.38078v1",
+  "hf_url": "https://huggingface.co/papers/2609.38078",
+  "arxiv_url": "https://arxiv.org/abs/2609.38078",
+  "pdf_url": "https://arxiv.org/pdf/2609.38078",
+  "ingested_at_kst": "2026-10-07T09:48:44.755963+09:00",
+  "license": "CC BY 4.0",
+  "figures": [
+    {
+      "file": "figures/figure-1-0.png",
+      "url": "https://arxiv.org/html/2609.38078v1/teaser.png",
+      "caption": "Figure 1: MotorMind : Equipping general-purpose vision-language models into robot controller. VLM proposes mid-level actions (e.g. \"move forward by 12.20mm\"), then pass to the control layer that connects those decisions to physical execution and feedback. Asynchronous monitoring enables interruption of pending actions, and outcome verification guides recovery and replanning. This design supports zero-shot manipulation across simulation and real-world settings without task-specific training.",
+      "bytes": 636369
+    },
+    {
+      "file": "figures/figure-2-0.png",
+      "url": "https://arxiv.org/html/2609.38078v1/embodied_qa_overview.png",
+      "caption": "Figure 2: Diagnosing VLM capabilities for robotic manipulation. We evaluate action selection, progress assessment, and subgoal completion.",
+      "bytes": 672335
+    },
+    {
+      "file": "figures/figure-3-0.png",
+      "url": "https://arxiv.org/html/2609.38078v1/method.png",
+      "caption": "Figure 3: Overview of MotorMind . The Planner specifies subgoals and success criteria. The Executor proposes short action batches, which the Controller converts into robot motion. During execution, the Monitor evaluates updated observations and can request interruption at an action boundary, cancelling pending commands. Outcome assessment then determines whether to advance, retry, or replan. Memory summarizes execution evidence and assessed outcomes in the background for subsequent decisions.",
+      "bytes": 290969
+    },
+    {
+      "file": "figures/figure-5-0.png",
+      "url": "https://arxiv.org/html/2609.38078v1/failure_audit_bar.png",
+      "caption": "Figure 5: Failure analysis of VLM decision errors across LIBERO-PRO settings.",
+      "bytes": 14562
+    }
+  ],
+  "limitations": "Selective detailed main-body technical translation; dense tables and appendices condensed. HTML non-image diagrams retained via source link.",
+  "reference_count": 8
+}

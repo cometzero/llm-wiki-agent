@@ -1,3 +1,7 @@
+## [2026-10-07] ingest | MotorMind / PerturBot (Hugging Face Weekly 2026-W41)
+
+Added eight Korean raw Markdown deliverables, eight downloaded arXiv figure assets, eight source pages, two method entities, and the GroundFscore concept. Duplicate ID/title checks were clean. NVIDIA ingest returned HTTP 410 for an EOL model; the bounded Codex fallback failed because codex CLI is absent, so deterministic source materialization preserves exact raw paths and hashes. Main-body translations retain section structure and equations; dense appendices/tables are explicitly condensed. Source discrepancies and robotics-to-driving evidence boundaries are recorded.
+
 ## [2026-09-30] ingest | D-JEPA / VLA-Precision (Hugging Face Weekly 2026-W40)
 
 Added eight Korean raw deliverables and eight deterministic source pages for D-JEPA (decision-aligned latent world-model candidate ranking with driving transfer) and VLA-Precision (human-correction real-world VLA RL with context streaming). The configured Codex model is unavailable for this account, so generated source coverage/navigation/overview were materialized deterministically; graph follows extracted-wikilink fallback after a bounded normal attempt.
@@ -1515,3 +1519,7 @@ Added eight Korean raw deliverables with four verified arXiv figure assets. Auto
 ## [2026-09-30] graph | Knowledge graph rebuilt
 
 3198 nodes, 10752 edges (10752 extracted, 0 inferred).
+
+## [2026-10-07] graph | Knowledge graph rebuilt
+
+3209 nodes, 10799 edges (10799 extracted, 0 inferred).

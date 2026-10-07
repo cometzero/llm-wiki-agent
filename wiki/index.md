@@ -4,6 +4,14 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [MotorMind: 범용 VLM Zero-Shot 로봇 조작 기술 번역](sources/motormind-2609-38078-paper-ko.md) — mid-level action·asynchronous harness 본문 번역
+- [MotorMind 분석](sources/motormind-2609-38078-analysis.md) — action grounding·evaluation·latency boundary
+- [MotorMind 참고문헌](sources/motormind-2609-38078-references.md) — 핵심 8편의 문헌 지도
+- [MotorMind 학습 자료](sources/motormind-2609-38078-learning.md) — execution contract·stale response·verification
+- [PerturBot 기술 번역](sources/perturbot-2610-04616-paper-ko.md) — label-valid V/C/R와 GroundFscore 본문 번역
+- [PerturBot 분석](sources/perturbot-2610-04616-analysis.md) — shortcut·evidence use·offline/closed-loop 경계
+- [PerturBot 참고문헌](sources/perturbot-2610-04616-references.md) — 핵심 8편의 문헌 지도
+- [PerturBot 학습 자료](sources/perturbot-2610-04616-learning.md) — null/causal edit·label validity·paired noise
 - [D-JEPA: 의사결정 정렬 잠재 world model](sources/d-jepa-2609-24749-paper-ko.md) — latent world model의 action 후보 순위를 실제 outcome에 정렬하고 driving trajectory selection까지 평가
 - [D-JEPA 분석](sources/d-jepa-2609-24749-analysis.md) — candidate-set ranking, native latent realization, AD deployment boundary 분석
 - [D-JEPA 참고 레퍼런스](sources/d-jepa-2609-24749-references.md) — JEPA·latent control·VLA planning 문헌 지도
@@ -354,6 +362,58 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+<!-- Exact-path navigation audit: existing pages previously lacked direct catalog links. -->
+- [Fedora](entities/Fedora.md)
+- [Pounce](entities/Pounce.md)
+- [Fast-WAM](entities/Fast-WAM.md)
+- [SimWAM](entities/SimWAM.md)
+- [FAST](entities/FAST.md)
+- [ABot-N0](entities/ABot-N0.md)
+- [ColaVLA](entities/ColaVLA.md)
+- [VisualThink-VLA](entities/VisualThink-VLA.md)
+- [PonderPounce](entities/PonderPounce.md)
+- [360CityArena](entities/360CityArena.md)
+- [OpenSUSE](entities/OpenSUSE.md)
+- [Vid2Sim](entities/Vid2Sim.md)
+- [StarVLA](entities/StarVLA.md)
+- [RoboSemanticBench](entities/RoboSemanticBench.md)
+- [Fast-dVLA](entities/Fast-dVLA.md)
+- [ReflectDrive](entities/ReflectDrive.md)
+- [DriveWAM](entities/DriveWAM.md)
+- [VLAct](entities/VLAct.md)
+- [LSFMMbpfSummit2026](entities/LSFMMbpfSummit2026.md)
+- [ExploreVLA](entities/ExploreVLA.md)
+- [Embodied-cpp](entities/Embodied-cpp.md)
+- [RoboDojo](entities/RoboDojo.md)
+- [Cosmos](entities/Cosmos.md)
+- [Xiaomi-Robotics-1](entities/Xiaomi-Robotics-1.md)
+- [Qwen3VL](entities/Qwen3VL.md)
+- [π0](entities/π0.md)
+- [Kernel Launch](<entities/Kernel Launch.md>)
+- [ManiSkill](entities/ManiSkill.md)
+- [WorldDiT](entities/WorldDiT.md)
+- [OmniDreams](entities/OmniDreams.md)
+- [Ponder](entities/Ponder.md)
+- [RDS](entities/RDS.md)
+- [InternVLA-M1](entities/InternVLA-M1.md)
+- [ABot-N1](entities/ABot-N1.md)
+- [Forgejo](entities/Forgejo.md)
+- [Meta-World](entities/Meta-World.md)
+- [SpatialMemoryAgent](entities/SpatialMemoryAgent.md)
+- [Akihabara](entities/Akihabara.md)
+- [Qwen3-VL](entities/Qwen3-VL.md)
+- [DriveVA](entities/DriveVA.md)
+- [EmbodiedCity](entities/EmbodiedCity.md)
+- [Alpamayo](entities/Alpamayo.md)
+- [TBDVLA](entities/TBDVLA.md)
+- [SidewalkBench](entities/SidewalkBench.md)
+- [GN0](entities/GN0.md)
+- [EXIMO](entities/EXIMO.md)
+- [CUDA Kernel](<entities/CUDA Kernel.md>)
+- [HY-VLA](entities/HY-VLA.md)
+- [RT-1](entities/RT-1.md)
+- [MotorMind](entities/MotorMind.md) — frozen VLM mid-level action과 asynchronous execution harness
+- [PerturBot](entities/PerturBot.md) — evidence-aware VLA training data intervention
 - [ShieldVLA](entities/ShieldVLA.md) — HJ reachability critic으로 VLA safety update를 gate하는 framework
 - [THAW-VLA](entities/THAWVLA.md) — world-model representation을 compact VLA policy로 증류하는 method
 - [Bambu Lab](entities/BambuLab.md) — 3D-printer vendor discussed in the August 27 LWN copyleft-compliance report.
@@ -847,6 +907,82 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+<!-- Exact-path navigation audit: existing pages previously lacked direct catalog links. -->
+- [DEFT](concepts/DEFT.md)
+- [inode](concepts/inode.md)
+- [DiscreteDiffusionVLA](concepts/DiscreteDiffusionVLA.md)
+- [SemanticGrounding](concepts/SemanticGrounding.md)
+- [DirectIO](concepts/DirectIO.md)
+- [ActionTokenization](concepts/ActionTokenization.md)
+- [PI](concepts/PI.md)
+- [VulnerabilityDisclosure](concepts/VulnerabilityDisclosure.md)
+- [ECoT](concepts/ECoT.md)
+- [BPF](concepts/BPF.md)
+- [Iomap](concepts/Iomap.md)
+- [StarVLA](concepts/StarVLA.md)
+- [ActionsAsLanguage](concepts/ActionsAsLanguage.md)
+- [FailureRecovery](concepts/FailureRecovery.md)
+- [InferenceStack](concepts/InferenceStack.md)
+- [TemporalAR](concepts/TemporalAR.md)
+- [VLAct](concepts/VLAct.md)
+- [ActionToken](concepts/ActionToken.md)
+- [OpenLoop](concepts/OpenLoop.md)
+- [FastECoT](concepts/FastECoT.md)
+- [ClosedLoopSimulation](concepts/ClosedLoopSimulation.md)
+- [GSR](concepts/GSR.md)
+- [ActionChunk](concepts/ActionChunk.md)
+- [Vision-Language Navigation (VLN)](<concepts/Vision-Language Navigation (VLN).md>)
+- [SSD](concepts/SSD.md)
+- [RLVR](concepts/RLVR.md)
+- [TrainingStack](concepts/TrainingStack.md)
+- [BlockDiffusion](concepts/BlockDiffusion.md)
+- [PGP](concepts/PGP.md)
+- [Waypoint](concepts/Waypoint.md)
+- [DeepThinkVLA](concepts/DeepThinkVLA.md)
+- [FutureRGBPatch](concepts/FutureRGBPatch.md)
+- [ResidualRL](concepts/ResidualRL.md)
+- [ClosedLoop](concepts/ClosedLoop.md)
+- [NAVSIM](concepts/NAVSIM.md)
+- [BEV](concepts/BEV.md)
+- [RCU](concepts/RCU.md)
+- [RTC](concepts/RTC.md)
+- [Forgetting](concepts/Forgetting.md)
+- [Autorubric](concepts/Autorubric.md)
+- [WorldDiT](concepts/WorldDiT.md)
+- [TokenPrediction](concepts/TokenPrediction.md)
+- [LangForce](concepts/LangForce.md)
+- [Simulator](concepts/Simulator.md)
+- [π0.5](concepts/π0.5.md)
+- [WorldActionModel](concepts/WorldActionModel.md)
+- [AD-MCQ](concepts/AD-MCQ.md)
+- [VisualPlanning](concepts/VisualPlanning.md)
+- [CovariateShift](concepts/CovariateShift.md)
+- [OFT](concepts/OFT.md)
+- [DEFT-RLVR](concepts/DEFT-RLVR.md)
+- [RGB](concepts/RGB.md)
+- [FeedbackLoop](concepts/FeedbackLoop.md)
+- [AutonomousDriving](concepts/AutonomousDriving.md)
+- [DataPipeline](concepts/DataPipeline.md)
+- [WAL](concepts/WAL.md)
+- [OpenPGP](concepts/OpenPGP.md)
+- [Action](concepts/Action.md)
+- [AgenticNavigation](concepts/AgenticNavigation.md)
+- [StateTransitionCaptioning](concepts/StateTransitionCaptioning.md)
+- [SmolVLA](concepts/SmolVLA.md)
+- [DataPyramidForEmbodiedManipulation](concepts/DataPyramidForEmbodiedManipulation.md)
+- [Streaming](concepts/Streaming.md)
+- [Accelerator](concepts/Accelerator.md)
+- [Poseestimation](concepts/Poseestimation.md)
+- [VisualReasoning](concepts/VisualReasoning.md)
+- [PQC](concepts/PQC.md)
+- [nSG](concepts/nSG.md)
+- [Vln](concepts/Vln.md)
+- [VLN](concepts/VLN.md)
+- [SUSE](concepts/SUSE.md)
+- [PDMS](concepts/PDMS.md)
+- [Serving](concepts/Serving.md)
+- [TSR](concepts/TSR.md)
+- [GroundFscore](concepts/GroundFscore.md) — paired null/causal edit로 VLA의 stability와 evidence responsiveness를 함께 측정
 - [DriveZero](concepts/DriveZero.md) — closed-loop RL teacher를 camera-only trajectory planner로 증류하는 E2E AD system
 - [Latent Interface Training](concepts/LatentInterfaceTraining.md) — pose-supervised latent bottleneck을 통한 VLA/WAM visual conditioning
 - [Vision–Action Shortcut](concepts/VisionActionShortcut.md) — nuisance visual cue에 의존해 action이 OOD에서 흔들리는 failure mode

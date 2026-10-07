@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W41: Runtime Harness와 Evidence-Aware VLA Training
+- [[MotorMind]]는 frozen 범용 VLM의 subgoal·parameterized mid-level action을 deterministic Controller와 measured feedback에 연결한다. sequential execution 옆의 asynchronous Monitor·Memory, action-boundary cancellation, stale-result rejection, explicit outcome verification으로 zero-shot 조작을 지원하지만 instant safety stop이나 vehicle control 성능을 입증한 연구는 아니다.
+- [[PerturBot]]은 successful demonstration의 visual·lexical·motor shortcut을 label-valid wrist perturbation·decision-relevant caption·recorded random/failed segment로 다룬다. 기존 π0.5 action loss와 inference graph를 유지하며 [[GroundFscore]]로 null-edit stability와 causal responsiveness를 함께 평가한다. relabeling은 기록되지 않은 recovery를 만들지 않으며 offline score는 safety certificate가 아니다.
+- [[LatentInterfaceTraining]]의 representation intervention, PerturBot의 training-data intervention, MotorMind의 runtime intervention은 [[VisionActionShortcut]]과 action grounding의 서로 다른 layer를 다룬다. robotics 결과를 자율주행에 전이할 때는 numeric action contract, observation freshness, independent safety fallback, vehicle closed-loop 검증을 별도로 유지해야 한다.
+
 ## 2026-W40: Decision-Aligned World Model과 Real-World VLA RL
 - **D-JEPA**는 latent world model의 global prediction quality와 실행 순간의 local candidate ranking을 분리한다. goal-relative descriptor와 ordinal rank를 set-wise로 보정해 action/trajectory 후보의 실제 outcome을 더 잘 반영하려 하며, RoboTwin·physical robot·7 focused driving scene에서 candidate selection 전이를 보인다. 다만 후보 생성기 coverage, task-local calibration, rare-event safety와 uncertainty는 reranker 바깥의 문제다.
 - **VLA-Precision**은 real-world VLA post-training에서 human correction을 빠른 behavior-cloning signal과 proposal-versus-correction ranking signal로 쓰고, TD return·pessimistic relative advantage·frozen reference regularization으로 policy drift를 줄이려 한다. ACoB-Stream의 KV-context reuse와 action-expert-only synchronization은 closed-loop update freshness를 다루지만, task-specific robot reward·operator intervention·low-level safety constraint에 의존한다.

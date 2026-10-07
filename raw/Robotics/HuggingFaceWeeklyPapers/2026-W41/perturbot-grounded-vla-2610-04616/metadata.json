@@ -1,0 +1,42 @@
+{
+  "arxiv_id": "2610.04616",
+  "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
+  "week": "2026-W41",
+  "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W41/perturbot-grounded-vla-2610-04616",
+  "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+  "selected_reason": "current-week VLA의 evidence grounding·shortcut robustness와 unchanged-inference training을 다루어 deployment reliability 학습에 적합",
+  "source_url": "https://arxiv.org/html/2610.04616v1",
+  "hf_url": "https://huggingface.co/papers/2610.04616",
+  "arxiv_url": "https://arxiv.org/abs/2610.04616",
+  "pdf_url": "https://arxiv.org/pdf/2610.04616",
+  "ingested_at_kst": "2026-10-07T09:48:44.759073+09:00",
+  "license": "CC BY 4.0",
+  "figures": [
+    {
+      "file": "figures/figure-1-0.png",
+      "url": "https://arxiv.org/html/2610.04616v1/fig1_overview.png",
+      "caption": "Figure 1: Modality shortcuts and Perturbot . Top: familiar visual, lexical, and\nmotor cues can replace task evidence (solid: hypothetical shortcut choices;\ndashed: required alternatives). Bottom: task-preserving wrist-view\nperturbations (V), behavior-supported caption enrichment (C), and screened,\nrelabeled trajectory segments (R; Section 3.2 ). Examples are conceptual;\nrelabeled local behavior does not by itself establish recovery.",
+      "bytes": 95072
+    },
+    {
+      "file": "figures/figure-2-0.png",
+      "url": "https://arxiv.org/html/2610.04616v1/groundfscore.png",
+      "caption": "Figure 2: GroundFscore from paired inputs. (a) For each family, a null edit must\nleave the action unchanged (an off-path decoy, a paraphrase, another approach to\nthe same pose), and a causal edit must change it by a known target $\\Delta a^{\\star}_{e}$ (the target moved by $\\Delta p$ , another object named, a\ngrasp that closed on nothing). (b) $R_{c}$ normalizes the predicted change $\\delta$ ; $S_{c}$ projects it onto $\\Delta a^{\\star}_{e}$ and is clipped to $[0,1]$ . (c) Policies with equal success on the demonstration distribution can\ndiffer sharply in GroundFscore .",
+      "bytes": 86820
+    },
+    {
+      "file": "figures/figure-3-0.png",
+      "url": "https://arxiv.org/html/2610.04616v1/generalpnp_setup.png",
+      "caption": "Figure 3: Real-robot General PnP setup. Left: the material pool and the six\nobjects and three containers used in the task. Middle: an example stored\nlayout, specified by each item’s position and orientation. Right: an\ninstruction-conditioned scene; every policy is tested on the same 50 stored\ncases.",
+      "bytes": 812114
+    },
+    {
+      "file": "figures/figure-9-0.png",
+      "url": "https://arxiv.org/html/2610.04616v1/real_robot_setup.png",
+      "caption": "Figure 5: Real-robot platform. Two AgileX PiPER X arms are mounted\nside by side and face the tabletop workspace. A RealSense D435 head camera on\nthe central vertical post provides the third-person view, and a RealSense wrist\ncamera beside each gripper provides a wrist view.",
+      "bytes": 76822
+    }
+  ],
+  "limitations": "Selective detailed main-body technical translation; dense tables and appendices condensed. HTML non-image diagrams retained via source link.",
+  "reference_count": 8
+}
