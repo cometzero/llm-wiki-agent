@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-10-01 LWN Weekly: Language, Runtime, and Sustainable Systems
+- [[PostgreSQL]]의 kernel 협업 경험은 durability와 실제 application 성능이 I/O·memory·scheduler의 상호작용과 회귀 검증에 달려 있음을 보여 준다.
+- [[RustGPUNativeTarget]]의 heterogeneous runtime 구상과 [[CUndefinedBehavior]] 논의는 hardware/compiler가 제공하는 자유를 명시적 language contract와 검증 가능한 실행 의미에 연결해야 한다는 공통 주제를 갖는다. SDR의 deadline는 memory safety와 구분되는 실행 요구다.
+- [[KDE]]의 enterprise QA·authentication·recovery와 [[Igalia]]의 upstream·협동조합 사례는 오픈소스의 기술적 품질에 자금·조직·지속 가능한 유지보수가 필요함을 보강한다.
+- [[lwn-weekly-edition-2026-10-01-1096293]]은 CC BY-SA 특집 7편 전체 번역과 라이선스 미확인 단신 14개의 요약을 구분하며 공지·보안·patch 사실 목록을 보존한다. 발행 당시의 릴리스 현황을 오늘의 최신 현황으로 해석하지 않는다.
+
 ## 2026-W41: Runtime Harness와 Evidence-Aware VLA Training
 - [[MotorMind]]는 frozen 범용 VLM의 subgoal·parameterized mid-level action을 deterministic Controller와 measured feedback에 연결한다. sequential execution 옆의 asynchronous Monitor·Memory, action-boundary cancellation, stale-result rejection, explicit outcome verification으로 zero-shot 조작을 지원하지만 instant safety stop이나 vehicle control 성능을 입증한 연구는 아니다.
 - [[PerturBot]]은 successful demonstration의 visual·lexical·motor shortcut을 label-valid wrist perturbation·decision-relevant caption·recorded random/failed segment로 다룬다. 기존 π0.5 action loss와 inference graph를 유지하며 [[GroundFscore]]로 null-edit stability와 causal responsiveness를 함께 평가한다. relabeling은 기록되지 않은 recovery를 만들지 않으며 offline score는 safety certificate가 아니다.

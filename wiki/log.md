@@ -1523,3 +1523,11 @@ Added eight Korean raw deliverables with four verified arXiv figure assets. Auto
 ## [2026-10-07] graph | Knowledge graph rebuilt
 
 3209 nodes, 10799 edges (10799 extracted, 0 inferred).
+
+## [2026-10-09] ingest | LWN.net Weekly Edition for October 1, 2026
+
+Added Korean report for public edition 1096293: seven verified CC BY-SA feature translations, 14 paraphrased news briefs, complete factual announcement/security/patch appendices, and 55 explanatory footnotes. NVIDIA ingest failed with an EOL-model HTTP 410; bounded Codex retry failed because the CLI is absent. Deterministically materialized the source with full nested raw path and final-byte SHA-256; added RustGPUNativeTarget, CUndefinedBehavior and KDE, expanded PostgreSQL/Rust placeholders and preserved Igalia's prior context. Prior overview sections are preserved; translation scope and historical-version boundary are explicit.
+
+## [2026-10-09] graph | Knowledge graph rebuilt
+
+3213 nodes, 10817 edges (10817 extracted, 0 inferred).
