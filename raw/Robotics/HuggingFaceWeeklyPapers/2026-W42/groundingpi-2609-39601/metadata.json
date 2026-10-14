@@ -1,0 +1,138 @@
+{
+  "id": "2609.39601",
+  "title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+  "week": "2026-W42",
+  "hf_rank_snapshot": 2,
+  "hf_upvotes_snapshot": 246,
+  "selected_reason": "현재 주 후보 중 AD/VLA와 직접 연관된 최고 점수·추천수. Grounding backbone의 nuScenes trajectory와 로봇 action 전이를 함께 분석. 기존 주간 노트의 단순 후보 언급은 분석으로 간주하지 않음.",
+  "source_url": "https://arxiv.org/html/2609.39601v1",
+  "hf_url": "https://huggingface.co/papers/2609.39601",
+  "arxiv_url": "https://arxiv.org/abs/2609.39601",
+  "pdf_url": "https://arxiv.org/pdf/2609.39601",
+  "ingested_at_kst": "2026-10-14",
+  "license": "CC BY 4.0",
+  "authors": "Authors: Qize Yu , Lianrui Fan , Boyu Chen , Jiaqi Liang , Xini Ding , Yue Chen , Zetian Song , Yuran Wang , Yi Zou , Kaixuan Wang , Tianxing Chen , Wenxuan Song , Bohan Zhou , Mingleyang Li , Siqiao Huang , Yuqi Ye , Caigao Jiang , Wei Wei , Ruihai Wu , Hang Zhang , Yixiao Ge , Shuchang Zhou , Shilong Liu , Xianming Liu , Ping Luo , Shiyu Huang",
+  "figures": [
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/GroundingPI_Architectures.png",
+      "file": "figures/GroundingPI_Architectures.png",
+      "caption": "Figure 1 : GroundingPI architecture. The grounding example includes two minions and one human and an absent car category ( None ). Architecture specifications and parameter counts are provided in Section 7.2 .",
+      "bytes": 342481,
+      "sha256": "aca992a00540a656e74eeb022e564870b38fbcdf27b47c8644c97ac333b5c72f",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/GroundingPI_SFT_RL_Framework.png",
+      "file": "figures/GroundingPI_SFT_RL_Framework.png",
+      "caption": "Figure 3 : Overview of GroundingPI’s two-stage training pipeline. The first stage uses supervised fine-tuning (SFT) to learn structured grounding outputs with token-level cross-entropy. The second stage applies group relative policy optimization (GRPO) with task-specific rewards that balance grounding completeness and localization, and assess OCR text–geometry consistency and output reliability. Illustrative rollouts highlight common prediction errors and alternative OCR granularities.",
+      "bytes": 365804,
+      "sha256": "eadb23cb7cb343a6935fe716e021c03d4b9af64647176511eecc72f94aa86350",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/vla-benchmark-grid.png",
+      "file": "figures/vla-benchmark-grid.png",
+      "caption": "Figure 5 : Transfer to physical intelligence. Manipulation success rates and reciprocal nuScenes open-loop L2 errors (higher is better in all panels). Manipulation comparisons fix the action expert, action data, and training budget within each benchmark.",
+      "bytes": 161956,
+      "sha256": "1aa13ebff4e651bdba1b0e9742973bef5de7933317a4f28e1e7a6b7cae5a1890",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/GroundingPI_VLA_Representation_Concept.png",
+      "file": "figures/GroundingPI_VLA_Representation_Concept.png",
+      "caption": "Figure 6 : Perception before action. A conceptual progression toward a foundation with native grounding capabilities. Segment sizes are illustrative and do not represent measured parameter or data proportions.",
+      "bytes": 160054,
+      "sha256": "9f28cf64375440d8e10be5aaa2e8e61aeca88f2b9bca2bcf0b2800447c167b21",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/GroundingPI_Data_Mix.png",
+      "file": "figures/GroundingPI_Data_Mix.png",
+      "caption": "Figure 9 : Which perceptual supervision transfers? Included task groups and downstream results. Leave-one-out differences compare with all six groups; – denotes an unavailable ablation.",
+      "bytes": 160528,
+      "sha256": "081c5dbaeead675735e1e26b8db2486d7fa99525893f471789560d841d7efed7",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_02_grounding_across_foreground_and_background_small.png",
+      "file": "figures/qual_02_grounding_across_foreground_and_background_small.png",
+      "caption": "Figure 12 : Multi-scale grounding in a crowded classroom scene.",
+      "bytes": 1946731,
+      "sha256": "d474ca953d248ba2e6869840bfc7f54cf04cd90d245bfa4878a4c6d5871bc9e3",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_05_dense_objects_inside_a_container_small.png",
+      "file": "figures/qual_05_dense_objects_inside_a_container_small.png",
+      "caption": "Figure 13 : Dense fruit grounding under partial occlusion.",
+      "bytes": 2281447,
+      "sha256": "e386def91d14bcebb750b3785eee1451662c40b7e440c4df7474833e0642a326",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_09_relational_referring_with_occluded_body_parts_small.png",
+      "file": "figures/qual_09_relational_referring_with_occluded_body_parts_small.png",
+      "caption": "Figure 14 : Grounding a person through an occluded spatial relationship.",
+      "bytes": 1564031,
+      "sha256": "d26f5cd6bbfa323a6321aa3a10edd1ae09adbec11ac0477d25c2ee9e0961e943",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_11_instance_selection_and_interior_point_placement_small.png",
+      "file": "figures/qual_11_instance_selection_and_interior_point_placement_small.png",
+      "caption": "Figure 15 : Point grounding on the visible surface of a sofa.",
+      "bytes": 3025756,
+      "sha256": "1070508c16f7759e500f003860d3ea44d683bb8a25b59e52c042d437593f95bb",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_13_dense_pointing_across_a_wide_field_of_view_small.png",
+      "file": "figures/qual_13_dense_pointing_across_a_wide_field_of_view_small.png",
+      "caption": "Figure 16 : Dense point grounding in an aerial urban scene.",
+      "bytes": 1725609,
+      "sha256": "761317f5c804cb47f692ddb9db93c02b98e93d01580a34173302634d8002544a",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_16_gui_grounding_of_a_small_peripheral_control_small.png",
+      "file": "figures/qual_16_gui_grounding_of_a_small_peripheral_control_small.png",
+      "caption": "Figure 17 : GUI target grounding of a small side-panel control.",
+      "bytes": 103408,
+      "sha256": "6851b0618e0c8807d876ce94d751c4a9022b206687afea6ca693bf4ab8911abe",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_19_complex_case_typography_across_scales_and_orientations_small.png",
+      "file": "figures/qual_19_complex_case_typography_across_scales_and_orientations_small.png",
+      "caption": "Figure 18 : OCR of layered artistic typography and small print.",
+      "bytes": 4039294,
+      "sha256": "8b80b7dfce9b44546632e52de8730de7bba82ce4e800ea9315810be40e4f42e6",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_20_complex_case_text_integrated_into_graphic_composition_small.png",
+      "file": "figures/qual_20_complex_case_text_integrated_into_graphic_composition_small.png",
+      "caption": "Figure 19 : OCR of slanted display text and mixed lettering styles.",
+      "bytes": 1960305,
+      "sha256": "ad7d26a0011b70f5eeb9547e8a62921539fa9542e38ccb2100216d6a52745d53",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_23_multilingual_text_and_numerical_fields_small.png",
+      "file": "figures/qual_23_multilingual_text_and_numerical_fields_small.png",
+      "caption": "Figure 20 : OCR of multilingual packaging and numerical fields.",
+      "bytes": 1521801,
+      "sha256": "7dcd8fb29b03a643a498df2fe8869b72366a52ab94e2fd5641fc2dbf231d90de",
+      "status": "downloaded"
+    },
+    {
+      "url": "https://arxiv.org/html/2609.39601v1/qual_26_visual_prompting_and_instance_granularity_small.png",
+      "file": "figures/qual_26_visual_prompting_and_instance_granularity_small.png",
+      "caption": "Figure 21 : Exemplar-guided grounding of densely stacked pipe openings.",
+      "bytes": 730959,
+      "sha256": "e225f3f2224b318dbfc5628c281f53d4139555fa200367b684223da3363d88d8",
+      "status": "downloaded"
+    }
+  ],
+  "reference_api_note": "Semantic Scholar endpoint succeeded but data=[]; important references selected from original bibliography."
+}

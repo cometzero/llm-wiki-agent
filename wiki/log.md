@@ -1531,3 +1531,13 @@ Added Korean report for public edition 1096293: seven verified CC BY-SA feature 
 ## [2026-10-09] graph | Knowledge graph rebuilt
 
 3213 nodes, 10817 edges (10817 extracted, 0 inferred).
+
+## [2026-10-14] ingest | GroundingPI HF Weekly 2026-W42
+
+- New paper 2609.39601: four Korean raw deliverables, fifteen verified figure assets, four exact-path/hash source pages, entity and transfer concept.
+- Duplicate check found only a prior auxiliary-candidate mention, not an existing analysis. MotorMind excluded as already analyzed.
+- NVIDIA ingest returned HTTP 410; bounded Codex fallback failed because executable was unavailable. Deterministic source materialization preserves the prior corpus/navigation. Dense appendix tables/theory are explicitly condensed.
+
+## [2026-10-14] graph | Knowledge graph rebuilt
+
+3219 nodes, 10852 edges (10852 extracted, 0 inferred).

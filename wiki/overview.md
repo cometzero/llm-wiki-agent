@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W42: Precise Perceptual Foundation의 Action Transfer
+- [[GroundingPI]]는 native point/box grounding을 갖춘 [[VisionLanguageModel]] foundation을 driving numerical waypoint와 robot flow-matching expert로 adapt한다. [[PreciseGroundingTransfer]]는 where-to-act perception을 먼저 학습해 희소 action demonstration의 부담을 줄이는 관점을 추가한다.
+- Dense grounding과 OCR/Layout/GUI의 complementary supervision은 OOD manipulation과 limited-data transfer를 지원한다. 다만 OCR-only causality, gate/DeepStack의 architectural cause, integrated System-1/2 execution은 hypothesis이며 평균 grounding 우위는 모든 metric의 dominance가 아니다.
+- nuScenes 결과는 open-loop recorded-trajectory error, robot 결과는 simulation task success다. [[PerturBot]]의 evidence-aware training, [[MotorMind]]의 measured-feedback harness와 결합해 생각할 수 있으나, 실제 차량/로봇 safety·metric calibration·observation freshness·end-to-end latency는 별도로 검증해야 한다.
+
 ## 2026-10-01 LWN Weekly: Language, Runtime, and Sustainable Systems
 - [[PostgreSQL]]의 kernel 협업 경험은 durability와 실제 application 성능이 I/O·memory·scheduler의 상호작용과 회귀 검증에 달려 있음을 보여 준다.
 - [[RustGPUNativeTarget]]의 heterogeneous runtime 구상과 [[CUndefinedBehavior]] 논의는 hardware/compiler가 제공하는 자유를 명시적 language contract와 검증 가능한 실행 의미에 연결해야 한다는 공통 주제를 갖는다. SDR의 deadline는 memory safety와 구분되는 실행 요구다.

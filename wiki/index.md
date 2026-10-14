@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [GroundingPI 한국어 기술 번역](sources/groundingpi-2609-39601-paper-ko.md) — precise grounding foundation과 AD/robot action 전이의 본문·주요 부록 번역
+- [GroundingPI 분석](sources/groundingpi-2609-39601-analysis.md) — taxonomy·I/O·metric·safety/latency boundary
+- [GroundingPI 참고문헌](sources/groundingpi-2609-39601-references.md) — generative grounding·flow policy·benchmark의 핵심 9편
+- [GroundingPI 핵심 기술 학습](sources/groundingpi-2609-39601-learning.md) — coordinate contract·GRPO·Action DiT 예제와 Q&A
 - [LWN Weekly 2026-10-01 한국어 기술 리포트](sources/lwn-weekly-edition-2026-10-01-1096293.md) — 특집 7편 전체 번역, 단신 요약, 보안·공지·패치 사실 목록
 - [MotorMind: 범용 VLM Zero-Shot 로봇 조작 기술 번역](sources/motormind-2609-38078-paper-ko.md) — mid-level action·asynchronous harness 본문 번역
 - [MotorMind 분석](sources/motormind-2609-38078-analysis.md) — action grounding·evaluation·latency boundary
@@ -363,6 +367,7 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [GroundingPI](entities/GroundingPI.md) — precise grounding foundation과 driving/robot action adaptation
 - [KDE](entities/KDE.md) — Plasma와 enterprise desktop 유지보수·자금 조달
 <!-- Exact-path navigation audit: existing pages previously lacked direct catalog links. -->
 - [Fedora](entities/Fedora.md)
@@ -909,6 +914,7 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Precise Grounding Transfer](concepts/PreciseGroundingTransfer.md) — native perception을 numerical trajectory·continuous action expert로 전이
 - [Rust Native GPU Target](concepts/RustGPUNativeTarget.md) — Rust semantics와 GPU/host execution 구상
 - [C Undefined Behavior](concepts/CUndefinedBehavior.md) — C abstract machine과 compiler optimization 계약
 <!-- Exact-path navigation audit: existing pages previously lacked direct catalog links. -->
