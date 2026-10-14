@@ -39,9 +39,33 @@
     "2609.24749",
     "2609.04355",
     "2609.38078",
-    "2610.04616"
+    "2610.04616",
+    "2609.39601"
   ],
   "runs": [
+    {
+      "date_kst": "2026-10-14 09:40:10 KST",
+      "week": "2026-W42",
+      "selected_paper_ids": ["2609.39601"],
+      "papers": [
+        {
+          "id": "2609.39601",
+          "title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+          "week": "2026-W42",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W42/groundingpi-2609-39601"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W42/groundingpi-2609-39601/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W42/groundingpi-2609-39601/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W42/groundingpi-2609-39601/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W42/groundingpi-2609-39601/learning.md"
+      ],
+      "commit_hash": "7ca023d0a500fcc55ecb313034efcae899ce9488",
+      "notes": "Four Korean deliverables, fifteen decoded/hash-verified images, four final-byte exact-path/hash source pages, GroundingPI entity and PreciseGroundingTransfer concept. No broken wikilinks or unindexed pages; educational coordinate snippet exercised. Content commit pushed and exact remote hash verified before recording state. Prior auxiliary-candidate mention was not main-subject analysis; MotorMind excluded.",
+      "limitations": "NVIDIA ingest returned HTTP 410; bounded Codex fallback failed because executable was absent. Deterministic manual wiki materialization completed. Required semantic graph attempt timed out after 90 seconds; extracted-link graph has 3219 nodes and 10852 edges. networkx was absent so community detection was disabled. Main text and key appendix protocols translated; dense baseline tables and long conditional derivations explicitly condensed. Semantic Scholar references returned empty data; original bibliography used. No independent benchmark reproduction or real-world deployment test."
+    },
     {
       "date_kst": "2026-10-07 09:40:10 KST",
       "week": "2026-W41",
