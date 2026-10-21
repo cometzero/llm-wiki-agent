@@ -1,0 +1,66 @@
+{
+  "id": "2610.20019",
+  "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
+  "source_url": "https://arxiv.org/html/2610.20019v1",
+  "hf_url": "https://huggingface.co/papers/2610.20019",
+  "arxiv_id": "2610.20019",
+  "arxiv_url": "https://arxiv.org/abs/2610.20019v1",
+  "pdf_url": "https://arxiv.org/pdf/2610.20019v1",
+  "week": "2026-W43",
+  "ingested_at_kst": "2026-10-21 09:40:10 KST",
+  "selected_reason": "현재 주 후보의 VLA 직접 관련성 점수 23; raw/wiki에서 ID 및 고유 제목 중복 없음. perception과 action의 context-conditioned parameter generation을 함께 학습하는 numerical-action VLA 연구.",
+  "version": "v1",
+  "published": "2026-10-14",
+  "selection": {
+    "candidate_score": 23,
+    "candidate_upvotes": 6,
+    "candidate_rank": 91,
+    "candidate_week": "2026-W43",
+    "duplicate_check": "No ID or distinctive title matches in raw/ and wiki/ before creation"
+  },
+  "license": "arXiv perpetual non-exclusive; detailed Korean synopsis, not full translation",
+  "figures": [
+    {
+      "file": "figures/morphact-teaser-parameter-demands.png",
+      "url": "https://arxiv.org/html/2610.20019v1/morphact-teaser-parameter-demands.png",
+      "bytes": 587654,
+      "sha256": "28ee8bc2f2cac8f8ee9abb1b28a831510ef709d3bdb763a8d2fb4b1ab2c88413"
+    },
+    {
+      "file": "figures/method.png",
+      "url": "https://arxiv.org/html/2610.20019v1/method.png",
+      "bytes": 493270,
+      "sha256": "f79cd701c798789ab182ed3a65aec8cec6eb3a657303841bd32873caab7e4473"
+    },
+    {
+      "file": "figures/real-world-panel-000.png",
+      "url": "https://arxiv.org/html/2610.20019v1/figures/real-world-panel-000.png",
+      "bytes": 397550,
+      "sha256": "5fa31d6dc33f9d4361fb310058fd0050ff4d210b7c71f1c66175b0ef34554f56"
+    },
+    {
+      "file": "figures/real-world-panel-001.png",
+      "url": "https://arxiv.org/html/2610.20019v1/figures/real-world-panel-001.png",
+      "bytes": 200514,
+      "sha256": "2629edfaa66cd794d46025883dddb8506c0381c79bd71f9d0a444965a9c5d59b"
+    },
+    {
+      "file": "figures/real-world-panel-002.png",
+      "url": "https://arxiv.org/html/2610.20019v1/figures/real-world-panel-002.png",
+      "bytes": 398566,
+      "sha256": "d3272d5761cd40adb02f7888c950eb9f2256eb85e99466bbe3e13df2a29e7571"
+    },
+    {
+      "file": "figures/real-world-panel-003.png",
+      "url": "https://arxiv.org/html/2610.20019v1/figures/real-world-panel-003.png",
+      "bytes": 287598,
+      "sha256": "f24de1184afbd1e3a92f0cd4264f2239eb2b10ff344e35b21c75bf6abf5b7bc5"
+    }
+  ],
+  "semantic_scholar_reference_count": 45,
+  "limitations": [
+    "No full copyrighted-paper translation; independent Korean technical synopsis instead",
+    "Appendices and dense tables condensed",
+    "No independent training or robot benchmark reproduction"
+  ]
+}

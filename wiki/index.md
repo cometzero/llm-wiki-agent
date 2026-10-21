@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [MorphAct 한국어 기술 해설](sources/morphact-2610-20019-paper-ko.md) — context-conditioned VLM/action parameter generation의 절별 기술 해설; 전면 번역 아님
+- [MorphAct 분석](sources/morphact-2610-20019-analysis.md) — numerical-action VLA, closed-loop evidence 및 safety/latency 경계
+- [MorphAct 참고문헌 지도](sources/morphact-2610-20019-references.md) — 핵심 9편의 weight generation·policy·benchmark 관계
+- [MorphAct 핵심 기술 학습](sources/morphact-2610-20019-learning.md) — dynamic LoRA·gradient coupling·cache lifecycle 예제
 - [GroundingPI 한국어 기술 번역](sources/groundingpi-2609-39601-paper-ko.md) — precise grounding foundation과 AD/robot action 전이의 본문·주요 부록 번역
 - [GroundingPI 분석](sources/groundingpi-2609-39601-analysis.md) — taxonomy·I/O·metric·safety/latency boundary
 - [GroundingPI 참고문헌](sources/groundingpi-2609-39601-references.md) — generative grounding·flow policy·benchmark의 핵심 9편
@@ -367,6 +371,7 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [MorphAct](entities/MorphAct.md) — adapted VLM으로 action parameter generation을 condition하는 VLA
 - [GroundingPI](entities/GroundingPI.md) — precise grounding foundation과 driving/robot action adaptation
 - [KDE](entities/KDE.md) — Plasma와 enterprise desktop 유지보수·자금 조달
 <!-- Exact-path navigation audit: existing pages previously lacked direct catalog links. -->
@@ -914,6 +919,7 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Contextual Parameter Generation](concepts/ContextualParameterGeneration.md) — context-dependent low-rank weight와 representation coupling
 - [Precise Grounding Transfer](concepts/PreciseGroundingTransfer.md) — native perception을 numerical trajectory·continuous action expert로 전이
 - [Rust Native GPU Target](concepts/RustGPUNativeTarget.md) — Rust semantics와 GPU/host execution 구상
 - [C Undefined Behavior](concepts/CUndefinedBehavior.md) — C abstract machine과 compiler optimization 계약

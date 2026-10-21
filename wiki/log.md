@@ -1,3 +1,7 @@
+## [2026-10-21] ingest | MorphAct (Hugging Face Weekly 2026-W43)
+
+Added four Korean raw deliverables, six downloaded PNG figure assets, four source pages with exact nested raw paths and final-byte hashes, one method entity, and one contextual parameter generation concept. ID/title duplicate checks were clean. Source license is arXiv perpetual non-exclusive: paper-ko is explicitly an independent detailed technical synopsis, not a full-paper translation. NVIDIA ingest returned HTTP 410 and the bounded Codex fallback could not find the executable; deterministic wiki materialization completed. Nine references use Semantic Scholar plus the original bibliography. Existing multi-source context is preserved.
+
 ## [2026-10-07] ingest | MotorMind / PerturBot (Hugging Face Weekly 2026-W41)
 
 Added eight Korean raw Markdown deliverables, eight downloaded arXiv figure assets, eight source pages, two method entities, and the GroundFscore concept. Duplicate ID/title checks were clean. NVIDIA ingest returned HTTP 410 for an EOL model; the bounded Codex fallback failed because codex CLI is absent, so deterministic source materialization preserves exact raw paths and hashes. Main-body translations retain section structure and equations; dense appendices/tables are explicitly condensed. Source discrepancies and robotics-to-driving evidence boundaries are recorded.
@@ -1541,3 +1545,7 @@ Added Korean report for public edition 1096293: seven verified CC BY-SA feature 
 ## [2026-10-14] graph | Knowledge graph rebuilt
 
 3219 nodes, 10852 edges (10852 extracted, 0 inferred).
+
+## [2026-10-21] graph | Knowledge graph rebuilt
+
+3225 nodes, 10872 edges (10872 extracted, 0 inferred).

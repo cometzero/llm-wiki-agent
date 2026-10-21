@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W43: Context-Dependent Perception/Action Parameter Generation
+- [[MorphAct]]는 [[ContextualParameterGeneration]]으로 observation마다 VLM과 action module의 low-rank effective weight를 생성하며, adapted perception이 action-side generator를 condition한다. [[LoRA]]는 update의 표현이고, generator와 생성된 factor는 서로 다른 parameter budget이다.
+- [[GroundingPI]]의 perception pretraining, [[PerturBot]]의 data intervention과 달리 runtime effective-parameter interface를 바꾼다. closed-loop manipulation 개선을 보고하지만 local gradient conflict 진단은 universal optimization failure 증명이 아니며 Meta-World metric은 difficulty-group 평균이다.
+- 추가 generator의 latency/memory 비용이 남고 실물 Sort Hardware의 최종 성공률도 22%다. vehicle closed-loop·NPU speedup·formal safety를 입증한 것으로 해석하지 않는다. raw는 라이선스에 맞춰 전면 번역 대신 독자적인 상세 한국어 기술 해설로 구성했다.
+
 ## 2026-W42: Precise Perceptual Foundation의 Action Transfer
 - [[GroundingPI]]는 native point/box grounding을 갖춘 [[VisionLanguageModel]] foundation을 driving numerical waypoint와 robot flow-matching expert로 adapt한다. [[PreciseGroundingTransfer]]는 where-to-act perception을 먼저 학습해 희소 action demonstration의 부담을 줄이는 관점을 추가한다.
 - Dense grounding과 OCR/Layout/GUI의 complementary supervision은 OOD manipulation과 limited-data transfer를 지원한다. 다만 OCR-only causality, gate/DeepStack의 architectural cause, integrated System-1/2 execution은 hypothesis이며 평균 grounding 우위는 모든 metric의 dominance가 아니다.
