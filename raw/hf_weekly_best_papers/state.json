@@ -40,13 +40,41 @@
     "2609.04355",
     "2609.38078",
     "2610.04616",
-    "2609.39601"
+    "2609.39601",
+    "2610.20019"
   ],
   "runs": [
     {
+      "date_kst": "2026-10-21 09:40:10 KST",
+      "week": "2026-W43",
+      "selected_paper_ids": [
+        "2610.20019"
+      ],
+      "papers": [
+        {
+          "id": "2610.20019",
+          "title": "MorphAct: Robot Policies Morphing with the Worlds They Act In",
+          "week": "2026-W43",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W43/morphact-2610-20019"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W43/morphact-2610-20019/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W43/morphact-2610-20019/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W43/morphact-2610-20019/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W43/morphact-2610-20019/learning.md"
+      ],
+      "commit_hash": "a0d20ac4892cd78035850293bdb8cc2ddd0f135b",
+      "notes": "Current-week selection; ID and distinctive-title searches across raw/wiki found no prior main-subject analysis. Four detailed Korean deliverables, six PNGs checked by hash/chunk CRC/decompression, nine references grounded in Semantic Scholar and original bibliography. Four exact-path/hash source pages, one entity, one concept. Content commit pushed and exact remote hash verified before state update. All pages indexed and no broken wikilinks. Educational code passed. GroundingPI excluded as already processed.",
+      "limitations": "Source is arXiv perpetual non-exclusive: independent detailed Korean technical synopsis instead of full-paper translation; appendices and dense tables condensed. NVIDIA ingest HTTP 410; bounded Codex fallback executable unavailable; deterministic manual wiki materialization. Required normal graph attempt timed out after 90 seconds with repeated HTTP 410; --no-infer produced 3225 nodes and 10872 EXTRACTED edges. networkx absent; community detection disabled. No independent policy training, robot rollout, vehicle or NPU deployment benchmark."
+    },
+    {
       "date_kst": "2026-10-14 09:40:10 KST",
       "week": "2026-W42",
-      "selected_paper_ids": ["2609.39601"],
+      "selected_paper_ids": [
+        "2609.39601"
+      ],
       "papers": [
         {
           "id": "2609.39601",
@@ -69,7 +97,10 @@
     {
       "date_kst": "2026-10-07 09:40:10 KST",
       "week": "2026-W41",
-      "selected_paper_ids": ["2609.38078", "2610.04616"],
+      "selected_paper_ids": [
+        "2609.38078",
+        "2610.04616"
+      ],
       "papers": [
         {
           "id": "2609.38078",
