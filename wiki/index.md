@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN Weekly 2026-10-15 한국어 기술 리포트](sources/lwn-weekly-edition-2026-10-15-1099247.md) — CC BY-SA 특집 9편 번역·단신 요약·보안 및 패치 사실 목록
 - [MorphAct 한국어 기술 해설](sources/morphact-2610-20019-paper-ko.md) — context-conditioned VLM/action parameter generation의 절별 기술 해설; 전면 번역 아님
 - [MorphAct 분석](sources/morphact-2610-20019-analysis.md) — numerical-action VLA, closed-loop evidence 및 safety/latency 경계
 - [MorphAct 참고문헌 지도](sources/morphact-2610-20019-references.md) — 핵심 9편의 weight generation·policy·benchmark 관계

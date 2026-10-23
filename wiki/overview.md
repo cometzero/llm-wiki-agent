@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-10-15 LWN Weekly: Maintainer Capacity와 System Boundaries
+- [[lwn-weekly-edition-2026-10-15-1099247]]은 LLM 기반 patch/review와 [[GCC]] 개발 보조를 사람의 이해·책임·test coverage·검토 자원이라는 공동 과제로 연결한다.
+- [[Rust]] project goals와 C object ownership, kernel CFI, out-of-tree tracing 및 swap 논의는 언어/toolchain 변화가 기존 lifecycle·ABI·실제 workload의 검증을 대체하지 않음을 보강한다.
+- systemd와 [[KDE]] Linux의 system lifecycle은 boot·desktop 기능 외에도 복구·배포·유지보수 경계를 다룬다. 발행 당시 릴리스·보안 공지를 오늘의 최신 상태로 해석하지 않는다.
+- 재배포 허용을 확인한 특집 9편은 전체 번역하고 나머지 단신은 독자 요약으로 분리했으며, 43개 항목·79개 기술 각주와 보안·행사·patch 사실 목록을 보존했다.
+
 ## 2026-W43: Context-Dependent Perception/Action Parameter Generation
 - [[MorphAct]]는 [[ContextualParameterGeneration]]으로 observation마다 VLM과 action module의 low-rank effective weight를 생성하며, adapted perception이 action-side generator를 condition한다. [[LoRA]]는 update의 표현이고, generator와 생성된 factor는 서로 다른 parameter budget이다.
 - [[GroundingPI]]의 perception pretraining, [[PerturBot]]의 data intervention과 달리 runtime effective-parameter interface를 바꾼다. closed-loop manipulation 개선을 보고하지만 local gradient conflict 진단은 universal optimization failure 증명이 아니며 Meta-World metric은 difficulty-group 평균이다.

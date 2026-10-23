@@ -1549,3 +1549,12 @@ Added Korean report for public edition 1096293: seven verified CC BY-SA feature 
 ## [2026-10-21] graph | Knowledge graph rebuilt
 
 3225 nodes, 10872 edges (10872 extracted, 0 inferred).
+
+
+## [2026-10-23] ingest | LWN Weekly 2026-10-15 (1099247)
+
+Added licensed full Korean translations of nine CC BY-SA features plus independently worded digests for unverified-license briefs; retained factual security/calendar/patch data. All 43 source sections and 79 explanatory footnotes are represented. Normal NVIDIA ingest failed with retired-model HTTP 410, bounded Codex fallback found no executable; deterministic source materialization keeps full nested raw path and final-byte SHA-256. Preserved existing overview and multi-source pages.
+
+## [2026-10-23] graph | Knowledge graph rebuilt
+
+3226 nodes, 10880 edges (10880 extracted, 0 inferred).
