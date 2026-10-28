@@ -41,9 +41,35 @@
     "2609.38078",
     "2610.04616",
     "2609.39601",
-    "2610.20019"
+    "2610.20019",
+    "2610.31569"
   ],
   "runs": [
+    {
+      "date_kst": "2026-10-28 10:03:11 KST",
+      "week": "2026-W44",
+      "selected_paper_ids": [
+        "2610.31569"
+      ],
+      "papers": [
+        {
+          "id": "2610.31569",
+          "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+          "week": "2026-W44",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W44/echo-task-status-2610-31569"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W44/echo-task-status-2610-31569/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W44/echo-task-status-2610-31569/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W44/echo-task-status-2610-31569/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W44/echo-task-status-2610-31569/references.md"
+      ],
+      "commit_hash": "1c962d438929abd76cdafc56d16181890747aec6",
+      "notes": "Current-week physical-robot VLA selection. Exact ID and distinctive title search found no existing main-subject analysis. Four Korean deliverables, eight PNGs verified by signature/CRC/zlib and two parsed SVG objects, four exact-path/final-byte-hash source pages, Echo entity and StatusGuidedActionDenoising concept. Semantic Scholar returned 38 references; eight selected against 39 original bibliography entries. Two educational Python blocks passed. Prior overview and multi-source pages preserved. Content commit pushed and exact origin/personal hash verified before state update.",
+      "limitations": "CC BY 4.0 attributed main-body translation preserves method equations/core tables, but selected appendices and dense tables are explicitly condensed. NVIDIA ingest returned retired-model HTTP 410; one bounded Codex fallback found no executable; deterministic manual wiki materialization completed. Required normal graph attempt timed out after 90 seconds with repeated HTTP 410; --no-infer produced 3232 nodes and 10906 extracted edges. networkx absent; no community detection. No independent policy training, robot rollout, vehicle closed-loop or NPU experiment."
+    },
     {
       "date_kst": "2026-10-21 09:40:10 KST",
       "week": "2026-W43",
