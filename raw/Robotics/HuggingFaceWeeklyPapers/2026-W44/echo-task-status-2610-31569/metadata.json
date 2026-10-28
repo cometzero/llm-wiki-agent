@@ -1,0 +1,116 @@
+{
+  "id": "2610.31569",
+  "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+  "authors": [
+    "Liu, Yufeng",
+    "Fan, Bohao",
+    "Zhao, Juntu",
+    "Wang, Xinyi",
+    "Yu, Hang",
+    "Luo, Wenzhuan",
+    "Wang, Yingzhi",
+    "Li, Qinghai",
+    "Hu, Yingdong",
+    "Guo, Junliang",
+    "Wang, Richard",
+    "Wang, Dequan",
+    "Gao, Yang",
+    "Ma, Cheng"
+  ],
+  "week": "2026-W44",
+  "ingested_at_kst": "2026-10-28T09:43:38.174248+09:00",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "source_url": "https://arxiv.org/html/2610.31569",
+  "hf_url": "https://huggingface.co/papers/2610.31569",
+  "figures": [
+    {
+      "file": "figures/fig_teaser_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_teaser_pdf.png",
+      "width": 2014,
+      "height": 1689,
+      "sha256": "aef3a953e41df950bcc44b079754afdf86c950326ed347f02d3819b4292ea405",
+      "caption": "Figure 1: A low stop signal (SS, orange) value indicates ongoing execution, where a high failure signal (FS, purple) value marks recoverable failure and guides correction. High SS with low or high FS values indicates success (top) or terminal failure (bottom) respectively.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/fig_overview_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_overview_pdf.png",
+      "width": 2024,
+      "height": 872,
+      "sha256": "780e4629203ddf7d5212cfa5688957e56a00432d5b338e0c5db83381da5cabee",
+      "caption": "Figure 2: Overview of Echo. Four data types provide complementary action and signal supervision, with failed actions excluded from imitation. Stop (SS) and failure (FS) signals are appended to action chunks, with padding-based target construction illustrated on the left. The attention mask couples actions with both signals while blocking direct SS–FS interactions. Asynchronous denoising provides cleaner signals to guide subsequent action updates.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/fig_setting_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_setting_pdf.png",
+      "width": 655,
+      "height": 347,
+      "sha256": "02aa0be83ec097192a061ab6ccb0277847c95f61aabc4a0b1812519f23db8ad6",
+      "caption": "Figure 4: Real-world experimental setups for five manipulation tasks. Arrows illustrate the intended manipulations.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/fig_steering_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_steering_pdf.png",
+      "width": 631,
+      "height": 441,
+      "sha256": "6d55ff7ee4506d3fb43307cf0adc5088eb7dc5cb664eb72c354199d4d7806bba",
+      "caption": "Figure 5: Signal interventions on Insert Flower. With SS = 0 \\text{SS}=0 , imposing FS = 1 \\text{FS}=1 elicits upward recovery motions (blue), while FS = 0 \\text{FS}=0 produces task-directed motions (green). Curves show right-arm height over time.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/cycleVLA.png",
+      "url": "https://arxiv.org/html/2610.31569v1/cycleVLA.png",
+      "width": 1924,
+      "height": 801,
+      "sha256": "06c7656e4150d879b512ca9323b616c738ee8246c05256e1f36a2af2aeacb974",
+      "caption": "Figure 7: Signal values estimated by CycleVLA. The model exhibits weak discriminative capability for real-world failures.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/Robometer.png",
+      "url": "https://arxiv.org/html/2610.31569v1/Robometer.png",
+      "width": 2011,
+      "height": 528,
+      "sha256": "375bffeeac60000a0c40352e032d14eb337ae930154971aff2b806c1925a7a29",
+      "caption": "Figure 8: Signal values estimated by Robometer. The model sometimes lacks discriminative capability for real-world failures.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/app_fig_heatmap_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/app_fig_heatmap_pdf.png",
+      "width": 646,
+      "height": 289,
+      "sha256": "efd57f5915caa068edd343766ea443965ee211d74959478ef5c66715caa4eabd",
+      "caption": "Figure 9: Hyperparameter sensitivity across five tasks. Top: frame-level Macro-F1 under independently varied SS and FS thresholds. Bottom: trajectory-level F1 under a shared SS/FS threshold and varying outcome-window lengths. Values are percentages. Capsule and Skewer denote Capsule Toy and Make Tanghulu, respectively. The main results use δ s = δ f = 0.5 \\delta_{s}=\\delta_{f}=0.5 and W = 15 W=15 frames.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/fig_simulation_pdf.png",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_simulation_pdf.png",
+      "width": 660,
+      "height": 378,
+      "sha256": "f1e4502c375a110e1ce0e32b5cc9659b93ce4372e377fb60f6cc692155e715c6",
+      "caption": "Figure 10: Task status signals in simulation. Each column shows three observations, cropped to the task region, above the stop signal (SS, orange) and failure signal (FS, purple), averaged over all H = 50 H=50 chunk predictions. Left: successful tomato-sauce placement; the green line marks first success at 8.05 s, followed by the shaded 3-second scoring window. Right: bowl placement reaching the 26-second timeout, with SS remaining below threshold. Both traces cover all 520 actions, including after success. Predictions are held between queries without smoothing or clipping; final images are recorded after action 520.",
+      "png_verified": true
+    },
+    {
+      "file": "figures/fig_speed_pdf.svg",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_speed_pdf.svg",
+      "sha256": "f1bf4618c123222c30b3743289c7c1d62f9143b47db491048ba002762d78633e",
+      "svg_xml_verified": true,
+      "caption": "Figure 3: Intermediate clean-sample estimates under synchronous denoising. (a) Right-arm vertical action estimates; darker curves indicate later denoising steps. (b) Stop (SS) and failure (FS) signal estimates, plotted on separate scales. Both signals converge earlier than actions, with SS already near its zero target at the earliest denoising step. This motivates resolving signals earlier to guide subsequent action updates."
+    },
+    {
+      "file": "figures/fig_failure_data.svg",
+      "url": "https://arxiv.org/html/2610.31569v1/fig_failure_data.svg",
+      "sha256": "e880b59e8ed7ac9a5a3c046eee1651c390b62a9cfef0b1bc9ce07a62f89f0b46",
+      "svg_xml_verified": true,
+      "caption": "Figure 6: Effect of terminal-failure data quantity on Insert Flower, with its sampling proportion fixed. Curves show mean Frame-level Macro-F1 (left axis) and Task Completion Score (right axis) over 30 trials."
+    }
+  ],
+  "semantic_scholar_references_status": "ok: 38",
+  "selection_reason": "Current-week VLA task-status/action coupling; higher topical priority for physical robotics than game-only HiSTEVE; duplicate ID/title searches returned no existing analysis.",
+  "translation_scope": "CC BY 4.0 Korean translation of main sections with all method equations and core tables; appendices selectively translated and explicitly condensed."
+}

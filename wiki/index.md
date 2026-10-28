@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [Echo 한국어 기술 번역](sources/echo-2610-31569-paper-ko.md) — CC BY 4.0 본문·수식·핵심 표 번역과 선별 부록
+- [Echo 분석](sources/echo-2610-31569-analysis.md) — status/action coupling·metric·AD/NPU 전이 경계
+- [Echo 참고문헌 지도](sources/echo-2610-31569-references.md) — backbone·correction·recovery benchmark 핵심 8편
+- [Echo 핵심 기술 학습](sources/echo-2610-31569-learning.md) — supervision mask·async schedule·flow 부호 실행 예제
 - [LWN Weekly 2026-10-15 한국어 기술 리포트](sources/lwn-weekly-edition-2026-10-15-1099247.md) — CC BY-SA 특집 9편 번역·단신 요약·보안 및 패치 사실 목록
 - [MorphAct 한국어 기술 해설](sources/morphact-2610-20019-paper-ko.md) — context-conditioned VLM/action parameter generation의 절별 기술 해설; 전면 번역 아님
 - [MorphAct 분석](sources/morphact-2610-20019-analysis.md) — numerical-action VLA, closed-loop evidence 및 safety/latency 경계
@@ -372,6 +376,7 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [Echo](entities/Echo.md) — task status와 action을 jointly denoise하는 physical-robot VLA
 - [MorphAct](entities/MorphAct.md) — adapted VLM으로 action parameter generation을 condition하는 VLA
 - [GroundingPI](entities/GroundingPI.md) — precise grounding foundation과 driving/robot action adaptation
 - [KDE](entities/KDE.md) — Plasma와 enterprise desktop 유지보수·자금 조달
@@ -920,6 +925,7 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Status-Guided Action Denoising](concepts/StatusGuidedActionDenoising.md) — cleaner stop/failure signal로 continuous action generation을 안내하는 interface
 - [Contextual Parameter Generation](concepts/ContextualParameterGeneration.md) — context-dependent low-rank weight와 representation coupling
 - [Precise Grounding Transfer](concepts/PreciseGroundingTransfer.md) — native perception을 numerical trajectory·continuous action expert로 전이
 - [Rust Native GPU Target](concepts/RustGPUNativeTarget.md) — Rust semantics와 GPU/host execution 구상

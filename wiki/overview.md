@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-W44: Status-Guided Action Denoising과 Recovery의 실행 의미
+- [[Echo]]는 [[StatusGuidedActionDenoising]]으로 SS(termination)와 FS(failure)를 continuous action chunk에 결합한다. Failure action은 imitation하지 않고 segment boundary와 recovery data로 signal을 학습하며, controlled attention과 asynchronous flow schedule로 cleaner status가 action update를 안내한다.
+- Status readability와 action influence를 구분한다. Signal→action attention을 제거한 ablation은 status F1이 유지되어도 task score가 하락함을 보여 준다. [[MotorMind]]의 external harness나 [[MorphAct]]의 context parameter generation과 달리 policy-internal feedback interface를 바꾼다.
+- 실물 0–10 task score와 episode-first Macro-F1, simulation ever-success SR과 frame-weighted accuracy를 구분한다. Simulation의 32.67→34.76% SR은 +2.09 pp이며 terminal-failure timing·차량 safety·NPU latency 검증은 아니다. 3초 outcome window는 emergency-stop deadline이 아니고 learned status는 independent safety fallback을 대체하지 않는다.
+- 원문 CC BY 4.0 attribution 아래 본문·수식·핵심 표와 선별 부록을 한국어로 번역했고 10개 figure asset과 교육 예제를 보존했다.
+
 ## 2026-10-15 LWN Weekly: Maintainer Capacity와 System Boundaries
 - [[lwn-weekly-edition-2026-10-15-1099247]]은 LLM 기반 patch/review와 [[GCC]] 개발 보조를 사람의 이해·책임·test coverage·검토 자원이라는 공동 과제로 연결한다.
 - [[Rust]] project goals와 C object ownership, kernel CFI, out-of-tree tracing 및 swap 논의는 언어/toolchain 변화가 기존 lifecycle·ABI·실제 workload의 검증을 대체하지 않음을 보강한다.

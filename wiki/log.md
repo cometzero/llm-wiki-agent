@@ -1558,3 +1558,11 @@ Added licensed full Korean translations of nine CC BY-SA features plus independe
 ## [2026-10-23] graph | Knowledge graph rebuilt
 
 3226 nodes, 10880 edges (10880 extracted, 0 inferred).
+
+## [2026-10-28] ingest | Echo (Hugging Face Weekly 2026-W44)
+
+Added four Korean raw Markdown deliverables, ten downloaded figure assets (eight CRC/zlib-verified PNGs and two XML-verified SVGs), four exact-path/final-byte-hash source pages, the Echo entity and StatusGuidedActionDenoising concept. Main-body translation is permitted by the source CC BY 4.0 license with attribution; selected appendices are explicitly condensed. Semantic Scholar returned 38 references and the original bibliography has 39 entries; eight key references were mapped. ID/distinctive-title duplicate checks were clean. NVIDIA ingest failed with retired-model HTTP 410; one bounded Codex fallback failed because its CLI is absent. Deterministic manual materialization preserves existing multi-source pages and overview. Two final-Markdown Python teaching blocks executed successfully. Robotics metrics are author-reported, not independent reproduction or vehicle/NPU safety evidence.
+
+## [2026-10-28] graph | Knowledge graph rebuilt
+
+3232 nodes, 10906 edges (10906 extracted, 0 inferred).
