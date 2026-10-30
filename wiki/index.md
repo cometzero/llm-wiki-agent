@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN Weekly 2026-10-22 한국어 기술 리포트](sources/lwn-weekly-edition-2026-10-22-1100612.md) — 허용된 특집 8편 번역·Nix/단신 요약·59개 기술 각주·보안 및 patch 사실 목록
 - [Echo 한국어 기술 번역](sources/echo-2610-31569-paper-ko.md) — CC BY 4.0 본문·수식·핵심 표 번역과 선별 부록
 - [Echo 분석](sources/echo-2610-31569-analysis.md) — status/action coupling·metric·AD/NPU 전이 경계
 - [Echo 참고문헌 지도](sources/echo-2610-31569-references.md) — backbone·correction·recovery benchmark 핵심 8편
@@ -925,6 +926,9 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [XArray](concepts/XArray.md) — kernel indexed data structure와 Rust 재작성 경계
+- [Linux NFS Server](concepts/NFSServer.md) — cache·delegation·file-handle 보안과 관리 API
+- [no_new_privs](concepts/NoNewPrivileges.md) — 실행 기반 권한 획득 제한과 system-wide 이관
 - [Status-Guided Action Denoising](concepts/StatusGuidedActionDenoising.md) — cleaner stop/failure signal로 continuous action generation을 안내하는 interface
 - [Contextual Parameter Generation](concepts/ContextualParameterGeneration.md) — context-dependent low-rank weight와 representation coupling
 - [Precise Grounding Transfer](concepts/PreciseGroundingTransfer.md) — native perception을 numerical trajectory·continuous action expert로 전이

@@ -1566,3 +1566,12 @@ Added four Korean raw Markdown deliverables, ten downloaded figure assets (eight
 ## [2026-10-28] graph | Knowledge graph rebuilt
 
 3232 nodes, 10906 edges (10906 extracted, 0 inferred).
+
+
+## [2026-10-30] ingest | LWN Weekly 2026-10-22 한국어 기술 리포트
+
+Added licensed feature translations (8), copyright-safe Nix/brief digests, 59 technical footnotes, 773 security advisory rows, and event/kernel announcement data. Normal NVIDIA ingest failed with model EOL HTTP 410; bounded Codex fallback found no CLI. Manually materialized source with full raw path and final-byte SHA-256 plus XArray/NFSServer/NoNewPrivileges concepts; preserved all existing multi-source pages and overview sections.
+
+## [2026-10-30] graph | Knowledge graph rebuilt
+
+3236 nodes, 10923 edges (10923 extracted, 0 inferred).

@@ -1,5 +1,11 @@
 # Wiki Overview
 
+## 2026-10-22 LWN Weekly: Integrity, Lifetime, and Privilege Boundaries
+- [[lwn-weekly-edition-2026-10-22-1100612]]은 Android vendor hook과 hash/Merkle-tree module integrity를 upstream 확장·ABI 유지·[[ReproducibleBuilds]]의 공동 경계로 연결한다.
+- [[Rust]] self-reference·crate 경계와 [[XArray]] 재작성은 memory safety의 선언보다 lifetime·unsafe boundary·성능·기존 API 검증이 중요함을 보여 준다.
+- [[NFSServer]]의 delegation·서명된 handle·netlink와 [[NoNewPrivileges]]의 service 기반 권한 분리는 각각 cache correctness 및 권한 부여의 운영 계약을 재설계한다.
+- CC BY-SA 특집 8편은 전문 번역하고 Nix·단신은 독자 요약으로 분리했다. 59개 해설 각주와 보안 공지 773행 및 행사·patch 사실 데이터를 보존했으며 발행 당시 기록을 최신 권고로 해석하지 않는다.
+
 ## 2026-W44: Status-Guided Action Denoising과 Recovery의 실행 의미
 - [[Echo]]는 [[StatusGuidedActionDenoising]]으로 SS(termination)와 FS(failure)를 continuous action chunk에 결합한다. Failure action은 imitation하지 않고 segment boundary와 recovery data로 signal을 학습하며, controlled attention과 asynchronous flow schedule로 cleaner status가 action update를 안내한다.
 - Status readability와 action influence를 구분한다. Signal→action attention을 제거한 ablation은 status F1이 유지되어도 task score가 하락함을 보여 준다. [[MotorMind]]의 external harness나 [[MorphAct]]의 context parameter generation과 달리 policy-internal feedback interface를 바꾼다.
