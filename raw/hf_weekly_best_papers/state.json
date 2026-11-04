@@ -42,9 +42,33 @@
     "2610.04616",
     "2609.39601",
     "2610.20019",
-    "2610.31569"
+    "2610.31569",
+    "2610.35850"
   ],
   "runs": [
+    {
+      "date_kst": "2026-11-04 09:40:25 KST",
+      "week": "2026-W45",
+      "selected_paper_ids": ["2610.35850"],
+      "papers": [
+        {
+          "id": "2610.35850",
+          "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+          "week": "2026-W45",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W45/oswam-one-step-action-2610-35850"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W45/oswam-one-step-action-2610-35850/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W45/oswam-one-step-action-2610-35850/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W45/oswam-one-step-action-2610-35850/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W45/oswam-one-step-action-2610-35850/references.md"
+      ],
+      "commit_hash": "58efb446e5b1ff55fd42a19cfe9c3b837071e728",
+      "notes": "Current-week autonomous-driving/WAM selection. Exact ID and distinctive title searches plus live discovery found no previous main-subject analysis. Four detailed Korean deliverables, six verified figure assets (four PNG signature/CRC/IDAT checks and two parsed SVGs), four exact-path/final-byte-hash source pages, OSWAM entity and StructuredActionInitialization concept. Semantic Scholar returned 59 references matching 59 bibliography entries; nine selected. Both final-Markdown educational Python blocks passed. Existing corpus pages and overview preserved. Content commit pushed and exact origin/personal hash read back before this state update.",
+      "limitations": "CC BY 4.0 attributed main-body technical translation retains equations 1–12 and core tables; dense full baseline tables and the full 50-task appendix table are explicitly condensed. NVIDIA ingest failed with retired-model HTTP 410; one bounded Codex fallback found no executable, so deterministic manual wiki materialization completed. Required normal graph attempt timed out after 90 seconds with repeated HTTP 410; --no-infer produced 3242 nodes and 10954 extracted edges. networkx absent; no community detection. Author-reported benchmark outcomes only; no independent training, robot rollout, vehicle closed-loop or NPU experiment."
+    },
     {
       "date_kst": "2026-10-28 10:03:11 KST",
       "week": "2026-W44",
