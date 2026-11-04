@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W45: Structured Initialization으로 Direct-Policy WAM을 One-Step으로
+- [[OSWAM]]은 [[StructuredActionInitialization]]으로 Video DiT의 AIT action prior를 same-noise re-noising하고, 한 번의 Action DiT update로 numerical action chunk를 refine한다. SIT는 current-scene context를 보완하고 full-future teacher는 training-only AIT feature distillation을 제공한다.
+- [[SimWAM]]의 video-rollout-free interface에서 남은 action 반복 비용을 줄이는 작업이다. NAVSIM PDMS 90.3을 유지하며 H20 410→136ms를 보고하지만 RoboTwin SR은 multi-step Fast-WAM보다 1.83 pp 낮다. AIT가 가장 큰 ablation gain을 제공하며 teacher·SIT가 추가 개선한다.
+- NAVSIM non-reactive simulation, nuScenes open-loop, 제한된 PiPER 실물 task를 구분한다. Compiled RTX 5090의 40.81ms는 robot 설정이고 driving은 52.64ms이며 real vehicle closed-loop·NPU latency·formal safety를 입증하지 않는다. 원문 CC BY 4.0 attribution 아래 본문·핵심 표·수식과 선별 부록을 번역하고 그림 6개와 교육 예제 2개를 보존했다.
+
 ## 2026-10-22 LWN Weekly: Integrity, Lifetime, and Privilege Boundaries
 - [[lwn-weekly-edition-2026-10-22-1100612]]은 Android vendor hook과 hash/Merkle-tree module integrity를 upstream 확장·ABI 유지·[[ReproducibleBuilds]]의 공동 경계로 연결한다.
 - [[Rust]] self-reference·crate 경계와 [[XArray]] 재작성은 memory safety의 선언보다 lifetime·unsafe boundary·성능·기존 API 검증이 중요함을 보여 준다.

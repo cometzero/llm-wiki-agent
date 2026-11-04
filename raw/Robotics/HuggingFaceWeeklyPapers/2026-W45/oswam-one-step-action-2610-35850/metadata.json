@@ -1,0 +1,108 @@
+{
+  "rank": 49,
+  "id": "2610.35850",
+  "title": "OSWAM: An Effective World Action Model with One-Step Action Generation",
+  "authors": [
+    "Guowen Zhang",
+    "Liyi Chen",
+    "Xu Hu",
+    "Pengfei Wang",
+    "Jingfan Chen",
+    "Chenhang He",
+    "Lei Zhang"
+  ],
+  "summary": "Direct-policy World Action Models (WAM) have demonstrated the benefits of decoupling action generation from explicit future visual prediction for efficient inference in autonomous driving and embodied control. However, they still require tens of denoising steps to achieve competitive action quality, incurring substantial latency and hindering real-time deployment. Simply reducing the number of denoising steps will collapse the nonlinear multi-step denoising trajectory into coarse updates, substantially degrading action quality. To reduce the denoising steps while enabling real-time action generation, we present an effective world action model with one-step action generation, namely OSWAM, for autonomous driving and embodied control. We argue that it is the absence of structured action priors in random noise initialization that forces direct-policy WAMs to recover coherent action sequences through iterative denoising. Hence, we construct imagination tokens to initialize the diffusion process, providing physical priors and action-conditioned representations. We further introduce privileged information distillation with future conditioning to enhance future-aware action generation. As a result, OSWAM can efficiently and effectively generate high quality actions in just one diffusion step. Our experiments demonstrate that OSWAM achieves comparable or even better results in both autonomous driving and embodied control than direct-policy WAM and Joint-WAM that require tens of steps. It obtains approximately 3times speedup over direct-policy WAM baselines and supports real-time compiled inference with latency as low as 40ms on an NVIDIA RTX 5090 GPU. The project page is available at https://gwenzhang.github.io/OSWAM/",
+  "ai_summary": "OSWAM enables real-time, high-quality action generation in autonomous driving and embodied control by initializing diffusion with structured imagination tokens and distilling future-conditioned privileged information into a single denoising step.",
+  "ai_keywords": [
+    "direct-policy World Action Models",
+    "diffusion",
+    "denoising steps",
+    "imagination tokens",
+    "privileged information distillation",
+    "future conditioning",
+    "OSWAM"
+  ],
+  "upvotes": 7,
+  "score": 19,
+  "matched_terms": [
+    "autonomous driving",
+    "driving",
+    "trajectory",
+    "embodied"
+  ],
+  "hf_url": "https://huggingface.co/papers/2610.35850",
+  "arxiv_abs_url": "https://arxiv.org/abs/2610.35850",
+  "arxiv_pdf_url": "https://arxiv.org/pdf/2610.35850",
+  "arxiv_html_url": "https://arxiv.org/html/2610.35850",
+  "project_page": "https://gwenzhang.github.io/OSWAM",
+  "github_repo": "https://github.com/PolyU-VCLab/OSWAM",
+  "week": "2026-W45",
+  "week_url": "https://huggingface.co/papers/week/2026-W45",
+  "arxiv_version": "2610.35850v1",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "ingested_at_kst": "2026-11-04",
+  "selected_reason": "Current ISO week; directly evaluates autonomous-driving and embodied action generation; structured action initialization and training-only future distillation address WAM deployment latency. ID and distinctive-title searches found no existing analysis.",
+  "figures": [
+    {
+      "figure_id": "S1.F1",
+      "file": "figures/latency_success_tradeoff2.svg",
+      "url": "https://arxiv.org/html/2610.35850v1/latency_success_tradeoff2.svg",
+      "caption": "Figure 1: NAVSIM and Robotwin 2.0 inference efficiency-performance comparison. EPT denotes embodied pretraining. All latencies are measured on NVIDIA H20 GPU.",
+      "sha256": "a1b83ec1e69d0069a75dac3504f5ea66b719c32e1b1c5e5a82197b484143cd91",
+      "bytes": 96958,
+      "verified": true
+    },
+    {
+      "figure_id": "S1.F2",
+      "file": "figures/oswam_scores.svg",
+      "url": "https://arxiv.org/html/2610.35850v1/oswam_scores.svg",
+      "caption": "Figure 2: Quantitative comparison of the Fast-WAM [ 4 ] test-time scaling with different action denoising steps on (a) the autonomous driving dataset Navsim, and (b) embodied control dataset RoboTwin.",
+      "sha256": "f77153643e1bf53fe217559dd01499186f789aeb647c978f52cce1a6e136e4fb",
+      "bytes": 138128,
+      "verified": true
+    },
+    {
+      "figure_id": "S3.F3",
+      "file": "figures/Framework8_cropped.png",
+      "url": "https://arxiv.org/html/2610.35850v1/Framework8_cropped.png",
+      "caption": "Figure 3: The overall architecture of OSWAM. A single Video DiT pass produces an observation-conditioned action prior with AIT and complementary scene context with SIT, providing a structured initialization for one-step Action DiT denoising. Privileged-information distillation injects future-informed representations during training, while inference uses only the current observation.",
+      "sha256": "5684f1784db75221adb6d79b276076a4107c3be7cb42ae78c53508ce2def5092",
+      "bytes": 324927,
+      "verified": true
+    },
+    {
+      "figure_id": "S3.F4",
+      "file": "figures/rope_attn_mask4_cropped.png",
+      "url": "https://arxiv.org/html/2610.35850v1/rope_attn_mask4_cropped.png",
+      "caption": "Figure 4: (a) The attention mask of OSWAM and the privileged teacher. (b) Role-aware RoPE explicitly disentangles token groups using unique positional encodings. s ​ I sI is SIT and a ​ I aI is AIT.",
+      "sha256": "be5685d1b7f8659ce118d32e17727a0782116b2ac549cd01a988b84635ee0917",
+      "bytes": 141512,
+      "verified": true
+    },
+    {
+      "figure_id": "S4.F5",
+      "file": "figures/oswam_real_world.png",
+      "url": "https://arxiv.org/html/2610.35850v1/oswam_real_world.png",
+      "caption": "Figure 5: Real-world manipulation with OSWAM on a PiPER robotic arm: (a) placing bread into a bowl and (b) placing a board eraser into an open drawer.",
+      "sha256": "82aeec5ef80dd8acf44544b23bda61b0d4be6987223ea9f9b04effc90cff59b4",
+      "bytes": 264843,
+      "verified": true
+    },
+    {
+      "figure_id": "A2.F1",
+      "file": "figures/comparison_appendix_cropped.png",
+      "url": "https://arxiv.org/html/2610.35850v1/comparison_appendix_cropped.png",
+      "caption": "Figure B.1: Qualitative comparison of one-step SimWAM and OSWAM on Navsim v1.",
+      "sha256": "b0e4ded2e5d6eb6409b2a524d301231b01460283c6c8e7a815bbef77137506af",
+      "bytes": 2366505,
+      "verified": true
+    }
+  ],
+  "bibliography_count": 59,
+  "semantic_scholar": {
+    "status": "ok",
+    "count": 59
+  },
+  "translation_scope": "Attributed main-body Korean technical translation with equations, core tables and selected appendices; full per-task Appendix B table condensed."
+}

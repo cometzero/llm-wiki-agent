@@ -1575,3 +1575,11 @@ Added licensed feature translations (8), copyright-safe Nix/brief digests, 59 te
 ## [2026-10-30] graph | Knowledge graph rebuilt
 
 3236 nodes, 10923 edges (10923 extracted, 0 inferred).
+
+## [2026-11-04] ingest | OSWAM (Hugging Face Weekly 2026-W45)
+
+Added four detailed Korean raw Markdown deliverables, six downloaded figure assets (four PNGs verified by signature/chunk CRC/IDAT decompression and two XML-verified SVGs), four exact-path/final-byte-hash source pages, the OSWAM entity and StructuredActionInitialization concept. Main-body technical translation retains equations 1–12 and core experimental tables under CC BY 4.0 attribution; long comparison tables and the full per-task appendix table are explicitly condensed. Semantic Scholar returned 59 references, matching 59 original bibliography entries; nine key references were mapped. Exact ID/distinctive-title searches and live discovery confirmed a new current-week autonomous-driving/WAM paper. NVIDIA ingest failed with retired-model HTTP 410; one bounded Codex fallback could not find its executable. Deterministic manual materialization preserves existing multi-source pages and overview. Both final-Markdown Python teaching blocks passed. Driving/robot metrics and latency are author-reported, with non-reactive/open-loop/reactive evaluation and eager/compiled hardware conditions distinguished; no independent model training, robot rollout, vehicle safety or NPU deployment claim. The bounded normal graph attempt timed out after repeated HTTP 410; extracted-wikilink fallback is used below.
+
+## [2026-11-04] graph | Knowledge graph rebuilt
+
+3242 nodes, 10954 edges (10954 extracted, 0 inferred).
