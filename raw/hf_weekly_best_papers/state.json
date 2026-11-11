@@ -43,13 +43,41 @@
     "2609.39601",
     "2610.20019",
     "2610.31569",
-    "2610.35850"
+    "2610.35850",
+    "2611.01729"
   ],
   "runs": [
     {
+      "date_kst": "2026-11-11 09:51:25 KST",
+      "week": "2026-W46",
+      "selected_paper_ids": [
+        "2611.01729"
+      ],
+      "papers": [
+        {
+          "id": "2611.01729",
+          "title": "ODE Policy: Robot Learning via Action Dynamics, Not Actions",
+          "week": "2026-W46",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729/references.md"
+      ],
+      "commit_hash": "e9ad5e32f50b1c29ccc892f602a1592b51d0e0fc",
+      "notes": "Current-week numerical-action/control selection; exact ID and distinctive title searches in raw and wiki found no prior analysis. Four Korean deliverables, four exact-path/final-byte-hash source pages, ODEPolicy entity and ActionDynamicsPolicy concept; existing overview and prior pages preserved. Semantic Scholar returned 82 references without further pagination; nine core references selected. Two final-Markdown toy Python blocks passed. Original PNG and SVG downloaded and verified for local review only; independently drawn SVG redistributed. Content commit pushed and exact origin/personal hash read back before this state update.",
+      "limitations": "Original arXiv perpetual non-exclusive license: paper-ko.md is an independently worded Korean technical synopsis, NOT full translation; original figures linked rather than redistributed. NVIDIA ingest HTTP 410 retired model, one bounded Codex fallback found CLI missing; deterministic manual materialization completed. Required semantic graph attempt bounded at 90 seconds then --no-infer succeeded: 3248 nodes, 10970 extracted edges; networkx unavailable, no community detection. Author-reported benchmark outcomes; no independent policy training, robot rollout, vehicle closed-loop or NPU experiment."
+    },
+    {
       "date_kst": "2026-11-04 09:40:25 KST",
       "week": "2026-W45",
-      "selected_paper_ids": ["2610.35850"],
+      "selected_paper_ids": [
+        "2610.35850"
+      ],
       "papers": [
         {
           "id": "2610.35850",
