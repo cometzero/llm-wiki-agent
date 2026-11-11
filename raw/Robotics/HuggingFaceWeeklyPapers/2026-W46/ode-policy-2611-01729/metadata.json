@@ -1,0 +1,33 @@
+{
+  "source_url": "https://arxiv.org/html/2611.01729v1",
+  "hf_url": "https://huggingface.co/papers/2611.01729",
+  "arxiv_id": "2611.01729",
+  "arxiv_url": "https://arxiv.org/abs/2611.01729",
+  "pdf_url": "https://arxiv.org/pdf/2611.01729",
+  "week": "2026-W46",
+  "ingested_at_kst": "2026-11-11T09:46:49+09:00",
+  "selected_reason": "현재 주 후보 중 action dynamics·VLA/WAM action head·실물 제어를 직접 다루는 고관련 신규 논문; ID와 distinctive title의 raw/wiki 중복 없음",
+  "original_title": "ODE Policy: Robot Learning via Action Dynamics, Not Actions",
+  "authors": [
+    "Jindou Jia",
+    "Jingliang Li",
+    "Kuangji Zuo",
+    "Tuo An",
+    "Yuxuan Hu",
+    "Mengfei Zhao",
+    "Bofan Lyu",
+    "Jiaqi Bai",
+    "Daoyuan Zhu",
+    "Hengyu Dai",
+    "Junpeng Zhang",
+    "Jianfei Yang"
+  ],
+  "source_version": "2611.01729v1",
+  "source_license": "arXiv perpetual non-exclusive distribution license",
+  "document_policy": "독자적인 한국어 기술 해설 및 분석; 원문 전체 번역이나 대체본 아님",
+  "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W46/ode-policy-2611-01729",
+  "selected_id": "2611.01729",
+  "selection_week": "2026-W46",
+  "figure_policy": "Original figures linked, not redistributed; independently drawn SVG included.",
+  "semantic_scholar_reference_count": 82
+}

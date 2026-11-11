@@ -1583,3 +1583,11 @@ Added four detailed Korean raw Markdown deliverables, six downloaded figure asse
 ## [2026-11-04] graph | Knowledge graph rebuilt
 
 3242 nodes, 10954 edges (10954 extracted, 0 inferred).
+
+## [2026-11-11] ingest | ODE Policy physical-time action dynamics
+
+W46 신규 논문 2611.01729의 독자 한국어 해설/분석/참고문헌/학습 자료 4개를 source로 materialize하고 ODEPolicy 및 ActionDynamicsPolicy를 추가했다. NVIDIA HTTP 410과 Codex CLI 부재 때문에 수동 materialization을 사용했다. 원문 전체 번역/그림 재배포는 하지 않고 original diagram과 원본 figure 링크를 제공한다. 기존 overview와 multi-source page를 보존했다.
+
+## [2026-11-11] graph | Knowledge graph rebuilt
+
+3248 nodes, 10970 edges (10970 extracted, 0 inferred).

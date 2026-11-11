@@ -1,5 +1,12 @@
 # Wiki Overview
 
+## 2026-W46: Action 값을 넘어 Physical-Time Action Dynamics로
+- [[ODEPolicy]]는 [[ActionDynamicsPolicy]]로 desired command의 변화율을 학습하고 이전 command에서 적분한다. Short-path supervision과 contractive perturbation, seamless chunking, diversity head는 각각 학습 비용·drift·경계 consistency·multi-modality를 다룬다.
+- [[OSWAM]]이 structured initialization으로 generation step을 줄인다면, 이 연구는 generation time과 physical time을 구분해 numerical action의 parameterization을 바꾼다. Language는 field condition이며 자유형 reasoning을 직접 actuator로 보내지 않는다.
+- LIBERO/Plus·physical robot·model-based motion tracking 근거를 분리한다. 초기 epoch·random-init FM comparison·head-only latency를 최종 pretrained 성능이나 full-pipeline Hz로 확대하지 않는다. Continuous command는 formal safety가 아니며 차량 closed-loop/NPU 결과는 없다.
+- 원문 non-exclusive license 때문에 전체 번역 대신 독자 한국어 해설·학습 자료와 original diagram을 보존한다. 교육 Python 2개는 실행했고 policy training/robot rollout은 재현하지 않았다.
+
+
 ## 2026-W45: Structured Initialization으로 Direct-Policy WAM을 One-Step으로
 - [[OSWAM]]은 [[StructuredActionInitialization]]으로 Video DiT의 AIT action prior를 same-noise re-noising하고, 한 번의 Action DiT update로 numerical action chunk를 refine한다. SIT는 current-scene context를 보완하고 full-future teacher는 training-only AIT feature distillation을 제공한다.
 - [[SimWAM]]의 video-rollout-free interface에서 남은 action 반복 비용을 줄이는 작업이다. NAVSIM PDMS 90.3을 유지하며 H20 410→136ms를 보고하지만 RoboTwin SR은 multi-step Fast-WAM보다 1.83 pp 낮다. AIT가 가장 큰 ablation gain을 제공하며 teacher·SIT가 추가 개선한다.
