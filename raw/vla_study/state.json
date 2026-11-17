@@ -2,9 +2,9 @@
   "program_title": "VLA for Autonomous Driving Weekly Study",
   "timezone": "Asia/Seoul",
   "total_weeks": 12,
-  "next_week": 6,
-  "last_completed_date": "2026-11-10",
-  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-05-cot-retrieval-instruction-following-2026-11-10.md",
+  "next_week": 7,
+  "last_completed_date": "2026-11-17",
+  "last_completed_file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-06-numerical-action-generator-1-2026-11-17.md",
   "completed_weeks": [
     {
       "week": 1,
@@ -179,6 +179,12 @@
       "title": "CoT, Retrieval, Instruction Following",
       "date": "2026-11-10",
       "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-05-cot-retrieval-instruction-following-2026-11-10.md"
+    },
+    {
+      "week": 6,
+      "title": "Numerical Action Generator 1",
+      "date": "2026-11-17",
+      "file": "/home/ubuntu/.openclaw/workspace/llm-wiki-agent/raw/vla_study/weeks/week-06-numerical-action-generator-1-2026-11-17.md"
     }
   ]
 }
