@@ -1591,3 +1591,12 @@ W46 신규 논문 2611.01729의 독자 한국어 해설/분석/참고문헌/학�
 ## [2026-11-11] graph | Knowledge graph rebuilt
 
 3248 nodes, 10970 edges (10970 extracted, 0 inferred).
+
+## [2026-11-18] ingest | ScaleVLA: frontier representation to continuous action
+- New current-week paper 2611.21607; four Korean raw deliverables, five verified figures, original bibliography 101 entries, nine selected references, two executed educational Python blocks.
+- Automatic NVIDIA ingest failed HTTP 410; one bounded Codex fallback found CLI absent. Four deterministic source pages plus ScaleVLA entity and FrontierVLMFeatureTransfer concept preserve full raw paths/final-byte hashes. Existing corpus navigation/synthesis retained.
+- CC BY 4.0 technical translation preserves main sections, equation, all nine table cell sets and key appendix protocols; full bibliography prose/citation enumeration condensed. No independent robot/vehicle/NPU experiment.
+
+## [2026-11-18] graph | Knowledge graph rebuilt
+
+3254 nodes, 10993 edges (10993 extracted, 0 inferred).

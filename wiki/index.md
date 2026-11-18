@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [ScaleVLA 한국어 기술 번역](sources/scalevla-2611-21607-paper-ko.md) — frontier frozen feature·continuous action 및 검증 경계
+- [ScaleVLA 분석](sources/scalevla-2611-21607-analysis.md) — frontier frozen feature·continuous action 및 검증 경계
+- [ScaleVLA 핵심 참고문헌 9편](sources/scalevla-2611-21607-references.md) — frontier frozen feature·continuous action 및 검증 경계
+- [ScaleVLA 핵심 기술 학습](sources/scalevla-2611-21607-learning.md) — frontier frozen feature·continuous action 및 검증 경계
 - [ODE Policy 참고문헌 지도](sources/ode-policy-2611-01729-references.md) — ODE Policy action dynamics 및 검증 경계
 - [ODE Policy 한국어 기술 해설](sources/ode-policy-2611-01729-paper-ko.md) — ODE Policy action dynamics 및 검증 경계
 - [ODE Policy 핵심 기술 학습](sources/ode-policy-2611-01729-learning.md) — ODE Policy action dynamics 및 검증 경계
@@ -385,6 +389,7 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [ScaleVLA](entities/ScaleVLA.md) — frozen 552B frontier VLM과 continuous action head
 - [ODEPolicy](entities/ODEPolicy.md) — ODE Policy action dynamics 및 검증 경계
 - [OSWAM](entities/OSWAM.md) — structured action prior와 training-only future teacher를 사용하는 one-step WAM
 - [Echo](entities/Echo.md) — task status와 action을 jointly denoise하는 physical-robot VLA
@@ -936,6 +941,7 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Frontier VLM Feature Transfer](concepts/FrontierVLMFeatureTransfer.md) — 중간 multimodal feature의 numerical action grounding
 - [ActionDynamicsPolicy](concepts/ActionDynamicsPolicy.md) — ODE Policy action dynamics 및 검증 경계
 - [Structured Action Initialization](concepts/StructuredActionInitialization.md) — AIT prior·same-noise re-noising·one-step residual refinement
 - [XArray](concepts/XArray.md) — kernel indexed data structure와 Rust 재작성 경계

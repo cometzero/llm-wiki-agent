@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W47: Frontier VLM Representation의 Continuous Action Transfer
+- [[ScaleVLA]]는 [[FrontierVLMFeatureTransfer]]로 frozen 552B VLM의 causal-encoder token을 scratch action DiT에 연결한다. Explicit CoT/decoder 없이 chunk당 feature를 한 번 읽고 네 flow step으로 numerical action을 만든다. [[GroundingPI]]의 precise perception과 [[ODEPolicy]]의 action dynamics와 다른 interface layer를 확장한다.
+- LIBERO-PRO mean 45.1%와 scarce-demo Goal의 이득, 실물 charger ID 9/10·OOD 8/15를 보고하지만 Object-Env·hard dexterity는 여전히 어렵다. Full-data normalization·fixed update budget·one seed·작은 실물 표본 및 backbone family/hardware confound를 보존한다.
+- 4×H200 RoboCasa median 215.8ms와 실물 384ms, successful-trial completion 114.4s를 구분한다. Controller rate는 feedback freshness가 아니며 vehicle closed-loop/NPU/formal safety 결과는 없다. CC BY 4.0 본문 기술 번역·표 1–9·그림 5개와 교육 toy 2개를 보존했다.
+
 ## 2026-W46: Action 값을 넘어 Physical-Time Action Dynamics로
 - [[ODEPolicy]]는 [[ActionDynamicsPolicy]]로 desired command의 변화율을 학습하고 이전 command에서 적분한다. Short-path supervision과 contractive perturbation, seamless chunking, diversity head는 각각 학습 비용·drift·경계 consistency·multi-modality를 다룬다.
 - [[OSWAM]]이 structured initialization으로 generation step을 줄인다면, 이 연구는 generation time과 physical time을 구분해 numerical action의 parameterization을 바꾼다. Language는 field condition이며 자유형 reasoning을 직접 actuator로 보내지 않는다.
