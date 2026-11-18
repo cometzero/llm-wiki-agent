@@ -1,0 +1,786 @@
+{
+  "id": "2611.21607",
+  "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+  "version": "v1",
+  "submitted": "2026-11-16",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "week": "2026-W47",
+  "hf_url": "https://huggingface.co/papers/2611.21607",
+  "source_url": "https://arxiv.org/html/2611.21607v1",
+  "authors": [
+    "Ruixi Yu",
+    "Dairu Liu",
+    "Xuchuan Chen",
+    "Zekun Qi",
+    "Zekai Li",
+    "Zhuo Cao",
+    "Luyang Niu",
+    "Yingsheng Zhang",
+    "Sikai Liang",
+    "Ke Fan",
+    "He Wang",
+    "Li Yi"
+  ],
+  "assets": [
+    {
+      "file": "figures/teaser.png",
+      "url": "https://arxiv.org/html/2611.21607v1/teaser.png",
+      "sha256": "8e1a0f46544f8234c2d063c5c83fdebce3640e4e513e823d510c9620d3b43949",
+      "verification": [
+        780,
+        546
+      ],
+      "caption": "Figure 1 : ScaleVLA overview. Top left: backbone sizes. Top right: the VLM encodes images and the instruction, and the action DiT uses these features and robot state to generate an action chunk.\nMiddle: task success by backbone size. Base is the best dense backbone at or below each size.\nBottom: inference latency on RoboCasa, sample efficiency on LIBERO Goal, and success on LIBERO and LIBERO-PRO."
+    },
+    {
+      "file": "figures/architecture.png",
+      "url": "https://arxiv.org/html/2611.21607v1/architecture.png",
+      "sha256": "d6d27dc264e285326064a8841b9cd781ebc0cc778fc972ce994edc019bca3ccb",
+      "verification": [
+        780,
+        284
+      ],
+      "caption": "Figure 2 : ScaleVLA architecture. The VLM encodes the images and the instruction, and the action head reads the output of its causal encoder.\nThe action DiT alternates cross-attention and self-attention and generates an action chunk in four flow steps."
+    },
+    {
+      "file": "figures/tasks.png",
+      "url": "https://arxiv.org/html/2611.21607v1/tasks.png",
+      "sha256": "a6396888d56d2e6d6140fc71072ea25c02827b277c81113a587a1a70545de6a3",
+      "verification": [
+        780,
+        461
+      ],
+      "caption": "Figure 3 : Simulation tasks. LIBERO tests tabletop manipulation, LIBERO-PRO perturbs the objects and scenes of LIBERO, RoboCasa tests kitchen tasks in out-of-distribution scenes, and DexJoCo tests five tasks that require coordinating two dexterous hands."
+    },
+    {
+      "file": "figures/latency.svg",
+      "url": "https://arxiv.org/html/2611.21607v1/latency.svg",
+      "sha256": "31f56143ca12be1a273b95a6741aae96e91c74ccea52d7c9f43c9df9999f2cd2",
+      "verification": "SVG XML parsed; no script",
+      "caption": "Figure 4 : Backbone size and inference latency. Left: total parameters in each source model. Right: median time per action chunk on RoboCasa, with backbone and action head times shown separately.\nScaleVLA uses four H200 GPUs; the other backbones use one each."
+    },
+    {
+      "file": "figures/real_robot.png",
+      "url": "https://arxiv.org/html/2611.21607v1/real_robot.png",
+      "sha256": "c11877f98a3689cf3e383463e7f9415cd150538ea4dfb42b87ad1ee5f43ea17a",
+      "verification": [
+        756,
+        358
+      ],
+      "caption": "Figure 5 : Plug In Charger on a real robot. Left: all three policies grasp and hand over the charger from in-domain layouts. ScaleVLA aligns and inserts the plug; the other two policies reach the socket but fail to insert the plug.\nRight: success rates in the in-domain and OOD settings."
+    }
+  ],
+  "semantic_scholar_status": 404,
+  "bibliography": [
+    {
+      "id": "bib.bib1",
+      "text": "[1] Shuai Bai, Yuxuan Cai, Ruizhe Chen, et al. Qwen3-VL technical report. arXiv preprint arXiv:2511.21631 , 2025. https://arxiv.org/abs/2511.21631 .",
+      "links": [
+        "https://arxiv.org/abs/2511.21631"
+      ]
+    },
+    {
+      "id": "bib.bib2",
+      "text": "[2] Suneel Belkhale, Tianli Ding, Ted Xiao, Pierre Sermanet, Quan Vuong, Jonathan Tompson, Yevgen Chebotar, Debidatta Dwibedi, and Dorsa Sadigh. RT-H: Action Hierarchies Using Language. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.049 . https://doi.org/10.15607/RSS.2024.XX.049 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.049",
+        "https://doi.org/10.15607/RSS.2024.XX.049"
+      ]
+    },
+    {
+      "id": "bib.bib3",
+      "text": "[3] Hongzhe Bi, Hengkai Tan, Shenghao Xie, Zeyuan Wang, Shuhe Huang, Haitian Liu, Ruowen Zhao, Yao Feng, Chendong Xiang, Yinze Rong, Hongyan Zhao, Hanyu Liu, Zhizhong Su, Lei Ma, Hang Su, and Jun Zhu. Motus: A Unified Latent Action World Model. arXiv preprint arXiv:2512.13030 , 2025. https://arxiv.org/abs/2512.13030 .",
+      "links": [
+        "https://arxiv.org/abs/2512.13030"
+      ]
+    },
+    {
+      "id": "bib.bib4",
+      "text": "[4] Johan Bjorck, Fernando Castañeda, et al. GR00T N1: An open foundation model for generalist humanoid robots. arXiv preprint arXiv:2503.14734 , 2025.",
+      "links": []
+    },
+    {
+      "id": "bib.bib5",
+      "text": "[5] Kevin Black, Noah Brown, Danny Driess, et al. π 0 \\pi_{0} : A vision-language-action flow model for general robot control. arXiv preprint arXiv:2410.24164 , 2024.",
+      "links": []
+    },
+    {
+      "id": "bib.bib6",
+      "text": "[6] Konstantinos Bousmalis, Giulia Vezzani, Dushyant Rao, Coline Manon Devin, Alex X. Lee, Maria Bauzá Villalonga, Todor Davchev, Yuxiang Zhou, Agrim Gupta, Akhil Raju, Antoine Laurens, Claudio Fantacci, Valentin Dalibard, Martina Zambelli, Murilo Fernandes Martins, Rugile Pevceviciute, Michiel Blokzijl, Misha Denil, Nathan Batchelor, Thomas Lampe, Emilio Parisotto, Konrad Zolna, Scott E. Reed, Sergio Gómez Colmenarejo, Jon Scholz, Abbas Abdolmaleki, Oliver Groth, Jean-Baptiste Regli, Oleg Sushkov, Thomas Rothörl, José Enrique Chen, Yusuf Aytar, Dave Barker, Joy Ortiz, Martin A. Riedmiller, Jost Tobias Springenberg, Raia Hadsell, Francesco Nori, and Nicolas Heess. RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation. Transactions on Machine Learning Research , 2024. https://openreview.net/forum?id=vsCpILiWHu .",
+      "links": [
+        "https://openreview.net/forum?id=vsCpILiWHu"
+      ]
+    },
+    {
+      "id": "bib.bib7",
+      "text": "[7] Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar, Joseph Dabis, Chelsea Finn, Keerthana Gopalakrishnan, Karol Hausman, Alexander Herzog, Jasmine Hsu, Julian Ibarz, Brian Ichter, Alex Irpan, Tomas Jackson, Sally Jesmonth, Nikhil J. Joshi, Ryan Julian, Dmitry Kalashnikov, Yuheng Kuang, Isabel Leal, Kuang-Huei Lee, Sergey Levine, Yao Lu, Utsav Malla, Deeksha Manjunath, Igor Mordatch, Ofir Nachum, Carolina Parada, Jodilyn Peralta, Emily Perez, Karl Pertsch, Jornell Quiambao, Kanishka Rao, Michael S. Ryoo, Grecia Salazar, Pannag R. Sanketi, Kevin Sayed, Jaspiar Singh, Sumedh Sontakke, Austin Stone, Clayton Tan, Huong T. Tran, Vincent Vanhoucke, Steve Vega, Quan Vuong, Fei Xia, Ted Xiao, Peng Xu, Sichun Xu, Tianhe Yu, and Brianna Zitkovich. RT-1: Robotics Transformer for Real-World Control at Scale. In Robotics: Science and Systems , 2023. 10.15607/RSS.2023.XIX.025 . https://doi.org/10.15607/RSS.2023.XIX.025 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2023.XIX.025",
+        "https://doi.org/10.15607/RSS.2023.XIX.025"
+      ]
+    },
+    {
+      "id": "bib.bib8",
+      "text": "[8] Qingwen Bu, Yanting Yang, Jisong Cai, Shenyuan Gao, Guanghui Ren, Maoqing Yao, Ping Luo, and Hongyang Li. UniVLA: Learning to Act Anywhere with Task-centric Latent Actions. arXiv preprint arXiv:2505.06111 , 2025. https://arxiv.org/abs/2505.06111 .",
+      "links": [
+        "https://arxiv.org/abs/2505.06111"
+      ]
+    },
+    {
+      "id": "bib.bib9",
+      "text": "[9] Rahul Chand and Miguel Villa Floran. How many demonstrations does a VLA need? on the sample efficiency of VLA finetuning. arXiv preprint arXiv:2611.09964 , 2026. https://arxiv.org/abs/2611.09964 .",
+      "links": [
+        "https://arxiv.org/abs/2611.09964"
+      ]
+    },
+    {
+      "id": "bib.bib10",
+      "text": "[10] Chi-Lam Cheang, Guangzeng Chen, Ya Jing, Tao Kong, Hang Li, Yifeng Li, Yuxiao Liu, Hongtao Wu, Jiafeng Xu, Yichu Yang, Hanbo Zhang, and Minzhao Zhu. GR-2: A Generative Video-Language-Action Model with Web-Scale Knowledge for Robot Manipulation. arXiv preprint arXiv:2410.06158 , 2024. https://arxiv.org/abs/2410.06158 .",
+      "links": [
+        "https://arxiv.org/abs/2410.06158"
+      ]
+    },
+    {
+      "id": "bib.bib11",
+      "text": "[11] Boyuan Chen, Zhuo Xu, Sean Kirmani, Brian Ichter, Dorsa Sadigh, Leonidas J. Guibas, and Fei Xia. SpatialVLM: Endowing vision-language models with spatial reasoning capabilities. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 14455–14465. IEEE, 2024. 10.1109/CVPR52733.2024.01370 . https://doi.org/10.1109/CVPR52733.2024.01370 .",
+      "links": [
+        "https://doi.org/10.1109/CVPR52733.2024.01370",
+        "https://doi.org/10.1109/CVPR52733.2024.01370"
+      ]
+    },
+    {
+      "id": "bib.bib12",
+      "text": "[12] Tianxing Chen, Yue Chen, Zixuan Li, Junyuan Tang, Kailun Su, Weijie Wan, Baijun Chen, Haoran Lu, Haowen Yan, Honghao Su, et al. RoboDojo: A unified sim-and-real benchmark for comprehensive evaluation of generalist robot manipulation policies. arXiv preprint arXiv:2607.04434 , 2026. https://arxiv.org/abs/2607.04434 .",
+      "links": [
+        "https://arxiv.org/abs/2607.04434"
+      ]
+    },
+    {
+      "id": "bib.bib13",
+      "text": "[13] Cheng Chi, Siyuan Feng, Yilun Du, Zhenjia Xu, Eric Cousineau, Benjamin Burchfiel, and Shuran Song. Diffusion policy: Visuomotor policy learning via action diffusion. In Robotics: Science and Systems , 2023. 10.15607/RSS.2023.XIX.026 . https://doi.org/10.15607/RSS.2023.XIX.026 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2023.XIX.026",
+        "https://doi.org/10.15607/RSS.2023.XIX.026"
+      ]
+    },
+    {
+      "id": "bib.bib14",
+      "text": "[14] Damai Dai, Chengqi Deng, Chenggang Zhao, R.X. Xu, Huazuo Gao, Deli Chen, Jiashi Li, Wangding Zeng, Xingkai Yu, Y. Wu, Zhenda Xie, Y.K. Li, Panpan Huang, Fuli Luo, Chong Ruan, Zhifang Sui, and Wenfeng Liang. DeepSeekMoE: Towards ultimate expert specialization in mixture-of-experts language models. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , pages 1280–1297. Association for Computational Linguistics, 2024. 10.18653/v1/2024.acl-long.70 . https://aclanthology.org/2024.acl-long.70/ .",
+      "links": [
+        "https://doi.org/10.18653/v1/2024.acl-long.70",
+        "https://aclanthology.org/2024.acl-long.70/"
+      ]
+    },
+    {
+      "id": "bib.bib15",
+      "text": "[15] DeepSeek-AI. DeepSeek-V4.1-Flash: Pushing the limits of KV cache compression. Technical report, 2026. https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf .",
+      "links": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/DeepSeek_V41_Tech_Report.pdf"
+      ]
+    },
+    {
+      "id": "bib.bib16",
+      "text": "[16] Ria Doshi, Homer Rich Walke, Oier Mees, Sudeep Dasari, and Sergey Levine. Scaling Cross-Embodied Learning: One Policy for Manipulation, Navigation, Locomotion and Aviation. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 496–512. PMLR, 2024. https://proceedings.mlr.press/v270/doshi25a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/doshi25a.html"
+      ]
+    },
+    {
+      "id": "bib.bib17",
+      "text": "[17] Danny Driess, Fei Xia, Mehdi S. M. Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine, Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng, Igor Mordatch, and Pete Florence. PaLM-E: An Embodied Multimodal Language Model. In International Conference on Machine Learning , volume 202 of Proceedings of Machine Learning Research , pages 8469–8488. PMLR, 2023. https://proceedings.mlr.press/v202/driess23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v202/driess23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib18",
+      "text": "[18] Danny Driess, Jost Tobias Springenberg, Brian Ichter, Lili Yu, Adrian Li-Bell, Karl Pertsch, Allen Z. Ren, Homer Walke, Quan Vuong, Lucy Xiaoyang Shi, and Sergey Levine. Knowledge insulating vision-language-action models: Train fast, run fast, generalize better. In Advances in Neural Information Processing Systems , volume 38, 2025. https://arxiv.org/abs/2505.23705 .",
+      "links": [
+        "https://arxiv.org/abs/2505.23705"
+      ]
+    },
+    {
+      "id": "bib.bib19",
+      "text": "[19] Yilun Du, Sherry Yang, Bo Dai, Hanjun Dai, Ofir Nachum, Josh Tenenbaum, Dale Schuurmans, and Pieter Abbeel. Learning universal policies via text-guided video generation. In Advances in Neural Information Processing Systems , volume 36, 2023. https://arxiv.org/abs/2302.00111 .",
+      "links": [
+        "https://arxiv.org/abs/2302.00111"
+      ]
+    },
+    {
+      "id": "bib.bib20",
+      "text": "[20] Galbot Team. Systematically exploring the capabilities of GPT-6 Astra as embodied policies, 2026. https://arxiv.org/abs/2609.38537 .",
+      "links": [
+        "https://arxiv.org/abs/2609.38537"
+      ]
+    },
+    {
+      "id": "bib.bib21",
+      "text": "[21] Gemini Robotics Team. Gemini robotics: Bringing AI into the physical world. arXiv preprint arXiv:2503.20020 , 2025.",
+      "links": []
+    },
+    {
+      "id": "bib.bib22",
+      "text": "[22] Dibya Ghosh, Homer Rich Walke, Karl Pertsch, Kevin Black, Oier Mees, Sudeep Dasari, Joey Hejna, Tobias Kreiman, Charles Xu, Jianlan Luo, You Liang Tan, Lawrence Yunliang Chen, Quan Vuong, Ted Xiao, Pannag R. Sanketi, Dorsa Sadigh, Chelsea Finn, and Sergey Levine. Octo: An open-source generalist robot policy. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.090 . https://doi.org/10.15607/RSS.2024.XX.090 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.090",
+        "https://doi.org/10.15607/RSS.2024.XX.090"
+      ]
+    },
+    {
+      "id": "bib.bib23",
+      "text": "[23] Ankit Goyal, Jie Xu, Yijie Guo, Valts Blukis, Yu-Wei Chao, and Dieter Fox. RVT: Robotic View Transformer for 3D Object Manipulation. In Conference on Robot Learning , volume 229 of Proceedings of Machine Learning Research , pages 694–710. PMLR, 2023. https://proceedings.mlr.press/v229/goyal23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v229/goyal23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib24",
+      "text": "[24] Ankit Goyal, Valts Blukis, Jie Xu, Yijie Guo, Yu-Wei Chao, and Dieter Fox. RVT-2: Learning Precise Manipulation from Few Demonstrations. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.055 . https://doi.org/10.15607/RSS.2024.XX.055 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.055",
+        "https://doi.org/10.15607/RSS.2024.XX.055"
+      ]
+    },
+    {
+      "id": "bib.bib25",
+      "text": "[25] Ryan Hoque, Peide Huang, David J. Yoon, Mouli Sivapurapu, and Jian Zhang. EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video. arXiv preprint arXiv:2505.11709 , 2025. https://arxiv.org/abs/2505.11709 .",
+      "links": [
+        "https://arxiv.org/abs/2505.11709"
+      ]
+    },
+    {
+      "id": "bib.bib26",
+      "text": "[26] Siyuan Huang, Zhengkai Jiang, Hao Dong, Yu Qiao, Peng Gao, and Hongsheng Li. Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model. arXiv preprint arXiv:2305.11176 , 2023a. https://arxiv.org/abs/2305.11176 .",
+      "links": [
+        "https://arxiv.org/abs/2305.11176"
+      ]
+    },
+    {
+      "id": "bib.bib27",
+      "text": "[27] Wenlong Huang, Fei Xia, Ted Xiao, Harris Chan, Jacky Liang, Pete Florence, Andy Zeng, Jonathan Tompson, Igor Mordatch, Yevgen Chebotar, Pierre Sermanet, Tomas Jackson, Noah Brown, Linda Luu, Sergey Levine, Karol Hausman, and Brian Ichter. Inner Monologue: Embodied Reasoning through Planning with Language Models. In Conference on Robot Learning , volume 205 of Proceedings of Machine Learning Research , pages 1769–1782. PMLR, 2022. https://proceedings.mlr.press/v205/huang23c.html .",
+      "links": [
+        "https://proceedings.mlr.press/v205/huang23c.html"
+      ]
+    },
+    {
+      "id": "bib.bib28",
+      "text": "[28] Wenlong Huang, Chen Wang, Ruohan Zhang, Yunzhu Li, Jiajun Wu, and Li Fei-Fei. VoxPoser: Composable 3D value maps for robotic manipulation with language models. In Conference on Robot Learning , volume 229 of Proceedings of Machine Learning Research , pages 540–562. PMLR, 2023b. https://proceedings.mlr.press/v229/huang23b.html .",
+      "links": [
+        "https://proceedings.mlr.press/v229/huang23b.html"
+      ]
+    },
+    {
+      "id": "bib.bib29",
+      "text": "[29] Wenlong Huang, Chen Wang, Yunzhu Li, Ruohan Zhang, and Li Fei-Fei. ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 4573–4602. PMLR, 2024. https://proceedings.mlr.press/v270/huang25g.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/huang25g.html"
+      ]
+    },
+    {
+      "id": "bib.bib30",
+      "text": "[30] Brian Ichter, Anthony Brohan, Yevgen Chebotar, Chelsea Finn, Karol Hausman, Alexander Herzog, Daniel Ho, Julian Ibarz, Alex Irpan, Eric Jang, Ryan Julian, Dmitry Kalashnikov, Sergey Levine, Yao Lu, Carolina Parada, Kanishka Rao, Pierre Sermanet, Alexander Toshev, Vincent Vanhoucke, Fei Xia, Ted Xiao, Peng Xu, Mengyuan Yan, Noah Brown, Michael Ahn, Omar Cortes, Nicolas Sievers, Clayton Tan, Sichun Xu, Diego Reyes, Jarek Rettinghouse, Jornell Quiambao, Peter Pastor, Linda Luu, Kuang-Huei Lee, Yuheng Kuang, Sally Jesmonth, Nikhil J. Joshi, Kyle Jeffrey, Rosario Jauregui Ruano, Jasmine Hsu, Keerthana Gopalakrishnan, Byron David, Andy Zeng, and Chuyuan Kelly Fu. Do as i can, not as i say: Grounding language in robotic affordances. In Conference on Robot Learning , volume 205 of Proceedings of Machine Learning Research , pages 287–318. PMLR, 2022. https://proceedings.mlr.press/v205/ichter23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v205/ichter23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib31",
+      "text": "[31] Vidhi Jain, Maria Attarian, Nikhil J. Joshi, Ayzaan Wahid, Danny Driess, Quan Vuong, Pannag R. Sanketi, Pierre Sermanet, Stefan Welker, Christine Chan, Igor Gilitschenski, Yonatan Bisk, and Debidatta Dwibedi. Vid2Robot: End-to-end Video-conditioned Policy Learning with Cross-Attention Transformers. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.052 . https://doi.org/10.15607/RSS.2024.XX.052 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.052",
+        "https://doi.org/10.15607/RSS.2024.XX.052"
+      ]
+    },
+    {
+      "id": "bib.bib32",
+      "text": "[32] Eric Jang, Alex Irpan, Mohi Khansari, Daniel Kappler, Frederik Ebert, Corey Lynch, Sergey Levine, and Chelsea Finn. BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning. In Conference on Robot Learning , volume 164 of Proceedings of Machine Learning Research , pages 991–1002. PMLR, 2021. https://proceedings.mlr.press/v164/jang22a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v164/jang22a.html"
+      ]
+    },
+    {
+      "id": "bib.bib33",
+      "text": "[33] Joel Jang, Seonghyeon Ye, Zongyu Lin, Jiannan Xiang, Johan Bjorck, Yu Fang, Fengyuan Hu, Spencer Huang, Kaushil Kundalia, Yen-Chen Lin, Loic Magne, Ajay Mandlekar, Avnish Narayan, You Liang Tan, Guanzhi Wang, Jing Wang, Qi Wang, Yinzhen Xu, Xiaohui Zeng, Kaiyuan Zheng, Ruijie Zheng, Ming-Yu Liu, Luke Zettlemoyer, Dieter Fox, Jan Kautz, Scott Reed, Yuke Zhu, and Linxi Fan. DreamGen: Unlocking Generalization in Robot Learning through Video World Models. arXiv preprint arXiv:2505.12705 , 2025. https://arxiv.org/abs/2505.12705 .",
+      "links": [
+        "https://arxiv.org/abs/2505.12705"
+      ]
+    },
+    {
+      "id": "bib.bib34",
+      "text": "[34] Yunfan Jiang, Agrim Gupta, Zichen Zhang, Guanzhi Wang, Yongqiang Dou, Yanjun Chen, Li Fei-Fei, Anima Anandkumar, Yuke Zhu, and Linxi Fan. VIMA: General Robot Manipulation with Multimodal Prompts. arXiv preprint arXiv:2210.03094 , 2022. https://arxiv.org/abs/2210.03094 .",
+      "links": [
+        "https://arxiv.org/abs/2210.03094"
+      ]
+    },
+    {
+      "id": "bib.bib35",
+      "text": "[35] Alexander Khazatsky, Karl Pertsch, Suraj Nair, Ashwin Balakrishna, Sudeep Dasari, Siddharth Karamcheti, Soroush Nasiriany, Mohan Kumar Srirama, Lawrence Yunliang Chen, Kirsty Ellis, Peter David Fagan, Joey Hejna, Masha Itkina, Marion Lepert, Yecheng Jason Ma, Patrick Tree Miller, Jimmy Wu, Suneel Belkhale, Shivin Dass, Huy Ha, Arhan Jain, Abraham Lee, Youngwoon Lee, Marius Memmel, Sungjae Park, Ilija Radosavovic, Kaiyuan Wang, Albert Zhan, Kevin Black, Cheng Chi, Kyle Beltran Hatch, Shan Lin, Jingpei Lu, Jean Mercat, Abdul Rehman, Pannag R. Sanketi, Archit Sharma, Cody Simpson, Quan Vuong, Homer Rich Walke, Blake Wulfe, Ted Xiao, Jonathan Heewon Yang, Arefeh Yavary, Tony Z. Zhao, Christopher Agia, Rohan Baijal, Mateo Guaman Castro, Daphne Chen, Qiuyu Chen, Trinity Chung, Jaimyn Drake, Ethan Paul Foster, Jensen Gao, David Antonio Herrera, Minho Heo, Kyle Hsu, Jiaheng Hu, Donovon Jackson, Charlotte Le, Yunshuang Li, Roy Lin, Zehan Ma, Abhiram Maddukuri, Suvir Mirchandani, Daniel Morton, Tony Nguyen, Abigail\nO’Neill, Rosario Scalise, Derick Seale, Victor Son, Stephen Tian, Emi Tran, Andrew E. Wang, Yilin Wu, Annie Xie, Jingyun Yang, Patrick Yin, Yunchu Zhang, Osbert Bastani, Glen Berseth, Jeannette Bohg, Ken Goldberg, Abhinav Gupta, Abhishek Gupta, Dinesh Jayaraman, Joseph J. Lim, Jitendra Malik, Roberto Martín-Martín, Subramanian Ramamoorthy, Dorsa Sadigh, Shuran Song, Jiajun Wu, Michael C. Yip, Yuke Zhu, Thomas Kollar, Sergey Levine, and Chelsea Finn. DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.120 . https://doi.org/10.15607/RSS.2024.XX.120 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.120",
+        "https://doi.org/10.15607/RSS.2024.XX.120"
+      ]
+    },
+    {
+      "id": "bib.bib36",
+      "text": "[36] Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti, Ted Xiao, Ashwin Balakrishna, Suraj Nair, Rafael Rafailov, Ethan Paul Foster, Pannag R. Sanketi, Quan Vuong, Thomas Kollar, Benjamin Burchfiel, Russ Tedrake, Dorsa Sadigh, Sergey Levine, Percy Liang, and Chelsea Finn. OpenVLA: An open-source vision-language-action model. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 2679–2713. PMLR, 2024. https://proceedings.mlr.press/v270/kim25c.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/kim25c.html"
+      ]
+    },
+    {
+      "id": "bib.bib37",
+      "text": "[37] Moo Jin Kim, Chelsea Finn, and Percy Liang. Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success. arXiv preprint arXiv:2502.19645 , 2025. https://arxiv.org/abs/2502.19645 .",
+      "links": [
+        "https://arxiv.org/abs/2502.19645"
+      ]
+    },
+    {
+      "id": "bib.bib38",
+      "text": "[38] Moo Jin Kim, Yihuai Gao, Tsung-Yi Lin, Yen-Chen Lin, Yunhao Ge, Grace Lam, Percy Liang, Shuran Song, Ming-Yu Liu, Chelsea Finn, and Jinwei Gu. Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning. arXiv preprint arXiv:2601.16163 , 2026. https://arxiv.org/abs/2601.16163 .",
+      "links": [
+        "https://arxiv.org/abs/2601.16163"
+      ]
+    },
+    {
+      "id": "bib.bib39",
+      "text": "[39] Qixiu Li, Yaobo Liang, Zeyu Wang, et al. CogACT: A foundational vision-language-action model for synergizing cognition and action in robotic manipulation. arXiv preprint arXiv:2411.19650 , 2024a.",
+      "links": []
+    },
+    {
+      "id": "bib.bib40",
+      "text": "[40] Xinghang Li, Peiyan Li, Long Qian, Minghuan Liu, Dong Wang, Jirong Liu, Bingyi Kang, Xiao Ma, Xinlong Wang, Di Guo, Tao Kong, Hanbo Zhang, and Huaping Liu. What matters in building vision-language-action models for generalist robots. arXiv preprint arXiv:2412.14058 , 2024b. https://arxiv.org/abs/2412.14058 . Version 4, revised February 13, 2026.",
+      "links": [
+        "https://arxiv.org/abs/2412.14058"
+      ]
+    },
+    {
+      "id": "bib.bib41",
+      "text": "[41] Xinghang Li, Minghuan Liu, Hanbo Zhang, Cunjun Yu, Jie Xu, Hongtao Wu, Chilam Cheang, Ya Jing, Weinan Zhang, Huaping Liu, Hang Li, and Tao Kong. Vision-Language Foundation Models as Effective Robot Imitators. In International Conference on Learning Representations . OpenReview.net, 2024c. https://openreview.net/forum?id=lFYj0oibGR .",
+      "links": [
+        "https://openreview.net/forum?id=lFYj0oibGR"
+      ]
+    },
+    {
+      "id": "bib.bib42",
+      "text": "[42] Yi Li, Yuquan Deng, Jesse Zhang, Joel Jang, Marius Memmel, Caelan Reed Garrett, Fabio Ramos, Dieter Fox, Anqi Li, Abhishek Gupta, and Ankit Goyal. HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation. In International Conference on Learning Representations . OpenReview.net, 2025. https://openreview.net/forum?id=h7aQxzKbq6 .",
+      "links": [
+        "https://openreview.net/forum?id=h7aQxzKbq6"
+      ]
+    },
+    {
+      "id": "bib.bib43",
+      "text": "[43] Zekai Li, Jiayi Yu, Jinlu Zhang, Luyang Niu, Zekun Qi, Jun Zheng, Xuchuan Chen, Dairu Liu, Yintianrun Zhang, He Wang, and Li Yi. Where is physical RSI capability from? an observational scaling law of LLM-as-policy, 2026. https://arxiv.org/abs/2610.26848 .",
+      "links": [
+        "https://arxiv.org/abs/2610.26848"
+      ]
+    },
+    {
+      "id": "bib.bib44",
+      "text": "[44] Jacky Liang, Wenlong Huang, Fei Xia, Peng Xu, Karol Hausman, Brian Ichter, Pete Florence, and Andy Zeng. Code as policies: Language model programs for embodied control. In IEEE International Conference on Robotics and Automation , pages 9493–9500. IEEE, 2023. 10.1109/ICRA48891.2023.10160591 . https://doi.org/10.1109/ICRA48891.2023.10160591 .",
+      "links": [
+        "https://doi.org/10.1109/ICRA48891.2023.10160591",
+        "https://doi.org/10.1109/ICRA48891.2023.10160591"
+      ]
+    },
+    {
+      "id": "bib.bib45",
+      "text": "[45] Weifeng Lin, Siyuan Huang, Hao Li, Tingwei Chen, Ruichuan An, Xinyu Wei, Jianbo Liu, and Hongsheng Li. Rethinking VLM representation for VLA initialization. arXiv preprint arXiv:2605.25802 , 2026. https://arxiv.org/abs/2605.25802 .",
+      "links": [
+        "https://arxiv.org/abs/2605.25802"
+      ]
+    },
+    {
+      "id": "bib.bib46",
+      "text": "[46] Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le. Flow matching for generative modeling. In International Conference on Learning Representations . OpenReview.net, 2023. https://openreview.net/pdf?id=PqvMRDCJT9t .",
+      "links": [
+        "https://openreview.net/pdf?id=PqvMRDCJT9t"
+      ]
+    },
+    {
+      "id": "bib.bib47",
+      "text": "[47] Bo Liu, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter Stone. LIBERO: Benchmarking knowledge transfer for lifelong robot learning. In Advances in Neural Information Processing Systems (Datasets and Benchmarks Track) , volume 36, 2023. https://arxiv.org/abs/2306.03310 .",
+      "links": [
+        "https://arxiv.org/abs/2306.03310"
+      ]
+    },
+    {
+      "id": "bib.bib48",
+      "text": "[48] Jiaming Liu, Mengzhen Liu, Zhenyu Wang, Pengju An, Xiaoqi Li, Kaichen Zhou, Senqiao Yang, Renrui Zhang, Yandong Guo, and Shanghang Zhang. RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation. In Advances in Neural Information Processing Systems , volume 37, 2024. https://arxiv.org/abs/2406.04339 .",
+      "links": [
+        "https://arxiv.org/abs/2406.04339"
+      ]
+    },
+    {
+      "id": "bib.bib49",
+      "text": "[49] Songming Liu, Lingxuan Wu, Bangguo Li, Hengkai Tan, Huayu Chen, Zhengyi Wang, Ke Xu, Hang Su, and Jun Zhu. RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation. In International Conference on Learning Representations . OpenReview.net, 2025. https://openreview.net/forum?id=yAzN4tz7oI .",
+      "links": [
+        "https://openreview.net/forum?id=yAzN4tz7oI"
+      ]
+    },
+    {
+      "id": "bib.bib50",
+      "text": "[50] Corey Lynch, Ayzaan Wahid, Jonathan Tompson, Tianli Ding, James Betker, Robert Baruch, Travis Armstrong, and Pete Florence. Interactive Language: Talking to Robots in Real Time. arXiv preprint arXiv:2210.06407 , 2022. https://arxiv.org/abs/2210.06407 .",
+      "links": [
+        "https://arxiv.org/abs/2210.06407"
+      ]
+    },
+    {
+      "id": "bib.bib51",
+      "text": "[51] Arjun Majumdar, Karmesh Yadav, Sergio Arnaud, Yecheng Jason Ma, Claire Chen, Sneha Silwal, Aryan Jain, Vincent-Pierre Berges, Tingfan Wu, Jay Vakil, Pieter Abbeel, Jitendra Malik, Dhruv Batra, Yixin Lin, Oleksandr Maksymets, Aravind Rajeswaran, and Franziska Meier. Where are we in the search for an artificial visual cortex for embodied intelligence? In Advances in Neural Information Processing Systems , volume 36, 2023. https://arxiv.org/abs/2303.18240 .",
+      "links": [
+        "https://arxiv.org/abs/2303.18240"
+      ]
+    },
+    {
+      "id": "bib.bib52",
+      "text": "[52] Ajay Mandlekar, Soroush Nasiriany, Bowen Wen, Iretiayo Akinola, Yashraj Narang, Linxi Fan, Yuke Zhu, and Dieter Fox. MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations. In Conference on Robot Learning , volume 229 of Proceedings of Machine Learning Research , pages 1820–1864. PMLR, 2023. https://proceedings.mlr.press/v229/mandlekar23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v229/mandlekar23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib53",
+      "text": "[53] Suraj Nair, Aravind Rajeswaran, Vikash Kumar, Chelsea Finn, and Abhinav Gupta. R3M: A universal visual representation for robot manipulation. In Conference on Robot Learning , volume 205 of Proceedings of Machine Learning Research , pages 892–909. PMLR, 2022. https://proceedings.mlr.press/v205/nair23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v205/nair23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib54",
+      "text": "[54] Soroush Nasiriany, Abhiram Maddukuri, Lance Zhang, Adeet Parikh, Aaron Lo, Abhishek Joshi, Ajay Mandlekar, and Yuke Zhu. RoboCasa: Large-scale simulation of everyday tasks for generalist robots. In Robotics: Science and Systems (RSS) , 2024. https://robocasa.ai/assets/robocasa_rss24.pdf .",
+      "links": [
+        "https://robocasa.ai/assets/robocasa_rss24.pdf"
+      ]
+    },
+    {
+      "id": "bib.bib55",
+      "text": "[55] Dantong Niu, Yuvan Sharma, Giscard Biamby, Jerome Quenum, Yutong Bai, Baifeng Shi, Trevor Darrell, and Roei Herzig. LLARVA: Vision-Action Instruction Tuning Enhances Robot Learning. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 3333–3355. PMLR, 2024. https://proceedings.mlr.press/v270/niu25a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/niu25a.html"
+      ]
+    },
+    {
+      "id": "bib.bib56",
+      "text": "[56] NVIDIA. GR00T N1.5: An improved open foundation model for generalist humanoid robots. https://research.nvidia.com/labs/gear/gr00t-n1_5/ , 2025. Published June 11, 2025; accessed November 12, 2026.",
+      "links": [
+        "https://research.nvidia.com/labs/gear/gr00t-n1_5/"
+      ]
+    },
+    {
+      "id": "bib.bib57",
+      "text": "[57] NVIDIA. Cosmos-Reason2-2B. Model card, 2026a. https://huggingface.co/nvidia/Cosmos-Reason2-2B .",
+      "links": [
+        "https://huggingface.co/nvidia/Cosmos-Reason2-2B"
+      ]
+    },
+    {
+      "id": "bib.bib58",
+      "text": "[58] NVIDIA. Isaac GR00T N1.7: A foundation model for generalist robots. Code and model release, 2026b. https://github.com/NVIDIA/Isaac-GR00T . Version N1.7; model card at https://huggingface.co/nvidia/GR00T-N1.7-3B.",
+      "links": [
+        "https://github.com/NVIDIA/Isaac-GR00T"
+      ]
+    },
+    {
+      "id": "bib.bib59",
+      "text": "[59] NVIDIA. GR00T 2: Scaling robot foundation models for generalization, dexterity, and adaptation. White paper, 2026c. https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf .",
+      "links": [
+        "https://research.nvidia.com/labs/gear/gr00t-2/assets/gr00t2_whitepaper.pdf"
+      ]
+    },
+    {
+      "id": "bib.bib60",
+      "text": "[60] Open X-Embodiment Collaboration. Open X-embodiment: Robotic learning datasets and RT-X models. arXiv preprint arXiv:2310.08864 , 2023. https://arxiv.org/abs/2310.08864 .",
+      "links": [
+        "https://arxiv.org/abs/2310.08864"
+      ]
+    },
+    {
+      "id": "bib.bib61",
+      "text": "[61] Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy V. Vo, Marc Szafraniec, Vasil Khalidov, Pierre Fernandez, Daniel Haziza, Francisco Massa, Alaaeldin El-Nouby, Mido Assran, Nicolas Ballas, Wojciech Galuba, Russell Howes, Po-Yao Huang, Shang-Wen Li, Ishan Misra, Michael Rabbat, Vasu Sharma, Gabriel Synnaeve, Hu Xu, Hervé Jégou, Julien Mairal, Patrick Labatut, Armand Joulin, and Piotr Bojanowski. DINOv2: Learning Robust Visual Features without Supervision. Transactions on Machine Learning Research , 2024. https://openreview.net/forum?id=a68SUt6zFt .",
+      "links": [
+        "https://openreview.net/forum?id=a68SUt6zFt"
+      ]
+    },
+    {
+      "id": "bib.bib62",
+      "text": "[62] Karl Pertsch, Kyle Stachowicz, Brian Ichter, Danny Driess, Suraj Nair, Quan Vuong, Oier Mees, Chelsea Finn, and Sergey Levine. FAST: Efficient Action Tokenization for Vision-Language-Action Models. arXiv preprint arXiv:2501.09747 , 2025. https://arxiv.org/abs/2501.09747 .",
+      "links": [
+        "https://arxiv.org/abs/2501.09747"
+      ]
+    },
+    {
+      "id": "bib.bib63",
+      "text": "[63] Physical Intelligence. π 0.7 \\pi_{0.7} : A steerable generalist robotic foundation model with emergent capabilities. Technical report, 2026. https://www.pi.website/download/pi07.pdf .",
+      "links": [
+        "https://www.pi.website/download/pi07.pdf"
+      ]
+    },
+    {
+      "id": "bib.bib64",
+      "text": "[64] Physical Intelligence, Kevin Black, Noah Brown, et al. π 0.5 \\pi_{0.5} : a vision-language-action model with open-world generalization. arXiv preprint arXiv:2504.16054 , 2025.",
+      "links": []
+    },
+    {
+      "id": "bib.bib65",
+      "text": "[65] Scott E. Reed, Konrad Zolna, Emilio Parisotto, Sergio Gómez Colmenarejo, Alexander Novikov, Gabriel Barth-Maron, Mai Gimenez, Yury Sulsky, Jackie Kay, Jost Tobias Springenberg, Tom Eccles, Jake Bruce, Ali Razavi, Ashley Edwards, Nicolas Heess, Yutian Chen, Raia Hadsell, Oriol Vinyals, Mahyar Bordbar, and Nando de Freitas. A Generalist Agent. Transactions on Machine Learning Research , 2022. https://openreview.net/forum?id=1ikK0kHjvj .",
+      "links": [
+        "https://openreview.net/forum?id=1ikK0kHjvj"
+      ]
+    },
+    {
+      "id": "bib.bib66",
+      "text": "[66] Jinghuan Shang, Karl Schmeckpeper, Brandon B. May, Maria Vittoria Minniti, Tarik Kelestemur, David Watkins, and Laura Herlant. Theia: Distilling diverse vision foundation models for robot learning. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 724–748. PMLR, 2024. https://proceedings.mlr.press/v270/shang25a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/shang25a.html"
+      ]
+    },
+    {
+      "id": "bib.bib67",
+      "text": "[67] Yichao Shen, Fangyun Wei, Zhiying Du, Yaobo Liang, Yan Lu, Jiaolong Yang, Nanning Zheng, and Baining Guo. VideoVLA: Video Generators Can Be Generalizable Robot Manipulators. In Advances in Neural Information Processing Systems , volume 38, 2025. https://arxiv.org/abs/2512.06963 .",
+      "links": [
+        "https://arxiv.org/abs/2512.06963"
+      ]
+    },
+    {
+      "id": "bib.bib68",
+      "text": "[68] Mohit Shridhar, Lucas Manuelli, and Dieter Fox. CLIPort: What and Where Pathways for Robotic Manipulation. In Conference on Robot Learning , volume 164 of Proceedings of Machine Learning Research , pages 894–906. PMLR, 2021. https://proceedings.mlr.press/v164/shridhar22a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v164/shridhar22a.html"
+      ]
+    },
+    {
+      "id": "bib.bib69",
+      "text": "[69] Mohit Shridhar, Lucas Manuelli, and Dieter Fox. Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation. In Conference on Robot Learning , volume 205 of Proceedings of Machine Learning Research , pages 785–799. PMLR, 2022. https://proceedings.mlr.press/v205/shridhar23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v205/shridhar23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib70",
+      "text": "[70] Mustafa Shukor, Dana Aubakirova, Francesco Capuano, et al. SmolVLA: A vision-language-action model for affordable and efficient robotics. arXiv preprint arXiv:2506.01844 , 2025.",
+      "links": []
+    },
+    {
+      "id": "bib.bib71",
+      "text": "[71] Ishika Singh, Valts Blukis, Arsalan Mousavian, Ankit Goyal, Danfei Xu, Jonathan Tremblay, Dieter Fox, Jesse Thomason, and Animesh Garg. ProgPrompt: Generating Situated Robot Task Plans using Large Language Models. In IEEE International Conference on Robotics and Automation , pages 11523–11530. IEEE, 2023. 10.1109/ICRA48891.2023.10161317 . https://doi.org/10.1109/ICRA48891.2023.10161317 .",
+      "links": [
+        "https://doi.org/10.1109/ICRA48891.2023.10161317",
+        "https://doi.org/10.1109/ICRA48891.2023.10161317"
+      ]
+    },
+    {
+      "id": "bib.bib72",
+      "text": "[72] Luoyang Sun, Guoyang Xia, Fengfa Li, Lei Ren, Xinyu Cui, Haifeng Zhang, Fangxiang Feng, Kaike Zhang, Kun Zhan, Yan Xie, Jun Wang, and Cheng Deng. What makes an efficient VLA? navigating action-head design, scaling, and latency. arXiv preprint arXiv:2609.13984 , 2026. https://arxiv.org/abs/2609.13984 .",
+      "links": [
+        "https://arxiv.org/abs/2609.13984"
+      ]
+    },
+    {
+      "id": "bib.bib73",
+      "text": "[73] Homer Rich Walke, Kevin Black, Tony Z. Zhao, Quan Vuong, Chongyi Zheng, Philippe Hansen-Estruch, Andre Wang He, Vivek Myers, Moo Jin Kim, Max Du, Abraham Lee, Kuan Fang, Chelsea Finn, and Sergey Levine. BridgeData V2: A Dataset for Robot Learning at Scale. In Conference on Robot Learning , volume 229 of Proceedings of Machine Learning Research , pages 1723–1736. PMLR, 2023. https://proceedings.mlr.press/v229/walke23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v229/walke23a.html"
+      ]
+    },
+    {
+      "id": "bib.bib74",
+      "text": "[74] Hanwen Wang, Weizhi Zhao, Xiangyu Wang, Siyuan Huang, He Lin, Boyuan Zheng, Rongtao Xu, Gang Wang, Yao Mu, He Wang, Lue Fan, Hongsheng Li, Zhaoxiang Zhang, and Tieniu Tan. DexJoCo: A benchmark and toolkit for task-oriented dexterous manipulation on MuJoCo. arXiv preprint arXiv:2605.16257 , 2026a. https://arxiv.org/abs/2605.16257 .",
+      "links": [
+        "https://arxiv.org/abs/2605.16257"
+      ]
+    },
+    {
+      "id": "bib.bib75",
+      "text": "[75] Lirui Wang, Xinlei Chen, Jialiang Zhao, and Kaiming He. Scaling Proprioceptive-Visual Learning with Heterogeneous Pre-trained Transformers. In Advances in Neural Information Processing Systems , volume 37, 2024. https://arxiv.org/abs/2409.20537 .",
+      "links": [
+        "https://arxiv.org/abs/2409.20537"
+      ]
+    },
+    {
+      "id": "bib.bib76",
+      "text": "[76] Yihao Wang, Pengxiang Ding, Lingxiao Li, Can Cui, Zirui Ge, Xinyang Tong, Wenxuan Song, Han Zhao, Wei Zhao, Pengxu Hou, Siteng Huang, Yifan Tang, Wenhui Wang, Ru Zhang, Jianyi Liu, and Donglin Wang. VLA-Adapter: An effective paradigm for tiny-scale vision-language-action model. In Proceedings of the AAAI Conference on Artificial Intelligence , pages 18638–18646. AAAI Press, 2026b. 10.1609/AAAI.V40I22.38931 . https://doi.org/10.1609/aaai.v40i22.38931 .",
+      "links": [
+        "https://doi.org/10.1609/AAAI.V40I22.38931",
+        "https://doi.org/10.1609/aaai.v40i22.38931"
+      ]
+    },
+    {
+      "id": "bib.bib77",
+      "text": "[77] Junjie Wen, Yichen Zhu, Jinming Li, Minjie Zhu, Kun Wu, Zhiyuan Xu, Ning Liu, Ran Cheng, Chaomin Shen, Yaxin Peng, Feifei Feng, and Jian Tang. TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation. arXiv preprint arXiv:2409.12514 , 2024. https://arxiv.org/abs/2409.12514 .",
+      "links": [
+        "https://arxiv.org/abs/2409.12514"
+      ]
+    },
+    {
+      "id": "bib.bib78",
+      "text": "[78] Hongtao Wu, Ya Jing, Chilam Cheang, Guangzeng Chen, Jiafeng Xu, Xinghang Li, Minghuan Liu, Hang Li, and Tao Kong. Unleashing large-scale video generative pre-training for visual robot manipulation. In International Conference on Learning Representations . OpenReview.net, 2024. https://openreview.net/forum?id=NxoFmGgWC9 .",
+      "links": [
+        "https://openreview.net/forum?id=NxoFmGgWC9"
+      ]
+    },
+    {
+      "id": "bib.bib79",
+      "text": "[79] Tete Xiao, Ilija Radosavovic, Trevor Darrell, and Jitendra Malik. Masked Visual Pre-training for Motor Control. arXiv preprint arXiv:2203.06173 , 2022. https://arxiv.org/abs/2203.06173 .",
+      "links": [
+        "https://arxiv.org/abs/2203.06173"
+      ]
+    },
+    {
+      "id": "bib.bib80",
+      "text": "[80] Jenai Xuning Yang, Ashna Khetan, and Shun Zhang. Astranomy: An empirical study of GPT-6 Astra as a native robot policy. CoRL 2026 Late-Breaking Results, https://research.nvidia.com/labs/srl/projects/astranomy/ , 2026. Published October 14, 2026; accessed November 12, 2026.",
+      "links": [
+        "https://research.nvidia.com/labs/srl/projects/astranomy/"
+      ]
+    },
+    {
+      "id": "bib.bib81",
+      "text": "[81] Jinhui Ye, Ning Gao, Senqiao Yang, Jinliang Zheng, Zixuan Wang, Yuxin Chen, Pengguang Chen, Yilun Chen, Shu Liu, and Jiaya Jia. StarVLA- α \\alpha : Reducing Complexity in Vision-Language-Action Systems. arXiv preprint arXiv:2604.11757 , 2026a. https://arxiv.org/abs/2604.11757 .",
+      "links": [
+        "https://arxiv.org/abs/2604.11757"
+      ]
+    },
+    {
+      "id": "bib.bib82",
+      "text": "[82] Seonghyeon Ye, Yunhao Ge, Kaiyuan Zheng, Shenyuan Gao, Sihyun Yu, George Kurian, Suneel Indupuru, You Liang Tan, Chuning Zhu, Jiannan Xiang, Ayaan Malik, Kyungmin Lee, William Liang, Nadun Ranawaka, Jiasheng Gu, Yinzhen Xu, Guanzhi Wang, Fengyuan Hu, Avnish Narayan, Johan Bjorck, Jing Wang, Gwanghyun Kim, Dantong Niu, Ruijie Zheng, Yuqi Xie, Jimmy Wu, Qi Wang, Ryan Julian, Danfei Xu, Yilun Du, Yevgen Chebotar, Scott Reed, Jan Kautz, Yuke Zhu, Linxi \"Jim\" Fan, and Joel Jang. World Action Models are Zero-shot Policies. arXiv preprint arXiv:2602.15922 , 2026b. https://arxiv.org/abs/2602.15922 .",
+      "links": [
+        "https://arxiv.org/abs/2602.15922"
+      ]
+    },
+    {
+      "id": "bib.bib83",
+      "text": "[83] Qize Yu, Lianrui Fan, Boyu Chen, Jiaqi Liang, Xini Ding, Yue Chen, Zetian Song, Yuran Wang, Yi Zou, Kaixuan Wang, Tianxing Chen, Wenxuan Song, Bohan Zhou, Mingleyang Li, Siqiao Huang, Yuqi Ye, Caigao Jiang, Wei Wei, Ruihai Wu, Hang Zhang, Yixiao Ge, Shuchang Zhou, Shilong Liu, Xianming Liu, Ping Luo, and Shiyu Huang. GroundingPI: A grounding foundation model towards physical intelligence with visual primitives, 2026. https://arxiv.org/abs/2609.39601 .",
+      "links": [
+        "https://arxiv.org/abs/2609.39601"
+      ]
+    },
+    {
+      "id": "bib.bib84",
+      "text": "[84] Haoqi Yuan, Zhixuan Liang, Anzhe Chen, Ye Wang, Haoyang Li, Pei Lin, Yiyang Huang, Zixing Lei, Tong Zhang, Jiazhao Zhang, Jie Zhang, Jingyang Fan, Gengze Zhou, Qihang Peng, Chenxu Lv, Xiaoyue Chen, An Yang, Fei Huang, Junyang Lin, Dayiheng Liu, Jingren Zhou, Chenfei Wu, and Xiong-Hui Chen. Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models. arXiv preprint arXiv:2606.17846 , 2026. https://arxiv.org/abs/2606.17846 .",
+      "links": [
+        "https://arxiv.org/abs/2606.17846"
+      ]
+    },
+    {
+      "id": "bib.bib85",
+      "text": "[85] Wentao Yuan, Jiafei Duan, Valts Blukis, Wilbert Pumacay, Ranjay Krishna, Adithyavairavan Murali, Arsalan Mousavian, and Dieter Fox. RoboPoint: A vision-language model for spatial affordance prediction for robotics. arXiv preprint arXiv:2406.10721 , 2024. https://arxiv.org/abs/2406.10721 .",
+      "links": [
+        "https://arxiv.org/abs/2406.10721"
+      ]
+    },
+    {
+      "id": "bib.bib86",
+      "text": "[86] Michal Zawalski, William Chen, Karl Pertsch, Oier Mees, Chelsea Finn, and Sergey Levine. Robotic control via embodied chain-of-thought reasoning. In Conference on Robot Learning , volume 270 of Proceedings of Machine Learning Research , pages 3157–3181. PMLR, 2024. https://proceedings.mlr.press/v270/zawalski25a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v270/zawalski25a.html"
+      ]
+    },
+    {
+      "id": "bib.bib87",
+      "text": "[87] Yanjie Ze, Gu Zhang, Kangning Zhang, Chenyuan Hu, Muhan Wang, and Huazhe Xu. 3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations. In Robotics: Science and Systems , 2024. 10.15607/RSS.2024.XX.067 . https://doi.org/10.15607/RSS.2024.XX.067 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2024.XX.067",
+        "https://doi.org/10.15607/RSS.2024.XX.067"
+      ]
+    },
+    {
+      "id": "bib.bib88",
+      "text": "[88] Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. Sigmoid Loss for Language Image Pre-Training. In Proceedings of the IEEE/CVF International Conference on Computer Vision , pages 11941–11952. IEEE, 2023. 10.1109/ICCV51070.2023.01100 . https://doi.org/10.1109/ICCV51070.2023.01100 .",
+      "links": [
+        "https://doi.org/10.1109/ICCV51070.2023.01100",
+        "https://doi.org/10.1109/ICCV51070.2023.01100"
+      ]
+    },
+    {
+      "id": "bib.bib89",
+      "text": "[89] Jianke Zhang, Xiaoyu Chen, Qiuyue Wang, Mingsheng Li, Yanjiang Guo, Yucheng Hu, Jiajun Zhang, Shuai Bai, Junyang Lin, and Jianyu Chen. VLM4VLA: Revisiting vision-language-models in vision-language-action models. arXiv preprint arXiv:2601.03309 , 2026a. https://arxiv.org/abs/2601.03309 .",
+      "links": [
+        "https://arxiv.org/abs/2601.03309"
+      ]
+    },
+    {
+      "id": "bib.bib90",
+      "text": "[90] Wenyao Zhang, Hongsi Liu, Zekun Qi, Yunnan Wang, Xinqiang Yu, Jiazhao Zhang, Runpei Dong, Jiawei He, He Wang, Zhizheng Zhang, Li Yi, Wenjun Zeng, and Xin Jin. DreamVLA: A vision-language-action model dreamed with comprehensive world knowledge. In Advances in Neural Information Processing Systems , volume 38, 2025. https://arxiv.org/abs/2507.04447 .",
+      "links": [
+        "https://arxiv.org/abs/2507.04447"
+      ]
+    },
+    {
+      "id": "bib.bib91",
+      "text": "[91] Wenyao Zhang, Bozhou Zhang, Zekun Qi, Wenjun Zeng, Xin Jin, and Li Zhang. Disentangled robot learning via separate forward and inverse dynamics pretraining. In International Conference on Learning Representations (ICLR) , 2026b. https://arxiv.org/abs/2604.16391 .",
+      "links": [
+        "https://arxiv.org/abs/2604.16391"
+      ]
+    },
+    {
+      "id": "bib.bib92",
+      "text": "[92] Yuyang Zhang, Wenyao Zhang, Zekun Qi, He Zhang, Haitao Lin, Jingbo Zhang, Yao Mu, Xiaokang Yang, Wenjun Zeng, and Xin Jin. ImageWAM: Do world action models really need video generation, or just image editing? In Conference on Robot Learning (CoRL) , 2026c. https://arxiv.org/abs/2606.19531 .",
+      "links": [
+        "https://arxiv.org/abs/2606.19531"
+      ]
+    },
+    {
+      "id": "bib.bib93",
+      "text": "[93] Qingqing Zhao, Yao Lu, Moo Jin Kim, Zipeng Fu, Zhuoyang Zhang, Yecheng Wu, Zhaoshuo Li, Qianli Ma, Song Han, Chelsea Finn, Ankur Handa, Tsung-Yi Lin, Gordon Wetzstein, Ming-Yu Liu, and Donglai Xiang. CoT-VLA: Visual chain-of-thought reasoning for vision-language-action models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 1702–1713. Computer Vision Foundation / IEEE, 2025. 10.1109/CVPR52734.2025.00166 . https://openaccess.thecvf.com/content/CVPR2025/html/Zhao_CoT-VLA_Visual_Chain-of-Thought_Reasoning_for_Vision-Language-Action_Models_CVPR_2025_paper.html .",
+      "links": [
+        "https://doi.org/10.1109/CVPR52734.2025.00166",
+        "https://openaccess.thecvf.com/content/CVPR2025/html/Zhao_CoT-VLA_Visual_Chain-of-Thought_Reasoning_for_Vision-Language-Action_Models_CVPR_2025_paper.html"
+      ]
+    },
+    {
+      "id": "bib.bib94",
+      "text": "[94] Tony Z. Zhao, Vikash Kumar, Sergey Levine, and Chelsea Finn. Learning fine-grained bimanual manipulation with low-cost hardware. In Robotics: Science and Systems , 2023. 10.15607/RSS.2023.XIX.016 . https://doi.org/10.15607/RSS.2023.XIX.016 .",
+      "links": [
+        "https://doi.org/10.15607/RSS.2023.XIX.016",
+        "https://doi.org/10.15607/RSS.2023.XIX.016"
+      ]
+    },
+    {
+      "id": "bib.bib95",
+      "text": "[95] Haoyu Zhen, Xiaowen Qiu, Peihao Chen, Jincheng Yang, Xin Yan, Yilun Du, Yining Hong, and Chuang Gan. 3D-VLA: A 3D Vision-Language-Action Generative World Model. In International Conference on Machine Learning . OpenReview.net, 2024. https://openreview.net/forum?id=EZcFK8HupF .",
+      "links": [
+        "https://openreview.net/forum?id=EZcFK8HupF"
+      ]
+    },
+    {
+      "id": "bib.bib96",
+      "text": "[96] Jinliang Zheng, Jianxiong Li, Zhihao Wang, Dongxiu Liu, Xirui Kang, Yuchun Feng, Yinan Zheng, Jiayin Zou, Yilun Chen, Jia Zeng, Ya-Qin Zhang, Jiangmiao Pang, Jingjing Liu, Tai Wang, and Xianyuan Zhan. X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model. arXiv preprint arXiv:2510.10274 , 2025a. https://arxiv.org/abs/2510.10274 .",
+      "links": [
+        "https://arxiv.org/abs/2510.10274"
+      ]
+    },
+    {
+      "id": "bib.bib97",
+      "text": "[97] Ruijie Zheng, Yongyuan Liang, Shuaiyi Huang, Jianfeng Gao, Hal Daumé III, Andrey Kolobov, Furong Huang, and Jianwei Yang. TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies. In International Conference on Learning Representations . OpenReview.net, 2025b. https://openreview.net/forum?id=b1CVu9l5GO .",
+      "links": [
+        "https://openreview.net/forum?id=b1CVu9l5GO"
+      ]
+    },
+    {
+      "id": "bib.bib98",
+      "text": "[98] Enshen Zhou, Jingkun An, Cheng Chi, Yi Han, Shanyu Rong, Chi Zhang, Pengwei Wang, Zhongyuan Wang, Tiejun Huang, Lu Sheng, and Shanghang Zhang. RoboRefer: Towards spatial referring with reasoning in vision-language models for robotics. In Advances in Neural Information Processing Systems , volume 38, 2025a. https://arxiv.org/abs/2506.04308 .",
+      "links": [
+        "https://arxiv.org/abs/2506.04308"
+      ]
+    },
+    {
+      "id": "bib.bib99",
+      "text": "[99] Enshen Zhou, Yibo Li, Jingkun An, Jiayuan Zhang, Shanyu Rong, Mengzhen Liu, Yi Han, Yuheng Ji, Huajie Tan, Jiawei He, Pengwei Wang, Zhongyuan Wang, Cheng Chi, Lu Sheng, and Shanghang Zhang. Towards spatial trace with reasoning in vision-language models for robotics. In European Conference on Computer Vision (ECCV) , 2026. https://arxiv.org/abs/2512.13660 .",
+      "links": [
+        "https://arxiv.org/abs/2512.13660"
+      ]
+    },
+    {
+      "id": "bib.bib100",
+      "text": "[100] Xueyang Zhou, Yangming Xu, Guiyao Tie, Yongchao Chen, Guowen Zhang, Duanfeng Chu, Pan Zhou, and Lichao Sun. LIBERO-PRO: Towards robust and fair evaluation of vision-language-action models beyond memorization. arXiv preprint arXiv:2510.03827 , 2025b.",
+      "links": []
+    },
+    {
+      "id": "bib.bib101",
+      "text": "[101] Brianna Zitkovich, Tianhe Yu, Sichun Xu, Peng Xu, Ted Xiao, Fei Xia, Jialin Wu, Paul Wohlhart, Stefan Welker, Ayzaan Wahid, Quan Vuong, Vincent Vanhoucke, Huong T. Tran, Radu Soricut, Anikait Singh, Jaspiar Singh, Pierre Sermanet, Pannag R. Sanketi, Grecia Salazar, Michael S. Ryoo, Krista Reymann, Kanishka Rao, Karl Pertsch, Igor Mordatch, Henryk Michalewski, Yao Lu, Sergey Levine, Lisa Lee, Tsang-Wei Edward Lee, Isabel Leal, Yuheng Kuang, Dmitry Kalashnikov, Ryan Julian, Nikhil J. Joshi, Alex Irpan, Brian Ichter, Jasmine Hsu, Alexander Herzog, Karol Hausman, Keerthana Gopalakrishnan, Chuyuan Fu, Pete Florence, Chelsea Finn, Kumar Avinava Dubey, Danny Driess, Tianli Ding, Krzysztof Marcin Choromanski, Xi Chen, Yevgen Chebotar, Justice Carbajal, Noah Brown, Anthony Brohan, Montserrat Gonzalez Arenas, and Kehang Han. RT-2: Vision-language-action models transfer web knowledge to robotic control. In Conference on Robot Learning , volume 229 of Proceedings of Machine Learning Research , pages 2165–2183. PMLR, 2023. https://proceedings.mlr.press/v229/zitkovich23a.html .",
+      "links": [
+        "https://proceedings.mlr.press/v229/zitkovich23a.html"
+      ]
+    }
+  ]
+}
