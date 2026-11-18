@@ -44,9 +44,36 @@
     "2610.20019",
     "2610.31569",
     "2610.35850",
-    "2611.01729"
+    "2611.01729",
+    "2611.21607"
   ],
   "runs": [
+    {
+      "date_kst": "2026-11-18 09:53:58 KST",
+      "week": "2026-W47",
+      "selected_paper_ids": [
+        "2611.21607"
+      ],
+      "papers": [
+        {
+          "id": "2611.21607",
+          "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+          "week": "2026-W47",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W47/scalevla-2611-21607"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W47/scalevla-2611-21607/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W47/scalevla-2611-21607/learning.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W47/scalevla-2611-21607/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W47/scalevla-2611-21607/references.md"
+      ],
+      "commit_hash": "4c66e8981f03828147633ca5385fa120c595b904",
+      "artifact_commit_hash": "4a97d32f78df",
+      "notes": "Current-week new VLA backbone-scaling selection; exact id and distinctive title searches found no existing analysis. Four CC BY 4.0 Korean deliverables, five decoded/parsed and hashed original figures, all nine table cell sets, 101 original bibliography records and nine selected references. Semantic Scholar references HTTP 404 handled through original bibliography. Four deterministic source pages with exact paths/final-byte hashes, ScaleVLA entity and FrontierVLMFeatureTransfer concept. Existing overview preserved. Two final-Markdown Python educational blocks passed. Content and navigation/graph commits pushed; exact origin/personal hash read back before state write.",
+      "limitations": "Technical translation condenses related-work citation enumeration and bibliography prose while preserving main body, equation 1, all tables and key Appendix A-D protocols. NVIDIA auto-ingest HTTP 410 retired model; one bounded Codex fallback found CLI absent; manual materialization completed. Required semantic graph attempt timed out at 90 seconds; --no-infer succeeded with 3254 nodes and 10993 extracted edges; networkx absent. Author-reported benchmark outcomes, no independent training/robot/vehicle/NPU experiments."
+    },
     {
       "date_kst": "2026-11-11 09:51:25 KST",
       "week": "2026-W46",
