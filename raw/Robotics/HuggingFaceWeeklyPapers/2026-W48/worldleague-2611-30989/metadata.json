@@ -1,0 +1,210 @@
+{
+  "id": "2611.30989",
+  "title": "WorldLeague: Benchmarking Physical Agency",
+  "html_title": "Benchmarking Physical Agency",
+  "authors": [
+    "Xinyang Zhou",
+    "Qi Li",
+    "Xinchao Wang"
+  ],
+  "version": "v1",
+  "published": "2026-11-23",
+  "week": "2026-W48",
+  "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+  "source_url": "https://arxiv.org/html/2611.30989v1",
+  "hf_url": "https://huggingface.co/papers/2611.30989",
+  "arxiv_id": "2611.30989",
+  "arxiv_url": "https://arxiv.org/abs/2611.30989",
+  "pdf_url": "https://arxiv.org/pdf/2611.30989",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "ingested_at_kst": "2026-11-25 09:43:23 KST",
+  "selected_reason": "Current-week HF rank 4, 88 votes in pre-run snapshot; VLM/VLA/WAM closed-loop goal-achievement benchmark; independent exact ID/title duplicate searches found no raw/wiki analysis. Benchmark taxonomy rather than a driving policy.",
+  "semantic_scholar_http_status": 200,
+  "semantic_scholar_reference_count": 62,
+  "original_bibliography_count": 63,
+  "figures": [
+    {
+      "file": "figures/figure-02-1.png",
+      "sha256": "fc6ef3eba08da20eaa3e56d17c13e8b56c13895c765cf9145330132223fc758f",
+      "figure": 2
+    },
+    {
+      "file": "figures/figure-04-1.png",
+      "sha256": "ddf0444114b750ba771892e49cdc2d27a9dc92e32db71fa2434850d3ec19d943",
+      "figure": 4
+    },
+    {
+      "file": "figures/figure-05-1.svg",
+      "sha256": "0367bdf47060d0f1b07fc28685543605d54cc5d8f882e8fd75a4ac3905b05c47",
+      "figure": 5
+    },
+    {
+      "file": "figures/figure-06-1.svg",
+      "sha256": "f1fa8e6d1c8af0dd57469c2e862d448dff3526e068de80c553d9348520b38fc8",
+      "figure": 6
+    },
+    {
+      "file": "figures/figure-07-1.svg",
+      "sha256": "983c614bcaa3e7c3eca5955fabb032f8e6c47b79feae03468413bf66cb05869b",
+      "figure": 7
+    },
+    {
+      "file": "figures/figure-08-1.svg",
+      "sha256": "0a7225fb525635a081d76458c24ee6d6518d6e9c55836901e3fb3df8c998a63b",
+      "figure": 8
+    },
+    {
+      "file": "figures/figure-09-1.svg",
+      "sha256": "969c952cfd0c1190c07bb558e943e08055c3f4a243547479bbb874809db9f7cc",
+      "figure": 9
+    },
+    {
+      "file": "figures/figure-10-1.svg",
+      "sha256": "d3d995c6b239bf10c4f9f64a8de96c454d2d8885ed16520931ddcd4a10a963c3",
+      "figure": 10
+    },
+    {
+      "file": "figures/figure-11-1.svg",
+      "sha256": "82ba472fd569824bd478c8ac65393cc644bc4e99aaeaccb7a75e5a6e7f6837f2",
+      "figure": 11
+    },
+    {
+      "file": "figures/figure-12-1.svg",
+      "sha256": "7fa43280d1f7a57525a25b97cafa269dc44b5b9a9ef3f9929aefa56caa72b9fc",
+      "figure": 12
+    }
+  ],
+  "figure_captions": [
+    {
+      "figure": 1,
+      "caption": "Figure 1: Example tasks across six dimensions in WorldSeek (blue, right), WorldShape (green, left), and WorldShift (red, below).",
+      "files": []
+    },
+    {
+      "figure": 2,
+      "caption": "Figure 2: From goal to executable task. (A) The instruction specifies the visit order, pickups, and tray constraint. (B) The scene fixes object placements and the robot’s starting configuration. (C) The evaluator checks visits and pickups in order, tray contents, stability, and release.",
+      "files": [
+        "figures/figure-02-1.png"
+      ]
+    },
+    {
+      "figure": 3,
+      "caption": "Figure 3: WorldHarness executes VLM commands and returns observations and feedback. The evaluator scores physical outcomes and terminal QA separately.",
+      "files": []
+    },
+    {
+      "figure": 4,
+      "caption": "Figure 4: Three goals achieved through interaction. Fable uses a reflection to reposition an object (top), Sol builds a stable tower after an arm joint-limit stop (middle), and Astra clears an obstruction that returns after delivery (bottom). Frame labels identify the decision and whether the view precedes or follows it.",
+      "files": [
+        "figures/figure-04-1.png"
+      ]
+    },
+    {
+      "figure": 5,
+      "caption": "Figure 5: What eight VLMs report and achieve in the same episode. Left, mean Interactive Score and terminal QA over all tasks. Right, the distribution of zero, partial, and full Interactive Scores among the episodes in which each VLM answers every question correctly.",
+      "files": [
+        "figures/figure-05-1.svg"
+      ]
+    },
+    {
+      "figure": 6,
+      "caption": "Figure 6: Overall Interactive Score versus mean elapsed minutes per task (left, all models) and mean millions of tokens per task (right, VLMs). Both horizontal axes are logarithmic. Lines connect the observed Pareto-optimal points. Colors identify models and shapes distinguish model families.",
+      "files": [
+        "figures/figure-06-1.svg"
+      ]
+    },
+    {
+      "figure": 7,
+      "caption": "Figure 7: The left panel shows mean Interactive Scores by dimension and overall (darker is higher, color scale 0–50). The right panel shows each model’s share of evaluated tasks with zero ( I = 0 I=0 ), partial ( 0 < I < 100 0<I<100 ), and full ( I = 100 I=100 ) credit.",
+      "files": [
+        "figures/figure-07-1.svg"
+      ]
+    },
+    {
+      "figure": 8,
+      "caption": "Figure 8: Task-level Interactive Scores by model. Each panel groups tasks from one track by dimension. Gray, amber, and green mark zero, partial, and full credit. Numbers show nonzero scores rounded to integers. Dashes mark the unevaluated T52 task for continuous-control policies.",
+      "files": [
+        "figures/figure-08-1.svg"
+      ]
+    },
+    {
+      "figure": 9,
+      "caption": "Figure 9: (a) Goal-component completion by task family, pooled over eight VLMs. Bar labels give completed/evaluated episodes. (b) Shares of complete three-decision windows containing a completed command or a recurrence of the original stop status. Filled markers weight windows equally, and open markers average within each episode first.",
+      "files": [
+        "figures/figure-09-1.svg"
+      ]
+    },
+    {
+      "figure": 10,
+      "caption": "Figure 10: Mean paired operation and terminal QA by question type for the 22 tasks about the initial state, 26 about the final state, and 12 about history.",
+      "files": [
+        "figures/figure-10-1.svg"
+      ]
+    },
+    {
+      "figure": 11,
+      "caption": "Figure 11: Decision-level outcomes and task-level success for each VLM. The left panel uses all decisions, including invalid decisions and phase or final declarations. The right panel reports the percentage of 60 tasks that meet all physical goals and constraints.",
+      "files": [
+        "figures/figure-11-1.svg"
+      ]
+    },
+    {
+      "figure": 12,
+      "caption": "Figure 12: Termination across 60 episodes per VLM. (a) Physical outcomes after final DONE or budget termination (hatched). (b) Each dot shows the share of the decision budget used in one episode. Dark ticks mark the median budget share for unsuccessful final declarations.",
+      "files": [
+        "figures/figure-12-1.svg"
+      ]
+    }
+  ],
+  "table_count": 26,
+  "translation_scope": "Main-body section-preserving Korean technical translation with equations 1-4, all table cell rows, selected Appendix A-F protocols/equations; appendices condensed, bibliography summarized separately.",
+  "selected_references": [
+    {
+      "bib_number": 1,
+      "title": "SayCan — Do As I Can, Not As I Say",
+      "arxiv_id": "2204.01691"
+    },
+    {
+      "bib_number": 2,
+      "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+      "arxiv_id": "2506.09985"
+    },
+    {
+      "bib_number": 9,
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "arxiv_id": "2609.10522"
+    },
+    {
+      "bib_number": 15,
+      "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+      "arxiv_id": "2605.18746"
+    },
+    {
+      "bib_number": 18,
+      "title": "Inner Monologue: Embodied Reasoning through Planning with Language Models",
+      "arxiv_id": "2207.05608"
+    },
+    {
+      "bib_number": 19,
+      "title": "π0.5: A Vision-Language-Action Model with Open-World Generalization",
+      "arxiv_id": "2504.16054"
+    },
+    {
+      "bib_number": 20,
+      "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+      "arxiv_id": "2406.09246"
+    },
+    {
+      "bib_number": 21,
+      "title": "BEHAVIOR-1K: A Benchmark for Embodied AI with 1,000 Everyday Activities and Realistic Simulation",
+      "arxiv_id": null
+    },
+    {
+      "bib_number": 63,
+      "title": "World Action Models Are Zero-Shot Policies — DreamZero",
+      "arxiv_id": "2602.15922"
+    }
+  ],
+  "limitations": "Appendices A-F selectively translated; main-body technical translation condenses repeated citation prose. Figure 1 and 3 have no extractable HTML image/object/SVG. Main text and all table rows preserved; no training/robot benchmark reproduction."
+}

@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-W48: 설명과 Command Completion에서 Physical Goal Achievement로
+- [[WorldLeague]]는 VLM/VLA/WAM을 60개 task의 여섯 capability dimension에서 비교하며 [[GoalPredicateEvaluation]]으로 partial progress와 모든 goal·constraint를 요구하는 success를 구분한다. QA 정답·completed command·DONE은 외부 outcome 검증을 대체하지 않는다.
+- [[ScaleVLA]]의 representation scale, [[MotorMind]]의 runtime harness, [[Echo]]의 status signal을 실제 목표 달성 관점에서 연결한다. 같은 physical task라도 robot·native controller·context가 달라 backbone-only causal ranking으로 해석하지 않는다.
+- Simulation closed-loop 결과이며 주로 single episode, task-equal weighting, 60/59 task 분모, seed sensitivity를 보존한다. Inference 중 world가 진행하는 observation-freshness 문제는 중요하지만 real-vehicle/NPU/formal safety 검증은 아니다. CC BY 4.0 본문 기술 번역·선별 부록·원문 표와 figure asset 10개, 실행 검증한 교육 toy 두 개를 추가했다.
+
 ## 2026-W47: Frontier VLM Representation의 Continuous Action Transfer
 - [[ScaleVLA]]는 [[FrontierVLMFeatureTransfer]]로 frozen 552B VLM의 causal-encoder token을 scratch action DiT에 연결한다. Explicit CoT/decoder 없이 chunk당 feature를 한 번 읽고 네 flow step으로 numerical action을 만든다. [[GroundingPI]]의 precise perception과 [[ODEPolicy]]의 action dynamics와 다른 interface layer를 확장한다.
 - LIBERO-PRO mean 45.1%와 scarce-demo Goal의 이득, 실물 charger ID 9/10·OOD 8/15를 보고하지만 Object-Env·hard dexterity는 여전히 어렵다. Full-data normalization·fixed update budget·one seed·작은 실물 표본 및 backbone family/hardware confound를 보존한다.

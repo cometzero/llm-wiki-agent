@@ -1,3 +1,7 @@
+## [2026-11-25] ingest | WorldLeague (Hugging Face Weekly 2026-W48)
+
+Added four Korean raw deliverables, ten validated figure assets, exact-path/hash source pages, WorldLeague entity and GoalPredicateEvaluation concept. Independent ID/title duplicate checks were clean; ScaleVLA remains excluded. CC BY 4.0 main-body technical translation preserves equations 1–4, all original table rows and selected Appendix A–F protocols; appendices are explicitly condensed. Semantic Scholar returned 62 references versus 63 original bibliography entries; nine were selected against the original bibliography. Two final-Markdown educational Python blocks passed. NVIDIA auto-ingest returned EOL HTTP 410; one bounded Codex fallback found CLI absent, so source pages were materialized deterministically. Existing overview and multi-source pages are preserved.
+
 ## [2026-10-21] ingest | MorphAct (Hugging Face Weekly 2026-W43)
 
 Added four Korean raw deliverables, six downloaded PNG figure assets, four source pages with exact nested raw paths and final-byte hashes, one method entity, and one contextual parameter generation concept. ID/title duplicate checks were clean. Source license is arXiv perpetual non-exclusive: paper-ko is explicitly an independent detailed technical synopsis, not a full-paper translation. NVIDIA ingest returned HTTP 410 and the bounded Codex fallback could not find the executable; deterministic wiki materialization completed. Nine references use Semantic Scholar plus the original bibliography. Existing multi-source context is preserved.
@@ -1600,3 +1604,7 @@ W46 신규 논문 2611.01729의 독자 한국어 해설/분석/참고문헌/학�
 ## [2026-11-18] graph | Knowledge graph rebuilt
 
 3254 nodes, 10993 edges (10993 extracted, 0 inferred).
+
+## [2026-11-25] graph | Knowledge graph rebuilt
+
+3260 nodes, 11021 edges (11021 extracted, 0 inferred).

@@ -4,6 +4,10 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [WorldLeague 한국어 기술 번역](sources/worldleague-2611-30989-paper-ko.md) — CC BY 4.0 본문·선별 부록·원문 표·그림
+- [WorldLeague 분석](sources/worldleague-2611-30989-analysis.md) — physical goal·constraint·QA·closed-loop 경계
+- [WorldLeague 핵심 참고문헌 9편](sources/worldleague-2611-30989-references.md) — harness·native policy·benchmark 관계
+- [WorldLeague 핵심 기술 학습](sources/worldleague-2611-30989-learning.md) — goal scoring·timestamp 교육 toy 두 개 실행 검증
 - [ScaleVLA 한국어 기술 번역](sources/scalevla-2611-21607-paper-ko.md) — frontier frozen feature·continuous action 및 검증 경계
 - [ScaleVLA 분석](sources/scalevla-2611-21607-analysis.md) — frontier frozen feature·continuous action 및 검증 경계
 - [ScaleVLA 핵심 참고문헌 9편](sources/scalevla-2611-21607-references.md) — frontier frozen feature·continuous action 및 검증 경계
@@ -389,6 +393,7 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [WorldLeague](entities/WorldLeague.md) — physical goal·constraint 기반 VLM/VLA/WAM benchmark
 - [ScaleVLA](entities/ScaleVLA.md) — frozen 552B frontier VLM과 continuous action head
 - [ODEPolicy](entities/ODEPolicy.md) — ODE Policy action dynamics 및 검증 경계
 - [OSWAM](entities/OSWAM.md) — structured action prior와 training-only future teacher를 사용하는 one-step WAM
@@ -941,6 +946,7 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Goal Predicate Evaluation](concepts/GoalPredicateEvaluation.md) — partial progress와 모든 goal·constraint의 complete success를 분리
 - [Frontier VLM Feature Transfer](concepts/FrontierVLMFeatureTransfer.md) — 중간 multimodal feature의 numerical action grounding
 - [ActionDynamicsPolicy](concepts/ActionDynamicsPolicy.md) — ODE Policy action dynamics 및 검증 경계
 - [Structured Action Initialization](concepts/StructuredActionInitialization.md) — AIT prior·same-noise re-noising·one-step residual refinement
