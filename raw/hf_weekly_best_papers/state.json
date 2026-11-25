@@ -45,9 +45,33 @@
     "2610.31569",
     "2610.35850",
     "2611.01729",
-    "2611.21607"
+    "2611.21607",
+    "2611.30989"
   ],
   "runs": [
+    {
+      "date_kst": "2026-11-25 09:40:25 KST",
+      "week": "2026-W48",
+      "selected_paper_ids": ["2611.30989"],
+      "papers": [
+        {
+          "id": "2611.30989",
+          "title": "WorldLeague: Benchmarking Physical Agency",
+          "week": "2026-W48",
+          "category": "raw/Robotics/HuggingFaceWeeklyPapers",
+          "raw_dir": "raw/Robotics/HuggingFaceWeeklyPapers/2026-W48/worldleague-2611-30989"
+        }
+      ],
+      "raw_paths": [
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W48/worldleague-2611-30989/paper-ko.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W48/worldleague-2611-30989/analysis.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W48/worldleague-2611-30989/references.md",
+        "raw/Robotics/HuggingFaceWeeklyPapers/2026-W48/worldleague-2611-30989/learning.md"
+      ],
+      "commit_hash": "50dbc53b6084d30a202415304f709b2eeb65a4ac",
+      "notes": "Current-week HF rank-4 benchmark selection; exact ID and distinctive-title duplicate searches across raw/wiki were clean. Four CC BY 4.0 Korean deliverables, ten decoded/parsed and hashed original figure assets, numbered tables 1-27 preserved (26 HTML table blocks plus manually translated layout table 2), four exact-path/final-byte-hash source pages, WorldLeague entity and GoalPredicateEvaluation concept. Semantic Scholar returned 62 references versus 63 original bibliography entries; nine selected against the original bibliography. Existing overview and multi-source pages preserved. Exactly two final-Markdown educational Python blocks passed. Content commit pushed and exact origin/personal hash read back before state update. ScaleVLA excluded as already analyzed.",
+      "limitations": "Section-preserving main-body technical translation condenses repeated citations and selects Appendix A-F protocols rather than claiming full appendix translation. Figure 1 and 3 lack extractable HTML image/object/SVG, so captions and original anchors retained. NVIDIA auto-ingest HTTP 410 retired model; one bounded Codex fallback found CLI absent; deterministic wiki materialization completed. Required semantic graph attempt timed out at 90 seconds; --no-infer produced 3260 nodes and 11021 extracted edges; networkx absent, no community detection. No independent training/robot benchmark/vehicle/NPU experiments."
+    },
     {
       "date_kst": "2026-11-18 09:53:58 KST",
       "week": "2026-W47",
