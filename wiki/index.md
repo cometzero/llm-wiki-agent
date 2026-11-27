@@ -4,6 +4,7 @@
 - [Overview](overview.md) — living synthesis
 
 ## Sources
+- [LWN Weekly 2026-11-12 한국어 기술 리포트](sources/lwn-weekly-edition-2026-11-12-1105460.md) — 특집 5편 번역·단신 요약·57개 각주·보안 870행·patch 79개
 - [WorldLeague 한국어 기술 번역](sources/worldleague-2611-30989-paper-ko.md) — CC BY 4.0 본문·선별 부록·원문 표·그림
 - [WorldLeague 분석](sources/worldleague-2611-30989-analysis.md) — physical goal·constraint·QA·closed-loop 경계
 - [WorldLeague 핵심 참고문헌 9편](sources/worldleague-2611-30989-references.md) — harness·native policy·benchmark 관계
@@ -393,6 +394,8 @@
 - [Object-Centric Residual RL Korean Technical Translation](sources/object-centric-residual-rl-vla-enhancement-2606-18953-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav Korean Technical Translation](sources/qwen-robotnav-2606-18112-paper-ko.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Entities
+- [Synaptics](entities/Synaptics.md) — DisplayLink 특허 주장 사례의 당사자
+- [DisplayLink](entities/DisplayLink.md) — Linux dock 지원과 특허·상호운용성
 - [WorldLeague](entities/WorldLeague.md) — physical goal·constraint 기반 VLM/VLA/WAM benchmark
 - [ScaleVLA](entities/ScaleVLA.md) — frozen 552B frontier VLM과 continuous action head
 - [ODEPolicy](entities/ODEPolicy.md) — ODE Policy action dynamics 및 검증 경계
@@ -946,6 +949,9 @@
 - [Nvidia Robotics](entities/NvidiaRobotics.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 - [Qwen-RobotNav](entities/QwenRobotNav.md) — auto-indexed during 2026-W27 HF Weekly validation repair
 ## Concepts
+- [Dynamic Linker Hardening](concepts/DynamicLinkerHardening.md) — glibc loader 정책과 binary 호환성
+- [User Namespace and File Capabilities](concepts/UserNamespaceFileCapabilities.md) — UID mapping과 file capability의 격리 경계
+- [Secure Hibernation](concepts/SecureHibernation.md) — lockdown hibernation의 신뢰 경계
 - [Goal Predicate Evaluation](concepts/GoalPredicateEvaluation.md) — partial progress와 모든 goal·constraint의 complete success를 분리
 - [Frontier VLM Feature Transfer](concepts/FrontierVLMFeatureTransfer.md) — 중간 multimodal feature의 numerical action grounding
 - [ActionDynamicsPolicy](concepts/ActionDynamicsPolicy.md) — ODE Policy action dynamics 및 검증 경계

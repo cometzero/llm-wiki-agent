@@ -1,5 +1,10 @@
 # Wiki Overview
 
+## 2026-11-12 LWN Weekly: Governance와 Runtime Trust Boundaries
+- [[DisplayLink]]/[[Synaptics]] 사례와 [[Git]] LLM 정책 논의는 upstream 기여의 기술적 타당성 외에도 특허 위험·의사결정 절차·책임 경계가 필요함을 보여 준다.
+- [[SecureHibernation]], [[UserNamespaceFileCapabilities]], [[DynamicLinkerHardening]]은 boot·ID mapping·ELF loading을 통과하는 권한과 신뢰를 end-to-end로 검증해야 한다는 공동 주제다.
+- [[lwn-weekly-edition-2026-11-12-1105460]]은 허용된 특집 5편의 전체 번역과 단신 독자 요약을 구분한다. 57개 해설 각주·보안 870행·patch 79개의 발행 당시 데이터를 보존하며 미병합 제안이나 역사적 릴리스를 현재 확정 상태로 해석하지 않는다.
+
 ## 2026-W48: 설명과 Command Completion에서 Physical Goal Achievement로
 - [[WorldLeague]]는 VLM/VLA/WAM을 60개 task의 여섯 capability dimension에서 비교하며 [[GoalPredicateEvaluation]]으로 partial progress와 모든 goal·constraint를 요구하는 success를 구분한다. QA 정답·completed command·DONE은 외부 outcome 검증을 대체하지 않는다.
 - [[ScaleVLA]]의 representation scale, [[MotorMind]]의 runtime harness, [[Echo]]의 status signal을 실제 목표 달성 관점에서 연결한다. 같은 physical task라도 robot·native controller·context가 달라 backbone-only causal ranking으로 해석하지 않는다.

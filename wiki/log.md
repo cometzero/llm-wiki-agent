@@ -1608,3 +1608,11 @@ W46 신규 논문 2611.01729의 독자 한국어 해설/분석/참고문헌/학�
 ## [2026-11-25] graph | Knowledge graph rebuilt
 
 3260 nodes, 11021 edges (11021 extracted, 0 inferred).
+
+## [2026-11-27] ingest | LWN Weekly 2026-11-12 (1105460)
+
+Added licensed feature translations (5), unlicensed brief digests, 57 explanatory footnotes, 870 exact advisory rows and 79 kernel patch records. Auto ingest failed on NVIDIA EOL HTTP 410; one Codex retry found executable absent. Deterministic source/full SHA-256 plus three concept and two entity pages preserve old multi-source content and overview. PDF is a build-only deliverable.
+
+## [2026-11-27] graph | Knowledge graph rebuilt
+
+3266 nodes, 11039 edges (11039 extracted, 0 inferred).
